@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate)
+        {
+            return this.CreateResponseAsync(mdmWindowsInformationProtectionPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MdmWindowsInformationProtectionPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MdmWindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MdmWindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToUpdate">The MdmWindowsInformationProtectionPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> UpdateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(mdmWindowsInformationProtectionPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToUpdate">The MdmWindowsInformationProtectionPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> UpdateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData != null)
+			{
+				if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mdmWindowsInformationProtectionPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData != null)
+            {
+                if (mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mdmWindowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mdmWindowsInformationProtectionPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

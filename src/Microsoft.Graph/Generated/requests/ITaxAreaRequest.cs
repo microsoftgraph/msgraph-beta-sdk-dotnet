@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="taxAreaToCreate">The TaxArea to create.</param>
         /// <returns>The created TaxArea.</returns>
-        System.Threading.Tasks.Task<TaxArea> CreateAsync(TaxArea taxAreaToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TaxArea> CreateAsync(TaxArea taxAreaToCreate);
+
+        /// <summary>
         /// Creates the specified TaxArea using POST.
         /// </summary>
         /// <param name="taxAreaToCreate">The TaxArea to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TaxArea.</returns>
         System.Threading.Tasks.Task<TaxArea> CreateAsync(TaxArea taxAreaToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TaxArea using POST and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <param name="taxAreaToCreate">The TaxArea to create.</param>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> CreateResponseAsync(TaxArea taxAreaToCreate);
+
+        /// <summary>
+        /// Creates the specified TaxArea using POST and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <param name="taxAreaToCreate">The TaxArea to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> CreateResponseAsync(TaxArea taxAreaToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TaxArea.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TaxArea and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TaxArea and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TaxArea.
         /// </summary>
         /// <returns>The TaxArea.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TaxArea.</returns>
         System.Threading.Tasks.Task<TaxArea> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TaxArea and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TaxArea and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TaxArea using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TaxArea.</returns>
         System.Threading.Tasks.Task<TaxArea> UpdateAsync(TaxArea taxAreaToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TaxArea using PATCH and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <param name="taxAreaToUpdate">The TaxArea to update.</param>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> UpdateResponseAsync(TaxArea taxAreaToUpdate);
+
+        /// <summary>
+        /// Updates the specified TaxArea using PATCH and returns a <see cref="GraphResponse{TaxArea}"/> object.
+        /// </summary>
+        /// <param name="taxAreaToUpdate">The TaxArea to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> UpdateResponseAsync(TaxArea taxAreaToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

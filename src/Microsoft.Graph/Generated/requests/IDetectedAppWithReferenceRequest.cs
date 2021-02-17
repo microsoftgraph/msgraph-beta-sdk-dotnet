@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The DetectedApp.</returns>
         System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <returns>The created DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);
+
+        /// <summary>
         /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DetectedApp.</returns>
         System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate);
+
+        /// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified DetectedApp using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified DetectedApp using PATCH and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> UpdateResponseAsync(DetectedApp detectedAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified DetectedApp using PATCH and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> UpdateResponseAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified DetectedApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified DetectedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DetectedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

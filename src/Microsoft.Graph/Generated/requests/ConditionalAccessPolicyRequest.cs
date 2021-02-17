@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate)
+        {
+            return this.CreateResponseAsync(conditionalAccessPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(conditionalAccessPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ConditionalAccessPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ConditionalAccessPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ConditionalAccessPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ConditionalAccessPolicy>(conditionalAccessPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(conditionalAccessPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (conditionalAccessPolicyToUpdate.AdditionalData != null)
+			{
+				if (conditionalAccessPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					conditionalAccessPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conditionalAccessPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (conditionalAccessPolicyToUpdate.AdditionalData != null)
+            {
+                if (conditionalAccessPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    conditionalAccessPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conditionalAccessPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(conditionalAccessPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

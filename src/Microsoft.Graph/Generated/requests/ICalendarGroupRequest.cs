@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
         /// <returns>The created CalendarGroup.</returns>
-        System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate);
+
+        /// <summary>
         /// Creates the specified CalendarGroup using POST.
         /// </summary>
         /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarGroup.</returns>
         System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CalendarGroup using POST and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> CreateResponseAsync(CalendarGroup calendarGroupToCreate);
+
+        /// <summary>
+        /// Creates the specified CalendarGroup using POST and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> CreateResponseAsync(CalendarGroup calendarGroupToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CalendarGroup.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified CalendarGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified CalendarGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified CalendarGroup.
         /// </summary>
         /// <returns>The CalendarGroup.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CalendarGroup.</returns>
         System.Threading.Tasks.Task<CalendarGroup> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified CalendarGroup and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CalendarGroup and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified CalendarGroup using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CalendarGroup.</returns>
         System.Threading.Tasks.Task<CalendarGroup> UpdateAsync(CalendarGroup calendarGroupToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified CalendarGroup using PATCH and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToUpdate">The CalendarGroup to update.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> UpdateResponseAsync(CalendarGroup calendarGroupToUpdate);
+
+        /// <summary>
+        /// Updates the specified CalendarGroup using PATCH and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToUpdate">The CalendarGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> UpdateResponseAsync(CalendarGroup calendarGroupToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <returns>The created ProgramControl.</returns>
-        System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate);
+
+        /// <summary>
         /// Creates the specified ProgramControl using POST.
         /// </summary>
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProgramControl.</returns>
         System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ProgramControl using POST and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="programControlToCreate">The ProgramControl to create.</param>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> CreateResponseAsync(ProgramControl programControlToCreate);
+
+        /// <summary>
+        /// Creates the specified ProgramControl using POST and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="programControlToCreate">The ProgramControl to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> CreateResponseAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ProgramControl.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ProgramControl and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ProgramControl and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ProgramControl.
         /// </summary>
         /// <returns>The ProgramControl.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProgramControl.</returns>
         System.Threading.Tasks.Task<ProgramControl> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ProgramControl and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ProgramControl and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ProgramControl using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProgramControl.</returns>
         System.Threading.Tasks.Task<ProgramControl> UpdateAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ProgramControl using PATCH and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="programControlToUpdate">The ProgramControl to update.</param>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> UpdateResponseAsync(ProgramControl programControlToUpdate);
+
+        /// <summary>
+        /// Updates the specified ProgramControl using PATCH and returns a <see cref="GraphResponse{ProgramControl}"/> object.
+        /// </summary>
+        /// <param name="programControlToUpdate">The ProgramControl to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> UpdateResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

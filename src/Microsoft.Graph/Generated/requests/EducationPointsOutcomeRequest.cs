@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EducationPointsOutcome using POST and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationPointsOutcomeToCreate">The EducationPointsOutcome to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> CreateResponseAsync(EducationPointsOutcome educationPointsOutcomeToCreate)
+        {
+            return this.CreateResponseAsync(educationPointsOutcomeToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationPointsOutcome using POST and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationPointsOutcomeToCreate">The EducationPointsOutcome to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> CreateResponseAsync(EducationPointsOutcome educationPointsOutcomeToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationPointsOutcome>(educationPointsOutcomeToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EducationPointsOutcome.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationPointsOutcome>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationPointsOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationPointsOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EducationPointsOutcome>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EducationPointsOutcome and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EducationPointsOutcome and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EducationPointsOutcome>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EducationPointsOutcome>(educationPointsOutcomeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationPointsOutcome using PATCH and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationPointsOutcomeToUpdate">The EducationPointsOutcome to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> UpdateResponseAsync(EducationPointsOutcome educationPointsOutcomeToUpdate)
+        {
+            return this.UpdateResponseAsync(educationPointsOutcomeToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationPointsOutcome using PATCH and returns a <see cref="GraphResponse{EducationPointsOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationPointsOutcomeToUpdate">The EducationPointsOutcome to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationPointsOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationPointsOutcome>> UpdateResponseAsync(EducationPointsOutcome educationPointsOutcomeToUpdate, CancellationToken cancellationToken)
+        {
+			if (educationPointsOutcomeToUpdate.AdditionalData != null)
+			{
+				if (educationPointsOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationPointsOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationPointsOutcomeToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (educationPointsOutcomeToUpdate.AdditionalData != null)
+            {
+                if (educationPointsOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    educationPointsOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationPointsOutcomeToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EducationPointsOutcome>(educationPointsOutcomeToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

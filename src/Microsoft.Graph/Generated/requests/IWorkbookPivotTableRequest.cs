@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
-        System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookPivotTable using POST.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookPivotTable.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookPivotTable and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookPivotTable and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookPivotTable.
         /// </summary>
         /// <returns>The WorkbookPivotTable.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookPivotTable and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookPivotTable and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookPivotTable using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> UpdateAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

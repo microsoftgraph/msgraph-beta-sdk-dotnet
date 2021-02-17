@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SharePointSiteUsageDetail using POST and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToCreate">The SharePointSiteUsageDetail to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> CreateResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToCreate)
+        {
+            return this.CreateResponseAsync(sharePointSiteUsageDetailToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SharePointSiteUsageDetail using POST and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToCreate">The SharePointSiteUsageDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> CreateResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SharePointSiteUsageDetail>(sharePointSiteUsageDetailToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SharePointSiteUsageDetail.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SharePointSiteUsageDetail>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SharePointSiteUsageDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SharePointSiteUsageDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SharePointSiteUsageDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SharePointSiteUsageDetail and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SharePointSiteUsageDetail and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SharePointSiteUsageDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SharePointSiteUsageDetail>(sharePointSiteUsageDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageDetail using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToUpdate">The SharePointSiteUsageDetail to update.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> UpdateResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToUpdate)
+        {
+            return this.UpdateResponseAsync(sharePointSiteUsageDetailToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SharePointSiteUsageDetail using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="sharePointSiteUsageDetailToUpdate">The SharePointSiteUsageDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageDetail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageDetail>> UpdateResponseAsync(SharePointSiteUsageDetail sharePointSiteUsageDetailToUpdate, CancellationToken cancellationToken)
+        {
+			if (sharePointSiteUsageDetailToUpdate.AdditionalData != null)
+			{
+				if (sharePointSiteUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					sharePointSiteUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsageDetailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (sharePointSiteUsageDetailToUpdate.AdditionalData != null)
+            {
+                if (sharePointSiteUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    sharePointSiteUsageDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointSiteUsageDetailToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SharePointSiteUsageDetail>(sharePointSiteUsageDetailToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

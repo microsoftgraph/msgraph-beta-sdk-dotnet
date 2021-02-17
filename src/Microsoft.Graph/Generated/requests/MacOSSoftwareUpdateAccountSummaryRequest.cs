@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSSoftwareUpdateAccountSummary using POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummaryToCreate">The MacOSSoftwareUpdateAccountSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> CreateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToCreate)
+        {
+            return this.CreateResponseAsync(macOSSoftwareUpdateAccountSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSSoftwareUpdateAccountSummary using POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummaryToCreate">The MacOSSoftwareUpdateAccountSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> CreateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSSoftwareUpdateAccountSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSSoftwareUpdateAccountSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSSoftwareUpdateAccountSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSSoftwareUpdateAccountSummary and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSSoftwareUpdateAccountSummary and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSSoftwareUpdateAccountSummary using PATCH and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummaryToUpdate">The MacOSSoftwareUpdateAccountSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> UpdateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(macOSSoftwareUpdateAccountSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSSoftwareUpdateAccountSummary using PATCH and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummaryToUpdate">The MacOSSoftwareUpdateAccountSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> UpdateResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData != null)
+			{
+				if (macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSSoftwareUpdateAccountSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData != null)
+            {
+                if (macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSSoftwareUpdateAccountSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSSoftwareUpdateAccountSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

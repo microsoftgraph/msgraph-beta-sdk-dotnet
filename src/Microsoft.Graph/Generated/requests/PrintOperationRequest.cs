@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PrintOperation using POST and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToCreate">The PrintOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintOperation>> CreateResponseAsync(PrintOperation printOperationToCreate)
+        {
+            return this.CreateResponseAsync(printOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PrintOperation using POST and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToCreate">The PrintOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintOperation>> CreateResponseAsync(PrintOperation printOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PrintOperation>(printOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PrintOperation.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<PrintOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified PrintOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified PrintOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<PrintOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified PrintOperation and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PrintOperation and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PrintOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<PrintOperation>(printOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PrintOperation using PATCH and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToUpdate">The PrintOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintOperation>> UpdateResponseAsync(PrintOperation printOperationToUpdate)
+        {
+            return this.UpdateResponseAsync(printOperationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PrintOperation using PATCH and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToUpdate">The PrintOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintOperation>> UpdateResponseAsync(PrintOperation printOperationToUpdate, CancellationToken cancellationToken)
+        {
+			if (printOperationToUpdate.AdditionalData != null)
+			{
+				if (printOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					printOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printOperationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (printOperationToUpdate.AdditionalData != null)
+            {
+                if (printOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    printOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PrintOperation>(printOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsAppX using POST and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate)
+        {
+            return this.CreateResponseAsync(windowsAppXToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsAppX using POST and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsAppX>(windowsAppXToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsAppX.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsAppX>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsAppX>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsAppX and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsAppX and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsAppX>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsAppX>(windowsAppXToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsAppX using PATCH and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToUpdate">The WindowsAppX to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsAppXToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsAppX using PATCH and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToUpdate">The WindowsAppX to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsAppXToUpdate.AdditionalData != null)
+			{
+				if (windowsAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAppXToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsAppXToUpdate.AdditionalData != null)
+            {
+                if (windowsAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAppXToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsAppX>(windowsAppXToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

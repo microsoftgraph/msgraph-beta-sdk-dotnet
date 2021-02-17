@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DelegatedPermissionClassification using POST and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> CreateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate)
+        {
+            return this.CreateResponseAsync(delegatedPermissionClassificationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DelegatedPermissionClassification using POST and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> CreateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DelegatedPermissionClassification>(delegatedPermissionClassificationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DelegatedPermissionClassification.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DelegatedPermissionClassification>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DelegatedPermissionClassification>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DelegatedPermissionClassification>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DelegatedPermissionClassification>(delegatedPermissionClassificationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DelegatedPermissionClassification using PATCH and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToUpdate">The DelegatedPermissionClassification to update.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> UpdateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToUpdate)
+        {
+            return this.UpdateResponseAsync(delegatedPermissionClassificationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DelegatedPermissionClassification using PATCH and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToUpdate">The DelegatedPermissionClassification to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> UpdateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToUpdate, CancellationToken cancellationToken)
+        {
+			if (delegatedPermissionClassificationToUpdate.AdditionalData != null)
+			{
+				if (delegatedPermissionClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					delegatedPermissionClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, delegatedPermissionClassificationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (delegatedPermissionClassificationToUpdate.AdditionalData != null)
+            {
+                if (delegatedPermissionClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    delegatedPermissionClassificationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, delegatedPermissionClassificationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DelegatedPermissionClassification>(delegatedPermissionClassificationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

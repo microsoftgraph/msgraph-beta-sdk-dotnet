@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> CreateAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> CreateAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedDeviceMobileAppConfigurationState using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> CreateAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationState using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationState using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationStateToCreate">The ManagedDeviceMobileAppConfigurationState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationState.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagedDeviceMobileAppConfigurationState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedDeviceMobileAppConfigurationState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationState.
         /// </summary>
         /// <returns>The ManagedDeviceMobileAppConfigurationState.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfigurationState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagedDeviceMobileAppConfigurationState and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedDeviceMobileAppConfigurationState and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationState using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfigurationState.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationState> UpdateAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationStateToUpdate">The ManagedDeviceMobileAppConfigurationState to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationStateToUpdate">The ManagedDeviceMobileAppConfigurationState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationState>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationState managedDeviceMobileAppConfigurationStateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

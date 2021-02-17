@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<GovernanceRoleAssignmentRequestObject>(governanceRoleAssignmentRequest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GovernanceRoleAssignmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleAssignmentRequest">The GovernanceRoleAssignmentRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> AddResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest)
+        {
+            return this.AddResponseAsync(governanceRoleAssignmentRequest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GovernanceRoleAssignmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleAssignmentRequest">The GovernanceRoleAssignmentRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> AddResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GovernanceRoleAssignmentRequestObject>(governanceRoleAssignmentRequest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServiceGovernanceRoleAssignmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

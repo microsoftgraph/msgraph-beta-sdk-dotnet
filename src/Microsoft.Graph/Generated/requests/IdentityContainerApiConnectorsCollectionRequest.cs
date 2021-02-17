@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<IdentityApiConnector>(identityApiConnector, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified IdentityApiConnector to the collection via POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector)
+        {
+            return this.AddResponseAsync(identityApiConnector, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified IdentityApiConnector to the collection via POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IdentityApiConnector>(identityApiConnector, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IdentityContainerApiConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
         /// <returns>The created MacOsVppApp.</returns>
-        System.Threading.Tasks.Task<MacOsVppApp> CreateAsync(MacOsVppApp macOsVppAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOsVppApp> CreateAsync(MacOsVppApp macOsVppAppToCreate);
+
+        /// <summary>
         /// Creates the specified MacOsVppApp using POST.
         /// </summary>
         /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOsVppApp.</returns>
         System.Threading.Tasks.Task<MacOsVppApp> CreateAsync(MacOsVppApp macOsVppAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOsVppApp using POST and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> CreateResponseAsync(MacOsVppApp macOsVppAppToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOsVppApp using POST and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppToCreate">The MacOsVppApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> CreateResponseAsync(MacOsVppApp macOsVppAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOsVppApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOsVppApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOsVppApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOsVppApp.
         /// </summary>
         /// <returns>The MacOsVppApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOsVppApp.</returns>
         System.Threading.Tasks.Task<MacOsVppApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOsVppApp and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOsVppApp and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOsVppApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOsVppApp.</returns>
         System.Threading.Tasks.Task<MacOsVppApp> UpdateAsync(MacOsVppApp macOsVppAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOsVppApp using PATCH and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppToUpdate">The MacOsVppApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> UpdateResponseAsync(MacOsVppApp macOsVppAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOsVppApp using PATCH and returns a <see cref="GraphResponse{MacOsVppApp}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppToUpdate">The MacOsVppApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOsVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppApp>> UpdateResponseAsync(MacOsVppApp macOsVppAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

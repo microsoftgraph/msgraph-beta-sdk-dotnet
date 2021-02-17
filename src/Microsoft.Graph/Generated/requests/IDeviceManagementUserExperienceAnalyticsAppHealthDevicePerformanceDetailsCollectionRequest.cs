@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> AddAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetails, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetails">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> AddResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetails);
+
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetails">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> AddResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetails, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthDevicePerformanceDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

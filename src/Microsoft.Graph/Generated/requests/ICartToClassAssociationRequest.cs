@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
         /// <returns>The created CartToClassAssociation.</returns>
-        System.Threading.Tasks.Task<CartToClassAssociation> CreateAsync(CartToClassAssociation cartToClassAssociationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CartToClassAssociation> CreateAsync(CartToClassAssociation cartToClassAssociationToCreate);
+
+        /// <summary>
         /// Creates the specified CartToClassAssociation using POST.
         /// </summary>
         /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CartToClassAssociation.</returns>
         System.Threading.Tasks.Task<CartToClassAssociation> CreateAsync(CartToClassAssociation cartToClassAssociationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CartToClassAssociation using POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> CreateResponseAsync(CartToClassAssociation cartToClassAssociationToCreate);
+
+        /// <summary>
+        /// Creates the specified CartToClassAssociation using POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> CreateResponseAsync(CartToClassAssociation cartToClassAssociationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CartToClassAssociation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified CartToClassAssociation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified CartToClassAssociation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified CartToClassAssociation.
         /// </summary>
         /// <returns>The CartToClassAssociation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CartToClassAssociation.</returns>
         System.Threading.Tasks.Task<CartToClassAssociation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified CartToClassAssociation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CartToClassAssociation.</returns>
         System.Threading.Tasks.Task<CartToClassAssociation> UpdateAsync(CartToClassAssociation cartToClassAssociationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified CartToClassAssociation using PATCH and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToUpdate">The CartToClassAssociation to update.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> UpdateResponseAsync(CartToClassAssociation cartToClassAssociationToUpdate);
+
+        /// <summary>
+        /// Updates the specified CartToClassAssociation using PATCH and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToUpdate">The CartToClassAssociation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> UpdateResponseAsync(CartToClassAssociation cartToClassAssociationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

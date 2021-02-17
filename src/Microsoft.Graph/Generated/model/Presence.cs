@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets activity.
-        /// The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+        /// The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
         /// </summary>
         [JsonPropertyName("activity")]
         public string Activity { get; set; }
@@ -41,6 +41,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("availability")]
         public string Availability { get; set; }
+    
+        /// <summary>
+        /// Gets or sets out of office settings.
+        /// The out of office settings for a user.
+        /// </summary>
+        [JsonPropertyName("outOfOfficeSettings")]
+        public OutOfOfficeSettings OutOfOfficeSettings { get; set; }
     
     }
 }

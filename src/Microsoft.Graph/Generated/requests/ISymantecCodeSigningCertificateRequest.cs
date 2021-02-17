@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
         /// <returns>The created SymantecCodeSigningCertificate.</returns>
-        System.Threading.Tasks.Task<SymantecCodeSigningCertificate> CreateAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SymantecCodeSigningCertificate> CreateAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate);
+
+        /// <summary>
         /// Creates the specified SymantecCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SymantecCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<SymantecCodeSigningCertificate> CreateAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SymantecCodeSigningCertificate using POST and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> CreateResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate);
+
+        /// <summary>
+        /// Creates the specified SymantecCodeSigningCertificate using POST and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToCreate">The SymantecCodeSigningCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> CreateResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SymantecCodeSigningCertificate.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SymantecCodeSigningCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SymantecCodeSigningCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SymantecCodeSigningCertificate.
         /// </summary>
         /// <returns>The SymantecCodeSigningCertificate.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SymantecCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<SymantecCodeSigningCertificate> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SymantecCodeSigningCertificate and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SymantecCodeSigningCertificate and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SymantecCodeSigningCertificate using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SymantecCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<SymantecCodeSigningCertificate> UpdateAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SymantecCodeSigningCertificate using PATCH and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToUpdate">The SymantecCodeSigningCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> UpdateResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate);
+
+        /// <summary>
+        /// Updates the specified SymantecCodeSigningCertificate using PATCH and returns a <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="symantecCodeSigningCertificateToUpdate">The SymantecCodeSigningCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SymantecCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SymantecCodeSigningCertificate>> UpdateResponseAsync(SymantecCodeSigningCertificate symantecCodeSigningCertificateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

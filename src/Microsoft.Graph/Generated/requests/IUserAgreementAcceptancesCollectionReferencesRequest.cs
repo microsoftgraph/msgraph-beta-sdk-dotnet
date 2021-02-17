@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(AgreementAcceptance agreementAcceptance);
+
+        /// <summary>
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken);
     }
 }

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
-        System.Threading.Tasks.Task<UserCredentialUsageDetails> CreateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserCredentialUsageDetails> CreateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate);
+
+        /// <summary>
         /// Creates the specified UserCredentialUsageDetails using POST.
         /// </summary>
         /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
         System.Threading.Tasks.Task<UserCredentialUsageDetails> CreateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserCredentialUsageDetails using POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> CreateResponseAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate);
+
+        /// <summary>
+        /// Creates the specified UserCredentialUsageDetails using POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <param name="userCredentialUsageDetailsToCreate">The UserCredentialUsageDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> CreateResponseAsync(UserCredentialUsageDetails userCredentialUsageDetailsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserCredentialUsageDetails.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified UserCredentialUsageDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified UserCredentialUsageDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified UserCredentialUsageDetails.
         /// </summary>
         /// <returns>The UserCredentialUsageDetails.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserCredentialUsageDetails.</returns>
         System.Threading.Tasks.Task<UserCredentialUsageDetails> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified UserCredentialUsageDetails and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserCredentialUsageDetails and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified UserCredentialUsageDetails using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserCredentialUsageDetails.</returns>
         System.Threading.Tasks.Task<UserCredentialUsageDetails> UpdateAsync(UserCredentialUsageDetails userCredentialUsageDetailsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified UserCredentialUsageDetails using PATCH and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <param name="userCredentialUsageDetailsToUpdate">The UserCredentialUsageDetails to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> UpdateResponseAsync(UserCredentialUsageDetails userCredentialUsageDetailsToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserCredentialUsageDetails using PATCH and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object.
+        /// </summary>
+        /// <param name="userCredentialUsageDetailsToUpdate">The UserCredentialUsageDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> UpdateResponseAsync(UserCredentialUsageDetails userCredentialUsageDetailsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified FilterOperatorSchema using POST and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToCreate">The FilterOperatorSchema to create.</param>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> CreateResponseAsync(FilterOperatorSchema filterOperatorSchemaToCreate)
+        {
+            return this.CreateResponseAsync(filterOperatorSchemaToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified FilterOperatorSchema using POST and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToCreate">The FilterOperatorSchema to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> CreateResponseAsync(FilterOperatorSchema filterOperatorSchemaToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<FilterOperatorSchema>(filterOperatorSchemaToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified FilterOperatorSchema.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<FilterOperatorSchema>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified FilterOperatorSchema and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified FilterOperatorSchema and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<FilterOperatorSchema>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified FilterOperatorSchema and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified FilterOperatorSchema and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<FilterOperatorSchema>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<FilterOperatorSchema>(filterOperatorSchemaToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FilterOperatorSchema using PATCH and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToUpdate">The FilterOperatorSchema to update.</param>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> UpdateResponseAsync(FilterOperatorSchema filterOperatorSchemaToUpdate)
+        {
+            return this.UpdateResponseAsync(filterOperatorSchemaToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified FilterOperatorSchema using PATCH and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
+        /// </summary>
+        /// <param name="filterOperatorSchemaToUpdate">The FilterOperatorSchema to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> UpdateResponseAsync(FilterOperatorSchema filterOperatorSchemaToUpdate, CancellationToken cancellationToken)
+        {
+			if (filterOperatorSchemaToUpdate.AdditionalData != null)
+			{
+				if (filterOperatorSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					filterOperatorSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, filterOperatorSchemaToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (filterOperatorSchemaToUpdate.AdditionalData != null)
+            {
+                if (filterOperatorSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    filterOperatorSchemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, filterOperatorSchemaToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<FilterOperatorSchema>(filterOperatorSchemaToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSExtensionsConfiguration using POST and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> CreateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(macOSExtensionsConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSExtensionsConfiguration using POST and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> CreateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSExtensionsConfiguration>(macOSExtensionsConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSExtensionsConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSExtensionsConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MacOSExtensionsConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOSExtensionsConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MacOSExtensionsConfiguration>(macOSExtensionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSExtensionsConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> UpdateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(macOSExtensionsConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSExtensionsConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> UpdateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOSExtensionsConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSExtensionsConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSExtensionsConfigurationToUpdate.AdditionalData != null)
+            {
+                if (macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSExtensionsConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSExtensionsConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOSExtensionsConfiguration>(macOSExtensionsConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

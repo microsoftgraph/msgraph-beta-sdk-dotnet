@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageAssignmentPolicy.</returns>
         System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> AddAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AccessPackageAssignmentPolicy to the collection via POST and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageAssignmentPolicy">The AccessPackageAssignmentPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> AddResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicy);
+
+        /// <summary>
+        /// Adds the specified AccessPackageAssignmentPolicy to the collection via POST and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageAssignmentPolicy">The AccessPackageAssignmentPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> AddResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAccessPackageAccessPackageAssignmentPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageAccessPackageAssignmentPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAccessPackageAssignmentPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAccessPackageAssignmentPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageAccessPackageAssignmentPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAccessPackageAssignmentPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAccessPackageAssignmentPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementConfigurationChoiceSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationChoiceSettingDefinitionToCreate">The DeviceManagementConfigurationChoiceSettingDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> CreateResponseAsync(DeviceManagementConfigurationChoiceSettingDefinition deviceManagementConfigurationChoiceSettingDefinitionToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementConfigurationChoiceSettingDefinitionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementConfigurationChoiceSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationChoiceSettingDefinitionToCreate">The DeviceManagementConfigurationChoiceSettingDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> CreateResponseAsync(DeviceManagementConfigurationChoiceSettingDefinition deviceManagementConfigurationChoiceSettingDefinitionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>(deviceManagementConfigurationChoiceSettingDefinitionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementConfigurationChoiceSettingDefinition.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementConfigurationChoiceSettingDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementConfigurationChoiceSettingDefinition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementConfigurationChoiceSettingDefinition>(deviceManagementConfigurationChoiceSettingDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationChoiceSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationChoiceSettingDefinitionToUpdate">The DeviceManagementConfigurationChoiceSettingDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationChoiceSettingDefinition deviceManagementConfigurationChoiceSettingDefinitionToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementConfigurationChoiceSettingDefinitionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationChoiceSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationChoiceSettingDefinitionToUpdate">The DeviceManagementConfigurationChoiceSettingDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationChoiceSettingDefinition deviceManagementConfigurationChoiceSettingDefinitionToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationChoiceSettingDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementConfigurationChoiceSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationChoiceSettingDefinitionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>(deviceManagementConfigurationChoiceSettingDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

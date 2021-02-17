@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to create.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.
         /// </summary>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary windowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

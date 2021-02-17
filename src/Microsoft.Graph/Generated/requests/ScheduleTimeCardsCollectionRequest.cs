@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TimeCard>(timeCard, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TimeCard to the collection via POST and returns a <see cref="GraphResponse{TimeCard}"/> object of the request.
+        /// </summary>
+        /// <param name="timeCard">The TimeCard to add.</param>
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TimeCard>> AddResponseAsync(TimeCard timeCard)
+        {
+            return this.AddResponseAsync(timeCard, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TimeCard to the collection via POST and returns a <see cref="GraphResponse{TimeCard}"/> object of the request.
+        /// </summary>
+        /// <param name="timeCard">The TimeCard to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeCard}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TimeCard>> AddResponseAsync(TimeCard timeCard, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TimeCard>(timeCard, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleTimeCardsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeCardsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ScheduleTimeCardsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ScheduleTimeCardsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

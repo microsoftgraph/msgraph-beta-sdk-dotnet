@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedAppProtection.</returns>
         System.Threading.Tasks.Task<AndroidManagedAppProtection> AddAsync(AndroidManagedAppProtection androidManagedAppProtection, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AndroidManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedAppProtection">The AndroidManagedAppProtection to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> AddResponseAsync(AndroidManagedAppProtection androidManagedAppProtection);
+
+        /// <summary>
+        /// Adds the specified AndroidManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedAppProtection">The AndroidManagedAppProtection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> AddResponseAsync(AndroidManagedAppProtection androidManagedAppProtection, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceAppManagementAndroidManagedAppProtectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

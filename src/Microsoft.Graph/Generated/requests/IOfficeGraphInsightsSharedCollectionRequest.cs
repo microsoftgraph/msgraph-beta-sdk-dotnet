@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedInsight.</returns>
         System.Threading.Tasks.Task<SharedInsight> AddAsync(SharedInsight sharedInsight, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SharedInsight to the collection via POST and returns a <see cref="GraphResponse{SharedInsight}"/> object of the request.
+        /// </summary>
+        /// <param name="sharedInsight">The SharedInsight to add.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> AddResponseAsync(SharedInsight sharedInsight);
+
+        /// <summary>
+        /// Adds the specified SharedInsight to the collection via POST and returns a <see cref="GraphResponse{SharedInsight}"/> object of the request.
+        /// </summary>
+        /// <param name="sharedInsight">The SharedInsight to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> AddResponseAsync(SharedInsight sharedInsight, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IOfficeGraphInsightsSharedCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsSharedCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsSharedCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

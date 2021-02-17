@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SalesQuoteLine using POST and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <param name="salesQuoteLineToCreate">The SalesQuoteLine to create.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> CreateResponseAsync(SalesQuoteLine salesQuoteLineToCreate)
+        {
+            return this.CreateResponseAsync(salesQuoteLineToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SalesQuoteLine using POST and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <param name="salesQuoteLineToCreate">The SalesQuoteLine to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> CreateResponseAsync(SalesQuoteLine salesQuoteLineToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SalesQuoteLine>(salesQuoteLineToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SalesQuoteLine.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SalesQuoteLine>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SalesQuoteLine and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SalesQuoteLine and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SalesQuoteLine>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SalesQuoteLine and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SalesQuoteLine and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SalesQuoteLine>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SalesQuoteLine>(salesQuoteLineToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SalesQuoteLine using PATCH and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <param name="salesQuoteLineToUpdate">The SalesQuoteLine to update.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> UpdateResponseAsync(SalesQuoteLine salesQuoteLineToUpdate)
+        {
+            return this.UpdateResponseAsync(salesQuoteLineToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SalesQuoteLine using PATCH and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object.
+        /// </summary>
+        /// <param name="salesQuoteLineToUpdate">The SalesQuoteLine to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> UpdateResponseAsync(SalesQuoteLine salesQuoteLineToUpdate, CancellationToken cancellationToken)
+        {
+			if (salesQuoteLineToUpdate.AdditionalData != null)
+			{
+				if (salesQuoteLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					salesQuoteLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesQuoteLineToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (salesQuoteLineToUpdate.AdditionalData != null)
+            {
+                if (salesQuoteLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    salesQuoteLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesQuoteLineToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SalesQuoteLine>(salesQuoteLineToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

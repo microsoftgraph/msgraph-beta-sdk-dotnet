@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EnrollmentProfile using POST and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="enrollmentProfileToCreate">The EnrollmentProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> CreateResponseAsync(EnrollmentProfile enrollmentProfileToCreate)
+        {
+            return this.CreateResponseAsync(enrollmentProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EnrollmentProfile using POST and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="enrollmentProfileToCreate">The EnrollmentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> CreateResponseAsync(EnrollmentProfile enrollmentProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EnrollmentProfile>(enrollmentProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EnrollmentProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EnrollmentProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EnrollmentProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EnrollmentProfile and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EnrollmentProfile and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EnrollmentProfile>(enrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentProfile using PATCH and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="enrollmentProfileToUpdate">The EnrollmentProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> UpdateResponseAsync(EnrollmentProfile enrollmentProfileToUpdate)
+        {
+            return this.UpdateResponseAsync(enrollmentProfileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EnrollmentProfile using PATCH and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="enrollmentProfileToUpdate">The EnrollmentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> UpdateResponseAsync(EnrollmentProfile enrollmentProfileToUpdate, CancellationToken cancellationToken)
+        {
+			if (enrollmentProfileToUpdate.AdditionalData != null)
+			{
+				if (enrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					enrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (enrollmentProfileToUpdate.AdditionalData != null)
+            {
+                if (enrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    enrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, enrollmentProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EnrollmentProfile>(enrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

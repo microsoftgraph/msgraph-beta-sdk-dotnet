@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RbacApplicationMultiple using POST and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToCreate">The RbacApplicationMultiple to create.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> CreateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate)
+        {
+            return this.CreateResponseAsync(rbacApplicationMultipleToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RbacApplicationMultiple using POST and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToCreate">The RbacApplicationMultiple to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> CreateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(rbacApplicationMultipleToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RbacApplicationMultiple.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<RbacApplicationMultiple>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified RbacApplicationMultiple and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified RbacApplicationMultiple and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<RbacApplicationMultiple>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified RbacApplicationMultiple and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified RbacApplicationMultiple and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PATCH and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple to update.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> UpdateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate)
+        {
+            return this.UpdateResponseAsync(rbacApplicationMultipleToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PATCH and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> UpdateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken)
+        {
+			if (rbacApplicationMultipleToUpdate.AdditionalData != null)
+			{
+				if (rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationMultipleToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (rbacApplicationMultipleToUpdate.AdditionalData != null)
+            {
+                if (rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationMultipleToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

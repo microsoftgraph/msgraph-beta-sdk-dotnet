@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SecurityBaselineCategoryStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> CreateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate)
+        {
+            return this.CreateResponseAsync(securityBaselineCategoryStateSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SecurityBaselineCategoryStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> CreateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SecurityBaselineCategoryStateSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SecurityBaselineCategoryStateSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SecurityBaselineCategoryStateSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineCategoryStateSummaryToUpdate">The SecurityBaselineCategoryStateSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> UpdateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(securityBaselineCategoryStateSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineCategoryStateSummaryToUpdate">The SecurityBaselineCategoryStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> UpdateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (securityBaselineCategoryStateSummaryToUpdate.AdditionalData != null)
+			{
+				if (securityBaselineCategoryStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					securityBaselineCategoryStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineCategoryStateSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (securityBaselineCategoryStateSummaryToUpdate.AdditionalData != null)
+            {
+                if (securityBaselineCategoryStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    securityBaselineCategoryStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineCategoryStateSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidForWorkTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkTrustedRootCertificateToCreate">The AndroidForWorkTrustedRootCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> CreateResponseAsync(AndroidForWorkTrustedRootCertificate androidForWorkTrustedRootCertificateToCreate)
+        {
+            return this.CreateResponseAsync(androidForWorkTrustedRootCertificateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkTrustedRootCertificateToCreate">The AndroidForWorkTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> CreateResponseAsync(AndroidForWorkTrustedRootCertificate androidForWorkTrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkTrustedRootCertificate>(androidForWorkTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidForWorkTrustedRootCertificate.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidForWorkTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AndroidForWorkTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AndroidForWorkTrustedRootCertificate>(androidForWorkTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkTrustedRootCertificateToUpdate">The AndroidForWorkTrustedRootCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> UpdateResponseAsync(AndroidForWorkTrustedRootCertificate androidForWorkTrustedRootCertificateToUpdate)
+        {
+            return this.UpdateResponseAsync(androidForWorkTrustedRootCertificateToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkTrustedRootCertificateToUpdate">The AndroidForWorkTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkTrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkTrustedRootCertificate>> UpdateResponseAsync(AndroidForWorkTrustedRootCertificate androidForWorkTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        {
+			if (androidForWorkTrustedRootCertificateToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkTrustedRootCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkTrustedRootCertificateToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkTrustedRootCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkTrustedRootCertificate>(androidForWorkTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

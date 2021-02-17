@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceHealthScriptDeviceState>(deviceHealthScriptDeviceState, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceHealthScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceHealthScriptDeviceState">The DeviceHealthScriptDeviceState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> AddResponseAsync(DeviceHealthScriptDeviceState deviceHealthScriptDeviceState)
+        {
+            return this.AddResponseAsync(deviceHealthScriptDeviceState, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceHealthScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceHealthScriptDeviceState">The DeviceHealthScriptDeviceState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> AddResponseAsync(DeviceHealthScriptDeviceState deviceHealthScriptDeviceState, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceHealthScriptDeviceState>(deviceHealthScriptDeviceState, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceRunStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceRunStatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceRunStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceRunStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceHealthScriptDeviceRunStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

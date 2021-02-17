@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate)
+        {
+            return this.CreateResponseAsync(userSettingsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserSettings>(userSettingsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserSettings.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<UserSettings>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<UserSettings>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified UserSettings and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserSettings and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserSettings>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<UserSettings>(userSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserSettings using PATCH and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToUpdate">The UserSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSettings>> UpdateResponseAsync(UserSettings userSettingsToUpdate)
+        {
+            return this.UpdateResponseAsync(userSettingsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UserSettings using PATCH and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToUpdate">The UserSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserSettings>> UpdateResponseAsync(UserSettings userSettingsToUpdate, CancellationToken cancellationToken)
+        {
+			if (userSettingsToUpdate.AdditionalData != null)
+			{
+				if (userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userSettingsToUpdate.AdditionalData != null)
+            {
+                if (userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userSettingsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UserSettings>(userSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

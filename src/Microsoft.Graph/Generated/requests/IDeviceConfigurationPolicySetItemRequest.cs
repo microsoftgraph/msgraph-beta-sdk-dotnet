@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationPolicySetItemToCreate">The DeviceConfigurationPolicySetItem to create.</param>
         /// <returns>The created DeviceConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> CreateAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> CreateAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceConfigurationPolicySetItem using POST.
         /// </summary>
         /// <param name="deviceConfigurationPolicySetItemToCreate">The DeviceConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> CreateAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationPolicySetItemToCreate">The DeviceConfigurationPolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> CreateResponseAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationPolicySetItemToCreate">The DeviceConfigurationPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> CreateResponseAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationPolicySetItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceConfigurationPolicySetItem.
         /// </summary>
         /// <returns>The DeviceConfigurationPolicySetItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationPolicySetItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> UpdateAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationPolicySetItemToUpdate">The DeviceConfigurationPolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> UpdateResponseAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationPolicySetItemToUpdate">The DeviceConfigurationPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> UpdateResponseAsync(DeviceConfigurationPolicySetItem deviceConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

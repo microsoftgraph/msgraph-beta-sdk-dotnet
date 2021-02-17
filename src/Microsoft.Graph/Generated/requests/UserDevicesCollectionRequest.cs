@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Device>(device, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
+        /// </summary>
+        /// <param name="device">The Device to add.</param>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device)
+        {
+            return this.AddResponseAsync(device, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
+        /// </summary>
+        /// <param name="device">The Device to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Device>(device, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserDevicesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserDevicesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserDevicesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

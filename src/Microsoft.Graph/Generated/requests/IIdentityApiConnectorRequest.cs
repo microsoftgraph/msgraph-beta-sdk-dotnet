@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="identityApiConnectorToCreate">The IdentityApiConnector to create.</param>
         /// <returns>The created IdentityApiConnector.</returns>
-        System.Threading.Tasks.Task<IdentityApiConnector> CreateAsync(IdentityApiConnector identityApiConnectorToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IdentityApiConnector> CreateAsync(IdentityApiConnector identityApiConnectorToCreate);
+
+        /// <summary>
         /// Creates the specified IdentityApiConnector using POST.
         /// </summary>
         /// <param name="identityApiConnectorToCreate">The IdentityApiConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityApiConnector.</returns>
         System.Threading.Tasks.Task<IdentityApiConnector> CreateAsync(IdentityApiConnector identityApiConnectorToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IdentityApiConnector using POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <param name="identityApiConnectorToCreate">The IdentityApiConnector to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> CreateResponseAsync(IdentityApiConnector identityApiConnectorToCreate);
+
+        /// <summary>
+        /// Creates the specified IdentityApiConnector using POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <param name="identityApiConnectorToCreate">The IdentityApiConnector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> CreateResponseAsync(IdentityApiConnector identityApiConnectorToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IdentityApiConnector.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified IdentityApiConnector and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified IdentityApiConnector and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified IdentityApiConnector.
         /// </summary>
         /// <returns>The IdentityApiConnector.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityApiConnector.</returns>
         System.Threading.Tasks.Task<IdentityApiConnector> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified IdentityApiConnector and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IdentityApiConnector and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified IdentityApiConnector using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityApiConnector.</returns>
         System.Threading.Tasks.Task<IdentityApiConnector> UpdateAsync(IdentityApiConnector identityApiConnectorToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified IdentityApiConnector using PATCH and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <param name="identityApiConnectorToUpdate">The IdentityApiConnector to update.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> UpdateResponseAsync(IdentityApiConnector identityApiConnectorToUpdate);
+
+        /// <summary>
+        /// Updates the specified IdentityApiConnector using PATCH and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object.
+        /// </summary>
+        /// <param name="identityApiConnectorToUpdate">The IdentityApiConnector to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> UpdateResponseAsync(IdentityApiConnector identityApiConnectorToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

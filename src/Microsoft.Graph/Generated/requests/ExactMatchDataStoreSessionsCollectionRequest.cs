@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ExactMatchSession>(exactMatchSession, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ExactMatchSession to the collection via POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchSession">The ExactMatchSession to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> AddResponseAsync(ExactMatchSession exactMatchSession)
+        {
+            return this.AddResponseAsync(exactMatchSession, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ExactMatchSession to the collection via POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchSession">The ExactMatchSession to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> AddResponseAsync(ExactMatchSession exactMatchSession, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ExactMatchSession>(exactMatchSession, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreSessionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ExactMatchDataStoreSessionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

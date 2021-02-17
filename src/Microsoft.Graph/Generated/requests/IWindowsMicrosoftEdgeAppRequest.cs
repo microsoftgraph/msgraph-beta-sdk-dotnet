@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
         /// <returns>The created WindowsMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsMicrosoftEdgeApp using POST.
         /// </summary>
         /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsMicrosoftEdgeApp.</returns>
         System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> CreateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsMicrosoftEdgeApp using POST and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> CreateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsMicrosoftEdgeApp using POST and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="windowsMicrosoftEdgeAppToCreate">The WindowsMicrosoftEdgeApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> CreateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsMicrosoftEdgeApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsMicrosoftEdgeApp.
         /// </summary>
         /// <returns>The WindowsMicrosoftEdgeApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsMicrosoftEdgeApp.</returns>
         System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsMicrosoftEdgeApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsMicrosoftEdgeApp.</returns>
         System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> UpdateAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsMicrosoftEdgeApp using PATCH and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="windowsMicrosoftEdgeAppToUpdate">The WindowsMicrosoftEdgeApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> UpdateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsMicrosoftEdgeApp using PATCH and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
+        /// </summary>
+        /// <param name="windowsMicrosoftEdgeAppToUpdate">The WindowsMicrosoftEdgeApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> UpdateResponseAsync(WindowsMicrosoftEdgeApp windowsMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionDeviceRegistration">The WindowsInformationProtectionDeviceRegistration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionDeviceRegistration to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistration">The WindowsInformationProtectionDeviceRegistration to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistration);
+
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionDeviceRegistration to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistration">The WindowsInformationProtectionDeviceRegistration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistration, CancellationToken cancellationToken);
     }
 }

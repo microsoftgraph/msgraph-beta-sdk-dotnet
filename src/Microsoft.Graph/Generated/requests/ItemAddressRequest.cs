@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ItemAddress using POST and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToCreate">The ItemAddress to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> CreateResponseAsync(ItemAddress itemAddressToCreate)
+        {
+            return this.CreateResponseAsync(itemAddressToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ItemAddress using POST and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToCreate">The ItemAddress to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAddress>> CreateResponseAsync(ItemAddress itemAddressToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemAddress>(itemAddressToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ItemAddress.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ItemAddress>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ItemAddress and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ItemAddress and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ItemAddress>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ItemAddress and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ItemAddress and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ItemAddress>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ItemAddress>(itemAddressToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAddress using PATCH and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToUpdate">The ItemAddress to update.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> UpdateResponseAsync(ItemAddress itemAddressToUpdate)
+        {
+            return this.UpdateResponseAsync(itemAddressToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ItemAddress using PATCH and returns a <see cref="GraphResponse{ItemAddress}"/> object.
+        /// </summary>
+        /// <param name="itemAddressToUpdate">The ItemAddress to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAddress>> UpdateResponseAsync(ItemAddress itemAddressToUpdate, CancellationToken cancellationToken)
+        {
+			if (itemAddressToUpdate.AdditionalData != null)
+			{
+				if (itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAddressToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (itemAddressToUpdate.AdditionalData != null)
+            {
+                if (itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    itemAddressToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemAddressToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ItemAddress>(itemAddressToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

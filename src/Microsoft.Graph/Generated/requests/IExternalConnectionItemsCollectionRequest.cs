@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExternalItem.</returns>
         System.Threading.Tasks.Task<ExternalItem> AddAsync(ExternalItem externalItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ExternalItem to the collection via POST and returns a <see cref="GraphResponse{ExternalItem}"/> object of the request.
+        /// </summary>
+        /// <param name="externalItem">The ExternalItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalItem>> AddResponseAsync(ExternalItem externalItem);
+
+        /// <summary>
+        /// Adds the specified ExternalItem to the collection via POST and returns a <see cref="GraphResponse{ExternalItem}"/> object of the request.
+        /// </summary>
+        /// <param name="externalItem">The ExternalItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalItem>> AddResponseAsync(ExternalItem externalItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IExternalConnectionItemsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionItemsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
         /// <returns>The created Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate);
+
+        /// <summary>
         /// Creates the specified Schedule using POST.
         /// </summary>
         /// <param name="scheduleToCreate">The Schedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Schedule.</returns>
         System.Threading.Tasks.Task<Schedule> CreateAsync(Schedule scheduleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Schedule using POST and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToCreate">The Schedule to create.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> CreateResponseAsync(Schedule scheduleToCreate);
+
+        /// <summary>
+        /// Creates the specified Schedule using POST and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToCreate">The Schedule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> CreateResponseAsync(Schedule scheduleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Schedule.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Schedule and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Schedule and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Schedule.
         /// </summary>
         /// <returns>The Schedule.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Schedule.</returns>
         System.Threading.Tasks.Task<Schedule> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Schedule using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Schedule.</returns>
         System.Threading.Tasks.Task<Schedule> UpdateAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Schedule using PATCH and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule to update.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> UpdateResponseAsync(Schedule scheduleToUpdate);
+
+        /// <summary>
+        /// Updates the specified Schedule using PATCH and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> UpdateResponseAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

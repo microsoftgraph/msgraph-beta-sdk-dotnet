@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SensitivityLabel>(sensitivityLabel, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SensitivityLabel to the collection via POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object of the request.
+        /// </summary>
+        /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel)
+        {
+            return this.AddResponseAsync(sensitivityLabel, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SensitivityLabel to the collection via POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object of the request.
+        /// </summary>
+        /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SensitivityLabel>(sensitivityLabel, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

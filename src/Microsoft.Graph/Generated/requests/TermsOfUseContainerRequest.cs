@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TermsOfUseContainer using POST and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> CreateResponseAsync(TermsOfUseContainer termsOfUseContainerToCreate)
+        {
+            return this.CreateResponseAsync(termsOfUseContainerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TermsOfUseContainer using POST and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToCreate">The TermsOfUseContainer to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> CreateResponseAsync(TermsOfUseContainer termsOfUseContainerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TermsOfUseContainer>(termsOfUseContainerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TermsOfUseContainer.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<TermsOfUseContainer>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified TermsOfUseContainer and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified TermsOfUseContainer and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<TermsOfUseContainer>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified TermsOfUseContainer and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TermsOfUseContainer and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TermsOfUseContainer>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TermsOfUseContainer using PATCH and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer to update.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> UpdateResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate)
+        {
+            return this.UpdateResponseAsync(termsOfUseContainerToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TermsOfUseContainer using PATCH and returns a <see cref="GraphResponse{TermsOfUseContainer}"/> object.
+        /// </summary>
+        /// <param name="termsOfUseContainerToUpdate">The TermsOfUseContainer to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainer>> UpdateResponseAsync(TermsOfUseContainer termsOfUseContainerToUpdate, CancellationToken cancellationToken)
+        {
+			if (termsOfUseContainerToUpdate.AdditionalData != null)
+			{
+				if (termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsOfUseContainerToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (termsOfUseContainerToUpdate.AdditionalData != null)
+            {
+                if (termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    termsOfUseContainerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsOfUseContainerToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TermsOfUseContainer>(termsOfUseContainerToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

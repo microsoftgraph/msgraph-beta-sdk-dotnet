@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedRoleAssignment.</returns>
         System.Threading.Tasks.Task<PrivilegedRoleAssignment> AddAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PrivilegedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> AddResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignment);
+
+        /// <summary>
+        /// Adds the specified PrivilegedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> AddResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServicePrivilegedRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedRoleAssignmentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserInstallStateSummary>(userInstallStateSummary, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserInstallStateSummary to the collection via POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary)
+        {
+            return this.AddResponseAsync(userInstallStateSummary, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserInstallStateSummary to the collection via POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserInstallStateSummary>(userInstallStateSummary, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookUserStateSummaryCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookUserStateSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedEBookUserStateSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

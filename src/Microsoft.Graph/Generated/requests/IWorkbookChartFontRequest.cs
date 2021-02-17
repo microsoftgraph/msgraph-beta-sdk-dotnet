@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
         /// <returns>The created WorkbookChartFont.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFont> CreateAsync(WorkbookChartFont workbookChartFontToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartFont> CreateAsync(WorkbookChartFont workbookChartFontToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartFont using POST.
         /// </summary>
         /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartFont.</returns>
         System.Threading.Tasks.Task<WorkbookChartFont> CreateAsync(WorkbookChartFont workbookChartFontToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFont using POST and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> CreateResponseAsync(WorkbookChartFont workbookChartFontToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFont using POST and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFontToCreate">The WorkbookChartFont to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> CreateResponseAsync(WorkbookChartFont workbookChartFontToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartFont.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookChartFont and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookChartFont and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookChartFont.
         /// </summary>
         /// <returns>The WorkbookChartFont.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartFont.</returns>
         System.Threading.Tasks.Task<WorkbookChartFont> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookChartFont and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartFont and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookChartFont using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartFont.</returns>
         System.Threading.Tasks.Task<WorkbookChartFont> UpdateAsync(WorkbookChartFont workbookChartFontToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFont using PATCH and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFontToUpdate">The WorkbookChartFont to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> UpdateResponseAsync(WorkbookChartFont workbookChartFontToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartFont using PATCH and returns a <see cref="GraphResponse{WorkbookChartFont}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFontToUpdate">The WorkbookChartFont to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFont>> UpdateResponseAsync(WorkbookChartFont workbookChartFontToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <returns>The created CommsApplication.</returns>
-        System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate);
+
+        /// <summary>
         /// Creates the specified CommsApplication using POST.
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CommsApplication.</returns>
         System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CommsApplication using POST and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> CreateResponseAsync(CommsApplication commsApplicationToCreate);
+
+        /// <summary>
+        /// Creates the specified CommsApplication using POST and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> CreateResponseAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CommsApplication.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified CommsApplication and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified CommsApplication and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified CommsApplication.
         /// </summary>
         /// <returns>The CommsApplication.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CommsApplication.</returns>
         System.Threading.Tasks.Task<CommsApplication> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified CommsApplication and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CommsApplication and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified CommsApplication using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CommsApplication.</returns>
         System.Threading.Tasks.Task<CommsApplication> UpdateAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified CommsApplication using PATCH and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> UpdateResponseAsync(CommsApplication commsApplicationToUpdate);
+
+        /// <summary>
+        /// Updates the specified CommsApplication using PATCH and returns a <see cref="GraphResponse{CommsApplication}"/> object.
+        /// </summary>
+        /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplication>> UpdateResponseAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

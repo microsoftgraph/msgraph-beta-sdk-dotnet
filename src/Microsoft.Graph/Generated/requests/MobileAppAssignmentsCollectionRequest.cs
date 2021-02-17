@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<MobileAppAssignment>(mobileAppAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment)
+        {
+            return this.AddResponseAsync(mobileAppAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppAssignment>(mobileAppAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppAssignmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MobileAppAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

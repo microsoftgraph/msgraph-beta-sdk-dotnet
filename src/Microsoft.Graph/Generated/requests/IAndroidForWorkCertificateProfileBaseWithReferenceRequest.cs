@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The AndroidForWorkCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified AndroidForWorkCertificateProfileBase using POST.
         /// </summary>
         /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
         /// <returns>The created AndroidForWorkCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> CreateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> CreateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidForWorkCertificateProfileBase using POST.
         /// </summary>
         /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkCertificateProfileBase.</returns>
         System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> CreateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified AndroidForWorkCertificateProfileBase using POST and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> CreateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkCertificateProfileBase using POST and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> CreateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified AndroidForWorkCertificateProfileBase using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> UpdateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified AndroidForWorkCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCertificateProfileBaseToUpdate">The AndroidForWorkCertificateProfileBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> UpdateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCertificateProfileBaseToUpdate">The AndroidForWorkCertificateProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> UpdateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified AndroidForWorkCertificateProfileBase.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

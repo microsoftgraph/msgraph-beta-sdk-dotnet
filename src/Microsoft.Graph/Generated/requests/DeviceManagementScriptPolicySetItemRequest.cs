@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementScriptPolicySetItem using POST and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToCreate">The DeviceManagementScriptPolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> CreateResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementScriptPolicySetItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementScriptPolicySetItem using POST and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToCreate">The DeviceManagementScriptPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> CreateResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementScriptPolicySetItem>(deviceManagementScriptPolicySetItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementScriptPolicySetItem.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementScriptPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementScriptPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementScriptPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementScriptPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementScriptPolicySetItem and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementScriptPolicySetItem and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementScriptPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementScriptPolicySetItem>(deviceManagementScriptPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptPolicySetItem using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToUpdate">The DeviceManagementScriptPolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> UpdateResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementScriptPolicySetItemToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptPolicySetItem using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptPolicySetItemToUpdate">The DeviceManagementScriptPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptPolicySetItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptPolicySetItem>> UpdateResponseAsync(DeviceManagementScriptPolicySetItem deviceManagementScriptPolicySetItemToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementScriptPolicySetItemToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementScriptPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementScriptPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptPolicySetItemToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementScriptPolicySetItemToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementScriptPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementScriptPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptPolicySetItemToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementScriptPolicySetItem>(deviceManagementScriptPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

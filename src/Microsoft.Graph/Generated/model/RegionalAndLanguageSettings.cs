@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("regionalFormatOverrides")]
         public RegionalFormatOverrides RegionalFormatOverrides { get; set; }
     
+        /// <summary>
+        /// Gets or sets translation preferences.
+        /// </summary>
+        [JsonPropertyName("translationPreferences")]
+        public TranslationPreferences TranslationPreferences { get; set; }
+    
     }
 }
 

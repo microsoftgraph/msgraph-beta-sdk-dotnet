@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceRole.</returns>
         System.Threading.Tasks.Task<AccessPackageResourceRole> AddAsync(AccessPackageResourceRole accessPackageResourceRole, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AccessPackageResourceRole to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceRole">The AccessPackageResourceRole to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> AddResponseAsync(AccessPackageResourceRole accessPackageResourceRole);
+
+        /// <summary>
+        /// Adds the specified AccessPackageResourceRole to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceRole">The AccessPackageResourceRole to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> AddResponseAsync(AccessPackageResourceRole accessPackageResourceRole, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAccessPackageResourceAccessPackageResourceRolesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceRolesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

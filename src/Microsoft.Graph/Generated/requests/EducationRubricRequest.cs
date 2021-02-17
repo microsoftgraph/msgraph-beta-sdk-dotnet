@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EducationRubric using POST and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <param name="educationRubricToCreate">The EducationRubric to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationRubric>> CreateResponseAsync(EducationRubric educationRubricToCreate)
+        {
+            return this.CreateResponseAsync(educationRubricToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationRubric using POST and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <param name="educationRubricToCreate">The EducationRubric to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationRubric>> CreateResponseAsync(EducationRubric educationRubricToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationRubric>(educationRubricToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EducationRubric.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationRubric>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationRubric and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationRubric and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EducationRubric>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EducationRubric and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationRubric>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EducationRubric and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationRubric>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EducationRubric>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EducationRubric>(educationRubricToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationRubric using PATCH and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <param name="educationRubricToUpdate">The EducationRubric to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationRubric>> UpdateResponseAsync(EducationRubric educationRubricToUpdate)
+        {
+            return this.UpdateResponseAsync(educationRubricToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationRubric using PATCH and returns a <see cref="GraphResponse{EducationRubric}"/> object.
+        /// </summary>
+        /// <param name="educationRubricToUpdate">The EducationRubric to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationRubric>> UpdateResponseAsync(EducationRubric educationRubricToUpdate, CancellationToken cancellationToken)
+        {
+			if (educationRubricToUpdate.AdditionalData != null)
+			{
+				if (educationRubricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationRubricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationRubricToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (educationRubricToUpdate.AdditionalData != null)
+            {
+                if (educationRubricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    educationRubricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationRubricToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EducationRubric>(educationRubricToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
         /// <returns>The created AndroidStoreApp.</returns>
-        System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidStoreApp using POST.
         /// </summary>
         /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidStoreApp.</returns>
         System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidStoreApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidStoreApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidStoreApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidStoreApp.
         /// </summary>
         /// <returns>The AndroidStoreApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidStoreApp.</returns>
         System.Threading.Tasks.Task<AndroidStoreApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidStoreApp and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidStoreApp and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidStoreApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidStoreApp.</returns>
         System.Threading.Tasks.Task<AndroidStoreApp> UpdateAsync(AndroidStoreApp androidStoreAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidStoreApp using PATCH and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToUpdate">The AndroidStoreApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> UpdateResponseAsync(AndroidStoreApp androidStoreAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidStoreApp using PATCH and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToUpdate">The AndroidStoreApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> UpdateResponseAsync(AndroidStoreApp androidStoreAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

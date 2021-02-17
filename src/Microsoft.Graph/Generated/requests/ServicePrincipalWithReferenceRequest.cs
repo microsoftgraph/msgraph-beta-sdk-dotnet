@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified ServicePrincipal and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ServicePrincipal and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ServicePrincipal>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified ServicePrincipal using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<ServicePrincipal>(servicePrincipalToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate)
+        {
+            return this.CreateResponseAsync(servicePrincipalToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ServicePrincipal>(servicePrincipalToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified ServicePrincipal using PATCH and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToUpdate">The ServicePrincipal to update.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> UpdateResponseAsync(ServicePrincipal servicePrincipalToUpdate)
+        {
+            return this.UpdateResponseAsync(servicePrincipalToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ServicePrincipal using PATCH and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToUpdate">The ServicePrincipal to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> UpdateResponseAsync(ServicePrincipal servicePrincipalToUpdate, CancellationToken cancellationToken)
+        {
+			if (servicePrincipalToUpdate.AdditionalData != null)
+			{
+				if (servicePrincipalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					servicePrincipalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, servicePrincipalToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (servicePrincipalToUpdate.AdditionalData != null)
+            {
+                if (servicePrincipalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    servicePrincipalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, servicePrincipalToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ServicePrincipal>(servicePrincipalToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified ServicePrincipal.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ServicePrincipal>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified ServicePrincipal and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ServicePrincipal and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

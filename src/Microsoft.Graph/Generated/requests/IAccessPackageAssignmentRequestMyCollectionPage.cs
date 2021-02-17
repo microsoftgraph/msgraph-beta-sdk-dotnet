@@ -15,7 +15,7 @@ namespace Microsoft.Graph
     /// The interface IAccessPackageAssignmentRequestMyCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<AccessPackageAssignmentRequestMyCollectionPage>))]
-    public interface IAccessPackageAssignmentRequestMyCollectionPage : ICollectionPage<AccessPackageAssignmentRequest>
+    public interface IAccessPackageAssignmentRequestMyCollectionPage : ICollectionPage<AccessPackageAssignmentRequestObject>
     {
         /// <summary>
         /// Gets the next page <see cref="IAccessPackageAssignmentRequestMyRequest"/> instance.

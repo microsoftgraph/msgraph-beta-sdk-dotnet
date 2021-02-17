@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SecurityBaselineSettingState>(securityBaselineSettingState, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SecurityBaselineSettingState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.
+        /// </summary>
+        /// <param name="securityBaselineSettingState">The SecurityBaselineSettingState to add.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> AddResponseAsync(SecurityBaselineSettingState securityBaselineSettingState)
+        {
+            return this.AddResponseAsync(securityBaselineSettingState, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SecurityBaselineSettingState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.
+        /// </summary>
+        /// <param name="securityBaselineSettingState">The SecurityBaselineSettingState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> AddResponseAsync(SecurityBaselineSettingState securityBaselineSettingState, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecurityBaselineSettingState>(securityBaselineSettingState, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineStateSettingStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSettingStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSettingStatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineStateSettingStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSettingStatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSettingStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecurityBaselineStateSettingStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

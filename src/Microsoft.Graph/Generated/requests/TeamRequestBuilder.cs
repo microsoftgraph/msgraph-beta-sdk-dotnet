@@ -159,6 +159,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Tags.
+        /// </summary>
+        /// <returns>The <see cref="ITeamTagsCollectionRequestBuilder"/>.</returns>
+        public ITeamTagsCollectionRequestBuilder Tags
+        {
+            get
+            {
+                return new TeamTagsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tags"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Template.
         /// </summary>
         /// <returns>The <see cref="ITeamsTemplateWithReferenceRequestBuilder"/>.</returns>
@@ -227,7 +239,8 @@ namespace Microsoft.Graph
             Int64? chainId = null,
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationRecipient recipient = null)
+            TeamworkNotificationRecipient recipient = null,
+            string teamsAppId = null)
         {
             return new TeamSendActivityNotificationRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
@@ -237,7 +250,8 @@ namespace Microsoft.Graph
                 chainId,
                 previewText,
                 templateParameters,
-                recipient);
+                recipient,
+                teamsAppId);
         }
 
         /// <summary>

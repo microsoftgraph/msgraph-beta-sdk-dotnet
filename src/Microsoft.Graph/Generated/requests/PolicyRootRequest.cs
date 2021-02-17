@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate)
+        {
+            return this.CreateResponseAsync(policyRootToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PolicyRoot>(policyRootToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PolicyRoot.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<PolicyRoot>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified PolicyRoot and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified PolicyRoot and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<PolicyRoot>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PolicyRoot>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<PolicyRoot>(policyRootToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PolicyRoot using PATCH and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToUpdate">The PolicyRoot to update.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> UpdateResponseAsync(PolicyRoot policyRootToUpdate)
+        {
+            return this.UpdateResponseAsync(policyRootToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PolicyRoot using PATCH and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToUpdate">The PolicyRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> UpdateResponseAsync(PolicyRoot policyRootToUpdate, CancellationToken cancellationToken)
+        {
+			if (policyRootToUpdate.AdditionalData != null)
+			{
+				if (policyRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					policyRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyRootToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (policyRootToUpdate.AdditionalData != null)
+            {
+                if (policyRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    policyRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyRootToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PolicyRoot>(policyRootToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -373,6 +486,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (policyRootToInitialize.RoleManagementPolicies != null && policyRootToInitialize.RoleManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.RoleManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("roleManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.RoleManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (policyRootToInitialize.RoleManagementPolicyAssignments != null && policyRootToInitialize.RoleManagementPolicyAssignments.CurrentPage != null)
+                {
+                    policyRootToInitialize.RoleManagementPolicyAssignments.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("roleManagementPolicyAssignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.RoleManagementPolicyAssignments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

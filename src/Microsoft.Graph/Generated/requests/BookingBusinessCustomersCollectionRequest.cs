@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<BookingCustomer>(bookingCustomer, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified BookingCustomer to the collection via POST and returns a <see cref="GraphResponse{BookingCustomer}"/> object of the request.
+        /// </summary>
+        /// <param name="bookingCustomer">The BookingCustomer to add.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> AddResponseAsync(BookingCustomer bookingCustomer)
+        {
+            return this.AddResponseAsync(bookingCustomer, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified BookingCustomer to the collection via POST and returns a <see cref="GraphResponse{BookingCustomer}"/> object of the request.
+        /// </summary>
+        /// <param name="bookingCustomer">The BookingCustomer to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> AddResponseAsync(BookingCustomer bookingCustomer, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<BookingCustomer>(bookingCustomer, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessCustomersCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BookingBusinessCustomersCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusinessCustomersCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessCustomersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusinessCustomersCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BookingBusinessCustomersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<BookingBusinessCustomersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

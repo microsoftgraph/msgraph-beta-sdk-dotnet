@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
         /// <returns>The created SkypeForBusinessDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate);
+
+        /// <summary>
         /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkypeForBusinessDeviceUsageUserDetail.</returns>
         System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> CreateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> CreateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate);
+
+        /// <summary>
+        /// Creates the specified SkypeForBusinessDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToCreate">The SkypeForBusinessDeviceUsageUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> CreateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SkypeForBusinessDeviceUsageUserDetail.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
         /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
         System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessDeviceUsageUserDetail.</returns>
         System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> UpdateAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail to update.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> UpdateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate);
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessDeviceUsageUserDetailToUpdate">The SkypeForBusinessDeviceUsageUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> UpdateResponseAsync(SkypeForBusinessDeviceUsageUserDetail skypeForBusinessDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

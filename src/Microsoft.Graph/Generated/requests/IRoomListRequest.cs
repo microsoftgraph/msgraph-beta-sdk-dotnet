@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roomListToCreate">The RoomList to create.</param>
         /// <returns>The created RoomList.</returns>
-        System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate);
+
+        /// <summary>
         /// Creates the specified RoomList using POST.
         /// </summary>
         /// <param name="roomListToCreate">The RoomList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoomList.</returns>
         System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate);
+
+        /// <summary>
+        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RoomList.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified RoomList and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified RoomList and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified RoomList.
         /// </summary>
         /// <returns>The RoomList.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoomList.</returns>
         System.Threading.Tasks.Task<RoomList> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified RoomList and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified RoomList and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified RoomList using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoomList.</returns>
         System.Threading.Tasks.Task<RoomList> UpdateAsync(RoomList roomListToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified RoomList using PATCH and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToUpdate">The RoomList to update.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate);
+
+        /// <summary>
+        /// Updates the specified RoomList using PATCH and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToUpdate">The RoomList to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

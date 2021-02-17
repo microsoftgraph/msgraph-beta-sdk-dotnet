@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataLossPreventionPolicyToCreate">The DataLossPreventionPolicy to create.</param>
         /// <returns>The created DataLossPreventionPolicy.</returns>
-        System.Threading.Tasks.Task<DataLossPreventionPolicy> CreateAsync(DataLossPreventionPolicy dataLossPreventionPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DataLossPreventionPolicy> CreateAsync(DataLossPreventionPolicy dataLossPreventionPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified DataLossPreventionPolicy using POST.
         /// </summary>
         /// <param name="dataLossPreventionPolicyToCreate">The DataLossPreventionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataLossPreventionPolicy.</returns>
         System.Threading.Tasks.Task<DataLossPreventionPolicy> CreateAsync(DataLossPreventionPolicy dataLossPreventionPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DataLossPreventionPolicy using POST and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicyToCreate">The DataLossPreventionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> CreateResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified DataLossPreventionPolicy using POST and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicyToCreate">The DataLossPreventionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> CreateResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DataLossPreventionPolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DataLossPreventionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DataLossPreventionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DataLossPreventionPolicy.
         /// </summary>
         /// <returns>The DataLossPreventionPolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataLossPreventionPolicy.</returns>
         System.Threading.Tasks.Task<DataLossPreventionPolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DataLossPreventionPolicy and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DataLossPreventionPolicy and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DataLossPreventionPolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataLossPreventionPolicy.</returns>
         System.Threading.Tasks.Task<DataLossPreventionPolicy> UpdateAsync(DataLossPreventionPolicy dataLossPreventionPolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DataLossPreventionPolicy using PATCH and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicyToUpdate">The DataLossPreventionPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> UpdateResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified DataLossPreventionPolicy using PATCH and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicyToUpdate">The DataLossPreventionPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> UpdateResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

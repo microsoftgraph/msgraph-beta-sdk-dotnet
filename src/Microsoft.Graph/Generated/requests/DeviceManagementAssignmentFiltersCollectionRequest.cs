@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter)
+        {
+            return this.AddResponseAsync(deviceAndAppManagementAssignmentFilter, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

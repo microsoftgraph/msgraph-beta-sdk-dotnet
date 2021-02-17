@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Currency.</returns>
         System.Threading.Tasks.Task<Currency> AddAsync(Currency currency, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Currency to the collection via POST and returns a <see cref="GraphResponse{Currency}"/> object of the request.
+        /// </summary>
+        /// <param name="currency">The Currency to add.</param>
+        /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Currency>> AddResponseAsync(Currency currency);
+
+        /// <summary>
+        /// Adds the specified Currency to the collection via POST and returns a <see cref="GraphResponse{Currency}"/> object of the request.
+        /// </summary>
+        /// <param name="currency">The Currency to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Currency>> AddResponseAsync(Currency currency, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICompanyCurrenciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyCurrenciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyCurrenciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyCurrenciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

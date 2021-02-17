@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81ImportedPFXCertificateProfileToCreate">The WindowsPhone81ImportedPFXCertificateProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> CreateResponseAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToCreate)
+        {
+            return this.CreateResponseAsync(windowsPhone81ImportedPFXCertificateProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81ImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81ImportedPFXCertificateProfileToCreate">The WindowsPhone81ImportedPFXCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> CreateResponseAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81ImportedPFXCertificateProfile>(windowsPhone81ImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsPhone81ImportedPFXCertificateProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsPhone81ImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsPhone81ImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81ImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsPhone81ImportedPFXCertificateProfile>(windowsPhone81ImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81ImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81ImportedPFXCertificateProfileToUpdate">The WindowsPhone81ImportedPFXCertificateProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> UpdateResponseAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsPhone81ImportedPFXCertificateProfileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81ImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81ImportedPFXCertificateProfileToUpdate">The WindowsPhone81ImportedPFXCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> UpdateResponseAsync(WindowsPhone81ImportedPFXCertificateProfile windowsPhone81ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81ImportedPFXCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81ImportedPFXCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81ImportedPFXCertificateProfile>(windowsPhone81ImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

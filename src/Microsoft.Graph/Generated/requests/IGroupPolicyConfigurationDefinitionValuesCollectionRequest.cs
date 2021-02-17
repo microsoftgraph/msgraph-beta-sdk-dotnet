@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyDefinitionValue.</returns>
         System.Threading.Tasks.Task<GroupPolicyDefinitionValue> AddAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified GroupPolicyDefinitionValue to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyDefinitionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyDefinitionValue">The GroupPolicyDefinitionValue to add.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionValue}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionValue>> AddResponseAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue);
+
+        /// <summary>
+        /// Adds the specified GroupPolicyDefinitionValue to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyDefinitionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyDefinitionValue">The GroupPolicyDefinitionValue to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionValue}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionValue>> AddResponseAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGroupPolicyConfigurationDefinitionValuesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyConfigurationDefinitionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationDefinitionValuesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationDefinitionValuesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyConfigurationDefinitionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationDefinitionValuesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationDefinitionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

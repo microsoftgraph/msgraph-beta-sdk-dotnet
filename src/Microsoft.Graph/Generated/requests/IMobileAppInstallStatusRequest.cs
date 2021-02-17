@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<MobileAppInstallStatus> CreateAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppInstallStatus> CreateAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppInstallStatus using POST.
         /// </summary>
         /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
         System.Threading.Tasks.Task<MobileAppInstallStatus> CreateAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppInstallStatus using POST and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> CreateResponseAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppInstallStatus using POST and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="mobileAppInstallStatusToCreate">The MobileAppInstallStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> CreateResponseAsync(MobileAppInstallStatus mobileAppInstallStatusToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppInstallStatus.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MobileAppInstallStatus and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppInstallStatus and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MobileAppInstallStatus.
         /// </summary>
         /// <returns>The MobileAppInstallStatus.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppInstallStatus.</returns>
         System.Threading.Tasks.Task<MobileAppInstallStatus> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MobileAppInstallStatus and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppInstallStatus and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MobileAppInstallStatus using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppInstallStatus.</returns>
         System.Threading.Tasks.Task<MobileAppInstallStatus> UpdateAsync(MobileAppInstallStatus mobileAppInstallStatusToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MobileAppInstallStatus using PATCH and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="mobileAppInstallStatusToUpdate">The MobileAppInstallStatus to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> UpdateResponseAsync(MobileAppInstallStatus mobileAppInstallStatusToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppInstallStatus using PATCH and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object.
+        /// </summary>
+        /// <param name="mobileAppInstallStatusToUpdate">The MobileAppInstallStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> UpdateResponseAsync(MobileAppInstallStatus mobileAppInstallStatusToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

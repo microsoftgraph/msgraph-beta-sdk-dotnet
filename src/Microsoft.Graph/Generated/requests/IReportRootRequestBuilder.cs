@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder ApplicationSignInDetailedSummary { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootRequestBuilder"/>.</returns>
+        IAuthenticationMethodsRootRequestBuilder AuthenticationMethods { get; }
+
+        /// <summary>
         /// Gets the request builder for CredentialUserRegistrationDetails.
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
@@ -50,6 +56,18 @@ namespace Microsoft.Graph
         IReportRootUserCredentialUsageDetailsCollectionRequestBuilder UserCredentialUsageDetails { get; }
 
         /// <summary>
+        /// Gets the request builder for DailyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder DailyPrintUsageByPrinter { get; }
+
+        /// <summary>
+        /// Gets the request builder for DailyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        IReportRootDailyPrintUsageByUserCollectionRequestBuilder DailyPrintUsageByUser { get; }
+
+        /// <summary>
         /// Gets the request builder for DailyPrintUsageSummariesByPrinter.
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByPrinterCollectionRequestBuilder"/>.</returns>
@@ -60,6 +78,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder"/>.</returns>
         IReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder DailyPrintUsageSummariesByUser { get; }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder MonthlyPrintUsageByPrinter { get; }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder MonthlyPrintUsageByUser { get; }
 
         /// <summary>
         /// Gets the request builder for MonthlyPrintUsageSummariesByPrinter.
@@ -792,6 +822,33 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder"/>.</returns>
         IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder GetYammerGroupsActivityGroupCounts(
             string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetGroupArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetGroupArchivedPrintJobsRequestBuilder GetGroupArchivedPrintJobs(
+            string groupId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
+            string printerId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
+            string userId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
 
         /// <summary>
         /// Gets the request builder for ReportRootGetTenantSecureScores.

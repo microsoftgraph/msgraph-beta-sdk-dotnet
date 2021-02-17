@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<Attachment>(attachment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Attachment to the collection via POST and returns a <see cref="GraphResponse{Attachment}"/> object of the request.
+        /// </summary>
+        /// <param name="attachment">The Attachment to add.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Attachment>> AddResponseAsync(Attachment attachment)
+        {
+            return this.AddResponseAsync(attachment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Attachment to the collection via POST and returns a <see cref="GraphResponse{Attachment}"/> object of the request.
+        /// </summary>
+        /// <param name="attachment">The Attachment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Attachment>> AddResponseAsync(Attachment attachment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            attachment.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(attachment.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<Attachment>(attachment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{NoteAttachmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{NoteAttachmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NoteAttachmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{NoteAttachmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NoteAttachmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<NoteAttachmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<NoteAttachmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified YammerGroupsActivityGroupCounts using POST and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerGroupsActivityGroupCountsToCreate">The YammerGroupsActivityGroupCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> CreateResponseAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToCreate)
+        {
+            return this.CreateResponseAsync(yammerGroupsActivityGroupCountsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified YammerGroupsActivityGroupCounts using POST and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerGroupsActivityGroupCountsToCreate">The YammerGroupsActivityGroupCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> CreateResponseAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<YammerGroupsActivityGroupCounts>(yammerGroupsActivityGroupCountsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified YammerGroupsActivityGroupCounts.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<YammerGroupsActivityGroupCounts>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<YammerGroupsActivityGroupCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<YammerGroupsActivityGroupCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<YammerGroupsActivityGroupCounts>(yammerGroupsActivityGroupCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified YammerGroupsActivityGroupCounts using PATCH and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerGroupsActivityGroupCountsToUpdate">The YammerGroupsActivityGroupCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> UpdateResponseAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToUpdate)
+        {
+            return this.UpdateResponseAsync(yammerGroupsActivityGroupCountsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified YammerGroupsActivityGroupCounts using PATCH and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerGroupsActivityGroupCountsToUpdate">The YammerGroupsActivityGroupCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> UpdateResponseAsync(YammerGroupsActivityGroupCounts yammerGroupsActivityGroupCountsToUpdate, CancellationToken cancellationToken)
+        {
+			if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData != null)
+			{
+				if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerGroupsActivityGroupCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData != null)
+            {
+                if (yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    yammerGroupsActivityGroupCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerGroupsActivityGroupCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<YammerGroupsActivityGroupCounts>(yammerGroupsActivityGroupCountsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

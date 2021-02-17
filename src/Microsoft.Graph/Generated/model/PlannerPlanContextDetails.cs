@@ -29,6 +29,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets customLinkText.
+        /// Nullable. Specifies the text to use in a user experience to display a link the the associated plannerPlanContext. If null, applications should display the link with a custom text based on the displayLinkType property.
+        /// </summary>
+        [JsonPropertyName("customLinkText")]
+        public string CustomLinkText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets displayLinkType.
+        /// Specifies how an application should display the link to the associated plannerPlanContext. Applications may choose to provide customized text, description, icons, or other experiences based on the type of the link. Possible values are: teamsTab, sharePointPage, meetingNotes, other, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("displayLinkType")]
+        public PlannerPlanContextType? DisplayLinkType { get; set; }
+    
+        /// <summary>
         /// Gets or sets url.
         /// URL of the user experience represented by the associated plannerPlanContext.
         /// </summary>

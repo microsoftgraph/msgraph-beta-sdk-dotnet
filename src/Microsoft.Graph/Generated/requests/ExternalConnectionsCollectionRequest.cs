@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ExternalConnection>(externalConnection, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ExternalConnection to the collection via POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object of the request.
+        /// </summary>
+        /// <param name="externalConnection">The ExternalConnection to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> AddResponseAsync(ExternalConnection externalConnection)
+        {
+            return this.AddResponseAsync(externalConnection, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ExternalConnection to the collection via POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object of the request.
+        /// </summary>
+        /// <param name="externalConnection">The ExternalConnection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> AddResponseAsync(ExternalConnection externalConnection, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ExternalConnection>(externalConnection, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalConnectionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalConnectionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ExternalConnectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

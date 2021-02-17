@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <returns>The created Conversation.</returns>
-        System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate);
+
+        /// <summary>
         /// Creates the specified Conversation using POST.
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate);
+
+        /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Conversation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Conversation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Conversation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Conversation.
         /// </summary>
         /// <returns>The Conversation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Conversation and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Conversation and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Conversation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> UpdateAsync(Conversation conversationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Conversation using PATCH and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToUpdate">The Conversation to update.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> UpdateResponseAsync(Conversation conversationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Conversation using PATCH and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToUpdate">The Conversation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> UpdateResponseAsync(Conversation conversationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> AddAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified GovernanceRoleAssignmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleAssignmentRequest">The GovernanceRoleAssignmentRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> AddResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest);
+
+        /// <summary>
+        /// Adds the specified GovernanceRoleAssignmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleAssignmentRequest">The GovernanceRoleAssignmentRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> AddResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequest, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGovernanceResourceRoleAssignmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GovernanceResourceRoleAssignmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GovernanceResourceRoleAssignmentRequestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResourceRoleAssignmentRequestsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GovernanceResourceRoleAssignmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceResourceRoleAssignmentRequestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResourceRoleAssignmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

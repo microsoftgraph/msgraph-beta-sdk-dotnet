@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows81CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> CreateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate)
+        {
+            return this.CreateResponseAsync(windows81CompliancePolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows81CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> CreateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows81CompliancePolicy>(windows81CompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows81CompliancePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows81CompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Windows81CompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Windows81CompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Windows81CompliancePolicy>(windows81CompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows81CompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToUpdate">The Windows81CompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> UpdateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(windows81CompliancePolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows81CompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToUpdate">The Windows81CompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> UpdateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (windows81CompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (windows81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81CompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows81CompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (windows81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows81CompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows81CompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Windows81CompliancePolicy>(windows81CompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

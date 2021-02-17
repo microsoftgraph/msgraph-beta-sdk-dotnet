@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<Place>(place, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Place to the collection via POST and returns a <see cref="GraphResponse{Place}"/> object of the request.
+        /// </summary>
+        /// <param name="place">The Place to add.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Place>> AddResponseAsync(Place place)
+        {
+            return this.AddResponseAsync(place, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Place to the collection via POST and returns a <see cref="GraphResponse{Place}"/> object of the request.
+        /// </summary>
+        /// <param name="place">The Place to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Place>> AddResponseAsync(Place place, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            place.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(place.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<Place>(place, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePlacesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServicePlacesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServicePlacesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePlacesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServicePlacesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServicePlacesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServicePlacesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

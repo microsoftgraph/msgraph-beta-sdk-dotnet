@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="office365ActivationsUserDetailToCreate">The Office365ActivationsUserDetail to create.</param>
         /// <returns>The created Office365ActivationsUserDetail.</returns>
-        System.Threading.Tasks.Task<Office365ActivationsUserDetail> CreateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Office365ActivationsUserDetail> CreateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToCreate);
+
+        /// <summary>
         /// Creates the specified Office365ActivationsUserDetail using POST.
         /// </summary>
         /// <param name="office365ActivationsUserDetailToCreate">The Office365ActivationsUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365ActivationsUserDetail.</returns>
         System.Threading.Tasks.Task<Office365ActivationsUserDetail> CreateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Office365ActivationsUserDetail using POST and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserDetailToCreate">The Office365ActivationsUserDetail to create.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> CreateResponseAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToCreate);
+
+        /// <summary>
+        /// Creates the specified Office365ActivationsUserDetail using POST and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserDetailToCreate">The Office365ActivationsUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> CreateResponseAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Office365ActivationsUserDetail.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Office365ActivationsUserDetail.
         /// </summary>
         /// <returns>The Office365ActivationsUserDetail.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ActivationsUserDetail.</returns>
         System.Threading.Tasks.Task<Office365ActivationsUserDetail> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Office365ActivationsUserDetail using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365ActivationsUserDetail.</returns>
         System.Threading.Tasks.Task<Office365ActivationsUserDetail> UpdateAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Office365ActivationsUserDetail using PATCH and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserDetailToUpdate">The Office365ActivationsUserDetail to update.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> UpdateResponseAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToUpdate);
+
+        /// <summary>
+        /// Updates the specified Office365ActivationsUserDetail using PATCH and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserDetailToUpdate">The Office365ActivationsUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> UpdateResponseAsync(Office365ActivationsUserDetail office365ActivationsUserDetailToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

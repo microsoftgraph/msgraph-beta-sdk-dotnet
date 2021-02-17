@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<LanguageProficiency>(languageProficiency, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified LanguageProficiency to the collection via POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object of the request.
+        /// </summary>
+        /// <param name="languageProficiency">The LanguageProficiency to add.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> AddResponseAsync(LanguageProficiency languageProficiency)
+        {
+            return this.AddResponseAsync(languageProficiency, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified LanguageProficiency to the collection via POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object of the request.
+        /// </summary>
+        /// <param name="languageProficiency">The LanguageProficiency to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> AddResponseAsync(LanguageProficiency languageProficiency, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<LanguageProficiency>(languageProficiency, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfileLanguagesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ProfileLanguagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

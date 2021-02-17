@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DimensionValue.</returns>
         System.Threading.Tasks.Task<DimensionValue> AddAsync(DimensionValue dimensionValue, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="dimensionValue">The DimensionValue to add.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue);
+
+        /// <summary>
+        /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="dimensionValue">The DimensionValue to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICompanyDimensionValuesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyDimensionValuesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyDimensionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

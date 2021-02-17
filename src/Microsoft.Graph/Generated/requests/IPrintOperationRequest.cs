@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="printOperationToCreate">The PrintOperation to create.</param>
         /// <returns>The created PrintOperation.</returns>
-        System.Threading.Tasks.Task<PrintOperation> CreateAsync(PrintOperation printOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PrintOperation> CreateAsync(PrintOperation printOperationToCreate);
+
+        /// <summary>
         /// Creates the specified PrintOperation using POST.
         /// </summary>
         /// <param name="printOperationToCreate">The PrintOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintOperation.</returns>
         System.Threading.Tasks.Task<PrintOperation> CreateAsync(PrintOperation printOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PrintOperation using POST and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToCreate">The PrintOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> CreateResponseAsync(PrintOperation printOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified PrintOperation using POST and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToCreate">The PrintOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> CreateResponseAsync(PrintOperation printOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PrintOperation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PrintOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PrintOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PrintOperation.
         /// </summary>
         /// <returns>The PrintOperation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintOperation.</returns>
         System.Threading.Tasks.Task<PrintOperation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PrintOperation and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PrintOperation and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PrintOperation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintOperation.</returns>
         System.Threading.Tasks.Task<PrintOperation> UpdateAsync(PrintOperation printOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PrintOperation using PATCH and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToUpdate">The PrintOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> UpdateResponseAsync(PrintOperation printOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified PrintOperation using PATCH and returns a <see cref="GraphResponse{PrintOperation}"/> object.
+        /// </summary>
+        /// <param name="printOperationToUpdate">The PrintOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintOperation>> UpdateResponseAsync(PrintOperation printOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

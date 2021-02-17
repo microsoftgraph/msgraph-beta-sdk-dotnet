@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate)
+        {
+            return this.CreateResponseAsync(listItemVersionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ListItemVersion.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ListItemVersion>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ListItemVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ListItemVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ListItemVersion>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ListItemVersion>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ListItemVersion>(listItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ListItemVersion using PATCH and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToUpdate">The ListItemVersion to update.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate)
+        {
+            return this.UpdateResponseAsync(listItemVersionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ListItemVersion using PATCH and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToUpdate">The ListItemVersion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken)
+        {
+			if (listItemVersionToUpdate.AdditionalData != null)
+			{
+				if (listItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					listItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemVersionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (listItemVersionToUpdate.AdditionalData != null)
+            {
+                if (listItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    listItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemVersionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

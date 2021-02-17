@@ -163,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device type.
-        /// Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, blackberry, palm, unknown, cloudPC.
+        /// Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, linux, blackberry, palm, unknown, cloudPC.
         /// </summary>
         [JsonPropertyName("deviceType")]
         public DeviceType? DeviceType { get; set; }
@@ -561,18 +561,18 @@ namespace Microsoft.Graph
         public Int32? WindowsRemediatedMalwareCount { get; set; }
     
         /// <summary>
-        /// Gets or sets security baseline states.
-        /// Security baseline states for this device.
-        /// </summary>
-        [JsonPropertyName("securityBaselineStates")]
-        public IManagedDeviceSecurityBaselineStatesCollectionPage SecurityBaselineStates { get; set; }
-    
-        /// <summary>
         /// Gets or sets device compliance policy states.
         /// Device compliance policy states for this device.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicyStates")]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment filter evaluation status details.
+        /// Managed device mobile app configuration states for this device.
+        /// </summary>
+        [JsonPropertyName("assignmentFilterEvaluationStatusDetails")]
+        public IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage AssignmentFilterEvaluationStatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.
@@ -587,6 +587,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDeviceMobileAppConfigurationStates")]
         public IManagedDeviceManagedDeviceMobileAppConfigurationStatesCollectionPage ManagedDeviceMobileAppConfigurationStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets security baseline states.
+        /// Security baseline states for this device.
+        /// </summary>
+        [JsonPropertyName("securityBaselineStates")]
+        public IManagedDeviceSecurityBaselineStatesCollectionPage SecurityBaselineStates { get; set; }
     
         /// <summary>
         /// Gets or sets detected apps.

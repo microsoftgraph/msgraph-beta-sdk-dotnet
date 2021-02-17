@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceManagementAutopilotPolicyStatusDetail>(deviceManagementAutopilotPolicyStatusDetail, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementAutopilotPolicyStatusDetail to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotPolicyStatusDetail">The DeviceManagementAutopilotPolicyStatusDetail to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> AddResponseAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetail)
+        {
+            return this.AddResponseAsync(deviceManagementAutopilotPolicyStatusDetail, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceManagementAutopilotPolicyStatusDetail to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotPolicyStatusDetail">The DeviceManagementAutopilotPolicyStatusDetail to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> AddResponseAsync(DeviceManagementAutopilotPolicyStatusDetail deviceManagementAutopilotPolicyStatusDetail, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotPolicyStatusDetail>(deviceManagementAutopilotPolicyStatusDetail, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEventPolicyStatusDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

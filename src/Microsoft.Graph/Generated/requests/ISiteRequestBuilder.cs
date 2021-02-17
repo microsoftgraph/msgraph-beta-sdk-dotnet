@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         ISitePagesCollectionRequestBuilder Pages { get; }
 
         /// <summary>
+        /// Gets the request builder for Permissions.
+        /// </summary>
+        /// <returns>The <see cref="ISitePermissionsCollectionRequestBuilder"/>.</returns>
+        ISitePermissionsCollectionRequestBuilder Permissions { get; }
+
+        /// <summary>
         /// Gets the request builder for Sites.
         /// </summary>
         /// <returns>The <see cref="ISiteSitesCollectionRequestBuilder"/>.</returns>

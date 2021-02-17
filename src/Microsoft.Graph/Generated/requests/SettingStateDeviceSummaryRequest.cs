@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SettingStateDeviceSummary using POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> CreateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate)
+        {
+            return this.CreateResponseAsync(settingStateDeviceSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SettingStateDeviceSummary using POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> CreateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SettingStateDeviceSummary>(settingStateDeviceSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SettingStateDeviceSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SettingStateDeviceSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SettingStateDeviceSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SettingStateDeviceSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SettingStateDeviceSummary>(settingStateDeviceSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SettingStateDeviceSummary using PATCH and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> UpdateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(settingStateDeviceSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SettingStateDeviceSummary using PATCH and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> UpdateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (settingStateDeviceSummaryToUpdate.AdditionalData != null)
+			{
+				if (settingStateDeviceSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					settingStateDeviceSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, settingStateDeviceSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (settingStateDeviceSummaryToUpdate.AdditionalData != null)
+            {
+                if (settingStateDeviceSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    settingStateDeviceSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, settingStateDeviceSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SettingStateDeviceSummary>(settingStateDeviceSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

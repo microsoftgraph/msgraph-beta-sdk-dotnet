@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="personCertificationToCreate">The PersonCertification to create.</param>
         /// <returns>The created PersonCertification.</returns>
-        System.Threading.Tasks.Task<PersonCertification> CreateAsync(PersonCertification personCertificationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PersonCertification> CreateAsync(PersonCertification personCertificationToCreate);
+
+        /// <summary>
         /// Creates the specified PersonCertification using POST.
         /// </summary>
         /// <param name="personCertificationToCreate">The PersonCertification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonCertification.</returns>
         System.Threading.Tasks.Task<PersonCertification> CreateAsync(PersonCertification personCertificationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PersonCertification using POST and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <param name="personCertificationToCreate">The PersonCertification to create.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> CreateResponseAsync(PersonCertification personCertificationToCreate);
+
+        /// <summary>
+        /// Creates the specified PersonCertification using POST and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <param name="personCertificationToCreate">The PersonCertification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> CreateResponseAsync(PersonCertification personCertificationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PersonCertification.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PersonCertification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PersonCertification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PersonCertification.
         /// </summary>
         /// <returns>The PersonCertification.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonCertification.</returns>
         System.Threading.Tasks.Task<PersonCertification> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PersonCertification and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PersonCertification and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PersonCertification using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonCertification.</returns>
         System.Threading.Tasks.Task<PersonCertification> UpdateAsync(PersonCertification personCertificationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PersonCertification using PATCH and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <param name="personCertificationToUpdate">The PersonCertification to update.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> UpdateResponseAsync(PersonCertification personCertificationToUpdate);
+
+        /// <summary>
+        /// Updates the specified PersonCertification using PATCH and returns a <see cref="GraphResponse{PersonCertification}"/> object.
+        /// </summary>
+        /// <param name="personCertificationToUpdate">The PersonCertification to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> UpdateResponseAsync(PersonCertification personCertificationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Picture>(picture, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Picture to the collection via POST and returns a <see cref="GraphResponse{Picture}"/> object of the request.
+        /// </summary>
+        /// <param name="picture">The Picture to add.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Picture>> AddResponseAsync(Picture picture)
+        {
+            return this.AddResponseAsync(picture, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Picture to the collection via POST and returns a <see cref="GraphResponse{Picture}"/> object of the request.
+        /// </summary>
+        /// <param name="picture">The Picture to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Picture>> AddResponseAsync(Picture picture, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Picture>(picture, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VendorPictureCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VendorPictureCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VendorPictureCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VendorPictureCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VendorPictureCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<VendorPictureCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<VendorPictureCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

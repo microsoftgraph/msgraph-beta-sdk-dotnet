@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <returns>The created Subscription.</returns>
-        System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate);
+
+        /// <summary>
         /// Creates the specified Subscription using POST.
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Subscription.</returns>
         System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Subscription using POST and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToCreate">The Subscription to create.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> CreateResponseAsync(Subscription subscriptionToCreate);
+
+        /// <summary>
+        /// Creates the specified Subscription using POST and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToCreate">The Subscription to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> CreateResponseAsync(Subscription subscriptionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Subscription.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Subscription and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Subscription and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Subscription.
         /// </summary>
         /// <returns>The Subscription.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Subscription.</returns>
         System.Threading.Tasks.Task<Subscription> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Subscription and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Subscription and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Subscription using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Subscription.</returns>
         System.Threading.Tasks.Task<Subscription> UpdateAsync(Subscription subscriptionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Subscription using PATCH and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToUpdate">The Subscription to update.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> UpdateResponseAsync(Subscription subscriptionToUpdate);
+
+        /// <summary>
+        /// Updates the specified Subscription using PATCH and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToUpdate">The Subscription to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> UpdateResponseAsync(Subscription subscriptionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

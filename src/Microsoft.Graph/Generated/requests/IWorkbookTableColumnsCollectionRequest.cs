@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTableColumn.</returns>
         System.Threading.Tasks.Task<WorkbookTableColumn> AddAsync(WorkbookTableColumn workbookTableColumn, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookTableColumn to the collection via POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookTableColumn">The WorkbookTableColumn to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> AddResponseAsync(WorkbookTableColumn workbookTableColumn);
+
+        /// <summary>
+        /// Adds the specified WorkbookTableColumn to the collection via POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookTableColumn">The WorkbookTableColumn to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> AddResponseAsync(WorkbookTableColumn workbookTableColumn, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IWorkbookTableColumnsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookTableColumnsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumnsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumnsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookTableColumnsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumnsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumnsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

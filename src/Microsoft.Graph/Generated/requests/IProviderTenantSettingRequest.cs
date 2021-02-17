@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
         /// <returns>The created ProviderTenantSetting.</returns>
-        System.Threading.Tasks.Task<ProviderTenantSetting> CreateAsync(ProviderTenantSetting providerTenantSettingToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ProviderTenantSetting> CreateAsync(ProviderTenantSetting providerTenantSettingToCreate);
+
+        /// <summary>
         /// Creates the specified ProviderTenantSetting using POST.
         /// </summary>
         /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProviderTenantSetting.</returns>
         System.Threading.Tasks.Task<ProviderTenantSetting> CreateAsync(ProviderTenantSetting providerTenantSettingToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ProviderTenantSetting using POST and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> CreateResponseAsync(ProviderTenantSetting providerTenantSettingToCreate);
+
+        /// <summary>
+        /// Creates the specified ProviderTenantSetting using POST and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <param name="providerTenantSettingToCreate">The ProviderTenantSetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> CreateResponseAsync(ProviderTenantSetting providerTenantSettingToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ProviderTenantSetting.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ProviderTenantSetting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ProviderTenantSetting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ProviderTenantSetting.
         /// </summary>
         /// <returns>The ProviderTenantSetting.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProviderTenantSetting.</returns>
         System.Threading.Tasks.Task<ProviderTenantSetting> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ProviderTenantSetting and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ProviderTenantSetting and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ProviderTenantSetting using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProviderTenantSetting.</returns>
         System.Threading.Tasks.Task<ProviderTenantSetting> UpdateAsync(ProviderTenantSetting providerTenantSettingToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ProviderTenantSetting using PATCH and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <param name="providerTenantSettingToUpdate">The ProviderTenantSetting to update.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> UpdateResponseAsync(ProviderTenantSetting providerTenantSettingToUpdate);
+
+        /// <summary>
+        /// Updates the specified ProviderTenantSetting using PATCH and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
+        /// </summary>
+        /// <param name="providerTenantSettingToUpdate">The ProviderTenantSetting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> UpdateResponseAsync(ProviderTenantSetting providerTenantSettingToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppProvisioningConfigGroupAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MobileAppProvisioningConfigGroupAssignment.
         /// </summary>
         /// <returns>The MobileAppProvisioningConfigGroupAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppProvisioningConfigGroupAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppProvisioningConfigGroupAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

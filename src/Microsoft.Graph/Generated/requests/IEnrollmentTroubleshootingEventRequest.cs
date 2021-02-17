@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
         /// <returns>The created EnrollmentTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate);
+
+        /// <summary>
         /// Creates the specified EnrollmentTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> CreateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> CreateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate);
+
+        /// <summary>
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> CreateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EnrollmentTroubleshootingEvent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EnrollmentTroubleshootingEvent.
         /// </summary>
         /// <returns>The EnrollmentTroubleshootingEvent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EnrollmentTroubleshootingEvent and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EnrollmentTroubleshootingEvent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnrollmentTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<EnrollmentTroubleshootingEvent> UpdateAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EnrollmentTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> UpdateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate);
+
+        /// <summary>
+        /// Updates the specified EnrollmentTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToUpdate">The EnrollmentTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> UpdateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

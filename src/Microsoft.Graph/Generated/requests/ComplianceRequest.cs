@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Compliance using POST and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <param name="complianceToCreate">The Compliance to create.</param>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Compliance>> CreateResponseAsync(Compliance complianceToCreate)
+        {
+            return this.CreateResponseAsync(complianceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Compliance using POST and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <param name="complianceToCreate">The Compliance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Compliance>> CreateResponseAsync(Compliance complianceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Compliance>(complianceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Compliance.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Compliance>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Compliance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Compliance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Compliance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Compliance and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Compliance>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Compliance and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Compliance>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Compliance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Compliance>(complianceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Compliance using PATCH and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <param name="complianceToUpdate">The Compliance to update.</param>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Compliance>> UpdateResponseAsync(Compliance complianceToUpdate)
+        {
+            return this.UpdateResponseAsync(complianceToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Compliance using PATCH and returns a <see cref="GraphResponse{Compliance}"/> object.
+        /// </summary>
+        /// <param name="complianceToUpdate">The Compliance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Compliance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Compliance>> UpdateResponseAsync(Compliance complianceToUpdate, CancellationToken cancellationToken)
+        {
+			if (complianceToUpdate.AdditionalData != null)
+			{
+				if (complianceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					complianceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, complianceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (complianceToUpdate.AdditionalData != null)
+            {
+                if (complianceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    complianceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, complianceToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Compliance>(complianceToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

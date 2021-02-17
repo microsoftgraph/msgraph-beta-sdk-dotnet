@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceManagementAutopilotEvent>(deviceManagementAutopilotEvent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementAutopilotEvent to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEvent">The DeviceManagementAutopilotEvent to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> AddResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent)
+        {
+            return this.AddResponseAsync(deviceManagementAutopilotEvent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceManagementAutopilotEvent to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEvent">The DeviceManagementAutopilotEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> AddResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEvent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEvent>(deviceManagementAutopilotEvent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEventsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEventsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEventsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

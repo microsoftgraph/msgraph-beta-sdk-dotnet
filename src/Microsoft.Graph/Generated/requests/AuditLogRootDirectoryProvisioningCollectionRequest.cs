@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ProvisioningObjectSummary>(provisioningObjectSummary, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ProvisioningObjectSummary to the collection via POST and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="provisioningObjectSummary">The ProvisioningObjectSummary to add.</param>
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> AddResponseAsync(ProvisioningObjectSummary provisioningObjectSummary)
+        {
+            return this.AddResponseAsync(provisioningObjectSummary, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ProvisioningObjectSummary to the collection via POST and returns a <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="provisioningObjectSummary">The ProvisioningObjectSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProvisioningObjectSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProvisioningObjectSummary>> AddResponseAsync(ProvisioningObjectSummary provisioningObjectSummary, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ProvisioningObjectSummary>(provisioningObjectSummary, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootDirectoryProvisioningCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuditLogRootDirectoryProvisioningCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuditLogRootDirectoryProvisioningCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootDirectoryProvisioningCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRootDirectoryProvisioningCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuditLogRootDirectoryProvisioningCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuditLogRootDirectoryProvisioningCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
         /// <returns>The created OnenoteResource.</returns>
-        System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteResource using POST.
         /// </summary>
         /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteResource.</returns>
         System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteResource using POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> CreateResponseAsync(OnenoteResource onenoteResourceToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteResource using POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> CreateResponseAsync(OnenoteResource onenoteResourceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteResource.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnenoteResource and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnenoteResource and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnenoteResource.
         /// </summary>
         /// <returns>The OnenoteResource.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteResource.</returns>
         System.Threading.Tasks.Task<OnenoteResource> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnenoteResource and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteResource and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnenoteResource using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteResource.</returns>
         System.Threading.Tasks.Task<OnenoteResource> UpdateAsync(OnenoteResource onenoteResourceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

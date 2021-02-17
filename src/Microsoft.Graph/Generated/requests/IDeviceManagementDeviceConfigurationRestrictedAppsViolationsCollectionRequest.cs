@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RestrictedAppsViolation.</returns>
         System.Threading.Tasks.Task<RestrictedAppsViolation> AddAsync(RestrictedAppsViolation restrictedAppsViolation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified RestrictedAppsViolation to the collection via POST and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedAppsViolation">The RestrictedAppsViolation to add.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> AddResponseAsync(RestrictedAppsViolation restrictedAppsViolation);
+
+        /// <summary>
+        /// Adds the specified RestrictedAppsViolation to the collection via POST and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedAppsViolation">The RestrictedAppsViolation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> AddResponseAsync(RestrictedAppsViolation restrictedAppsViolation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationRestrictedAppsViolationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAllDeviceCertificateState.</returns>
         System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> AddAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState);
+
+        /// <summary>
+        /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
         /// <returns>The created ManagedMobileLobApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedMobileLobApp using POST.
         /// </summary>
         /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedMobileLobApp.</returns>
         System.Threading.Tasks.Task<ManagedMobileLobApp> CreateAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedMobileLobApp using POST and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> CreateResponseAsync(ManagedMobileLobApp managedMobileLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedMobileLobApp using POST and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> CreateResponseAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedMobileLobApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagedMobileLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedMobileLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagedMobileLobApp.
         /// </summary>
         /// <returns>The ManagedMobileLobApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedMobileLobApp.</returns>
         System.Threading.Tasks.Task<ManagedMobileLobApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagedMobileLobApp and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedMobileLobApp and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagedMobileLobApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedMobileLobApp.</returns>
         System.Threading.Tasks.Task<ManagedMobileLobApp> UpdateAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PATCH and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> UpdateResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedMobileLobApp using PATCH and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToUpdate">The ManagedMobileLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> UpdateResponseAsync(ManagedMobileLobApp managedMobileLobAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

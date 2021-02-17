@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="eventToCreate">The Event to create.</param>
         /// <returns>The created Event.</returns>
-        System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate);
+
+        /// <summary>
         /// Creates the specified Event using POST.
         /// </summary>
         /// <param name="eventToCreate">The Event to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Event.</returns>
         System.Threading.Tasks.Task<Event> CreateAsync(Event eventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Event using POST and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToCreate">The Event to create.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> CreateResponseAsync(Event eventToCreate);
+
+        /// <summary>
+        /// Creates the specified Event using POST and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToCreate">The Event to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> CreateResponseAsync(Event eventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Event.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Event and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Event and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Event.
         /// </summary>
         /// <returns>The Event.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Event.</returns>
         System.Threading.Tasks.Task<Event> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Event and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Event and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Event using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Event.</returns>
         System.Threading.Tasks.Task<Event> UpdateAsync(Event eventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Event using PATCH and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToUpdate">The Event to update.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> UpdateResponseAsync(Event eventToUpdate);
+
+        /// <summary>
+        /// Updates the specified Event using PATCH and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToUpdate">The Event to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Event>> UpdateResponseAsync(Event eventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

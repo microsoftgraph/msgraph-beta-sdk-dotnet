@@ -25,13 +25,30 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="storeToCreate">The Store to create.</param>
         /// <returns>The created Store.</returns>
-        System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate);
+
+        /// <summary>
         /// Creates the specified Store using POST.
         /// </summary>
         /// <param name="storeToCreate">The Store to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Store.</returns>
         System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Store using POST and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToCreate">The Store to create.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> CreateResponseAsync(Store storeToCreate);
+
+        /// <summary>
+        /// Creates the specified Store using POST and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToCreate">The Store to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> CreateResponseAsync(Store storeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Store.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph.TermStore
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Store and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Store and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Store.
         /// </summary>
         /// <returns>The Store.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph.TermStore
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Store.</returns>
         System.Threading.Tasks.Task<Store> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Store and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Store and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Store using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph.TermStore
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Store.</returns>
         System.Threading.Tasks.Task<Store> UpdateAsync(Store storeToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Store using PATCH and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToUpdate">The Store to update.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> UpdateResponseAsync(Store storeToUpdate);
+
+        /// <summary>
+        /// Updates the specified Store using PATCH and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToUpdate">The Store to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Store>> UpdateResponseAsync(Store storeToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

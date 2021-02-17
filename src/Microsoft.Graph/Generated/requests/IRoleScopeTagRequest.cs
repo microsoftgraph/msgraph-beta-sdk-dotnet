@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
         /// <returns>The created RoleScopeTag.</returns>
-        System.Threading.Tasks.Task<RoleScopeTag> CreateAsync(RoleScopeTag roleScopeTagToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RoleScopeTag> CreateAsync(RoleScopeTag roleScopeTagToCreate);
+
+        /// <summary>
         /// Creates the specified RoleScopeTag using POST.
         /// </summary>
         /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTag.</returns>
         System.Threading.Tasks.Task<RoleScopeTag> CreateAsync(RoleScopeTag roleScopeTagToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RoleScopeTag using POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> CreateResponseAsync(RoleScopeTag roleScopeTagToCreate);
+
+        /// <summary>
+        /// Creates the specified RoleScopeTag using POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagToCreate">The RoleScopeTag to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> CreateResponseAsync(RoleScopeTag roleScopeTagToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RoleScopeTag.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified RoleScopeTag and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified RoleScopeTag and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified RoleScopeTag.
         /// </summary>
         /// <returns>The RoleScopeTag.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleScopeTag.</returns>
         System.Threading.Tasks.Task<RoleScopeTag> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified RoleScopeTag and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified RoleScopeTag and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified RoleScopeTag using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoleScopeTag.</returns>
         System.Threading.Tasks.Task<RoleScopeTag> UpdateAsync(RoleScopeTag roleScopeTagToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified RoleScopeTag using PATCH and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagToUpdate">The RoleScopeTag to update.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> UpdateResponseAsync(RoleScopeTag roleScopeTagToUpdate);
+
+        /// <summary>
+        /// Updates the specified RoleScopeTag using PATCH and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagToUpdate">The RoleScopeTag to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> UpdateResponseAsync(RoleScopeTag roleScopeTagToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

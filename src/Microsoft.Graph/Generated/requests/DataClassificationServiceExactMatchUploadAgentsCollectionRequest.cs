@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ExactMatchUploadAgent>(exactMatchUploadAgent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ExactMatchUploadAgent to the collection via POST and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchUploadAgent">The ExactMatchUploadAgent to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> AddResponseAsync(ExactMatchUploadAgent exactMatchUploadAgent)
+        {
+            return this.AddResponseAsync(exactMatchUploadAgent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ExactMatchUploadAgent to the collection via POST and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchUploadAgent">The ExactMatchUploadAgent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> AddResponseAsync(ExactMatchUploadAgent exactMatchUploadAgent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ExactMatchUploadAgent>(exactMatchUploadAgent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchUploadAgentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchUploadAgentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchUploadAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DataClassificationServiceExactMatchUploadAgentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

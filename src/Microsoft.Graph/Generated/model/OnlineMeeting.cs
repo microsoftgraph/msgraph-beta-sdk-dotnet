@@ -43,12 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternative recording.
+        /// The content stream of the alternative recording of a live event. Read-only.
         /// </summary>
         [JsonPropertyName("alternativeRecording")]
         public Stream AlternativeRecording { get; set; }
     
         /// <summary>
         /// Gets or sets attendee report.
+        /// The content stream of the attendee report of a live event. Read-only.
         /// </summary>
         [JsonPropertyName("attendeeReport")]
         public Stream AttendeeReport { get; set; }
@@ -62,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets broadcast settings.
+        /// Settings related to a live event
         /// </summary>
         [JsonPropertyName("broadcastSettings")]
         public BroadcastMeetingSettings BroadcastSettings { get; set; }
@@ -121,6 +124,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is broadcast.
+        /// Indicates if this is a live event.
         /// </summary>
         [JsonPropertyName("isBroadcast")]
         public bool? IsBroadcast { get; set; }
@@ -167,6 +171,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recording.
+        /// The content stream of the recording of a live event. Read-only.
         /// </summary>
         [JsonPropertyName("recording")]
         public Stream Recording { get; set; }

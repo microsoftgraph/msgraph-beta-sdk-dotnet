@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TermsAndConditionsAssignment using POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> CreateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(termsAndConditionsAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAssignment using POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> CreateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TermsAndConditionsAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<TermsAndConditionsAssignment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<TermsAndConditionsAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TermsAndConditionsAssignment using PATCH and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToUpdate">The TermsAndConditionsAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> UpdateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToUpdate)
+        {
+            return this.UpdateResponseAsync(termsAndConditionsAssignmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TermsAndConditionsAssignment using PATCH and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToUpdate">The TermsAndConditionsAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> UpdateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (termsAndConditionsAssignmentToUpdate.AdditionalData != null)
+			{
+				if (termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (termsAndConditionsAssignmentToUpdate.AdditionalData != null)
+            {
+                if (termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    termsAndConditionsAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

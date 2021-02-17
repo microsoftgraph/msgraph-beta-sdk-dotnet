@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementComplexSettingDefinitionToCreate">The DeviceManagementComplexSettingDefinition to create.</param>
         /// <returns>The created DeviceManagementComplexSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> CreateAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> CreateAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementComplexSettingDefinition using POST.
         /// </summary>
         /// <param name="deviceManagementComplexSettingDefinitionToCreate">The DeviceManagementComplexSettingDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementComplexSettingDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> CreateAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementComplexSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToCreate">The DeviceManagementComplexSettingDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> CreateResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementComplexSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToCreate">The DeviceManagementComplexSettingDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> CreateResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementComplexSettingDefinition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementComplexSettingDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementComplexSettingDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementComplexSettingDefinition.
         /// </summary>
         /// <returns>The DeviceManagementComplexSettingDefinition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementComplexSettingDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementComplexSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementComplexSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementComplexSettingDefinition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementComplexSettingDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementComplexSettingDefinition> UpdateAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToUpdate">The DeviceManagementComplexSettingDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> UpdateResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingDefinitionToUpdate">The DeviceManagementComplexSettingDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingDefinition>> UpdateResponseAsync(DeviceManagementComplexSettingDefinition deviceManagementComplexSettingDefinitionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

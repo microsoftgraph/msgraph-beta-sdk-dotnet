@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PrivateLinkResourcePolicy>(privateLinkResourcePolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> AddResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy)
+        {
+            return this.AddResponseAsync(privateLinkResourcePolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> AddResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PrivateLinkResourcePolicy>(privateLinkResourcePolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

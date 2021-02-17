@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationOutcome.</returns>
         System.Threading.Tasks.Task<EducationOutcome> AddAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified EducationOutcome to the collection via POST and returns a <see cref="GraphResponse{EducationOutcome}"/> object of the request.
+        /// </summary>
+        /// <param name="educationOutcome">The EducationOutcome to add.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome);
+
+        /// <summary>
+        /// Adds the specified EducationOutcome to the collection via POST and returns a <see cref="GraphResponse{EducationOutcome}"/> object of the request.
+        /// </summary>
+        /// <param name="educationOutcome">The EducationOutcome to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IEducationSubmissionOutcomesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

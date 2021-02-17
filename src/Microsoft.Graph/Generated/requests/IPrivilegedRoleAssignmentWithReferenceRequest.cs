@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The PrivilegedRoleAssignment.</returns>
         System.Threading.Tasks.Task<PrivilegedRoleAssignment> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified PrivilegedRoleAssignment using POST.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
         /// <returns>The created PrivilegedRoleAssignment.</returns>
-        System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified PrivilegedRoleAssignment using POST.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedRoleAssignment.</returns>
         System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified PrivilegedRoleAssignment using POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> CreateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified PrivilegedRoleAssignment using POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> CreateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified PrivilegedRoleAssignment using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PrivilegedRoleAssignment> UpdateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified PrivilegedRoleAssignment using PATCH and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> UpdateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified PrivilegedRoleAssignment using PATCH and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> UpdateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified PrivilegedRoleAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

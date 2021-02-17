@@ -35,10 +35,34 @@ namespace Microsoft.Graph
         public Int64? ActiveFileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets anonymous link count.
+        /// </summary>
+        [JsonPropertyName("anonymousLinkCount")]
+        public Int64? AnonymousLinkCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets company link count.
+        /// </summary>
+        [JsonPropertyName("companyLinkCount")]
+        public Int64? CompanyLinkCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external sharing.
+        /// </summary>
+        [JsonPropertyName("externalSharing")]
+        public bool? ExternalSharing { get; set; }
+    
+        /// <summary>
         /// Gets or sets file count.
         /// </summary>
         [JsonPropertyName("fileCount")]
         public Int64? FileCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets geolocation.
+        /// </summary>
+        [JsonPropertyName("geolocation")]
+        public string Geolocation { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
@@ -89,10 +113,28 @@ namespace Microsoft.Graph
         public string RootWebTemplate { get; set; }
     
         /// <summary>
+        /// Gets or sets secure link for guest count.
+        /// </summary>
+        [JsonPropertyName("secureLinkForGuestCount")]
+        public Int64? SecureLinkForGuestCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secure link for member count.
+        /// </summary>
+        [JsonPropertyName("secureLinkForMemberCount")]
+        public Int64? SecureLinkForMemberCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets site id.
         /// </summary>
         [JsonPropertyName("siteId")]
         public Guid? SiteId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets site sensitivity label id.
+        /// </summary>
+        [JsonPropertyName("siteSensitivityLabelId")]
+        public string SiteSensitivityLabelId { get; set; }
     
         /// <summary>
         /// Gets or sets site url.
@@ -111,6 +153,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("storageUsedInBytes")]
         public Int64? StorageUsedInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unmanaged device policy.
+        /// </summary>
+        [JsonPropertyName("unmanagedDevicePolicy")]
+        public string UnmanagedDevicePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets visited page count.

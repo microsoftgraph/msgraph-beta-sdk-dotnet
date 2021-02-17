@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
         /// <returns>The created ExactMatchSession.</returns>
-        System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate);
+
+        /// <summary>
         /// Creates the specified ExactMatchSession using POST.
         /// </summary>
         /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchSession.</returns>
         System.Threading.Tasks.Task<ExactMatchSession> CreateAsync(ExactMatchSession exactMatchSessionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ExactMatchSession using POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> CreateResponseAsync(ExactMatchSession exactMatchSessionToCreate);
+
+        /// <summary>
+        /// Creates the specified ExactMatchSession using POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToCreate">The ExactMatchSession to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> CreateResponseAsync(ExactMatchSession exactMatchSessionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ExactMatchSession.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ExactMatchSession and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ExactMatchSession and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ExactMatchSession.
         /// </summary>
         /// <returns>The ExactMatchSession.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchSession.</returns>
         System.Threading.Tasks.Task<ExactMatchSession> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ExactMatchSession and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ExactMatchSession and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ExactMatchSession using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchSession.</returns>
         System.Threading.Tasks.Task<ExactMatchSession> UpdateAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PATCH and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession to update.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> UpdateResponseAsync(ExactMatchSession exactMatchSessionToUpdate);
+
+        /// <summary>
+        /// Updates the specified ExactMatchSession using PATCH and returns a <see cref="GraphResponse{ExactMatchSession}"/> object.
+        /// </summary>
+        /// <param name="exactMatchSessionToUpdate">The ExactMatchSession to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> UpdateResponseAsync(ExactMatchSession exactMatchSessionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

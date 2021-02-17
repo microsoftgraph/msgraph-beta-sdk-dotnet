@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
         /// <returns>The created AndroidCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidCustomConfiguration> CreateAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidCustomConfiguration> CreateAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidCustomConfiguration> CreateAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> CreateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> CreateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidCustomConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidCustomConfiguration.
         /// </summary>
         /// <returns>The AndroidCustomConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidCustomConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidCustomConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidCustomConfiguration> UpdateAsync(AndroidCustomConfiguration androidCustomConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToUpdate">The AndroidCustomConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> UpdateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToUpdate">The AndroidCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> UpdateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

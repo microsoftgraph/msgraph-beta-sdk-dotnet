@@ -34,6 +34,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IDeviceTransitiveMemberOfCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceTransitiveMemberOfCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceTransitiveMemberOfCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceTransitiveMemberOfCollectionWithReferencesResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceTransitiveMemberOfCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceTransitiveMemberOfCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceTransitiveMemberOfCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

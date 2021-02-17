@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
         /// <returns>The created AndroidCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidCompliancePolicy> CreateAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidCompliancePolicy> CreateAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidCompliancePolicy> CreateAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> CreateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> CreateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidCompliancePolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidCompliancePolicy.
         /// </summary>
         /// <returns>The AndroidCompliancePolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidCompliancePolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidCompliancePolicy and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidCompliancePolicy and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidCompliancePolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidCompliancePolicy> UpdateAsync(AndroidCompliancePolicy androidCompliancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToUpdate">The AndroidCompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> UpdateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToUpdate">The AndroidCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> UpdateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

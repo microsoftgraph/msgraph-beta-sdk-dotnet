@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FeatureRolloutPolicy.</returns>
         System.Threading.Tasks.Task<FeatureRolloutPolicy> AddAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy);
+
+        /// <summary>
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDirectoryFeatureRolloutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

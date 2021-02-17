@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicy>(windowsDefenderApplicationControlSupplementalPolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicy">The WindowsDefenderApplicationControlSupplementalPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicy windowsDefenderApplicationControlSupplementalPolicy)
+        {
+            return this.AddResponseAsync(windowsDefenderApplicationControlSupplementalPolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicy">The WindowsDefenderApplicationControlSupplementalPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicy windowsDefenderApplicationControlSupplementalPolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>(windowsDefenderApplicationControlSupplementalPolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWdacSupplementalPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementWdacSupplementalPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWdacSupplementalPoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWdacSupplementalPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementWdacSupplementalPoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWdacSupplementalPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementWdacSupplementalPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

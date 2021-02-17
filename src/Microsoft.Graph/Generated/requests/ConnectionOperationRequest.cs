@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ConnectionOperation using POST and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <param name="connectionOperationToCreate">The ConnectionOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> CreateResponseAsync(ConnectionOperation connectionOperationToCreate)
+        {
+            return this.CreateResponseAsync(connectionOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ConnectionOperation using POST and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <param name="connectionOperationToCreate">The ConnectionOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> CreateResponseAsync(ConnectionOperation connectionOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ConnectionOperation>(connectionOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ConnectionOperation.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ConnectionOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConnectionOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConnectionOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ConnectionOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ConnectionOperation and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ConnectionOperation and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ConnectionOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ConnectionOperation>(connectionOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectionOperation using PATCH and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <param name="connectionOperationToUpdate">The ConnectionOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> UpdateResponseAsync(ConnectionOperation connectionOperationToUpdate)
+        {
+            return this.UpdateResponseAsync(connectionOperationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectionOperation using PATCH and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
+        /// </summary>
+        /// <param name="connectionOperationToUpdate">The ConnectionOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> UpdateResponseAsync(ConnectionOperation connectionOperationToUpdate, CancellationToken cancellationToken)
+        {
+			if (connectionOperationToUpdate.AdditionalData != null)
+			{
+				if (connectionOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					connectionOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectionOperationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (connectionOperationToUpdate.AdditionalData != null)
+            {
+                if (connectionOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    connectionOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectionOperationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ConnectionOperation>(connectionOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

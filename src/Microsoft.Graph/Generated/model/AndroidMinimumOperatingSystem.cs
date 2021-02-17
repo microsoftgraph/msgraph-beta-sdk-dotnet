@@ -29,6 +29,20 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets v10_0.
+        /// Version 10.0 or later.
+        /// </summary>
+        [JsonPropertyName("v10_0")]
+        public bool? V10_0 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v11_0.
+        /// Version 11.0 or later.
+        /// </summary>
+        [JsonPropertyName("v11_0")]
+        public bool? V11_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v4_0.
         /// Version 4.0 or later.
         /// </summary>

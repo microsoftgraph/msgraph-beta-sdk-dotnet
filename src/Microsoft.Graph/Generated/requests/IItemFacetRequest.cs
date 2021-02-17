@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="itemFacetToCreate">The ItemFacet to create.</param>
         /// <returns>The created ItemFacet.</returns>
-        System.Threading.Tasks.Task<ItemFacet> CreateAsync(ItemFacet itemFacetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ItemFacet> CreateAsync(ItemFacet itemFacetToCreate);
+
+        /// <summary>
         /// Creates the specified ItemFacet using POST.
         /// </summary>
         /// <param name="itemFacetToCreate">The ItemFacet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemFacet.</returns>
         System.Threading.Tasks.Task<ItemFacet> CreateAsync(ItemFacet itemFacetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ItemFacet using POST and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <param name="itemFacetToCreate">The ItemFacet to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> CreateResponseAsync(ItemFacet itemFacetToCreate);
+
+        /// <summary>
+        /// Creates the specified ItemFacet using POST and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <param name="itemFacetToCreate">The ItemFacet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> CreateResponseAsync(ItemFacet itemFacetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ItemFacet.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ItemFacet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ItemFacet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ItemFacet.
         /// </summary>
         /// <returns>The ItemFacet.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemFacet.</returns>
         System.Threading.Tasks.Task<ItemFacet> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ItemFacet and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ItemFacet and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ItemFacet using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemFacet.</returns>
         System.Threading.Tasks.Task<ItemFacet> UpdateAsync(ItemFacet itemFacetToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ItemFacet using PATCH and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <param name="itemFacetToUpdate">The ItemFacet to update.</param>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> UpdateResponseAsync(ItemFacet itemFacetToUpdate);
+
+        /// <summary>
+        /// Updates the specified ItemFacet using PATCH and returns a <see cref="GraphResponse{ItemFacet}"/> object.
+        /// </summary>
+        /// <param name="itemFacetToUpdate">The ItemFacet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemFacet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemFacet>> UpdateResponseAsync(ItemFacet itemFacetToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

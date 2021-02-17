@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate)
+        {
+            return this.CreateResponseAsync(iosStoreAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosStoreApp>(iosStoreAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosStoreApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<IosStoreApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosStoreApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosStoreApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<IosStoreApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified IosStoreApp and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosStoreApp and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosStoreApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<IosStoreApp>(iosStoreAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosStoreApp using PATCH and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> UpdateResponseAsync(IosStoreApp iosStoreAppToUpdate)
+        {
+            return this.UpdateResponseAsync(iosStoreAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosStoreApp using PATCH and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> UpdateResponseAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosStoreAppToUpdate.AdditionalData != null)
+			{
+				if (iosStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosStoreAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosStoreAppToUpdate.AdditionalData != null)
+            {
+                if (iosStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosStoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosStoreAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosStoreApp>(iosStoreAppToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

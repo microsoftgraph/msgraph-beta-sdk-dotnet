@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AuthenticationContextClassReference>(authenticationContextClassReference, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AuthenticationContextClassReference to the collection via POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationContextClassReference">The AuthenticationContextClassReference to add.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> AddResponseAsync(AuthenticationContextClassReference authenticationContextClassReference)
+        {
+            return this.AddResponseAsync(authenticationContextClassReference, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AuthenticationContextClassReference to the collection via POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationContextClassReference">The AuthenticationContextClassReference to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> AddResponseAsync(AuthenticationContextClassReference authenticationContextClassReference, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AuthenticationContextClassReference>(authenticationContextClassReference, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ConditionalAccessRootAuthenticationContextClassReferencesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

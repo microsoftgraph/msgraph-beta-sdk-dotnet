@@ -70,6 +70,13 @@ namespace Microsoft.Graph
         public IPlannerUserRecentPlansCollectionWithReferencesPage RecentPlans { get; set; }
     
         /// <summary>
+        /// Gets or sets roster plans.
+        /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
+        /// </summary>
+        [JsonPropertyName("rosterPlans")]
+        public IPlannerUserRosterPlansCollectionWithReferencesPage RosterPlans { get; set; }
+    
+        /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>

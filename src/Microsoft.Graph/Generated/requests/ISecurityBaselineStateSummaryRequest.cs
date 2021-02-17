@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="securityBaselineStateSummaryToCreate">The SecurityBaselineStateSummary to create.</param>
         /// <returns>The created SecurityBaselineStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineStateSummary> CreateAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SecurityBaselineStateSummary> CreateAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified SecurityBaselineStateSummary using POST.
         /// </summary>
         /// <param name="securityBaselineStateSummaryToCreate">The SecurityBaselineStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineStateSummary.</returns>
         System.Threading.Tasks.Task<SecurityBaselineStateSummary> CreateAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SecurityBaselineStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineStateSummaryToCreate">The SecurityBaselineStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> CreateResponseAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified SecurityBaselineStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineStateSummaryToCreate">The SecurityBaselineStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> CreateResponseAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SecurityBaselineStateSummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SecurityBaselineStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SecurityBaselineStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SecurityBaselineStateSummary.
         /// </summary>
         /// <returns>The SecurityBaselineStateSummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecurityBaselineStateSummary.</returns>
         System.Threading.Tasks.Task<SecurityBaselineStateSummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineStateSummary and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineStateSummary and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SecurityBaselineStateSummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineStateSummary.</returns>
         System.Threading.Tasks.Task<SecurityBaselineStateSummary> UpdateAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineStateSummaryToUpdate">The SecurityBaselineStateSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> UpdateResponseAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineStateSummaryToUpdate">The SecurityBaselineStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineStateSummary>> UpdateResponseAsync(SecurityBaselineStateSummary securityBaselineStateSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<OpenShiftChangeRequestObject>(openShiftChangeRequest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OpenShiftChangeRequestObject to the collection via POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="openShiftChangeRequest">The OpenShiftChangeRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> AddResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequest)
+        {
+            return this.AddResponseAsync(openShiftChangeRequest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OpenShiftChangeRequestObject to the collection via POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="openShiftChangeRequest">The OpenShiftChangeRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> AddResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            openShiftChangeRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(openShiftChangeRequest.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleOpenShiftChangeRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ScheduleOpenShiftChangeRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleOpenShiftChangeRequestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleOpenShiftChangeRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleOpenShiftChangeRequestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ScheduleOpenShiftChangeRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ScheduleOpenShiftChangeRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

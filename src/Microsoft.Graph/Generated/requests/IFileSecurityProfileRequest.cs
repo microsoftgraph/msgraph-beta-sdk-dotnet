@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <returns>The created FileSecurityProfile.</returns>
-        System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate);
+
+        /// <summary>
         /// Creates the specified FileSecurityProfile using POST.
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileSecurityProfile.</returns>
         System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified FileSecurityProfile using POST and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> CreateResponseAsync(FileSecurityProfile fileSecurityProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified FileSecurityProfile using POST and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> CreateResponseAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified FileSecurityProfile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified FileSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified FileSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified FileSecurityProfile.
         /// </summary>
         /// <returns>The FileSecurityProfile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FileSecurityProfile.</returns>
         System.Threading.Tasks.Task<FileSecurityProfile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified FileSecurityProfile and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified FileSecurityProfile and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified FileSecurityProfile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileSecurityProfile.</returns>
         System.Threading.Tasks.Task<FileSecurityProfile> UpdateAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified FileSecurityProfile using PATCH and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate);
+
+        /// <summary>
+        /// Updates the specified FileSecurityProfile using PATCH and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
         /// <returns>The created PayloadResponse.</returns>
-        System.Threading.Tasks.Task<PayloadResponse> CreateAsync(PayloadResponse payloadResponseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PayloadResponse> CreateAsync(PayloadResponse payloadResponseToCreate);
+
+        /// <summary>
         /// Creates the specified PayloadResponse using POST.
         /// </summary>
         /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PayloadResponse.</returns>
         System.Threading.Tasks.Task<PayloadResponse> CreateAsync(PayloadResponse payloadResponseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PayloadResponse using POST and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> CreateResponseAsync(PayloadResponse payloadResponseToCreate);
+
+        /// <summary>
+        /// Creates the specified PayloadResponse using POST and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> CreateResponseAsync(PayloadResponse payloadResponseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PayloadResponse.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PayloadResponse and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PayloadResponse and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PayloadResponse.
         /// </summary>
         /// <returns>The PayloadResponse.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PayloadResponse.</returns>
         System.Threading.Tasks.Task<PayloadResponse> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PayloadResponse and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PayloadResponse and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PayloadResponse using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PayloadResponse.</returns>
         System.Threading.Tasks.Task<PayloadResponse> UpdateAsync(PayloadResponse payloadResponseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PayloadResponse using PATCH and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <param name="payloadResponseToUpdate">The PayloadResponse to update.</param>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> UpdateResponseAsync(PayloadResponse payloadResponseToUpdate);
+
+        /// <summary>
+        /// Updates the specified PayloadResponse using PATCH and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
+        /// </summary>
+        /// <param name="payloadResponseToUpdate">The PayloadResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> UpdateResponseAsync(PayloadResponse payloadResponseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="accessPackageAssignmentRequestObjectToCreate">The AccessPackageAssignmentRequestObject to create.</param>
         /// <returns>The created AccessPackageAssignmentRequestObject.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> CreateAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> CreateAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified AccessPackageAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="accessPackageAssignmentRequestObjectToCreate">The AccessPackageAssignmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> CreateAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AccessPackageAssignmentRequestObject using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentRequestObjectToCreate">The AccessPackageAssignmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> CreateResponseAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified AccessPackageAssignmentRequestObject using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentRequestObjectToCreate">The AccessPackageAssignmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> CreateResponseAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AccessPackageAssignmentRequestObject.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AccessPackageAssignmentRequestObject and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AccessPackageAssignmentRequestObject and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AccessPackageAssignmentRequestObject.
         /// </summary>
         /// <returns>The AccessPackageAssignmentRequestObject.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AccessPackageAssignmentRequestObject and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AccessPackageAssignmentRequestObject and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AccessPackageAssignmentRequestObject using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageAssignmentRequestObject.</returns>
         System.Threading.Tasks.Task<AccessPackageAssignmentRequestObject> UpdateAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentRequestObject using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentRequestObjectToUpdate">The AccessPackageAssignmentRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> UpdateResponseAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToUpdate);
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentRequestObject using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentRequestObjectToUpdate">The AccessPackageAssignmentRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentRequestObject>> UpdateResponseAsync(AccessPackageAssignmentRequestObject accessPackageAssignmentRequestObjectToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

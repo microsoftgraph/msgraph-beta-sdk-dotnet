@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConfigManagerCollection.</returns>
         System.Threading.Tasks.Task<ConfigManagerCollection> AddAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ConfigManagerCollection to the collection via POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.
+        /// </summary>
+        /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
+        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> AddResponseAsync(ConfigManagerCollection configManagerCollection);
+
+        /// <summary>
+        /// Adds the specified ConfigManagerCollection to the collection via POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.
+        /// </summary>
+        /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> AddResponseAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementConfigManagerCollectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

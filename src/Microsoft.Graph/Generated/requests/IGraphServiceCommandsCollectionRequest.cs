@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Command.</returns>
         System.Threading.Tasks.Task<Command> AddAsync(Command command, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
+        /// </summary>
+        /// <param name="command">The Command to add.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command);
+
+        /// <summary>
+        /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
+        /// </summary>
+        /// <param name="command">The Command to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceCommandsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceCommandsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceCommandsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceCommandsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceCommandsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceCommandsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceCommandsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <returns>The created EditionUpgradeConfiguration.</returns>
-        System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified EditionUpgradeConfiguration using POST.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EditionUpgradeConfiguration.</returns>
         System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EditionUpgradeConfiguration using POST and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> CreateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified EditionUpgradeConfiguration using POST and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> CreateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EditionUpgradeConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EditionUpgradeConfiguration.
         /// </summary>
         /// <returns>The EditionUpgradeConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EditionUpgradeConfiguration.</returns>
         System.Threading.Tasks.Task<EditionUpgradeConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EditionUpgradeConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EditionUpgradeConfiguration.</returns>
         System.Threading.Tasks.Task<EditionUpgradeConfiguration> UpdateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EditionUpgradeConfiguration using PATCH and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> UpdateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified EditionUpgradeConfiguration using PATCH and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> UpdateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

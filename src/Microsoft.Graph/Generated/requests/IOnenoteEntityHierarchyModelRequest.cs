@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
         /// <returns>The created OnenoteEntityHierarchyModel.</returns>
-        System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> CreateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> CreateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteEntityHierarchyModel using POST.
         /// </summary>
         /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteEntityHierarchyModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> CreateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntityHierarchyModel using POST and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> CreateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntityHierarchyModel using POST and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityHierarchyModelToCreate">The OnenoteEntityHierarchyModel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> CreateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteEntityHierarchyModel.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnenoteEntityHierarchyModel.
         /// </summary>
         /// <returns>The OnenoteEntityHierarchyModel.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteEntityHierarchyModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnenoteEntityHierarchyModel using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteEntityHierarchyModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> UpdateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnenoteEntityHierarchyModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityHierarchyModelToUpdate">The OnenoteEntityHierarchyModel to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> UpdateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnenoteEntityHierarchyModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityHierarchyModelToUpdate">The OnenoteEntityHierarchyModel to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> UpdateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

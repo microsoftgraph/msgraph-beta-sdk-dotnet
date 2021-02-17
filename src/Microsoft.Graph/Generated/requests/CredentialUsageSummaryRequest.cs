@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CredentialUsageSummary using POST and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUsageSummaryToCreate">The CredentialUsageSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> CreateResponseAsync(CredentialUsageSummary credentialUsageSummaryToCreate)
+        {
+            return this.CreateResponseAsync(credentialUsageSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CredentialUsageSummary using POST and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUsageSummaryToCreate">The CredentialUsageSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> CreateResponseAsync(CredentialUsageSummary credentialUsageSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CredentialUsageSummary>(credentialUsageSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CredentialUsageSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<CredentialUsageSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified CredentialUsageSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified CredentialUsageSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<CredentialUsageSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified CredentialUsageSummary and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CredentialUsageSummary and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CredentialUsageSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<CredentialUsageSummary>(credentialUsageSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUsageSummary using PATCH and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUsageSummaryToUpdate">The CredentialUsageSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> UpdateResponseAsync(CredentialUsageSummary credentialUsageSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(credentialUsageSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUsageSummary using PATCH and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUsageSummaryToUpdate">The CredentialUsageSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> UpdateResponseAsync(CredentialUsageSummary credentialUsageSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (credentialUsageSummaryToUpdate.AdditionalData != null)
+			{
+				if (credentialUsageSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					credentialUsageSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, credentialUsageSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (credentialUsageSummaryToUpdate.AdditionalData != null)
+            {
+                if (credentialUsageSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    credentialUsageSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, credentialUsageSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CredentialUsageSummary>(credentialUsageSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

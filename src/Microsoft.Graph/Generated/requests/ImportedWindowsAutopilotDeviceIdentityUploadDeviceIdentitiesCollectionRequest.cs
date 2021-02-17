@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentity, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ImportedWindowsAutopilotDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentity">The ImportedWindowsAutopilotDeviceIdentity to add.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> AddResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentity)
+        {
+            return this.AddResponseAsync(importedWindowsAutopilotDeviceIdentity, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ImportedWindowsAutopilotDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentity">The ImportedWindowsAutopilotDeviceIdentity to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> AddResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentity, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentity, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

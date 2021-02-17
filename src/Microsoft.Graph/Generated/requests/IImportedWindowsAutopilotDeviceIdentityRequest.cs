@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <returns>The created ImportedWindowsAutopilotDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate);
+
+        /// <summary>
         /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedWindowsAutopilotDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> CreateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate);
+
+        /// <summary>
+        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> CreateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ImportedWindowsAutopilotDeviceIdentity.
         /// </summary>
         /// <returns>The ImportedWindowsAutopilotDeviceIdentity.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ImportedWindowsAutopilotDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedWindowsAutopilotDeviceIdentity.</returns>
         System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> UpdateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> UpdateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate);
+
+        /// <summary>
+        /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
+        /// </summary>
+        /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> UpdateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EducationalActivity using POST and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <param name="educationalActivityToCreate">The EducationalActivity to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> CreateResponseAsync(EducationalActivity educationalActivityToCreate)
+        {
+            return this.CreateResponseAsync(educationalActivityToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationalActivity using POST and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <param name="educationalActivityToCreate">The EducationalActivity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> CreateResponseAsync(EducationalActivity educationalActivityToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationalActivity>(educationalActivityToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EducationalActivity.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationalActivity>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationalActivity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationalActivity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EducationalActivity>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EducationalActivity and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EducationalActivity and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EducationalActivity>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EducationalActivity>(educationalActivityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationalActivity using PATCH and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <param name="educationalActivityToUpdate">The EducationalActivity to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> UpdateResponseAsync(EducationalActivity educationalActivityToUpdate)
+        {
+            return this.UpdateResponseAsync(educationalActivityToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationalActivity using PATCH and returns a <see cref="GraphResponse{EducationalActivity}"/> object.
+        /// </summary>
+        /// <param name="educationalActivityToUpdate">The EducationalActivity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationalActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationalActivity>> UpdateResponseAsync(EducationalActivity educationalActivityToUpdate, CancellationToken cancellationToken)
+        {
+			if (educationalActivityToUpdate.AdditionalData != null)
+			{
+				if (educationalActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationalActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationalActivityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (educationalActivityToUpdate.AdditionalData != null)
+            {
+                if (educationalActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    educationalActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationalActivityToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EducationalActivity>(educationalActivityToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

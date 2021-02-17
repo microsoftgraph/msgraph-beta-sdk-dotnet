@@ -223,6 +223,18 @@ namespace Microsoft.Graph
             }
         }
         /// <summary>
+        /// Gets the request builder for Permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        public IPermissionRequestBuilder Permissions
+        {
+            get
+            {
+                return new PermissionRequestBuilder(this.AppendSegmentToRequestUrl("permissions"), this.Client);
+            }
+        }
+        /// <summary>
         /// Gets the request builder for Sites.
         /// The collection of the sub-sites under this site.
         /// </summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSDeviceFeaturesConfigurationToCreate">The MacOSDeviceFeaturesConfiguration to create.</param>
         /// <returns>The created MacOSDeviceFeaturesConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSDeviceFeaturesConfiguration> CreateAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSDeviceFeaturesConfiguration> CreateAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSDeviceFeaturesConfiguration using POST.
         /// </summary>
         /// <param name="macOSDeviceFeaturesConfigurationToCreate">The MacOSDeviceFeaturesConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSDeviceFeaturesConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSDeviceFeaturesConfiguration> CreateAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSDeviceFeaturesConfigurationToCreate">The MacOSDeviceFeaturesConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> CreateResponseAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSDeviceFeaturesConfigurationToCreate">The MacOSDeviceFeaturesConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> CreateResponseAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSDeviceFeaturesConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOSDeviceFeaturesConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOSDeviceFeaturesConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOSDeviceFeaturesConfiguration.
         /// </summary>
         /// <returns>The MacOSDeviceFeaturesConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSDeviceFeaturesConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSDeviceFeaturesConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOSDeviceFeaturesConfiguration and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSDeviceFeaturesConfiguration and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOSDeviceFeaturesConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSDeviceFeaturesConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSDeviceFeaturesConfiguration> UpdateAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOSDeviceFeaturesConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSDeviceFeaturesConfigurationToUpdate">The MacOSDeviceFeaturesConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> UpdateResponseAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOSDeviceFeaturesConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSDeviceFeaturesConfigurationToUpdate">The MacOSDeviceFeaturesConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSDeviceFeaturesConfiguration>> UpdateResponseAsync(MacOSDeviceFeaturesConfiguration macOSDeviceFeaturesConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

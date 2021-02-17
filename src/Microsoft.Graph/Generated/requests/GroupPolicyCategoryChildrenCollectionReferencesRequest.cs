@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(GroupPolicyCategory groupPolicyCategory)
+        {
+            return this.AddResponseAsync(groupPolicyCategory, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(groupPolicyCategory.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceManagement/children/{1}", this.Client.BaseUrl, groupPolicyCategory.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

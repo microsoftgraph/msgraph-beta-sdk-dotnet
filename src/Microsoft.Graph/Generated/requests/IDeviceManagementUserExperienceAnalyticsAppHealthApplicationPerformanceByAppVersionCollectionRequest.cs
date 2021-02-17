@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> AddAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersion, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersion">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> AddResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersion);
+
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersion">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> AddResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersion, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

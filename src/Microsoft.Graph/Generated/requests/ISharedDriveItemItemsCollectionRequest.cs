@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
         System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
+        /// </summary>
+        /// <param name="driveItem">The DriveItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem);
+
+        /// <summary>
+        /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
+        /// </summary>
+        /// <param name="driveItem">The DriveItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISharedDriveItemItemsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SharedDriveItemItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItemItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItemItemsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SharedDriveItemItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItemItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItemItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

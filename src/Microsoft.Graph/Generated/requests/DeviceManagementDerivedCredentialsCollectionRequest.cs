@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceManagementDerivedCredentialSettings>(deviceManagementDerivedCredentialSettings, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementDerivedCredentialSettings to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettings">The DeviceManagementDerivedCredentialSettings to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> AddResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettings)
+        {
+            return this.AddResponseAsync(deviceManagementDerivedCredentialSettings, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceManagementDerivedCredentialSettings to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettings">The DeviceManagementDerivedCredentialSettings to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> AddResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettings, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDerivedCredentialSettings>(deviceManagementDerivedCredentialSettings, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDerivedCredentialsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

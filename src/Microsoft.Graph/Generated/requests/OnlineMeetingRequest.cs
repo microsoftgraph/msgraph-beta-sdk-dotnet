@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate)
+        {
+            return this.CreateResponseAsync(onlineMeetingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnlineMeeting.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<OnlineMeeting>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnlineMeeting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnlineMeeting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<OnlineMeeting>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnlineMeeting>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnlineMeeting using PATCH and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> UpdateResponseAsync(OnlineMeeting onlineMeetingToUpdate)
+        {
+            return this.UpdateResponseAsync(onlineMeetingToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OnlineMeeting using PATCH and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> UpdateResponseAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken)
+        {
+			if (onlineMeetingToUpdate.AdditionalData != null)
+			{
+				if (onlineMeetingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onlineMeetingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onlineMeetingToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onlineMeetingToUpdate.AdditionalData != null)
+            {
+                if (onlineMeetingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onlineMeetingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onlineMeetingToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

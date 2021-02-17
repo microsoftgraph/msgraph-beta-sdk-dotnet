@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> AddResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment)
+        {
+            return this.AddResponseAsync(targetedManagedAppPolicyAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> AddResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TargetedManagedAppPolicyAssignment>(targetedManagedAppPolicyAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtectionAssignmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtectionAssignmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtectionAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TargetedManagedAppProtectionAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailAuthenticationMethod.</returns>
         System.Threading.Tasks.Task<EmailAuthenticationMethod> AddAsync(EmailAuthenticationMethod emailAuthenticationMethod, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified EmailAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="emailAuthenticationMethod">The EmailAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> AddResponseAsync(EmailAuthenticationMethod emailAuthenticationMethod);
+
+        /// <summary>
+        /// Adds the specified EmailAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="emailAuthenticationMethod">The EmailAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> AddResponseAsync(EmailAuthenticationMethod emailAuthenticationMethod, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAuthenticationEmailMethodsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationEmailMethodsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationEmailMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

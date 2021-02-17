@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementAutopilotEvent using POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> CreateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementAutopilotEventToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementAutopilotEvent using POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> CreateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEvent>(deviceManagementAutopilotEventToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementAutopilotEvent.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementAutopilotEvent>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementAutopilotEvent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEvent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementAutopilotEvent>(deviceManagementAutopilotEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotEvent using PATCH and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToUpdate">The DeviceManagementAutopilotEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> UpdateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementAutopilotEventToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotEvent using PATCH and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToUpdate">The DeviceManagementAutopilotEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> UpdateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementAutopilotEventToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementAutopilotEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementAutopilotEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementAutopilotEventToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementAutopilotEventToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementAutopilotEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementAutopilotEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementAutopilotEventToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAutopilotEvent>(deviceManagementAutopilotEventToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

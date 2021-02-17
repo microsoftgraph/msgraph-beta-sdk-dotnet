@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<GovernanceRoleDefinition>(governanceRoleDefinition, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GovernanceRoleDefinition to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleDefinition">The GovernanceRoleDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> AddResponseAsync(GovernanceRoleDefinition governanceRoleDefinition)
+        {
+            return this.AddResponseAsync(governanceRoleDefinition, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GovernanceRoleDefinition to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceRoleDefinition">The GovernanceRoleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> AddResponseAsync(GovernanceRoleDefinition governanceRoleDefinition, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GovernanceRoleDefinition>(governanceRoleDefinition, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrivilegedAccessRoleDefinitionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrivilegedAccessRoleDefinitionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedAccessRoleDefinitionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrivilegedAccessRoleDefinitionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedAccessRoleDefinitionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedAccessRoleDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PrivilegedAccessRoleDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

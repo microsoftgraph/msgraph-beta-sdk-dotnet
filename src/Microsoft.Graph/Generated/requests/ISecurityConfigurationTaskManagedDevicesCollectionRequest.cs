@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VulnerableManagedDevice.</returns>
         System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified VulnerableManagedDevice to the collection via POST and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.
+        /// </summary>
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
+        /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> AddResponseAsync(VulnerableManagedDevice vulnerableManagedDevice);
+
+        /// <summary>
+        /// Adds the specified VulnerableManagedDevice to the collection via POST and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.
+        /// </summary>
+        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> AddResponseAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

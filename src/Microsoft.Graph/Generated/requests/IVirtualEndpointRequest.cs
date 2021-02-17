@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
         /// <returns>The created VirtualEndpoint.</returns>
-        System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate);        /// <summary>
+        System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate);
+
+        /// <summary>
         /// Creates the specified VirtualEndpoint using POST.
         /// </summary>
         /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VirtualEndpoint.</returns>
         System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified VirtualEndpoint using POST and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate);
+
+        /// <summary>
+        /// Creates the specified VirtualEndpoint using POST and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified VirtualEndpoint.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified VirtualEndpoint and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified VirtualEndpoint and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified VirtualEndpoint.
         /// </summary>
         /// <returns>The VirtualEndpoint.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VirtualEndpoint.</returns>
         System.Threading.Tasks.Task<VirtualEndpoint> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified VirtualEndpoint and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified VirtualEndpoint and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified VirtualEndpoint using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VirtualEndpoint.</returns>
         System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified VirtualEndpoint using PATCH and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate);
+
+        /// <summary>
+        /// Updates the specified VirtualEndpoint using PATCH and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

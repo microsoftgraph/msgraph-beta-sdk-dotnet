@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Call.</returns>
         System.Threading.Tasks.Task<Call> AddAsync(Call call, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Call to the collection via POST and returns a <see cref="GraphResponse{Call}"/> object of the request.
+        /// </summary>
+        /// <param name="call">The Call to add.</param>
+        /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Call>> AddResponseAsync(Call call);
+
+        /// <summary>
+        /// Adds the specified Call to the collection via POST and returns a <see cref="GraphResponse{Call}"/> object of the request.
+        /// </summary>
+        /// <param name="call">The Call to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Call>> AddResponseAsync(Call call, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICommsApplicationCallsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CommsApplicationCallsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CommsApplicationCallsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplicationCallsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CommsApplicationCallsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CommsApplicationCallsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsApplicationCallsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

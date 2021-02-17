@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
         /// <returns>The created DeviceManagementReports.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementReports using POST.
         /// </summary>
         /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReports.</returns>
         System.Threading.Tasks.Task<DeviceManagementReports> CreateAsync(DeviceManagementReports deviceManagementReportsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementReports using POST and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> CreateResponseAsync(DeviceManagementReports deviceManagementReportsToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementReports using POST and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToCreate">The DeviceManagementReports to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> CreateResponseAsync(DeviceManagementReports deviceManagementReportsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementReports.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementReports and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementReports and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementReports.
         /// </summary>
         /// <returns>The DeviceManagementReports.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementReports.</returns>
         System.Threading.Tasks.Task<DeviceManagementReports> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementReports and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementReports and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementReports using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementReports.</returns>
         System.Threading.Tasks.Task<DeviceManagementReports> UpdateAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PATCH and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> UpdateResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReports using PATCH and returns a <see cref="GraphResponse{DeviceManagementReports}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReportsToUpdate">The DeviceManagementReports to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReports}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReports>> UpdateResponseAsync(DeviceManagementReports deviceManagementReportsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

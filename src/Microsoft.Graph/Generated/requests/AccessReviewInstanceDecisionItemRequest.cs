@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AccessReviewInstanceDecisionItem using POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> CreateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate)
+        {
+            return this.CreateResponseAsync(accessReviewInstanceDecisionItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AccessReviewInstanceDecisionItem using POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> CreateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AccessReviewInstanceDecisionItem>(accessReviewInstanceDecisionItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AccessReviewInstanceDecisionItem.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AccessReviewInstanceDecisionItem>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AccessReviewInstanceDecisionItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AccessReviewInstanceDecisionItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AccessReviewInstanceDecisionItem>(accessReviewInstanceDecisionItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstanceDecisionItem using PATCH and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToUpdate">The AccessReviewInstanceDecisionItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> UpdateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToUpdate)
+        {
+            return this.UpdateResponseAsync(accessReviewInstanceDecisionItemToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstanceDecisionItem using PATCH and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToUpdate">The AccessReviewInstanceDecisionItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> UpdateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToUpdate, CancellationToken cancellationToken)
+        {
+			if (accessReviewInstanceDecisionItemToUpdate.AdditionalData != null)
+			{
+				if (accessReviewInstanceDecisionItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					accessReviewInstanceDecisionItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceDecisionItemToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (accessReviewInstanceDecisionItemToUpdate.AdditionalData != null)
+            {
+                if (accessReviewInstanceDecisionItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    accessReviewInstanceDecisionItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceDecisionItemToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AccessReviewInstanceDecisionItem>(accessReviewInstanceDecisionItemToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

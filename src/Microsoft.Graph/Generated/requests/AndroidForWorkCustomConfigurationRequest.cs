@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidForWorkCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToCreate">The AndroidForWorkCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> CreateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(androidForWorkCustomConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToCreate">The AndroidForWorkCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> CreateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkCustomConfiguration>(androidForWorkCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidForWorkCustomConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidForWorkCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AndroidForWorkCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkCustomConfiguration and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AndroidForWorkCustomConfiguration>(androidForWorkCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> UpdateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(androidForWorkCustomConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkCustomConfigurationToUpdate">The AndroidForWorkCustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkCustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCustomConfiguration>> UpdateResponseAsync(AndroidForWorkCustomConfiguration androidForWorkCustomConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (androidForWorkCustomConfigurationToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCustomConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkCustomConfigurationToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCustomConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkCustomConfiguration>(androidForWorkCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

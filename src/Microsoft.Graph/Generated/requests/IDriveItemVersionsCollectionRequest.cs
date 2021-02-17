@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItemVersion.</returns>
         System.Threading.Tasks.Task<DriveItemVersion> AddAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DriveItemVersion to the collection via POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion);
+
+        /// <summary>
+        /// Adds the specified DriveItemVersion to the collection via POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDriveItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

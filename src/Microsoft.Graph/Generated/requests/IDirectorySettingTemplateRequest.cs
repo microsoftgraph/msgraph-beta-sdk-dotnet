@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
         /// <returns>The created DirectorySettingTemplate.</returns>
-        System.Threading.Tasks.Task<DirectorySettingTemplate> CreateAsync(DirectorySettingTemplate directorySettingTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectorySettingTemplate> CreateAsync(DirectorySettingTemplate directorySettingTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified DirectorySettingTemplate using POST.
         /// </summary>
         /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectorySettingTemplate.</returns>
         System.Threading.Tasks.Task<DirectorySettingTemplate> CreateAsync(DirectorySettingTemplate directorySettingTemplateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectorySettingTemplate using POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> CreateResponseAsync(DirectorySettingTemplate directorySettingTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectorySettingTemplate using POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="directorySettingTemplateToCreate">The DirectorySettingTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> CreateResponseAsync(DirectorySettingTemplate directorySettingTemplateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectorySettingTemplate.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DirectorySettingTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DirectorySettingTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DirectorySettingTemplate.
         /// </summary>
         /// <returns>The DirectorySettingTemplate.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectorySettingTemplate.</returns>
         System.Threading.Tasks.Task<DirectorySettingTemplate> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DirectorySettingTemplate and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DirectorySettingTemplate and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DirectorySettingTemplate using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectorySettingTemplate.</returns>
         System.Threading.Tasks.Task<DirectorySettingTemplate> UpdateAsync(DirectorySettingTemplate directorySettingTemplateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DirectorySettingTemplate using PATCH and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="directorySettingTemplateToUpdate">The DirectorySettingTemplate to update.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> UpdateResponseAsync(DirectorySettingTemplate directorySettingTemplateToUpdate);
+
+        /// <summary>
+        /// Updates the specified DirectorySettingTemplate using PATCH and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="directorySettingTemplateToUpdate">The DirectorySettingTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> UpdateResponseAsync(DirectorySettingTemplate directorySettingTemplateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

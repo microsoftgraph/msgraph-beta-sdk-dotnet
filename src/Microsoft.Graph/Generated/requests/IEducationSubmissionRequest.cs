@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationSubmissionToCreate">The EducationSubmission to create.</param>
         /// <returns>The created EducationSubmission.</returns>
-        System.Threading.Tasks.Task<EducationSubmission> CreateAsync(EducationSubmission educationSubmissionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationSubmission> CreateAsync(EducationSubmission educationSubmissionToCreate);
+
+        /// <summary>
         /// Creates the specified EducationSubmission using POST.
         /// </summary>
         /// <param name="educationSubmissionToCreate">The EducationSubmission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSubmission.</returns>
         System.Threading.Tasks.Task<EducationSubmission> CreateAsync(EducationSubmission educationSubmissionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationSubmission using POST and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="educationSubmissionToCreate">The EducationSubmission to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> CreateResponseAsync(EducationSubmission educationSubmissionToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationSubmission using POST and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="educationSubmissionToCreate">The EducationSubmission to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> CreateResponseAsync(EducationSubmission educationSubmissionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationSubmission.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EducationSubmission and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EducationSubmission and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EducationSubmission.
         /// </summary>
         /// <returns>The EducationSubmission.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSubmission.</returns>
         System.Threading.Tasks.Task<EducationSubmission> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EducationSubmission and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationSubmission and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EducationSubmission using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSubmission.</returns>
         System.Threading.Tasks.Task<EducationSubmission> UpdateAsync(EducationSubmission educationSubmissionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EducationSubmission using PATCH and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="educationSubmissionToUpdate">The EducationSubmission to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> UpdateResponseAsync(EducationSubmission educationSubmissionToUpdate);
+
+        /// <summary>
+        /// Updates the specified EducationSubmission using PATCH and returns a <see cref="GraphResponse{EducationSubmission}"/> object.
+        /// </summary>
+        /// <param name="educationSubmissionToUpdate">The EducationSubmission to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> UpdateResponseAsync(EducationSubmission educationSubmissionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

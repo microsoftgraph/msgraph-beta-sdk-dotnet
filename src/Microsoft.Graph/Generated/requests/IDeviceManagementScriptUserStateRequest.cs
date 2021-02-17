@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementScriptUserStateToCreate">The DeviceManagementScriptUserState to create.</param>
         /// <returns>The created DeviceManagementScriptUserState.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptUserState> CreateAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementScriptUserState> CreateAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementScriptUserState using POST.
         /// </summary>
         /// <param name="deviceManagementScriptUserStateToCreate">The DeviceManagementScriptUserState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptUserState.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptUserState> CreateAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementScriptUserState using POST and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptUserStateToCreate">The DeviceManagementScriptUserState to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> CreateResponseAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementScriptUserState using POST and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptUserStateToCreate">The DeviceManagementScriptUserState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> CreateResponseAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementScriptUserState.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementScriptUserState.
         /// </summary>
         /// <returns>The DeviceManagementScriptUserState.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptUserState.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptUserState> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementScriptUserState using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementScriptUserState.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptUserState> UpdateAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptUserState using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptUserStateToUpdate">The DeviceManagementScriptUserState to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> UpdateResponseAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptUserState using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptUserStateToUpdate">The DeviceManagementScriptUserState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> UpdateResponseAsync(DeviceManagementScriptUserState deviceManagementScriptUserStateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

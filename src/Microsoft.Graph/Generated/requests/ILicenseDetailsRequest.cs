@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <returns>The created LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);
+
+        /// <summary>
         /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate);
+
+        /// <summary>
+        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified LicenseDetails.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified LicenseDetails.
         /// </summary>
         /// <returns>The LicenseDetails.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified LicenseDetails and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified LicenseDetails and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified LicenseDetails using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate);
+
+        /// <summary>
+        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

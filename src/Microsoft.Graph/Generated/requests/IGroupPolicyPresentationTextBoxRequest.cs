@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationTextBoxToCreate">The GroupPolicyPresentationTextBox to create.</param>
         /// <returns>The created GroupPolicyPresentationTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationTextBox> CreateAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationTextBox> CreateAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationTextBoxToCreate">The GroupPolicyPresentationTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationTextBox> CreateAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationTextBoxToCreate">The GroupPolicyPresentationTextBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> CreateResponseAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationTextBoxToCreate">The GroupPolicyPresentationTextBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> CreateResponseAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationTextBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationTextBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationTextBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationTextBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationTextBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationTextBox> UpdateAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationTextBoxToUpdate">The GroupPolicyPresentationTextBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> UpdateResponseAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationTextBoxToUpdate">The GroupPolicyPresentationTextBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationTextBox>> UpdateResponseAsync(GroupPolicyPresentationTextBox groupPolicyPresentationTextBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

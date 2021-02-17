@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReview.</returns>
         System.Threading.Tasks.Task<AccessReview> AddAsync(AccessReview accessReview, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AccessReview to the collection via POST and returns a <see cref="GraphResponse{AccessReview}"/> object of the request.
+        /// </summary>
+        /// <param name="accessReview">The AccessReview to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReview>> AddResponseAsync(AccessReview accessReview);
+
+        /// <summary>
+        /// Adds the specified AccessReview to the collection via POST and returns a <see cref="GraphResponse{AccessReview}"/> object of the request.
+        /// </summary>
+        /// <param name="accessReview">The AccessReview to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReview>> AddResponseAsync(AccessReview accessReview, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceAccessReviewsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAccessReviewsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceAccessReviewsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceAccessReviewsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAccessReviewsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceAccessReviewsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceAccessReviewsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

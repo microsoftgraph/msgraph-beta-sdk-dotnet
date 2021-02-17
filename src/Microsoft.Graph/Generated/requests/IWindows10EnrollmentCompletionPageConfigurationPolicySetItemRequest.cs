@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to create.</param>
         /// <returns>The created Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> CreateAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> CreateAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using POST.
         /// </summary>
         /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> CreateAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> CreateResponseAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> CreateResponseAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
         /// </summary>
         /// <returns>The Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</returns>
         System.Threading.Tasks.Task<Windows10EnrollmentCompletionPageConfigurationPolicySetItem> UpdateAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> UpdateResponseAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10EnrollmentCompletionPageConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate">The Windows10EnrollmentCompletionPageConfigurationPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10EnrollmentCompletionPageConfigurationPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnrollmentCompletionPageConfigurationPolicySetItem>> UpdateResponseAsync(Windows10EnrollmentCompletionPageConfigurationPolicySetItem windows10EnrollmentCompletionPageConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

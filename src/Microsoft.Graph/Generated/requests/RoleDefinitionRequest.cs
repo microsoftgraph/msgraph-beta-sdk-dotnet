@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RoleDefinition using POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> CreateResponseAsync(RoleDefinition roleDefinitionToCreate)
+        {
+            return this.CreateResponseAsync(roleDefinitionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RoleDefinition using POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> CreateResponseAsync(RoleDefinition roleDefinitionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RoleDefinition>(roleDefinitionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RoleDefinition.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<RoleDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified RoleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified RoleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<RoleDefinition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<RoleDefinition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<RoleDefinition>(roleDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RoleDefinition using PATCH and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToUpdate">The RoleDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> UpdateResponseAsync(RoleDefinition roleDefinitionToUpdate)
+        {
+            return this.UpdateResponseAsync(roleDefinitionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified RoleDefinition using PATCH and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToUpdate">The RoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> UpdateResponseAsync(RoleDefinition roleDefinitionToUpdate, CancellationToken cancellationToken)
+        {
+			if (roleDefinitionToUpdate.AdditionalData != null)
+			{
+				if (roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (roleDefinitionToUpdate.AdditionalData != null)
+            {
+                if (roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    roleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleDefinitionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<RoleDefinition>(roleDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

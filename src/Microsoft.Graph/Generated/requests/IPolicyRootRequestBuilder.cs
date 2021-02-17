@@ -44,12 +44,6 @@ namespace Microsoft.Graph
         IB2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceRegistrationPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
-        IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get; }
-
-        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>
@@ -120,6 +114,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
         IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPoliciesCollectionRequestBuilder RoleManagementPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicyAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder RoleManagementPolicyAssignments { get; }
     
     }
 }

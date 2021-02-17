@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesAgent.</returns>
         System.Threading.Tasks.Task<OnPremisesAgent> AddAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent);
+
+        /// <summary>
+        /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IOnPremisesAgentGroupAgentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

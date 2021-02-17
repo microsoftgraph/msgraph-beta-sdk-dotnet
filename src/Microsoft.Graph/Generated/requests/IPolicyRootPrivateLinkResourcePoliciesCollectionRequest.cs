@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivateLinkResourcePolicy.</returns>
         System.Threading.Tasks.Task<PrivateLinkResourcePolicy> AddAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> AddResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy);
+
+        /// <summary>
+        /// Adds the specified PrivateLinkResourcePolicy to the collection via POST and returns a <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="privateLinkResourcePolicy">The PrivateLinkResourcePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivateLinkResourcePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivateLinkResourcePolicy>> AddResponseAsync(PrivateLinkResourcePolicy privateLinkResourcePolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IPolicyRootPrivateLinkResourcePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPrivateLinkResourcePoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootPrivateLinkResourcePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

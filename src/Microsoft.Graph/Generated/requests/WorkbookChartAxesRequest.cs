@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartAxes using POST and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToCreate">The WorkbookChartAxes to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> CreateResponseAsync(WorkbookChartAxes workbookChartAxesToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartAxesToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxes using POST and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToCreate">The WorkbookChartAxes to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> CreateResponseAsync(WorkbookChartAxes workbookChartAxesToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartAxes>(workbookChartAxesToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartAxes.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookChartAxes>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WorkbookChartAxes and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WorkbookChartAxes and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WorkbookChartAxes>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookChartAxes and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookChartAxes and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartAxes>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WorkbookChartAxes>(workbookChartAxesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartAxes using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToUpdate">The WorkbookChartAxes to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> UpdateResponseAsync(WorkbookChartAxes workbookChartAxesToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookChartAxesToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartAxes using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToUpdate">The WorkbookChartAxes to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> UpdateResponseAsync(WorkbookChartAxes workbookChartAxesToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookChartAxesToUpdate.AdditionalData != null)
+			{
+				if (workbookChartAxesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartAxesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartAxesToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookChartAxesToUpdate.AdditionalData != null)
+            {
+                if (workbookChartAxesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookChartAxesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartAxesToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartAxes>(workbookChartAxesToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

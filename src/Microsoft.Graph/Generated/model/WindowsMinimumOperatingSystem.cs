@@ -78,6 +78,20 @@ namespace Microsoft.Graph
         public bool? V10_1903 { get; set; }
     
         /// <summary>
+        /// Gets or sets v10_1909.
+        /// Windows 10 1909 or later.
+        /// </summary>
+        [JsonPropertyName("v10_1909")]
+        public bool? V10_1909 { get; set; }
+    
+        /// <summary>
+        /// Gets or sets v10_2004.
+        /// Windows 10 2004 or later.
+        /// </summary>
+        [JsonPropertyName("v10_2004")]
+        public bool? V10_2004 { get; set; }
+    
+        /// <summary>
         /// Gets or sets v8_0.
         /// Windows version 8.0 or later.
         /// </summary>

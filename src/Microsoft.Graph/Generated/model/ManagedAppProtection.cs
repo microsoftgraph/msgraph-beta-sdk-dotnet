@@ -169,6 +169,27 @@ namespace Microsoft.Graph
         public Int32? MaximumPinRetries { get; set; }
     
         /// <summary>
+        /// Gets or sets maximum required os version.
+        /// Versions bigger than the specified version will block the managed app from accessing company data.
+        /// </summary>
+        [JsonPropertyName("maximumRequiredOsVersion")]
+        public string MaximumRequiredOsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum warning os version.
+        /// Versions bigger than the specified version will block the managed app from accessing company data.
+        /// </summary>
+        [JsonPropertyName("maximumWarningOsVersion")]
+        public string MaximumWarningOsVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum wipe os version.
+        /// Versions bigger than the specified version will block the managed app from accessing company data.
+        /// </summary>
+        [JsonPropertyName("maximumWipeOsVersion")]
+        public string MaximumWipeOsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets minimum pin length.
         /// Minimum pin length required for an app-level pin if PinRequired is set to True
         /// </summary>

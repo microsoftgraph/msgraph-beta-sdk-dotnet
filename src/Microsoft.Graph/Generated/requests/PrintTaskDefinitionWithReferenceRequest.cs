@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified PrintTaskDefinition and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PrintTaskDefinition and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PrintTaskDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified PrintTaskDefinition using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrintTaskDefinition>(printTaskDefinitionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified PrintTaskDefinition using POST and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <param name="printTaskDefinitionToCreate">The PrintTaskDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> CreateResponseAsync(PrintTaskDefinition printTaskDefinitionToCreate)
+        {
+            return this.CreateResponseAsync(printTaskDefinitionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PrintTaskDefinition using POST and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <param name="printTaskDefinitionToCreate">The PrintTaskDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> CreateResponseAsync(PrintTaskDefinition printTaskDefinitionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PrintTaskDefinition>(printTaskDefinitionToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified PrintTaskDefinition using PATCH and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <param name="printTaskDefinitionToUpdate">The PrintTaskDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> UpdateResponseAsync(PrintTaskDefinition printTaskDefinitionToUpdate)
+        {
+            return this.UpdateResponseAsync(printTaskDefinitionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PrintTaskDefinition using PATCH and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object.
+        /// </summary>
+        /// <param name="printTaskDefinitionToUpdate">The PrintTaskDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> UpdateResponseAsync(PrintTaskDefinition printTaskDefinitionToUpdate, CancellationToken cancellationToken)
+        {
+			if (printTaskDefinitionToUpdate.AdditionalData != null)
+			{
+				if (printTaskDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					printTaskDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printTaskDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (printTaskDefinitionToUpdate.AdditionalData != null)
+            {
+                if (printTaskDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    printTaskDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printTaskDefinitionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PrintTaskDefinition>(printTaskDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified PrintTaskDefinition.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<PrintTaskDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified PrintTaskDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified PrintTaskDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BusinessFlow.</returns>
         System.Threading.Tasks.Task<BusinessFlow> AddAsync(BusinessFlow businessFlow, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified BusinessFlow to the collection via POST and returns a <see cref="GraphResponse{BusinessFlow}"/> object of the request.
+        /// </summary>
+        /// <param name="businessFlow">The BusinessFlow to add.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> AddResponseAsync(BusinessFlow businessFlow);
+
+        /// <summary>
+        /// Adds the specified BusinessFlow to the collection via POST and returns a <see cref="GraphResponse{BusinessFlow}"/> object of the request.
+        /// </summary>
+        /// <param name="businessFlow">The BusinessFlow to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> AddResponseAsync(BusinessFlow businessFlow, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IApprovalWorkflowProviderBusinessFlowsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalWorkflowProviderBusinessFlowsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderBusinessFlowsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderBusinessFlowsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalWorkflowProviderBusinessFlowsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderBusinessFlowsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderBusinessFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

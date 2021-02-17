@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TokenIssuancePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy)
+        {
+            return this.AddResponseAsync(tokenIssuancePolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TokenIssuancePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(tokenIssuancePolicy.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/policies/tokenIssuancePolicies/{1}", this.Client.BaseUrl, tokenIssuancePolicy.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

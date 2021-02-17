@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
         /// <returns>The created OutlookTask.</returns>
-        System.Threading.Tasks.Task<OutlookTask> CreateAsync(OutlookTask outlookTaskToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OutlookTask> CreateAsync(OutlookTask outlookTaskToCreate);
+
+        /// <summary>
         /// Creates the specified OutlookTask using POST.
         /// </summary>
         /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTask.</returns>
         System.Threading.Tasks.Task<OutlookTask> CreateAsync(OutlookTask outlookTaskToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OutlookTask using POST and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> CreateResponseAsync(OutlookTask outlookTaskToCreate);
+
+        /// <summary>
+        /// Creates the specified OutlookTask using POST and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskToCreate">The OutlookTask to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> CreateResponseAsync(OutlookTask outlookTaskToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OutlookTask.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OutlookTask and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OutlookTask and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OutlookTask.
         /// </summary>
         /// <returns>The OutlookTask.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OutlookTask.</returns>
         System.Threading.Tasks.Task<OutlookTask> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OutlookTask and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OutlookTask and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OutlookTask using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookTask.</returns>
         System.Threading.Tasks.Task<OutlookTask> UpdateAsync(OutlookTask outlookTaskToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OutlookTask using PATCH and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskToUpdate">The OutlookTask to update.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> UpdateResponseAsync(OutlookTask outlookTaskToUpdate);
+
+        /// <summary>
+        /// Updates the specified OutlookTask using PATCH and returns a <see cref="GraphResponse{OutlookTask}"/> object.
+        /// </summary>
+        /// <param name="outlookTaskToUpdate">The OutlookTask to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> UpdateResponseAsync(OutlookTask outlookTaskToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

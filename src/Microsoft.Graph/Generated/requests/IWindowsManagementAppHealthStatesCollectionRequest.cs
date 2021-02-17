@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementAppHealthState.</returns>
         System.Threading.Tasks.Task<WindowsManagementAppHealthState> AddAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WindowsManagementAppHealthState to the collection via POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> AddResponseAsync(WindowsManagementAppHealthState windowsManagementAppHealthState);
+
+        /// <summary>
+        /// Adds the specified WindowsManagementAppHealthState to the collection via POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> AddResponseAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IWindowsManagementAppHealthStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthStatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

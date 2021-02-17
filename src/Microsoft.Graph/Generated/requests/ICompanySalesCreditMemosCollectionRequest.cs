@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesCreditMemo.</returns>
         System.Threading.Tasks.Task<SalesCreditMemo> AddAsync(SalesCreditMemo salesCreditMemo, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SalesCreditMemo to the collection via POST and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.
+        /// </summary>
+        /// <param name="salesCreditMemo">The SalesCreditMemo to add.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> AddResponseAsync(SalesCreditMemo salesCreditMemo);
+
+        /// <summary>
+        /// Adds the specified SalesCreditMemo to the collection via POST and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.
+        /// </summary>
+        /// <param name="salesCreditMemo">The SalesCreditMemo to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> AddResponseAsync(SalesCreditMemo salesCreditMemo, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICompanySalesCreditMemosCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesCreditMemosCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanySalesCreditMemosCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesCreditMemosCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesCreditMemosCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanySalesCreditMemosCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesCreditMemosCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

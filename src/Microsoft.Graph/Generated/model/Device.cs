@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device category.
+        /// User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
         /// </summary>
         [JsonPropertyName("deviceCategory")]
         public string DeviceCategory { get; set; }
@@ -78,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device ownership.
+        /// Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
         /// </summary>
         [JsonPropertyName("deviceOwnership")]
         public string DeviceOwnership { get; set; }
@@ -98,18 +100,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets domain name.
+        /// The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
         /// </summary>
         [JsonPropertyName("domainName")]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment profile name.
+        /// Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
         /// </summary>
         [JsonPropertyName("enrollmentProfileName")]
         public string EnrollmentProfileName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
+        /// Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
         /// </summary>
         [JsonPropertyName("enrollmentType")]
         public string EnrollmentType { get; set; }
@@ -119,6 +124,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensionAttributes")]
         public OnPremisesExtensionAttributes ExtensionAttributes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hostnames.
+        /// </summary>
+        [JsonPropertyName("hostnames")]
+        public IEnumerable<string> Hostnames { get; set; }
     
         /// <summary>
         /// Gets or sets is compliant.
@@ -136,12 +147,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is rooted.
+        /// true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         /// </summary>
         [JsonPropertyName("isRooted")]
         public bool? IsRooted { get; set; }
     
         /// <summary>
         /// Gets or sets management type.
+        /// Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
         /// </summary>
         [JsonPropertyName("managementType")]
         public string ManagementType { get; set; }
@@ -190,6 +203,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registration date time.
+        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonPropertyName("registrationDateTime")]
         public DateTimeOffset? RegistrationDateTime { get; set; }
@@ -245,6 +259,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usage rights.
+        /// </summary>
+        [JsonPropertyName("usageRights")]
+        public IDeviceUsageRightsCollectionPage UsageRights { get; set; }
     
         /// <summary>
         /// Gets or sets member of.

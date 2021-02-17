@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <returns>The created MacOSCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSCompliancePolicy using POST.
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCompliancePolicy.</returns>
         System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSCompliancePolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOSCompliancePolicy.
         /// </summary>
         /// <returns>The MacOSCompliancePolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSCompliancePolicy.</returns>
         System.Threading.Tasks.Task<MacOSCompliancePolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOSCompliancePolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSCompliancePolicy.</returns>
         System.Threading.Tasks.Task<MacOSCompliancePolicy> UpdateAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PATCH and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> UpdateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PATCH and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> UpdateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

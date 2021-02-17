@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
         /// <returns>The created Windows10VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10VpnConfiguration> CreateAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10VpnConfiguration> CreateAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10VpnConfiguration using POST.
         /// </summary>
         /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10VpnConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10VpnConfiguration> CreateAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10VpnConfiguration using POST and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> CreateResponseAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10VpnConfiguration using POST and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10VpnConfigurationToCreate">The Windows10VpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> CreateResponseAsync(Windows10VpnConfiguration windows10VpnConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10VpnConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Windows10VpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Windows10VpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Windows10VpnConfiguration.
         /// </summary>
         /// <returns>The Windows10VpnConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10VpnConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10VpnConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Windows10VpnConfiguration and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10VpnConfiguration and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Windows10VpnConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10VpnConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10VpnConfiguration> UpdateAsync(Windows10VpnConfiguration windows10VpnConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Windows10VpnConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10VpnConfigurationToUpdate">The Windows10VpnConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> UpdateResponseAsync(Windows10VpnConfiguration windows10VpnConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10VpnConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10VpnConfigurationToUpdate">The Windows10VpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10VpnConfiguration>> UpdateResponseAsync(Windows10VpnConfiguration windows10VpnConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

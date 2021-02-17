@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagementConditionStatement to the collection via POST and returns a <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.
+        /// </summary>
+        /// <param name="managementConditionStatement">The ManagementConditionStatement to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementConditionStatement managementConditionStatement)
+        {
+            return this.AddResponseAsync(managementConditionStatement, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagementConditionStatement to the collection via POST and returns a <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.
+        /// </summary>
+        /// <param name="managementConditionStatement">The ManagementConditionStatement to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementConditionStatement managementConditionStatement, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(managementConditionStatement.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceManagement/managementConditionStatements/{1}", this.Client.BaseUrl, managementConditionStatement.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

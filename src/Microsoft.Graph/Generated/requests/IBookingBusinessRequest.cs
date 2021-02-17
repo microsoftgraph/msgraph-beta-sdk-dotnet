@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
         /// <returns>The created BookingBusiness.</returns>
-        System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate);
+
+        /// <summary>
         /// Creates the specified BookingBusiness using POST.
         /// </summary>
         /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingBusiness.</returns>
         System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BookingBusiness using POST and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> CreateResponseAsync(BookingBusiness bookingBusinessToCreate);
+
+        /// <summary>
+        /// Creates the specified BookingBusiness using POST and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> CreateResponseAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BookingBusiness.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified BookingBusiness and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified BookingBusiness and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified BookingBusiness.
         /// </summary>
         /// <returns>The BookingBusiness.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingBusiness.</returns>
         System.Threading.Tasks.Task<BookingBusiness> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified BookingBusiness and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified BookingBusiness and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified BookingBusiness using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingBusiness.</returns>
         System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PATCH and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> UpdateResponseAsync(BookingBusiness bookingBusinessToUpdate);
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PATCH and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> UpdateResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonCertification.</returns>
         System.Threading.Tasks.Task<PersonCertification> AddAsync(PersonCertification personCertification, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PersonCertification to the collection via POST and returns a <see cref="GraphResponse{PersonCertification}"/> object of the request.
+        /// </summary>
+        /// <param name="personCertification">The PersonCertification to add.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> AddResponseAsync(PersonCertification personCertification);
+
+        /// <summary>
+        /// Adds the specified PersonCertification to the collection via POST and returns a <see cref="GraphResponse{PersonCertification}"/> object of the request.
+        /// </summary>
+        /// <param name="personCertification">The PersonCertification to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonCertification>> AddResponseAsync(PersonCertification personCertification, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IProfileCertificationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileCertificationsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileCertificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

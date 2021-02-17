@@ -12,7 +12,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrivilegedRoleAssignmentRequestMyCollectionPage.
     /// </summary>
-    public partial class PrivilegedRoleAssignmentRequestMyCollectionPage : CollectionPage<PrivilegedRoleAssignmentRequest>, IPrivilegedRoleAssignmentRequestMyCollectionPage
+    public partial class PrivilegedRoleAssignmentRequestMyCollectionPage : CollectionPage<PrivilegedRoleAssignmentRequestObject>, IPrivilegedRoleAssignmentRequestMyCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IPrivilegedRoleAssignmentRequestMyRequest"/> instance.

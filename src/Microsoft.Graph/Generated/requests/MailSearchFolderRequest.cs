@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate)
+        {
+            return this.CreateResponseAsync(mailSearchFolderToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MailSearchFolder>(mailSearchFolderToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MailSearchFolder.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MailSearchFolder>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MailSearchFolder and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MailSearchFolder and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MailSearchFolder>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MailSearchFolder>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MailSearchFolder>(mailSearchFolderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MailSearchFolder using PATCH and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToUpdate">The MailSearchFolder to update.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> UpdateResponseAsync(MailSearchFolder mailSearchFolderToUpdate)
+        {
+            return this.UpdateResponseAsync(mailSearchFolderToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MailSearchFolder using PATCH and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToUpdate">The MailSearchFolder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> UpdateResponseAsync(MailSearchFolder mailSearchFolderToUpdate, CancellationToken cancellationToken)
+        {
+			if (mailSearchFolderToUpdate.AdditionalData != null)
+			{
+				if (mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailSearchFolderToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mailSearchFolderToUpdate.AdditionalData != null)
+            {
+                if (mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mailSearchFolderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailSearchFolderToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MailSearchFolder>(mailSearchFolderToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

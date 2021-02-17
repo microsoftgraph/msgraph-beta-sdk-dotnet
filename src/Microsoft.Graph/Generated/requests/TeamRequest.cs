@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate)
+        {
+            return this.CreateResponseAsync(teamToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Team>(teamToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Team.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Team>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Team and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Team and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Team>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Team and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Team>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Team and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Team>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Team>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Team>(teamToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Team using PATCH and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToUpdate">The Team to update.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Team>> UpdateResponseAsync(Team teamToUpdate)
+        {
+            return this.UpdateResponseAsync(teamToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Team using PATCH and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToUpdate">The Team to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Team>> UpdateResponseAsync(Team teamToUpdate, CancellationToken cancellationToken)
+        {
+			if (teamToUpdate.AdditionalData != null)
+			{
+				if (teamToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (teamToUpdate.AdditionalData != null)
+            {
+                if (teamToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Team>(teamToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -309,6 +422,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         teamToInitialize.Owners.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (teamToInitialize.Tags != null && teamToInitialize.Tags.CurrentPage != null)
+                {
+                    teamToInitialize.Tags.AdditionalData = teamToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    teamToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        teamToInitialize.Tags.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

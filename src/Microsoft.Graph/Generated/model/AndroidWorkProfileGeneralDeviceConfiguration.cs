@@ -120,6 +120,13 @@ namespace Microsoft.Graph
         public bool? VpnEnableAlwaysOnLockdownMode { get; set; }
     
         /// <summary>
+        /// Gets or sets work profile allow app installs from unknown sources.
+        /// Indicates whether to allow installation of apps from unknown sources.
+        /// </summary>
+        [JsonPropertyName("workProfileAllowAppInstallsFromUnknownSources")]
+        public bool? WorkProfileAllowAppInstallsFromUnknownSources { get; set; }
+    
+        /// <summary>
         /// Gets or sets work profile allow widgets.
         /// Allow widgets from work profile apps.
         /// </summary>

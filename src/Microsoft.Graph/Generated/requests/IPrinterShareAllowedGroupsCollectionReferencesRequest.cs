@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="group">The Group to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(Group group, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Group to the collection via POST and returns a <see cref="GraphResponse{Group}"/> object of the request.
+        /// </summary>
+        /// <param name="group">The Group to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Group group);
+
+        /// <summary>
+        /// Adds the specified Group to the collection via POST and returns a <see cref="GraphResponse{Group}"/> object of the request.
+        /// </summary>
+        /// <param name="group">The Group to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Group group, CancellationToken cancellationToken);
     }
 }

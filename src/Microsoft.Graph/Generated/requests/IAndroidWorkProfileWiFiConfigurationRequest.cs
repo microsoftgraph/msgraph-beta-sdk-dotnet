@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileWiFiConfigurationToCreate">The AndroidWorkProfileWiFiConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> CreateAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> CreateAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidWorkProfileWiFiConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileWiFiConfigurationToCreate">The AndroidWorkProfileWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> CreateAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileWiFiConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToCreate">The AndroidWorkProfileWiFiConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> CreateResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileWiFiConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToCreate">The AndroidWorkProfileWiFiConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> CreateResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileWiFiConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidWorkProfileWiFiConfiguration.
         /// </summary>
         /// <returns>The AndroidWorkProfileWiFiConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileWiFiConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> UpdateAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> UpdateResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileWiFiConfigurationToUpdate">The AndroidWorkProfileWiFiConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> UpdateResponseAsync(AndroidWorkProfileWiFiConfiguration androidWorkProfileWiFiConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

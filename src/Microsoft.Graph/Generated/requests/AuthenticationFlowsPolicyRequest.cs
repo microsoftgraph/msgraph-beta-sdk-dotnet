@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AuthenticationFlowsPolicy using POST and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToCreate">The AuthenticationFlowsPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> CreateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate)
+        {
+            return this.CreateResponseAsync(authenticationFlowsPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AuthenticationFlowsPolicy using POST and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToCreate">The AuthenticationFlowsPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> CreateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AuthenticationFlowsPolicy>(authenticationFlowsPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AuthenticationFlowsPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AuthenticationFlowsPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AuthenticationFlowsPolicy and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationFlowsPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AuthenticationFlowsPolicy>(authenticationFlowsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AuthenticationFlowsPolicy using PATCH and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> UpdateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(authenticationFlowsPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AuthenticationFlowsPolicy using PATCH and returns a <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object.
+        /// </summary>
+        /// <param name="authenticationFlowsPolicyToUpdate">The AuthenticationFlowsPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuthenticationFlowsPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationFlowsPolicy>> UpdateResponseAsync(AuthenticationFlowsPolicy authenticationFlowsPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (authenticationFlowsPolicyToUpdate.AdditionalData != null)
+			{
+				if (authenticationFlowsPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					authenticationFlowsPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationFlowsPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (authenticationFlowsPolicyToUpdate.AdditionalData != null)
+            {
+                if (authenticationFlowsPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    authenticationFlowsPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationFlowsPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AuthenticationFlowsPolicy>(authenticationFlowsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

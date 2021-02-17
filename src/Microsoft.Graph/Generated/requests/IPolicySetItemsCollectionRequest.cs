@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySetItem.</returns>
         System.Threading.Tasks.Task<PolicySetItem> AddAsync(PolicySetItem policySetItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PolicySetItem to the collection via POST and returns a <see cref="GraphResponse{PolicySetItem}"/> object of the request.
+        /// </summary>
+        /// <param name="policySetItem">The PolicySetItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> AddResponseAsync(PolicySetItem policySetItem);
+
+        /// <summary>
+        /// Adds the specified PolicySetItem to the collection via POST and returns a <see cref="GraphResponse{PolicySetItem}"/> object of the request.
+        /// </summary>
+        /// <param name="policySetItem">The PolicySetItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> AddResponseAsync(PolicySetItem policySetItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IPolicySetItemsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicySetItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicySetItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItemsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicySetItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItemsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

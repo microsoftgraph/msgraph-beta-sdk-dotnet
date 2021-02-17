@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="directoryObject">The DirectoryObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryObject">The DirectoryObject to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DirectoryObject directoryObject);
+
+        /// <summary>
+        /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryObject">The DirectoryObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken);
     }
 }

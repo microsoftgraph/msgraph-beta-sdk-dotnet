@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public RbacApplication Directory { get; set; }
     
         /// <summary>
+        /// Gets or sets entitlement management.
+        /// The RbacApplication for Entitlement Management
+        /// </summary>
+        [JsonPropertyName("entitlementManagement")]
+        public RbacApplication EntitlementManagement { get; set; }
+    
+        /// <summary>
         /// Gets or sets device management.
         /// The RbacApplication for Device Management
         /// </summary>

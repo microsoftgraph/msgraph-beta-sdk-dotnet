@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFile, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionAppLockerFile to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFile">The WindowsInformationProtectionAppLockerFile to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> AddResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile)
+        {
+            return this.AddResponseAsync(windowsInformationProtectionAppLockerFile, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionAppLockerFile to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFile">The WindowsInformationProtectionAppLockerFile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> AddResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFile, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFile, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsInformationProtectionExemptAppLockerFilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionExemptAppLockerFilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionExemptAppLockerFilesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsInformationProtectionExemptAppLockerFilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionExemptAppLockerFilesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionExemptAppLockerFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionExemptAppLockerFilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

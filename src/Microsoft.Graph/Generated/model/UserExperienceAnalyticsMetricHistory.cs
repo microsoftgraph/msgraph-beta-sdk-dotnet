@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? MetricDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets metric type.
+        /// The user experience analytics metric type.
+        /// </summary>
+        [JsonPropertyName("metricType")]
+        public string MetricType { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics metric.
         /// User experience analytics metric.
         /// </summary>

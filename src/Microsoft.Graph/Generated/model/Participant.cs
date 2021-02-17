@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets info.
-        /// The participant of the participant.
+        /// Information about the participant.
         /// </summary>
         [JsonPropertyName("info")]
         public ParticipantInfo Info { get; set; }

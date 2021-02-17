@@ -43,6 +43,13 @@ namespace Microsoft.Graph
         public IPlannerPlansCollectionPage Plans { get; set; }
     
         /// <summary>
+        /// Gets or sets rosters.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
+        /// </summary>
+        [JsonPropertyName("rosters")]
+        public IPlannerRostersCollectionPage Rosters { get; set; }
+    
+        /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>

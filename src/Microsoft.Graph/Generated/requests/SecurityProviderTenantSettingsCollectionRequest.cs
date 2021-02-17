@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ProviderTenantSetting>(providerTenantSetting, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ProviderTenantSetting to the collection via POST and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.
+        /// </summary>
+        /// <param name="providerTenantSetting">The ProviderTenantSetting to add.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> AddResponseAsync(ProviderTenantSetting providerTenantSetting)
+        {
+            return this.AddResponseAsync(providerTenantSetting, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ProviderTenantSetting to the collection via POST and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.
+        /// </summary>
+        /// <param name="providerTenantSetting">The ProviderTenantSetting to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> AddResponseAsync(ProviderTenantSetting providerTenantSetting, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ProviderTenantSetting>(providerTenantSetting, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityProviderTenantSettingsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityProviderTenantSettingsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityProviderTenantSettingsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityProviderTenantSettingsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityProviderTenantSettingsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityProviderTenantSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecurityProviderTenantSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

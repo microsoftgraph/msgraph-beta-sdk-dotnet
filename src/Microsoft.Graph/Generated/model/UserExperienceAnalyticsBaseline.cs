@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
+        /// Gets or sets app health metrics.
+        /// The user experience analytics app health metrics.
+        /// </summary>
+        [JsonPropertyName("appHealthMetrics")]
+        public UserExperienceAnalyticsCategory AppHealthMetrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets best practices metrics.
         /// The user experience analytics best practices metrics.
         /// </summary>
@@ -69,6 +76,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("rebootAnalyticsMetrics")]
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics { get; set; }
+    
+        /// <summary>
+        /// Gets or sets resource performance metrics.
+        /// The user experience analytics resource performance metrics.
+        /// </summary>
+        [JsonPropertyName("resourcePerformanceMetrics")]
+        public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
     }
 }

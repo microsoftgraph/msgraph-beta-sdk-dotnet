@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
         /// <returns>The created MobileAppContent.</returns>
-        System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppContent using POST.
         /// </summary>
         /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppContent.</returns>
         System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppContent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MobileAppContent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppContent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MobileAppContent.
         /// </summary>
         /// <returns>The MobileAppContent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppContent.</returns>
         System.Threading.Tasks.Task<MobileAppContent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MobileAppContent and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppContent and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MobileAppContent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppContent.</returns>
         System.Threading.Tasks.Task<MobileAppContent> UpdateAsync(MobileAppContent mobileAppContentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MobileAppContent using PATCH and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToUpdate">The MobileAppContent to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> UpdateResponseAsync(MobileAppContent mobileAppContentToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppContent using PATCH and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToUpdate">The MobileAppContent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> UpdateResponseAsync(MobileAppContent mobileAppContentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

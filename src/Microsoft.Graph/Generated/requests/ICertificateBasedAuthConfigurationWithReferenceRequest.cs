@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The CertificateBasedAuthConfiguration.</returns>
         System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified CertificateBasedAuthConfiguration using POST.
         /// </summary>
         /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
         /// <returns>The created CertificateBasedAuthConfiguration.</returns>
-        System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified CertificateBasedAuthConfiguration using POST.
         /// </summary>
         /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CertificateBasedAuthConfiguration.</returns>
         System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified CertificateBasedAuthConfiguration using POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> CreateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified CertificateBasedAuthConfiguration using POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> CreateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified CertificateBasedAuthConfiguration using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> UpdateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> UpdateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> UpdateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified CertificateBasedAuthConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

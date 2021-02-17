@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceCompliancePolicyDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToCreate">The DeviceCompliancePolicyDeviceStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> CreateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToCreate)
+        {
+            return this.CreateResponseAsync(deviceCompliancePolicyDeviceStateSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToCreate">The DeviceCompliancePolicyDeviceStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> CreateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceStateSummary>(deviceCompliancePolicyDeviceStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceCompliancePolicyDeviceStateSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceCompliancePolicyDeviceStateSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceCompliancePolicyDeviceStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceCompliancePolicyDeviceStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceCompliancePolicyDeviceStateSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceCompliancePolicyDeviceStateSummary and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceCompliancePolicyDeviceStateSummary and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceStateSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceCompliancePolicyDeviceStateSummary>(deviceCompliancePolicyDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyDeviceStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToUpdate">The DeviceCompliancePolicyDeviceStateSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> UpdateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceCompliancePolicyDeviceStateSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyDeviceStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToUpdate">The DeviceCompliancePolicyDeviceStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> UpdateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData != null)
+			{
+				if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicyDeviceStateSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData != null)
+            {
+                if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicyDeviceStateSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceStateSummary>(deviceCompliancePolicyDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

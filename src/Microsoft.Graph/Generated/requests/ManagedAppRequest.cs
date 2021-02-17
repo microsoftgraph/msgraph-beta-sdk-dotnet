@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedApp using POST and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="managedAppToCreate">The ManagedApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedApp>> CreateResponseAsync(ManagedApp managedAppToCreate)
+        {
+            return this.CreateResponseAsync(managedAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedApp using POST and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="managedAppToCreate">The ManagedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedApp>> CreateResponseAsync(ManagedApp managedAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedApp>(managedAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ManagedApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ManagedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ManagedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ManagedApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ManagedApp>(managedAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedApp using PATCH and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="managedAppToUpdate">The ManagedApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedApp>> UpdateResponseAsync(ManagedApp managedAppToUpdate)
+        {
+            return this.UpdateResponseAsync(managedAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedApp using PATCH and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="managedAppToUpdate">The ManagedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedApp>> UpdateResponseAsync(ManagedApp managedAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (managedAppToUpdate.AdditionalData != null)
+			{
+				if (managedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (managedAppToUpdate.AdditionalData != null)
+            {
+                if (managedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ManagedApp>(managedAppToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

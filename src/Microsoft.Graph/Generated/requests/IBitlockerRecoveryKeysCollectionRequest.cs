@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BitlockerRecoveryKey.</returns>
         System.Threading.Tasks.Task<BitlockerRecoveryKey> AddAsync(BitlockerRecoveryKey bitlockerRecoveryKey, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified BitlockerRecoveryKey to the collection via POST and returns a <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.
+        /// </summary>
+        /// <param name="bitlockerRecoveryKey">The BitlockerRecoveryKey to add.</param>
+        /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKey>> AddResponseAsync(BitlockerRecoveryKey bitlockerRecoveryKey);
+
+        /// <summary>
+        /// Adds the specified BitlockerRecoveryKey to the collection via POST and returns a <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.
+        /// </summary>
+        /// <param name="bitlockerRecoveryKey">The BitlockerRecoveryKey to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKey>> AddResponseAsync(BitlockerRecoveryKey bitlockerRecoveryKey, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IBitlockerRecoveryKeysCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{BitlockerRecoveryKeysCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKeysCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKeysCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{BitlockerRecoveryKeysCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKeysCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKeysCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

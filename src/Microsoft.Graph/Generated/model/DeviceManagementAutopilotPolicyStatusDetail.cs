@@ -43,6 +43,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets error code.
+        /// The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
+        /// </summary>
+        [JsonPropertyName("errorCode")]
+        public Int32? ErrorCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets last reported date time.
         /// Timestamp of the reported policy status
         /// </summary>

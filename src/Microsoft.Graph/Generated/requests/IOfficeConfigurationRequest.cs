@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="officeConfigurationToCreate">The OfficeConfiguration to create.</param>
         /// <returns>The created OfficeConfiguration.</returns>
-        System.Threading.Tasks.Task<OfficeConfiguration> CreateAsync(OfficeConfiguration officeConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OfficeConfiguration> CreateAsync(OfficeConfiguration officeConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified OfficeConfiguration using POST.
         /// </summary>
         /// <param name="officeConfigurationToCreate">The OfficeConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeConfiguration.</returns>
         System.Threading.Tasks.Task<OfficeConfiguration> CreateAsync(OfficeConfiguration officeConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OfficeConfiguration using POST and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="officeConfigurationToCreate">The OfficeConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> CreateResponseAsync(OfficeConfiguration officeConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified OfficeConfiguration using POST and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="officeConfigurationToCreate">The OfficeConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> CreateResponseAsync(OfficeConfiguration officeConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OfficeConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OfficeConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OfficeConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OfficeConfiguration.
         /// </summary>
         /// <returns>The OfficeConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfficeConfiguration.</returns>
         System.Threading.Tasks.Task<OfficeConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OfficeConfiguration and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OfficeConfiguration and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OfficeConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeConfiguration.</returns>
         System.Threading.Tasks.Task<OfficeConfiguration> UpdateAsync(OfficeConfiguration officeConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OfficeConfiguration using PATCH and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="officeConfigurationToUpdate">The OfficeConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> UpdateResponseAsync(OfficeConfiguration officeConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified OfficeConfiguration using PATCH and returns a <see cref="GraphResponse{OfficeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="officeConfigurationToUpdate">The OfficeConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OfficeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeConfiguration>> UpdateResponseAsync(OfficeConfiguration officeConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

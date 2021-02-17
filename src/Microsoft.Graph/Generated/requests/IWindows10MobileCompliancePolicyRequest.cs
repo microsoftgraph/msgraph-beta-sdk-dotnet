@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10MobileCompliancePolicyToCreate">The Windows10MobileCompliancePolicy to create.</param>
         /// <returns>The created Windows10MobileCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> CreateAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> CreateAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10MobileCompliancePolicy using POST.
         /// </summary>
         /// <param name="windows10MobileCompliancePolicyToCreate">The Windows10MobileCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10MobileCompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> CreateAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10MobileCompliancePolicy using POST and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToCreate">The Windows10MobileCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> CreateResponseAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10MobileCompliancePolicy using POST and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToCreate">The Windows10MobileCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> CreateResponseAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10MobileCompliancePolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Windows10MobileCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Windows10MobileCompliancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Windows10MobileCompliancePolicy.
         /// </summary>
         /// <returns>The Windows10MobileCompliancePolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10MobileCompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Windows10MobileCompliancePolicy and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10MobileCompliancePolicy and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Windows10MobileCompliancePolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10MobileCompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10MobileCompliancePolicy> UpdateAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Windows10MobileCompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToUpdate">The Windows10MobileCompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> UpdateResponseAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10MobileCompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10MobileCompliancePolicyToUpdate">The Windows10MobileCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10MobileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10MobileCompliancePolicy>> UpdateResponseAsync(Windows10MobileCompliancePolicy windows10MobileCompliancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

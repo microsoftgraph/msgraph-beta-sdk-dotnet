@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
         /// <returns>The created AuthenticationContextClassReference.</returns>
-        System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate);
+
+        /// <summary>
         /// Creates the specified AuthenticationContextClassReference using POST.
         /// </summary>
         /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationContextClassReference.</returns>
         System.Threading.Tasks.Task<AuthenticationContextClassReference> CreateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AuthenticationContextClassReference using POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> CreateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate);
+
+        /// <summary>
+        /// Creates the specified AuthenticationContextClassReference using POST and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="authenticationContextClassReferenceToCreate">The AuthenticationContextClassReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> CreateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AuthenticationContextClassReference.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AuthenticationContextClassReference.
         /// </summary>
         /// <returns>The AuthenticationContextClassReference.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationContextClassReference.</returns>
         System.Threading.Tasks.Task<AuthenticationContextClassReference> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AuthenticationContextClassReference and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AuthenticationContextClassReference using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationContextClassReference.</returns>
         System.Threading.Tasks.Task<AuthenticationContextClassReference> UpdateAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AuthenticationContextClassReference using PATCH and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference to update.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> UpdateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate);
+
+        /// <summary>
+        /// Updates the specified AuthenticationContextClassReference using PATCH and returns a <see cref="GraphResponse{AuthenticationContextClassReference}"/> object.
+        /// </summary>
+        /// <param name="authenticationContextClassReferenceToUpdate">The AuthenticationContextClassReference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuthenticationContextClassReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationContextClassReference>> UpdateResponseAsync(AuthenticationContextClassReference authenticationContextClassReferenceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

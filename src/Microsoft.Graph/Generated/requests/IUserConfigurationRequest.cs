@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userConfigurationToCreate">The UserConfiguration to create.</param>
         /// <returns>The created UserConfiguration.</returns>
-        System.Threading.Tasks.Task<UserConfiguration> CreateAsync(UserConfiguration userConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserConfiguration> CreateAsync(UserConfiguration userConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified UserConfiguration using POST.
         /// </summary>
         /// <param name="userConfigurationToCreate">The UserConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConfiguration.</returns>
         System.Threading.Tasks.Task<UserConfiguration> CreateAsync(UserConfiguration userConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserConfiguration using POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userConfigurationToCreate">The UserConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> CreateResponseAsync(UserConfiguration userConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified UserConfiguration using POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userConfigurationToCreate">The UserConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> CreateResponseAsync(UserConfiguration userConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified UserConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified UserConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified UserConfiguration.
         /// </summary>
         /// <returns>The UserConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserConfiguration.</returns>
         System.Threading.Tasks.Task<UserConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified UserConfiguration and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserConfiguration and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified UserConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserConfiguration.</returns>
         System.Threading.Tasks.Task<UserConfiguration> UpdateAsync(UserConfiguration userConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified UserConfiguration using PATCH and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userConfigurationToUpdate">The UserConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> UpdateResponseAsync(UserConfiguration userConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserConfiguration using PATCH and returns a <see cref="GraphResponse{UserConfiguration}"/> object.
+        /// </summary>
+        /// <param name="userConfigurationToUpdate">The UserConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> UpdateResponseAsync(UserConfiguration userConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

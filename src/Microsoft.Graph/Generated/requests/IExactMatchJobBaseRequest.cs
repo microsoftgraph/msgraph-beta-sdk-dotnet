@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
         /// <returns>The created ExactMatchJobBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate);
+
+        /// <summary>
         /// Creates the specified ExactMatchJobBase using POST.
         /// </summary>
         /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchJobBase.</returns>
         System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ExactMatchJobBase using POST and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> CreateResponseAsync(ExactMatchJobBase exactMatchJobBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified ExactMatchJobBase using POST and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> CreateResponseAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ExactMatchJobBase.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ExactMatchJobBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ExactMatchJobBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ExactMatchJobBase.
         /// </summary>
         /// <returns>The ExactMatchJobBase.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchJobBase.</returns>
         System.Threading.Tasks.Task<ExactMatchJobBase> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ExactMatchJobBase and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ExactMatchJobBase and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ExactMatchJobBase using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchJobBase.</returns>
         System.Threading.Tasks.Task<ExactMatchJobBase> UpdateAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ExactMatchJobBase using PATCH and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> UpdateResponseAsync(ExactMatchJobBase exactMatchJobBaseToUpdate);
+
+        /// <summary>
+        /// Updates the specified ExactMatchJobBase using PATCH and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> UpdateResponseAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

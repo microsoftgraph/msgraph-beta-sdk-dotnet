@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
         /// <returns>The created EmailActivitySummary.</returns>
-        System.Threading.Tasks.Task<EmailActivitySummary> CreateAsync(EmailActivitySummary emailActivitySummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EmailActivitySummary> CreateAsync(EmailActivitySummary emailActivitySummaryToCreate);
+
+        /// <summary>
         /// Creates the specified EmailActivitySummary using POST.
         /// </summary>
         /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailActivitySummary.</returns>
         System.Threading.Tasks.Task<EmailActivitySummary> CreateAsync(EmailActivitySummary emailActivitySummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EmailActivitySummary using POST and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> CreateResponseAsync(EmailActivitySummary emailActivitySummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified EmailActivitySummary using POST and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="emailActivitySummaryToCreate">The EmailActivitySummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> CreateResponseAsync(EmailActivitySummary emailActivitySummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EmailActivitySummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EmailActivitySummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EmailActivitySummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EmailActivitySummary.
         /// </summary>
         /// <returns>The EmailActivitySummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailActivitySummary.</returns>
         System.Threading.Tasks.Task<EmailActivitySummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EmailActivitySummary and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EmailActivitySummary and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EmailActivitySummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailActivitySummary.</returns>
         System.Threading.Tasks.Task<EmailActivitySummary> UpdateAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EmailActivitySummary using PATCH and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="emailActivitySummaryToUpdate">The EmailActivitySummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> UpdateResponseAsync(EmailActivitySummary emailActivitySummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified EmailActivitySummary using PATCH and returns a <see cref="GraphResponse{EmailActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="emailActivitySummaryToUpdate">The EmailActivitySummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmailActivitySummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailActivitySummary>> UpdateResponseAsync(EmailActivitySummary emailActivitySummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

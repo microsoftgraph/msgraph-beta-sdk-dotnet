@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
         /// <returns>The created MacOSImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> CreateAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> CreateAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> CreateAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> CreateResponseAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="macOSImportedPFXCertificateProfileToCreate">The MacOSImportedPFXCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> CreateResponseAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSImportedPFXCertificateProfile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOSImportedPFXCertificateProfile.
         /// </summary>
         /// <returns>The MacOSImportedPFXCertificateProfile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOSImportedPFXCertificateProfile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSImportedPFXCertificateProfile.</returns>
         System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> UpdateAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOSImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="macOSImportedPFXCertificateProfileToUpdate">The MacOSImportedPFXCertificateProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> UpdateResponseAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOSImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="macOSImportedPFXCertificateProfileToUpdate">The MacOSImportedPFXCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> UpdateResponseAsync(MacOSImportedPFXCertificateProfile macOSImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

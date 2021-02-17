@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosMobileAppConfiguration using POST and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosMobileAppConfigurationToCreate">The IosMobileAppConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> CreateResponseAsync(IosMobileAppConfiguration iosMobileAppConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(iosMobileAppConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosMobileAppConfiguration using POST and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosMobileAppConfigurationToCreate">The IosMobileAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> CreateResponseAsync(IosMobileAppConfiguration iosMobileAppConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosMobileAppConfiguration>(iosMobileAppConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosMobileAppConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<IosMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<IosMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified IosMobileAppConfiguration and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosMobileAppConfiguration and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<IosMobileAppConfiguration>(iosMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosMobileAppConfigurationToUpdate">The IosMobileAppConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> UpdateResponseAsync(IosMobileAppConfiguration iosMobileAppConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(iosMobileAppConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{IosMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosMobileAppConfigurationToUpdate">The IosMobileAppConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosMobileAppConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosMobileAppConfiguration>> UpdateResponseAsync(IosMobileAppConfiguration iosMobileAppConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosMobileAppConfigurationToUpdate.AdditionalData != null)
+			{
+				if (iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosMobileAppConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosMobileAppConfigurationToUpdate.AdditionalData != null)
+            {
+                if (iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosMobileAppConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosMobileAppConfiguration>(iosMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

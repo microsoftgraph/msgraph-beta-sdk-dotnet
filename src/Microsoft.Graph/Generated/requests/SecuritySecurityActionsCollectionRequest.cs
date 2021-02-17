@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SecurityAction>(securityAction, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SecurityAction to the collection via POST and returns a <see cref="GraphResponse{SecurityAction}"/> object of the request.
+        /// </summary>
+        /// <param name="securityAction">The SecurityAction to add.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction)
+        {
+            return this.AddResponseAsync(securityAction, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SecurityAction to the collection via POST and returns a <see cref="GraphResponse{SecurityAction}"/> object of the request.
+        /// </summary>
+        /// <param name="securityAction">The SecurityAction to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecurityAction>(securityAction, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecuritySecurityActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

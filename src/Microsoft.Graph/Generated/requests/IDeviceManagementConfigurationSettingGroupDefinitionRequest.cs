@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingGroupDefinitionToCreate">The DeviceManagementConfigurationSettingGroupDefinition to create.</param>
         /// <returns>The created DeviceManagementConfigurationSettingGroupDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationSettingGroupDefinition> CreateAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementConfigurationSettingGroupDefinition> CreateAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementConfigurationSettingGroupDefinition using POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingGroupDefinitionToCreate">The DeviceManagementConfigurationSettingGroupDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationSettingGroupDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementConfigurationSettingGroupDefinition> CreateAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementConfigurationSettingGroupDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSettingGroupDefinitionToCreate">The DeviceManagementConfigurationSettingGroupDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> CreateResponseAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementConfigurationSettingGroupDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSettingGroupDefinitionToCreate">The DeviceManagementConfigurationSettingGroupDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> CreateResponseAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementConfigurationSettingGroupDefinition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationSettingGroupDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationSettingGroupDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementConfigurationSettingGroupDefinition.
         /// </summary>
         /// <returns>The DeviceManagementConfigurationSettingGroupDefinition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementConfigurationSettingGroupDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementConfigurationSettingGroupDefinition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationSettingGroupDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationSettingGroupDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementConfigurationSettingGroupDefinition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementConfigurationSettingGroupDefinition.</returns>
         System.Threading.Tasks.Task<DeviceManagementConfigurationSettingGroupDefinition> UpdateAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSettingGroupDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSettingGroupDefinitionToUpdate">The DeviceManagementConfigurationSettingGroupDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSettingGroupDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSettingGroupDefinitionToUpdate">The DeviceManagementConfigurationSettingGroupDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingGroupDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingGroupDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSettingGroupDefinition deviceManagementConfigurationSettingGroupDefinitionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

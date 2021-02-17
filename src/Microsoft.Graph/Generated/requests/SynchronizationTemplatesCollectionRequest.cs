@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SynchronizationTemplate>(synchronizationTemplate, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SynchronizationTemplate to the collection via POST and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> AddResponseAsync(SynchronizationTemplate synchronizationTemplate)
+        {
+            return this.AddResponseAsync(synchronizationTemplate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SynchronizationTemplate to the collection via POST and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> AddResponseAsync(SynchronizationTemplate synchronizationTemplate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SynchronizationTemplate>(synchronizationTemplate, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SynchronizationTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

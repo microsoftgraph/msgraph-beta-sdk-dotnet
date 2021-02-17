@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="user">The User to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(User user, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
+        /// </summary>
+        /// <param name="user">The User to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(User user);
+
+        /// <summary>
+        /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
+        /// </summary>
+        /// <param name="user">The User to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(User user, CancellationToken cancellationToken);
     }
 }

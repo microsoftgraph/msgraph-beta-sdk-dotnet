@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <returns>The created ShipmentMethod.</returns>
-        System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate);
+
+        /// <summary>
         /// Creates the specified ShipmentMethod using POST.
         /// </summary>
         /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ShipmentMethod.</returns>
         System.Threading.Tasks.Task<ShipmentMethod> CreateAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ShipmentMethod using POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate);
+
+        /// <summary>
+        /// Creates the specified ShipmentMethod using POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ShipmentMethod.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ShipmentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ShipmentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ShipmentMethod.
         /// </summary>
         /// <returns>The ShipmentMethod.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ShipmentMethod.</returns>
         System.Threading.Tasks.Task<ShipmentMethod> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ShipmentMethod and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ShipmentMethod and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ShipmentMethod using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ShipmentMethod.</returns>
         System.Threading.Tasks.Task<ShipmentMethod> UpdateAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ShipmentMethod using PATCH and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToUpdate">The ShipmentMethod to update.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate);
+
+        /// <summary>
+        /// Updates the specified ShipmentMethod using PATCH and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToUpdate">The ShipmentMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

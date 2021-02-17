@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MicrosoftTunnelConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> CreateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(microsoftTunnelConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MicrosoftTunnelConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> CreateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelConfiguration>(microsoftTunnelConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MicrosoftTunnelConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MicrosoftTunnelConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MicrosoftTunnelConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MicrosoftTunnelConfiguration>(microsoftTunnelConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelConfigurationToUpdate">The MicrosoftTunnelConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> UpdateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(microsoftTunnelConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelConfigurationToUpdate">The MicrosoftTunnelConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> UpdateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (microsoftTunnelConfigurationToUpdate.AdditionalData != null)
+			{
+				if (microsoftTunnelConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					microsoftTunnelConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (microsoftTunnelConfigurationToUpdate.AdditionalData != null)
+            {
+                if (microsoftTunnelConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    microsoftTunnelConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelConfiguration>(microsoftTunnelConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
-        System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate);
+
+        /// <summary>
         /// Creates the specified ActivityHistoryItem using POST.
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate);
+
+        /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ActivityHistoryItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ActivityHistoryItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ActivityHistoryItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ActivityHistoryItem.
         /// </summary>
         /// <returns>The ActivityHistoryItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ActivityHistoryItem and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ActivityHistoryItem and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ActivityHistoryItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> UpdateAsync(ActivityHistoryItem activityHistoryItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ActivityHistoryItem using PATCH and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToUpdate">The ActivityHistoryItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> UpdateResponseAsync(ActivityHistoryItem activityHistoryItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified ActivityHistoryItem using PATCH and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToUpdate">The ActivityHistoryItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> UpdateResponseAsync(ActivityHistoryItem activityHistoryItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

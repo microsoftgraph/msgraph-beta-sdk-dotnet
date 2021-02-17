@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<Extension>(extension, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Extension to the collection via POST and returns a <see cref="GraphResponse{Extension}"/> object of the request.
+        /// </summary>
+        /// <param name="extension">The Extension to add.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Extension>> AddResponseAsync(Extension extension)
+        {
+            return this.AddResponseAsync(extension, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Extension to the collection via POST and returns a <see cref="GraphResponse{Extension}"/> object of the request.
+        /// </summary>
+        /// <param name="extension">The Extension to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Extension>> AddResponseAsync(Extension extension, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            extension.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(extension.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<Extension>(extension, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AdministrativeUnitExtensionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnitExtensionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnitExtensionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AdministrativeUnitExtensionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnitExtensionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnitExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AdministrativeUnitExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

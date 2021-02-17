@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosManagedAppProtection using POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToCreate">The IosManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> CreateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToCreate)
+        {
+            return this.CreateResponseAsync(iosManagedAppProtectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosManagedAppProtection using POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToCreate">The IosManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> CreateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppProtection>(iosManagedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosManagedAppProtection.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<IosManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosManagedAppProtection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosManagedAppProtection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<IosManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified IosManagedAppProtection and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosManagedAppProtection and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppProtection>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<IosManagedAppProtection>(iosManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosManagedAppProtection using PATCH and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToUpdate">The IosManagedAppProtection to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> UpdateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToUpdate)
+        {
+            return this.UpdateResponseAsync(iosManagedAppProtectionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosManagedAppProtection using PATCH and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToUpdate">The IosManagedAppProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> UpdateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosManagedAppProtectionToUpdate.AdditionalData != null)
+			{
+				if (iosManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosManagedAppProtectionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosManagedAppProtectionToUpdate.AdditionalData != null)
+            {
+                if (iosManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosManagedAppProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosManagedAppProtectionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppProtection>(iosManagedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Permission>(permission, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Permission to the collection via POST and returns a <see cref="GraphResponse{Permission}"/> object of the request.
+        /// </summary>
+        /// <param name="permission">The Permission to add.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission)
+        {
+            return this.AddResponseAsync(permission, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Permission to the collection via POST and returns a <see cref="GraphResponse{Permission}"/> object of the request.
+        /// </summary>
+        /// <param name="permission">The Permission to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Permission>(permission, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemPermissionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DriveItemPermissionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItemPermissionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemPermissionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemPermissionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItemPermissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DriveItemPermissionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

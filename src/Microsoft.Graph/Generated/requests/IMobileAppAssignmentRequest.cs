@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppAssignment using POST.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppAssignment using POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> CreateResponseAsync(MobileAppAssignment mobileAppAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppAssignment using POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> CreateResponseAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MobileAppAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MobileAppAssignment.
         /// </summary>
         /// <returns>The MobileAppAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MobileAppAssignment and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppAssignment and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MobileAppAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> UpdateAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> UpdateResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToUpdate">The MobileAppAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> UpdateResponseAsync(MobileAppAssignment mobileAppAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

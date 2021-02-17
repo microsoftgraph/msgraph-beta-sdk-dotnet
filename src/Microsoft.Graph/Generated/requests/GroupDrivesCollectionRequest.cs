@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Drive>(drive, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Drive to the collection via POST and returns a <see cref="GraphResponse{Drive}"/> object of the request.
+        /// </summary>
+        /// <param name="drive">The Drive to add.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive)
+        {
+            return this.AddResponseAsync(drive, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Drive to the collection via POST and returns a <see cref="GraphResponse{Drive}"/> object of the request.
+        /// </summary>
+        /// <param name="drive">The Drive to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Drive>(drive, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupDrivesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupDrivesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupDrivesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupDrivesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupDrivesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupDrivesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupDrivesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

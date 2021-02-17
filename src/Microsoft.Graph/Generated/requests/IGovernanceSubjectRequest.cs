@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
         /// <returns>The created GovernanceSubject.</returns>
-        System.Threading.Tasks.Task<GovernanceSubject> CreateAsync(GovernanceSubject governanceSubjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GovernanceSubject> CreateAsync(GovernanceSubject governanceSubjectToCreate);
+
+        /// <summary>
         /// Creates the specified GovernanceSubject using POST.
         /// </summary>
         /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceSubject.</returns>
         System.Threading.Tasks.Task<GovernanceSubject> CreateAsync(GovernanceSubject governanceSubjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GovernanceSubject using POST and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> CreateResponseAsync(GovernanceSubject governanceSubjectToCreate);
+
+        /// <summary>
+        /// Creates the specified GovernanceSubject using POST and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="governanceSubjectToCreate">The GovernanceSubject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> CreateResponseAsync(GovernanceSubject governanceSubjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GovernanceSubject.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GovernanceSubject and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GovernanceSubject and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GovernanceSubject.
         /// </summary>
         /// <returns>The GovernanceSubject.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceSubject.</returns>
         System.Threading.Tasks.Task<GovernanceSubject> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GovernanceSubject and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GovernanceSubject and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GovernanceSubject using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceSubject.</returns>
         System.Threading.Tasks.Task<GovernanceSubject> UpdateAsync(GovernanceSubject governanceSubjectToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GovernanceSubject using PATCH and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="governanceSubjectToUpdate">The GovernanceSubject to update.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> UpdateResponseAsync(GovernanceSubject governanceSubjectToUpdate);
+
+        /// <summary>
+        /// Updates the specified GovernanceSubject using PATCH and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
+        /// </summary>
+        /// <param name="governanceSubjectToUpdate">The GovernanceSubject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> UpdateResponseAsync(GovernanceSubject governanceSubjectToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

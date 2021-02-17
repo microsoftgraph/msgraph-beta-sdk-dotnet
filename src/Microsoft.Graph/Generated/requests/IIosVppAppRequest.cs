@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
         /// <returns>The created IosVppApp.</returns>
-        System.Threading.Tasks.Task<IosVppApp> CreateAsync(IosVppApp iosVppAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosVppApp> CreateAsync(IosVppApp iosVppAppToCreate);
+
+        /// <summary>
         /// Creates the specified IosVppApp using POST.
         /// </summary>
         /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppApp.</returns>
         System.Threading.Tasks.Task<IosVppApp> CreateAsync(IosVppApp iosVppAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosVppApp using POST and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> CreateResponseAsync(IosVppApp iosVppAppToCreate);
+
+        /// <summary>
+        /// Creates the specified IosVppApp using POST and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> CreateResponseAsync(IosVppApp iosVppAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosVppApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified IosVppApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified IosVppApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified IosVppApp.
         /// </summary>
         /// <returns>The IosVppApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVppApp.</returns>
         System.Threading.Tasks.Task<IosVppApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified IosVppApp and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosVppApp and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified IosVppApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppApp.</returns>
         System.Threading.Tasks.Task<IosVppApp> UpdateAsync(IosVppApp iosVppAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified IosVppApp using PATCH and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToUpdate">The IosVppApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> UpdateResponseAsync(IosVppApp iosVppAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified IosVppApp using PATCH and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToUpdate">The IosVppApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppApp>> UpdateResponseAsync(IosVppApp iosVppAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

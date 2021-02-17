@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
-        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);
+
+        /// <summary>
         /// Creates the specified TelecomExpenseManagementPartner using POST.
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TelecomExpenseManagementPartner using POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> CreateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);
+
+        /// <summary>
+        /// Creates the specified TelecomExpenseManagementPartner using POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> CreateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TelecomExpenseManagementPartner.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TelecomExpenseManagementPartner.
         /// </summary>
         /// <returns>The TelecomExpenseManagementPartner.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TelecomExpenseManagementPartner.</returns>
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TelecomExpenseManagementPartner using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TelecomExpenseManagementPartner.</returns>
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> UpdateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TelecomExpenseManagementPartner using PATCH and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToUpdate">The TelecomExpenseManagementPartner to update.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> UpdateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToUpdate);
+
+        /// <summary>
+        /// Updates the specified TelecomExpenseManagementPartner using PATCH and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToUpdate">The TelecomExpenseManagementPartner to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> UpdateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

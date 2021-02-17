@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate)
+        {
+            return this.CreateResponseAsync(shiftToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Shift>(shiftToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Shift.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Shift>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Shift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Shift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Shift>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Shift and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Shift and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Shift>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Shift>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Shift>(shiftToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Shift using PATCH and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToUpdate">The Shift to update.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> UpdateResponseAsync(Shift shiftToUpdate)
+        {
+            return this.UpdateResponseAsync(shiftToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Shift using PATCH and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToUpdate">The Shift to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Shift>> UpdateResponseAsync(Shift shiftToUpdate, CancellationToken cancellationToken)
+        {
+			if (shiftToUpdate.AdditionalData != null)
+			{
+				if (shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shiftToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (shiftToUpdate.AdditionalData != null)
+            {
+                if (shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    shiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shiftToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Shift>(shiftToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

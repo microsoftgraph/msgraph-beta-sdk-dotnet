@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <returns>The created WindowsUniversalAppXContainedApp.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsUniversalAppXContainedApp using POST.
         /// </summary>
         /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUniversalAppXContainedApp.</returns>
         System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> CreateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsUniversalAppXContainedApp using POST and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> CreateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsUniversalAppXContainedApp using POST and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToCreate">The WindowsUniversalAppXContainedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> CreateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsUniversalAppXContainedApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsUniversalAppXContainedApp.
         /// </summary>
         /// <returns>The WindowsUniversalAppXContainedApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsUniversalAppXContainedApp.</returns>
         System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsUniversalAppXContainedApp and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsUniversalAppXContainedApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsUniversalAppXContainedApp.</returns>
         System.Threading.Tasks.Task<WindowsUniversalAppXContainedApp> UpdateAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsUniversalAppXContainedApp using PATCH and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> UpdateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsUniversalAppXContainedApp using PATCH and returns a <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXContainedAppToUpdate">The WindowsUniversalAppXContainedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXContainedApp>> UpdateResponseAsync(WindowsUniversalAppXContainedApp windowsUniversalAppXContainedAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate)
+        {
+            return this.CreateResponseAsync(appCatalogsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppCatalogs>(appCatalogsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AppCatalogs.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AppCatalogs>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AppCatalogs and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AppCatalogs and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AppCatalogs>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AppCatalogs and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AppCatalogs and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AppCatalogs>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AppCatalogs>(appCatalogsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppCatalogs using PATCH and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> UpdateResponseAsync(AppCatalogs appCatalogsToUpdate)
+        {
+            return this.UpdateResponseAsync(appCatalogsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AppCatalogs using PATCH and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> UpdateResponseAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken)
+        {
+			if (appCatalogsToUpdate.AdditionalData != null)
+			{
+				if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appCatalogsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (appCatalogsToUpdate.AdditionalData != null)
+            {
+                if (appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    appCatalogsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appCatalogsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AppCatalogs>(appCatalogsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

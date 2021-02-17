@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <returns>The created PublishedResource.</returns>
-        System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate);
+
+        /// <summary>
         /// Creates the specified PublishedResource using POST.
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PublishedResource.</returns>
         System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PublishedResource using POST and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate);
+
+        /// <summary>
+        /// Creates the specified PublishedResource using POST and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PublishedResource.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PublishedResource and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PublishedResource and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PublishedResource.
         /// </summary>
         /// <returns>The PublishedResource.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PublishedResource.</returns>
         System.Threading.Tasks.Task<PublishedResource> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PublishedResource and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PublishedResource and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PublishedResource using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PublishedResource.</returns>
         System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PublishedResource using PATCH and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate);
+
+        /// <summary>
+        /// Updates the specified PublishedResource using PATCH and returns a <see cref="GraphResponse{PublishedResource}"/> object.
+        /// </summary>
+        /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

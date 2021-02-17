@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<CustomerPayment>(customerPayment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified CustomerPayment to the collection via POST and returns a <see cref="GraphResponse{CustomerPayment}"/> object of the request.
+        /// </summary>
+        /// <param name="customerPayment">The CustomerPayment to add.</param>
+        /// <returns>The <see cref="GraphResponse{CustomerPayment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CustomerPayment>> AddResponseAsync(CustomerPayment customerPayment)
+        {
+            return this.AddResponseAsync(customerPayment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified CustomerPayment to the collection via POST and returns a <see cref="GraphResponse{CustomerPayment}"/> object of the request.
+        /// </summary>
+        /// <param name="customerPayment">The CustomerPayment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CustomerPayment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CustomerPayment>> AddResponseAsync(CustomerPayment customerPayment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CustomerPayment>(customerPayment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CustomerPaymentJournalCustomerPaymentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CustomerPaymentJournalCustomerPaymentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournalCustomerPaymentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CustomerPaymentJournalCustomerPaymentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CustomerPaymentJournalCustomerPaymentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournalCustomerPaymentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CustomerPaymentJournalCustomerPaymentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
-        System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified TokenIssuancePolicy using POST.
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
         System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TokenIssuancePolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TokenIssuancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TokenIssuancePolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TokenIssuancePolicy.
         /// </summary>
         /// <returns>The TokenIssuancePolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TokenIssuancePolicy.</returns>
         System.Threading.Tasks.Task<TokenIssuancePolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TokenIssuancePolicy and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TokenIssuancePolicy and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TokenIssuancePolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TokenIssuancePolicy.</returns>
         System.Threading.Tasks.Task<TokenIssuancePolicy> UpdateAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TokenIssuancePolicy using PATCH and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> UpdateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified TokenIssuancePolicy using PATCH and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> UpdateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

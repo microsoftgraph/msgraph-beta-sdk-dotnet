@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TimeOffRequestObject>(timeOffRequest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TimeOffRequestObject to the collection via POST and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="timeOffRequest">The TimeOffRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> AddResponseAsync(TimeOffRequestObject timeOffRequest)
+        {
+            return this.AddResponseAsync(timeOffRequest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TimeOffRequestObject to the collection via POST and returns a <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="timeOffRequest">The TimeOffRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TimeOffRequestObject>> AddResponseAsync(TimeOffRequestObject timeOffRequest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TimeOffRequestObject>(timeOffRequest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeOffRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeOffRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleTimeOffRequestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimeOffRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleTimeOffRequestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ScheduleTimeOffRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ScheduleTimeOffRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

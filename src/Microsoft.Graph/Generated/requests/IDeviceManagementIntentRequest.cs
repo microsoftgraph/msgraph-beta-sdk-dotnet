@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
         /// <returns>The created DeviceManagementIntent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementIntent using POST.
         /// </summary>
         /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntent.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementIntent using POST and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> CreateResponseAsync(DeviceManagementIntent deviceManagementIntentToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementIntent using POST and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> CreateResponseAsync(DeviceManagementIntent deviceManagementIntentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementIntent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementIntent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementIntent.
         /// </summary>
         /// <returns>The DeviceManagementIntent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntent.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementIntent and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementIntent and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementIntent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntent.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntent> UpdateAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntent using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> UpdateResponseAsync(DeviceManagementIntent deviceManagementIntentToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntent using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> UpdateResponseAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PersonAward>(personAward, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PersonAward to the collection via POST and returns a <see cref="GraphResponse{PersonAward}"/> object of the request.
+        /// </summary>
+        /// <param name="personAward">The PersonAward to add.</param>
+        /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonAward>> AddResponseAsync(PersonAward personAward)
+        {
+            return this.AddResponseAsync(personAward, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PersonAward to the collection via POST and returns a <see cref="GraphResponse{PersonAward}"/> object of the request.
+        /// </summary>
+        /// <param name="personAward">The PersonAward to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PersonAward>> AddResponseAsync(PersonAward personAward, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PersonAward>(personAward, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfileAwardsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileAwardsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ProfileAwardsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

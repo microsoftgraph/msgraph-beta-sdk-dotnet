@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Fido2AuthenticationMethod using POST and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> CreateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate)
+        {
+            return this.CreateResponseAsync(fido2AuthenticationMethodToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Fido2AuthenticationMethod using POST and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> CreateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(fido2AuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Fido2AuthenticationMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Fido2AuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Fido2AuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Fido2AuthenticationMethod>(fido2AuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Fido2AuthenticationMethod using PATCH and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> UpdateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate)
+        {
+            return this.UpdateResponseAsync(fido2AuthenticationMethodToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Fido2AuthenticationMethod using PATCH and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> UpdateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate, CancellationToken cancellationToken)
+        {
+			if (fido2AuthenticationMethodToUpdate.AdditionalData != null)
+			{
+				if (fido2AuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					fido2AuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fido2AuthenticationMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (fido2AuthenticationMethodToUpdate.AdditionalData != null)
+            {
+                if (fido2AuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    fido2AuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fido2AuthenticationMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(fido2AuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

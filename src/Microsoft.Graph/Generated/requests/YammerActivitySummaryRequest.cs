@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified YammerActivitySummary using POST and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="yammerActivitySummaryToCreate">The YammerActivitySummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> CreateResponseAsync(YammerActivitySummary yammerActivitySummaryToCreate)
+        {
+            return this.CreateResponseAsync(yammerActivitySummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified YammerActivitySummary using POST and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="yammerActivitySummaryToCreate">The YammerActivitySummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> CreateResponseAsync(YammerActivitySummary yammerActivitySummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<YammerActivitySummary>(yammerActivitySummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified YammerActivitySummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<YammerActivitySummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified YammerActivitySummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified YammerActivitySummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<YammerActivitySummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified YammerActivitySummary and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified YammerActivitySummary and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<YammerActivitySummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<YammerActivitySummary>(yammerActivitySummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified YammerActivitySummary using PATCH and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="yammerActivitySummaryToUpdate">The YammerActivitySummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> UpdateResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(yammerActivitySummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified YammerActivitySummary using PATCH and returns a <see cref="GraphResponse{YammerActivitySummary}"/> object.
+        /// </summary>
+        /// <param name="yammerActivitySummaryToUpdate">The YammerActivitySummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{YammerActivitySummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<YammerActivitySummary>> UpdateResponseAsync(YammerActivitySummary yammerActivitySummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (yammerActivitySummaryToUpdate.AdditionalData != null)
+			{
+				if (yammerActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					yammerActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivitySummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (yammerActivitySummaryToUpdate.AdditionalData != null)
+            {
+                if (yammerActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    yammerActivitySummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivitySummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<YammerActivitySummary>(yammerActivitySummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalWorkflowProvider.</returns>
         System.Threading.Tasks.Task<ApprovalWorkflowProvider> AddAsync(ApprovalWorkflowProvider approvalWorkflowProvider, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ApprovalWorkflowProvider to the collection via POST and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.
+        /// </summary>
+        /// <param name="approvalWorkflowProvider">The ApprovalWorkflowProvider to add.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> AddResponseAsync(ApprovalWorkflowProvider approvalWorkflowProvider);
+
+        /// <summary>
+        /// Adds the specified ApprovalWorkflowProvider to the collection via POST and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.
+        /// </summary>
+        /// <param name="approvalWorkflowProvider">The ApprovalWorkflowProvider to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> AddResponseAsync(ApprovalWorkflowProvider approvalWorkflowProvider, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceApprovalWorkflowProvidersCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApprovalWorkflowProvidersCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceApprovalWorkflowProvidersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceApprovalWorkflowProvidersCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApprovalWorkflowProvidersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceApprovalWorkflowProvidersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceApprovalWorkflowProvidersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

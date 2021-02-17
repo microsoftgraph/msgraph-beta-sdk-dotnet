@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AccessPackageResourceRole>(accessPackageResourceRole, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AccessPackageResourceRole to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceRole">The AccessPackageResourceRole to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> AddResponseAsync(AccessPackageResourceRole accessPackageResourceRole)
+        {
+            return this.AddResponseAsync(accessPackageResourceRole, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AccessPackageResourceRole to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceRole">The AccessPackageResourceRole to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> AddResponseAsync(AccessPackageResourceRole accessPackageResourceRole, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AccessPackageResourceRole>(accessPackageResourceRole, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceRolesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceRolesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AccessPackageResourceAccessPackageResourceRolesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

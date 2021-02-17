@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <returns>The created OnenoteSection.</returns>
-        System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteSection using POST.
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteSection.</returns>
         System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteSection.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnenoteSection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnenoteSection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnenoteSection.
         /// </summary>
         /// <returns>The OnenoteSection.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteSection.</returns>
         System.Threading.Tasks.Task<OnenoteSection> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnenoteSection and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteSection and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnenoteSection using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteSection.</returns>
         System.Threading.Tasks.Task<OnenoteSection> UpdateAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnenoteSection using PATCH and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> UpdateResponseAsync(OnenoteSection onenoteSectionToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnenoteSection using PATCH and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> UpdateResponseAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

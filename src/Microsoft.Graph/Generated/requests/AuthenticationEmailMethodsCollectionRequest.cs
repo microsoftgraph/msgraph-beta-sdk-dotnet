@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<EmailAuthenticationMethod>(emailAuthenticationMethod, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified EmailAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="emailAuthenticationMethod">The EmailAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> AddResponseAsync(EmailAuthenticationMethod emailAuthenticationMethod)
+        {
+            return this.AddResponseAsync(emailAuthenticationMethod, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified EmailAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="emailAuthenticationMethod">The EmailAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> AddResponseAsync(EmailAuthenticationMethod emailAuthenticationMethod, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EmailAuthenticationMethod>(emailAuthenticationMethod, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationEmailMethodsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationEmailMethodsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationEmailMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationEmailMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

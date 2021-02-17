@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <returns>The created RoleAssignment.</returns>
-        System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified RoleAssignment using POST.
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleAssignment.</returns>
         System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RoleAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified RoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified RoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified RoleAssignment.
         /// </summary>
         /// <returns>The RoleAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleAssignment.</returns>
         System.Threading.Tasks.Task<RoleAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified RoleAssignment and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified RoleAssignment and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified RoleAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoleAssignment.</returns>
         System.Threading.Tasks.Task<RoleAssignment> UpdateAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified RoleAssignment using PATCH and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToUpdate">The RoleAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> UpdateResponseAsync(RoleAssignment roleAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified RoleAssignment using PATCH and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToUpdate">The RoleAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> UpdateResponseAsync(RoleAssignment roleAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

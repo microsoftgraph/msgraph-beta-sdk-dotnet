@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DimensionValue>(dimensionValue, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="dimensionValue">The DimensionValue to add.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue)
+        {
+            return this.AddResponseAsync(dimensionValue, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
+        /// </summary>
+        /// <param name="dimensionValue">The DimensionValue to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DimensionValue>(dimensionValue, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyDimensionValuesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyDimensionValuesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyDimensionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CompanyDimensionValuesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSVpnConfiguration using POST and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToCreate">The MacOSVpnConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> CreateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(macOSVpnConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSVpnConfiguration using POST and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToCreate">The MacOSVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> CreateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSVpnConfiguration>(macOSVpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSVpnConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MacOSVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSVpnConfiguration and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOSVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MacOSVpnConfiguration>(macOSVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSVpnConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> UpdateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(macOSVpnConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSVpnConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSVpnConfigurationToUpdate">The MacOSVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSVpnConfiguration>> UpdateResponseAsync(MacOSVpnConfiguration macOSVpnConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOSVpnConfigurationToUpdate.AdditionalData != null)
+			{
+				if (macOSVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSVpnConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSVpnConfigurationToUpdate.AdditionalData != null)
+            {
+                if (macOSVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSVpnConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOSVpnConfiguration>(macOSVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

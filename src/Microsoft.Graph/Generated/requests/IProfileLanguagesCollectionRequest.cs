@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LanguageProficiency.</returns>
         System.Threading.Tasks.Task<LanguageProficiency> AddAsync(LanguageProficiency languageProficiency, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified LanguageProficiency to the collection via POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object of the request.
+        /// </summary>
+        /// <param name="languageProficiency">The LanguageProficiency to add.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> AddResponseAsync(LanguageProficiency languageProficiency);
+
+        /// <summary>
+        /// Adds the specified LanguageProficiency to the collection via POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object of the request.
+        /// </summary>
+        /// <param name="languageProficiency">The LanguageProficiency to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> AddResponseAsync(LanguageProficiency languageProficiency, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IProfileLanguagesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileLanguagesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileLanguagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonInterest.</returns>
         System.Threading.Tasks.Task<PersonInterest> AddAsync(PersonInterest personInterest, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PersonInterest to the collection via POST and returns a <see cref="GraphResponse{PersonInterest}"/> object of the request.
+        /// </summary>
+        /// <param name="personInterest">The PersonInterest to add.</param>
+        /// <returns>The <see cref="GraphResponse{PersonInterest}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonInterest>> AddResponseAsync(PersonInterest personInterest);
+
+        /// <summary>
+        /// Adds the specified PersonInterest to the collection via POST and returns a <see cref="GraphResponse{PersonInterest}"/> object of the request.
+        /// </summary>
+        /// <param name="personInterest">The PersonInterest to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonInterest}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonInterest>> AddResponseAsync(PersonInterest personInterest, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IProfileInterestsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileInterestsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileInterestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserExperienceAnalyticsBaseline using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsBaselineToCreate">The UserExperienceAnalyticsBaseline to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> CreateResponseAsync(UserExperienceAnalyticsBaseline userExperienceAnalyticsBaselineToCreate)
+        {
+            return this.CreateResponseAsync(userExperienceAnalyticsBaselineToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsBaseline using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsBaselineToCreate">The UserExperienceAnalyticsBaseline to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> CreateResponseAsync(UserExperienceAnalyticsBaseline userExperienceAnalyticsBaselineToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsBaseline>(userExperienceAnalyticsBaselineToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserExperienceAnalyticsBaseline.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsBaseline>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsBaseline>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsBaseline>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsBaseline>(userExperienceAnalyticsBaselineToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsBaseline using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsBaselineToUpdate">The UserExperienceAnalyticsBaseline to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> UpdateResponseAsync(UserExperienceAnalyticsBaseline userExperienceAnalyticsBaselineToUpdate)
+        {
+            return this.UpdateResponseAsync(userExperienceAnalyticsBaselineToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsBaseline using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsBaselineToUpdate">The UserExperienceAnalyticsBaseline to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> UpdateResponseAsync(UserExperienceAnalyticsBaseline userExperienceAnalyticsBaselineToUpdate, CancellationToken cancellationToken)
+        {
+			if (userExperienceAnalyticsBaselineToUpdate.AdditionalData != null)
+			{
+				if (userExperienceAnalyticsBaselineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userExperienceAnalyticsBaselineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsBaselineToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userExperienceAnalyticsBaselineToUpdate.AdditionalData != null)
+            {
+                if (userExperienceAnalyticsBaselineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userExperienceAnalyticsBaselineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsBaselineToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsBaseline>(userExperienceAnalyticsBaselineToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

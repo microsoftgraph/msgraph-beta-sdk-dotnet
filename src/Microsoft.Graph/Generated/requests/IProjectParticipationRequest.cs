@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="projectParticipationToCreate">The ProjectParticipation to create.</param>
         /// <returns>The created ProjectParticipation.</returns>
-        System.Threading.Tasks.Task<ProjectParticipation> CreateAsync(ProjectParticipation projectParticipationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ProjectParticipation> CreateAsync(ProjectParticipation projectParticipationToCreate);
+
+        /// <summary>
         /// Creates the specified ProjectParticipation using POST.
         /// </summary>
         /// <param name="projectParticipationToCreate">The ProjectParticipation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProjectParticipation.</returns>
         System.Threading.Tasks.Task<ProjectParticipation> CreateAsync(ProjectParticipation projectParticipationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ProjectParticipation using POST and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <param name="projectParticipationToCreate">The ProjectParticipation to create.</param>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> CreateResponseAsync(ProjectParticipation projectParticipationToCreate);
+
+        /// <summary>
+        /// Creates the specified ProjectParticipation using POST and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <param name="projectParticipationToCreate">The ProjectParticipation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> CreateResponseAsync(ProjectParticipation projectParticipationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ProjectParticipation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ProjectParticipation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ProjectParticipation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ProjectParticipation.
         /// </summary>
         /// <returns>The ProjectParticipation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProjectParticipation.</returns>
         System.Threading.Tasks.Task<ProjectParticipation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ProjectParticipation and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ProjectParticipation and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ProjectParticipation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProjectParticipation.</returns>
         System.Threading.Tasks.Task<ProjectParticipation> UpdateAsync(ProjectParticipation projectParticipationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ProjectParticipation using PATCH and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <param name="projectParticipationToUpdate">The ProjectParticipation to update.</param>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> UpdateResponseAsync(ProjectParticipation projectParticipationToUpdate);
+
+        /// <summary>
+        /// Updates the specified ProjectParticipation using PATCH and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
+        /// </summary>
+        /// <param name="projectParticipationToUpdate">The ProjectParticipation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> UpdateResponseAsync(ProjectParticipation projectParticipationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

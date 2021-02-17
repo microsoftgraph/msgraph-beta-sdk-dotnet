@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
         /// <returns>The created OrganizationalBrandingLocalization.</returns>
-        System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate);
+
+        /// <summary>
         /// Creates the specified OrganizationalBrandingLocalization using POST.
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBrandingLocalization.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OrganizationalBrandingLocalization using POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> CreateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate);
+
+        /// <summary>
+        /// Creates the specified OrganizationalBrandingLocalization using POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> CreateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OrganizationalBrandingLocalization.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OrganizationalBrandingLocalization.
         /// </summary>
         /// <returns>The OrganizationalBrandingLocalization.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrganizationalBrandingLocalization.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingLocalization> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OrganizationalBrandingLocalization using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationalBrandingLocalization.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingLocalization> UpdateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingLocalization using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> UpdateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingLocalization using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> UpdateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchDataStore.</returns>
         System.Threading.Tasks.Task<ExactMatchDataStore> AddAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ExactMatchDataStore to the collection via POST and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> AddResponseAsync(ExactMatchDataStore exactMatchDataStore);
+
+        /// <summary>
+        /// Adds the specified ExactMatchDataStore to the collection via POST and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.
+        /// </summary>
+        /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> AddResponseAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDataClassificationServiceExactMatchDataStoresCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

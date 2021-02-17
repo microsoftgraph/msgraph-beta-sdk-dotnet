@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedAppRegistration to the collection via POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedAppRegistration managedAppRegistration);
+
+        /// <summary>
+        /// Adds the specified ManagedAppRegistration to the collection via POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken);
     }
 }

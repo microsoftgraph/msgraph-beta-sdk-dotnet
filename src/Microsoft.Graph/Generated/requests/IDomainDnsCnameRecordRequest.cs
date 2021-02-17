@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
         /// <returns>The created DomainDnsCnameRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsCnameRecord> CreateAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DomainDnsCnameRecord> CreateAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate);
+
+        /// <summary>
         /// Creates the specified DomainDnsCnameRecord using POST.
         /// </summary>
         /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsCnameRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsCnameRecord> CreateAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DomainDnsCnameRecord using POST and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> CreateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate);
+
+        /// <summary>
+        /// Creates the specified DomainDnsCnameRecord using POST and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> CreateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DomainDnsCnameRecord.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DomainDnsCnameRecord and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DomainDnsCnameRecord and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DomainDnsCnameRecord.
         /// </summary>
         /// <returns>The DomainDnsCnameRecord.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DomainDnsCnameRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsCnameRecord> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DomainDnsCnameRecord and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DomainDnsCnameRecord and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DomainDnsCnameRecord using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainDnsCnameRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsCnameRecord> UpdateAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate);
+
+        /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

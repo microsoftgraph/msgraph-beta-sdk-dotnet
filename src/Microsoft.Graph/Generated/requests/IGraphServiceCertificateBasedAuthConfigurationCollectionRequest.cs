@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CertificateBasedAuthConfiguration.</returns>
         System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> AddAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> AddResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration);
+
+        /// <summary>
+        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> AddResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceCertificateBasedAuthConfigurationCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceCertificateBasedAuthConfigurationCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceCertificateBasedAuthConfigurationCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceCertificateBasedAuthConfigurationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

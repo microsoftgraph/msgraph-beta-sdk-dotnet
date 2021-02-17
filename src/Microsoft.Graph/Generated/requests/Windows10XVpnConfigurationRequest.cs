@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10XVpnConfiguration using POST and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XVpnConfigurationToCreate">The Windows10XVpnConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> CreateResponseAsync(Windows10XVpnConfiguration windows10XVpnConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10XVpnConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10XVpnConfiguration using POST and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XVpnConfigurationToCreate">The Windows10XVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> CreateResponseAsync(Windows10XVpnConfiguration windows10XVpnConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10XVpnConfiguration>(windows10XVpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10XVpnConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10XVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows10XVpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows10XVpnConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Windows10XVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Windows10XVpnConfiguration and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Windows10XVpnConfiguration and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Windows10XVpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Windows10XVpnConfiguration>(windows10XVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XVpnConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XVpnConfigurationToUpdate">The Windows10XVpnConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> UpdateResponseAsync(Windows10XVpnConfiguration windows10XVpnConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windows10XVpnConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XVpnConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XVpnConfigurationToUpdate">The Windows10XVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10XVpnConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10XVpnConfiguration>> UpdateResponseAsync(Windows10XVpnConfiguration windows10XVpnConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windows10XVpnConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10XVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10XVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XVpnConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10XVpnConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10XVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10XVpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XVpnConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Windows10XVpnConfiguration>(windows10XVpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

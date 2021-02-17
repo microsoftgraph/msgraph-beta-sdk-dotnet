@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="jobResponseBaseToCreate">The JobResponseBase to create.</param>
         /// <returns>The created JobResponseBase.</returns>
-        System.Threading.Tasks.Task<JobResponseBase> CreateAsync(JobResponseBase jobResponseBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<JobResponseBase> CreateAsync(JobResponseBase jobResponseBaseToCreate);
+
+        /// <summary>
         /// Creates the specified JobResponseBase using POST.
         /// </summary>
         /// <param name="jobResponseBaseToCreate">The JobResponseBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JobResponseBase.</returns>
         System.Threading.Tasks.Task<JobResponseBase> CreateAsync(JobResponseBase jobResponseBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified JobResponseBase using POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <param name="jobResponseBaseToCreate">The JobResponseBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> CreateResponseAsync(JobResponseBase jobResponseBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified JobResponseBase using POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <param name="jobResponseBaseToCreate">The JobResponseBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> CreateResponseAsync(JobResponseBase jobResponseBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified JobResponseBase.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified JobResponseBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified JobResponseBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified JobResponseBase.
         /// </summary>
         /// <returns>The JobResponseBase.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The JobResponseBase.</returns>
         System.Threading.Tasks.Task<JobResponseBase> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified JobResponseBase and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified JobResponseBase and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified JobResponseBase using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated JobResponseBase.</returns>
         System.Threading.Tasks.Task<JobResponseBase> UpdateAsync(JobResponseBase jobResponseBaseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified JobResponseBase using PATCH and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <param name="jobResponseBaseToUpdate">The JobResponseBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> UpdateResponseAsync(JobResponseBase jobResponseBaseToUpdate);
+
+        /// <summary>
+        /// Updates the specified JobResponseBase using PATCH and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
+        /// </summary>
+        /// <param name="jobResponseBaseToUpdate">The JobResponseBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> UpdateResponseAsync(JobResponseBase jobResponseBaseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

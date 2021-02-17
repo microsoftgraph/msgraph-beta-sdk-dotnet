@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate);
+
+        /// <summary>
         /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
         /// </summary>
         /// <returns>The UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UpdateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

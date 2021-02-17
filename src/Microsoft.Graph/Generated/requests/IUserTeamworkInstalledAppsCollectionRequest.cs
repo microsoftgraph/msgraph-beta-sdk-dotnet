@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserScopeTeamsAppInstallation.</returns>
         System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> AddAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> AddResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation);
+
+        /// <summary>
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> AddResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUserTeamworkInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserTeamworkInstalledAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserTeamworkInstalledAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserTeamworkInstalledAppsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserTeamworkInstalledAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamworkInstalledAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserTeamworkInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

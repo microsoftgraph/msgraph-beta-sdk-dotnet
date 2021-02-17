@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WorkbookComment>(workbookComment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WorkbookComment to the collection via POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookComment">The WorkbookComment to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> AddResponseAsync(WorkbookComment workbookComment)
+        {
+            return this.AddResponseAsync(workbookComment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WorkbookComment to the collection via POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookComment">The WorkbookComment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> AddResponseAsync(WorkbookComment workbookComment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookComment>(workbookComment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookCommentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookCommentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookCommentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

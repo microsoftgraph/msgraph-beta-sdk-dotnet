@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
         /// <returns>The created ManagementCondition.</returns>
-        System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate);
+
+        /// <summary>
         /// Creates the specified ManagementCondition using POST.
         /// </summary>
         /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementCondition.</returns>
         System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagementCondition using POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> CreateResponseAsync(ManagementCondition managementConditionToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagementCondition using POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> CreateResponseAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagementCondition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagementCondition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagementCondition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagementCondition.
         /// </summary>
         /// <returns>The ManagementCondition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementCondition.</returns>
         System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagementCondition and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagementCondition and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagementCondition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagementCondition.</returns>
         System.Threading.Tasks.Task<ManagementCondition> UpdateAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagementCondition using PATCH and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="managementConditionToUpdate">The ManagementCondition to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> UpdateResponseAsync(ManagementCondition managementConditionToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagementCondition using PATCH and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="managementConditionToUpdate">The ManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> UpdateResponseAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

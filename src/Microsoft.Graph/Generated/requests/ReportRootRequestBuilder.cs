@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootRequestBuilder"/>.</returns>
+        public IAuthenticationMethodsRootRequestBuilder AuthenticationMethods
+        {
+            get
+            {
+                return new AuthenticationMethodsRootRequestBuilder(this.AppendSegmentToRequestUrl("authenticationMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CredentialUserRegistrationDetails.
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
@@ -87,6 +99,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DailyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        public IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder DailyPrintUsageByPrinter
+        {
+            get
+            {
+                return new ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageByPrinter"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DailyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        public IReportRootDailyPrintUsageByUserCollectionRequestBuilder DailyPrintUsageByUser
+        {
+            get
+            {
+                return new ReportRootDailyPrintUsageByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageByUser"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DailyPrintUsageSummariesByPrinter.
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageSummariesByPrinterCollectionRequestBuilder"/>.</returns>
@@ -107,6 +143,30 @@ namespace Microsoft.Graph
             get
             {
                 return new ReportRootDailyPrintUsageSummariesByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsageSummariesByUser"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        public IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder MonthlyPrintUsageByPrinter
+        {
+            get
+            {
+                return new ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageByPrinter"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        public IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder MonthlyPrintUsageByUser
+        {
+            get
+            {
+                return new ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder(this.AppendSegmentToRequestUrl("monthlyPrintUsageByUser"), this.Client);
             }
         }
 
@@ -1469,6 +1529,57 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getYammerGroupsActivityGroupCounts"),
                 this.Client,
                 period);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetGroupArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
+        public IReportRootGetGroupArchivedPrintJobsRequestBuilder GetGroupArchivedPrintJobs(
+            string groupId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null)
+        {
+            return new ReportRootGetGroupArchivedPrintJobsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getGroupArchivedPrintJobs"),
+                this.Client,
+                groupId,
+                startDateTime,
+                endDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
+        public IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
+            string printerId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null)
+        {
+            return new ReportRootGetPrinterArchivedPrintJobsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPrinterArchivedPrintJobs"),
+                this.Client,
+                printerId,
+                startDateTime,
+                endDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
+        public IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
+            string userId = null,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null)
+        {
+            return new ReportRootGetUserArchivedPrintJobsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getUserArchivedPrintJobs"),
+                this.Client,
+                userId,
+                startDateTime,
+                endDateTime);
         }
 
         /// <summary>

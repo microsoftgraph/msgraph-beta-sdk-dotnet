@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
         /// <returns>The created AgreementFile.</returns>
-        System.Threading.Tasks.Task<AgreementFile> CreateAsync(AgreementFile agreementFileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AgreementFile> CreateAsync(AgreementFile agreementFileToCreate);
+
+        /// <summary>
         /// Creates the specified AgreementFile using POST.
         /// </summary>
         /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFile.</returns>
         System.Threading.Tasks.Task<AgreementFile> CreateAsync(AgreementFile agreementFileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AgreementFile using POST and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> CreateResponseAsync(AgreementFile agreementFileToCreate);
+
+        /// <summary>
+        /// Creates the specified AgreementFile using POST and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> CreateResponseAsync(AgreementFile agreementFileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AgreementFile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AgreementFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AgreementFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AgreementFile.
         /// </summary>
         /// <returns>The AgreementFile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFile.</returns>
         System.Threading.Tasks.Task<AgreementFile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AgreementFile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgreementFile.</returns>
         System.Threading.Tasks.Task<AgreementFile> UpdateAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AgreementFile using PATCH and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile to update.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> UpdateResponseAsync(AgreementFile agreementFileToUpdate);
+
+        /// <summary>
+        /// Updates the specified AgreementFile using PATCH and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> UpdateResponseAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

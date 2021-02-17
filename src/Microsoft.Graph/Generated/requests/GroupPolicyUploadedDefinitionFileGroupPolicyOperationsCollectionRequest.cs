@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<GroupPolicyOperation>(groupPolicyOperation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GroupPolicyOperation to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyOperation">The GroupPolicyOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> AddResponseAsync(GroupPolicyOperation groupPolicyOperation)
+        {
+            return this.AddResponseAsync(groupPolicyOperation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GroupPolicyOperation to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyOperation">The GroupPolicyOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> AddResponseAsync(GroupPolicyOperation groupPolicyOperation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyOperation>(groupPolicyOperation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

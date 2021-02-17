@@ -274,7 +274,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the visibility of a Microsoft 365 group. Possible values are: Private, Public, or Hiddenmembership; blank values are treated as public.  See group visibility options to learn more.Visibility can be set only when a group is created; it is not editable.Visibility is supported only for unified groups; it is not supported for security groups. Returned by default.
+        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. See group visibility options to learn more. Returned by default.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
@@ -349,6 +349,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership rule processing status.
+        /// Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supports $filter. Read-only.
         /// </summary>
         [JsonPropertyName("membershipRuleProcessingStatus")]
         public MembershipRuleProcessingStatus MembershipRuleProcessingStatus { get; set; }
@@ -437,7 +438,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         /// </summary>
         [JsonPropertyName("acceptedSenders")]
-        public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
+        public IGroupAcceptedSendersCollectionWithReferencesPage AcceptedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -486,7 +487,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         [JsonPropertyName("rejectedSenders")]
-        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
+        public IGroupRejectedSendersCollectionWithReferencesPage RejectedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets threads.

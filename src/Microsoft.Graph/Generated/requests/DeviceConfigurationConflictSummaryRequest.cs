@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceConfigurationConflictSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> CreateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate)
+        {
+            return this.CreateResponseAsync(deviceConfigurationConflictSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationConflictSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationConflictSummaryToCreate">The DeviceConfigurationConflictSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> CreateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationConflictSummary>(deviceConfigurationConflictSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceConfigurationConflictSummary.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceConfigurationConflictSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceConfigurationConflictSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationConflictSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceConfigurationConflictSummary>(deviceConfigurationConflictSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationConflictSummary using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationConflictSummaryToUpdate">The DeviceConfigurationConflictSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> UpdateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceConfigurationConflictSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationConflictSummary using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationConflictSummaryToUpdate">The DeviceConfigurationConflictSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> UpdateResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceConfigurationConflictSummaryToUpdate.AdditionalData != null)
+			{
+				if (deviceConfigurationConflictSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceConfigurationConflictSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationConflictSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceConfigurationConflictSummaryToUpdate.AdditionalData != null)
+            {
+                if (deviceConfigurationConflictSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceConfigurationConflictSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationConflictSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationConflictSummary>(deviceConfigurationConflictSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

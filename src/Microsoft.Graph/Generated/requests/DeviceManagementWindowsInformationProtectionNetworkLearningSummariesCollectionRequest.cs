@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummary, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> AddResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary)
+        {
+            return this.AddResponseAsync(windowsInformationProtectionNetworkLearningSummary, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> AddResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummary, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

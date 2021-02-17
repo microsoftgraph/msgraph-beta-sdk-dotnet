@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The ConnectorGroup.</returns>
         System.Threading.Tasks.Task<ConnectorGroup> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified ConnectorGroup and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ConnectorGroup and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified ConnectorGroup using POST.
         /// </summary>
         /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
         /// <returns>The created ConnectorGroup.</returns>
-        System.Threading.Tasks.Task<ConnectorGroup> CreateAsync(ConnectorGroup connectorGroupToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ConnectorGroup> CreateAsync(ConnectorGroup connectorGroupToCreate);
+
+        /// <summary>
         /// Creates the specified ConnectorGroup using POST.
         /// </summary>
         /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectorGroup.</returns>
         System.Threading.Tasks.Task<ConnectorGroup> CreateAsync(ConnectorGroup connectorGroupToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified ConnectorGroup using POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> CreateResponseAsync(ConnectorGroup connectorGroupToCreate);
+
+        /// <summary>
+        /// Creates the specified ConnectorGroup using POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> CreateResponseAsync(ConnectorGroup connectorGroupToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified ConnectorGroup using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ConnectorGroup> UpdateAsync(ConnectorGroup connectorGroupToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified ConnectorGroup using PATCH and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToUpdate">The ConnectorGroup to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> UpdateResponseAsync(ConnectorGroup connectorGroupToUpdate);
+
+        /// <summary>
+        /// Updates the specified ConnectorGroup using PATCH and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToUpdate">The ConnectorGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> UpdateResponseAsync(ConnectorGroup connectorGroupToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified ConnectorGroup.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified ConnectorGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ConnectorGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

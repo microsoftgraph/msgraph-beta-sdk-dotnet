@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharePointActivityUserCountsToCreate">The SharePointActivityUserCounts to create.</param>
         /// <returns>The created SharePointActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SharePointActivityUserCounts> CreateAsync(SharePointActivityUserCounts sharePointActivityUserCountsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SharePointActivityUserCounts> CreateAsync(SharePointActivityUserCounts sharePointActivityUserCountsToCreate);
+
+        /// <summary>
         /// Creates the specified SharePointActivityUserCounts using POST.
         /// </summary>
         /// <param name="sharePointActivityUserCountsToCreate">The SharePointActivityUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointActivityUserCounts.</returns>
         System.Threading.Tasks.Task<SharePointActivityUserCounts> CreateAsync(SharePointActivityUserCounts sharePointActivityUserCountsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SharePointActivityUserCounts using POST and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointActivityUserCountsToCreate">The SharePointActivityUserCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> CreateResponseAsync(SharePointActivityUserCounts sharePointActivityUserCountsToCreate);
+
+        /// <summary>
+        /// Creates the specified SharePointActivityUserCounts using POST and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointActivityUserCountsToCreate">The SharePointActivityUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> CreateResponseAsync(SharePointActivityUserCounts sharePointActivityUserCountsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SharePointActivityUserCounts.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SharePointActivityUserCounts.
         /// </summary>
         /// <returns>The SharePointActivityUserCounts.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointActivityUserCounts.</returns>
         System.Threading.Tasks.Task<SharePointActivityUserCounts> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SharePointActivityUserCounts using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointActivityUserCounts.</returns>
         System.Threading.Tasks.Task<SharePointActivityUserCounts> UpdateAsync(SharePointActivityUserCounts sharePointActivityUserCountsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SharePointActivityUserCounts using PATCH and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointActivityUserCountsToUpdate">The SharePointActivityUserCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> UpdateResponseAsync(SharePointActivityUserCounts sharePointActivityUserCountsToUpdate);
+
+        /// <summary>
+        /// Updates the specified SharePointActivityUserCounts using PATCH and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="sharePointActivityUserCountsToUpdate">The SharePointActivityUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> UpdateResponseAsync(SharePointActivityUserCounts sharePointActivityUserCountsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

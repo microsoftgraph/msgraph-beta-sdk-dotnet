@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <returns>The created LocationManagementCondition.</returns>
-        System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate);
+
+        /// <summary>
         /// Creates the specified LocationManagementCondition using POST.
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocationManagementCondition.</returns>
         System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified LocationManagementCondition using POST and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> CreateResponseAsync(LocationManagementCondition locationManagementConditionToCreate);
+
+        /// <summary>
+        /// Creates the specified LocationManagementCondition using POST and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> CreateResponseAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified LocationManagementCondition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified LocationManagementCondition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified LocationManagementCondition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified LocationManagementCondition.
         /// </summary>
         /// <returns>The LocationManagementCondition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LocationManagementCondition.</returns>
         System.Threading.Tasks.Task<LocationManagementCondition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified LocationManagementCondition and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified LocationManagementCondition and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified LocationManagementCondition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LocationManagementCondition.</returns>
         System.Threading.Tasks.Task<LocationManagementCondition> UpdateAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified LocationManagementCondition using PATCH and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> UpdateResponseAsync(LocationManagementCondition locationManagementConditionToUpdate);
+
+        /// <summary>
+        /// Updates the specified LocationManagementCondition using PATCH and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> UpdateResponseAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

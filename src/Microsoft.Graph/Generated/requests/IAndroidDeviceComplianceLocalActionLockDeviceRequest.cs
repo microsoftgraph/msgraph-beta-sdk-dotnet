@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDevice.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> CreateAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> CreateAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDevice.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> CreateAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> CreateResponseAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDevice using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceToCreate">The AndroidDeviceComplianceLocalActionLockDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> CreateResponseAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionLockDevice.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDevice and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDevice and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionLockDevice.
         /// </summary>
         /// <returns>The AndroidDeviceComplianceLocalActionLockDevice.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionLockDevice.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionLockDevice and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionLockDevice and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionLockDevice using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionLockDevice.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDevice> UpdateAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDevice using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceToUpdate">The AndroidDeviceComplianceLocalActionLockDevice to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDevice using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceToUpdate">The AndroidDeviceComplianceLocalActionLockDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDevice>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionLockDevice androidDeviceComplianceLocalActionLockDeviceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

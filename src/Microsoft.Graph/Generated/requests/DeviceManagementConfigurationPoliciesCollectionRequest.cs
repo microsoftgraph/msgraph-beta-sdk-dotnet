@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceManagementConfigurationPolicy>(deviceManagementConfigurationPolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> AddResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy)
+        {
+            return this.AddResponseAsync(deviceManagementConfigurationPolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> AddResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationPolicy>(deviceManagementConfigurationPolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

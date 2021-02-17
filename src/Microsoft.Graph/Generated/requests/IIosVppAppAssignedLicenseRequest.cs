@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppAppAssignedLicenseToCreate">The IosVppAppAssignedLicense to create.</param>
         /// <returns>The created IosVppAppAssignedLicense.</returns>
-        System.Threading.Tasks.Task<IosVppAppAssignedLicense> CreateAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosVppAppAssignedLicense> CreateAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToCreate);
+
+        /// <summary>
         /// Creates the specified IosVppAppAssignedLicense using POST.
         /// </summary>
         /// <param name="iosVppAppAssignedLicenseToCreate">The IosVppAppAssignedLicense to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<IosVppAppAssignedLicense> CreateAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppAssignedLicenseToCreate">The IosVppAppAssignedLicense to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> CreateResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToCreate);
+
+        /// <summary>
+        /// Creates the specified IosVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppAssignedLicenseToCreate">The IosVppAppAssignedLicense to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> CreateResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosVppAppAssignedLicense.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified IosVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified IosVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified IosVppAppAssignedLicense.
         /// </summary>
         /// <returns>The IosVppAppAssignedLicense.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<IosVppAppAssignedLicense> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified IosVppAppAssignedLicense and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosVppAppAssignedLicense and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified IosVppAppAssignedLicense using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<IosVppAppAssignedLicense> UpdateAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified IosVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppAssignedLicenseToUpdate">The IosVppAppAssignedLicense to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> UpdateResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToUpdate);
+
+        /// <summary>
+        /// Updates the specified IosVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppAssignedLicenseToUpdate">The IosVppAppAssignedLicense to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> UpdateResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicenseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

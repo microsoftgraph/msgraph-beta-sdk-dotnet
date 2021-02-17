@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TeamsApp using POST and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsApp>> CreateResponseAsync(TeamsApp teamsAppToCreate)
+        {
+            return this.CreateResponseAsync(teamsAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TeamsApp using POST and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsApp>> CreateResponseAsync(TeamsApp teamsAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsApp>(teamsAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TeamsApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<TeamsApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified TeamsApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified TeamsApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<TeamsApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified TeamsApp and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TeamsApp and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TeamsApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<TeamsApp>(teamsAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsApp using PATCH and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToUpdate">The TeamsApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsApp>> UpdateResponseAsync(TeamsApp teamsAppToUpdate)
+        {
+            return this.UpdateResponseAsync(teamsAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsApp using PATCH and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToUpdate">The TeamsApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsApp>> UpdateResponseAsync(TeamsApp teamsAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (teamsAppToUpdate.AdditionalData != null)
+			{
+				if (teamsAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (teamsAppToUpdate.AdditionalData != null)
+            {
+                if (teamsAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamsAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TeamsApp>(teamsAppToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateState.</returns>
         System.Threading.Tasks.Task<WindowsUpdateState> AddAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WindowsUpdateState to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> AddResponseAsync(WindowsUpdateState windowsUpdateState);
+
+        /// <summary>
+        /// Adds the specified WindowsUpdateState to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> AddResponseAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

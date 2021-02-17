@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The AdministrativeUnit.</returns>
         System.Threading.Tasks.Task<AdministrativeUnit> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified AdministrativeUnit and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AdministrativeUnit and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <returns>The created AdministrativeUnit.</returns>
-        System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate);
+
+        /// <summary>
         /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdministrativeUnit.</returns>
         System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate);
+
+        /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified AdministrativeUnit using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AdministrativeUnit> UpdateAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified AdministrativeUnit using PATCH and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> UpdateResponseAsync(AdministrativeUnit administrativeUnitToUpdate);
+
+        /// <summary>
+        /// Updates the specified AdministrativeUnit using PATCH and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> UpdateResponseAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified AdministrativeUnit.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified AdministrativeUnit and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AdministrativeUnit and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

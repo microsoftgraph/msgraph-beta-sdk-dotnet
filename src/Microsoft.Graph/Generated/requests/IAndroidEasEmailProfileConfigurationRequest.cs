@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
         /// <returns>The created AndroidEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> CreateAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> CreateAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidEasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> CreateAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> CreateResponseAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEasEmailProfileConfigurationToCreate">The AndroidEasEmailProfileConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> CreateResponseAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidEasEmailProfileConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidEasEmailProfileConfiguration.
         /// </summary>
         /// <returns>The AndroidEasEmailProfileConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidEasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidEasEmailProfileConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidEasEmailProfileConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> UpdateAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEasEmailProfileConfigurationToUpdate">The AndroidEasEmailProfileConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> UpdateResponseAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEasEmailProfileConfigurationToUpdate">The AndroidEasEmailProfileConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> UpdateResponseAsync(AndroidEasEmailProfileConfiguration androidEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

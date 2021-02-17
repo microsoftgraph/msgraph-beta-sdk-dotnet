@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidForWorkImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkImportedPFXCertificateProfileToCreate">The AndroidForWorkImportedPFXCertificateProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> CreateResponseAsync(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToCreate)
+        {
+            return this.CreateResponseAsync(androidForWorkImportedPFXCertificateProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkImportedPFXCertificateProfileToCreate">The AndroidForWorkImportedPFXCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> CreateResponseAsync(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkImportedPFXCertificateProfile>(androidForWorkImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidForWorkImportedPFXCertificateProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidForWorkImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AndroidForWorkImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkImportedPFXCertificateProfile and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkImportedPFXCertificateProfile and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AndroidForWorkImportedPFXCertificateProfile>(androidForWorkImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkImportedPFXCertificateProfileToUpdate">The AndroidForWorkImportedPFXCertificateProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> UpdateResponseAsync(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToUpdate)
+        {
+            return this.UpdateResponseAsync(androidForWorkImportedPFXCertificateProfileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkImportedPFXCertificateProfileToUpdate">The AndroidForWorkImportedPFXCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkImportedPFXCertificateProfile>> UpdateResponseAsync(AndroidForWorkImportedPFXCertificateProfile androidForWorkImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        {
+			if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+			{
+				if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkImportedPFXCertificateProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData != null)
+            {
+                if (androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    androidForWorkImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkImportedPFXCertificateProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkImportedPFXCertificateProfile>(androidForWorkImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtectionLabel.</returns>
         System.Threading.Tasks.Task<InformationProtectionLabel> AddAsync(InformationProtectionLabel informationProtectionLabel, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified InformationProtectionLabel to the collection via POST and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.
+        /// </summary>
+        /// <param name="informationProtectionLabel">The InformationProtectionLabel to add.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> AddResponseAsync(InformationProtectionLabel informationProtectionLabel);
+
+        /// <summary>
+        /// Adds the specified InformationProtectionLabel to the collection via POST and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.
+        /// </summary>
+        /// <param name="informationProtectionLabel">The InformationProtectionLabel to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> AddResponseAsync(InformationProtectionLabel informationProtectionLabel, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IInformationProtectionPolicyLabelsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionPolicyLabelsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicyLabelsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicyLabelsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionPolicyLabelsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicyLabelsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicyLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

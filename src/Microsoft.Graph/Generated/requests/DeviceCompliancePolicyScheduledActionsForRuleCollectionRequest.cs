@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRule, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceComplianceScheduledActionForRule to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRule">The DeviceComplianceScheduledActionForRule to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> AddResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRule)
+        {
+            return this.AddResponseAsync(deviceComplianceScheduledActionForRule, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceComplianceScheduledActionForRule to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRule">The DeviceComplianceScheduledActionForRule to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> AddResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRule, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRule, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyScheduledActionsForRuleCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

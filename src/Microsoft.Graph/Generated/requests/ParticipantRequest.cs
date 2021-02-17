@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Participant using POST and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToCreate">The Participant to create.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Participant>> CreateResponseAsync(Participant participantToCreate)
+        {
+            return this.CreateResponseAsync(participantToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Participant using POST and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToCreate">The Participant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Participant>> CreateResponseAsync(Participant participantToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Participant>(participantToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Participant.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Participant>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Participant and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Participant and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Participant>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Participant and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Participant>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Participant and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Participant>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Participant>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Participant>(participantToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Participant using PATCH and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToUpdate">The Participant to update.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Participant>> UpdateResponseAsync(Participant participantToUpdate)
+        {
+            return this.UpdateResponseAsync(participantToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Participant using PATCH and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToUpdate">The Participant to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Participant>> UpdateResponseAsync(Participant participantToUpdate, CancellationToken cancellationToken)
+        {
+			if (participantToUpdate.AdditionalData != null)
+			{
+				if (participantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					participantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, participantToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (participantToUpdate.AdditionalData != null)
+            {
+                if (participantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    participantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, participantToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Participant>(participantToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

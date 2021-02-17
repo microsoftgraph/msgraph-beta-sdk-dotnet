@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedAppRegistration to the collection via POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedAppRegistration managedAppRegistration)
+        {
+            return this.AddResponseAsync(managedAppRegistration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedAppRegistration to the collection via POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(managedAppRegistration.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/deviceAppManagement/managedAppRegistrations/{1}", this.Client.BaseUrl, managedAppRegistration.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

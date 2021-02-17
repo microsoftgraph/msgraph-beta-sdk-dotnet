@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
         /// <returns>The created AndroidOmaCpConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidOmaCpConfiguration> CreateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidOmaCpConfiguration> CreateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidOmaCpConfiguration using POST.
         /// </summary>
         /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidOmaCpConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidOmaCpConfiguration> CreateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidOmaCpConfiguration using POST and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> CreateResponseAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidOmaCpConfiguration using POST and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidOmaCpConfigurationToCreate">The AndroidOmaCpConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> CreateResponseAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidOmaCpConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidOmaCpConfiguration.
         /// </summary>
         /// <returns>The AndroidOmaCpConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidOmaCpConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidOmaCpConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidOmaCpConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidOmaCpConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidOmaCpConfiguration> UpdateAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidOmaCpConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidOmaCpConfigurationToUpdate">The AndroidOmaCpConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> UpdateResponseAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidOmaCpConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidOmaCpConfigurationToUpdate">The AndroidOmaCpConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> UpdateResponseAsync(AndroidOmaCpConfiguration androidOmaCpConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

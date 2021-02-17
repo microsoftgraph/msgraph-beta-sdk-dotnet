@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Notification>(notification, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Notification to the collection via POST and returns a <see cref="GraphResponse{Notification}"/> object of the request.
+        /// </summary>
+        /// <param name="notification">The Notification to add.</param>
+        /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification)
+        {
+            return this.AddResponseAsync(notification, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Notification to the collection via POST and returns a <see cref="GraphResponse{Notification}"/> object of the request.
+        /// </summary>
+        /// <param name="notification">The Notification to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Notification>(notification, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserNotificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
         /// <returns>The created MacOsVppAppAssignedLicense.</returns>
-        System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> CreateAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> CreateAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate);
+
+        /// <summary>
         /// Creates the specified MacOsVppAppAssignedLicense using POST.
         /// </summary>
         /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOsVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> CreateAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOsVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> CreateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOsVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> CreateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOsVppAppAssignedLicense.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOsVppAppAssignedLicense.
         /// </summary>
         /// <returns>The MacOsVppAppAssignedLicense.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOsVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOsVppAppAssignedLicense using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOsVppAppAssignedLicense.</returns>
         System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> UpdateAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOsVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToUpdate">The MacOsVppAppAssignedLicense to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> UpdateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOsVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToUpdate">The MacOsVppAppAssignedLicense to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> UpdateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

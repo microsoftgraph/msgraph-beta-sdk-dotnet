@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppRelationship.</returns>
         System.Threading.Tasks.Task<MobileAppRelationship> AddAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileAppRelationship to the collection via POST and returns a <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppRelationship>> AddResponseAsync(MobileAppRelationship mobileAppRelationship);
+
+        /// <summary>
+        /// Adds the specified MobileAppRelationship to the collection via POST and returns a <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppRelationship>> AddResponseAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IMobileAppRelationshipsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppRelationshipsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppRelationshipsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

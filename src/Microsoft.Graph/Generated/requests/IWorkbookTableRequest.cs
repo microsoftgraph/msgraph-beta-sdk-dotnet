@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
         /// <returns>The created WorkbookTable.</returns>
-        System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookTable using POST.
         /// </summary>
         /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTable.</returns>
         System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookTable.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookTable and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookTable and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookTable.
         /// </summary>
         /// <returns>The WorkbookTable.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookTable.</returns>
         System.Threading.Tasks.Task<WorkbookTable> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookTable and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookTable and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookTable using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookTable.</returns>
         System.Threading.Tasks.Task<WorkbookTable> UpdateAsync(WorkbookTable workbookTableToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookTable using PATCH and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToUpdate">The WorkbookTable to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> UpdateResponseAsync(WorkbookTable workbookTableToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookTable using PATCH and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToUpdate">The WorkbookTable to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> UpdateResponseAsync(WorkbookTable workbookTableToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

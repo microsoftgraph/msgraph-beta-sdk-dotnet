@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
         /// <returns>The created GroupPolicyPresentationComboBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationComboBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationComboBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> CreateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationComboBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> CreateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationComboBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationComboBoxToCreate">The GroupPolicyPresentationComboBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> CreateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationComboBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationComboBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationComboBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationComboBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationComboBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationComboBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> UpdateAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationComboBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationComboBoxToUpdate">The GroupPolicyPresentationComboBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> UpdateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationComboBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationComboBoxToUpdate">The GroupPolicyPresentationComboBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> UpdateResponseAsync(GroupPolicyPresentationComboBox groupPolicyPresentationComboBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

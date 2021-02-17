@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
         /// <returns>The created AadUserConversationMember.</returns>
-        System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate);
+
+        /// <summary>
         /// Creates the specified AadUserConversationMember using POST.
         /// </summary>
         /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AadUserConversationMember.</returns>
         System.Threading.Tasks.Task<AadUserConversationMember> CreateAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AadUserConversationMember using POST and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> CreateResponseAsync(AadUserConversationMember aadUserConversationMemberToCreate);
+
+        /// <summary>
+        /// Creates the specified AadUserConversationMember using POST and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> CreateResponseAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AadUserConversationMember.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AadUserConversationMember and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AadUserConversationMember and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AadUserConversationMember.
         /// </summary>
         /// <returns>The AadUserConversationMember.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AadUserConversationMember.</returns>
         System.Threading.Tasks.Task<AadUserConversationMember> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AadUserConversationMember and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AadUserConversationMember and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AadUserConversationMember using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AadUserConversationMember.</returns>
         System.Threading.Tasks.Task<AadUserConversationMember> UpdateAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PATCH and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> UpdateResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate);
+
+        /// <summary>
+        /// Updates the specified AadUserConversationMember using PATCH and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> UpdateResponseAsync(AadUserConversationMember aadUserConversationMemberToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

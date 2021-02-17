@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
         /// <returns>The created OrganizationalBrandingProperties.</returns>
-        System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate);
+
+        /// <summary>
         /// Creates the specified OrganizationalBrandingProperties using POST.
         /// </summary>
         /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBrandingProperties.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingProperties> CreateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OrganizationalBrandingProperties using POST and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> CreateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate);
+
+        /// <summary>
+        /// Creates the specified OrganizationalBrandingProperties using POST and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToCreate">The OrganizationalBrandingProperties to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> CreateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OrganizationalBrandingProperties.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OrganizationalBrandingProperties.
         /// </summary>
         /// <returns>The OrganizationalBrandingProperties.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrganizationalBrandingProperties.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingProperties> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OrganizationalBrandingProperties and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OrganizationalBrandingProperties using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationalBrandingProperties.</returns>
         System.Threading.Tasks.Task<OrganizationalBrandingProperties> UpdateAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingProperties using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties to update.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> UpdateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate);
+
+        /// <summary>
+        /// Updates the specified OrganizationalBrandingProperties using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object.
+        /// </summary>
+        /// <param name="organizationalBrandingPropertiesToUpdate">The OrganizationalBrandingProperties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingProperties}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingProperties>> UpdateResponseAsync(OrganizationalBrandingProperties organizationalBrandingPropertiesToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

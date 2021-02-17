@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration)
+        {
+            return this.AddResponseAsync(certificateBasedAuthConfiguration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified CertificateBasedAuthConfiguration to the collection via POST and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfiguration">The CertificateBasedAuthConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfiguration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(certificateBasedAuthConfiguration.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/certificateBasedAuthConfiguration/{1}", this.Client.BaseUrl, certificateBasedAuthConfiguration.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

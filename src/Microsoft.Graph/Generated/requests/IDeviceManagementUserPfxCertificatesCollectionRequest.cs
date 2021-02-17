@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserPFXCertificate.</returns>
         System.Threading.Tasks.Task<UserPFXCertificate> AddAsync(UserPFXCertificate userPFXCertificate, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UserPFXCertificate to the collection via POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.
+        /// </summary>
+        /// <param name="userPFXCertificate">The UserPFXCertificate to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> AddResponseAsync(UserPFXCertificate userPFXCertificate);
+
+        /// <summary>
+        /// Adds the specified UserPFXCertificate to the collection via POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.
+        /// </summary>
+        /// <param name="userPFXCertificate">The UserPFXCertificate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> AddResponseAsync(UserPFXCertificate userPFXCertificate, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementUserPfxCertificatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserPfxCertificatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserPfxCertificatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

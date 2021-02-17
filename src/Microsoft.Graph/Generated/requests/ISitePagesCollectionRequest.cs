@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SitePage.</returns>
         System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
+        /// </summary>
+        /// <param name="sitePage">The SitePage to add.</param>
+        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage);
+
+        /// <summary>
+        /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
+        /// </summary>
+        /// <param name="sitePage">The SitePage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISitePagesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SitePagesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SitePagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph.TermStore
         }
 
         /// <summary>
+        /// Creates the specified Term using POST and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="termToCreate">The Term to create.</param>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Term>> CreateResponseAsync(Term termToCreate)
+        {
+            return this.CreateResponseAsync(termToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Term using POST and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="termToCreate">The Term to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Term>> CreateResponseAsync(Term termToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Term>(termToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Term.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph.TermStore
         {
             this.Method = "DELETE";
             await this.SendAsync<Term>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Term and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Term and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph.TermStore
             var retrievedEntity = await this.SendAsync<Term>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Term and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Term>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Term and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Term>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Term>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph.TermStore
             var updatedEntity = await this.SendAsync<Term>(termToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Term using PATCH and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="termToUpdate">The Term to update.</param>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Term>> UpdateResponseAsync(Term termToUpdate)
+        {
+            return this.UpdateResponseAsync(termToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Term using PATCH and returns a <see cref="GraphResponse{Term}"/> object.
+        /// </summary>
+        /// <param name="termToUpdate">The Term to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Term>> UpdateResponseAsync(Term termToUpdate, CancellationToken cancellationToken)
+        {
+			if (termToUpdate.AdditionalData != null)
+			{
+				if (termToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
+					termToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new Microsoft.Graph.ClientException(
+						new Microsoft.Graph.Error
+						{
+							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (termToUpdate.AdditionalData != null)
+            {
+                if (termToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
+                    termToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new Microsoft.Graph.ClientException(
+                        new Microsoft.Graph.Error
+                        {
+                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Term>(termToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceAndAppManagementRoleAssignment using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToCreate">The DeviceAndAppManagementRoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> CreateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(deviceAndAppManagementRoleAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementRoleAssignment using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToCreate">The DeviceAndAppManagementRoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> CreateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceAndAppManagementRoleAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceAndAppManagementRoleAssignment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceAndAppManagementRoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceAndAppManagementRoleAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceAndAppManagementRoleAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceAndAppManagementRoleAssignment and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceAndAppManagementRoleAssignment and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleAssignment using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToUpdate">The DeviceAndAppManagementRoleAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> UpdateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleAssignment using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleAssignmentToUpdate">The DeviceAndAppManagementRoleAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> UpdateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData != null)
+			{
+				if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementRoleAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData != null)
+            {
+                if (deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceAndAppManagementRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAndAppManagementRoleAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

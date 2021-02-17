@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileVersion.</returns>
         System.Threading.Tasks.Task<AgreementFileVersion> AddAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion);
+
+        /// <summary>
+        /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAgreementFileLocalizationVersionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

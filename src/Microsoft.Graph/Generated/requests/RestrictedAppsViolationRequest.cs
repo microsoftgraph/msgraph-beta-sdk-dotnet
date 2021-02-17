@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RestrictedAppsViolation using POST and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <param name="restrictedAppsViolationToCreate">The RestrictedAppsViolation to create.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> CreateResponseAsync(RestrictedAppsViolation restrictedAppsViolationToCreate)
+        {
+            return this.CreateResponseAsync(restrictedAppsViolationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RestrictedAppsViolation using POST and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <param name="restrictedAppsViolationToCreate">The RestrictedAppsViolation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> CreateResponseAsync(RestrictedAppsViolation restrictedAppsViolationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RestrictedAppsViolation>(restrictedAppsViolationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RestrictedAppsViolation.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<RestrictedAppsViolation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified RestrictedAppsViolation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified RestrictedAppsViolation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<RestrictedAppsViolation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified RestrictedAppsViolation and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified RestrictedAppsViolation and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<RestrictedAppsViolation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<RestrictedAppsViolation>(restrictedAppsViolationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RestrictedAppsViolation using PATCH and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <param name="restrictedAppsViolationToUpdate">The RestrictedAppsViolation to update.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> UpdateResponseAsync(RestrictedAppsViolation restrictedAppsViolationToUpdate)
+        {
+            return this.UpdateResponseAsync(restrictedAppsViolationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified RestrictedAppsViolation using PATCH and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
+        /// </summary>
+        /// <param name="restrictedAppsViolationToUpdate">The RestrictedAppsViolation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> UpdateResponseAsync(RestrictedAppsViolation restrictedAppsViolationToUpdate, CancellationToken cancellationToken)
+        {
+			if (restrictedAppsViolationToUpdate.AdditionalData != null)
+			{
+				if (restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, restrictedAppsViolationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (restrictedAppsViolationToUpdate.AdditionalData != null)
+            {
+                if (restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    restrictedAppsViolationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, restrictedAppsViolationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<RestrictedAppsViolation>(restrictedAppsViolationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

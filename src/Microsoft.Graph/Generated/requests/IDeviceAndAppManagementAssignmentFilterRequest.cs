@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
         System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> CreateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> CreateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementAssignmentFilter using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToCreate">The DeviceAndAppManagementAssignmentFilter to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> CreateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceAndAppManagementAssignmentFilter.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceAndAppManagementAssignmentFilter.
         /// </summary>
         /// <returns>The DeviceAndAppManagementAssignmentFilter.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceAndAppManagementAssignmentFilter.</returns>
         System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceAndAppManagementAssignmentFilter and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceAndAppManagementAssignmentFilter using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAndAppManagementAssignmentFilter.</returns>
         System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> UpdateAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> UpdateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementAssignmentFilter using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementAssignmentFilterToUpdate">The DeviceAndAppManagementAssignmentFilter to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> UpdateResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilterToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

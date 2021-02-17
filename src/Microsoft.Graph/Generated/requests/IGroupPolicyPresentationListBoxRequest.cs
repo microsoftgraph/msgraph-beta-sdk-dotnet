@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
         /// <returns>The created GroupPolicyPresentationListBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationListBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationListBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationListBox> CreateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationListBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> CreateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationListBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToCreate">The GroupPolicyPresentationListBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> CreateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationListBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationListBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationListBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationListBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationListBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationListBox and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationListBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationListBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationListBox> UpdateAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationListBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> UpdateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationListBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationListBoxToUpdate">The GroupPolicyPresentationListBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationListBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationListBox>> UpdateResponseAsync(GroupPolicyPresentationListBox groupPolicyPresentationListBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

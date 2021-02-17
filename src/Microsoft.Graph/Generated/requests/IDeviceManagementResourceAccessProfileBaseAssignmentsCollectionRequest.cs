@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementResourceAccessProfileAssignment.</returns>
         System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileAssignment> AddAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementResourceAccessProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileAssignment">The DeviceManagementResourceAccessProfileAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileAssignment>> AddResponseAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignment);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementResourceAccessProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileAssignment">The DeviceManagementResourceAccessProfileAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileAssignment>> AddResponseAsync(DeviceManagementResourceAccessProfileAssignment deviceManagementResourceAccessProfileAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfileBaseAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBaseAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

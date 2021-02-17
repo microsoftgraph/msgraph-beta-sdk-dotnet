@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedStoreAppConfigurationSchema.</returns>
         System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> AddAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AndroidManagedStoreAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedStoreAppConfigurationSchema">The AndroidManagedStoreAppConfigurationSchema to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> AddResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema);
+
+        /// <summary>
+        /// Adds the specified AndroidManagedStoreAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedStoreAppConfigurationSchema">The AndroidManagedStoreAppConfigurationSchema to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> AddResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

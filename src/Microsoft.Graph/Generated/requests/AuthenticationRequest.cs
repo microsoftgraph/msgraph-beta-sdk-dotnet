@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Authentication using POST and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToCreate">The Authentication to create.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate)
+        {
+            return this.CreateResponseAsync(authenticationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Authentication using POST and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToCreate">The Authentication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Authentication>(authenticationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Authentication.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Authentication>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Authentication and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Authentication and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Authentication>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Authentication>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Authentication using PATCH and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToUpdate">The Authentication to update.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate)
+        {
+            return this.UpdateResponseAsync(authenticationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Authentication using PATCH and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="authenticationToUpdate">The Authentication to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken)
+        {
+			if (authenticationToUpdate.AdditionalData != null)
+			{
+				if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (authenticationToUpdate.AdditionalData != null)
+            {
+                if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -282,6 +395,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (authenticationToInitialize.Operations != null && authenticationToInitialize.Operations.CurrentPage != null)
                 {
                     authenticationToInitialize.Operations.AdditionalData = authenticationToInitialize.AdditionalData;
@@ -341,6 +470,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.WindowsHelloForBusinessMethods != null && authenticationToInitialize.WindowsHelloForBusinessMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

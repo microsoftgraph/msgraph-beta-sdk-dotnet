@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The WindowsInformationProtectionDeviceRegistration.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified WindowsInformationProtectionDeviceRegistration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

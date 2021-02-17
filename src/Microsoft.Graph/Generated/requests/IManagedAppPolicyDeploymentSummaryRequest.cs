@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <returns>The created ManagedAppPolicyDeploymentSummary.</returns>
-        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppPolicyDeploymentSummary using POST.
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppPolicyDeploymentSummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagedAppPolicyDeploymentSummary.
         /// </summary>
         /// <returns>The ManagedAppPolicyDeploymentSummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> UpdateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToUpdate">The ManagedAppPolicyDeploymentSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> UpdateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToUpdate">The ManagedAppPolicyDeploymentSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> UpdateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

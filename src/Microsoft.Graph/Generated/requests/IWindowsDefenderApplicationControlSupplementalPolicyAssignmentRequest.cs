@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment.
         /// </summary>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
         System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

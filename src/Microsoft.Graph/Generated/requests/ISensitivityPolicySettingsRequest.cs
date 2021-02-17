@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
         /// <returns>The created SensitivityPolicySettings.</returns>
-        System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate);
+
+        /// <summary>
         /// Creates the specified SensitivityPolicySettings using POST.
         /// </summary>
         /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitivityPolicySettings.</returns>
         System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SensitivityPolicySettings using POST and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> CreateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate);
+
+        /// <summary>
+        /// Creates the specified SensitivityPolicySettings using POST and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> CreateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SensitivityPolicySettings.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SensitivityPolicySettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SensitivityPolicySettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SensitivityPolicySettings.
         /// </summary>
         /// <returns>The SensitivityPolicySettings.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SensitivityPolicySettings.</returns>
         System.Threading.Tasks.Task<SensitivityPolicySettings> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SensitivityPolicySettings and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SensitivityPolicySettings and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SensitivityPolicySettings using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SensitivityPolicySettings.</returns>
         System.Threading.Tasks.Task<SensitivityPolicySettings> UpdateAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SensitivityPolicySettings using PATCH and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> UpdateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate);
+
+        /// <summary>
+        /// Updates the specified SensitivityPolicySettings using PATCH and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
+        /// </summary>
+        /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> UpdateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

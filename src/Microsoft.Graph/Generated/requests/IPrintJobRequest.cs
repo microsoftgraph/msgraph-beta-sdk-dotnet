@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="printJobToCreate">The PrintJob to create.</param>
         /// <returns>The created PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate);
+
+        /// <summary>
         /// Creates the specified PrintJob using POST.
         /// </summary>
         /// <param name="printJobToCreate">The PrintJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintJob.</returns>
         System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PrintJob using POST and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToCreate">The PrintJob to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate);
+
+        /// <summary>
+        /// Creates the specified PrintJob using POST and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToCreate">The PrintJob to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PrintJob.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PrintJob and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PrintJob and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PrintJob.
         /// </summary>
         /// <returns>The PrintJob.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintJob.</returns>
         System.Threading.Tasks.Task<PrintJob> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PrintJob and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PrintJob and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PrintJob using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintJob.</returns>
         System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PrintJob using PATCH and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToUpdate">The PrintJob to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate);
+
+        /// <summary>
+        /// Updates the specified PrintJob using PATCH and returns a <see cref="GraphResponse{PrintJob}"/> object.
+        /// </summary>
+        /// <param name="printJobToUpdate">The PrintJob to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

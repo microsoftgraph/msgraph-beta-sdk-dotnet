@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityProvider.</returns>
         System.Threading.Tasks.Task<IdentityProvider> AddAsync(IdentityProvider identityProvider, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified IdentityProvider to the collection via POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object of the request.
+        /// </summary>
+        /// <param name="identityProvider">The IdentityProvider to add.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> AddResponseAsync(IdentityProvider identityProvider);
+
+        /// <summary>
+        /// Adds the specified IdentityProvider to the collection via POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object of the request.
+        /// </summary>
+        /// <param name="identityProvider">The IdentityProvider to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> AddResponseAsync(IdentityProvider identityProvider, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceIdentityProvidersCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceIdentityProvidersCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceIdentityProvidersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceIdentityProvidersCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceIdentityProvidersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceIdentityProvidersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceIdentityProvidersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

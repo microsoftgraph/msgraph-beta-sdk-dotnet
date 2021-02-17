@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod using POST and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to create.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> CreateResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate)
+        {
+            return this.CreateResponseAsync(passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod using POST and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> CreateResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(passwordlessMicrosoftAuthenticatorAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to update.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> UpdateResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate)
+        {
+            return this.UpdateResponseAsync(passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> UpdateResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate, CancellationToken cancellationToken)
+        {
+			if (passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData != null)
+			{
+				if (passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData != null)
+            {
+                if (passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(passwordlessMicrosoftAuthenticatorAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

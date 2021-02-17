@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="emailAppUsageVersionsUserCountsToCreate">The EmailAppUsageVersionsUserCounts to create.</param>
         /// <returns>The created EmailAppUsageVersionsUserCounts.</returns>
-        System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> CreateAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> CreateAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToCreate);
+
+        /// <summary>
         /// Creates the specified EmailAppUsageVersionsUserCounts using POST.
         /// </summary>
         /// <param name="emailAppUsageVersionsUserCountsToCreate">The EmailAppUsageVersionsUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailAppUsageVersionsUserCounts.</returns>
         System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> CreateAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EmailAppUsageVersionsUserCounts using POST and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageVersionsUserCountsToCreate">The EmailAppUsageVersionsUserCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> CreateResponseAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToCreate);
+
+        /// <summary>
+        /// Creates the specified EmailAppUsageVersionsUserCounts using POST and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageVersionsUserCountsToCreate">The EmailAppUsageVersionsUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> CreateResponseAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EmailAppUsageVersionsUserCounts.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EmailAppUsageVersionsUserCounts.
         /// </summary>
         /// <returns>The EmailAppUsageVersionsUserCounts.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAppUsageVersionsUserCounts.</returns>
         System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EmailAppUsageVersionsUserCounts using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAppUsageVersionsUserCounts.</returns>
         System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> UpdateAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EmailAppUsageVersionsUserCounts using PATCH and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageVersionsUserCountsToUpdate">The EmailAppUsageVersionsUserCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> UpdateResponseAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToUpdate);
+
+        /// <summary>
+        /// Updates the specified EmailAppUsageVersionsUserCounts using PATCH and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="emailAppUsageVersionsUserCountsToUpdate">The EmailAppUsageVersionsUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> UpdateResponseAsync(EmailAppUsageVersionsUserCounts emailAppUsageVersionsUserCountsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

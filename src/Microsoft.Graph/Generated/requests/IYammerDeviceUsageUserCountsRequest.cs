@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
         /// <returns>The created YammerDeviceUsageUserCounts.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate);
+
+        /// <summary>
         /// Creates the specified YammerDeviceUsageUserCounts using POST.
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created YammerDeviceUsageUserCounts.</returns>
         System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified YammerDeviceUsageUserCounts using POST and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> CreateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate);
+
+        /// <summary>
+        /// Creates the specified YammerDeviceUsageUserCounts using POST and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> CreateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified YammerDeviceUsageUserCounts.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified YammerDeviceUsageUserCounts.
         /// </summary>
         /// <returns>The YammerDeviceUsageUserCounts.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerDeviceUsageUserCounts.</returns>
         System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified YammerDeviceUsageUserCounts using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerDeviceUsageUserCounts.</returns>
         System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> UpdateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageUserCounts using PATCH and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> UpdateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate);
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageUserCounts using PATCH and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> UpdateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

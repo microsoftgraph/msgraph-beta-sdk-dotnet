@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTag.</returns>
         System.Threading.Tasks.Task<RoleScopeTag> AddAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified RoleScopeTag to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object of the request.
+        /// </summary>
+        /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> AddResponseAsync(RoleScopeTag roleScopeTag);
+
+        /// <summary>
+        /// Adds the specified RoleScopeTag to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object of the request.
+        /// </summary>
+        /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> AddResponseAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementRoleScopeTagsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

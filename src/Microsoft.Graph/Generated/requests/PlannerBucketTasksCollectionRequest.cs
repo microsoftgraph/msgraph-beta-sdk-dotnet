@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PlannerTask>(plannerTask, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PlannerTask to the collection via POST and returns a <see cref="GraphResponse{PlannerTask}"/> object of the request.
+        /// </summary>
+        /// <param name="plannerTask">The PlannerTask to add.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTask>> AddResponseAsync(PlannerTask plannerTask)
+        {
+            return this.AddResponseAsync(plannerTask, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PlannerTask to the collection via POST and returns a <see cref="GraphResponse{PlannerTask}"/> object of the request.
+        /// </summary>
+        /// <param name="plannerTask">The PlannerTask to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerTask>> AddResponseAsync(PlannerTask plannerTask, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PlannerTask>(plannerTask, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerBucketTasksCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTasksCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerBucketTasksCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerBucketTasksCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTasksCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerBucketTasksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PlannerBucketTasksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

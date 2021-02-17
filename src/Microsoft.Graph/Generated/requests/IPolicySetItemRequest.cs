@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="policySetItemToCreate">The PolicySetItem to create.</param>
         /// <returns>The created PolicySetItem.</returns>
-        System.Threading.Tasks.Task<PolicySetItem> CreateAsync(PolicySetItem policySetItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PolicySetItem> CreateAsync(PolicySetItem policySetItemToCreate);
+
+        /// <summary>
         /// Creates the specified PolicySetItem using POST.
         /// </summary>
         /// <param name="policySetItemToCreate">The PolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySetItem.</returns>
         System.Threading.Tasks.Task<PolicySetItem> CreateAsync(PolicySetItem policySetItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PolicySetItem using POST and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="policySetItemToCreate">The PolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> CreateResponseAsync(PolicySetItem policySetItemToCreate);
+
+        /// <summary>
+        /// Creates the specified PolicySetItem using POST and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="policySetItemToCreate">The PolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> CreateResponseAsync(PolicySetItem policySetItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PolicySetItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PolicySetItem.
         /// </summary>
         /// <returns>The PolicySetItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicySetItem.</returns>
         System.Threading.Tasks.Task<PolicySetItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PolicySetItem and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PolicySetItem and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PolicySetItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicySetItem.</returns>
         System.Threading.Tasks.Task<PolicySetItem> UpdateAsync(PolicySetItem policySetItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PolicySetItem using PATCH and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="policySetItemToUpdate">The PolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> UpdateResponseAsync(PolicySetItem policySetItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified PolicySetItem using PATCH and returns a <see cref="GraphResponse{PolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="policySetItemToUpdate">The PolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> UpdateResponseAsync(PolicySetItem policySetItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

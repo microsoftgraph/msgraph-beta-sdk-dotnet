@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<InferenceClassificationOverride>(inferenceClassificationOverride, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified InferenceClassificationOverride to the collection via POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.
+        /// </summary>
+        /// <param name="inferenceClassificationOverride">The InferenceClassificationOverride to add.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> AddResponseAsync(InferenceClassificationOverride inferenceClassificationOverride)
+        {
+            return this.AddResponseAsync(inferenceClassificationOverride, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified InferenceClassificationOverride to the collection via POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.
+        /// </summary>
+        /// <param name="inferenceClassificationOverride">The InferenceClassificationOverride to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> AddResponseAsync(InferenceClassificationOverride inferenceClassificationOverride, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverride, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverridesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverridesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverridesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<InferenceClassificationOverridesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

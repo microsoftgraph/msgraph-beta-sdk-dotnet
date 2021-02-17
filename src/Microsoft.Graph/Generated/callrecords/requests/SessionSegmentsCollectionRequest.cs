@@ -57,6 +57,30 @@ namespace Microsoft.Graph.CallRecords
             return this.SendAsync<Segment>(segment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Segment to the collection via POST and returns a <see cref="GraphResponse{Segment}"/> object of the request.
+        /// </summary>
+        /// <param name="segment">The Segment to add.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Segment>> AddResponseAsync(Segment segment)
+        {
+            return this.AddResponseAsync(segment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Segment to the collection via POST and returns a <see cref="GraphResponse{Segment}"/> object of the request.
+        /// </summary>
+        /// <param name="segment">The Segment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Segment>> AddResponseAsync(Segment segment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Segment>(segment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph.CallRecords
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SessionSegmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SessionSegmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SessionSegmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SessionSegmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SessionSegmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SessionSegmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SessionSegmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsCategory>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified UserExperienceAnalyticsCategory using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserExperienceAnalyticsCategory>(userExperienceAnalyticsCategoryToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified UserExperienceAnalyticsCategory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> CreateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate)
+        {
+            return this.CreateResponseAsync(userExperienceAnalyticsCategoryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsCategory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> CreateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsCategory>(userExperienceAnalyticsCategoryToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified UserExperienceAnalyticsCategory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToUpdate">The UserExperienceAnalyticsCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> UpdateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToUpdate)
+        {
+            return this.UpdateResponseAsync(userExperienceAnalyticsCategoryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsCategory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToUpdate">The UserExperienceAnalyticsCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> UpdateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToUpdate, CancellationToken cancellationToken)
+        {
+			if (userExperienceAnalyticsCategoryToUpdate.AdditionalData != null)
+			{
+				if (userExperienceAnalyticsCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userExperienceAnalyticsCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsCategoryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userExperienceAnalyticsCategoryToUpdate.AdditionalData != null)
+            {
+                if (userExperienceAnalyticsCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userExperienceAnalyticsCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsCategoryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsCategory>(userExperienceAnalyticsCategoryToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified UserExperienceAnalyticsCategory.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsCategory>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

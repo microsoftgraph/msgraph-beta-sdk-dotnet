@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <returns>The created DataPolicyOperation.</returns>
-        System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate);
+
+        /// <summary>
         /// Creates the specified DataPolicyOperation using POST.
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataPolicyOperation.</returns>
         System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DataPolicyOperation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DataPolicyOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DataPolicyOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DataPolicyOperation.
         /// </summary>
         /// <returns>The DataPolicyOperation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataPolicyOperation.</returns>
         System.Threading.Tasks.Task<DataPolicyOperation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DataPolicyOperation and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DataPolicyOperation and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DataPolicyOperation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataPolicyOperation.</returns>
         System.Threading.Tasks.Task<DataPolicyOperation> UpdateAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DataPolicyOperation using PATCH and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> UpdateResponseAsync(DataPolicyOperation dataPolicyOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified DataPolicyOperation using PATCH and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> UpdateResponseAsync(DataPolicyOperation dataPolicyOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

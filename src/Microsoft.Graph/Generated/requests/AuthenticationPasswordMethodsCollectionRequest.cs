@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PasswordAuthenticationMethod>(passwordAuthenticationMethod, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PasswordAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="passwordAuthenticationMethod">The PasswordAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> AddResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethod)
+        {
+            return this.AddResponseAsync(passwordAuthenticationMethod, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PasswordAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="passwordAuthenticationMethod">The PasswordAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> AddResponseAsync(PasswordAuthenticationMethod passwordAuthenticationMethod, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PasswordAuthenticationMethod>(passwordAuthenticationMethod, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationPasswordMethodsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationPasswordMethodsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationPasswordMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationPasswordMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

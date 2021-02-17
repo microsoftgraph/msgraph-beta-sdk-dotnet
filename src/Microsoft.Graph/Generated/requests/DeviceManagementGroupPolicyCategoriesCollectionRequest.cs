@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<GroupPolicyCategory>(groupPolicyCategory, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> AddResponseAsync(GroupPolicyCategory groupPolicyCategory)
+        {
+            return this.AddResponseAsync(groupPolicyCategory, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> AddResponseAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyCategory>(groupPolicyCategory, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

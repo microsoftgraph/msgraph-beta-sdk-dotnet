@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> CreateAsync(OnlineMeeting onlineMeetingToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnlineMeeting> CreateAsync(OnlineMeeting onlineMeetingToCreate);
+
+        /// <summary>
         /// Creates the specified OnlineMeeting using POST.
         /// </summary>
         /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnlineMeeting.</returns>
         System.Threading.Tasks.Task<OnlineMeeting> CreateAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate);
+
+        /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnlineMeeting.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnlineMeeting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnlineMeeting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnlineMeeting.
         /// </summary>
         /// <returns>The OnlineMeeting.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnlineMeeting.</returns>
         System.Threading.Tasks.Task<OnlineMeeting> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnlineMeeting using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnlineMeeting.</returns>
         System.Threading.Tasks.Task<OnlineMeeting> UpdateAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnlineMeeting using PATCH and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> UpdateResponseAsync(OnlineMeeting onlineMeetingToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnlineMeeting using PATCH and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> UpdateResponseAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

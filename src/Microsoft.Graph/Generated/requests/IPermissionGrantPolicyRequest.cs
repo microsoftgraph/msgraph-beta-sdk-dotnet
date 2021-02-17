@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="permissionGrantPolicyToCreate">The PermissionGrantPolicy to create.</param>
         /// <returns>The created PermissionGrantPolicy.</returns>
-        System.Threading.Tasks.Task<PermissionGrantPolicy> CreateAsync(PermissionGrantPolicy permissionGrantPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PermissionGrantPolicy> CreateAsync(PermissionGrantPolicy permissionGrantPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified PermissionGrantPolicy using POST.
         /// </summary>
         /// <param name="permissionGrantPolicyToCreate">The PermissionGrantPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PermissionGrantPolicy.</returns>
         System.Threading.Tasks.Task<PermissionGrantPolicy> CreateAsync(PermissionGrantPolicy permissionGrantPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PermissionGrantPolicy using POST and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantPolicyToCreate">The PermissionGrantPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> CreateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified PermissionGrantPolicy using POST and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantPolicyToCreate">The PermissionGrantPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> CreateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PermissionGrantPolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PermissionGrantPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PermissionGrantPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PermissionGrantPolicy.
         /// </summary>
         /// <returns>The PermissionGrantPolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PermissionGrantPolicy.</returns>
         System.Threading.Tasks.Task<PermissionGrantPolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PermissionGrantPolicy and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PermissionGrantPolicy and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PermissionGrantPolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PermissionGrantPolicy.</returns>
         System.Threading.Tasks.Task<PermissionGrantPolicy> UpdateAsync(PermissionGrantPolicy permissionGrantPolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PermissionGrantPolicy using PATCH and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantPolicyToUpdate">The PermissionGrantPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> UpdateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified PermissionGrantPolicy using PATCH and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantPolicyToUpdate">The PermissionGrantPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> UpdateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

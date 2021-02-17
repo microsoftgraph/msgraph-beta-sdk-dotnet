@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CountryRegion using POST and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> CreateResponseAsync(CountryRegion countryRegionToCreate)
+        {
+            return this.CreateResponseAsync(countryRegionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CountryRegion using POST and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToCreate">The CountryRegion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CountryRegion>> CreateResponseAsync(CountryRegion countryRegionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CountryRegion>(countryRegionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CountryRegion.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<CountryRegion>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified CountryRegion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified CountryRegion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<CountryRegion>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified CountryRegion and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CountryRegion and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CountryRegion>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<CountryRegion>(countryRegionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CountryRegion using PATCH and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToUpdate">The CountryRegion to update.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> UpdateResponseAsync(CountryRegion countryRegionToUpdate)
+        {
+            return this.UpdateResponseAsync(countryRegionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CountryRegion using PATCH and returns a <see cref="GraphResponse{CountryRegion}"/> object.
+        /// </summary>
+        /// <param name="countryRegionToUpdate">The CountryRegion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CountryRegion>> UpdateResponseAsync(CountryRegion countryRegionToUpdate, CancellationToken cancellationToken)
+        {
+			if (countryRegionToUpdate.AdditionalData != null)
+			{
+				if (countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, countryRegionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (countryRegionToUpdate.AdditionalData != null)
+            {
+                if (countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    countryRegionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, countryRegionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CountryRegion>(countryRegionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

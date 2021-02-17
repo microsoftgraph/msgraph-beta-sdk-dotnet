@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DomainDnsRecord to the collection via POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.
+        /// </summary>
+        /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord);
+
+        /// <summary>
+        /// Adds the specified DomainDnsRecord to the collection via POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.
+        /// </summary>
+        /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDomainVerificationDnsRecordsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainVerificationDnsRecordsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainVerificationDnsRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

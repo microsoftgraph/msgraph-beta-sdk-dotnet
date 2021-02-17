@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
-        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);
+
+        /// <summary>
         /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST.
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AppleDeviceFeaturesConfigurationBase.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AppleDeviceFeaturesConfigurationBase.
         /// </summary>
         /// <returns>The AppleDeviceFeaturesConfigurationBase.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleDeviceFeaturesConfigurationBase.</returns>
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AppleDeviceFeaturesConfigurationBase using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleDeviceFeaturesConfigurationBase.</returns>
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> UpdateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AppleDeviceFeaturesConfigurationBase using PATCH and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToUpdate">The AppleDeviceFeaturesConfigurationBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> UpdateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate);
+
+        /// <summary>
+        /// Updates the specified AppleDeviceFeaturesConfigurationBase using PATCH and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToUpdate">The AppleDeviceFeaturesConfigurationBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> UpdateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

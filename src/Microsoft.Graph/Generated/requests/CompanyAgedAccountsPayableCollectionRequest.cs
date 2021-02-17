@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AgedAccountsPayable>(agedAccountsPayable, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AgedAccountsPayable to the collection via POST and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.
+        /// </summary>
+        /// <param name="agedAccountsPayable">The AgedAccountsPayable to add.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> AddResponseAsync(AgedAccountsPayable agedAccountsPayable)
+        {
+            return this.AddResponseAsync(agedAccountsPayable, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AgedAccountsPayable to the collection via POST and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.
+        /// </summary>
+        /// <param name="agedAccountsPayable">The AgedAccountsPayable to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> AddResponseAsync(AgedAccountsPayable agedAccountsPayable, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AgedAccountsPayable>(agedAccountsPayable, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsPayableCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyAgedAccountsPayableCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsPayableCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CompanyAgedAccountsPayableCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

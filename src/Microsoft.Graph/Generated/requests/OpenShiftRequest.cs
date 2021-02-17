@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate)
+        {
+            return this.CreateResponseAsync(openShiftToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OpenShift>(openShiftToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OpenShift.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<OpenShift>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified OpenShift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified OpenShift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<OpenShift>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OpenShift>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<OpenShift>(openShiftToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenShift using PATCH and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToUpdate">The OpenShift to update.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShift>> UpdateResponseAsync(OpenShift openShiftToUpdate)
+        {
+            return this.UpdateResponseAsync(openShiftToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OpenShift using PATCH and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToUpdate">The OpenShift to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShift>> UpdateResponseAsync(OpenShift openShiftToUpdate, CancellationToken cancellationToken)
+        {
+			if (openShiftToUpdate.AdditionalData != null)
+			{
+				if (openShiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					openShiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openShiftToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (openShiftToUpdate.AdditionalData != null)
+            {
+                if (openShiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    openShiftToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openShiftToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OpenShift>(openShiftToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

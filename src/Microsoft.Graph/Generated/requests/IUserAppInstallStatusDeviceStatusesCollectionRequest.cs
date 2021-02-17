@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
         System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> AddResponseAsync(MobileAppInstallStatus mobileAppInstallStatus);
+
+        /// <summary>
+        /// Adds the specified MobileAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> AddResponseAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUserAppInstallStatusDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppInstallStatusDeviceStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatusDeviceStatusesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatusDeviceStatusesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppInstallStatusDeviceStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatusDeviceStatusesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatusDeviceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

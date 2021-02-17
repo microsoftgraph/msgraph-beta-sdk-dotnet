@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PermissionGrantPolicy.</returns>
         System.Threading.Tasks.Task<PermissionGrantPolicy> AddAsync(PermissionGrantPolicy permissionGrantPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PermissionGrantPolicy to the collection via POST and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="permissionGrantPolicy">The PermissionGrantPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> AddResponseAsync(PermissionGrantPolicy permissionGrantPolicy);
+
+        /// <summary>
+        /// Adds the specified PermissionGrantPolicy to the collection via POST and returns a <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="permissionGrantPolicy">The PermissionGrantPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> AddResponseAsync(PermissionGrantPolicy permissionGrantPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IPolicyRootPermissionGrantPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPermissionGrantPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPermissionGrantPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootPermissionGrantPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootPermissionGrantPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootPermissionGrantPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootPermissionGrantPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

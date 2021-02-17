@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ChatMessageHostedContent using POST and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToCreate">The ChatMessageHostedContent to create.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> CreateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToCreate)
+        {
+            return this.CreateResponseAsync(chatMessageHostedContentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ChatMessageHostedContent using POST and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToCreate">The ChatMessageHostedContent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> CreateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ChatMessageHostedContent>(chatMessageHostedContentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ChatMessageHostedContent.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ChatMessageHostedContent>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ChatMessageHostedContent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ChatMessageHostedContent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ChatMessageHostedContent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ChatMessageHostedContent and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ChatMessageHostedContent and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ChatMessageHostedContent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ChatMessageHostedContent>(chatMessageHostedContentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ChatMessageHostedContent using PATCH and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToUpdate">The ChatMessageHostedContent to update.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> UpdateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToUpdate)
+        {
+            return this.UpdateResponseAsync(chatMessageHostedContentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ChatMessageHostedContent using PATCH and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToUpdate">The ChatMessageHostedContent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> UpdateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToUpdate, CancellationToken cancellationToken)
+        {
+			if (chatMessageHostedContentToUpdate.AdditionalData != null)
+			{
+				if (chatMessageHostedContentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					chatMessageHostedContentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatMessageHostedContentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (chatMessageHostedContentToUpdate.AdditionalData != null)
+            {
+                if (chatMessageHostedContentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    chatMessageHostedContentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatMessageHostedContentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ChatMessageHostedContent>(chatMessageHostedContentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

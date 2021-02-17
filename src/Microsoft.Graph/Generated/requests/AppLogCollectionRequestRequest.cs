@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AppLogCollectionRequestObject using POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> CreateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(appLogCollectionRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AppLogCollectionRequestObject using POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> CreateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppLogCollectionRequestObject>(appLogCollectionRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AppLogCollectionRequest.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AppLogCollectionRequestObject>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AppLogCollectionRequest and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AppLogCollectionRequest and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AppLogCollectionRequestObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AppLogCollectionRequestObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AppLogCollectionRequestObject>(appLogCollectionRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AppLogCollectionRequestObject using PATCH and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <param name="appLogCollectionRequestObjectToUpdate">The AppLogCollectionRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> UpdateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate)
+        {
+            return this.UpdateResponseAsync(appLogCollectionRequestObjectToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AppLogCollectionRequestObject using PATCH and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
+        /// </summary>
+        /// <param name="appLogCollectionRequestObjectToUpdate">The AppLogCollectionRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> UpdateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate, CancellationToken cancellationToken)
+        {
+			if (appLogCollectionRequestObjectToUpdate.AdditionalData != null)
+			{
+				if (appLogCollectionRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					appLogCollectionRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appLogCollectionRequestObjectToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (appLogCollectionRequestObjectToUpdate.AdditionalData != null)
+            {
+                if (appLogCollectionRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    appLogCollectionRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appLogCollectionRequestObjectToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AppLogCollectionRequestObject>(appLogCollectionRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

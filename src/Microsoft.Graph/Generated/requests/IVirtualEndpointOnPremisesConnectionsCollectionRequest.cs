@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcOnPremisesConnection.</returns>
         System.Threading.Tasks.Task<CloudPcOnPremisesConnection> AddAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified CloudPcOnPremisesConnection to the collection via POST and returns a <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcOnPremisesConnection">The CloudPcOnPremisesConnection to add.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> AddResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection);
+
+        /// <summary>
+        /// Adds the specified CloudPcOnPremisesConnection to the collection via POST and returns a <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcOnPremisesConnection">The CloudPcOnPremisesConnection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> AddResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IVirtualEndpointOnPremisesConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

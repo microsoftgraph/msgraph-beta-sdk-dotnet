@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
         /// <returns>The created ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> CreateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> CreateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate);
+
+        /// <summary>
         /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using POST.
         /// </summary>
         /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> CreateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using POST and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> CreateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using POST and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToCreate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> CreateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ActiveDirectoryWindowsAutopilotDeploymentProfile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ActiveDirectoryWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ActiveDirectoryWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ActiveDirectoryWindowsAutopilotDeploymentProfile.
         /// </summary>
         /// <returns>The ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ActiveDirectoryWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ActiveDirectoryWindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> UpdateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using PATCH and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToUpdate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> UpdateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate);
+
+        /// <summary>
+        /// Updates the specified ActiveDirectoryWindowsAutopilotDeploymentProfile using PATCH and returns a <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object.
+        /// </summary>
+        /// <param name="activeDirectoryWindowsAutopilotDeploymentProfileToUpdate">The ActiveDirectoryWindowsAutopilotDeploymentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> UpdateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

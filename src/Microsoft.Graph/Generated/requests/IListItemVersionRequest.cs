@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <returns>The created ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate);
+
+        /// <summary>
         /// Creates the specified ListItemVersion using POST.
         /// </summary>
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItemVersion.</returns>
         System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate);
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ListItemVersion.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ListItemVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ListItemVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ListItemVersion.
         /// </summary>
         /// <returns>The ListItemVersion.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ListItemVersion.</returns>
         System.Threading.Tasks.Task<ListItemVersion> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ListItemVersion using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ListItemVersion.</returns>
         System.Threading.Tasks.Task<ListItemVersion> UpdateAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ListItemVersion using PATCH and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToUpdate">The ListItemVersion to update.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate);
+
+        /// <summary>
+        /// Updates the specified ListItemVersion using PATCH and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToUpdate">The ListItemVersion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

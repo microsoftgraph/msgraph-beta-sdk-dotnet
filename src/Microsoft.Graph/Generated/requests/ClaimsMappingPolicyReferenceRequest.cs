@@ -53,6 +53,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Deletes the specified ClaimsMappingPolicy reference and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ClaimsMappingPolicy reference and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Puts the specified ClaimsMappingPolicy reference.
         /// </summary>
         /// <param name="id">The ClaimsMappingPolicy reference to update.</param>
@@ -84,6 +104,40 @@ namespace Microsoft.Graph
             this.Method = "PUT";
             this.ContentType = "application/json";
             await this.SendAsync(payload, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Puts the specified ClaimsMappingPolicy reference and returns <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="id">The ClaimsMappingPolicy reference to update.</param>
+        /// <returns>The task to await of <see cref="GraphResponse"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id)
+        {
+            return this.PutResponseAsync(id, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Puts the specified ClaimsMappingPolicy reference and returns <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="id">The ClaimsMappingPolicy reference to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse"/>.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken)
+        {
+            var baseUrl = this.Client.BaseUrl;
+            var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
+            var stream = new System.IO.MemoryStream();
+            using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
+            {
+                writer.WriteStartObject();
+                writer.WriteString("@odata.id", objectUri);
+                writer.WriteEndObject();
+                await writer.FlushAsync();
+            }
+            var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
+            this.Method = "PUT";
+            this.ContentType = "application/json";
+            return await this.SendAsyncWithGraphResponse(payload, cancellationToken).ConfigureAwait(false);
         }
     }
 }

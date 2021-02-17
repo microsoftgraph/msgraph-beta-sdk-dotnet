@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AuthorizationPolicy using POST and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> CreateResponseAsync(AuthorizationPolicy authorizationPolicyToCreate)
+        {
+            return this.CreateResponseAsync(authorizationPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AuthorizationPolicy using POST and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> CreateResponseAsync(AuthorizationPolicy authorizationPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AuthorizationPolicy>(authorizationPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AuthorizationPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AuthorizationPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AuthorizationPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AuthorizationPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AuthorizationPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AuthorizationPolicy and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AuthorizationPolicy and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthorizationPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AuthorizationPolicy>(authorizationPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AuthorizationPolicy using PATCH and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToUpdate">The AuthorizationPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> UpdateResponseAsync(AuthorizationPolicy authorizationPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(authorizationPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AuthorizationPolicy using PATCH and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToUpdate">The AuthorizationPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> UpdateResponseAsync(AuthorizationPolicy authorizationPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (authorizationPolicyToUpdate.AdditionalData != null)
+			{
+				if (authorizationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					authorizationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authorizationPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (authorizationPolicyToUpdate.AdditionalData != null)
+            {
+                if (authorizationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    authorizationPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authorizationPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AuthorizationPolicy>(authorizationPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

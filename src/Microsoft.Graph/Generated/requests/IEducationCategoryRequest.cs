@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
         /// <returns>The created EducationCategory.</returns>
-        System.Threading.Tasks.Task<EducationCategory> CreateAsync(EducationCategory educationCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationCategory> CreateAsync(EducationCategory educationCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified EducationCategory using POST.
         /// </summary>
         /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationCategory.</returns>
         System.Threading.Tasks.Task<EducationCategory> CreateAsync(EducationCategory educationCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationCategory using POST and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> CreateResponseAsync(EducationCategory educationCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationCategory using POST and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="educationCategoryToCreate">The EducationCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> CreateResponseAsync(EducationCategory educationCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationCategory.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EducationCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EducationCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EducationCategory.
         /// </summary>
         /// <returns>The EducationCategory.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationCategory.</returns>
         System.Threading.Tasks.Task<EducationCategory> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EducationCategory and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationCategory and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EducationCategory using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationCategory.</returns>
         System.Threading.Tasks.Task<EducationCategory> UpdateAsync(EducationCategory educationCategoryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EducationCategory using PATCH and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="educationCategoryToUpdate">The EducationCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> UpdateResponseAsync(EducationCategory educationCategoryToUpdate);
+
+        /// <summary>
+        /// Updates the specified EducationCategory using PATCH and returns a <see cref="GraphResponse{EducationCategory}"/> object.
+        /// </summary>
+        /// <param name="educationCategoryToUpdate">The EducationCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> UpdateResponseAsync(EducationCategory educationCategoryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

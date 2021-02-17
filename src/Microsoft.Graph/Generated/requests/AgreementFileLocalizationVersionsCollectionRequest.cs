@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AgreementFileVersion>(agreementFileVersion, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion)
+        {
+            return this.AddResponseAsync(agreementFileVersion, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AgreementFileVersion>(agreementFileVersion, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AgreementFileLocalizationVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

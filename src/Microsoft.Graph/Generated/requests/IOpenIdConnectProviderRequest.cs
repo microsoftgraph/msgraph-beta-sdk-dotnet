@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="openIdConnectProviderToCreate">The OpenIdConnectProvider to create.</param>
         /// <returns>The created OpenIdConnectProvider.</returns>
-        System.Threading.Tasks.Task<OpenIdConnectProvider> CreateAsync(OpenIdConnectProvider openIdConnectProviderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OpenIdConnectProvider> CreateAsync(OpenIdConnectProvider openIdConnectProviderToCreate);
+
+        /// <summary>
         /// Creates the specified OpenIdConnectProvider using POST.
         /// </summary>
         /// <param name="openIdConnectProviderToCreate">The OpenIdConnectProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenIdConnectProvider.</returns>
         System.Threading.Tasks.Task<OpenIdConnectProvider> CreateAsync(OpenIdConnectProvider openIdConnectProviderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OpenIdConnectProvider using POST and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectProviderToCreate">The OpenIdConnectProvider to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> CreateResponseAsync(OpenIdConnectProvider openIdConnectProviderToCreate);
+
+        /// <summary>
+        /// Creates the specified OpenIdConnectProvider using POST and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectProviderToCreate">The OpenIdConnectProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> CreateResponseAsync(OpenIdConnectProvider openIdConnectProviderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OpenIdConnectProvider.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OpenIdConnectProvider and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OpenIdConnectProvider and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OpenIdConnectProvider.
         /// </summary>
         /// <returns>The OpenIdConnectProvider.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OpenIdConnectProvider.</returns>
         System.Threading.Tasks.Task<OpenIdConnectProvider> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OpenIdConnectProvider and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OpenIdConnectProvider and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OpenIdConnectProvider using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OpenIdConnectProvider.</returns>
         System.Threading.Tasks.Task<OpenIdConnectProvider> UpdateAsync(OpenIdConnectProvider openIdConnectProviderToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OpenIdConnectProvider using PATCH and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectProviderToUpdate">The OpenIdConnectProvider to update.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> UpdateResponseAsync(OpenIdConnectProvider openIdConnectProviderToUpdate);
+
+        /// <summary>
+        /// Updates the specified OpenIdConnectProvider using PATCH and returns a <see cref="GraphResponse{OpenIdConnectProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectProviderToUpdate">The OpenIdConnectProvider to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenIdConnectProvider>> UpdateResponseAsync(OpenIdConnectProvider openIdConnectProviderToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

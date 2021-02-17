@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ScopedRoleMembership.</returns>
         System.Threading.Tasks.Task<ScopedRoleMembership> AddAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ScopedRoleMembership to the collection via POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.
+        /// </summary>
+        /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership);
+
+        /// <summary>
+        /// Adds the specified ScopedRoleMembership to the collection via POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.
+        /// </summary>
+        /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUserScopedRoleMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserScopedRoleMemberOfCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserScopedRoleMemberOfCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopedRoleMemberOfCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserScopedRoleMemberOfCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopedRoleMemberOfCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopedRoleMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

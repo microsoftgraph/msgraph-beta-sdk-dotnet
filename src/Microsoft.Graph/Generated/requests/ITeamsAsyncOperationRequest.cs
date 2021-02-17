@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
-        System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsAsyncOperation using POST.
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TeamsAsyncOperation using POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> CreateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsAsyncOperation using POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> CreateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TeamsAsyncOperation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TeamsAsyncOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TeamsAsyncOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TeamsAsyncOperation.
         /// </summary>
         /// <returns>The TeamsAsyncOperation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TeamsAsyncOperation and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsAsyncOperation and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TeamsAsyncOperation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> UpdateAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TeamsAsyncOperation using PATCH and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> UpdateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified TeamsAsyncOperation using PATCH and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> UpdateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagedMobileApp>(managedMobileApp, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedMobileApp to the collection via POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.
+        /// </summary>
+        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp)
+        {
+            return this.AddResponseAsync(managedMobileApp, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedMobileApp to the collection via POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.
+        /// </summary>
+        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedMobileApp>(managedMobileApp, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtectionAppsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtectionAppsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtectionAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppProtectionAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

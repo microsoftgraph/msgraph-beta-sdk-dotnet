@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified WindowsPhone81TrustedRootCertificate and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81TrustedRootCertificate and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81TrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified WindowsPhone81TrustedRootCertificate using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsPhone81TrustedRootCertificate>(windowsPhone81TrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified WindowsPhone81TrustedRootCertificate using POST and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToCreate">The WindowsPhone81TrustedRootCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> CreateResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToCreate)
+        {
+            return this.CreateResponseAsync(windowsPhone81TrustedRootCertificateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81TrustedRootCertificate using POST and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToCreate">The WindowsPhone81TrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> CreateResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81TrustedRootCertificate>(windowsPhone81TrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified WindowsPhone81TrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToUpdate">The WindowsPhone81TrustedRootCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> UpdateResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsPhone81TrustedRootCertificateToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81TrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81TrustedRootCertificateToUpdate">The WindowsPhone81TrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81TrustedRootCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81TrustedRootCertificate>> UpdateResponseAsync(WindowsPhone81TrustedRootCertificate windowsPhone81TrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81TrustedRootCertificateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81TrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81TrustedRootCertificateToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81TrustedRootCertificate>(windowsPhone81TrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified WindowsPhone81TrustedRootCertificate.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsPhone81TrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified WindowsPhone81TrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsPhone81TrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

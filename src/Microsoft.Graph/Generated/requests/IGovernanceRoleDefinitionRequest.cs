@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
         /// <returns>The created GovernanceRoleDefinition.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified GovernanceRoleDefinition using POST.
         /// </summary>
         /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleDefinition.</returns>
         System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GovernanceRoleDefinition using POST and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> CreateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified GovernanceRoleDefinition using POST and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> CreateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GovernanceRoleDefinition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GovernanceRoleDefinition.
         /// </summary>
         /// <returns>The GovernanceRoleDefinition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceRoleDefinition.</returns>
         System.Threading.Tasks.Task<GovernanceRoleDefinition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GovernanceRoleDefinition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceRoleDefinition.</returns>
         System.Threading.Tasks.Task<GovernanceRoleDefinition> UpdateAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GovernanceRoleDefinition using PATCH and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> UpdateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified GovernanceRoleDefinition using PATCH and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> UpdateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

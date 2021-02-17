@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
         /// <returns>The created TeamsAppDefinition.</returns>
-        System.Threading.Tasks.Task<TeamsAppDefinition> CreateAsync(TeamsAppDefinition teamsAppDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsAppDefinition> CreateAsync(TeamsAppDefinition teamsAppDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsAppDefinition using POST.
         /// </summary>
         /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAppDefinition.</returns>
         System.Threading.Tasks.Task<TeamsAppDefinition> CreateAsync(TeamsAppDefinition teamsAppDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TeamsAppDefinition using POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> CreateResponseAsync(TeamsAppDefinition teamsAppDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsAppDefinition using POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> CreateResponseAsync(TeamsAppDefinition teamsAppDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TeamsAppDefinition.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TeamsAppDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TeamsAppDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TeamsAppDefinition.
         /// </summary>
         /// <returns>The TeamsAppDefinition.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsAppDefinition.</returns>
         System.Threading.Tasks.Task<TeamsAppDefinition> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TeamsAppDefinition and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsAppDefinition and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TeamsAppDefinition using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAppDefinition.</returns>
         System.Threading.Tasks.Task<TeamsAppDefinition> UpdateAsync(TeamsAppDefinition teamsAppDefinitionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TeamsAppDefinition using PATCH and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToUpdate">The TeamsAppDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> UpdateResponseAsync(TeamsAppDefinition teamsAppDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified TeamsAppDefinition using PATCH and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToUpdate">The TeamsAppDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> UpdateResponseAsync(TeamsAppDefinition teamsAppDefinitionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

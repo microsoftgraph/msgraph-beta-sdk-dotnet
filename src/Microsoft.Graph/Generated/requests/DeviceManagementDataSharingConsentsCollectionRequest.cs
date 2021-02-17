@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DataSharingConsent>(dataSharingConsent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DataSharingConsent to the collection via POST and returns a <see cref="GraphResponse{DataSharingConsent}"/> object of the request.
+        /// </summary>
+        /// <param name="dataSharingConsent">The DataSharingConsent to add.</param>
+        /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> AddResponseAsync(DataSharingConsent dataSharingConsent)
+        {
+            return this.AddResponseAsync(dataSharingConsent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DataSharingConsent to the collection via POST and returns a <see cref="GraphResponse{DataSharingConsent}"/> object of the request.
+        /// </summary>
+        /// <param name="dataSharingConsent">The DataSharingConsent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> AddResponseAsync(DataSharingConsent dataSharingConsent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DataSharingConsent>(dataSharingConsent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDataSharingConsentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDataSharingConsentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDataSharingConsentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

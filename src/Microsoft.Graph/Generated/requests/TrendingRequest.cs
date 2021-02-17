@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate)
+        {
+            return this.CreateResponseAsync(trendingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Trending>(trendingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Trending.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Trending>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Trending and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Trending and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Trending>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Trending and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Trending>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Trending and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Trending>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Trending>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Trending>(trendingToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending to update.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate)
+        {
+            return this.UpdateResponseAsync(trendingToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken)
+        {
+			if (trendingToUpdate.AdditionalData != null)
+			{
+				if (trendingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					trendingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trendingToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (trendingToUpdate.AdditionalData != null)
+            {
+                if (trendingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    trendingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, trendingToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Trending>(trendingToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

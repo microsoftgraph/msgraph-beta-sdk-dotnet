@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <returns>The created WindowsAutopilotSettings.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsAutopilotSettings using POST.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAutopilotSettings.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsAutopilotSettings using POST and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> CreateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsAutopilotSettings using POST and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> CreateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsAutopilotSettings.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsAutopilotSettings.
         /// </summary>
         /// <returns>The WindowsAutopilotSettings.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAutopilotSettings.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotSettings> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsAutopilotSettings using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotSettings.</returns>
         System.Threading.Tasks.Task<WindowsAutopilotSettings> UpdateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsAutopilotSettings using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> UpdateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsAutopilotSettings using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
+        /// </summary>
+        /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> UpdateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

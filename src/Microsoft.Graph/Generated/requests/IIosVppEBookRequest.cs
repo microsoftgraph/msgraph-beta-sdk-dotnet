@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
         /// <returns>The created IosVppEBook.</returns>
-        System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate);
+
+        /// <summary>
         /// Creates the specified IosVppEBook using POST.
         /// </summary>
         /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppEBook.</returns>
         System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate);
+
+        /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosVppEBook.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified IosVppEBook and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified IosVppEBook and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified IosVppEBook.
         /// </summary>
         /// <returns>The IosVppEBook.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVppEBook.</returns>
         System.Threading.Tasks.Task<IosVppEBook> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified IosVppEBook and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosVppEBook and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified IosVppEBook using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppEBook.</returns>
         System.Threading.Tasks.Task<IosVppEBook> UpdateAsync(IosVppEBook iosVppEBookToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified IosVppEBook using PATCH and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToUpdate">The IosVppEBook to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> UpdateResponseAsync(IosVppEBook iosVppEBookToUpdate);
+
+        /// <summary>
+        /// Updates the specified IosVppEBook using PATCH and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToUpdate">The IosVppEBook to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> UpdateResponseAsync(IosVppEBook iosVppEBookToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

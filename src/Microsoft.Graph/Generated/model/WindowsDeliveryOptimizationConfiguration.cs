@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cache server foreground download fallback to http delay in seconds.
-        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.???
+        /// Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​
         /// </summary>
         [JsonPropertyName("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds")]
         public Int32? CacheServerForegroundDownloadFallbackToHttpDelayInSeconds { get; set; }

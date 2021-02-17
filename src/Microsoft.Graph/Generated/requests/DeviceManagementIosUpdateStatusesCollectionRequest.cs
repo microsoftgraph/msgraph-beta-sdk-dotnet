@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatus, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified IosUpdateDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> AddResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus)
+        {
+            return this.AddResponseAsync(iosUpdateDeviceStatus, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified IosUpdateDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> AddResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatus, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

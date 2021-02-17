@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
         /// <returns>The created GroupPolicyPresentationCheckBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationCheckBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationCheckBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> CreateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationCheckBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> CreateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationCheckBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationCheckBoxToCreate">The GroupPolicyPresentationCheckBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> CreateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationCheckBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationCheckBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationCheckBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationCheckBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationCheckBox and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationCheckBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationCheckBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationCheckBox> UpdateAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationCheckBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationCheckBoxToUpdate">The GroupPolicyPresentationCheckBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> UpdateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationCheckBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationCheckBoxToUpdate">The GroupPolicyPresentationCheckBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationCheckBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationCheckBox>> UpdateResponseAsync(GroupPolicyPresentationCheckBox groupPolicyPresentationCheckBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

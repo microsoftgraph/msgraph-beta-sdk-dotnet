@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> CreateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate)
+        {
+            return this.CreateResponseAsync(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> CreateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate)
+        {
+            return this.UpdateResponseAsync(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate">The UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate, CancellationToken cancellationToken)
+        {
+			if (userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData != null)
+			{
+				if (userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData != null)
+            {
+                if (userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(userExperienceAnalyticsAppHealthAppPerformanceByAppVersionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

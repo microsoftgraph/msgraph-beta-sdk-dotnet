@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified B2cIdentityUserFlow using POST and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToCreate">The B2cIdentityUserFlow to create.</param>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> CreateResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToCreate)
+        {
+            return this.CreateResponseAsync(b2cIdentityUserFlowToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified B2cIdentityUserFlow using POST and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToCreate">The B2cIdentityUserFlow to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> CreateResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<B2cIdentityUserFlow>(b2cIdentityUserFlowToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified B2cIdentityUserFlow.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<B2cIdentityUserFlow>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified B2cIdentityUserFlow and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified B2cIdentityUserFlow and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<B2cIdentityUserFlow>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified B2cIdentityUserFlow and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified B2cIdentityUserFlow and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<B2cIdentityUserFlow>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<B2cIdentityUserFlow>(b2cIdentityUserFlowToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified B2cIdentityUserFlow using PATCH and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToUpdate">The B2cIdentityUserFlow to update.</param>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> UpdateResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToUpdate)
+        {
+            return this.UpdateResponseAsync(b2cIdentityUserFlowToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified B2cIdentityUserFlow using PATCH and returns a <see cref="GraphResponse{B2cIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2cIdentityUserFlowToUpdate">The B2cIdentityUserFlow to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> UpdateResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlowToUpdate, CancellationToken cancellationToken)
+        {
+			if (b2cIdentityUserFlowToUpdate.AdditionalData != null)
+			{
+				if (b2cIdentityUserFlowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					b2cIdentityUserFlowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, b2cIdentityUserFlowToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (b2cIdentityUserFlowToUpdate.AdditionalData != null)
+            {
+                if (b2cIdentityUserFlowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    b2cIdentityUserFlowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, b2cIdentityUserFlowToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<B2cIdentityUserFlow>(b2cIdentityUserFlowToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

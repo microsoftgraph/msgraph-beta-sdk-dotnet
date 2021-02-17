@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <returns>The created Vendor.</returns>
-        System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate);
+
+        /// <summary>
         /// Creates the specified Vendor using POST.
         /// </summary>
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Vendor.</returns>
         System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Vendor using POST and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <param name="vendorToCreate">The Vendor to create.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> CreateResponseAsync(Vendor vendorToCreate);
+
+        /// <summary>
+        /// Creates the specified Vendor using POST and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <param name="vendorToCreate">The Vendor to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> CreateResponseAsync(Vendor vendorToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Vendor.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Vendor and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Vendor and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Vendor.
         /// </summary>
         /// <returns>The Vendor.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Vendor.</returns>
         System.Threading.Tasks.Task<Vendor> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Vendor and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Vendor and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Vendor using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Vendor.</returns>
         System.Threading.Tasks.Task<Vendor> UpdateAsync(Vendor vendorToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Vendor using PATCH and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <param name="vendorToUpdate">The Vendor to update.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> UpdateResponseAsync(Vendor vendorToUpdate);
+
+        /// <summary>
+        /// Updates the specified Vendor using PATCH and returns a <see cref="GraphResponse{Vendor}"/> object.
+        /// </summary>
+        /// <param name="vendorToUpdate">The Vendor to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> UpdateResponseAsync(Vendor vendorToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

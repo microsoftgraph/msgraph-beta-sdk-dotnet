@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
         /// <returns>The created MailboxUsageDetail.</returns>
-        System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate);
+
+        /// <summary>
         /// Creates the specified MailboxUsageDetail using POST.
         /// </summary>
         /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailboxUsageDetail.</returns>
         System.Threading.Tasks.Task<MailboxUsageDetail> CreateAsync(MailboxUsageDetail mailboxUsageDetailToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MailboxUsageDetail using POST and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> CreateResponseAsync(MailboxUsageDetail mailboxUsageDetailToCreate);
+
+        /// <summary>
+        /// Creates the specified MailboxUsageDetail using POST and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToCreate">The MailboxUsageDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> CreateResponseAsync(MailboxUsageDetail mailboxUsageDetailToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MailboxUsageDetail.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MailboxUsageDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MailboxUsageDetail and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MailboxUsageDetail.
         /// </summary>
         /// <returns>The MailboxUsageDetail.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailboxUsageDetail.</returns>
         System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MailboxUsageDetail and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MailboxUsageDetail and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MailboxUsageDetail using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageDetail.</returns>
         System.Threading.Tasks.Task<MailboxUsageDetail> UpdateAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PATCH and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail to update.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> UpdateResponseAsync(MailboxUsageDetail mailboxUsageDetailToUpdate);
+
+        /// <summary>
+        /// Updates the specified MailboxUsageDetail using PATCH and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageDetailToUpdate">The MailboxUsageDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> UpdateResponseAsync(MailboxUsageDetail mailboxUsageDetailToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

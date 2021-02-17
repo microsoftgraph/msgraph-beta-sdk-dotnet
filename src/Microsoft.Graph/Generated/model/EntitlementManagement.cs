@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public IEntitlementManagementAccessPackageCatalogsCollectionPage AccessPackageCatalogs { get; set; }
     
         /// <summary>
+        /// Gets or sets access package resource environments.
+        /// </summary>
+        [JsonPropertyName("accessPackageResourceEnvironments")]
+        public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage AccessPackageResourceEnvironments { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package resource requests.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRequests")]

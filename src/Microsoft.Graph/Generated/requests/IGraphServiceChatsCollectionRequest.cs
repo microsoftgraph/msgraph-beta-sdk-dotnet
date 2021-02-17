@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Chat.</returns>
         System.Threading.Tasks.Task<Chat> AddAsync(Chat chat, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Chat to the collection via POST and returns a <see cref="GraphResponse{Chat}"/> object of the request.
+        /// </summary>
+        /// <param name="chat">The Chat to add.</param>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat);
+
+        /// <summary>
+        /// Adds the specified Chat to the collection via POST and returns a <see cref="GraphResponse{Chat}"/> object of the request.
+        /// </summary>
+        /// <param name="chat">The Chat to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceChatsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceChatsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceChatsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceChatsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceChatsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceChatsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceChatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

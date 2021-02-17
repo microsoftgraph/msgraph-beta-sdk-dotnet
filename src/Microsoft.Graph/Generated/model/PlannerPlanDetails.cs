@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets category descriptions.
-        /// An object that specifies the descriptions of the six categories that can be associated with tasks in the plan
+        /// An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan
         /// </summary>
         [JsonPropertyName("categoryDescriptions")]
         public PlannerCategoryDescriptions CategoryDescriptions { get; set; }

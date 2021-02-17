@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<RiskDetection>(riskDetection, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified RiskDetection to the collection via POST and returns a <see cref="GraphResponse{RiskDetection}"/> object of the request.
+        /// </summary>
+        /// <param name="riskDetection">The RiskDetection to add.</param>
+        /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RiskDetection>> AddResponseAsync(RiskDetection riskDetection)
+        {
+            return this.AddResponseAsync(riskDetection, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified RiskDetection to the collection via POST and returns a <see cref="GraphResponse{RiskDetection}"/> object of the request.
+        /// </summary>
+        /// <param name="riskDetection">The RiskDetection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RiskDetection>> AddResponseAsync(RiskDetection riskDetection, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RiskDetection>(riskDetection, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityProtectionRootRiskDetectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IdentityProtectionRootRiskDetectionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRootRiskDetectionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityProtectionRootRiskDetectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProtectionRootRiskDetectionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRootRiskDetectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IdentityProtectionRootRiskDetectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

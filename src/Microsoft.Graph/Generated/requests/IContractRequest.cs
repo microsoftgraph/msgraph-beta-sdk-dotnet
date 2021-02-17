@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="contractToCreate">The Contract to create.</param>
         /// <returns>The created Contract.</returns>
-        System.Threading.Tasks.Task<Contract> CreateAsync(Contract contractToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Contract> CreateAsync(Contract contractToCreate);
+
+        /// <summary>
         /// Creates the specified Contract using POST.
         /// </summary>
         /// <param name="contractToCreate">The Contract to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Contract.</returns>
         System.Threading.Tasks.Task<Contract> CreateAsync(Contract contractToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Contract using POST and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <param name="contractToCreate">The Contract to create.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> CreateResponseAsync(Contract contractToCreate);
+
+        /// <summary>
+        /// Creates the specified Contract using POST and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <param name="contractToCreate">The Contract to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> CreateResponseAsync(Contract contractToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Contract.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Contract and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Contract and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Contract.
         /// </summary>
         /// <returns>The Contract.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Contract.</returns>
         System.Threading.Tasks.Task<Contract> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Contract and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Contract and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Contract using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Contract.</returns>
         System.Threading.Tasks.Task<Contract> UpdateAsync(Contract contractToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Contract using PATCH and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <param name="contractToUpdate">The Contract to update.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> UpdateResponseAsync(Contract contractToUpdate);
+
+        /// <summary>
+        /// Updates the specified Contract using PATCH and returns a <see cref="GraphResponse{Contract}"/> object.
+        /// </summary>
+        /// <param name="contractToUpdate">The Contract to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> UpdateResponseAsync(Contract contractToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

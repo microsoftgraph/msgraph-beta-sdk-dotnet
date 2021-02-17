@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScore.</returns>
         System.Threading.Tasks.Task<SecureScore> AddAsync(SecureScore secureScore, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SecureScore to the collection via POST and returns a <see cref="GraphResponse{SecureScore}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScore">The SecureScore to add.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> AddResponseAsync(SecureScore secureScore);
+
+        /// <summary>
+        /// Adds the specified SecureScore to the collection via POST and returns a <see cref="GraphResponse{SecureScore}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScore">The SecureScore to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> AddResponseAsync(SecureScore secureScore, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISecuritySecureScoresCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecureScoresCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecuritySecureScoresCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoresCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecureScoresCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecuritySecureScoresCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

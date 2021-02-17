@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagementCondition>(managementCondition, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
+        /// </summary>
+        /// <param name="managementCondition">The ManagementCondition to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> AddResponseAsync(ManagementCondition managementCondition)
+        {
+            return this.AddResponseAsync(managementCondition, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
+        /// </summary>
+        /// <param name="managementCondition">The ManagementCondition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            managementCondition.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managementCondition.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<ManagementCondition>(managementCondition, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagementConditionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagementConditionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementManagementConditionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

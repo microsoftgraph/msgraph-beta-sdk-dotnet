@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookRangeBorder using POST.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeBorder.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookRangeBorder and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookRangeBorder and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookRangeBorder.
         /// </summary>
         /// <returns>The WorkbookRangeBorder.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookRangeBorder and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookRangeBorder and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookRangeBorder using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> UpdateAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeBorder using PATCH and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> UpdateResponseAsync(WorkbookRangeBorder workbookRangeBorderToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeBorder using PATCH and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> UpdateResponseAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

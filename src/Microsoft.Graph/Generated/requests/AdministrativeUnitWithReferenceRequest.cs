@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified AdministrativeUnit and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AdministrativeUnit and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AdministrativeUnit>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<AdministrativeUnit>(administrativeUnitToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate)
+        {
+            return this.CreateResponseAsync(administrativeUnitToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified AdministrativeUnit using PATCH and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> UpdateResponseAsync(AdministrativeUnit administrativeUnitToUpdate)
+        {
+            return this.UpdateResponseAsync(administrativeUnitToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AdministrativeUnit using PATCH and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToUpdate">The AdministrativeUnit to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> UpdateResponseAsync(AdministrativeUnit administrativeUnitToUpdate, CancellationToken cancellationToken)
+        {
+			if (administrativeUnitToUpdate.AdditionalData != null)
+			{
+				if (administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, administrativeUnitToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (administrativeUnitToUpdate.AdditionalData != null)
+            {
+                if (administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    administrativeUnitToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, administrativeUnitToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified AdministrativeUnit.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AdministrativeUnit>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified AdministrativeUnit and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AdministrativeUnit and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

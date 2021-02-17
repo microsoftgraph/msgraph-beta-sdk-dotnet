@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPatent.</returns>
         System.Threading.Tasks.Task<ItemPatent> AddAsync(ItemPatent itemPatent, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ItemPatent to the collection via POST and returns a <see cref="GraphResponse{ItemPatent}"/> object of the request.
+        /// </summary>
+        /// <param name="itemPatent">The ItemPatent to add.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> AddResponseAsync(ItemPatent itemPatent);
+
+        /// <summary>
+        /// Adds the specified ItemPatent to the collection via POST and returns a <see cref="GraphResponse{ItemPatent}"/> object of the request.
+        /// </summary>
+        /// <param name="itemPatent">The ItemPatent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> AddResponseAsync(ItemPatent itemPatent, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IProfilePatentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePatentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePatentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

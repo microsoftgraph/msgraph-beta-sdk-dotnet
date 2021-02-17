@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ItemActivityOLD>(itemActivityOLD, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ItemActivityOLD to the collection via POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.
+        /// </summary>
+        /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> AddResponseAsync(ItemActivityOLD itemActivityOLD)
+        {
+            return this.AddResponseAsync(itemActivityOLD, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ItemActivityOLD to the collection via POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.
+        /// </summary>
+        /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> AddResponseAsync(ItemActivityOLD itemActivityOLD, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemActivityOLD>(itemActivityOLD, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemActivitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DriveItemActivitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItemActivitiesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemActivitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemActivitiesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItemActivitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DriveItemActivitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

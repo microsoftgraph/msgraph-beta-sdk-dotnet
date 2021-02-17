@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Vendor>(vendor, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Vendor to the collection via POST and returns a <see cref="GraphResponse{Vendor}"/> object of the request.
+        /// </summary>
+        /// <param name="vendor">The Vendor to add.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Vendor>> AddResponseAsync(Vendor vendor)
+        {
+            return this.AddResponseAsync(vendor, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Vendor to the collection via POST and returns a <see cref="GraphResponse{Vendor}"/> object of the request.
+        /// </summary>
+        /// <param name="vendor">The Vendor to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Vendor>> AddResponseAsync(Vendor vendor, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Vendor>(vendor, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyVendorsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyVendorsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyVendorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CompanyVendorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

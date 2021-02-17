@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserActivity>(userActivity, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserActivity to the collection via POST and returns a <see cref="GraphResponse{UserActivity}"/> object of the request.
+        /// </summary>
+        /// <param name="userActivity">The UserActivity to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserActivity>> AddResponseAsync(UserActivity userActivity)
+        {
+            return this.AddResponseAsync(userActivity, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserActivity to the collection via POST and returns a <see cref="GraphResponse{UserActivity}"/> object of the request.
+        /// </summary>
+        /// <param name="userActivity">The UserActivity to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> AddResponseAsync(UserActivity userActivity, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserActivity>(userActivity, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserActivitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserActivitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserActivitiesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserActivitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivitiesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserActivitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

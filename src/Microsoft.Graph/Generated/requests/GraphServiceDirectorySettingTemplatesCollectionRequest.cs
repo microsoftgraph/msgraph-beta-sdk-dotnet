@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DirectorySettingTemplate>(directorySettingTemplate, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DirectorySettingTemplate to the collection via POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="directorySettingTemplate">The DirectorySettingTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> AddResponseAsync(DirectorySettingTemplate directorySettingTemplate)
+        {
+            return this.AddResponseAsync(directorySettingTemplate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DirectorySettingTemplate to the collection via POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="directorySettingTemplate">The DirectorySettingTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> AddResponseAsync(DirectorySettingTemplate directorySettingTemplate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectorySettingTemplate>(directorySettingTemplate, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectorySettingTemplatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectorySettingTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServiceDirectorySettingTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

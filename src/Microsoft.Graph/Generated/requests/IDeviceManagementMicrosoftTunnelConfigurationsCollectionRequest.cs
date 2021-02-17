@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelConfiguration.</returns>
         System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> AddAsync(MicrosoftTunnelConfiguration microsoftTunnelConfiguration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MicrosoftTunnelConfiguration to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftTunnelConfiguration">The MicrosoftTunnelConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> AddResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfiguration);
+
+        /// <summary>
+        /// Adds the specified MicrosoftTunnelConfiguration to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftTunnelConfiguration">The MicrosoftTunnelConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> AddResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfiguration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

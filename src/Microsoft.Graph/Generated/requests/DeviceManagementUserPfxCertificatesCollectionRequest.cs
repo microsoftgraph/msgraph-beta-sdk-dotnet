@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserPFXCertificate>(userPFXCertificate, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserPFXCertificate to the collection via POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.
+        /// </summary>
+        /// <param name="userPFXCertificate">The UserPFXCertificate to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> AddResponseAsync(UserPFXCertificate userPFXCertificate)
+        {
+            return this.AddResponseAsync(userPFXCertificate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserPFXCertificate to the collection via POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.
+        /// </summary>
+        /// <param name="userPFXCertificate">The UserPFXCertificate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> AddResponseAsync(UserPFXCertificate userPFXCertificate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserPFXCertificate>(userPFXCertificate, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserPfxCertificatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserPfxCertificatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserPfxCertificatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementUserPfxCertificatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

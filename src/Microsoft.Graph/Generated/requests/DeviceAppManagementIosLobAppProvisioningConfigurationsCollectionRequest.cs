@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<IosLobAppProvisioningConfiguration>(iosLobAppProvisioningConfiguration, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified IosLobAppProvisioningConfiguration to the collection via POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="iosLobAppProvisioningConfiguration">The IosLobAppProvisioningConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> AddResponseAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration)
+        {
+            return this.AddResponseAsync(iosLobAppProvisioningConfiguration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified IosLobAppProvisioningConfiguration to the collection via POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="iosLobAppProvisioningConfiguration">The IosLobAppProvisioningConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> AddResponseAsync(IosLobAppProvisioningConfiguration iosLobAppProvisioningConfiguration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfiguration>(iosLobAppProvisioningConfiguration, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementIosLobAppProvisioningConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

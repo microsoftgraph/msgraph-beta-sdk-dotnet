@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewInstanceDecisionItem.</returns>
         System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> AddAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AccessReviewInstanceDecisionItem to the collection via POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItem">The AccessReviewInstanceDecisionItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> AddResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItem);
+
+        /// <summary>
+        /// Adds the specified AccessReviewInstanceDecisionItem to the collection via POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItem">The AccessReviewInstanceDecisionItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> AddResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAccessReviewInstanceDecisionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

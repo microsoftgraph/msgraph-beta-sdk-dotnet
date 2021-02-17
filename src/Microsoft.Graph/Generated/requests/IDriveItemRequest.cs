@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <returns>The created DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate);
+
+        /// <summary>
         /// Creates the specified DriveItem using POST.
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
         System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate);
+
+        /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DriveItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DriveItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DriveItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DriveItem.
         /// </summary>
         /// <returns>The DriveItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DriveItem.</returns>
         System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DriveItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DriveItem.</returns>
         System.Threading.Tasks.Task<DriveItem> UpdateAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DriveItem using PATCH and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> UpdateResponseAsync(DriveItem driveItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified DriveItem using PATCH and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToUpdate">The DriveItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> UpdateResponseAsync(DriveItem driveItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

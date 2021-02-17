@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WorkforceIntegration>(workforceIntegration, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
+        /// </summary>
+        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration)
+        {
+            return this.AddResponseAsync(workforceIntegration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
+        /// </summary>
+        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkforceIntegration>(workforceIntegration, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

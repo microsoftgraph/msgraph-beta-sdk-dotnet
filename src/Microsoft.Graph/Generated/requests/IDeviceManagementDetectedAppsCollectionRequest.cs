@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DetectedApp.</returns>
         System.Threading.Tasks.Task<DetectedApp> AddAsync(DetectedApp detectedApp, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DetectedApp to the collection via POST and returns a <see cref="GraphResponse{DetectedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="detectedApp">The DetectedApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> AddResponseAsync(DetectedApp detectedApp);
+
+        /// <summary>
+        /// Adds the specified DetectedApp to the collection via POST and returns a <see cref="GraphResponse{DetectedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="detectedApp">The DetectedApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> AddResponseAsync(DetectedApp detectedApp, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementDetectedAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDetectedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDetectedAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDetectedAppsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDetectedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDetectedAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDetectedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

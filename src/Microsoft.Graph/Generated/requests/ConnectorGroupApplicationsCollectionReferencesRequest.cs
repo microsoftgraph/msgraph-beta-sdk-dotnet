@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
+        /// </summary>
+        /// <param name="application">The Application to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Application application)
+        {
+            return this.AddResponseAsync(application, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
+        /// </summary>
+        /// <param name="application">The Application to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Application application, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(application.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/applications/{1}", this.Client.BaseUrl, application.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="commandToCreate">The Command to create.</param>
         /// <returns>The created Command.</returns>
-        System.Threading.Tasks.Task<Command> CreateAsync(Command commandToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Command> CreateAsync(Command commandToCreate);
+
+        /// <summary>
         /// Creates the specified Command using POST.
         /// </summary>
         /// <param name="commandToCreate">The Command to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Command.</returns>
         System.Threading.Tasks.Task<Command> CreateAsync(Command commandToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Command using POST and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <param name="commandToCreate">The Command to create.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> CreateResponseAsync(Command commandToCreate);
+
+        /// <summary>
+        /// Creates the specified Command using POST and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <param name="commandToCreate">The Command to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> CreateResponseAsync(Command commandToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Command.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Command and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Command and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Command.
         /// </summary>
         /// <returns>The Command.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Command.</returns>
         System.Threading.Tasks.Task<Command> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Command and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Command and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Command using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Command.</returns>
         System.Threading.Tasks.Task<Command> UpdateAsync(Command commandToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Command using PATCH and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <param name="commandToUpdate">The Command to update.</param>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> UpdateResponseAsync(Command commandToUpdate);
+
+        /// <summary>
+        /// Updates the specified Command using PATCH and returns a <see cref="GraphResponse{Command}"/> object.
+        /// </summary>
+        /// <param name="commandToUpdate">The Command to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Command>> UpdateResponseAsync(Command commandToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

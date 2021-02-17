@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="pictureToCreate">The Picture to create.</param>
         /// <returns>The created Picture.</returns>
-        System.Threading.Tasks.Task<Picture> CreateAsync(Picture pictureToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Picture> CreateAsync(Picture pictureToCreate);
+
+        /// <summary>
         /// Creates the specified Picture using POST.
         /// </summary>
         /// <param name="pictureToCreate">The Picture to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Picture.</returns>
         System.Threading.Tasks.Task<Picture> CreateAsync(Picture pictureToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Picture using POST and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <param name="pictureToCreate">The Picture to create.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> CreateResponseAsync(Picture pictureToCreate);
+
+        /// <summary>
+        /// Creates the specified Picture using POST and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <param name="pictureToCreate">The Picture to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> CreateResponseAsync(Picture pictureToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Picture.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Picture and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Picture and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Picture.
         /// </summary>
         /// <returns>The Picture.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Picture.</returns>
         System.Threading.Tasks.Task<Picture> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Picture and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Picture and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Picture using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Picture.</returns>
         System.Threading.Tasks.Task<Picture> UpdateAsync(Picture pictureToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Picture using PATCH and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <param name="pictureToUpdate">The Picture to update.</param>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> UpdateResponseAsync(Picture pictureToUpdate);
+
+        /// <summary>
+        /// Updates the specified Picture using PATCH and returns a <see cref="GraphResponse{Picture}"/> object.
+        /// </summary>
+        /// <param name="pictureToUpdate">The Picture to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Picture}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Picture>> UpdateResponseAsync(Picture pictureToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

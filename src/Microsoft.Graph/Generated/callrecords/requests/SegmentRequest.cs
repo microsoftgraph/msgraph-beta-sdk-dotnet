@@ -61,6 +61,29 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Creates the specified Segment using POST and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="segmentToCreate">The Segment to create.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Segment>> CreateResponseAsync(Segment segmentToCreate)
+        {
+            return this.CreateResponseAsync(segmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Segment using POST and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="segmentToCreate">The Segment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Segment>> CreateResponseAsync(Segment segmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Segment>(segmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Segment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph.CallRecords
         {
             this.Method = "DELETE";
             await this.SendAsync<Segment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Segment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Segment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph.CallRecords
             var retrievedEntity = await this.SendAsync<Segment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Segment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph.CallRecords
             var updatedEntity = await this.SendAsync<Segment>(segmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Segment using PATCH and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="segmentToUpdate">The Segment to update.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Segment>> UpdateResponseAsync(Segment segmentToUpdate)
+        {
+            return this.UpdateResponseAsync(segmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Segment using PATCH and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="segmentToUpdate">The Segment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Segment>> UpdateResponseAsync(Segment segmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (segmentToUpdate.AdditionalData != null)
+			{
+				if (segmentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
+					segmentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new Microsoft.Graph.ClientException(
+						new Microsoft.Graph.Error
+						{
+							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, segmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (segmentToUpdate.AdditionalData != null)
+            {
+                if (segmentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
+                    segmentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new Microsoft.Graph.ClientException(
+                        new Microsoft.Graph.Error
+                        {
+                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, segmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Segment>(segmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

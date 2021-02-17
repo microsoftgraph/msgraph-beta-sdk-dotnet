@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserConsentRequestObject>(userConsentRequest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserConsentRequestObject to the collection via POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="userConsentRequest">The UserConsentRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> AddResponseAsync(UserConsentRequestObject userConsentRequest)
+        {
+            return this.AddResponseAsync(userConsentRequest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserConsentRequestObject to the collection via POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="userConsentRequest">The UserConsentRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> AddResponseAsync(UserConsentRequestObject userConsentRequest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserConsentRequestObject>(userConsentRequest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppConsentRequestUserConsentRequestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppConsentRequestUserConsentRequestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppConsentRequestUserConsentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AppConsentRequestUserConsentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

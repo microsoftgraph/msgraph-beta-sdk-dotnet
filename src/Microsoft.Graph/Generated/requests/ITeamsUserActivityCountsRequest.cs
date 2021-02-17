@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
         /// <returns>The created TeamsUserActivityCounts.</returns>
-        System.Threading.Tasks.Task<TeamsUserActivityCounts> CreateAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsUserActivityCounts> CreateAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsUserActivityCounts using POST.
         /// </summary>
         /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsUserActivityCounts.</returns>
         System.Threading.Tasks.Task<TeamsUserActivityCounts> CreateAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TeamsUserActivityCounts using POST and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> CreateResponseAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsUserActivityCounts using POST and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityCountsToCreate">The TeamsUserActivityCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> CreateResponseAsync(TeamsUserActivityCounts teamsUserActivityCountsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TeamsUserActivityCounts.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified TeamsUserActivityCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified TeamsUserActivityCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified TeamsUserActivityCounts.
         /// </summary>
         /// <returns>The TeamsUserActivityCounts.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsUserActivityCounts.</returns>
         System.Threading.Tasks.Task<TeamsUserActivityCounts> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified TeamsUserActivityCounts and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsUserActivityCounts and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified TeamsUserActivityCounts using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsUserActivityCounts.</returns>
         System.Threading.Tasks.Task<TeamsUserActivityCounts> UpdateAsync(TeamsUserActivityCounts teamsUserActivityCountsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified TeamsUserActivityCounts using PATCH and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityCountsToUpdate">The TeamsUserActivityCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> UpdateResponseAsync(TeamsUserActivityCounts teamsUserActivityCountsToUpdate);
+
+        /// <summary>
+        /// Updates the specified TeamsUserActivityCounts using PATCH and returns a <see cref="GraphResponse{TeamsUserActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityCountsToUpdate">The TeamsUserActivityCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityCounts>> UpdateResponseAsync(TeamsUserActivityCounts teamsUserActivityCountsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

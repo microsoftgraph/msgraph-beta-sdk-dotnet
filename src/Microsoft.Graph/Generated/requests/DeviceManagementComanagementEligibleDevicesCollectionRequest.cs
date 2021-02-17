@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ComanagementEligibleDevice>(comanagementEligibleDevice, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ComanagementEligibleDevice to the collection via POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.
+        /// </summary>
+        /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
+        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> AddResponseAsync(ComanagementEligibleDevice comanagementEligibleDevice)
+        {
+            return this.AddResponseAsync(comanagementEligibleDevice, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ComanagementEligibleDevice to the collection via POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.
+        /// </summary>
+        /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> AddResponseAsync(ComanagementEligibleDevice comanagementEligibleDevice, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ComanagementEligibleDevice>(comanagementEligibleDevice, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

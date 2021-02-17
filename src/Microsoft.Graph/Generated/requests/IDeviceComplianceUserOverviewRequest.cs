@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceUserOverviewToCreate">The DeviceComplianceUserOverview to create.</param>
         /// <returns>The created DeviceComplianceUserOverview.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceUserOverview> CreateAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceComplianceUserOverview> CreateAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceComplianceUserOverview using POST.
         /// </summary>
         /// <param name="deviceComplianceUserOverviewToCreate">The DeviceComplianceUserOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceUserOverview.</returns>
         System.Threading.Tasks.Task<DeviceComplianceUserOverview> CreateAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceUserOverview using POST and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceUserOverviewToCreate">The DeviceComplianceUserOverview to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> CreateResponseAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceUserOverview using POST and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceUserOverviewToCreate">The DeviceComplianceUserOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> CreateResponseAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceComplianceUserOverview.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceComplianceUserOverview and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceComplianceUserOverview and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceComplianceUserOverview.
         /// </summary>
         /// <returns>The DeviceComplianceUserOverview.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceUserOverview.</returns>
         System.Threading.Tasks.Task<DeviceComplianceUserOverview> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceComplianceUserOverview and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceComplianceUserOverview and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceComplianceUserOverview using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceUserOverview.</returns>
         System.Threading.Tasks.Task<DeviceComplianceUserOverview> UpdateAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceUserOverview using PATCH and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceUserOverviewToUpdate">The DeviceComplianceUserOverview to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> UpdateResponseAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceUserOverview using PATCH and returns a <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceUserOverviewToUpdate">The DeviceComplianceUserOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserOverview>> UpdateResponseAsync(DeviceComplianceUserOverview deviceComplianceUserOverviewToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

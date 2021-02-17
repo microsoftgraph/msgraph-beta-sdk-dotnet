@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<JournalLine>(journalLine, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified JournalLine to the collection via POST and returns a <see cref="GraphResponse{JournalLine}"/> object of the request.
+        /// </summary>
+        /// <param name="journalLine">The JournalLine to add.</param>
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine)
+        {
+            return this.AddResponseAsync(journalLine, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified JournalLine to the collection via POST and returns a <see cref="GraphResponse{JournalLine}"/> object of the request.
+        /// </summary>
+        /// <param name="journalLine">The JournalLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<JournalLine>(journalLine, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CompanyJournalLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

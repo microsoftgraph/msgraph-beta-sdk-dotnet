@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationMultiTextBoxToCreate">The GroupPolicyPresentationMultiTextBox to create.</param>
         /// <returns>The created GroupPolicyPresentationMultiTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> CreateAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> CreateAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationMultiTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationMultiTextBoxToCreate">The GroupPolicyPresentationMultiTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationMultiTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> CreateAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationMultiTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToCreate">The GroupPolicyPresentationMultiTextBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> CreateResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationMultiTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToCreate">The GroupPolicyPresentationMultiTextBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> CreateResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationMultiTextBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationMultiTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationMultiTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationMultiTextBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationMultiTextBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationMultiTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationMultiTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationMultiTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationMultiTextBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationMultiTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationMultiTextBox> UpdateAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationMultiTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToUpdate">The GroupPolicyPresentationMultiTextBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> UpdateResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationMultiTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationMultiTextBoxToUpdate">The GroupPolicyPresentationMultiTextBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationMultiTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationMultiTextBox>> UpdateResponseAsync(GroupPolicyPresentationMultiTextBox groupPolicyPresentationMultiTextBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

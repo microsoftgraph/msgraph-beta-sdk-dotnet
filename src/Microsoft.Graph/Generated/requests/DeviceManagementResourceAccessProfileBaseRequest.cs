@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementResourceAccessProfileBase using POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementResourceAccessProfileBaseToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementResourceAccessProfileBase using POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementResourceAccessProfileBase.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementResourceAccessProfileBase>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileBase>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileBaseToUpdate">The DeviceManagementResourceAccessProfileBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementResourceAccessProfileBaseToUpdate">The DeviceManagementResourceAccessProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementResourceAccessProfileBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementResourceAccessProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementResourceAccessProfileBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CloudAppSecurityProfile using POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate)
+        {
+            return this.CreateResponseAsync(cloudAppSecurityProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CloudAppSecurityProfile using POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(cloudAppSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CloudAppSecurityProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<CloudAppSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<CloudAppSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<CloudAppSecurityProfile>(cloudAppSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CloudAppSecurityProfile using PATCH and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate)
+        {
+            return this.UpdateResponseAsync(cloudAppSecurityProfileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CloudAppSecurityProfile using PATCH and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken)
+        {
+			if (cloudAppSecurityProfileToUpdate.AdditionalData != null)
+			{
+				if (cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudAppSecurityProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (cloudAppSecurityProfileToUpdate.AdditionalData != null)
+            {
+                if (cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    cloudAppSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudAppSecurityProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CloudAppSecurityProfile>(cloudAppSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

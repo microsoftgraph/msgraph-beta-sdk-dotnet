@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MicrosoftTunnelServer using POST and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerToCreate">The MicrosoftTunnelServer to create.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> CreateResponseAsync(MicrosoftTunnelServer microsoftTunnelServerToCreate)
+        {
+            return this.CreateResponseAsync(microsoftTunnelServerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MicrosoftTunnelServer using POST and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerToCreate">The MicrosoftTunnelServer to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> CreateResponseAsync(MicrosoftTunnelServer microsoftTunnelServerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelServer>(microsoftTunnelServerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MicrosoftTunnelServer.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MicrosoftTunnelServer>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MicrosoftTunnelServer and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MicrosoftTunnelServer and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MicrosoftTunnelServer>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MicrosoftTunnelServer and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MicrosoftTunnelServer and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelServer>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MicrosoftTunnelServer>(microsoftTunnelServerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServer using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerToUpdate">The MicrosoftTunnelServer to update.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> UpdateResponseAsync(MicrosoftTunnelServer microsoftTunnelServerToUpdate)
+        {
+            return this.UpdateResponseAsync(microsoftTunnelServerToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServer using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerToUpdate">The MicrosoftTunnelServer to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> UpdateResponseAsync(MicrosoftTunnelServer microsoftTunnelServerToUpdate, CancellationToken cancellationToken)
+        {
+			if (microsoftTunnelServerToUpdate.AdditionalData != null)
+			{
+				if (microsoftTunnelServerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					microsoftTunnelServerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelServerToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (microsoftTunnelServerToUpdate.AdditionalData != null)
+            {
+                if (microsoftTunnelServerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    microsoftTunnelServerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelServerToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MicrosoftTunnelServer>(microsoftTunnelServerToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

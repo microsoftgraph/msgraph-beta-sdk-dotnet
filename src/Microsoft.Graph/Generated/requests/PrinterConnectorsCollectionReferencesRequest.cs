@@ -63,5 +63,36 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PrintConnector to the collection via POST and returns a <see cref="GraphResponse{PrintConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="printConnector">The PrintConnector to add.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrintConnector printConnector)
+        {
+            return this.AddResponseAsync(printConnector, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PrintConnector to the collection via POST and returns a <see cref="GraphResponse{PrintConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="printConnector">The PrintConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrintConnector printConnector, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+
+            if (string.IsNullOrEmpty(printConnector.Id))
+            {
+                throw new ServiceException(new Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            var requestBody = new ReferenceRequestBody { ODataId = string.Format("{0}/print/connectors/{1}", this.Client.BaseUrl, printConnector.Id) };
+            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+        }
+
     }
 }

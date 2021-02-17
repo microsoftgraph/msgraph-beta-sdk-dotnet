@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="openShiftToCreate">The OpenShift to create.</param>
         /// <returns>The created OpenShift.</returns>
-        System.Threading.Tasks.Task<OpenShift> CreateAsync(OpenShift openShiftToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OpenShift> CreateAsync(OpenShift openShiftToCreate);
+
+        /// <summary>
         /// Creates the specified OpenShift using POST.
         /// </summary>
         /// <param name="openShiftToCreate">The OpenShift to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenShift.</returns>
         System.Threading.Tasks.Task<OpenShift> CreateAsync(OpenShift openShiftToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate);
+
+        /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OpenShift.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OpenShift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OpenShift and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OpenShift.
         /// </summary>
         /// <returns>The OpenShift.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OpenShift.</returns>
         System.Threading.Tasks.Task<OpenShift> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OpenShift using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OpenShift.</returns>
         System.Threading.Tasks.Task<OpenShift> UpdateAsync(OpenShift openShiftToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OpenShift using PATCH and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToUpdate">The OpenShift to update.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> UpdateResponseAsync(OpenShift openShiftToUpdate);
+
+        /// <summary>
+        /// Updates the specified OpenShift using PATCH and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToUpdate">The OpenShift to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> UpdateResponseAsync(OpenShift openShiftToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

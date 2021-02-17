@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<PrintOperation>(printOperation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PrintOperation to the collection via POST and returns a <see cref="GraphResponse{PrintOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="printOperation">The PrintOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintOperation>> AddResponseAsync(PrintOperation printOperation)
+        {
+            return this.AddResponseAsync(printOperation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PrintOperation to the collection via POST and returns a <see cref="GraphResponse{PrintOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="printOperation">The PrintOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintOperation>> AddResponseAsync(PrintOperation printOperation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            printOperation.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(printOperation.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<PrintOperation>(printOperation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrintOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintOperationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintOperationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrintOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintOperationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PrintOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<CountryRegion>(countryRegion, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified CountryRegion to the collection via POST and returns a <see cref="GraphResponse{CountryRegion}"/> object of the request.
+        /// </summary>
+        /// <param name="countryRegion">The CountryRegion to add.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryRegion>> AddResponseAsync(CountryRegion countryRegion)
+        {
+            return this.AddResponseAsync(countryRegion, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified CountryRegion to the collection via POST and returns a <see cref="GraphResponse{CountryRegion}"/> object of the request.
+        /// </summary>
+        /// <param name="countryRegion">The CountryRegion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CountryRegion>> AddResponseAsync(CountryRegion countryRegion, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CountryRegion>(countryRegion, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyCountriesRegionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyCountriesRegionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyCountriesRegionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CompanyCountriesRegionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

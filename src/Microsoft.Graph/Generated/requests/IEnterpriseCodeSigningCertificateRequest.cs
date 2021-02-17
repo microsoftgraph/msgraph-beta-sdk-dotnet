@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
         /// <returns>The created EnterpriseCodeSigningCertificate.</returns>
-        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> CreateAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> CreateAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate);
+
+        /// <summary>
         /// Creates the specified EnterpriseCodeSigningCertificate using POST.
         /// </summary>
         /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnterpriseCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> CreateAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EnterpriseCodeSigningCertificate using POST and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> CreateResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate);
+
+        /// <summary>
+        /// Creates the specified EnterpriseCodeSigningCertificate using POST and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToCreate">The EnterpriseCodeSigningCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> CreateResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EnterpriseCodeSigningCertificate.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EnterpriseCodeSigningCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EnterpriseCodeSigningCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EnterpriseCodeSigningCertificate.
         /// </summary>
         /// <returns>The EnterpriseCodeSigningCertificate.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnterpriseCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EnterpriseCodeSigningCertificate and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EnterpriseCodeSigningCertificate and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EnterpriseCodeSigningCertificate using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnterpriseCodeSigningCertificate.</returns>
         System.Threading.Tasks.Task<EnterpriseCodeSigningCertificate> UpdateAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EnterpriseCodeSigningCertificate using PATCH and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToUpdate">The EnterpriseCodeSigningCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> UpdateResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate);
+
+        /// <summary>
+        /// Updates the specified EnterpriseCodeSigningCertificate using PATCH and returns a <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object.
+        /// </summary>
+        /// <param name="enterpriseCodeSigningCertificateToUpdate">The EnterpriseCodeSigningCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnterpriseCodeSigningCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnterpriseCodeSigningCertificate>> UpdateResponseAsync(EnterpriseCodeSigningCertificate enterpriseCodeSigningCertificateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

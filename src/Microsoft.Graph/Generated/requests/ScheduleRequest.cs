@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Schedule using POST and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToCreate">The Schedule to create.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Schedule>> CreateResponseAsync(Schedule scheduleToCreate)
+        {
+            return this.CreateResponseAsync(scheduleToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Schedule using POST and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToCreate">The Schedule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Schedule>> CreateResponseAsync(Schedule scheduleToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Schedule>(scheduleToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Schedule.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Schedule>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Schedule and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Schedule and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Schedule>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Schedule>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Schedule>(scheduleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Schedule using PATCH and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule to update.</param>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Schedule>> UpdateResponseAsync(Schedule scheduleToUpdate)
+        {
+            return this.UpdateResponseAsync(scheduleToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Schedule using PATCH and returns a <see cref="GraphResponse{Schedule}"/> object.
+        /// </summary>
+        /// <param name="scheduleToUpdate">The Schedule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Schedule>> UpdateResponseAsync(Schedule scheduleToUpdate, CancellationToken cancellationToken)
+        {
+			if (scheduleToUpdate.AdditionalData != null)
+			{
+				if (scheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					scheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, scheduleToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (scheduleToUpdate.AdditionalData != null)
+            {
+                if (scheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    scheduleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, scheduleToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Schedule>(scheduleToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

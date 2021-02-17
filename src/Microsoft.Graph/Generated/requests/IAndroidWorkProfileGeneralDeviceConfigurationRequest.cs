@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileGeneralDeviceConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidWorkProfileGeneralDeviceConfiguration.
         /// </summary>
         /// <returns>The AndroidWorkProfileGeneralDeviceConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileGeneralDeviceConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> UpdateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToUpdate">The AndroidWorkProfileGeneralDeviceConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToUpdate">The AndroidWorkProfileGeneralDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

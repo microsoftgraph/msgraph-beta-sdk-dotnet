@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
         /// <returns>The created WindowsAppX.</returns>
-        System.Threading.Tasks.Task<WindowsAppX> CreateAsync(WindowsAppX windowsAppXToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsAppX> CreateAsync(WindowsAppX windowsAppXToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsAppX using POST.
         /// </summary>
         /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAppX.</returns>
         System.Threading.Tasks.Task<WindowsAppX> CreateAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsAppX using POST and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsAppX using POST and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToCreate">The WindowsAppX to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> CreateResponseAsync(WindowsAppX windowsAppXToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsAppX.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsAppX.
         /// </summary>
         /// <returns>The WindowsAppX.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAppX.</returns>
         System.Threading.Tasks.Task<WindowsAppX> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsAppX and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsAppX and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsAppX using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAppX.</returns>
         System.Threading.Tasks.Task<WindowsAppX> UpdateAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsAppX using PATCH and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToUpdate">The WindowsAppX to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsAppX using PATCH and returns a <see cref="GraphResponse{WindowsAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsAppXToUpdate">The WindowsAppX to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAppX>> UpdateResponseAsync(WindowsAppX windowsAppXToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

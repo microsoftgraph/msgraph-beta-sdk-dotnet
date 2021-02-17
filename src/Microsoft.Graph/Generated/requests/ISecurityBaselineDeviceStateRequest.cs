@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
         /// <returns>The created SecurityBaselineDeviceState.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineDeviceState> CreateAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SecurityBaselineDeviceState> CreateAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate);
+
+        /// <summary>
         /// Creates the specified SecurityBaselineDeviceState using POST.
         /// </summary>
         /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineDeviceState.</returns>
         System.Threading.Tasks.Task<SecurityBaselineDeviceState> CreateAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SecurityBaselineDeviceState using POST and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> CreateResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate);
+
+        /// <summary>
+        /// Creates the specified SecurityBaselineDeviceState using POST and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineDeviceStateToCreate">The SecurityBaselineDeviceState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> CreateResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SecurityBaselineDeviceState.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SecurityBaselineDeviceState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SecurityBaselineDeviceState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SecurityBaselineDeviceState.
         /// </summary>
         /// <returns>The SecurityBaselineDeviceState.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecurityBaselineDeviceState.</returns>
         System.Threading.Tasks.Task<SecurityBaselineDeviceState> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineDeviceState and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SecurityBaselineDeviceState and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SecurityBaselineDeviceState using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineDeviceState.</returns>
         System.Threading.Tasks.Task<SecurityBaselineDeviceState> UpdateAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineDeviceState using PATCH and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineDeviceStateToUpdate">The SecurityBaselineDeviceState to update.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> UpdateResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToUpdate);
+
+        /// <summary>
+        /// Updates the specified SecurityBaselineDeviceState using PATCH and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object.
+        /// </summary>
+        /// <param name="securityBaselineDeviceStateToUpdate">The SecurityBaselineDeviceState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> UpdateResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceStateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UnsupportedDeviceConfiguration using POST and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> CreateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(unsupportedDeviceConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UnsupportedDeviceConfiguration using POST and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> CreateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UnsupportedDeviceConfiguration>(unsupportedDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UnsupportedDeviceConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<UnsupportedDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<UnsupportedDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UnsupportedDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<UnsupportedDeviceConfiguration>(unsupportedDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnsupportedDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(unsupportedDeviceConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UnsupportedDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (unsupportedDeviceConfigurationToUpdate.AdditionalData != null)
+			{
+				if (unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unsupportedDeviceConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (unsupportedDeviceConfigurationToUpdate.AdditionalData != null)
+            {
+                if (unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    unsupportedDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unsupportedDeviceConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UnsupportedDeviceConfiguration>(unsupportedDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

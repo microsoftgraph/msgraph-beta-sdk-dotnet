@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TokenLifetimePolicy>(tokenLifetimePolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TokenLifetimePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy)
+        {
+            return this.AddResponseAsync(tokenLifetimePolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TokenLifetimePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TokenLifetimePolicy>(tokenLifetimePolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenLifetimePoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootTokenLifetimePoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenLifetimePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PolicyRootTokenLifetimePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

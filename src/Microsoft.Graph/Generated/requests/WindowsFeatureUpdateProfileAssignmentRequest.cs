@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsFeatureUpdateProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToCreate">The WindowsFeatureUpdateProfileAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> CreateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(windowsFeatureUpdateProfileAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsFeatureUpdateProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToCreate">The WindowsFeatureUpdateProfileAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> CreateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsFeatureUpdateProfileAssignment>(windowsFeatureUpdateProfileAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsFeatureUpdateProfileAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsFeatureUpdateProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsFeatureUpdateProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsFeatureUpdateProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsFeatureUpdateProfileAssignment>(windowsFeatureUpdateProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> UpdateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> UpdateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData != null)
+			{
+				if (windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsFeatureUpdateProfileAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData != null)
+            {
+                if (windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsFeatureUpdateProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsFeatureUpdateProfileAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsFeatureUpdateProfileAssignment>(windowsFeatureUpdateProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

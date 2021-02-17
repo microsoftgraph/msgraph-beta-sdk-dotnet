@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileContainedApp.</returns>
         System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileContainedApp to the collection via POST and returns a <see cref="GraphResponse{MobileContainedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp);
+
+        /// <summary>
+        /// Adds the specified MobileContainedApp to the collection via POST and returns a <see cref="GraphResponse{MobileContainedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IWindowsUniversalAppXCommittedContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsUniversalAppXCommittedContainedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXCommittedContainedAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsUniversalAppXCommittedContainedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXCommittedContainedAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

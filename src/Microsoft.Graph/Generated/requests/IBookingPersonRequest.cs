@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
         /// <returns>The created BookingPerson.</returns>
-        System.Threading.Tasks.Task<BookingPerson> CreateAsync(BookingPerson bookingPersonToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BookingPerson> CreateAsync(BookingPerson bookingPersonToCreate);
+
+        /// <summary>
         /// Creates the specified BookingPerson using POST.
         /// </summary>
         /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingPerson.</returns>
         System.Threading.Tasks.Task<BookingPerson> CreateAsync(BookingPerson bookingPersonToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BookingPerson using POST and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> CreateResponseAsync(BookingPerson bookingPersonToCreate);
+
+        /// <summary>
+        /// Creates the specified BookingPerson using POST and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <param name="bookingPersonToCreate">The BookingPerson to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> CreateResponseAsync(BookingPerson bookingPersonToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BookingPerson.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified BookingPerson and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified BookingPerson and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified BookingPerson.
         /// </summary>
         /// <returns>The BookingPerson.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingPerson.</returns>
         System.Threading.Tasks.Task<BookingPerson> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified BookingPerson and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified BookingPerson and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified BookingPerson using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingPerson.</returns>
         System.Threading.Tasks.Task<BookingPerson> UpdateAsync(BookingPerson bookingPersonToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified BookingPerson using PATCH and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <param name="bookingPersonToUpdate">The BookingPerson to update.</param>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> UpdateResponseAsync(BookingPerson bookingPersonToUpdate);
+
+        /// <summary>
+        /// Updates the specified BookingPerson using PATCH and returns a <see cref="GraphResponse{BookingPerson}"/> object.
+        /// </summary>
+        /// <param name="bookingPersonToUpdate">The BookingPerson to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingPerson}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingPerson>> UpdateResponseAsync(BookingPerson bookingPersonToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

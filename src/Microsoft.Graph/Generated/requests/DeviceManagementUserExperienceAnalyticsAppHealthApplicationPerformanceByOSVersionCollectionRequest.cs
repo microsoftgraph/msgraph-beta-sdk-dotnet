@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersion">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> AddResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersion)
+        {
+            return this.AddResponseAsync(userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthAppPerformanceByOSVersion">The UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>> AddResponseAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(userExperienceAnalyticsAppHealthAppPerformanceByOSVersion, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

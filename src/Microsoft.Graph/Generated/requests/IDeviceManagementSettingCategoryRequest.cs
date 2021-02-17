@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementSettingCategoryToCreate">The DeviceManagementSettingCategory to create.</param>
         /// <returns>The created DeviceManagementSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementSettingCategory> CreateAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementSettingCategory> CreateAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementSettingCategory using POST.
         /// </summary>
         /// <param name="deviceManagementSettingCategoryToCreate">The DeviceManagementSettingCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementSettingCategory.</returns>
         System.Threading.Tasks.Task<DeviceManagementSettingCategory> CreateAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementSettingCategory using POST and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementSettingCategoryToCreate">The DeviceManagementSettingCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> CreateResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementSettingCategory using POST and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementSettingCategoryToCreate">The DeviceManagementSettingCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> CreateResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementSettingCategory.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementSettingCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementSettingCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementSettingCategory.
         /// </summary>
         /// <returns>The DeviceManagementSettingCategory.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementSettingCategory.</returns>
         System.Threading.Tasks.Task<DeviceManagementSettingCategory> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementSettingCategory and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementSettingCategory and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementSettingCategory using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementSettingCategory.</returns>
         System.Threading.Tasks.Task<DeviceManagementSettingCategory> UpdateAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementSettingCategory using PATCH and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementSettingCategoryToUpdate">The DeviceManagementSettingCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> UpdateResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementSettingCategory using PATCH and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementSettingCategoryToUpdate">The DeviceManagementSettingCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> UpdateResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategoryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

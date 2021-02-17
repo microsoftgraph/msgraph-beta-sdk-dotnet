@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesQuoteLine.</returns>
         System.Threading.Tasks.Task<SalesQuoteLine> AddAsync(SalesQuoteLine salesQuoteLine, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SalesQuoteLine to the collection via POST and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.
+        /// </summary>
+        /// <param name="salesQuoteLine">The SalesQuoteLine to add.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> AddResponseAsync(SalesQuoteLine salesQuoteLine);
+
+        /// <summary>
+        /// Adds the specified SalesQuoteLine to the collection via POST and returns a <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.
+        /// </summary>
+        /// <param name="salesQuoteLine">The SalesQuoteLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesQuoteLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesQuoteLine>> AddResponseAsync(SalesQuoteLine salesQuoteLine, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICompanySalesQuoteLinesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesQuoteLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanySalesQuoteLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesQuoteLinesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesQuoteLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanySalesQuoteLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesQuoteLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

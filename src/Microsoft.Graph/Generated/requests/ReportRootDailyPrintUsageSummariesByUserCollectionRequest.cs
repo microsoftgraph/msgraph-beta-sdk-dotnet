@@ -35,26 +35,50 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByUser to the collection via POST.
+        /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByUser">The PrintUsageSummaryByUser to add.</param>
-        /// <returns>The created PrintUsageSummaryByUser.</returns>
-        public System.Threading.Tasks.Task<PrintUsageSummaryByUser> AddAsync(PrintUsageSummaryByUser PrintUsageSummaryByUser)
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
+        /// <returns>The created PrintUsageByUser.</returns>
+        public System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser)
         {
-            return this.AddAsync(PrintUsageSummaryByUser, CancellationToken.None);
+            return this.AddAsync(printUsageByUser, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByUser to the collection via POST.
+        /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByUser">The PrintUsageSummaryByUser to add.</param>
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrintUsageSummaryByUser.</returns>
-        public System.Threading.Tasks.Task<PrintUsageSummaryByUser> AddAsync(PrintUsageSummaryByUser PrintUsageSummaryByUser, CancellationToken cancellationToken)
+        /// <returns>The created PrintUsageByUser.</returns>
+        public System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<PrintUsageSummaryByUser>(PrintUsageSummaryByUser, cancellationToken);
+            return this.SendAsync<PrintUsageByUser>(printUsageByUser, cancellationToken);
+        }
+
+        
+        /// <summary>
+        /// Adds the specified PrintUsageByUser to the collection via POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.
+        /// </summary>
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser)
+        {
+            return this.AddResponseAsync(printUsageByUser, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PrintUsageByUser to the collection via POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.
+        /// </summary>
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PrintUsageByUser>(printUsageByUser, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -102,6 +126,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootDailyPrintUsageSummariesByUserCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ReportRootDailyPrintUsageSummariesByUserCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootDailyPrintUsageSummariesByUserCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootDailyPrintUsageSummariesByUserCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRootDailyPrintUsageSummariesByUserCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ReportRootDailyPrintUsageSummariesByUserCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ReportRootDailyPrintUsageSummariesByUserCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
@@ -117,7 +161,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IReportRootDailyPrintUsageSummariesByUserCollectionRequest Expand(Expression<Func<PrintUsageSummaryByUser, object>> expandExpression)
+        public IReportRootDailyPrintUsageSummariesByUserCollectionRequest Expand(Expression<Func<PrintUsageByUser, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +196,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IReportRootDailyPrintUsageSummariesByUserCollectionRequest Select(Expression<Func<PrintUsageSummaryByUser, object>> selectExpression)
+        public IReportRootDailyPrintUsageSummariesByUserCollectionRequest Select(Expression<Func<PrintUsageByUser, object>> selectExpression)
         {
             if (selectExpression == null)
             {

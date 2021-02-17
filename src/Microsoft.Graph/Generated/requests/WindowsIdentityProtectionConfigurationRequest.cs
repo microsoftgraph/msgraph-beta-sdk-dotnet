@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsIdentityProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> CreateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windowsIdentityProtectionConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsIdentityProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> CreateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsIdentityProtectionConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsIdentityProtectionConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsIdentityProtectionConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsIdentityProtectionConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> UpdateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsIdentityProtectionConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> UpdateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

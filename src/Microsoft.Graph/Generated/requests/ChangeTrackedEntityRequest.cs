@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ChangeTrackedEntity using POST and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> CreateResponseAsync(ChangeTrackedEntity changeTrackedEntityToCreate)
+        {
+            return this.CreateResponseAsync(changeTrackedEntityToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ChangeTrackedEntity using POST and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> CreateResponseAsync(ChangeTrackedEntity changeTrackedEntityToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(changeTrackedEntityToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ChangeTrackedEntity.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ChangeTrackedEntity>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ChangeTrackedEntity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ChangeTrackedEntity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ChangeTrackedEntity>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ChangeTrackedEntity>(changeTrackedEntityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ChangeTrackedEntity using PATCH and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToUpdate">The ChangeTrackedEntity to update.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> UpdateResponseAsync(ChangeTrackedEntity changeTrackedEntityToUpdate)
+        {
+            return this.UpdateResponseAsync(changeTrackedEntityToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ChangeTrackedEntity using PATCH and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToUpdate">The ChangeTrackedEntity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> UpdateResponseAsync(ChangeTrackedEntity changeTrackedEntityToUpdate, CancellationToken cancellationToken)
+        {
+			if (changeTrackedEntityToUpdate.AdditionalData != null)
+			{
+				if (changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, changeTrackedEntityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (changeTrackedEntityToUpdate.AdditionalData != null)
+            {
+                if (changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    changeTrackedEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, changeTrackedEntityToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(changeTrackedEntityToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

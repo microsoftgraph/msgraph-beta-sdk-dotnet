@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PaymentMethod using POST and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <param name="paymentMethodToCreate">The PaymentMethod to create.</param>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> CreateResponseAsync(PaymentMethod paymentMethodToCreate)
+        {
+            return this.CreateResponseAsync(paymentMethodToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PaymentMethod using POST and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <param name="paymentMethodToCreate">The PaymentMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> CreateResponseAsync(PaymentMethod paymentMethodToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PaymentMethod>(paymentMethodToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PaymentMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<PaymentMethod>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified PaymentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified PaymentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<PaymentMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified PaymentMethod and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PaymentMethod and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PaymentMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<PaymentMethod>(paymentMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PaymentMethod using PATCH and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <param name="paymentMethodToUpdate">The PaymentMethod to update.</param>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> UpdateResponseAsync(PaymentMethod paymentMethodToUpdate)
+        {
+            return this.UpdateResponseAsync(paymentMethodToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PaymentMethod using PATCH and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
+        /// </summary>
+        /// <param name="paymentMethodToUpdate">The PaymentMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> UpdateResponseAsync(PaymentMethod paymentMethodToUpdate, CancellationToken cancellationToken)
+        {
+			if (paymentMethodToUpdate.AdditionalData != null)
+			{
+				if (paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, paymentMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (paymentMethodToUpdate.AdditionalData != null)
+            {
+                if (paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    paymentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, paymentMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PaymentMethod>(paymentMethodToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

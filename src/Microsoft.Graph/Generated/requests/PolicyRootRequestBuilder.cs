@@ -75,18 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceRegistrationPolicy.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceRegistrationPolicyRequestBuilder"/>.</returns>
-        public IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
-        {
-            get
-            {
-                return new DeviceRegistrationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("deviceRegistrationPolicy"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>
@@ -227,6 +215,30 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("identitySecurityDefaultsEnforcementPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootRoleManagementPoliciesCollectionRequestBuilder RoleManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootRoleManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicyAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder RoleManagementPolicyAssignments
+        {
+            get
+            {
+                return new PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleManagementPolicyAssignments"), this.Client);
             }
         }
     

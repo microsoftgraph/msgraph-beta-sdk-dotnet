@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
         /// <returns>The created BookingNamedEntity.</returns>
-        System.Threading.Tasks.Task<BookingNamedEntity> CreateAsync(BookingNamedEntity bookingNamedEntityToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BookingNamedEntity> CreateAsync(BookingNamedEntity bookingNamedEntityToCreate);
+
+        /// <summary>
         /// Creates the specified BookingNamedEntity using POST.
         /// </summary>
         /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingNamedEntity.</returns>
         System.Threading.Tasks.Task<BookingNamedEntity> CreateAsync(BookingNamedEntity bookingNamedEntityToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BookingNamedEntity using POST and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> CreateResponseAsync(BookingNamedEntity bookingNamedEntityToCreate);
+
+        /// <summary>
+        /// Creates the specified BookingNamedEntity using POST and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <param name="bookingNamedEntityToCreate">The BookingNamedEntity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> CreateResponseAsync(BookingNamedEntity bookingNamedEntityToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BookingNamedEntity.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified BookingNamedEntity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified BookingNamedEntity and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified BookingNamedEntity.
         /// </summary>
         /// <returns>The BookingNamedEntity.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingNamedEntity.</returns>
         System.Threading.Tasks.Task<BookingNamedEntity> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified BookingNamedEntity and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified BookingNamedEntity and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified BookingNamedEntity using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingNamedEntity.</returns>
         System.Threading.Tasks.Task<BookingNamedEntity> UpdateAsync(BookingNamedEntity bookingNamedEntityToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified BookingNamedEntity using PATCH and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <param name="bookingNamedEntityToUpdate">The BookingNamedEntity to update.</param>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> UpdateResponseAsync(BookingNamedEntity bookingNamedEntityToUpdate);
+
+        /// <summary>
+        /// Updates the specified BookingNamedEntity using PATCH and returns a <see cref="GraphResponse{BookingNamedEntity}"/> object.
+        /// </summary>
+        /// <param name="bookingNamedEntityToUpdate">The BookingNamedEntity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingNamedEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingNamedEntity>> UpdateResponseAsync(BookingNamedEntity bookingNamedEntityToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

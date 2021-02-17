@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified GroupPolicyConfiguration using POST and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> CreateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(groupPolicyConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified GroupPolicyConfiguration using POST and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> CreateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyConfiguration>(groupPolicyConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified GroupPolicyConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<GroupPolicyConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<GroupPolicyConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<GroupPolicyConfiguration>(groupPolicyConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyConfiguration using PATCH and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToUpdate">The GroupPolicyConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> UpdateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(groupPolicyConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyConfiguration using PATCH and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToUpdate">The GroupPolicyConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> UpdateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (groupPolicyConfigurationToUpdate.AdditionalData != null)
+			{
+				if (groupPolicyConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupPolicyConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupPolicyConfigurationToUpdate.AdditionalData != null)
+            {
+                if (groupPolicyConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupPolicyConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<GroupPolicyConfiguration>(groupPolicyConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

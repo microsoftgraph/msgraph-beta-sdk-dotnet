@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
         /// <returns>The created MicrosoftStoreForBusinessApp.</returns>
-        System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> CreateAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> CreateAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate);
+
+        /// <summary>
         /// Creates the specified MicrosoftStoreForBusinessApp using POST.
         /// </summary>
         /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftStoreForBusinessApp.</returns>
         System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> CreateAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> CreateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate);
+
+        /// <summary>
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> CreateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MicrosoftStoreForBusinessApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MicrosoftStoreForBusinessApp.
         /// </summary>
         /// <returns>The MicrosoftStoreForBusinessApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftStoreForBusinessApp.</returns>
         System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MicrosoftStoreForBusinessApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftStoreForBusinessApp.</returns>
         System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> UpdateAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MicrosoftStoreForBusinessApp using PATCH and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToUpdate">The MicrosoftStoreForBusinessApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> UpdateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified MicrosoftStoreForBusinessApp using PATCH and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToUpdate">The MicrosoftStoreForBusinessApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> UpdateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

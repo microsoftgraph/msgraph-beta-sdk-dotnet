@@ -241,7 +241,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of the application. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Read-only. Nullable.
+        /// Directory objects that are owners of the application. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }

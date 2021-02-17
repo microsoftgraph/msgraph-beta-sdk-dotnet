@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The MobileAppCategory.</returns>
         System.Threading.Tasks.Task<MobileAppCategory> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified MobileAppCategory and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppCategory and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppCategory.</returns>
         System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified MobileAppCategory using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MobileAppCategory> UpdateAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified MobileAppCategory using PATCH and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> UpdateResponseAsync(MobileAppCategory mobileAppCategoryToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppCategory using PATCH and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> UpdateResponseAsync(MobileAppCategory mobileAppCategoryToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified MobileAppCategory.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified MobileAppCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

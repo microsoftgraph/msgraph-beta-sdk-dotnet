@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
         /// <returns>The created DeviceManagementAutopilotEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> CreateAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> CreateAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementAutopilotEvent using POST.
         /// </summary>
         /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementAutopilotEvent.</returns>
         System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> CreateAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementAutopilotEvent using POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> CreateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementAutopilotEvent using POST and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToCreate">The DeviceManagementAutopilotEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> CreateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementAutopilotEvent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceManagementAutopilotEvent.
         /// </summary>
         /// <returns>The DeviceManagementAutopilotEvent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementAutopilotEvent.</returns>
         System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceManagementAutopilotEvent and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceManagementAutopilotEvent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementAutopilotEvent.</returns>
         System.Threading.Tasks.Task<DeviceManagementAutopilotEvent> UpdateAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotEvent using PATCH and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToUpdate">The DeviceManagementAutopilotEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> UpdateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAutopilotEvent using PATCH and returns a <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAutopilotEventToUpdate">The DeviceManagementAutopilotEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotEvent>> UpdateResponseAsync(DeviceManagementAutopilotEvent deviceManagementAutopilotEventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

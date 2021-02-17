@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <returns>The created SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate);
+
+        /// <summary>
         /// Creates the specified SideLoadingKey using POST.
         /// </summary>
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SideLoadingKey.</returns>
         System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SideLoadingKey using POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> CreateResponseAsync(SideLoadingKey sideLoadingKeyToCreate);
+
+        /// <summary>
+        /// Creates the specified SideLoadingKey using POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> CreateResponseAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SideLoadingKey.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SideLoadingKey and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SideLoadingKey and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SideLoadingKey.
         /// </summary>
         /// <returns>The SideLoadingKey.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SideLoadingKey.</returns>
         System.Threading.Tasks.Task<SideLoadingKey> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SideLoadingKey and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SideLoadingKey and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SideLoadingKey using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SideLoadingKey.</returns>
         System.Threading.Tasks.Task<SideLoadingKey> UpdateAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SideLoadingKey using PATCH and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <param name="sideLoadingKeyToUpdate">The SideLoadingKey to update.</param>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> UpdateResponseAsync(SideLoadingKey sideLoadingKeyToUpdate);
+
+        /// <summary>
+        /// Updates the specified SideLoadingKey using PATCH and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
+        /// </summary>
+        /// <param name="sideLoadingKeyToUpdate">The SideLoadingKey to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> UpdateResponseAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

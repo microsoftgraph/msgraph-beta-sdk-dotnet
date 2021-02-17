@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PersonInterest>(personInterest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PersonInterest to the collection via POST and returns a <see cref="GraphResponse{PersonInterest}"/> object of the request.
+        /// </summary>
+        /// <param name="personInterest">The PersonInterest to add.</param>
+        /// <returns>The <see cref="GraphResponse{PersonInterest}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonInterest>> AddResponseAsync(PersonInterest personInterest)
+        {
+            return this.AddResponseAsync(personInterest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PersonInterest to the collection via POST and returns a <see cref="GraphResponse{PersonInterest}"/> object of the request.
+        /// </summary>
+        /// <param name="personInterest">The PersonInterest to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonInterest}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PersonInterest>> AddResponseAsync(PersonInterest personInterest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PersonInterest>(personInterest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfileInterestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileInterestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileInterestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ProfileInterestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<BusinessFlowTemplate>(businessFlowTemplate, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified BusinessFlowTemplate to the collection via POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> AddResponseAsync(BusinessFlowTemplate businessFlowTemplate)
+        {
+            return this.AddResponseAsync(businessFlowTemplate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified BusinessFlowTemplate to the collection via POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> AddResponseAsync(BusinessFlowTemplate businessFlowTemplate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<BusinessFlowTemplate>(businessFlowTemplate, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

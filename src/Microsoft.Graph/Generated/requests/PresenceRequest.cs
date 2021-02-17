@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate)
+        {
+            return this.CreateResponseAsync(presenceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Presence>(presenceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Presence.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Presence>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Presence and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Presence and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Presence>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Presence>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Presence>(presenceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Presence using PATCH and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToUpdate">The Presence to update.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presence>> UpdateResponseAsync(Presence presenceToUpdate)
+        {
+            return this.UpdateResponseAsync(presenceToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Presence using PATCH and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToUpdate">The Presence to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Presence>> UpdateResponseAsync(Presence presenceToUpdate, CancellationToken cancellationToken)
+        {
+			if (presenceToUpdate.AdditionalData != null)
+			{
+				if (presenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					presenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, presenceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (presenceToUpdate.AdditionalData != null)
+            {
+                if (presenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    presenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, presenceToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Presence>(presenceToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

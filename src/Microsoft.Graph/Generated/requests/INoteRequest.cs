@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="noteToCreate">The Note to create.</param>
         /// <returns>The created Note.</returns>
-        System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate);
+
+        /// <summary>
         /// Creates the specified Note using POST.
         /// </summary>
         /// <param name="noteToCreate">The Note to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Note.</returns>
         System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Note using POST and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToCreate">The Note to create.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> CreateResponseAsync(Note noteToCreate);
+
+        /// <summary>
+        /// Creates the specified Note using POST and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToCreate">The Note to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> CreateResponseAsync(Note noteToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Note.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Note and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Note and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Note.
         /// </summary>
         /// <returns>The Note.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Note.</returns>
         System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Note using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Note.</returns>
         System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Note using PATCH and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note to update.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> UpdateResponseAsync(Note noteToUpdate);
+
+        /// <summary>
+        /// Updates the specified Note using PATCH and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> UpdateResponseAsync(Note noteToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

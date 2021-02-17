@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryDefinition.</returns>
         System.Threading.Tasks.Task<DirectoryDefinition> AddAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DirectoryDefinition to the collection via POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> AddResponseAsync(DirectoryDefinition directoryDefinition);
+
+        /// <summary>
+        /// Adds the specified DirectoryDefinition to the collection via POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> AddResponseAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISynchronizationSchemaDirectoriesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

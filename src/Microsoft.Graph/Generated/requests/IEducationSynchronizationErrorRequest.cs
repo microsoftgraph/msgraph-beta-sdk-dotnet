@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
         /// <returns>The created EducationSynchronizationError.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate);
+
+        /// <summary>
         /// Creates the specified EducationSynchronizationError using POST.
         /// </summary>
         /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationError.</returns>
         System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationSynchronizationError using POST and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> CreateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationSynchronizationError using POST and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> CreateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationSynchronizationError.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EducationSynchronizationError and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EducationSynchronizationError and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EducationSynchronizationError.
         /// </summary>
         /// <returns>The EducationSynchronizationError.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSynchronizationError.</returns>
         System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EducationSynchronizationError and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationSynchronizationError and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EducationSynchronizationError using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSynchronizationError.</returns>
         System.Threading.Tasks.Task<EducationSynchronizationError> UpdateAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> UpdateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate);
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> UpdateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

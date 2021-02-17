@@ -34,6 +34,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IPrinterShareAllowedUsersCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrinterShareAllowedUsersCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrinterShareAllowedUsersCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShareAllowedUsersCollectionWithReferencesResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PrinterShareAllowedUsersCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrinterShareAllowedUsersCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrinterShareAllowedUsersCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

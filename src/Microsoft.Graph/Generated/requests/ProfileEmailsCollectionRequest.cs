@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ItemEmail>(itemEmail, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ItemEmail to the collection via POST and returns a <see cref="GraphResponse{ItemEmail}"/> object of the request.
+        /// </summary>
+        /// <param name="itemEmail">The ItemEmail to add.</param>
+        /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemEmail>> AddResponseAsync(ItemEmail itemEmail)
+        {
+            return this.AddResponseAsync(itemEmail, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ItemEmail to the collection via POST and returns a <see cref="GraphResponse{ItemEmail}"/> object of the request.
+        /// </summary>
+        /// <param name="itemEmail">The ItemEmail to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemEmail>> AddResponseAsync(ItemEmail itemEmail, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemEmail>(itemEmail, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfileEmailsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileEmailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ProfileEmailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

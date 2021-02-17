@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
         /// <returns>The created EducationSchool.</returns>
-        System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate);
+
+        /// <summary>
         /// Creates the specified EducationSchool using POST.
         /// </summary>
         /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationSchool.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EducationSchool and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EducationSchool and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EducationSchool.
         /// </summary>
         /// <returns>The EducationSchool.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EducationSchool and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationSchool and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EducationSchool using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> UpdateAsync(EducationSchool educationSchoolToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EducationSchool using PATCH and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToUpdate">The EducationSchool to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> UpdateResponseAsync(EducationSchool educationSchoolToUpdate);
+
+        /// <summary>
+        /// Updates the specified EducationSchool using PATCH and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToUpdate">The EducationSchool to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> UpdateResponseAsync(EducationSchool educationSchoolToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

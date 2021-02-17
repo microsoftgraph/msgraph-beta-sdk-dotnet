@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate)
+        {
+            return this.CreateResponseAsync(iosLobAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosLobApp>(iosLobAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosLobApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<IosLobApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<IosLobApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified IosLobApp and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosLobApp and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosLobApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<IosLobApp>(iosLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosLobApp using PATCH and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosLobApp>> UpdateResponseAsync(IosLobApp iosLobAppToUpdate)
+        {
+            return this.UpdateResponseAsync(iosLobAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosLobApp using PATCH and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobApp>> UpdateResponseAsync(IosLobApp iosLobAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosLobAppToUpdate.AdditionalData != null)
+			{
+				if (iosLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosLobAppToUpdate.AdditionalData != null)
+            {
+                if (iosLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosLobAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosLobApp>(iosLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

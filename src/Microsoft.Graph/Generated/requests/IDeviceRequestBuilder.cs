@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDeviceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for UsageRights.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceUsageRightsCollectionRequestBuilder"/>.</returns>
+        IDeviceUsageRightsCollectionRequestBuilder UsageRights { get; }
+
+        /// <summary>
         /// Gets the request builder for MemberOf.
         /// </summary>
         /// <returns>The <see cref="IDeviceMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>

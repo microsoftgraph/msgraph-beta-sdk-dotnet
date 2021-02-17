@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingStateSummary.</returns>
-        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingStateSummary.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> CreateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> CreateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified AdvancedThreatProtectionOnboardingStateSummary using POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToCreate">The AdvancedThreatProtectionOnboardingStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> CreateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AdvancedThreatProtectionOnboardingStateSummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AdvancedThreatProtectionOnboardingStateSummary.
         /// </summary>
         /// <returns>The AdvancedThreatProtectionOnboardingStateSummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AdvancedThreatProtectionOnboardingStateSummary.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AdvancedThreatProtectionOnboardingStateSummary and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdvancedThreatProtectionOnboardingStateSummary.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingStateSummary> UpdateAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PATCH and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> UpdateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingStateSummary using PATCH and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingStateSummaryToUpdate">The AdvancedThreatProtectionOnboardingStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummary>> UpdateResponseAsync(AdvancedThreatProtectionOnboardingStateSummary advancedThreatProtectionOnboardingStateSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

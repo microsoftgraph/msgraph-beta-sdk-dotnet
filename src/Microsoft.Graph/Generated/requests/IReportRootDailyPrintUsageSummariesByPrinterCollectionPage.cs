@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface IReportRootDailyPrintUsageSummariesByPrinterCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<ReportRootDailyPrintUsageSummariesByPrinterCollectionPage>))]
-    public interface IReportRootDailyPrintUsageSummariesByPrinterCollectionPage : ICollectionPage<PrintUsageSummaryByPrinter>
+    public interface IReportRootDailyPrintUsageSummariesByPrinterCollectionPage : ICollectionPage<PrintUsageByPrinter>
     {
         /// <summary>
         /// Gets the next page <see cref="IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest"/> instance.

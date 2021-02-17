@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="importedDeviceIdentityResultToCreate">The ImportedDeviceIdentityResult to create.</param>
         /// <returns>The created ImportedDeviceIdentityResult.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentityResult> CreateAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ImportedDeviceIdentityResult> CreateAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToCreate);
+
+        /// <summary>
         /// Creates the specified ImportedDeviceIdentityResult using POST.
         /// </summary>
         /// <param name="importedDeviceIdentityResultToCreate">The ImportedDeviceIdentityResult to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedDeviceIdentityResult.</returns>
         System.Threading.Tasks.Task<ImportedDeviceIdentityResult> CreateAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ImportedDeviceIdentityResult using POST and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityResultToCreate">The ImportedDeviceIdentityResult to create.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> CreateResponseAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToCreate);
+
+        /// <summary>
+        /// Creates the specified ImportedDeviceIdentityResult using POST and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityResultToCreate">The ImportedDeviceIdentityResult to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> CreateResponseAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ImportedDeviceIdentityResult.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ImportedDeviceIdentityResult and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ImportedDeviceIdentityResult and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ImportedDeviceIdentityResult.
         /// </summary>
         /// <returns>The ImportedDeviceIdentityResult.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ImportedDeviceIdentityResult.</returns>
         System.Threading.Tasks.Task<ImportedDeviceIdentityResult> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ImportedDeviceIdentityResult and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ImportedDeviceIdentityResult and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ImportedDeviceIdentityResult using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedDeviceIdentityResult.</returns>
         System.Threading.Tasks.Task<ImportedDeviceIdentityResult> UpdateAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ImportedDeviceIdentityResult using PATCH and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityResultToUpdate">The ImportedDeviceIdentityResult to update.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> UpdateResponseAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToUpdate);
+
+        /// <summary>
+        /// Updates the specified ImportedDeviceIdentityResult using PATCH and returns a <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object.
+        /// </summary>
+        /// <param name="importedDeviceIdentityResultToUpdate">The ImportedDeviceIdentityResult to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentityResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentityResult>> UpdateResponseAsync(ImportedDeviceIdentityResult importedDeviceIdentityResultToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

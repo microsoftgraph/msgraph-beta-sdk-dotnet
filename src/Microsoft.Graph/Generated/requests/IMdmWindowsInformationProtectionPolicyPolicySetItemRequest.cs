@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToCreate">The MdmWindowsInformationProtectionPolicyPolicySetItem to create.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> CreateAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> CreateAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToCreate);
+
+        /// <summary>
         /// Creates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using POST.
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToCreate">The MdmWindowsInformationProtectionPolicyPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> CreateAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToCreate">The MdmWindowsInformationProtectionPolicyPolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> CreateResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToCreate);
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToCreate">The MdmWindowsInformationProtectionPolicyPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> CreateResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MdmWindowsInformationProtectionPolicyPolicySetItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem.
         /// </summary>
         /// <returns>The MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> UpdateAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PATCH and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate">The MdmWindowsInformationProtectionPolicyPolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> UpdateResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PATCH and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate">The MdmWindowsInformationProtectionPolicyPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> UpdateResponseAsync(MdmWindowsInformationProtectionPolicyPolicySetItem mdmWindowsInformationProtectionPolicyPolicySetItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<FeatureRolloutPolicy>(featureRolloutPolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy)
+        {
+            return this.AddResponseAsync(featureRolloutPolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified FeatureRolloutPolicy to the collection via POST and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="featureRolloutPolicy">The FeatureRolloutPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> AddResponseAsync(FeatureRolloutPolicy featureRolloutPolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<FeatureRolloutPolicy>(featureRolloutPolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryFeatureRolloutPoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DirectoryFeatureRolloutPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

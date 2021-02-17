@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="connectorToCreate">The Connector to create.</param>
         /// <returns>The created Connector.</returns>
-        System.Threading.Tasks.Task<Connector> CreateAsync(Connector connectorToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Connector> CreateAsync(Connector connectorToCreate);
+
+        /// <summary>
         /// Creates the specified Connector using POST.
         /// </summary>
         /// <param name="connectorToCreate">The Connector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Connector.</returns>
         System.Threading.Tasks.Task<Connector> CreateAsync(Connector connectorToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Connector using POST and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <param name="connectorToCreate">The Connector to create.</param>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> CreateResponseAsync(Connector connectorToCreate);
+
+        /// <summary>
+        /// Creates the specified Connector using POST and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <param name="connectorToCreate">The Connector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> CreateResponseAsync(Connector connectorToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Connector.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Connector and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Connector and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Connector.
         /// </summary>
         /// <returns>The Connector.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Connector.</returns>
         System.Threading.Tasks.Task<Connector> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Connector and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Connector and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Connector using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Connector.</returns>
         System.Threading.Tasks.Task<Connector> UpdateAsync(Connector connectorToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Connector using PATCH and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <param name="connectorToUpdate">The Connector to update.</param>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> UpdateResponseAsync(Connector connectorToUpdate);
+
+        /// <summary>
+        /// Updates the specified Connector using PATCH and returns a <see cref="GraphResponse{Connector}"/> object.
+        /// </summary>
+        /// <param name="connectorToUpdate">The Connector to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Connector>> UpdateResponseAsync(Connector connectorToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

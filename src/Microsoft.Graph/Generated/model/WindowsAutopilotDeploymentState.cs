@@ -44,5 +44,15 @@ namespace Microsoft.Graph
         /// </summary>
         SuccessWithTimeout = 4,
 	
+        /// <summary>
+        /// Not Attempted
+        /// </summary>
+        NotAttempted = 5,
+	
+        /// <summary>
+        /// Disabled
+        /// </summary>
+        Disabled = 6,
+	
     }
 }

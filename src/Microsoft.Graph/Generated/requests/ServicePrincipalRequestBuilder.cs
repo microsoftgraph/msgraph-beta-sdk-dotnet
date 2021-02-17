@@ -297,6 +297,21 @@ namespace Microsoft.Graph
                 id,
                 credentials);
         }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalAddTokenSigningCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalAddTokenSigningCertificateRequestBuilder"/>.</returns>
+        public IServicePrincipalAddTokenSigningCertificateRequestBuilder AddTokenSigningCertificate(
+            string displayName = null,
+            DateTimeOffset? endDateTime = null)
+        {
+            return new ServicePrincipalAddTokenSigningCertificateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addTokenSigningCertificate"),
+                this.Client,
+                displayName,
+                endDateTime);
+        }
     
     }
 }

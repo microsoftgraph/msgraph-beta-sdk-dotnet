@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AgreementAcceptance>(agreementAcceptance, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementAcceptance>> AddResponseAsync(AgreementAcceptance agreementAcceptance)
+        {
+            return this.AddResponseAsync(agreementAcceptance, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AgreementAcceptance to the collection via POST and returns a <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.
+        /// </summary>
+        /// <param name="agreementAcceptance">The AgreementAcceptance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementAcceptance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementAcceptance>> AddResponseAsync(AgreementAcceptance agreementAcceptance, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AgreementAcceptance>(agreementAcceptance, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainerAgreementAcceptancesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsOfUseContainerAgreementAcceptancesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsOfUseContainerAgreementAcceptancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TermsOfUseContainerAgreementAcceptancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
         /// <returns>The created RelyingPartyDetailedSummary.</returns>
-        System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified RelyingPartyDetailedSummary using POST.
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RelyingPartyDetailedSummary.</returns>
         System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RelyingPartyDetailedSummary using POST and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> CreateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified RelyingPartyDetailedSummary using POST and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> CreateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RelyingPartyDetailedSummary.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified RelyingPartyDetailedSummary.
         /// </summary>
         /// <returns>The RelyingPartyDetailedSummary.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RelyingPartyDetailedSummary.</returns>
         System.Threading.Tasks.Task<RelyingPartyDetailedSummary> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified RelyingPartyDetailedSummary using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RelyingPartyDetailedSummary.</returns>
         System.Threading.Tasks.Task<RelyingPartyDetailedSummary> UpdateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified RelyingPartyDetailedSummary using PATCH and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> UpdateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified RelyingPartyDetailedSummary using PATCH and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
+        /// </summary>
+        /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> UpdateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

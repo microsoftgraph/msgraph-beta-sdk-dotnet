@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummary, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified MacOSSoftwareUpdateAccountSummary to the collection via POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummary">The MacOSSoftwareUpdateAccountSummary to add.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> AddResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummary)
+        {
+            return this.AddResponseAsync(macOSSoftwareUpdateAccountSummary, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified MacOSSoftwareUpdateAccountSummary to the collection via POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="macOSSoftwareUpdateAccountSummary">The MacOSSoftwareUpdateAccountSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummary>> AddResponseAsync(MacOSSoftwareUpdateAccountSummary macOSSoftwareUpdateAccountSummary, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummary>(macOSSoftwareUpdateAccountSummary, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementMacOSSoftwareUpdateAccountSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

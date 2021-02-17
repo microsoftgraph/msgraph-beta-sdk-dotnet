@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
         /// <returns>The created UserExperienceAnalyticsCategory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> CreateAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> CreateAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified UserExperienceAnalyticsCategory using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsCategory.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> CreateAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsCategory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> CreateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsCategory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToCreate">The UserExperienceAnalyticsCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> CreateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsCategory.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified UserExperienceAnalyticsCategory.
         /// </summary>
         /// <returns>The UserExperienceAnalyticsCategory.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsCategory.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsCategory using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsCategory.</returns>
         System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> UpdateAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsCategory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToUpdate">The UserExperienceAnalyticsCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> UpdateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsCategory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsCategoryToUpdate">The UserExperienceAnalyticsCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> UpdateResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategoryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

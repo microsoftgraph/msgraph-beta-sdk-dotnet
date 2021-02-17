@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AppScope>(appScope, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AppScope to the collection via POST and returns a <see cref="GraphResponse{AppScope}"/> object of the request.
+        /// </summary>
+        /// <param name="appScope">The AppScope to add.</param>
+        /// <returns>The <see cref="GraphResponse{AppScope}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppScope>> AddResponseAsync(AppScope appScope)
+        {
+            return this.AddResponseAsync(appScope, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AppScope to the collection via POST and returns a <see cref="GraphResponse{AppScope}"/> object of the request.
+        /// </summary>
+        /// <param name="appScope">The AppScope to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppScope}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppScope>> AddResponseAsync(AppScope appScope, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppScope>(appScope, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultipleAppScopesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultipleAppScopesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultipleAppScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentMultipleAppScopesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

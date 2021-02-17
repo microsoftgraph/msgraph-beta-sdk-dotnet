@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Shift.</returns>
         System.Threading.Tasks.Task<Shift> AddAsync(Shift shift, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Shift to the collection via POST and returns a <see cref="GraphResponse{Shift}"/> object of the request.
+        /// </summary>
+        /// <param name="shift">The Shift to add.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> AddResponseAsync(Shift shift);
+
+        /// <summary>
+        /// Adds the specified Shift to the collection via POST and returns a <see cref="GraphResponse{Shift}"/> object of the request.
+        /// </summary>
+        /// <param name="shift">The Shift to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> AddResponseAsync(Shift shift, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IScheduleShiftsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleShiftsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ScheduleShiftsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleShiftsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleShiftsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleShiftsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleShiftsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

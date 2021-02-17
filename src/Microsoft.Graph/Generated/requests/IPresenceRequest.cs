@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="presenceToCreate">The Presence to create.</param>
         /// <returns>The created Presence.</returns>
-        System.Threading.Tasks.Task<Presence> CreateAsync(Presence presenceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Presence> CreateAsync(Presence presenceToCreate);
+
+        /// <summary>
         /// Creates the specified Presence using POST.
         /// </summary>
         /// <param name="presenceToCreate">The Presence to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Presence.</returns>
         System.Threading.Tasks.Task<Presence> CreateAsync(Presence presenceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate);
+
+        /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Presence.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Presence and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Presence and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Presence.
         /// </summary>
         /// <returns>The Presence.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Presence.</returns>
         System.Threading.Tasks.Task<Presence> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Presence using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Presence.</returns>
         System.Threading.Tasks.Task<Presence> UpdateAsync(Presence presenceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Presence using PATCH and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToUpdate">The Presence to update.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> UpdateResponseAsync(Presence presenceToUpdate);
+
+        /// <summary>
+        /// Updates the specified Presence using PATCH and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToUpdate">The Presence to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> UpdateResponseAsync(Presence presenceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

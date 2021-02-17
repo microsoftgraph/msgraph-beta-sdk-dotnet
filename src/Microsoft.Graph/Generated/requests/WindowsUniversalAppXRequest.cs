@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsUniversalAppX using POST and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> CreateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToCreate)
+        {
+            return this.CreateResponseAsync(windowsUniversalAppXToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsUniversalAppX using POST and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> CreateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsUniversalAppX>(windowsUniversalAppXToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsUniversalAppX.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsUniversalAppX>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsUniversalAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsUniversalAppX and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsUniversalAppX>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsUniversalAppX and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsUniversalAppX and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsUniversalAppX>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsUniversalAppX>(windowsUniversalAppXToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsUniversalAppX using PATCH and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToUpdate">The WindowsUniversalAppX to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> UpdateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsUniversalAppXToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsUniversalAppX using PATCH and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToUpdate">The WindowsUniversalAppX to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> UpdateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsUniversalAppXToUpdate.AdditionalData != null)
+			{
+				if (windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUniversalAppXToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsUniversalAppXToUpdate.AdditionalData != null)
+            {
+                if (windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsUniversalAppXToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUniversalAppXToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsUniversalAppX>(windowsUniversalAppXToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

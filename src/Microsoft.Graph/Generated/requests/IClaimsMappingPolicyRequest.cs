@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
         /// <returns>The created ClaimsMappingPolicy.</returns>
-        System.Threading.Tasks.Task<ClaimsMappingPolicy> CreateAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ClaimsMappingPolicy> CreateAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified ClaimsMappingPolicy using POST.
         /// </summary>
         /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ClaimsMappingPolicy.</returns>
         System.Threading.Tasks.Task<ClaimsMappingPolicy> CreateAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ClaimsMappingPolicy using POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> CreateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified ClaimsMappingPolicy using POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> CreateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ClaimsMappingPolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ClaimsMappingPolicy.
         /// </summary>
         /// <returns>The ClaimsMappingPolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ClaimsMappingPolicy.</returns>
         System.Threading.Tasks.Task<ClaimsMappingPolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ClaimsMappingPolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ClaimsMappingPolicy.</returns>
         System.Threading.Tasks.Task<ClaimsMappingPolicy> UpdateAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

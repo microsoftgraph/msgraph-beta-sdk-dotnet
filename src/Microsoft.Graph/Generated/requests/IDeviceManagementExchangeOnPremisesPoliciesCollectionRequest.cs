@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
         System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> AddAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementExchangeOnPremisesPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementExchangeOnPremisesPolicy">The DeviceManagementExchangeOnPremisesPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> AddResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicy);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementExchangeOnPremisesPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementExchangeOnPremisesPolicy">The DeviceManagementExchangeOnPremisesPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> AddResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementExchangeOnPremisesPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

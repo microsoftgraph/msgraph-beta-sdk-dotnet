@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> CreateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate)
+        {
+            return this.CreateResponseAsync(windowsInformationProtectionPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> CreateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsInformationProtectionPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsInformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified WindowsInformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<WindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToUpdate">The WindowsInformationProtectionPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> UpdateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsInformationProtectionPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToUpdate">The WindowsInformationProtectionPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> UpdateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsInformationProtectionPolicyToUpdate.AdditionalData != null)
+			{
+				if (windowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsInformationProtectionPolicyToUpdate.AdditionalData != null)
+            {
+                if (windowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsInformationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistory, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsMetricHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsMetricHistory">The UserExperienceAnalyticsMetricHistory to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> AddResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory)
+        {
+            return this.AddResponseAsync(userExperienceAnalyticsMetricHistory, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserExperienceAnalyticsMetricHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsMetricHistory">The UserExperienceAnalyticsMetricHistory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> AddResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistory, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

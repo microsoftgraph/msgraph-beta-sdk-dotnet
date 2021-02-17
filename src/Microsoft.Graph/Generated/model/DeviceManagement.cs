@@ -630,6 +630,13 @@ namespace Microsoft.Graph
         public IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage UserExperienceAnalyticsDeviceStartupProcessPerformance { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics devices without cloud identity.
+        /// User experience analytics devices without cloud identity.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDevicesWithoutCloudIdentity")]
+        public IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionPage UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics metric history.
         /// User experience analytics metric history
         /// </summary>
@@ -649,6 +656,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsRegressionSummary")]
         public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics resource performance.
+        /// User experience analytics resource performance
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsResourcePerformance")]
+        public IDeviceManagementUserExperienceAnalyticsResourcePerformanceCollectionPage UserExperienceAnalyticsResourcePerformance { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics score history.
@@ -798,6 +812,20 @@ namespace Microsoft.Graph
         public IDeviceManagementMicrosoftTunnelConfigurationsCollectionPage MicrosoftTunnelConfigurations { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft tunnel health thresholds.
+        /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelHealthThresholds")]
+        public IDeviceManagementMicrosoftTunnelHealthThresholdsCollectionPage MicrosoftTunnelHealthThresholds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft tunnel server log collection responses.
+        /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelServerLogCollectionResponses")]
+        public IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage MicrosoftTunnelServerLogCollectionResponses { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel sites.
         /// Collection of MicrosoftTunnelSite settings associated with account.
         /// </summary>
@@ -901,6 +929,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsFeatureUpdateProfiles")]
         public IDeviceManagementWindowsFeatureUpdateProfilesCollectionPage WindowsFeatureUpdateProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows quality update profiles.
+        /// A collection of windows quality update profiles
+        /// </summary>
+        [JsonPropertyName("windowsQualityUpdateProfiles")]
+        public IDeviceManagementWindowsQualityUpdateProfilesCollectionPage WindowsQualityUpdateProfiles { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows update catalog items.
+        /// A collection of windows update catalog items (fetaure updates item , quality updates item)
+        /// </summary>
+        [JsonPropertyName("windowsUpdateCatalogItems")]
+        public IDeviceManagementWindowsUpdateCatalogItemsCollectionPage WindowsUpdateCatalogItems { get; set; }
     
         /// <summary>
         /// Gets or sets intune branding profiles.

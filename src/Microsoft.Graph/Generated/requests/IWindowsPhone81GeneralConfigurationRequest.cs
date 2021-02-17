@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
         /// <returns>The created WindowsPhone81GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> CreateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> CreateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsPhone81GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhone81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> CreateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81GeneralConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> CreateResponseAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81GeneralConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81GeneralConfigurationToCreate">The WindowsPhone81GeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> CreateResponseAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsPhone81GeneralConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsPhone81GeneralConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsPhone81GeneralConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsPhone81GeneralConfiguration.
         /// </summary>
         /// <returns>The WindowsPhone81GeneralConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81GeneralConfiguration and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81GeneralConfiguration and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsPhone81GeneralConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsPhone81GeneralConfiguration> UpdateAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81GeneralConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81GeneralConfigurationToUpdate">The WindowsPhone81GeneralConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> UpdateResponseAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81GeneralConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81GeneralConfigurationToUpdate">The WindowsPhone81GeneralConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81GeneralConfiguration>> UpdateResponseAsync(WindowsPhone81GeneralConfiguration windowsPhone81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

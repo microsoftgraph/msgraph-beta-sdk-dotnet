@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceEnrollmentConfiguration>(deviceEnrollmentConfiguration, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceEnrollmentConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfiguration">The DeviceEnrollmentConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> AddResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfiguration)
+        {
+            return this.AddResponseAsync(deviceEnrollmentConfiguration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceEnrollmentConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfiguration">The DeviceEnrollmentConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> AddResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfiguration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            deviceEnrollmentConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceEnrollmentConfiguration.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<DeviceEnrollmentConfiguration>(deviceEnrollmentConfiguration, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceEnrollmentConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

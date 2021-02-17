@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
         /// <returns>The created GroupPolicyPresentationLongDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationLongDecimalTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyPresentationLongDecimalTextBox.
         /// </summary>
         /// <returns>The GroupPolicyPresentationLongDecimalTextBox.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationLongDecimalTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationLongDecimalTextBox.</returns>
         System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> UpdateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

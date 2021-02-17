@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagedDeviceCertificateState>(managedDeviceCertificateState, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceCertificateState">The ManagedDeviceCertificateState to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> AddResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateState)
+        {
+            return this.AddResponseAsync(managedDeviceCertificateState, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceCertificateState">The ManagedDeviceCertificateState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> AddResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateState, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceCertificateState>(managedDeviceCertificateState, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOSImportedPFXCertificateProfileManagedDeviceCertificateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

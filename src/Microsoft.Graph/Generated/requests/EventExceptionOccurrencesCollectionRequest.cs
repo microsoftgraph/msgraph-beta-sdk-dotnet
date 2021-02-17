@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Event>(exceptionOccurrencesEvent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
+        /// </summary>
+        /// <param name="exceptionOccurrencesEvent">The Event to add.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event exceptionOccurrencesEvent)
+        {
+            return this.AddResponseAsync(exceptionOccurrencesEvent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
+        /// </summary>
+        /// <param name="exceptionOccurrencesEvent">The Event to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event exceptionOccurrencesEvent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Event>(exceptionOccurrencesEvent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EventExceptionOccurrencesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EventExceptionOccurrencesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EventExceptionOccurrencesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EventExceptionOccurrencesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventExceptionOccurrencesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EventExceptionOccurrencesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EventExceptionOccurrencesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

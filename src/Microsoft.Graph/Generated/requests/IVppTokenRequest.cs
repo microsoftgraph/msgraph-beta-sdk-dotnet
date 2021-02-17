@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <returns>The created VppToken.</returns>
-        System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate);        /// <summary>
+        System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate);
+
+        /// <summary>
         /// Creates the specified VppToken using POST.
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate);
+
+        /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified VppToken.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified VppToken and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified VppToken and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified VppToken.
         /// </summary>
         /// <returns>The VppToken.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified VppToken and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified VppToken and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified VppToken using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> UpdateAsync(VppToken vppTokenToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified VppToken using PATCH and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToUpdate">The VppToken to update.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> UpdateResponseAsync(VppToken vppTokenToUpdate);
+
+        /// <summary>
+        /// Updates the specified VppToken using PATCH and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToUpdate">The VppToken to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> UpdateResponseAsync(VppToken vppTokenToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

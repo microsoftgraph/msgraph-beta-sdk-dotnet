@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<NdesConnector>(ndesConnector, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified NdesConnector to the collection via POST and returns a <see cref="GraphResponse{NdesConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="ndesConnector">The NdesConnector to add.</param>
+        /// <returns>The <see cref="GraphResponse{NdesConnector}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NdesConnector>> AddResponseAsync(NdesConnector ndesConnector)
+        {
+            return this.AddResponseAsync(ndesConnector, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified NdesConnector to the collection via POST and returns a <see cref="GraphResponse{NdesConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="ndesConnector">The NdesConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NdesConnector}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<NdesConnector>> AddResponseAsync(NdesConnector ndesConnector, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<NdesConnector>(ndesConnector, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementNdesConnectorsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementNdesConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementNdesConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

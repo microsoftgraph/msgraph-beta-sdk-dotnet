@@ -126,6 +126,12 @@ namespace Microsoft.Graph
         public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment settings.
+        /// </summary>
+        [JsonPropertyName("assignmentSettings")]
+        public EducationAssignmentSettings AssignmentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
         /// The directory group corresponding to this class.
         /// </summary>

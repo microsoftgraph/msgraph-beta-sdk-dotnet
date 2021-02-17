@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Event>(eventsEvent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
+        /// </summary>
+        /// <param name="eventsEvent">The Event to add.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event eventsEvent)
+        {
+            return this.AddResponseAsync(eventsEvent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
+        /// </summary>
+        /// <param name="eventsEvent">The Event to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event eventsEvent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Event>(eventsEvent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupEventsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupEventsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupEventsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupEventsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ImportedAppleDeviceIdentity>(importedAppleDeviceIdentity, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity)
+        {
+            return this.AddResponseAsync(importedAppleDeviceIdentity, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ImportedAppleDeviceIdentity>(importedAppleDeviceIdentity, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

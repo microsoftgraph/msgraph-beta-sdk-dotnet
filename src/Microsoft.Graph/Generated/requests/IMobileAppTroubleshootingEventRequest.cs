@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppTroubleshootingEvent using POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> CreateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppTroubleshootingEvent using POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> CreateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppTroubleshootingEvent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MobileAppTroubleshootingEvent.
         /// </summary>
         /// <returns>The MobileAppTroubleshootingEvent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MobileAppTroubleshootingEvent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> UpdateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MobileAppTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> UpdateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileAppTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> UpdateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

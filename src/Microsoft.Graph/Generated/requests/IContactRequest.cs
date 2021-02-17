@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="contactToCreate">The Contact to create.</param>
         /// <returns>The created Contact.</returns>
-        System.Threading.Tasks.Task<Contact> CreateAsync(Contact contactToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Contact> CreateAsync(Contact contactToCreate);
+
+        /// <summary>
         /// Creates the specified Contact using POST.
         /// </summary>
         /// <param name="contactToCreate">The Contact to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Contact.</returns>
         System.Threading.Tasks.Task<Contact> CreateAsync(Contact contactToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Contact using POST and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToCreate">The Contact to create.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> CreateResponseAsync(Contact contactToCreate);
+
+        /// <summary>
+        /// Creates the specified Contact using POST and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToCreate">The Contact to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> CreateResponseAsync(Contact contactToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Contact.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Contact and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Contact and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Contact.
         /// </summary>
         /// <returns>The Contact.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Contact.</returns>
         System.Threading.Tasks.Task<Contact> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Contact and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Contact and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Contact using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Contact.</returns>
         System.Threading.Tasks.Task<Contact> UpdateAsync(Contact contactToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Contact using PATCH and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToUpdate">The Contact to update.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> UpdateResponseAsync(Contact contactToUpdate);
+
+        /// <summary>
+        /// Updates the specified Contact using PATCH and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToUpdate">The Contact to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> UpdateResponseAsync(Contact contactToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

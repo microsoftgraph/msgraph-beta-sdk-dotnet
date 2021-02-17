@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSharingConsent.</returns>
         System.Threading.Tasks.Task<DataSharingConsent> AddAsync(DataSharingConsent dataSharingConsent, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DataSharingConsent to the collection via POST and returns a <see cref="GraphResponse{DataSharingConsent}"/> object of the request.
+        /// </summary>
+        /// <param name="dataSharingConsent">The DataSharingConsent to add.</param>
+        /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> AddResponseAsync(DataSharingConsent dataSharingConsent);
+
+        /// <summary>
+        /// Adds the specified DataSharingConsent to the collection via POST and returns a <see cref="GraphResponse{DataSharingConsent}"/> object of the request.
+        /// </summary>
+        /// <param name="dataSharingConsent">The DataSharingConsent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataSharingConsent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSharingConsent>> AddResponseAsync(DataSharingConsent dataSharingConsent, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementDataSharingConsentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDataSharingConsentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDataSharingConsentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDataSharingConsentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

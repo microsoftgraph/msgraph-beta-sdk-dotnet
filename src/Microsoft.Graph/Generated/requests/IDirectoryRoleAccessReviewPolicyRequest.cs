@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryRoleAccessReviewPolicyToCreate">The DirectoryRoleAccessReviewPolicy to create.</param>
         /// <returns>The created DirectoryRoleAccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<DirectoryRoleAccessReviewPolicy> CreateAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryRoleAccessReviewPolicy> CreateAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryRoleAccessReviewPolicy using POST.
         /// </summary>
         /// <param name="directoryRoleAccessReviewPolicyToCreate">The DirectoryRoleAccessReviewPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRoleAccessReviewPolicy.</returns>
         System.Threading.Tasks.Task<DirectoryRoleAccessReviewPolicy> CreateAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleAccessReviewPolicy using POST and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleAccessReviewPolicyToCreate">The DirectoryRoleAccessReviewPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> CreateResponseAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleAccessReviewPolicy using POST and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleAccessReviewPolicyToCreate">The DirectoryRoleAccessReviewPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> CreateResponseAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryRoleAccessReviewPolicy.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DirectoryRoleAccessReviewPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DirectoryRoleAccessReviewPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DirectoryRoleAccessReviewPolicy.
         /// </summary>
         /// <returns>The DirectoryRoleAccessReviewPolicy.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryRoleAccessReviewPolicy.</returns>
         System.Threading.Tasks.Task<DirectoryRoleAccessReviewPolicy> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DirectoryRoleAccessReviewPolicy and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DirectoryRoleAccessReviewPolicy and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DirectoryRoleAccessReviewPolicy using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryRoleAccessReviewPolicy.</returns>
         System.Threading.Tasks.Task<DirectoryRoleAccessReviewPolicy> UpdateAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleAccessReviewPolicy using PATCH and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleAccessReviewPolicyToUpdate">The DirectoryRoleAccessReviewPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> UpdateResponseAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleAccessReviewPolicy using PATCH and returns a <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleAccessReviewPolicyToUpdate">The DirectoryRoleAccessReviewPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleAccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleAccessReviewPolicy>> UpdateResponseAsync(DirectoryRoleAccessReviewPolicy directoryRoleAccessReviewPolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

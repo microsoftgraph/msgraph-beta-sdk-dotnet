@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
         /// <returns>The created OnPremisesConditionalAccessSettings.</returns>
-        System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> CreateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> CreateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate);
+
+        /// <summary>
         /// Creates the specified OnPremisesConditionalAccessSettings using POST.
         /// </summary>
         /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesConditionalAccessSettings.</returns>
         System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> CreateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate);
+
+        /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnPremisesConditionalAccessSettings.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnPremisesConditionalAccessSettings.
         /// </summary>
         /// <returns>The OnPremisesConditionalAccessSettings.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnPremisesConditionalAccessSettings.</returns>
         System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnPremisesConditionalAccessSettings using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnPremisesConditionalAccessSettings.</returns>
         System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> UpdateAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnPremisesConditionalAccessSettings using PATCH and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToUpdate">The OnPremisesConditionalAccessSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> UpdateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnPremisesConditionalAccessSettings using PATCH and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToUpdate">The OnPremisesConditionalAccessSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> UpdateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

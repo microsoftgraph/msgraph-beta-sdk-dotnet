@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
         /// <returns>The created AppleVppTokenTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate);
+
+        /// <summary>
         /// Creates the specified AppleVppTokenTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleVppTokenTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> CreateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> CreateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate);
+
+        /// <summary>
+        /// Creates the specified AppleVppTokenTroubleshootingEvent using POST and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="appleVppTokenTroubleshootingEventToCreate">The AppleVppTokenTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> CreateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AppleVppTokenTroubleshootingEvent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AppleVppTokenTroubleshootingEvent.
         /// </summary>
         /// <returns>The AppleVppTokenTroubleshootingEvent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleVppTokenTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AppleVppTokenTroubleshootingEvent and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AppleVppTokenTroubleshootingEvent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleVppTokenTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<AppleVppTokenTroubleshootingEvent> UpdateAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AppleVppTokenTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="appleVppTokenTroubleshootingEventToUpdate">The AppleVppTokenTroubleshootingEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> UpdateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate);
+
+        /// <summary>
+        /// Updates the specified AppleVppTokenTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="appleVppTokenTroubleshootingEventToUpdate">The AppleVppTokenTroubleshootingEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppleVppTokenTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleVppTokenTroubleshootingEvent>> UpdateResponseAsync(AppleVppTokenTroubleshootingEvent appleVppTokenTroubleshootingEventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

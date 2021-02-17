@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptDeviceState.</returns>
         System.Threading.Tasks.Task<DeviceManagementScriptDeviceState> AddAsync(DeviceManagementScriptDeviceState deviceManagementScriptDeviceState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementScriptDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementScriptDeviceState">The DeviceManagementScriptDeviceState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptDeviceState>> AddResponseAsync(DeviceManagementScriptDeviceState deviceManagementScriptDeviceState);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementScriptDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementScriptDeviceState">The DeviceManagementScriptDeviceState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptDeviceState>> AddResponseAsync(DeviceManagementScriptDeviceState deviceManagementScriptDeviceState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceCustomAttributeShellScriptDeviceRunStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScriptDeviceRunStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

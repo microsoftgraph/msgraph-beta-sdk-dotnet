@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EntitlementManagement using POST and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate)
+        {
+            return this.CreateResponseAsync(entitlementManagementToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EntitlementManagement using POST and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EntitlementManagement.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EntitlementManagement and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EntitlementManagement and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EntitlementManagement and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EntitlementManagement and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PATCH and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate)
+        {
+            return this.UpdateResponseAsync(entitlementManagementToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PATCH and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken)
+        {
+			if (entitlementManagementToUpdate.AdditionalData != null)
+			{
+				if (entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, entitlementManagementToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (entitlementManagementToUpdate.AdditionalData != null)
+            {
+                if (entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, entitlementManagementToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -309,6 +422,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (entitlementManagementToInitialize.AccessPackageResourceEnvironments != null && entitlementManagementToInitialize.AccessPackageResourceEnvironments.CurrentPage != null)
+                {
+                    entitlementManagementToInitialize.AccessPackageResourceEnvironments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

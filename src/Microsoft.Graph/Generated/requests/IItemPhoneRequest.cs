@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
         /// <returns>The created ItemPhone.</returns>
-        System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate);
+
+        /// <summary>
         /// Creates the specified ItemPhone using POST.
         /// </summary>
         /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPhone.</returns>
         System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ItemPhone using POST and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> CreateResponseAsync(ItemPhone itemPhoneToCreate);
+
+        /// <summary>
+        /// Creates the specified ItemPhone using POST and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> CreateResponseAsync(ItemPhone itemPhoneToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ItemPhone.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ItemPhone and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ItemPhone and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ItemPhone.
         /// </summary>
         /// <returns>The ItemPhone.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemPhone.</returns>
         System.Threading.Tasks.Task<ItemPhone> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ItemPhone and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ItemPhone and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ItemPhone using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemPhone.</returns>
         System.Threading.Tasks.Task<ItemPhone> UpdateAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ItemPhone using PATCH and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToUpdate">The ItemPhone to update.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> UpdateResponseAsync(ItemPhone itemPhoneToUpdate);
+
+        /// <summary>
+        /// Updates the specified ItemPhone using PATCH and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToUpdate">The ItemPhone to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPhone>> UpdateResponseAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

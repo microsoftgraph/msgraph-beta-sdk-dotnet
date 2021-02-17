@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
         /// <returns>The created DeviceLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceLogCollectionResponse using POST.
         /// </summary>
         /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceLogCollectionResponse.</returns>
         System.Threading.Tasks.Task<DeviceLogCollectionResponse> CreateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceLogCollectionResponse using POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> CreateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceLogCollectionResponse using POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponseToCreate">The DeviceLogCollectionResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> CreateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceLogCollectionResponse.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceLogCollectionResponse.
         /// </summary>
         /// <returns>The DeviceLogCollectionResponse.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceLogCollectionResponse.</returns>
         System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceLogCollectionResponse using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceLogCollectionResponse.</returns>
         System.Threading.Tasks.Task<DeviceLogCollectionResponse> UpdateAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceLogCollectionResponse using PATCH and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponseToUpdate">The DeviceLogCollectionResponse to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> UpdateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceLogCollectionResponse using PATCH and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponseToUpdate">The DeviceLogCollectionResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> UpdateResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

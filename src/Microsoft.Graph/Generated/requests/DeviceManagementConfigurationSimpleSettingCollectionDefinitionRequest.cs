@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> CreateResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> CreateResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(deviceManagementConfigurationSimpleSettingCollectionDefinitionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationSimpleSettingCollectionDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate">The DeviceManagementConfigurationSimpleSettingCollectionDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSimpleSettingCollectionDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSimpleSettingCollectionDefinition deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationSimpleSettingCollectionDefinition>(deviceManagementConfigurationSimpleSettingCollectionDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

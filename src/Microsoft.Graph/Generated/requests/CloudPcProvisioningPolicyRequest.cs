@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CloudPcProvisioningPolicy using POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicyToCreate">The CloudPcProvisioningPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> CreateResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicyToCreate)
+        {
+            return this.CreateResponseAsync(cloudPcProvisioningPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CloudPcProvisioningPolicy using POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicyToCreate">The CloudPcProvisioningPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> CreateResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicy>(cloudPcProvisioningPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CloudPcProvisioningPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<CloudPcProvisioningPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<CloudPcProvisioningPolicy>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicy>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<CloudPcProvisioningPolicy>(cloudPcProvisioningPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CloudPcProvisioningPolicy using PATCH and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicyToUpdate">The CloudPcProvisioningPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> UpdateResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(cloudPcProvisioningPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CloudPcProvisioningPolicy using PATCH and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicyToUpdate">The CloudPcProvisioningPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> UpdateResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (cloudPcProvisioningPolicyToUpdate.AdditionalData != null)
+			{
+				if (cloudPcProvisioningPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					cloudPcProvisioningPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcProvisioningPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (cloudPcProvisioningPolicyToUpdate.AdditionalData != null)
+            {
+                if (cloudPcProvisioningPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    cloudPcProvisioningPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcProvisioningPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicy>(cloudPcProvisioningPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ImportedDeviceIdentity>(importedDeviceIdentity, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ImportedDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> AddResponseAsync(ImportedDeviceIdentity importedDeviceIdentity)
+        {
+            return this.AddResponseAsync(importedDeviceIdentity, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ImportedDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.
+        /// </summary>
+        /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> AddResponseAsync(ImportedDeviceIdentity importedDeviceIdentity, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ImportedDeviceIdentity>(importedDeviceIdentity, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

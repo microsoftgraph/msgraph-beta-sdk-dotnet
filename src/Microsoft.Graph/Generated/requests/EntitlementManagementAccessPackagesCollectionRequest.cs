@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AccessPackage>(accessPackage, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AccessPackage to the collection via POST and returns a <see cref="GraphResponse{AccessPackage}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackage">The AccessPackage to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage)
+        {
+            return this.AddResponseAsync(accessPackage, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AccessPackage to the collection via POST and returns a <see cref="GraphResponse{AccessPackage}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackage">The AccessPackage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AccessPackage>(accessPackage, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackagesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EntitlementManagementAccessPackagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

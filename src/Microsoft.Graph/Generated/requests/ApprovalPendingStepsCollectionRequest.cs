@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ApprovalStep>(approvalStep, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ApprovalStep to the collection via POST and returns a <see cref="GraphResponse{ApprovalStep}"/> object of the request.
+        /// </summary>
+        /// <param name="approvalStep">The ApprovalStep to add.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> AddResponseAsync(ApprovalStep approvalStep)
+        {
+            return this.AddResponseAsync(approvalStep, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ApprovalStep to the collection via POST and returns a <see cref="GraphResponse{ApprovalStep}"/> object of the request.
+        /// </summary>
+        /// <param name="approvalStep">The ApprovalStep to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> AddResponseAsync(ApprovalStep approvalStep, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ApprovalStep>(approvalStep, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalPendingStepsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ApprovalPendingStepsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalPendingStepsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalPendingStepsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalPendingStepsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ApprovalPendingStepsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ApprovalPendingStepsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

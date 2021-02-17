@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate)
+        {
+            return this.CreateResponseAsync(deviceAppManagementTaskToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementTask>(deviceAppManagementTaskToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceAppManagementTask.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceAppManagementTask>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceAppManagementTask>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceAppManagementTask and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceAppManagementTask and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementTask>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceAppManagementTask>(deviceAppManagementTaskToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceAppManagementTaskToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceAppManagementTaskToUpdate.AdditionalData != null)
+			{
+				if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceAppManagementTaskToUpdate.AdditionalData != null)
+            {
+                if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementTask>(deviceAppManagementTaskToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

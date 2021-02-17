@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DirectoryRole>(directoryRole, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DirectoryRole to the collection via POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryRole">The DirectoryRole to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> AddResponseAsync(DirectoryRole directoryRole)
+        {
+            return this.AddResponseAsync(directoryRole, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DirectoryRole to the collection via POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryRole">The DirectoryRole to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> AddResponseAsync(DirectoryRole directoryRole, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectoryRole>(directoryRole, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectoryRolesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectoryRolesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectoryRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServiceDirectoryRolesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is wheel chair accessible.
+        /// Specifies whether the room is wheelchair accessible.
         /// </summary>
         [JsonPropertyName("isWheelChairAccessible")]
         public bool? IsWheelChairAccessible { get; set; }

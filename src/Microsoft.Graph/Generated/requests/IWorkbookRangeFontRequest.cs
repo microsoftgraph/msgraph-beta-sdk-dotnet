@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
         /// <returns>The created WorkbookRangeFont.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFont> CreateAsync(WorkbookRangeFont workbookRangeFontToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookRangeFont> CreateAsync(WorkbookRangeFont workbookRangeFontToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookRangeFont using POST.
         /// </summary>
         /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeFont.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFont> CreateAsync(WorkbookRangeFont workbookRangeFontToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeFont using POST and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> CreateResponseAsync(WorkbookRangeFont workbookRangeFontToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeFont using POST and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> CreateResponseAsync(WorkbookRangeFont workbookRangeFontToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeFont.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookRangeFont and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookRangeFont and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookRangeFont.
         /// </summary>
         /// <returns>The WorkbookRangeFont.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeFont.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFont> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookRangeFont using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeFont.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFont> UpdateAsync(WorkbookRangeFont workbookRangeFontToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFont using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFontToUpdate">The WorkbookRangeFont to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> UpdateResponseAsync(WorkbookRangeFont workbookRangeFontToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookRangeFont using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFontToUpdate">The WorkbookRangeFont to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> UpdateResponseAsync(WorkbookRangeFont workbookRangeFontToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AgreementFile using POST and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFile>> CreateResponseAsync(AgreementFile agreementFileToCreate)
+        {
+            return this.CreateResponseAsync(agreementFileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AgreementFile using POST and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToCreate">The AgreementFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFile>> CreateResponseAsync(AgreementFile agreementFileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AgreementFile>(agreementFileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AgreementFile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<AgreementFile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified AgreementFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified AgreementFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<AgreementFile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AgreementFile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<AgreementFile>(agreementFileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFile using PATCH and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile to update.</param>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgreementFile>> UpdateResponseAsync(AgreementFile agreementFileToUpdate)
+        {
+            return this.UpdateResponseAsync(agreementFileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified AgreementFile using PATCH and returns a <see cref="GraphResponse{AgreementFile}"/> object.
+        /// </summary>
+        /// <param name="agreementFileToUpdate">The AgreementFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFile>> UpdateResponseAsync(AgreementFile agreementFileToUpdate, CancellationToken cancellationToken)
+        {
+			if (agreementFileToUpdate.AdditionalData != null)
+			{
+				if (agreementFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					agreementFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (agreementFileToUpdate.AdditionalData != null)
+            {
+                if (agreementFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    agreementFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agreementFileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<AgreementFile>(agreementFileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

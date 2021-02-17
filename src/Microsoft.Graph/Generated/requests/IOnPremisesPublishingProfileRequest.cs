@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
         /// <returns>The created OnPremisesPublishingProfile.</returns>
-        System.Threading.Tasks.Task<OnPremisesPublishingProfile> CreateAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnPremisesPublishingProfile> CreateAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate);
+
+        /// <summary>
         /// Creates the specified OnPremisesPublishingProfile using POST.
         /// </summary>
         /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesPublishingProfile.</returns>
         System.Threading.Tasks.Task<OnPremisesPublishingProfile> CreateAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnPremisesPublishingProfile using POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> CreateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified OnPremisesPublishingProfile using POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> CreateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnPremisesPublishingProfile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OnPremisesPublishingProfile.
         /// </summary>
         /// <returns>The OnPremisesPublishingProfile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnPremisesPublishingProfile.</returns>
         System.Threading.Tasks.Task<OnPremisesPublishingProfile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OnPremisesPublishingProfile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnPremisesPublishingProfile.</returns>
         System.Threading.Tasks.Task<OnPremisesPublishingProfile> UpdateAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PATCH and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> UpdateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PATCH and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> UpdateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

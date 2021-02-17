@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TermsAndConditions>(termsAndConditions, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TermsAndConditions to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object of the request.
+        /// </summary>
+        /// <param name="termsAndConditions">The TermsAndConditions to add.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> AddResponseAsync(TermsAndConditions termsAndConditions)
+        {
+            return this.AddResponseAsync(termsAndConditions, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TermsAndConditions to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object of the request.
+        /// </summary>
+        /// <param name="termsAndConditions">The TermsAndConditions to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> AddResponseAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditions>(termsAndConditions, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTermsAndConditionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTermsAndConditionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementTermsAndConditionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementTermsAndConditionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

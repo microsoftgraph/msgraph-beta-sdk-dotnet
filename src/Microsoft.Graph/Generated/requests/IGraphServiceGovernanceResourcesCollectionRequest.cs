@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceResource.</returns>
         System.Threading.Tasks.Task<GovernanceResource> AddAsync(GovernanceResource governanceResource, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified GovernanceResource to the collection via POST and returns a <see cref="GraphResponse{GovernanceResource}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceResource">The GovernanceResource to add.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> AddResponseAsync(GovernanceResource governanceResource);
+
+        /// <summary>
+        /// Adds the specified GovernanceResource to the collection via POST and returns a <see cref="GraphResponse{GovernanceResource}"/> object of the request.
+        /// </summary>
+        /// <param name="governanceResource">The GovernanceResource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GovernanceResource>> AddResponseAsync(GovernanceResource governanceResource, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceGovernanceResourcesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceResourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceResourcesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceResourcesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceResourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceResourcesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

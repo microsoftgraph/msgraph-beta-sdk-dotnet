@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Drive.</returns>
         System.Threading.Tasks.Task<Drive> AddAsync(Drive drive, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Drive to the collection via POST and returns a <see cref="GraphResponse{Drive}"/> object of the request.
+        /// </summary>
+        /// <param name="drive">The Drive to add.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive);
+
+        /// <summary>
+        /// Adds the specified Drive to the collection via POST and returns a <see cref="GraphResponse{Drive}"/> object of the request.
+        /// </summary>
+        /// <param name="drive">The Drive to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceDrivesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDrivesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDrivesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDrivesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDrivesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDrivesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDrivesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,18 +33,48 @@ namespace Microsoft.Graph
         /// <returns>The AndroidDeviceOwnerTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
         /// <returns>The created AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> CreateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> CreateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToCreate">The AndroidDeviceOwnerTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> CreateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH.
@@ -63,6 +93,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> UpdateAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToUpdate">The AndroidDeviceOwnerTrustedRootCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> UpdateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerTrustedRootCertificateToUpdate">The AndroidDeviceOwnerTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> UpdateResponseAsync(AndroidDeviceOwnerTrustedRootCertificate androidDeviceOwnerTrustedRootCertificateToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -74,6 +120,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Journal using POST and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToCreate">The Journal to create.</param>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Journal>> CreateResponseAsync(Journal journalToCreate)
+        {
+            return this.CreateResponseAsync(journalToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Journal using POST and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToCreate">The Journal to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Journal>> CreateResponseAsync(Journal journalToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Journal>(journalToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Journal.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Journal>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Journal and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Journal and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Journal>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Journal and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Journal>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Journal and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Journal>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Journal>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Journal>(journalToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Journal using PATCH and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal to update.</param>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate)
+        {
+            return this.UpdateResponseAsync(journalToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Journal using PATCH and returns a <see cref="GraphResponse{Journal}"/> object.
+        /// </summary>
+        /// <param name="journalToUpdate">The Journal to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken)
+        {
+			if (journalToUpdate.AdditionalData != null)
+			{
+				if (journalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					journalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, journalToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (journalToUpdate.AdditionalData != null)
+            {
+                if (journalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    journalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, journalToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Journal>(journalToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

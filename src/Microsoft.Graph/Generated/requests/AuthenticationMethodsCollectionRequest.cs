@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<AuthenticationMethod>(authenticationMethod, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationMethod">The AuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> AddResponseAsync(AuthenticationMethod authenticationMethod)
+        {
+            return this.AddResponseAsync(authenticationMethod, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationMethod">The AuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> AddResponseAsync(AuthenticationMethod authenticationMethod, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            authenticationMethod.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(authenticationMethod.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<AuthenticationMethod>(authenticationMethod, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

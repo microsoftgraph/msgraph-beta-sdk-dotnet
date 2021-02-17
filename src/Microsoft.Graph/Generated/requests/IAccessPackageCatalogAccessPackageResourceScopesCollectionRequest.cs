@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceScope.</returns>
         System.Threading.Tasks.Task<AccessPackageResourceScope> AddAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AccessPackageResourceScope to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> AddResponseAsync(AccessPackageResourceScope accessPackageResourceScope);
+
+        /// <summary>
+        /// Adds the specified AccessPackageResourceScope to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> AddResponseAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IAccessPackageCatalogAccessPackageResourceScopesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageCatalogAccessPackageResourceScopesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessPackageCatalogAccessPackageResourceScopesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalogAccessPackageResourceScopesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageCatalogAccessPackageResourceScopesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageCatalogAccessPackageResourceScopesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalogAccessPackageResourceScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

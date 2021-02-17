@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSWiredNetworkConfigurationToCreate">The MacOSWiredNetworkConfiguration to create.</param>
         /// <returns>The created MacOSWiredNetworkConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> CreateAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> CreateAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSWiredNetworkConfiguration using POST.
         /// </summary>
         /// <param name="macOSWiredNetworkConfigurationToCreate">The MacOSWiredNetworkConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSWiredNetworkConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> CreateAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSWiredNetworkConfiguration using POST and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToCreate">The MacOSWiredNetworkConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> CreateResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSWiredNetworkConfiguration using POST and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToCreate">The MacOSWiredNetworkConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> CreateResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSWiredNetworkConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified MacOSWiredNetworkConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified MacOSWiredNetworkConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified MacOSWiredNetworkConfiguration.
         /// </summary>
         /// <returns>The MacOSWiredNetworkConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSWiredNetworkConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified MacOSWiredNetworkConfiguration and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSWiredNetworkConfiguration and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified MacOSWiredNetworkConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSWiredNetworkConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSWiredNetworkConfiguration> UpdateAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> UpdateResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOSWiredNetworkConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSWiredNetworkConfigurationToUpdate">The MacOSWiredNetworkConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSWiredNetworkConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiredNetworkConfiguration>> UpdateResponseAsync(MacOSWiredNetworkConfiguration macOSWiredNetworkConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

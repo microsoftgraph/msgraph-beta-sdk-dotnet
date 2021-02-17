@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTemplate.</returns>
         System.Threading.Tasks.Task<DeviceManagementTemplate> AddAsync(DeviceManagementTemplate deviceManagementTemplate, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementTemplate to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementTemplate">The DeviceManagementTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> AddResponseAsync(DeviceManagementTemplate deviceManagementTemplate);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementTemplate to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementTemplate">The DeviceManagementTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> AddResponseAsync(DeviceManagementTemplate deviceManagementTemplate, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementTemplateMigratableToCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTemplateMigratableToCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateMigratableToCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateMigratableToCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTemplateMigratableToCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateMigratableToCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateMigratableToCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

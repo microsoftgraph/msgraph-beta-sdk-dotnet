@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TrustFrameworkPolicy.</returns>
         System.Threading.Tasks.Task<TrustFrameworkPolicy> AddAsync(TrustFrameworkPolicy trustFrameworkPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TrustFrameworkPolicy to the collection via POST and returns a <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="trustFrameworkPolicy">The TrustFrameworkPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPolicy>> AddResponseAsync(TrustFrameworkPolicy trustFrameworkPolicy);
+
+        /// <summary>
+        /// Adds the specified TrustFrameworkPolicy to the collection via POST and returns a <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="trustFrameworkPolicy">The TrustFrameworkPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPolicy>> AddResponseAsync(TrustFrameworkPolicy trustFrameworkPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ITrustFrameworkPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TrustFrameworkPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{TrustFrameworkPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TrustFrameworkPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

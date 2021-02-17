@@ -29,6 +29,7 @@ namespace Microsoft.Graph
         /// <param name="previewText">A previewText parameter for the OData method call.</param>
         /// <param name="templateParameters">A templateParameters parameter for the OData method call.</param>
         /// <param name="recipient">A recipient parameter for the OData method call.</param>
+        /// <param name="teamsAppId">A teamsAppId parameter for the OData method call.</param>
         public ChatSendActivityNotificationRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -37,7 +38,8 @@ namespace Microsoft.Graph
             Int64? chainId,
             ItemBody previewText,
             IEnumerable<KeyValuePair> templateParameters,
-            TeamworkNotificationRecipient recipient)
+            TeamworkNotificationRecipient recipient,
+            string teamsAppId)
             : base(requestUrl, client)
         {
             this.SetParameter("topic", topic, true);
@@ -46,6 +48,7 @@ namespace Microsoft.Graph
             this.SetParameter("previewText", previewText, true);
             this.SetParameter("templateParameters", templateParameters, true);
             this.SetParameter("recipient", recipient, true);
+            this.SetParameter("teamsAppId", teamsAppId, true);
         }
 
         /// <summary>
@@ -86,6 +89,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("recipient"))
             {
                 request.RequestBody.Recipient = this.GetParameter<TeamworkNotificationRecipient>("recipient");
+            }
+
+            if (this.HasParameter("teamsAppId"))
+            {
+                request.RequestBody.TeamsAppId = this.GetParameter<string>("teamsAppId");
             }
 
             return request;

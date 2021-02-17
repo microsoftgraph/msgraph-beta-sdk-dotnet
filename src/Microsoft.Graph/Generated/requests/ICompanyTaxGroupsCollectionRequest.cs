@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TaxGroup.</returns>
         System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TaxGroup to the collection via POST and returns a <see cref="GraphResponse{TaxGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="taxGroup">The TaxGroup to add.</param>
+        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup);
+
+        /// <summary>
+        /// Adds the specified TaxGroup to the collection via POST and returns a <see cref="GraphResponse{TaxGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="taxGroup">The TaxGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

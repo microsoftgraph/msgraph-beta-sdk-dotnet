@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(passwordlessMicrosoftAuthenticatorAuthenticationMethod, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethod">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethod)
+        {
+            return this.AddResponseAsync(passwordlessMicrosoftAuthenticatorAuthenticationMethod, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="passwordlessMicrosoftAuthenticatorAuthenticationMethod">The PasswordlessMicrosoftAuthenticatorAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(PasswordlessMicrosoftAuthenticatorAuthenticationMethod passwordlessMicrosoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(passwordlessMicrosoftAuthenticatorAuthenticationMethod, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationPasswordlessMicrosoftAuthenticatorMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate)
+        {
+            return this.CreateResponseAsync(onPremisesConditionalAccessSettingsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnPremisesConditionalAccessSettings>(onPremisesConditionalAccessSettingsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnPremisesConditionalAccessSettings.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<OnPremisesConditionalAccessSettings>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<OnPremisesConditionalAccessSettings>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnPremisesConditionalAccessSettings>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<OnPremisesConditionalAccessSettings>(onPremisesConditionalAccessSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesConditionalAccessSettings using PATCH and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToUpdate">The OnPremisesConditionalAccessSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> UpdateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate)
+        {
+            return this.UpdateResponseAsync(onPremisesConditionalAccessSettingsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesConditionalAccessSettings using PATCH and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToUpdate">The OnPremisesConditionalAccessSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> UpdateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToUpdate, CancellationToken cancellationToken)
+        {
+			if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData != null)
+			{
+				if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesConditionalAccessSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData != null)
+            {
+                if (onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onPremisesConditionalAccessSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesConditionalAccessSettingsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OnPremisesConditionalAccessSettings>(onPremisesConditionalAccessSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

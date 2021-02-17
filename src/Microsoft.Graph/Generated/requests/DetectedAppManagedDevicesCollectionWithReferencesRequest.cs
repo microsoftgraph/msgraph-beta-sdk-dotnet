@@ -79,6 +79,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DetectedAppManagedDevicesCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DetectedAppManagedDevicesCollectionWithReferencesResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedAppManagedDevicesCollectionWithReferencesResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DetectedAppManagedDevicesCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedAppManagedDevicesCollectionWithReferencesResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DetectedAppManagedDevicesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DetectedAppManagedDevicesCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

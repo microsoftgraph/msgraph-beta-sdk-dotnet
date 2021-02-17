@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified BusinessFlowTemplate using POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> CreateResponseAsync(BusinessFlowTemplate businessFlowTemplateToCreate)
+        {
+            return this.CreateResponseAsync(businessFlowTemplateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified BusinessFlowTemplate using POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="businessFlowTemplateToCreate">The BusinessFlowTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> CreateResponseAsync(BusinessFlowTemplate businessFlowTemplateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<BusinessFlowTemplate>(businessFlowTemplateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified BusinessFlowTemplate.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<BusinessFlowTemplate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified BusinessFlowTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified BusinessFlowTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<BusinessFlowTemplate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified BusinessFlowTemplate and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified BusinessFlowTemplate and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<BusinessFlowTemplate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<BusinessFlowTemplate>(businessFlowTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BusinessFlowTemplate using PATCH and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="businessFlowTemplateToUpdate">The BusinessFlowTemplate to update.</param>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> UpdateResponseAsync(BusinessFlowTemplate businessFlowTemplateToUpdate)
+        {
+            return this.UpdateResponseAsync(businessFlowTemplateToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified BusinessFlowTemplate using PATCH and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object.
+        /// </summary>
+        /// <param name="businessFlowTemplateToUpdate">The BusinessFlowTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> UpdateResponseAsync(BusinessFlowTemplate businessFlowTemplateToUpdate, CancellationToken cancellationToken)
+        {
+			if (businessFlowTemplateToUpdate.AdditionalData != null)
+			{
+				if (businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, businessFlowTemplateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (businessFlowTemplateToUpdate.AdditionalData != null)
+            {
+                if (businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    businessFlowTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, businessFlowTemplateToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<BusinessFlowTemplate>(businessFlowTemplateToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

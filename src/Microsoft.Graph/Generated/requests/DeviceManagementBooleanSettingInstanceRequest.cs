@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementBooleanSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToCreate">The DeviceManagementBooleanSettingInstance to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> CreateResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementBooleanSettingInstanceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementBooleanSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToCreate">The DeviceManagementBooleanSettingInstance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> CreateResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementBooleanSettingInstance>(deviceManagementBooleanSettingInstanceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementBooleanSettingInstance.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementBooleanSettingInstance>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementBooleanSettingInstance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementBooleanSettingInstance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementBooleanSettingInstance>(deviceManagementBooleanSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementBooleanSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToUpdate">The DeviceManagementBooleanSettingInstance to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> UpdateResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementBooleanSettingInstanceToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementBooleanSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementBooleanSettingInstanceToUpdate">The DeviceManagementBooleanSettingInstance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> UpdateResponseAsync(DeviceManagementBooleanSettingInstance deviceManagementBooleanSettingInstanceToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementBooleanSettingInstanceToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementBooleanSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementBooleanSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementBooleanSettingInstanceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementBooleanSettingInstanceToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementBooleanSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementBooleanSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementBooleanSettingInstanceToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementBooleanSettingInstance>(deviceManagementBooleanSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

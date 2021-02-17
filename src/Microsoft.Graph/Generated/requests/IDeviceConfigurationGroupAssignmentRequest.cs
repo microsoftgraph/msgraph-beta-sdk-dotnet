@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
         /// <returns>The created DeviceConfigurationGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceConfigurationGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationGroupAssignment.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> CreateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> CreateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationGroupAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DeviceConfigurationGroupAssignment.
         /// </summary>
         /// <returns>The DeviceConfigurationGroupAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationGroupAssignment.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DeviceConfigurationGroupAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationGroupAssignment.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> UpdateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> UpdateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> UpdateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

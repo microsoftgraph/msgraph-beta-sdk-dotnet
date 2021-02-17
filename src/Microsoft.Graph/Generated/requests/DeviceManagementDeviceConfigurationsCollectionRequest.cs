@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceConfiguration>(deviceConfiguration, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> AddResponseAsync(DeviceConfiguration deviceConfiguration)
+        {
+            return this.AddResponseAsync(deviceConfiguration, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> AddResponseAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            deviceConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceConfiguration.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<DeviceConfiguration>(deviceConfiguration, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

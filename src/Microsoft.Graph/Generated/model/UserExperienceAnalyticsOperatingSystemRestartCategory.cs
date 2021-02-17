@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         BootError = 7,
 	
+        /// <summary>
+        /// Update
+        /// </summary>
+        Update = 8,
+	
     }
 }

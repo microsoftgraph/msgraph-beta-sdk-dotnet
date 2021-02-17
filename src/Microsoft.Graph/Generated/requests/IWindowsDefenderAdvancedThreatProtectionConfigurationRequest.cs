@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
         /// <returns>The created WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> CreateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> CreateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> CreateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> CreateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToCreate">The WindowsDefenderAdvancedThreatProtectionConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> CreateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsDefenderAdvancedThreatProtectionConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WindowsDefenderAdvancedThreatProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WindowsDefenderAdvancedThreatProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WindowsDefenderAdvancedThreatProtectionConfiguration.
         /// </summary>
         /// <returns>The WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderAdvancedThreatProtectionConfiguration and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsDefenderAdvancedThreatProtectionConfiguration and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderAdvancedThreatProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsDefenderAdvancedThreatProtectionConfiguration> UpdateAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> UpdateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> UpdateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

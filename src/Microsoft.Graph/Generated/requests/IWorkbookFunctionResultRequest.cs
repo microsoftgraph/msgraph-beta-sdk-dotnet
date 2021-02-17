@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <returns>The created WorkbookFunctionResult.</returns>
-        System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookFunctionResult using POST.
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFunctionResult.</returns>
         System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctionResult using POST and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> CreateResponseAsync(WorkbookFunctionResult workbookFunctionResultToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctionResult using POST and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> CreateResponseAsync(WorkbookFunctionResult workbookFunctionResultToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookFunctionResult.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookFunctionResult and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookFunctionResult and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookFunctionResult.
         /// </summary>
         /// <returns>The WorkbookFunctionResult.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookFunctionResult.</returns>
         System.Threading.Tasks.Task<WorkbookFunctionResult> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookFunctionResult and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookFunctionResult and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookFunctionResult using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFunctionResult.</returns>
         System.Threading.Tasks.Task<WorkbookFunctionResult> UpdateAsync(WorkbookFunctionResult workbookFunctionResultToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookFunctionResult using PATCH and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToUpdate">The WorkbookFunctionResult to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> UpdateResponseAsync(WorkbookFunctionResult workbookFunctionResultToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookFunctionResult using PATCH and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToUpdate">The WorkbookFunctionResult to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> UpdateResponseAsync(WorkbookFunctionResult workbookFunctionResultToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

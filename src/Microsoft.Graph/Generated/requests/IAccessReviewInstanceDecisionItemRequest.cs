@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
         /// <returns>The created AccessReviewInstanceDecisionItem.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> CreateAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> CreateAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate);
+
+        /// <summary>
         /// Creates the specified AccessReviewInstanceDecisionItem using POST.
         /// </summary>
         /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewInstanceDecisionItem.</returns>
         System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> CreateAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AccessReviewInstanceDecisionItem using POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> CreateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate);
+
+        /// <summary>
+        /// Creates the specified AccessReviewInstanceDecisionItem using POST and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToCreate">The AccessReviewInstanceDecisionItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> CreateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AccessReviewInstanceDecisionItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AccessReviewInstanceDecisionItem.
         /// </summary>
         /// <returns>The AccessReviewInstanceDecisionItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewInstanceDecisionItem.</returns>
         System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AccessReviewInstanceDecisionItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewInstanceDecisionItem.</returns>
         System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> UpdateAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstanceDecisionItem using PATCH and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToUpdate">The AccessReviewInstanceDecisionItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> UpdateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified AccessReviewInstanceDecisionItem using PATCH and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
+        /// </summary>
+        /// <param name="accessReviewInstanceDecisionItemToUpdate">The AccessReviewInstanceDecisionItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> UpdateResponseAsync(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

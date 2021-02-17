@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ResourceSpecificPermissionGrant>(resourceSpecificPermissionGrant, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant)
+        {
+            return this.AddResponseAsync(resourceSpecificPermissionGrant, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ResourceSpecificPermissionGrant>(resourceSpecificPermissionGrant, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPermissionGrantsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPermissionGrantsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPermissionGrantsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPermissionGrantsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPermissionGrantsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPermissionGrantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupPermissionGrantsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

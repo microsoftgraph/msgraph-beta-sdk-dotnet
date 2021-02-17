@@ -78,12 +78,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets include properties.
-        /// </summary>
-        [JsonPropertyName("includeProperties")]
-        public bool? IncludeProperties { get; set; }
-    
-        /// <summary>
         /// Gets or sets include resource data.
         /// When set to true, change notifications include resource data (such as content of a chat message). Optional.
         /// </summary>
@@ -103,6 +97,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lifecycleNotificationUrl")]
         public string LifecycleNotificationUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notification content type.
+        /// </summary>
+        [JsonPropertyName("notificationContentType")]
+        public string NotificationContentType { get; set; }
     
         /// <summary>
         /// Gets or sets notification query options.

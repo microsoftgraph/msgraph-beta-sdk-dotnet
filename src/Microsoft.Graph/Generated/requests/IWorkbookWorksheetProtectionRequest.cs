@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <returns>The created WorkbookWorksheetProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookWorksheetProtection using POST.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookWorksheetProtection.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookWorksheetProtection.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified WorkbookWorksheetProtection.
         /// </summary>
         /// <returns>The WorkbookWorksheetProtection.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookWorksheetProtection.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheetProtection> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified WorkbookWorksheetProtection using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookWorksheetProtection.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheetProtection> UpdateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

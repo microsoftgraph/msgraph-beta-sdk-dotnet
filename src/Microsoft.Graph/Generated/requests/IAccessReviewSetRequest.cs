@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="accessReviewSetToCreate">The AccessReviewSet to create.</param>
         /// <returns>The created AccessReviewSet.</returns>
-        System.Threading.Tasks.Task<AccessReviewSet> CreateAsync(AccessReviewSet accessReviewSetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AccessReviewSet> CreateAsync(AccessReviewSet accessReviewSetToCreate);
+
+        /// <summary>
         /// Creates the specified AccessReviewSet using POST.
         /// </summary>
         /// <param name="accessReviewSetToCreate">The AccessReviewSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewSet.</returns>
         System.Threading.Tasks.Task<AccessReviewSet> CreateAsync(AccessReviewSet accessReviewSetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AccessReviewSet using POST and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <param name="accessReviewSetToCreate">The AccessReviewSet to create.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> CreateResponseAsync(AccessReviewSet accessReviewSetToCreate);
+
+        /// <summary>
+        /// Creates the specified AccessReviewSet using POST and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <param name="accessReviewSetToCreate">The AccessReviewSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> CreateResponseAsync(AccessReviewSet accessReviewSetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AccessReviewSet.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AccessReviewSet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AccessReviewSet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AccessReviewSet.
         /// </summary>
         /// <returns>The AccessReviewSet.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewSet.</returns>
         System.Threading.Tasks.Task<AccessReviewSet> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AccessReviewSet and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AccessReviewSet and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AccessReviewSet using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewSet.</returns>
         System.Threading.Tasks.Task<AccessReviewSet> UpdateAsync(AccessReviewSet accessReviewSetToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AccessReviewSet using PATCH and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <param name="accessReviewSetToUpdate">The AccessReviewSet to update.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> UpdateResponseAsync(AccessReviewSet accessReviewSetToUpdate);
+
+        /// <summary>
+        /// Updates the specified AccessReviewSet using PATCH and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
+        /// </summary>
+        /// <param name="accessReviewSetToUpdate">The AccessReviewSet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> UpdateResponseAsync(AccessReviewSet accessReviewSetToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

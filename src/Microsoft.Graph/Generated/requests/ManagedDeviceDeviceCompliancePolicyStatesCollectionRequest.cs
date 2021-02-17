@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceCompliancePolicyState>(deviceCompliancePolicyState, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceCompliancePolicyState to the collection via POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyState">The DeviceCompliancePolicyState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> AddResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyState)
+        {
+            return this.AddResponseAsync(deviceCompliancePolicyState, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceCompliancePolicyState to the collection via POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyState">The DeviceCompliancePolicyState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> AddResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyState, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyState>(deviceCompliancePolicyState, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceDeviceCompliancePolicyStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

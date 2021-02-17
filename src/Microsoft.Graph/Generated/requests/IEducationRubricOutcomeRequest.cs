@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationRubricOutcomeToCreate">The EducationRubricOutcome to create.</param>
         /// <returns>The created EducationRubricOutcome.</returns>
-        System.Threading.Tasks.Task<EducationRubricOutcome> CreateAsync(EducationRubricOutcome educationRubricOutcomeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationRubricOutcome> CreateAsync(EducationRubricOutcome educationRubricOutcomeToCreate);
+
+        /// <summary>
         /// Creates the specified EducationRubricOutcome using POST.
         /// </summary>
         /// <param name="educationRubricOutcomeToCreate">The EducationRubricOutcome to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationRubricOutcome.</returns>
         System.Threading.Tasks.Task<EducationRubricOutcome> CreateAsync(EducationRubricOutcome educationRubricOutcomeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationRubricOutcome using POST and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationRubricOutcomeToCreate">The EducationRubricOutcome to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> CreateResponseAsync(EducationRubricOutcome educationRubricOutcomeToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationRubricOutcome using POST and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationRubricOutcomeToCreate">The EducationRubricOutcome to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> CreateResponseAsync(EducationRubricOutcome educationRubricOutcomeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationRubricOutcome.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EducationRubricOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EducationRubricOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EducationRubricOutcome.
         /// </summary>
         /// <returns>The EducationRubricOutcome.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationRubricOutcome.</returns>
         System.Threading.Tasks.Task<EducationRubricOutcome> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EducationRubricOutcome and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationRubricOutcome and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EducationRubricOutcome using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationRubricOutcome.</returns>
         System.Threading.Tasks.Task<EducationRubricOutcome> UpdateAsync(EducationRubricOutcome educationRubricOutcomeToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EducationRubricOutcome using PATCH and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationRubricOutcomeToUpdate">The EducationRubricOutcome to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> UpdateResponseAsync(EducationRubricOutcome educationRubricOutcomeToUpdate);
+
+        /// <summary>
+        /// Updates the specified EducationRubricOutcome using PATCH and returns a <see cref="GraphResponse{EducationRubricOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationRubricOutcomeToUpdate">The EducationRubricOutcome to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationRubricOutcome}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRubricOutcome>> UpdateResponseAsync(EducationRubricOutcome educationRubricOutcomeToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

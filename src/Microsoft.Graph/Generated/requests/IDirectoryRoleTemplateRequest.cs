@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
-        System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryRoleTemplate using POST.
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryRoleTemplate.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DirectoryRoleTemplate.
         /// </summary>
         /// <returns>The DirectoryRoleTemplate.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DirectoryRoleTemplate and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DirectoryRoleTemplate using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> UpdateAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PATCH and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate to update.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> UpdateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate);
+
+        /// <summary>
+        /// Updates the specified DirectoryRoleTemplate using PATCH and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToUpdate">The DirectoryRoleTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> UpdateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRbacResourceAction.</returns>
         System.Threading.Tasks.Task<UnifiedRbacResourceAction> AddAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UnifiedRbacResourceAction to the collection via POST and returns a <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.
+        /// </summary>
+        /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceAction>> AddResponseAsync(UnifiedRbacResourceAction unifiedRbacResourceAction);
+
+        /// <summary>
+        /// Adds the specified UnifiedRbacResourceAction to the collection via POST and returns a <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.
+        /// </summary>
+        /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceAction>> AddResponseAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUnifiedRbacResourceNamespaceResourceActionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

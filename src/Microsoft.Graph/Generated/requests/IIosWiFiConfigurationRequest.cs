@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosWiFiConfigurationToCreate">The IosWiFiConfiguration to create.</param>
         /// <returns>The created IosWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<IosWiFiConfiguration> CreateAsync(IosWiFiConfiguration iosWiFiConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosWiFiConfiguration> CreateAsync(IosWiFiConfiguration iosWiFiConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified IosWiFiConfiguration using POST.
         /// </summary>
         /// <param name="iosWiFiConfigurationToCreate">The IosWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<IosWiFiConfiguration> CreateAsync(IosWiFiConfiguration iosWiFiConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosWiFiConfiguration using POST and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosWiFiConfigurationToCreate">The IosWiFiConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> CreateResponseAsync(IosWiFiConfiguration iosWiFiConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified IosWiFiConfiguration using POST and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosWiFiConfigurationToCreate">The IosWiFiConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> CreateResponseAsync(IosWiFiConfiguration iosWiFiConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosWiFiConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified IosWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified IosWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified IosWiFiConfiguration.
         /// </summary>
         /// <returns>The IosWiFiConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<IosWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified IosWiFiConfiguration and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosWiFiConfiguration and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified IosWiFiConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosWiFiConfiguration.</returns>
         System.Threading.Tasks.Task<IosWiFiConfiguration> UpdateAsync(IosWiFiConfiguration iosWiFiConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified IosWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosWiFiConfigurationToUpdate">The IosWiFiConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> UpdateResponseAsync(IosWiFiConfiguration iosWiFiConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified IosWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{IosWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosWiFiConfigurationToUpdate">The IosWiFiConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosWiFiConfiguration>> UpdateResponseAsync(IosWiFiConfiguration iosWiFiConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

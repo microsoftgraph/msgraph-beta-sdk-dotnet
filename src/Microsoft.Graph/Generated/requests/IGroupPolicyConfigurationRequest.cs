@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
         /// <returns>The created GroupPolicyConfiguration.</returns>
-        System.Threading.Tasks.Task<GroupPolicyConfiguration> CreateAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupPolicyConfiguration> CreateAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified GroupPolicyConfiguration using POST.
         /// </summary>
         /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyConfiguration.</returns>
         System.Threading.Tasks.Task<GroupPolicyConfiguration> CreateAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyConfiguration using POST and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> CreateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupPolicyConfiguration using POST and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToCreate">The GroupPolicyConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> CreateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupPolicyConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GroupPolicyConfiguration.
         /// </summary>
         /// <returns>The GroupPolicyConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyConfiguration.</returns>
         System.Threading.Tasks.Task<GroupPolicyConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupPolicyConfiguration and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GroupPolicyConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyConfiguration.</returns>
         System.Threading.Tasks.Task<GroupPolicyConfiguration> UpdateAsync(GroupPolicyConfiguration groupPolicyConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyConfiguration using PATCH and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToUpdate">The GroupPolicyConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> UpdateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified GroupPolicyConfiguration using PATCH and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyConfigurationToUpdate">The GroupPolicyConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> UpdateResponseAsync(GroupPolicyConfiguration groupPolicyConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

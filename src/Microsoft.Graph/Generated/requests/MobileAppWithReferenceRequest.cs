@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified MobileApp and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MobileApp and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MobileApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified MobileApp using POST.
         /// </summary>
@@ -78,6 +98,29 @@ namespace Microsoft.Graph
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileApp>(mobileAppToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
+        }
+
+		/// <summary>
+        /// Creates the specified MobileApp using POST and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToCreate">The MobileApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileApp>> CreateResponseAsync(MobileApp mobileAppToCreate)
+        {
+            return this.CreateResponseAsync(mobileAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileApp using POST and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToCreate">The MobileApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> CreateResponseAsync(MobileApp mobileAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileApp>(mobileAppToCreate, cancellationToken).ConfigureAwait(false);
         }
 
 		/// <summary>
@@ -132,6 +175,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified MobileApp using PATCH and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToUpdate">The MobileApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileApp>> UpdateResponseAsync(MobileApp mobileAppToUpdate)
+        {
+            return this.UpdateResponseAsync(mobileAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileApp using PATCH and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToUpdate">The MobileApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> UpdateResponseAsync(MobileApp mobileAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (mobileAppToUpdate.AdditionalData != null)
+			{
+				if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppToUpdate.AdditionalData != null)
+            {
+                if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MobileApp>(mobileAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified MobileApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -149,6 +242,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified MobileApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MobileApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

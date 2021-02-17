@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookNamedItem.</returns>
         System.Threading.Tasks.Task<WorkbookNamedItem> AddAsync(WorkbookNamedItem workbookNamedItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookNamedItem to the collection via POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookNamedItem">The WorkbookNamedItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> AddResponseAsync(WorkbookNamedItem workbookNamedItem);
+
+        /// <summary>
+        /// Adds the specified WorkbookNamedItem to the collection via POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookNamedItem">The WorkbookNamedItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> AddResponseAsync(WorkbookNamedItem workbookNamedItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IWorkbookNamesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookNamesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookNamesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

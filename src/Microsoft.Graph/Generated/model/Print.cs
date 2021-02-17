@@ -66,7 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets reports.
         /// </summary>
         [JsonPropertyName("reports")]
-        public IPrintReportsCollectionPage Reports { get; set; }
+        public ReportRoot Reports { get; set; }
     
         /// <summary>
         /// Gets or sets services.

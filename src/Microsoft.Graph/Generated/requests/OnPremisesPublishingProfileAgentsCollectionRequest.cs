@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<OnPremisesAgent>(onPremisesAgent, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent)
+        {
+            return this.AddResponseAsync(onPremisesAgent, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
+        /// </summary>
+        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnPremisesAgent>(onPremisesAgent, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesPublishingProfileAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfileAgentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfileAgentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesPublishingProfileAgentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfileAgentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfileAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnPremisesPublishingProfileAgentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified EnrollmentConfigurationAssignment using POST.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> CreateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EnrollmentConfigurationAssignment using POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> CreateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified EnrollmentConfigurationAssignment using POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> CreateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EnrollmentConfigurationAssignment.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EnrollmentConfigurationAssignment.
         /// </summary>
         /// <returns>The EnrollmentConfigurationAssignment.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EnrollmentConfigurationAssignment using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EnrollmentConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> UpdateAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> UpdateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified EnrollmentConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> UpdateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

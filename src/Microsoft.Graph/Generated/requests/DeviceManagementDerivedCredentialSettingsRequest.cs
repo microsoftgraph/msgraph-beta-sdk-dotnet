@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementDerivedCredentialSettings using POST and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> CreateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementDerivedCredentialSettingsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementDerivedCredentialSettings using POST and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToCreate">The DeviceManagementDerivedCredentialSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> CreateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDerivedCredentialSettings>(deviceManagementDerivedCredentialSettingsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementDerivedCredentialSettings.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementDerivedCredentialSettings>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementDerivedCredentialSettings>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDerivedCredentialSettings>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementDerivedCredentialSettings>(deviceManagementDerivedCredentialSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementDerivedCredentialSettings using PATCH and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> UpdateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementDerivedCredentialSettings using PATCH and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementDerivedCredentialSettingsToUpdate">The DeviceManagementDerivedCredentialSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> UpdateResponseAsync(DeviceManagementDerivedCredentialSettings deviceManagementDerivedCredentialSettingsToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementDerivedCredentialSettingsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementDerivedCredentialSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementDerivedCredentialSettingsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementDerivedCredentialSettings>(deviceManagementDerivedCredentialSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OfferShiftRequestObject using POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(offerShiftRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OfferShiftRequestObject using POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OfferShiftRequest.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<OfferShiftRequestObject>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified OfferShiftRequest and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified OfferShiftRequest and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<OfferShiftRequestObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified OfferShiftRequestObject and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OfferShiftRequestObject and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<OfferShiftRequestObject>(offerShiftRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OfferShiftRequestObject using PATCH and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToUpdate">The OfferShiftRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> UpdateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate)
+        {
+            return this.UpdateResponseAsync(offerShiftRequestObjectToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OfferShiftRequestObject using PATCH and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToUpdate">The OfferShiftRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> UpdateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken)
+        {
+			if (offerShiftRequestObjectToUpdate.AdditionalData != null)
+			{
+				if (offerShiftRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					offerShiftRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, offerShiftRequestObjectToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (offerShiftRequestObjectToUpdate.AdditionalData != null)
+            {
+                if (offerShiftRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    offerShiftRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, offerShiftRequestObjectToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMActivationCodePoolAssignment.</returns>
         System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> AddAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> AddResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment);
+
+        /// <summary>
+        /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> AddResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

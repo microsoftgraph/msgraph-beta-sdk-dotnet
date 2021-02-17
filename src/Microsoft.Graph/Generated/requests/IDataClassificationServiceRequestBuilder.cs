@@ -80,12 +80,6 @@ namespace Microsoft.Graph
         IDataClassificationServiceJobsCollectionRequestBuilder Jobs { get; }
 
         /// <summary>
-        /// Gets the request builder for LabelsAndPoliciesEvaluationJobs.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceLabelsAndPoliciesEvaluationJobsCollectionRequestBuilder LabelsAndPoliciesEvaluationJobs { get; }
-
-        /// <summary>
         /// Gets the request builder for SensitiveTypes.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceSensitiveTypesCollectionRequestBuilder"/>.</returns>

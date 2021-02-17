@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDeviceImage.</returns>
         System.Threading.Tasks.Task<CloudPcDeviceImage> AddAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified CloudPcDeviceImage to the collection via POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage);
+
+        /// <summary>
+        /// Adds the specified CloudPcDeviceImage to the collection via POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IVirtualEndpointDeviceImagesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

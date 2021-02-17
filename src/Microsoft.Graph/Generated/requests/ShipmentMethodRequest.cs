@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ShipmentMethod using POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate)
+        {
+            return this.CreateResponseAsync(shipmentMethodToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ShipmentMethod using POST and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToCreate">The ShipmentMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> CreateResponseAsync(ShipmentMethod shipmentMethodToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ShipmentMethod>(shipmentMethodToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ShipmentMethod.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ShipmentMethod>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ShipmentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ShipmentMethod and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ShipmentMethod>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ShipmentMethod and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ShipmentMethod and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ShipmentMethod>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ShipmentMethod>(shipmentMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ShipmentMethod using PATCH and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToUpdate">The ShipmentMethod to update.</param>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate)
+        {
+            return this.UpdateResponseAsync(shipmentMethodToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ShipmentMethod using PATCH and returns a <see cref="GraphResponse{ShipmentMethod}"/> object.
+        /// </summary>
+        /// <param name="shipmentMethodToUpdate">The ShipmentMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ShipmentMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ShipmentMethod>> UpdateResponseAsync(ShipmentMethod shipmentMethodToUpdate, CancellationToken cancellationToken)
+        {
+			if (shipmentMethodToUpdate.AdditionalData != null)
+			{
+				if (shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shipmentMethodToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (shipmentMethodToUpdate.AdditionalData != null)
+            {
+                if (shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    shipmentMethodToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, shipmentMethodToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ShipmentMethod>(shipmentMethodToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

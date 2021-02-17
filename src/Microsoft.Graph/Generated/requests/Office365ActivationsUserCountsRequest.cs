@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Office365ActivationsUserCounts using POST and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserCountsToCreate">The Office365ActivationsUserCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> CreateResponseAsync(Office365ActivationsUserCounts office365ActivationsUserCountsToCreate)
+        {
+            return this.CreateResponseAsync(office365ActivationsUserCountsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Office365ActivationsUserCounts using POST and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserCountsToCreate">The Office365ActivationsUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> CreateResponseAsync(Office365ActivationsUserCounts office365ActivationsUserCountsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Office365ActivationsUserCounts>(office365ActivationsUserCountsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Office365ActivationsUserCounts.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Office365ActivationsUserCounts>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Office365ActivationsUserCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Office365ActivationsUserCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Office365ActivationsUserCounts>(office365ActivationsUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ActivationsUserCounts using PATCH and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserCountsToUpdate">The Office365ActivationsUserCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> UpdateResponseAsync(Office365ActivationsUserCounts office365ActivationsUserCountsToUpdate)
+        {
+            return this.UpdateResponseAsync(office365ActivationsUserCountsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Office365ActivationsUserCounts using PATCH and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
+        /// </summary>
+        /// <param name="office365ActivationsUserCountsToUpdate">The Office365ActivationsUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> UpdateResponseAsync(Office365ActivationsUserCounts office365ActivationsUserCountsToUpdate, CancellationToken cancellationToken)
+        {
+			if (office365ActivationsUserCountsToUpdate.AdditionalData != null)
+			{
+				if (office365ActivationsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					office365ActivationsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ActivationsUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (office365ActivationsUserCountsToUpdate.AdditionalData != null)
+            {
+                if (office365ActivationsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    office365ActivationsUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365ActivationsUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Office365ActivationsUserCounts>(office365ActivationsUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

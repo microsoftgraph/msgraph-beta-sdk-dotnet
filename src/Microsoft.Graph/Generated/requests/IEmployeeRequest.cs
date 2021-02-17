@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="employeeToCreate">The Employee to create.</param>
         /// <returns>The created Employee.</returns>
-        System.Threading.Tasks.Task<Employee> CreateAsync(Employee employeeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Employee> CreateAsync(Employee employeeToCreate);
+
+        /// <summary>
         /// Creates the specified Employee using POST.
         /// </summary>
         /// <param name="employeeToCreate">The Employee to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Employee.</returns>
         System.Threading.Tasks.Task<Employee> CreateAsync(Employee employeeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Employee using POST and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <param name="employeeToCreate">The Employee to create.</param>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> CreateResponseAsync(Employee employeeToCreate);
+
+        /// <summary>
+        /// Creates the specified Employee using POST and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <param name="employeeToCreate">The Employee to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> CreateResponseAsync(Employee employeeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Employee.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Employee and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Employee and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Employee.
         /// </summary>
         /// <returns>The Employee.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Employee.</returns>
         System.Threading.Tasks.Task<Employee> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Employee and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Employee and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Employee using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Employee.</returns>
         System.Threading.Tasks.Task<Employee> UpdateAsync(Employee employeeToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Employee using PATCH and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <param name="employeeToUpdate">The Employee to update.</param>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> UpdateResponseAsync(Employee employeeToUpdate);
+
+        /// <summary>
+        /// Updates the specified Employee using PATCH and returns a <see cref="GraphResponse{Employee}"/> object.
+        /// </summary>
+        /// <param name="employeeToUpdate">The Employee to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Employee}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Employee>> UpdateResponseAsync(Employee employeeToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentDeviceState.</returns>
         System.Threading.Tasks.Task<DeviceManagementIntentDeviceState> AddAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceState>> AddResponseAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceState>> AddResponseAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementIntentDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WorkbookOperation>(workbookOperation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WorkbookOperation to the collection via POST and returns a <see cref="GraphResponse{WorkbookOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookOperation">The WorkbookOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> AddResponseAsync(WorkbookOperation workbookOperation)
+        {
+            return this.AddResponseAsync(workbookOperation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WorkbookOperation to the collection via POST and returns a <see cref="GraphResponse{WorkbookOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookOperation">The WorkbookOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> AddResponseAsync(WorkbookOperation workbookOperation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookOperation>(workbookOperation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookOperationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookOperationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -34,6 +34,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

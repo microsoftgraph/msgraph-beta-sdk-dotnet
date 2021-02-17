@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
         /// <returns>The created AndroidForWorkMobileAppConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidForWorkMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkMobileAppConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> CreateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkMobileAppConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> CreateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidForWorkMobileAppConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidForWorkMobileAppConfiguration.
         /// </summary>
         /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> UpdateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> UpdateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> UpdateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

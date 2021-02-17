@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> CreateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> CreateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.
         /// </summary>
         /// <returns>The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> UpdateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

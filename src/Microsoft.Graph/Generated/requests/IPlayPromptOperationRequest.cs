@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <returns>The created PlayPromptOperation.</returns>
-        System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate);
+
+        /// <summary>
         /// Creates the specified PlayPromptOperation using POST.
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlayPromptOperation.</returns>
         System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlayPromptOperation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PlayPromptOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PlayPromptOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PlayPromptOperation.
         /// </summary>
         /// <returns>The PlayPromptOperation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlayPromptOperation.</returns>
         System.Threading.Tasks.Task<PlayPromptOperation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PlayPromptOperation and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PlayPromptOperation and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PlayPromptOperation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlayPromptOperation.</returns>
         System.Threading.Tasks.Task<PlayPromptOperation> UpdateAsync(PlayPromptOperation playPromptOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PlayPromptOperation using PATCH and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToUpdate">The PlayPromptOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> UpdateResponseAsync(PlayPromptOperation playPromptOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified PlayPromptOperation using PATCH and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToUpdate">The PlayPromptOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> UpdateResponseAsync(PlayPromptOperation playPromptOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

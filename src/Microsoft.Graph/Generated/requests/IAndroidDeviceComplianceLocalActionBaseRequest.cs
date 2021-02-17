@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionBase.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionBase.
         /// </summary>
         /// <returns>The AndroidDeviceComplianceLocalActionBase.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionBase.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionBase.</returns>
         System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

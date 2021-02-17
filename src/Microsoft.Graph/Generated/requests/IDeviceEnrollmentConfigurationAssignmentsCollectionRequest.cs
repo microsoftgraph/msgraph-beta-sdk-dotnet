@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> AddAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment);
+
+        /// <summary>
+        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceEnrollmentConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

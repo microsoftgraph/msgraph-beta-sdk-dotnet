@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <returns>The created PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate);
+
+        /// <summary>
         /// Creates the specified PolicySet using POST.
         /// </summary>
         /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySet.</returns>
         System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <param name="policySetToCreate">The PolicySet to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate);
+
+        /// <summary>
+        /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <param name="policySetToCreate">The PolicySet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PolicySet.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PolicySet.
         /// </summary>
         /// <returns>The PolicySet.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicySet.</returns>
         System.Threading.Tasks.Task<PolicySet> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PolicySet and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PolicySet and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PolicySet using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicySet.</returns>
         System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <param name="policySetToUpdate">The PolicySet to update.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate);
+
+        /// <summary>
+        /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
+        /// </summary>
+        /// <param name="policySetToUpdate">The PolicySet to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

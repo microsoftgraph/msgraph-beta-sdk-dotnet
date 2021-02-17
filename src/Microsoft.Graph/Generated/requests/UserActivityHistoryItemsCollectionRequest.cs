@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ActivityHistoryItem>(activityHistoryItem, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ActivityHistoryItem to the collection via POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.
+        /// </summary>
+        /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem)
+        {
+            return this.AddResponseAsync(activityHistoryItem, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ActivityHistoryItem to the collection via POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.
+        /// </summary>
+        /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ActivityHistoryItem>(activityHistoryItem, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserActivityHistoryItemsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivityHistoryItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserActivityHistoryItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

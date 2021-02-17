@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<CloudPcProvisioningPolicy>(cloudPcProvisioningPolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified CloudPcProvisioningPolicy to the collection via POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicy">The CloudPcProvisioningPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> AddResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy)
+        {
+            return this.AddResponseAsync(cloudPcProvisioningPolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified CloudPcProvisioningPolicy to the collection via POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="cloudPcProvisioningPolicy">The CloudPcProvisioningPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> AddResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicy>(cloudPcProvisioningPolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointProvisioningPoliciesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpointProvisioningPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<VirtualEndpointProvisioningPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

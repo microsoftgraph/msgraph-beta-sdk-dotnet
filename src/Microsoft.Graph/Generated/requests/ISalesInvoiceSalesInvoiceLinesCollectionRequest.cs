@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesInvoiceLine.</returns>
         System.Threading.Tasks.Task<SalesInvoiceLine> AddAsync(SalesInvoiceLine salesInvoiceLine, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SalesInvoiceLine to the collection via POST and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.
+        /// </summary>
+        /// <param name="salesInvoiceLine">The SalesInvoiceLine to add.</param>
+        /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> AddResponseAsync(SalesInvoiceLine salesInvoiceLine);
+
+        /// <summary>
+        /// Adds the specified SalesInvoiceLine to the collection via POST and returns a <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.
+        /// </summary>
+        /// <param name="salesInvoiceLine">The SalesInvoiceLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesInvoiceLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceLine>> AddResponseAsync(SalesInvoiceLine salesInvoiceLine, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<ISalesInvoiceSalesInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SalesInvoiceSalesInvoiceLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SalesInvoiceSalesInvoiceLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceSalesInvoiceLinesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SalesInvoiceSalesInvoiceLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SalesInvoiceSalesInvoiceLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoiceSalesInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

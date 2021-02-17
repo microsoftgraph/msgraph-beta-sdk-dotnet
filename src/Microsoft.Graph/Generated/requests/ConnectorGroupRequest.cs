@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ConnectorGroup using POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> CreateResponseAsync(ConnectorGroup connectorGroupToCreate)
+        {
+            return this.CreateResponseAsync(connectorGroupToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ConnectorGroup using POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToCreate">The ConnectorGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> CreateResponseAsync(ConnectorGroup connectorGroupToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ConnectorGroup>(connectorGroupToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ConnectorGroup.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<ConnectorGroup>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConnectorGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified ConnectorGroup and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<ConnectorGroup>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified ConnectorGroup and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ConnectorGroup and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ConnectorGroup>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<ConnectorGroup>(connectorGroupToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectorGroup using PATCH and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToUpdate">The ConnectorGroup to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> UpdateResponseAsync(ConnectorGroup connectorGroupToUpdate)
+        {
+            return this.UpdateResponseAsync(connectorGroupToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ConnectorGroup using PATCH and returns a <see cref="GraphResponse{ConnectorGroup}"/> object.
+        /// </summary>
+        /// <param name="connectorGroupToUpdate">The ConnectorGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> UpdateResponseAsync(ConnectorGroup connectorGroupToUpdate, CancellationToken cancellationToken)
+        {
+			if (connectorGroupToUpdate.AdditionalData != null)
+			{
+				if (connectorGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					connectorGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectorGroupToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (connectorGroupToUpdate.AdditionalData != null)
+            {
+                if (connectorGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    connectorGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, connectorGroupToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ConnectorGroup>(connectorGroupToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

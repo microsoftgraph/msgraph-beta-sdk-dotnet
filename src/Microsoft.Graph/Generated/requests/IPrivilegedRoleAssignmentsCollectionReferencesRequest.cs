@@ -32,5 +32,18 @@ namespace Microsoft.Graph
         /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         System.Threading.Tasks.Task AddAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified PrivilegedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignment);
+
+        /// <summary>
+        /// Adds the specified PrivilegedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedRoleAssignment">The PrivilegedRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignment, CancellationToken cancellationToken);
     }
 }

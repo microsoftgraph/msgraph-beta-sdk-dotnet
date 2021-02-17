@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataLossPreventionPolicy.</returns>
         System.Threading.Tasks.Task<DataLossPreventionPolicy> AddAsync(DataLossPreventionPolicy dataLossPreventionPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DataLossPreventionPolicy to the collection via POST and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicy">The DataLossPreventionPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> AddResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicy);
+
+        /// <summary>
+        /// Adds the specified DataLossPreventionPolicy to the collection via POST and returns a <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="dataLossPreventionPolicy">The DataLossPreventionPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataLossPreventionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataLossPreventionPolicy>> AddResponseAsync(DataLossPreventionPolicy dataLossPreventionPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IInformationProtectionDataLossPreventionPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionDataLossPreventionPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionDataLossPreventionPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionDataLossPreventionPoliciesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionDataLossPreventionPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionDataLossPreventionPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionDataLossPreventionPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

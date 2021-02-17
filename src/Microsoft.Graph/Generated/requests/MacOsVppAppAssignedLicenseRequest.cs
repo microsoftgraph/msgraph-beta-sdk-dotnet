@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOsVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> CreateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate)
+        {
+            return this.CreateResponseAsync(macOsVppAppAssignedLicenseToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOsVppAppAssignedLicense using POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToCreate">The MacOsVppAppAssignedLicense to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> CreateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOsVppAppAssignedLicense>(macOsVppAppAssignedLicenseToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOsVppAppAssignedLicense.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOsVppAppAssignedLicense>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MacOsVppAppAssignedLicense>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MacOsVppAppAssignedLicense and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOsVppAppAssignedLicense>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MacOsVppAppAssignedLicense>(macOsVppAppAssignedLicenseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOsVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToUpdate">The MacOsVppAppAssignedLicense to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> UpdateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToUpdate)
+        {
+            return this.UpdateResponseAsync(macOsVppAppAssignedLicenseToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOsVppAppAssignedLicense using PATCH and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object.
+        /// </summary>
+        /// <param name="macOsVppAppAssignedLicenseToUpdate">The MacOsVppAppAssignedLicense to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> UpdateResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicenseToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOsVppAppAssignedLicenseToUpdate.AdditionalData != null)
+			{
+				if (macOsVppAppAssignedLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOsVppAppAssignedLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOsVppAppAssignedLicenseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOsVppAppAssignedLicenseToUpdate.AdditionalData != null)
+            {
+                if (macOsVppAppAssignedLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOsVppAppAssignedLicenseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOsVppAppAssignedLicenseToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOsVppAppAssignedLicense>(macOsVppAppAssignedLicenseToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

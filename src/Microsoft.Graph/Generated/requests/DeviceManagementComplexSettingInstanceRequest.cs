@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementComplexSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingInstanceToCreate">The DeviceManagementComplexSettingInstance to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> CreateResponseAsync(DeviceManagementComplexSettingInstance deviceManagementComplexSettingInstanceToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementComplexSettingInstanceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementComplexSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingInstanceToCreate">The DeviceManagementComplexSettingInstance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> CreateResponseAsync(DeviceManagementComplexSettingInstance deviceManagementComplexSettingInstanceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstance>(deviceManagementComplexSettingInstanceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementComplexSettingInstance.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementComplexSettingInstance>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementComplexSettingInstance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceManagementComplexSettingInstance and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceManagementComplexSettingInstance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementComplexSettingInstance and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementComplexSettingInstance and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceManagementComplexSettingInstance>(deviceManagementComplexSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingInstanceToUpdate">The DeviceManagementComplexSettingInstance to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> UpdateResponseAsync(DeviceManagementComplexSettingInstance deviceManagementComplexSettingInstanceToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementComplexSettingInstanceToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementComplexSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementComplexSettingInstanceToUpdate">The DeviceManagementComplexSettingInstance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstance}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstance>> UpdateResponseAsync(DeviceManagementComplexSettingInstance deviceManagementComplexSettingInstanceToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementComplexSettingInstanceToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementComplexSettingInstanceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementComplexSettingInstanceToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementComplexSettingInstanceToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstance>(deviceManagementComplexSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

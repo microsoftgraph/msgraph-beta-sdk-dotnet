@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectorySettingTemplate.</returns>
         System.Threading.Tasks.Task<DirectorySettingTemplate> AddAsync(DirectorySettingTemplate directorySettingTemplate, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DirectorySettingTemplate to the collection via POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="directorySettingTemplate">The DirectorySettingTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> AddResponseAsync(DirectorySettingTemplate directorySettingTemplate);
+
+        /// <summary>
+        /// Adds the specified DirectorySettingTemplate to the collection via POST and returns a <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="directorySettingTemplate">The DirectorySettingTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectorySettingTemplate>> AddResponseAsync(DirectorySettingTemplate directorySettingTemplate, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IGraphServiceDirectorySettingTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectorySettingTemplatesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceDirectorySettingTemplatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDirectorySettingTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

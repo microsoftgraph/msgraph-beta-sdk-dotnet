@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSLobApp using POST and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="macOSLobAppToCreate">The MacOSLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> CreateResponseAsync(MacOSLobApp macOSLobAppToCreate)
+        {
+            return this.CreateResponseAsync(macOSLobAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSLobApp using POST and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="macOSLobAppToCreate">The MacOSLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> CreateResponseAsync(MacOSLobApp macOSLobAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSLobApp>(macOSLobAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSLobApp.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSLobApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MacOSLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MacOSLobApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSLobApp and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MacOSLobApp and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MacOSLobApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MacOSLobApp>(macOSLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSLobApp using PATCH and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="macOSLobAppToUpdate">The MacOSLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> UpdateResponseAsync(MacOSLobApp macOSLobAppToUpdate)
+        {
+            return this.UpdateResponseAsync(macOSLobAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSLobApp using PATCH and returns a <see cref="GraphResponse{MacOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="macOSLobAppToUpdate">The MacOSLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSLobApp>> UpdateResponseAsync(MacOSLobApp macOSLobAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOSLobAppToUpdate.AdditionalData != null)
+			{
+				if (macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSLobAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSLobAppToUpdate.AdditionalData != null)
+            {
+                if (macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSLobAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOSLobApp>(macOSLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

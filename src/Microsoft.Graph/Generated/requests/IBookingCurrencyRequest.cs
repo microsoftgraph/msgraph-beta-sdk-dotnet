@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <returns>The created BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate);
+
+        /// <summary>
         /// Creates the specified BookingCurrency using POST.
         /// </summary>
         /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingCurrency.</returns>
         System.Threading.Tasks.Task<BookingCurrency> CreateAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BookingCurrency using POST and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> CreateResponseAsync(BookingCurrency bookingCurrencyToCreate);
+
+        /// <summary>
+        /// Creates the specified BookingCurrency using POST and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToCreate">The BookingCurrency to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> CreateResponseAsync(BookingCurrency bookingCurrencyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BookingCurrency.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified BookingCurrency and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified BookingCurrency and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified BookingCurrency.
         /// </summary>
         /// <returns>The BookingCurrency.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingCurrency.</returns>
         System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified BookingCurrency using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingCurrency.</returns>
         System.Threading.Tasks.Task<BookingCurrency> UpdateAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PATCH and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> UpdateResponseAsync(BookingCurrency bookingCurrencyToUpdate);
+
+        /// <summary>
+        /// Updates the specified BookingCurrency using PATCH and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
+        /// </summary>
+        /// <param name="bookingCurrencyToUpdate">The BookingCurrency to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> UpdateResponseAsync(BookingCurrency bookingCurrencyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

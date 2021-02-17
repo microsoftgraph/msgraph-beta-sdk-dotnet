@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AndroidForWorkAppConfigurationSchema>(androidForWorkAppConfigurationSchema, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AndroidForWorkAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidForWorkAppConfigurationSchema">The AndroidForWorkAppConfigurationSchema to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkAppConfigurationSchema>> AddResponseAsync(AndroidForWorkAppConfigurationSchema androidForWorkAppConfigurationSchema)
+        {
+            return this.AddResponseAsync(androidForWorkAppConfigurationSchema, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AndroidForWorkAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidForWorkAppConfigurationSchema">The AndroidForWorkAppConfigurationSchema to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkAppConfigurationSchema>> AddResponseAsync(AndroidForWorkAppConfigurationSchema androidForWorkAppConfigurationSchema, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidForWorkAppConfigurationSchema>(androidForWorkAppConfigurationSchema, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

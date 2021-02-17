@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Calendar>(calendar, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Calendar to the collection via POST and returns a <see cref="GraphResponse{Calendar}"/> object of the request.
+        /// </summary>
+        /// <param name="calendar">The Calendar to add.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> AddResponseAsync(Calendar calendar)
+        {
+            return this.AddResponseAsync(calendar, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Calendar to the collection via POST and returns a <see cref="GraphResponse{Calendar}"/> object of the request.
+        /// </summary>
+        /// <param name="calendar">The Calendar to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Calendar>> AddResponseAsync(Calendar calendar, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Calendar>(calendar, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CalendarGroupCalendarsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CalendarGroupCalendarsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CalendarGroupCalendarsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CalendarGroupCalendarsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroupCalendarsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CalendarGroupCalendarsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CalendarGroupCalendarsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

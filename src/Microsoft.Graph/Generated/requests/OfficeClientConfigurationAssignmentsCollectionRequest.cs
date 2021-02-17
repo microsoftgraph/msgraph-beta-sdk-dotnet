@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<OfficeClientConfigurationAssignment>(officeClientConfigurationAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> AddResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment)
+        {
+            return this.AddResponseAsync(officeClientConfigurationAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> AddResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OfficeClientConfigurationAssignment>(officeClientConfigurationAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

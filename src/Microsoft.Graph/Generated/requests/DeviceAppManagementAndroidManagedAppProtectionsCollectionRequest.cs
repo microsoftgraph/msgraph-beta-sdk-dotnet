@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AndroidManagedAppProtection>(androidManagedAppProtection, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AndroidManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedAppProtection">The AndroidManagedAppProtection to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> AddResponseAsync(AndroidManagedAppProtection androidManagedAppProtection)
+        {
+            return this.AddResponseAsync(androidManagedAppProtection, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AndroidManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedAppProtection">The AndroidManagedAppProtection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> AddResponseAsync(AndroidManagedAppProtection androidManagedAppProtection, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtection, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementAndroidManagedAppProtectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
-        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> CreateAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> CreateAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate);
+
+        /// <summary>
         /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> CreateAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> CreateResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate);
+
+        /// <summary>
+        /// Creates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToCreate">The AdvancedThreatProtectionOnboardingDeviceSettingState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> CreateResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AdvancedThreatProtectionOnboardingDeviceSettingState.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AdvancedThreatProtectionOnboardingDeviceSettingState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AdvancedThreatProtectionOnboardingDeviceSettingState and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AdvancedThreatProtectionOnboardingDeviceSettingState.
         /// </summary>
         /// <returns>The AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AdvancedThreatProtectionOnboardingDeviceSettingState and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AdvancedThreatProtectionOnboardingDeviceSettingState and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
         System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> UpdateAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using PATCH and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToUpdate">The AdvancedThreatProtectionOnboardingDeviceSettingState to update.</param>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> UpdateResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToUpdate);
+
+        /// <summary>
+        /// Updates the specified AdvancedThreatProtectionOnboardingDeviceSettingState using PATCH and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object.
+        /// </summary>
+        /// <param name="advancedThreatProtectionOnboardingDeviceSettingStateToUpdate">The AdvancedThreatProtectionOnboardingDeviceSettingState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> UpdateResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingStateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

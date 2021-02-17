@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="extensionToCreate">The Extension to create.</param>
         /// <returns>The created Extension.</returns>
-        System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate);
+
+        /// <summary>
         /// Creates the specified Extension using POST.
         /// </summary>
         /// <param name="extensionToCreate">The Extension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Extension.</returns>
         System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToCreate">The Extension to create.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate);
+
+        /// <summary>
+        /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToCreate">The Extension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Extension.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Extension and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Extension and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Extension.
         /// </summary>
         /// <returns>The Extension.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Extension.</returns>
         System.Threading.Tasks.Task<Extension> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Extension and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Extension and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Extension using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Extension.</returns>
         System.Threading.Tasks.Task<Extension> UpdateAsync(Extension extensionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Extension using PATCH and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToUpdate">The Extension to update.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> UpdateResponseAsync(Extension extensionToUpdate);
+
+        /// <summary>
+        /// Updates the specified Extension using PATCH and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToUpdate">The Extension to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Extension>> UpdateResponseAsync(Extension extensionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

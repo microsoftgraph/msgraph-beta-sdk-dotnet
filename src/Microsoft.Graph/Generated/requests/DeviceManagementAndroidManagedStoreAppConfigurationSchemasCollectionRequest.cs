@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchema, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AndroidManagedStoreAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedStoreAppConfigurationSchema">The AndroidManagedStoreAppConfigurationSchema to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> AddResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema)
+        {
+            return this.AddResponseAsync(androidManagedStoreAppConfigurationSchema, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AndroidManagedStoreAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidManagedStoreAppConfigurationSchema">The AndroidManagedStoreAppConfigurationSchema to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> AddResponseAsync(AndroidManagedStoreAppConfigurationSchema androidManagedStoreAppConfigurationSchema, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidManagedStoreAppConfigurationSchema>(androidManagedStoreAppConfigurationSchema, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAndroidManagedStoreAppConfigurationSchemasCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

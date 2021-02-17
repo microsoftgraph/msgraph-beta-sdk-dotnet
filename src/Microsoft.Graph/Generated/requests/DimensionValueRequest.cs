@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DimensionValue using POST and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <param name="dimensionValueToCreate">The DimensionValue to create.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DimensionValue>> CreateResponseAsync(DimensionValue dimensionValueToCreate)
+        {
+            return this.CreateResponseAsync(dimensionValueToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DimensionValue using POST and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <param name="dimensionValueToCreate">The DimensionValue to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DimensionValue>> CreateResponseAsync(DimensionValue dimensionValueToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DimensionValue>(dimensionValueToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DimensionValue.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DimensionValue>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DimensionValue and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DimensionValue and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DimensionValue>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DimensionValue and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DimensionValue>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DimensionValue and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DimensionValue>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DimensionValue>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DimensionValue>(dimensionValueToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DimensionValue using PATCH and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <param name="dimensionValueToUpdate">The DimensionValue to update.</param>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DimensionValue>> UpdateResponseAsync(DimensionValue dimensionValueToUpdate)
+        {
+            return this.UpdateResponseAsync(dimensionValueToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DimensionValue using PATCH and returns a <see cref="GraphResponse{DimensionValue}"/> object.
+        /// </summary>
+        /// <param name="dimensionValueToUpdate">The DimensionValue to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DimensionValue>> UpdateResponseAsync(DimensionValue dimensionValueToUpdate, CancellationToken cancellationToken)
+        {
+			if (dimensionValueToUpdate.AdditionalData != null)
+			{
+				if (dimensionValueToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					dimensionValueToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionValueToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (dimensionValueToUpdate.AdditionalData != null)
+            {
+                if (dimensionValueToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    dimensionValueToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionValueToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DimensionValue>(dimensionValueToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

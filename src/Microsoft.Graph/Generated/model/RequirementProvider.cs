@@ -20,19 +20,109 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// MFA
+        /// User
         /// </summary>
-        MFA = 0,
+        User = 0,
 	
         /// <summary>
-        /// CA
+        /// Request
         /// </summary>
-        CA = 1,
+        Request = 1,
+	
+        /// <summary>
+        /// Service Principal
+        /// </summary>
+        ServicePrincipal = 2,
+	
+        /// <summary>
+        /// V1Conditional Access
+        /// </summary>
+        V1ConditionalAccess = 3,
+	
+        /// <summary>
+        /// Multi Conditional Access
+        /// </summary>
+        MultiConditionalAccess = 4,
+	
+        /// <summary>
+        /// Tenant Session Risk Policy
+        /// </summary>
+        TenantSessionRiskPolicy = 5,
+	
+        /// <summary>
+        /// Account Compromise Policies
+        /// </summary>
+        AccountCompromisePolicies = 6,
+	
+        /// <summary>
+        /// V1Conditional Access Dependency
+        /// </summary>
+        V1ConditionalAccessDependency = 7,
+	
+        /// <summary>
+        /// V1Conditional Access Policy Id Requested
+        /// </summary>
+        V1ConditionalAccessPolicyIdRequested = 8,
+	
+        /// <summary>
+        /// Mfa Registration Required By Identity Protection Policy
+        /// </summary>
+        MfaRegistrationRequiredByIdentityProtectionPolicy = 9,
+	
+        /// <summary>
+        /// Baseline Protection
+        /// </summary>
+        BaselineProtection = 10,
+	
+        /// <summary>
+        /// Mfa Registration Required By Baseline Protection
+        /// </summary>
+        MfaRegistrationRequiredByBaselineProtection = 11,
+	
+        /// <summary>
+        /// Mfa Registration Required By Multi Conditional Access
+        /// </summary>
+        MfaRegistrationRequiredByMultiConditionalAccess = 12,
+	
+        /// <summary>
+        /// Enforced For Csp Admins
+        /// </summary>
+        EnforcedForCspAdmins = 13,
+	
+        /// <summary>
+        /// Security Defaults
+        /// </summary>
+        SecurityDefaults = 14,
+	
+        /// <summary>
+        /// Mfa Registration Required By Security Defaults
+        /// </summary>
+        MfaRegistrationRequiredBySecurityDefaults = 15,
+	
+        /// <summary>
+        /// Proof Up Code Request
+        /// </summary>
+        ProofUpCodeRequest = 16,
+	
+        /// <summary>
+        /// Cross Tenant Outbound Rule
+        /// </summary>
+        CrossTenantOutboundRule = 17,
+	
+        /// <summary>
+        /// Gps Location Condition
+        /// </summary>
+        GpsLocationCondition = 18,
+	
+        /// <summary>
+        /// Risk Based Policy
+        /// </summary>
+        RiskBasedPolicy = 19,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 2,
+        UnknownFutureValue = 20,
 	
     }
 }

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EducationFeedbackOutcome using POST and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationFeedbackOutcomeToCreate">The EducationFeedbackOutcome to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> CreateResponseAsync(EducationFeedbackOutcome educationFeedbackOutcomeToCreate)
+        {
+            return this.CreateResponseAsync(educationFeedbackOutcomeToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationFeedbackOutcome using POST and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationFeedbackOutcomeToCreate">The EducationFeedbackOutcome to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> CreateResponseAsync(EducationFeedbackOutcome educationFeedbackOutcomeToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationFeedbackOutcome>(educationFeedbackOutcomeToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EducationFeedbackOutcome.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationFeedbackOutcome>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationFeedbackOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified EducationFeedbackOutcome and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<EducationFeedbackOutcome>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified EducationFeedbackOutcome and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified EducationFeedbackOutcome and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<EducationFeedbackOutcome>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<EducationFeedbackOutcome>(educationFeedbackOutcomeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationFeedbackOutcome using PATCH and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationFeedbackOutcomeToUpdate">The EducationFeedbackOutcome to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> UpdateResponseAsync(EducationFeedbackOutcome educationFeedbackOutcomeToUpdate)
+        {
+            return this.UpdateResponseAsync(educationFeedbackOutcomeToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationFeedbackOutcome using PATCH and returns a <see cref="GraphResponse{EducationFeedbackOutcome}"/> object.
+        /// </summary>
+        /// <param name="educationFeedbackOutcomeToUpdate">The EducationFeedbackOutcome to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationFeedbackOutcome}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationFeedbackOutcome>> UpdateResponseAsync(EducationFeedbackOutcome educationFeedbackOutcomeToUpdate, CancellationToken cancellationToken)
+        {
+			if (educationFeedbackOutcomeToUpdate.AdditionalData != null)
+			{
+				if (educationFeedbackOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationFeedbackOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationFeedbackOutcomeToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (educationFeedbackOutcomeToUpdate.AdditionalData != null)
+            {
+                if (educationFeedbackOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    educationFeedbackOutcomeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationFeedbackOutcomeToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EducationFeedbackOutcome>(educationFeedbackOutcomeToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

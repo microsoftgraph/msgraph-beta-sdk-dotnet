@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10TeamGeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToCreate">The Windows10TeamGeneralConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> CreateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10TeamGeneralConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10TeamGeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToCreate">The Windows10TeamGeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> CreateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10TeamGeneralConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10TeamGeneralConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<Windows10TeamGeneralConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10TeamGeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToUpdate">The Windows10TeamGeneralConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> UpdateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windows10TeamGeneralConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10TeamGeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToUpdate">The Windows10TeamGeneralConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> UpdateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windows10TeamGeneralConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10TeamGeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10TeamGeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10TeamGeneralConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10TeamGeneralConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10TeamGeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10TeamGeneralConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10TeamGeneralConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

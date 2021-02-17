@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<IntuneBrandingProfileAssignment>(intuneBrandingProfileAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified IntuneBrandingProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="intuneBrandingProfileAssignment">The IntuneBrandingProfileAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> AddResponseAsync(IntuneBrandingProfileAssignment intuneBrandingProfileAssignment)
+        {
+            return this.AddResponseAsync(intuneBrandingProfileAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified IntuneBrandingProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="intuneBrandingProfileAssignment">The IntuneBrandingProfileAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> AddResponseAsync(IntuneBrandingProfileAssignment intuneBrandingProfileAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IntuneBrandingProfileAssignment>(intuneBrandingProfileAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignmentsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignmentsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IntuneBrandingProfileAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

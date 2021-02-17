@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppRoleAssignment.</returns>
         System.Threading.Tasks.Task<AppRoleAssignment> AddAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AppRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> AddResponseAsync(AppRoleAssignment appRoleAssignment);
+
+        /// <summary>
+        /// Adds the specified AppRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> AddResponseAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUserAppRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAppRoleAssignmentsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAppRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

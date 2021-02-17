@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
         /// <returns>The created ConditionalAccessRoot.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate);
+
+        /// <summary>
         /// Creates the specified ConditionalAccessRoot using POST.
         /// </summary>
         /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessRoot.</returns>
         System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessRoot using POST and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> CreateResponseAsync(ConditionalAccessRoot conditionalAccessRootToCreate);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessRoot using POST and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> CreateResponseAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ConditionalAccessRoot.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ConditionalAccessRoot and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ConditionalAccessRoot and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ConditionalAccessRoot.
         /// </summary>
         /// <returns>The ConditionalAccessRoot.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConditionalAccessRoot.</returns>
         System.Threading.Tasks.Task<ConditionalAccessRoot> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ConditionalAccessRoot using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConditionalAccessRoot.</returns>
         System.Threading.Tasks.Task<ConditionalAccessRoot> UpdateAsync(ConditionalAccessRoot conditionalAccessRootToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessRoot using PATCH and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToUpdate">The ConditionalAccessRoot to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> UpdateResponseAsync(ConditionalAccessRoot conditionalAccessRootToUpdate);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessRoot using PATCH and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToUpdate">The ConditionalAccessRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> UpdateResponseAsync(ConditionalAccessRoot conditionalAccessRootToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

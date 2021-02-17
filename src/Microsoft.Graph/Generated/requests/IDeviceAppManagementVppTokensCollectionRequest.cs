@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> AddAsync(VppToken vppToken, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified VppToken to the collection via POST and returns a <see cref="GraphResponse{VppToken}"/> object of the request.
+        /// </summary>
+        /// <param name="vppToken">The VppToken to add.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> AddResponseAsync(VppToken vppToken);
+
+        /// <summary>
+        /// Adds the specified VppToken to the collection via POST and returns a <see cref="GraphResponse{VppToken}"/> object of the request.
+        /// </summary>
+        /// <param name="vppToken">The VppToken to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> AddResponseAsync(VppToken vppToken, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceAppManagementVppTokensCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementVppTokensCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementVppTokensCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

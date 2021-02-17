@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedResourceActions.
-        /// Set of tasks that can be perfomed on a resource.
+        /// Set of tasks that can be performed on a resource.
         /// </summary>
         [JsonPropertyName("allowedResourceActions")]
         public IEnumerable<string> AllowedResourceActions { get; set; }

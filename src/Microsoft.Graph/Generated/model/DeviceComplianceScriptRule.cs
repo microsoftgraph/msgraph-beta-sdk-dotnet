@@ -36,6 +36,20 @@ namespace Microsoft.Graph
         public DataType? DataType { get; set; }
     
         /// <summary>
+        /// Gets or sets deviceComplianceScriptRuleDataType.
+        /// Data type specified in the rule. Possible values are: none, boolean, int64, double, string, dateTime, version, base64, xml, booleanArray, int64Array, doubleArray, stringArray, dateTimeArray, versionArray.
+        /// </summary>
+        [JsonPropertyName("deviceComplianceScriptRuleDataType")]
+        public DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceComplianceScriptRulOperator.
+        /// Operator specified in the rule. Possible values are: none, and, or, isEquals, notEquals, greaterThan, lessThan, between, notBetween, greaterEquals, lessEquals, dayTimeBetween, beginsWith, notBeginsWith, endsWith, notEndsWith, contains, notContains, allOf, oneOf, noneOf, setEquals, orderedSetEquals, subsetOf, excludesAll.
+        /// </summary>
+        [JsonPropertyName("deviceComplianceScriptRulOperator")]
+        public DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator { get; set; }
+    
+        /// <summary>
         /// Gets or sets operand.
         /// Operand specified in the rule.
         /// </summary>

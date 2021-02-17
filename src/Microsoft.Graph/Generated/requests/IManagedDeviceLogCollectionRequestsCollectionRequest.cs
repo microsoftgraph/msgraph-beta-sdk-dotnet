@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceLogCollectionResponse.</returns>
         System.Threading.Tasks.Task<DeviceLogCollectionResponse> AddAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> AddResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponse);
+
+        /// <summary>
+        /// Adds the specified DeviceLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> AddResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IManagedDeviceLogCollectionRequestsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SecureScoreControlProfile>(secureScoreControlProfile, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SecureScoreControlProfile to the collection via POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScoreControlProfile">The SecureScoreControlProfile to add.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> AddResponseAsync(SecureScoreControlProfile secureScoreControlProfile)
+        {
+            return this.AddResponseAsync(secureScoreControlProfile, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SecureScoreControlProfile to the collection via POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScoreControlProfile">The SecureScoreControlProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> AddResponseAsync(SecureScoreControlProfile secureScoreControlProfile, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecureScoreControlProfile>(secureScoreControlProfile, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecureScoreControlProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecuritySecureScoreControlProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoreControlProfilesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecureScoreControlProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecuritySecureScoreControlProfilesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecuritySecureScoreControlProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecuritySecureScoreControlProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

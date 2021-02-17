@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <returns>The created AndroidLobApp.</returns>
-        System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidLobApp using POST.
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidLobApp.</returns>
         System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidLobApp using POST and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidLobApp using POST and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidLobApp.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidLobApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidLobApp.
         /// </summary>
         /// <returns>The AndroidLobApp.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidLobApp.</returns>
         System.Threading.Tasks.Task<AndroidLobApp> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidLobApp and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidLobApp and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidLobApp using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidLobApp.</returns>
         System.Threading.Tasks.Task<AndroidLobApp> UpdateAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidLobApp using PATCH and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToUpdate">The AndroidLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> UpdateResponseAsync(AndroidLobApp androidLobAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidLobApp using PATCH and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToUpdate">The AndroidLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> UpdateResponseAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

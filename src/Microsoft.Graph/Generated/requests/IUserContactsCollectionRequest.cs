@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Contact.</returns>
         System.Threading.Tasks.Task<Contact> AddAsync(Contact contact, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Contact to the collection via POST and returns a <see cref="GraphResponse{Contact}"/> object of the request.
+        /// </summary>
+        /// <param name="contact">The Contact to add.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> AddResponseAsync(Contact contact);
+
+        /// <summary>
+        /// Adds the specified Contact to the collection via POST and returns a <see cref="GraphResponse{Contact}"/> object of the request.
+        /// </summary>
+        /// <param name="contact">The Contact to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contact>> AddResponseAsync(Contact contact, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IUserContactsCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserContactsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserContactsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserContactsCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserContactsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserContactsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserContactsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

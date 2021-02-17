@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
         /// <returns>The created UserSecurityProfile.</returns>
-        System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate);
+
+        /// <summary>
         /// Creates the specified UserSecurityProfile using POST.
         /// </summary>
         /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSecurityProfile.</returns>
         System.Threading.Tasks.Task<UserSecurityProfile> CreateAsync(UserSecurityProfile userSecurityProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserSecurityProfile using POST and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> CreateResponseAsync(UserSecurityProfile userSecurityProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified UserSecurityProfile using POST and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToCreate">The UserSecurityProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> CreateResponseAsync(UserSecurityProfile userSecurityProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserSecurityProfile.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified UserSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified UserSecurityProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified UserSecurityProfile.
         /// </summary>
         /// <returns>The UserSecurityProfile.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserSecurityProfile.</returns>
         System.Threading.Tasks.Task<UserSecurityProfile> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified UserSecurityProfile and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserSecurityProfile and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified UserSecurityProfile using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserSecurityProfile.</returns>
         System.Threading.Tasks.Task<UserSecurityProfile> UpdateAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified UserSecurityProfile using PATCH and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> UpdateResponseAsync(UserSecurityProfile userSecurityProfileToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserSecurityProfile using PATCH and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object.
+        /// </summary>
+        /// <param name="userSecurityProfileToUpdate">The UserSecurityProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> UpdateResponseAsync(UserSecurityProfile userSecurityProfileToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

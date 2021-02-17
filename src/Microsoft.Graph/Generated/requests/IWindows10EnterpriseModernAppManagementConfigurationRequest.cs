@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> CreateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> CreateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10EnterpriseModernAppManagementConfiguration.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration.
         /// </summary>
         /// <returns>The Windows10EnterpriseModernAppManagementConfiguration.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> UpdateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> UpdateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> UpdateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

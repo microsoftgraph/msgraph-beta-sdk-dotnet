@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="printTaskTriggerToCreate">The PrintTaskTrigger to create.</param>
         /// <returns>The created PrintTaskTrigger.</returns>
-        System.Threading.Tasks.Task<PrintTaskTrigger> CreateAsync(PrintTaskTrigger printTaskTriggerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PrintTaskTrigger> CreateAsync(PrintTaskTrigger printTaskTriggerToCreate);
+
+        /// <summary>
         /// Creates the specified PrintTaskTrigger using POST.
         /// </summary>
         /// <param name="printTaskTriggerToCreate">The PrintTaskTrigger to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintTaskTrigger.</returns>
         System.Threading.Tasks.Task<PrintTaskTrigger> CreateAsync(PrintTaskTrigger printTaskTriggerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PrintTaskTrigger using POST and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <param name="printTaskTriggerToCreate">The PrintTaskTrigger to create.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> CreateResponseAsync(PrintTaskTrigger printTaskTriggerToCreate);
+
+        /// <summary>
+        /// Creates the specified PrintTaskTrigger using POST and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <param name="printTaskTriggerToCreate">The PrintTaskTrigger to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> CreateResponseAsync(PrintTaskTrigger printTaskTriggerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PrintTaskTrigger.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PrintTaskTrigger and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PrintTaskTrigger and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PrintTaskTrigger.
         /// </summary>
         /// <returns>The PrintTaskTrigger.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintTaskTrigger.</returns>
         System.Threading.Tasks.Task<PrintTaskTrigger> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PrintTaskTrigger and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PrintTaskTrigger and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PrintTaskTrigger using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintTaskTrigger.</returns>
         System.Threading.Tasks.Task<PrintTaskTrigger> UpdateAsync(PrintTaskTrigger printTaskTriggerToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PrintTaskTrigger using PATCH and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <param name="printTaskTriggerToUpdate">The PrintTaskTrigger to update.</param>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> UpdateResponseAsync(PrintTaskTrigger printTaskTriggerToUpdate);
+
+        /// <summary>
+        /// Updates the specified PrintTaskTrigger using PATCH and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
+        /// </summary>
+        /// <param name="printTaskTriggerToUpdate">The PrintTaskTrigger to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> UpdateResponseAsync(PrintTaskTrigger printTaskTriggerToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

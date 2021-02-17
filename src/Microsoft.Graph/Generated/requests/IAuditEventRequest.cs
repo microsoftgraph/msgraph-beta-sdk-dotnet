@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <returns>The created AuditEvent.</returns>
-        System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate);
+
+        /// <summary>
         /// Creates the specified AuditEvent using POST.
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuditEvent.</returns>
         System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AuditEvent using POST and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <param name="auditEventToCreate">The AuditEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> CreateResponseAsync(AuditEvent auditEventToCreate);
+
+        /// <summary>
+        /// Creates the specified AuditEvent using POST and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <param name="auditEventToCreate">The AuditEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> CreateResponseAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AuditEvent.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AuditEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AuditEvent and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AuditEvent.
         /// </summary>
         /// <returns>The AuditEvent.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuditEvent.</returns>
         System.Threading.Tasks.Task<AuditEvent> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AuditEvent and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AuditEvent and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AuditEvent using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuditEvent.</returns>
         System.Threading.Tasks.Task<AuditEvent> UpdateAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AuditEvent using PATCH and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> UpdateResponseAsync(AuditEvent auditEventToUpdate);
+
+        /// <summary>
+        /// Updates the specified AuditEvent using PATCH and returns a <see cref="GraphResponse{AuditEvent}"/> object.
+        /// </summary>
+        /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditEvent>> UpdateResponseAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

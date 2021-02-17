@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
         /// <returns>The created GeneralLedgerEntry.</returns>
-        System.Threading.Tasks.Task<GeneralLedgerEntry> CreateAsync(GeneralLedgerEntry generalLedgerEntryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GeneralLedgerEntry> CreateAsync(GeneralLedgerEntry generalLedgerEntryToCreate);
+
+        /// <summary>
         /// Creates the specified GeneralLedgerEntry using POST.
         /// </summary>
         /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GeneralLedgerEntry.</returns>
         System.Threading.Tasks.Task<GeneralLedgerEntry> CreateAsync(GeneralLedgerEntry generalLedgerEntryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GeneralLedgerEntry using POST and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> CreateResponseAsync(GeneralLedgerEntry generalLedgerEntryToCreate);
+
+        /// <summary>
+        /// Creates the specified GeneralLedgerEntry using POST and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <param name="generalLedgerEntryToCreate">The GeneralLedgerEntry to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> CreateResponseAsync(GeneralLedgerEntry generalLedgerEntryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GeneralLedgerEntry.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified GeneralLedgerEntry and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified GeneralLedgerEntry and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified GeneralLedgerEntry.
         /// </summary>
         /// <returns>The GeneralLedgerEntry.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GeneralLedgerEntry.</returns>
         System.Threading.Tasks.Task<GeneralLedgerEntry> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified GeneralLedgerEntry and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GeneralLedgerEntry and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified GeneralLedgerEntry using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GeneralLedgerEntry.</returns>
         System.Threading.Tasks.Task<GeneralLedgerEntry> UpdateAsync(GeneralLedgerEntry generalLedgerEntryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified GeneralLedgerEntry using PATCH and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <param name="generalLedgerEntryToUpdate">The GeneralLedgerEntry to update.</param>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> UpdateResponseAsync(GeneralLedgerEntry generalLedgerEntryToUpdate);
+
+        /// <summary>
+        /// Updates the specified GeneralLedgerEntry using PATCH and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object.
+        /// </summary>
+        /// <param name="generalLedgerEntryToUpdate">The GeneralLedgerEntry to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> UpdateResponseAsync(GeneralLedgerEntry generalLedgerEntryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

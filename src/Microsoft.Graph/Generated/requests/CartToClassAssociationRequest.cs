@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CartToClassAssociation using POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> CreateResponseAsync(CartToClassAssociation cartToClassAssociationToCreate)
+        {
+            return this.CreateResponseAsync(cartToClassAssociationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CartToClassAssociation using POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToCreate">The CartToClassAssociation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> CreateResponseAsync(CartToClassAssociation cartToClassAssociationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CartToClassAssociation>(cartToClassAssociationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CartToClassAssociation.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<CartToClassAssociation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified CartToClassAssociation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified CartToClassAssociation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<CartToClassAssociation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CartToClassAssociation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<CartToClassAssociation>(cartToClassAssociationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CartToClassAssociation using PATCH and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToUpdate">The CartToClassAssociation to update.</param>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> UpdateResponseAsync(CartToClassAssociation cartToClassAssociationToUpdate)
+        {
+            return this.UpdateResponseAsync(cartToClassAssociationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CartToClassAssociation using PATCH and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
+        /// </summary>
+        /// <param name="cartToClassAssociationToUpdate">The CartToClassAssociation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> UpdateResponseAsync(CartToClassAssociation cartToClassAssociationToUpdate, CancellationToken cancellationToken)
+        {
+			if (cartToClassAssociationToUpdate.AdditionalData != null)
+			{
+				if (cartToClassAssociationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					cartToClassAssociationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cartToClassAssociationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (cartToClassAssociationToUpdate.AdditionalData != null)
+            {
+                if (cartToClassAssociationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    cartToClassAssociationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cartToClassAssociationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CartToClassAssociation>(cartToClassAssociationToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

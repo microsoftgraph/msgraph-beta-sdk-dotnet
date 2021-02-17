@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagedEBookCategory>(managedEBookCategory, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedEBookCategory to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> AddResponseAsync(ManagedEBookCategory managedEBookCategory)
+        {
+            return this.AddResponseAsync(managedEBookCategory, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedEBookCategory to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> AddResponseAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedEBookCategory>(managedEBookCategory, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedEBookCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedEBookCategoriesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedEBookCategoriesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedEBookCategoriesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedEBookCategoriesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedEBookCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagementManagedEBookCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

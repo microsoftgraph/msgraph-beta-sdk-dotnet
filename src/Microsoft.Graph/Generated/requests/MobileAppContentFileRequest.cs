@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate)
+        {
+            return this.CreateResponseAsync(mobileAppContentFileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppContentFile>(mobileAppContentFileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MobileAppContentFile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileAppContentFile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified MobileAppContentFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified MobileAppContentFile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<MobileAppContentFile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified MobileAppContentFile and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MobileAppContentFile and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MobileAppContentFile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<MobileAppContentFile>(mobileAppContentFileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MobileAppContentFile using PATCH and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate)
+        {
+            return this.UpdateResponseAsync(mobileAppContentFileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileAppContentFile using PATCH and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken)
+        {
+			if (mobileAppContentFileToUpdate.AdditionalData != null)
+			{
+				if (mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppContentFileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppContentFileToUpdate.AdditionalData != null)
+            {
+                if (mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppContentFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppContentFileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MobileAppContentFile>(mobileAppContentFileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

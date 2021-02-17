@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidTrustedRootCertificateToCreate">The AndroidTrustedRootCertificate to create.</param>
         /// <returns>The created AndroidTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidTrustedRootCertificate> CreateAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidTrustedRootCertificate> CreateAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="androidTrustedRootCertificateToCreate">The AndroidTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidTrustedRootCertificate> CreateAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidTrustedRootCertificateToCreate">The AndroidTrustedRootCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> CreateResponseAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidTrustedRootCertificate using POST and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidTrustedRootCertificateToCreate">The AndroidTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> CreateResponseAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidTrustedRootCertificate.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified AndroidTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified AndroidTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified AndroidTrustedRootCertificate.
         /// </summary>
         /// <returns>The AndroidTrustedRootCertificate.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified AndroidTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified AndroidTrustedRootCertificate using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidTrustedRootCertificate.</returns>
         System.Threading.Tasks.Task<AndroidTrustedRootCertificate> UpdateAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified AndroidTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidTrustedRootCertificateToUpdate">The AndroidTrustedRootCertificate to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> UpdateResponseAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="androidTrustedRootCertificateToUpdate">The AndroidTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidTrustedRootCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidTrustedRootCertificate>> UpdateResponseAsync(AndroidTrustedRootCertificate androidTrustedRootCertificateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

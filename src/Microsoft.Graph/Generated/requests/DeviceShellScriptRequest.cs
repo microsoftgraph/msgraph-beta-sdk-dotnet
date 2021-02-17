@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceShellScript using POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> CreateResponseAsync(DeviceShellScript deviceShellScriptToCreate)
+        {
+            return this.CreateResponseAsync(deviceShellScriptToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceShellScript using POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> CreateResponseAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScriptToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceShellScript.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceShellScript>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceShellScript and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DeviceShellScript and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DeviceShellScript>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceShellScript and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceShellScript and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceShellScript>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceShellScript using PATCH and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> UpdateResponseAsync(DeviceShellScript deviceShellScriptToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceShellScriptToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceShellScript using PATCH and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> UpdateResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceShellScriptToUpdate.AdditionalData != null)
+			{
+				if (deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceShellScriptToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceShellScriptToUpdate.AdditionalData != null)
+            {
+                if (deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceShellScriptToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

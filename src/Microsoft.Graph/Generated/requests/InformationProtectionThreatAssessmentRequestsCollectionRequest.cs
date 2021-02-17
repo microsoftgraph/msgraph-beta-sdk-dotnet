@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ThreatAssessmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest)
+        {
+            return this.AddResponseAsync(threatAssessmentRequest, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ThreatAssessmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.
+        /// </summary>
+        /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            threatAssessmentRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(threatAssessmentRequest.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -100,6 +125,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

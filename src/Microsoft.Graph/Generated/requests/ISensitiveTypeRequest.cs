@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
         /// <returns>The created SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate);
+
+        /// <summary>
         /// Creates the specified SensitiveType using POST.
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitiveType.</returns>
         System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SensitiveType using POST and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> CreateResponseAsync(SensitiveType sensitiveTypeToCreate);
+
+        /// <summary>
+        /// Creates the specified SensitiveType using POST and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> CreateResponseAsync(SensitiveType sensitiveTypeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SensitiveType.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified SensitiveType and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified SensitiveType and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified SensitiveType.
         /// </summary>
         /// <returns>The SensitiveType.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SensitiveType.</returns>
         System.Threading.Tasks.Task<SensitiveType> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified SensitiveType and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SensitiveType and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified SensitiveType using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SensitiveType.</returns>
         System.Threading.Tasks.Task<SensitiveType> UpdateAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PATCH and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType to update.</param>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> UpdateResponseAsync(SensitiveType sensitiveTypeToUpdate);
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PATCH and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> UpdateResponseAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

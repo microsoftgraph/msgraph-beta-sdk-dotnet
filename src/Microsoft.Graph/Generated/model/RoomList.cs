@@ -42,12 +42,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("rooms")]
         public IRoomListRoomsCollectionPage Rooms { get; set; }
     
-        /// <summary>
-        /// Gets or sets spaces.
-        /// </summary>
-        [JsonPropertyName("spaces")]
-        public IRoomListSpacesCollectionPage Spaces { get; set; }
-    
     }
 }
 

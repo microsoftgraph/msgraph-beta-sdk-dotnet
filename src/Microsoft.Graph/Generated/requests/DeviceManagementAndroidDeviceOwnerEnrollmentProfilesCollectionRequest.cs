@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfile, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AndroidDeviceOwnerEnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="androidDeviceOwnerEnrollmentProfile">The AndroidDeviceOwnerEnrollmentProfile to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> AddResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile)
+        {
+            return this.AddResponseAsync(androidDeviceOwnerEnrollmentProfile, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AndroidDeviceOwnerEnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="androidDeviceOwnerEnrollmentProfile">The AndroidDeviceOwnerEnrollmentProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> AddResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfile, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfile, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementAndroidDeviceOwnerEnrollmentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

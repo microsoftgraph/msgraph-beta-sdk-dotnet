@@ -25,13 +25,30 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="relationToCreate">The Relation to create.</param>
         /// <returns>The created Relation.</returns>
-        System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate);
+
+        /// <summary>
         /// Creates the specified Relation using POST.
         /// </summary>
         /// <param name="relationToCreate">The Relation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Relation.</returns>
         System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Relation using POST and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <param name="relationToCreate">The Relation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> CreateResponseAsync(Relation relationToCreate);
+
+        /// <summary>
+        /// Creates the specified Relation using POST and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <param name="relationToCreate">The Relation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> CreateResponseAsync(Relation relationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Relation.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph.TermStore
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified Relation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified Relation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified Relation.
         /// </summary>
         /// <returns>The Relation.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph.TermStore
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Relation.</returns>
         System.Threading.Tasks.Task<Relation> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified Relation and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Relation and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified Relation using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph.TermStore
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Relation.</returns>
         System.Threading.Tasks.Task<Relation> UpdateAsync(Relation relationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified Relation using PATCH and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <param name="relationToUpdate">The Relation to update.</param>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> UpdateResponseAsync(Relation relationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Relation using PATCH and returns a <see cref="GraphResponse{Relation}"/> object.
+        /// </summary>
+        /// <param name="relationToUpdate">The Relation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Relation>> UpdateResponseAsync(Relation relationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

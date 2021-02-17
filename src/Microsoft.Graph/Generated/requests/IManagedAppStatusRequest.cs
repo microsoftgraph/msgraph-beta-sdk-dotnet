@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
         /// <returns>The created ManagedAppStatus.</returns>
-        System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppStatus using POST.
         /// </summary>
         /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatus.</returns>
         System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppStatus.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagedAppStatus and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedAppStatus and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagedAppStatus.
         /// </summary>
         /// <returns>The ManagedAppStatus.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppStatus.</returns>
         System.Threading.Tasks.Task<ManagedAppStatus> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagedAppStatus and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedAppStatus and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagedAppStatus using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppStatus.</returns>
         System.Threading.Tasks.Task<ManagedAppStatus> UpdateAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagedAppStatus using PATCH and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> UpdateResponseAsync(ManagedAppStatus managedAppStatusToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedAppStatus using PATCH and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToUpdate">The ManagedAppStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> UpdateResponseAsync(ManagedAppStatus managedAppStatusToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

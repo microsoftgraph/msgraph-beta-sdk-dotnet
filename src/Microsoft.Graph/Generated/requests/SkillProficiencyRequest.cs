@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SkillProficiency using POST and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <param name="skillProficiencyToCreate">The SkillProficiency to create.</param>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> CreateResponseAsync(SkillProficiency skillProficiencyToCreate)
+        {
+            return this.CreateResponseAsync(skillProficiencyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SkillProficiency using POST and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <param name="skillProficiencyToCreate">The SkillProficiency to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> CreateResponseAsync(SkillProficiency skillProficiencyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SkillProficiency>(skillProficiencyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SkillProficiency.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SkillProficiency>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SkillProficiency and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SkillProficiency and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SkillProficiency>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SkillProficiency and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SkillProficiency and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SkillProficiency>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SkillProficiency>(skillProficiencyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkillProficiency using PATCH and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <param name="skillProficiencyToUpdate">The SkillProficiency to update.</param>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> UpdateResponseAsync(SkillProficiency skillProficiencyToUpdate)
+        {
+            return this.UpdateResponseAsync(skillProficiencyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SkillProficiency using PATCH and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
+        /// </summary>
+        /// <param name="skillProficiencyToUpdate">The SkillProficiency to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> UpdateResponseAsync(SkillProficiency skillProficiencyToUpdate, CancellationToken cancellationToken)
+        {
+			if (skillProficiencyToUpdate.AdditionalData != null)
+			{
+				if (skillProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					skillProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skillProficiencyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (skillProficiencyToUpdate.AdditionalData != null)
+            {
+                if (skillProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    skillProficiencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skillProficiencyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SkillProficiency>(skillProficiencyToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

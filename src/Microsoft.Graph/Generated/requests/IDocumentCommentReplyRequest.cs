@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="documentCommentReplyToCreate">The DocumentCommentReply to create.</param>
         /// <returns>The created DocumentCommentReply.</returns>
-        System.Threading.Tasks.Task<DocumentCommentReply> CreateAsync(DocumentCommentReply documentCommentReplyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DocumentCommentReply> CreateAsync(DocumentCommentReply documentCommentReplyToCreate);
+
+        /// <summary>
         /// Creates the specified DocumentCommentReply using POST.
         /// </summary>
         /// <param name="documentCommentReplyToCreate">The DocumentCommentReply to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DocumentCommentReply.</returns>
         System.Threading.Tasks.Task<DocumentCommentReply> CreateAsync(DocumentCommentReply documentCommentReplyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DocumentCommentReply using POST and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <param name="documentCommentReplyToCreate">The DocumentCommentReply to create.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> CreateResponseAsync(DocumentCommentReply documentCommentReplyToCreate);
+
+        /// <summary>
+        /// Creates the specified DocumentCommentReply using POST and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <param name="documentCommentReplyToCreate">The DocumentCommentReply to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> CreateResponseAsync(DocumentCommentReply documentCommentReplyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DocumentCommentReply.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified DocumentCommentReply and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified DocumentCommentReply and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified DocumentCommentReply.
         /// </summary>
         /// <returns>The DocumentCommentReply.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DocumentCommentReply.</returns>
         System.Threading.Tasks.Task<DocumentCommentReply> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified DocumentCommentReply and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DocumentCommentReply and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified DocumentCommentReply using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DocumentCommentReply.</returns>
         System.Threading.Tasks.Task<DocumentCommentReply> UpdateAsync(DocumentCommentReply documentCommentReplyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified DocumentCommentReply using PATCH and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <param name="documentCommentReplyToUpdate">The DocumentCommentReply to update.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> UpdateResponseAsync(DocumentCommentReply documentCommentReplyToUpdate);
+
+        /// <summary>
+        /// Updates the specified DocumentCommentReply using PATCH and returns a <see cref="GraphResponse{DocumentCommentReply}"/> object.
+        /// </summary>
+        /// <param name="documentCommentReplyToUpdate">The DocumentCommentReply to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentReply>> UpdateResponseAsync(DocumentCommentReply documentCommentReplyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

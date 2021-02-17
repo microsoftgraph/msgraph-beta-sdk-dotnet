@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosVppEBookAssignment using POST and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> CreateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(iosVppEBookAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosVppEBookAssignment using POST and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> CreateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(iosVppEBookAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosVppEBookAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<IosVppEBookAssignment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosVppEBookAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified IosVppEBookAssignment and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<IosVppEBookAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified IosVppEBookAssignment and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosVppEBookAssignment and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosVppEBookAssignment using PATCH and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToUpdate">The IosVppEBookAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> UpdateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate)
+        {
+            return this.UpdateResponseAsync(iosVppEBookAssignmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosVppEBookAssignment using PATCH and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToUpdate">The IosVppEBookAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> UpdateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosVppEBookAssignmentToUpdate.AdditionalData != null)
+			{
+				if (iosVppEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppEBookAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosVppEBookAssignmentToUpdate.AdditionalData != null)
+            {
+                if (iosVppEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosVppEBookAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppEBookAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

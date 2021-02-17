@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SkypeForBusinessOrganizerActivityUserCounts using POST and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityUserCountsToCreate">The SkypeForBusinessOrganizerActivityUserCounts to create.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> CreateResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeForBusinessOrganizerActivityUserCountsToCreate)
+        {
+            return this.CreateResponseAsync(skypeForBusinessOrganizerActivityUserCountsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SkypeForBusinessOrganizerActivityUserCounts using POST and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityUserCountsToCreate">The SkypeForBusinessOrganizerActivityUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> CreateResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeForBusinessOrganizerActivityUserCountsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SkypeForBusinessOrganizerActivityUserCounts>(skypeForBusinessOrganizerActivityUserCountsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SkypeForBusinessOrganizerActivityUserCounts.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<SkypeForBusinessOrganizerActivityUserCounts>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified SkypeForBusinessOrganizerActivityUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified SkypeForBusinessOrganizerActivityUserCounts and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<SkypeForBusinessOrganizerActivityUserCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified SkypeForBusinessOrganizerActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SkypeForBusinessOrganizerActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SkypeForBusinessOrganizerActivityUserCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<SkypeForBusinessOrganizerActivityUserCounts>(skypeForBusinessOrganizerActivityUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessOrganizerActivityUserCounts using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityUserCountsToUpdate">The SkypeForBusinessOrganizerActivityUserCounts to update.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> UpdateResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeForBusinessOrganizerActivityUserCountsToUpdate)
+        {
+            return this.UpdateResponseAsync(skypeForBusinessOrganizerActivityUserCountsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessOrganizerActivityUserCounts using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityUserCountsToUpdate">The SkypeForBusinessOrganizerActivityUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityUserCounts}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityUserCounts>> UpdateResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeForBusinessOrganizerActivityUserCountsToUpdate, CancellationToken cancellationToken)
+        {
+			if (skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData != null)
+			{
+				if (skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessOrganizerActivityUserCountsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData != null)
+            {
+                if (skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    skypeForBusinessOrganizerActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, skypeForBusinessOrganizerActivityUserCountsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SkypeForBusinessOrganizerActivityUserCounts>(skypeForBusinessOrganizerActivityUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

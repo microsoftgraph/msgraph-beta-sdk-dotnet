@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<OnenotePage>(onenotePage, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OnenotePage to the collection via POST and returns a <see cref="GraphResponse{OnenotePage}"/> object of the request.
+        /// </summary>
+        /// <param name="onenotePage">The OnenotePage to add.</param>
+        /// <returns>The <see cref="GraphResponse{OnenotePage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenotePage>> AddResponseAsync(OnenotePage onenotePage)
+        {
+            return this.AddResponseAsync(onenotePage, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OnenotePage to the collection via POST and returns a <see cref="GraphResponse{OnenotePage}"/> object of the request.
+        /// </summary>
+        /// <param name="onenotePage">The OnenotePage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenotePage}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenotePage>> AddResponseAsync(OnenotePage onenotePage, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnenotePage>(onenotePage, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteSectionPagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteSectionPagesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteSectionPagesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteSectionPagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSectionPagesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSectionPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnenoteSectionPagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

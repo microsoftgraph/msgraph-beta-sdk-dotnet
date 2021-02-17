@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DirectorySetting using POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> CreateResponseAsync(DirectorySetting directorySettingToCreate)
+        {
+            return this.CreateResponseAsync(directorySettingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DirectorySetting using POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> CreateResponseAsync(DirectorySetting directorySettingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectorySetting>(directorySettingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DirectorySetting.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<DirectorySetting>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified DirectorySetting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified DirectorySetting and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<DirectorySetting>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified DirectorySetting and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DirectorySetting and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DirectorySetting>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<DirectorySetting>(directorySettingToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DirectorySetting using PATCH and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <param name="directorySettingToUpdate">The DirectorySetting to update.</param>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> UpdateResponseAsync(DirectorySetting directorySettingToUpdate)
+        {
+            return this.UpdateResponseAsync(directorySettingToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DirectorySetting using PATCH and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
+        /// </summary>
+        /// <param name="directorySettingToUpdate">The DirectorySetting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> UpdateResponseAsync(DirectorySetting directorySettingToUpdate, CancellationToken cancellationToken)
+        {
+			if (directorySettingToUpdate.AdditionalData != null)
+			{
+				if (directorySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directorySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directorySettingToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (directorySettingToUpdate.AdditionalData != null)
+            {
+                if (directorySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    directorySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directorySettingToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DirectorySetting>(directorySettingToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

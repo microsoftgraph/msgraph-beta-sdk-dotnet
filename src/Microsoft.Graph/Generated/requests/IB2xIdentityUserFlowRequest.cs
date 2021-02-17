@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="b2xIdentityUserFlowToCreate">The B2xIdentityUserFlow to create.</param>
         /// <returns>The created B2xIdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<B2xIdentityUserFlow> CreateAsync(B2xIdentityUserFlow b2xIdentityUserFlowToCreate);        /// <summary>
+        System.Threading.Tasks.Task<B2xIdentityUserFlow> CreateAsync(B2xIdentityUserFlow b2xIdentityUserFlowToCreate);
+
+        /// <summary>
         /// Creates the specified B2xIdentityUserFlow using POST.
         /// </summary>
         /// <param name="b2xIdentityUserFlowToCreate">The B2xIdentityUserFlow to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created B2xIdentityUserFlow.</returns>
         System.Threading.Tasks.Task<B2xIdentityUserFlow> CreateAsync(B2xIdentityUserFlow b2xIdentityUserFlowToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified B2xIdentityUserFlow using POST and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2xIdentityUserFlowToCreate">The B2xIdentityUserFlow to create.</param>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> CreateResponseAsync(B2xIdentityUserFlow b2xIdentityUserFlowToCreate);
+
+        /// <summary>
+        /// Creates the specified B2xIdentityUserFlow using POST and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2xIdentityUserFlowToCreate">The B2xIdentityUserFlow to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> CreateResponseAsync(B2xIdentityUserFlow b2xIdentityUserFlowToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified B2xIdentityUserFlow.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified B2xIdentityUserFlow.
         /// </summary>
         /// <returns>The B2xIdentityUserFlow.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The B2xIdentityUserFlow.</returns>
         System.Threading.Tasks.Task<B2xIdentityUserFlow> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified B2xIdentityUserFlow using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated B2xIdentityUserFlow.</returns>
         System.Threading.Tasks.Task<B2xIdentityUserFlow> UpdateAsync(B2xIdentityUserFlow b2xIdentityUserFlowToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified B2xIdentityUserFlow using PATCH and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2xIdentityUserFlowToUpdate">The B2xIdentityUserFlow to update.</param>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> UpdateResponseAsync(B2xIdentityUserFlow b2xIdentityUserFlowToUpdate);
+
+        /// <summary>
+        /// Updates the specified B2xIdentityUserFlow using PATCH and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
+        /// </summary>
+        /// <param name="b2xIdentityUserFlowToUpdate">The B2xIdentityUserFlow to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> UpdateResponseAsync(B2xIdentityUserFlow b2xIdentityUserFlowToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

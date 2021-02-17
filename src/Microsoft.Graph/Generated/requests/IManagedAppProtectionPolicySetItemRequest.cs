@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppProtectionPolicySetItemToCreate">The ManagedAppProtectionPolicySetItem to create.</param>
         /// <returns>The created ManagedAppProtectionPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> CreateAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> CreateAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppProtectionPolicySetItem using POST.
         /// </summary>
         /// <param name="managedAppProtectionPolicySetItemToCreate">The ManagedAppProtectionPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppProtectionPolicySetItem.</returns>
         System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> CreateAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppProtectionPolicySetItem using POST and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionPolicySetItemToCreate">The ManagedAppProtectionPolicySetItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> CreateResponseAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppProtectionPolicySetItem using POST and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionPolicySetItemToCreate">The ManagedAppProtectionPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> CreateResponseAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppProtectionPolicySetItem.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ManagedAppProtectionPolicySetItem.
         /// </summary>
         /// <returns>The ManagedAppProtectionPolicySetItem.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppProtectionPolicySetItem.</returns>
         System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ManagedAppProtectionPolicySetItem using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppProtectionPolicySetItem.</returns>
         System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> UpdateAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ManagedAppProtectionPolicySetItem using PATCH and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionPolicySetItemToUpdate">The ManagedAppProtectionPolicySetItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> UpdateResponseAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedAppProtectionPolicySetItem using PATCH and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionPolicySetItemToUpdate">The ManagedAppProtectionPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> UpdateResponseAsync(ManagedAppProtectionPolicySetItem managedAppProtectionPolicySetItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

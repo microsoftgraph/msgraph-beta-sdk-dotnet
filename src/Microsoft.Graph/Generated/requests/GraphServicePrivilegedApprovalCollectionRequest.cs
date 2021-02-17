@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<PrivilegedApproval>(privilegedApproval, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified PrivilegedApproval to the collection via POST and returns a <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedApproval">The PrivilegedApproval to add.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PrivilegedApproval>> AddResponseAsync(PrivilegedApproval privilegedApproval)
+        {
+            return this.AddResponseAsync(privilegedApproval, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified PrivilegedApproval to the collection via POST and returns a <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.
+        /// </summary>
+        /// <param name="privilegedApproval">The PrivilegedApproval to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedApproval>> AddResponseAsync(PrivilegedApproval privilegedApproval, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PrivilegedApproval>(privilegedApproval, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedApprovalCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedApprovalCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedApprovalCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedApprovalCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedApprovalCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedApprovalCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GraphServicePrivilegedApprovalCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

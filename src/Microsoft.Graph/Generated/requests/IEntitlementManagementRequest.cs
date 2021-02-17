@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
         /// <returns>The created EntitlementManagement.</returns>
-        System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate);
+
+        /// <summary>
         /// Creates the specified EntitlementManagement using POST.
         /// </summary>
         /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EntitlementManagement.</returns>
         System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EntitlementManagement using POST and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate);
+
+        /// <summary>
+        /// Creates the specified EntitlementManagement using POST and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EntitlementManagement.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified EntitlementManagement and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified EntitlementManagement and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified EntitlementManagement.
         /// </summary>
         /// <returns>The EntitlementManagement.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EntitlementManagement.</returns>
         System.Threading.Tasks.Task<EntitlementManagement> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified EntitlementManagement and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EntitlementManagement and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified EntitlementManagement using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EntitlementManagement.</returns>
         System.Threading.Tasks.Task<EntitlementManagement> UpdateAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PATCH and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate);
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PATCH and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

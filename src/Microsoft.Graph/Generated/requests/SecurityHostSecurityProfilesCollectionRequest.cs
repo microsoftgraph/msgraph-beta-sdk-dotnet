@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<HostSecurityProfile>(hostSecurityProfile, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified HostSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
+        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> AddResponseAsync(HostSecurityProfile hostSecurityProfile)
+        {
+            return this.AddResponseAsync(hostSecurityProfile, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified HostSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> AddResponseAsync(HostSecurityProfile hostSecurityProfile, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<HostSecurityProfile>(hostSecurityProfile, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityHostSecurityProfilesCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityHostSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SecurityHostSecurityProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

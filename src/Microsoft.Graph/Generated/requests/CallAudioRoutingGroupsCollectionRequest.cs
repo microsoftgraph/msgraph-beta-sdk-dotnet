@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<AudioRoutingGroup>(audioRoutingGroup, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified AudioRoutingGroup to the collection via POST and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> AddResponseAsync(AudioRoutingGroup audioRoutingGroup)
+        {
+            return this.AddResponseAsync(audioRoutingGroup, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified AudioRoutingGroup to the collection via POST and returns a <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="audioRoutingGroup">The AudioRoutingGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AudioRoutingGroup}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AudioRoutingGroup>> AddResponseAsync(AudioRoutingGroup audioRoutingGroup, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AudioRoutingGroup>(audioRoutingGroup, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CallAudioRoutingGroupsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CallAudioRoutingGroupsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CallAudioRoutingGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CallAudioRoutingGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

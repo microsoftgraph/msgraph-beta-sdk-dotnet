@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkAppConfigurationSchema.</returns>
         System.Threading.Tasks.Task<AndroidForWorkAppConfigurationSchema> AddAsync(AndroidForWorkAppConfigurationSchema androidForWorkAppConfigurationSchema, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AndroidForWorkAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidForWorkAppConfigurationSchema">The AndroidForWorkAppConfigurationSchema to add.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkAppConfigurationSchema>> AddResponseAsync(AndroidForWorkAppConfigurationSchema androidForWorkAppConfigurationSchema);
+
+        /// <summary>
+        /// Adds the specified AndroidForWorkAppConfigurationSchema to the collection via POST and returns a <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.
+        /// </summary>
+        /// <param name="androidForWorkAppConfigurationSchema">The AndroidForWorkAppConfigurationSchema to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkAppConfigurationSchema}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkAppConfigurationSchema>> AddResponseAsync(AndroidForWorkAppConfigurationSchema androidForWorkAppConfigurationSchema, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IDeviceManagementAndroidForWorkAppConfigurationSchemasCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAndroidForWorkAppConfigurationSchemasCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

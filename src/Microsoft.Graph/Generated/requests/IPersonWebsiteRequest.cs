@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
         /// <returns>The created PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate);
+
+        /// <summary>
         /// Creates the specified PersonWebsite using POST.
         /// </summary>
         /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonWebsite.</returns>
         System.Threading.Tasks.Task<PersonWebsite> CreateAsync(PersonWebsite personWebsiteToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PersonWebsite using POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> CreateResponseAsync(PersonWebsite personWebsiteToCreate);
+
+        /// <summary>
+        /// Creates the specified PersonWebsite using POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="personWebsiteToCreate">The PersonWebsite to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> CreateResponseAsync(PersonWebsite personWebsiteToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PersonWebsite.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified PersonWebsite and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified PersonWebsite and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified PersonWebsite.
         /// </summary>
         /// <returns>The PersonWebsite.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonWebsite.</returns>
         System.Threading.Tasks.Task<PersonWebsite> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified PersonWebsite and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PersonWebsite and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified PersonWebsite using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonWebsite.</returns>
         System.Threading.Tasks.Task<PersonWebsite> UpdateAsync(PersonWebsite personWebsiteToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified PersonWebsite using PATCH and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="personWebsiteToUpdate">The PersonWebsite to update.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> UpdateResponseAsync(PersonWebsite personWebsiteToUpdate);
+
+        /// <summary>
+        /// Updates the specified PersonWebsite using PATCH and returns a <see cref="GraphResponse{PersonWebsite}"/> object.
+        /// </summary>
+        /// <param name="personWebsiteToUpdate">The PersonWebsite to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> UpdateResponseAsync(PersonWebsite personWebsiteToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

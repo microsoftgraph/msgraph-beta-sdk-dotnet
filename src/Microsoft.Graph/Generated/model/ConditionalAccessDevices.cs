@@ -29,11 +29,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets excludeDevices.
+        /// </summary>
+        [JsonPropertyName("excludeDevices")]
+        public IEnumerable<string> ExcludeDevices { get; set; }
+    
+        /// <summary>
         /// Gets or sets excludeDeviceStates.
         /// States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
         /// </summary>
         [JsonPropertyName("excludeDeviceStates")]
         public IEnumerable<string> ExcludeDeviceStates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets includeDevices.
+        /// </summary>
+        [JsonPropertyName("includeDevices")]
+        public IEnumerable<string> IncludeDevices { get; set; }
     
         /// <summary>
         /// Gets or sets includeDeviceStates.

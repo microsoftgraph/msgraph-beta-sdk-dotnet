@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnPremisesPublishingProfile using POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> CreateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate)
+        {
+            return this.CreateResponseAsync(onPremisesPublishingProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnPremisesPublishingProfile using POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToCreate">The OnPremisesPublishingProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> CreateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(onPremisesPublishingProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnPremisesPublishingProfile.
         /// </summary>
         /// <returns>The task to await.</returns>
@@ -78,6 +101,26 @@ namespace Microsoft.Graph
         {
             this.Method = "DELETE";
             await this.SendAsync<OnPremisesPublishingProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
+        {
+            return this.DeleteResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Deletes the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "DELETE";
+            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -100,6 +143,26 @@ namespace Microsoft.Graph
             var retrievedEntity = await this.SendAsync<OnPremisesPublishingProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
+        }
+
+        /// <summary>
+        /// Gets the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OnPremisesPublishingProfile and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -152,6 +215,56 @@ namespace Microsoft.Graph
             var updatedEntity = await this.SendAsync<OnPremisesPublishingProfile>(onPremisesPublishingProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PATCH and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> UpdateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate)
+        {
+            return this.UpdateResponseAsync(onPremisesPublishingProfileToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesPublishingProfile using PATCH and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object.
+        /// </summary>
+        /// <param name="onPremisesPublishingProfileToUpdate">The OnPremisesPublishingProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> UpdateResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfileToUpdate, CancellationToken cancellationToken)
+        {
+			if (onPremisesPublishingProfileToUpdate.AdditionalData != null)
+			{
+				if (onPremisesPublishingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onPremisesPublishingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesPublishingProfileToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onPremisesPublishingProfileToUpdate.AdditionalData != null)
+            {
+                if (onPremisesPublishingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onPremisesPublishingProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesPublishingProfileToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(onPremisesPublishingProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

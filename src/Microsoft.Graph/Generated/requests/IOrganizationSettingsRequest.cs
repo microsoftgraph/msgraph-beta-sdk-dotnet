@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
         /// <returns>The created OrganizationSettings.</returns>
-        System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate);
+
+        /// <summary>
         /// Creates the specified OrganizationSettings using POST.
         /// </summary>
         /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationSettings.</returns>
         System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OrganizationSettings using POST and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> CreateResponseAsync(OrganizationSettings organizationSettingsToCreate);
+
+        /// <summary>
+        /// Creates the specified OrganizationSettings using POST and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> CreateResponseAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OrganizationSettings.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified OrganizationSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified OrganizationSettings and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified OrganizationSettings.
         /// </summary>
         /// <returns>The OrganizationSettings.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrganizationSettings.</returns>
         System.Threading.Tasks.Task<OrganizationSettings> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified OrganizationSettings and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OrganizationSettings and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified OrganizationSettings using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationSettings.</returns>
         System.Threading.Tasks.Task<OrganizationSettings> UpdateAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified OrganizationSettings using PATCH and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> UpdateResponseAsync(OrganizationSettings organizationSettingsToUpdate);
+
+        /// <summary>
+        /// Updates the specified OrganizationSettings using PATCH and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
+        /// </summary>
+        /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> UpdateResponseAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

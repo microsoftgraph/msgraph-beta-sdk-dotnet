@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SharedEmailDomainInvitation>(sharedEmailDomainInvitation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SharedEmailDomainInvitation to the collection via POST and returns a <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.
+        /// </summary>
+        /// <param name="sharedEmailDomainInvitation">The SharedEmailDomainInvitation to add.</param>
+        /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> AddResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation)
+        {
+            return this.AddResponseAsync(sharedEmailDomainInvitation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SharedEmailDomainInvitation to the collection via POST and returns a <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.
+        /// </summary>
+        /// <param name="sharedEmailDomainInvitation">The SharedEmailDomainInvitation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> AddResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(sharedEmailDomainInvitation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainSharedEmailDomainInvitationsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainSharedEmailDomainInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DomainSharedEmailDomainInvitationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

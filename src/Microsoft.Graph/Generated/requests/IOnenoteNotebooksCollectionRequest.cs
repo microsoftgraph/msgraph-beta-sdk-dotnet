@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notebook.</returns>
         System.Threading.Tasks.Task<Notebook> AddAsync(Notebook notebook, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
+        /// </summary>
+        /// <param name="notebook">The Notebook to add.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook);
+
+        /// <summary>
+        /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
+        /// </summary>
+        /// <param name="notebook">The Notebook to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -47,6 +63,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
         System.Threading.Tasks.Task<IOnenoteNotebooksCollectionPage> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteNotebooksCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteNotebooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.

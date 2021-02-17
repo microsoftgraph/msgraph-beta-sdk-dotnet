@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<JobResponseBase>(jobResponseBase, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified JobResponseBase to the collection via POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object of the request.
+        /// </summary>
+        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase)
+        {
+            return this.AddResponseAsync(jobResponseBase, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified JobResponseBase to the collection via POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object of the request.
+        /// </summary>
+        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<JobResponseBase>(jobResponseBase, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -99,6 +123,26 @@ namespace Microsoft.Graph
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextJobsCollectionResponse>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DataClassificationServiceClassifyTextJobsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

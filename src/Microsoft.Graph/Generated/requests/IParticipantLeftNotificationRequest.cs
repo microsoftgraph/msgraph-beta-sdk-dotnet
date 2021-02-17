@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="participantLeftNotificationToCreate">The ParticipantLeftNotification to create.</param>
         /// <returns>The created ParticipantLeftNotification.</returns>
-        System.Threading.Tasks.Task<ParticipantLeftNotification> CreateAsync(ParticipantLeftNotification participantLeftNotificationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ParticipantLeftNotification> CreateAsync(ParticipantLeftNotification participantLeftNotificationToCreate);
+
+        /// <summary>
         /// Creates the specified ParticipantLeftNotification using POST.
         /// </summary>
         /// <param name="participantLeftNotificationToCreate">The ParticipantLeftNotification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ParticipantLeftNotification.</returns>
         System.Threading.Tasks.Task<ParticipantLeftNotification> CreateAsync(ParticipantLeftNotification participantLeftNotificationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ParticipantLeftNotification using POST and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <param name="participantLeftNotificationToCreate">The ParticipantLeftNotification to create.</param>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> CreateResponseAsync(ParticipantLeftNotification participantLeftNotificationToCreate);
+
+        /// <summary>
+        /// Creates the specified ParticipantLeftNotification using POST and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <param name="participantLeftNotificationToCreate">The ParticipantLeftNotification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> CreateResponseAsync(ParticipantLeftNotification participantLeftNotificationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ParticipantLeftNotification.
@@ -47,6 +64,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Deletes the specified ParticipantLeftNotification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+
+        /// <summary>
+        /// Deletes the specified ParticipantLeftNotification and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Gets the specified ParticipantLeftNotification.
         /// </summary>
         /// <returns>The ParticipantLeftNotification.</returns>
@@ -58,6 +88,19 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ParticipantLeftNotification.</returns>
         System.Threading.Tasks.Task<ParticipantLeftNotification> GetAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Gets the specified ParticipantLeftNotification and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ParticipantLeftNotification and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> GetResponseAsync(CancellationToken cancellationToken);
 
         /// <summary>
         /// Updates the specified ParticipantLeftNotification using PATCH.
@@ -74,6 +117,22 @@ namespace Microsoft.Graph
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ParticipantLeftNotification.</returns>
         System.Threading.Tasks.Task<ParticipantLeftNotification> UpdateAsync(ParticipantLeftNotification participantLeftNotificationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Updates the specified ParticipantLeftNotification using PATCH and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <param name="participantLeftNotificationToUpdate">The ParticipantLeftNotification to update.</param>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> UpdateResponseAsync(ParticipantLeftNotification participantLeftNotificationToUpdate);
+
+        /// <summary>
+        /// Updates the specified ParticipantLeftNotification using PATCH and returns a <see cref="GraphResponse{ParticipantLeftNotification}"/> object.
+        /// </summary>
+        /// <param name="participantLeftNotificationToUpdate">The ParticipantLeftNotification to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ParticipantLeftNotification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ParticipantLeftNotification>> UpdateResponseAsync(ParticipantLeftNotification participantLeftNotificationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Adds the specified expand value to the request.
