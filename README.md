@@ -71,14 +71,16 @@ Install NewtonSoft.Json first if you want to use a version greater than NewtonSo
 
 Install System.Runtime.InteropServices.RuntimeInformation before you install Microsoft.Graph >=1.3 if you are having an issue updating the package for a Xamarin solution. You may need to updated references to Microsoft.NETCore.UniversalWindowsPlatform to >=5.2.2 as well.
 
-### Upgrading to 0.x.x-preview+netstandard2.0 from 0.x.x-preview
+### Upgrading to v2.x.x-preview
 
-Between 0.x.x-preview and 0.x.x-preview+netstandard2.0 there were some major breaking changes:
+Between 0.x.x-preview and 2.x.x-preview there were some major breaking changes:
 
  * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
  * .NET Framework minimum version bumped from `net45` to `net461`
  * Replacing Newtosoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
+
+View the upgrade guide [here](docs/upgrade-to-v2.md).
 
 ## Issues
 
