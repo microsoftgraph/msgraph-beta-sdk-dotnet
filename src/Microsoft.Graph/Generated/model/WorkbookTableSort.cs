@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets fields.
+        /// Represents the current conditions used to last sort the table. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<WorkbookSortField> Fields { get; set; }

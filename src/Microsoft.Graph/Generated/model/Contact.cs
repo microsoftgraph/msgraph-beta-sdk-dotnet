@@ -116,12 +116,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets im addresses.
+        /// The contact's instant messaging (IM) addresses.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "imAddresses", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> ImAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets initials.
+        /// The contact's initials.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initials", Required = Newtonsoft.Json.Required.Default)]
         public string Initials { get; set; }
@@ -134,42 +136,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets job title.
+        /// The contact’s job title.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets manager.
+        /// The name of the contact's manager.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public string Manager { get; set; }
     
         /// <summary>
         /// Gets or sets middle name.
+        /// The contact's middle name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middleName", Required = Newtonsoft.Json.Required.Default)]
         public string MiddleName { get; set; }
     
         /// <summary>
         /// Gets or sets nick name.
+        /// The contact's nickname.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "nickName", Required = Newtonsoft.Json.Required.Default)]
         public string NickName { get; set; }
     
         /// <summary>
         /// Gets or sets office location.
+        /// The location of the contact's office.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets parent folder id.
+        /// The ID of the contact's parent folder.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentFolderId", Required = Newtonsoft.Json.Required.Default)]
         public string ParentFolderId { get; set; }
     
         /// <summary>
         /// Gets or sets personal notes.
+        /// The user's notes about the contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personalNotes", Required = Newtonsoft.Json.Required.Default)]
         public string PersonalNotes { get; set; }
@@ -188,24 +197,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets profession.
+        /// The contact's profession.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "profession", Required = Newtonsoft.Json.Required.Default)]
         public string Profession { get; set; }
     
         /// <summary>
         /// Gets or sets spouse name.
+        /// The name of the contact's spouse/partner.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "spouseName", Required = Newtonsoft.Json.Required.Default)]
         public string SpouseName { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
+        /// The contact's surname.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "surname", Required = Newtonsoft.Json.Required.Default)]
         public string Surname { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// The contact's title.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "title", Required = Newtonsoft.Json.Required.Default)]
         public string Title { get; set; }
@@ -224,18 +237,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets yomi company name.
+        /// The phonetic Japanese company name of the contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yomiCompanyName", Required = Newtonsoft.Json.Required.Default)]
         public string YomiCompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets yomi given name.
+        /// The phonetic Japanese given name (first name) of the contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yomiGivenName", Required = Newtonsoft.Json.Required.Default)]
         public string YomiGivenName { get; set; }
     
         /// <summary>
         /// Gets or sets yomi surname.
+        /// The phonetic Japanese surname (last name)  of the contact.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "yomiSurname", Required = Newtonsoft.Json.Required.Default)]
         public string YomiSurname { get; set; }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AuditLogRootRequestBuilder.
     /// </summary>
-    public partial class AuditLogRootRequestBuilder : BaseRequestBuilder, IAuditLogRootRequestBuilder
+    public partial class AuditLogRootRequestBuilder : EntityRequestBuilder, IAuditLogRootRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public IAuditLogRootRequest Request()
+        public new IAuditLogRootRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public IAuditLogRootRequest Request(IEnumerable<Option> options)
+        public new IAuditLogRootRequest Request(IEnumerable<Option> options)
         {
             return new AuditLogRootRequest(this.RequestUrl, this.Client, options);
         }
