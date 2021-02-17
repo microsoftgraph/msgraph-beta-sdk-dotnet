@@ -37,10 +37,34 @@ namespace Microsoft.Graph
         public Int64? ActiveFileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets anonymous link count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "anonymousLinkCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? AnonymousLinkCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets company link count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyLinkCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? CompanyLinkCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external sharing.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSharing", Required = Newtonsoft.Json.Required.Default)]
+        public bool? ExternalSharing { get; set; }
+    
+        /// <summary>
         /// Gets or sets file count.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileCount", Required = Newtonsoft.Json.Required.Default)]
         public Int64? FileCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets geolocation.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geolocation", Required = Newtonsoft.Json.Required.Default)]
+        public string Geolocation { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
@@ -91,10 +115,28 @@ namespace Microsoft.Graph
         public string RootWebTemplate { get; set; }
     
         /// <summary>
+        /// Gets or sets secure link for guest count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureLinkForGuestCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SecureLinkForGuestCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secure link for member count.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureLinkForMemberCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int64? SecureLinkForMemberCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets site id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
         public Guid? SiteId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets site sensitivity label id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteSensitivityLabelId", Required = Newtonsoft.Json.Required.Default)]
+        public string SiteSensitivityLabelId { get; set; }
     
         /// <summary>
         /// Gets or sets site url.
@@ -113,6 +155,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
         public Int64? StorageUsedInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unmanaged device policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unmanagedDevicePolicy", Required = Newtonsoft.Json.Required.Default)]
+        public string UnmanagedDevicePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets visited page count.

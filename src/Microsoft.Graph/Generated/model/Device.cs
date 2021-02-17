@@ -60,6 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device category.
+        /// User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceCategory", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceCategory { get; set; }
@@ -80,6 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device ownership.
+        /// Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceOwnership", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceOwnership { get; set; }
@@ -100,18 +102,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets domain name.
+        /// The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "domainName", Required = Newtonsoft.Json.Required.Default)]
         public string DomainName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment profile name.
+        /// Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentProfileName", Required = Newtonsoft.Json.Required.Default)]
         public string EnrollmentProfileName { get; set; }
     
         /// <summary>
         /// Gets or sets enrollment type.
+        /// Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enrollmentType", Required = Newtonsoft.Json.Required.Default)]
         public string EnrollmentType { get; set; }
@@ -144,12 +149,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is rooted.
+        /// true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isRooted", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsRooted { get; set; }
     
         /// <summary>
         /// Gets or sets management type.
+        /// Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementType", Required = Newtonsoft.Json.Required.Default)]
         public string ManagementType { get; set; }
@@ -198,6 +205,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registration date time.
+        /// Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "registrationDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? RegistrationDateTime { get; set; }
@@ -262,6 +270,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
+        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberOf", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceMemberOfCollectionWithReferencesPage MemberOf { get; set; }

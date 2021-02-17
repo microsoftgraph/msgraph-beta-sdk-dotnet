@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type Audit Log Root.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class AuditLogRoot
+    public partial class AuditLogRoot : Entity
     {
     
 		///<summary>
@@ -33,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets directory audits.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryAudits", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
@@ -57,21 +57,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign ins.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signIns", Required = Newtonsoft.Json.Required.Default)]
         public IAuditLogRootSignInsCollectionPage SignIns { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

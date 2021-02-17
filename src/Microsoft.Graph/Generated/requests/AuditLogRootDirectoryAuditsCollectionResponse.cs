@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type AuditLogRootDirectoryAuditsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class AuditLogRootDirectoryAuditsCollectionResponse
     {
         /// <summary>

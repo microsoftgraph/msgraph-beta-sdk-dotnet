@@ -298,22 +298,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (printToInitialize.Reports != null && printToInitialize.Reports.CurrentPage != null)
-                {
-                    printToInitialize.Reports.AdditionalData = printToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    printToInitialize.AdditionalData.TryGetValue("reports@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        printToInitialize.Reports.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (printToInitialize.Services != null && printToInitialize.Services.CurrentPage != null)
                 {
                     printToInitialize.Services.AdditionalData = printToInitialize.AdditionalData;

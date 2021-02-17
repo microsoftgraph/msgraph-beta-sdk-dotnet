@@ -39,7 +39,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue.
+        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, roster, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public PlannerContainerType? Type { get; set; }

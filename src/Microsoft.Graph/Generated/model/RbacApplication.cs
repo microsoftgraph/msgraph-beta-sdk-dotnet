@@ -48,6 +48,42 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitions", Required = Newtonsoft.Json.Required.Default)]
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
     
+        /// <summary>
+        /// Gets or sets role assignment requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleAssignmentRequestsCollectionPage RoleAssignmentRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role assignment schedule instances.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentScheduleInstances", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage RoleAssignmentScheduleInstances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role assignment schedules.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleAssignmentSchedules", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleAssignmentSchedulesCollectionPage RoleAssignmentSchedules { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility requests.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilityRequests", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleEligibilityRequestsCollectionPage RoleEligibilityRequests { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility schedule instances.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilityScheduleInstances", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage RoleEligibilityScheduleInstances { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role eligibility schedules.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleEligibilitySchedules", Required = Newtonsoft.Json.Required.Default)]
+        public IRbacApplicationRoleEligibilitySchedulesCollectionPage RoleEligibilitySchedules { get; set; }
+    
     }
 }
 

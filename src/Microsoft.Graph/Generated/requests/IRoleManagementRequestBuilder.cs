@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IRbacApplicationRequestBuilder Directory { get; }
 
         /// <summary>
+        /// Gets the request builder for EntitlementManagement.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>
+        IRbacApplicationRequestBuilder EntitlementManagement { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagement.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>

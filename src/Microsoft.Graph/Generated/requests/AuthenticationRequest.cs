@@ -282,6 +282,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (authenticationToInitialize.Operations != null && authenticationToInitialize.Operations.CurrentPage != null)
                 {
                     authenticationToInitialize.Operations.AdditionalData = authenticationToInitialize.AdditionalData;
@@ -341,6 +357,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         authenticationToInitialize.PhoneMethods.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (authenticationToInitialize.WindowsHelloForBusinessMethods != null && authenticationToInitialize.WindowsHelloForBusinessMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

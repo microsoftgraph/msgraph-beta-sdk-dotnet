@@ -46,7 +46,8 @@ namespace Microsoft.Graph
             string activityType = null,
             Int64? chainId = null,
             ItemBody previewText = null,
-            IEnumerable<KeyValuePair> templateParameters = null);
+            IEnumerable<KeyValuePair> templateParameters = null,
+            string teamsAppId = null);
     
     }
 }

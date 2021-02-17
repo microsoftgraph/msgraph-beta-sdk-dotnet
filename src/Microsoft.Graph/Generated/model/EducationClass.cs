@@ -135,6 +135,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group.
+        /// The directory group corresponding to this class.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
         public Group Group { get; set; }

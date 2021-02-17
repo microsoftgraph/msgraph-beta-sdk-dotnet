@@ -217,6 +217,30 @@ namespace Microsoft.Graph
                 return new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("identitySecurityDefaultsEnforcementPolicy"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootRoleManagementPoliciesCollectionRequestBuilder RoleManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootRoleManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicyAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder RoleManagementPolicyAssignments
+        {
+            get
+            {
+                return new PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleManagementPolicyAssignments"), this.Client);
+            }
+        }
     
     }
 }

@@ -88,6 +88,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history.
+        /// The activity related to user risk level change
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "history", Required = Newtonsoft.Json.Required.Default)]
         public IRiskyUserHistoryCollectionPage History { get; set; }

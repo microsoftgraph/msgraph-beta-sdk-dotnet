@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IRequestRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Approval.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
-        IApprovalRequestBuilder Approval { get; }
-    
-        /// <summary>
         /// Gets the request builder for RequestStop.
         /// </summary>
         /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>

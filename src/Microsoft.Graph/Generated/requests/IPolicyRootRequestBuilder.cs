@@ -114,6 +114,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
         IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPoliciesCollectionRequestBuilder RoleManagementPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementPolicyAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder"/>.</returns>
+        IPolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder RoleManagementPolicyAssignments { get; }
     
     }
 }

@@ -116,6 +116,18 @@ namespace Microsoft.Graph
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets role management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role management policy assignments.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleManagementPolicyAssignments", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]

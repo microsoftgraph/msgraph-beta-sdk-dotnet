@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets cell addresses.
+        /// Represents the cell addresses
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cellAddresses", Required = Newtonsoft.Json.Required.Default)]
         public Newtonsoft.Json.Linq.JToken CellAddresses { get; set; }

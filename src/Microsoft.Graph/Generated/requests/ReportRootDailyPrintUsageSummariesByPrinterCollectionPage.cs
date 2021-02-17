@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ReportRootDailyPrintUsageSummariesByPrinterCollectionPage.
     /// </summary>
-    public partial class ReportRootDailyPrintUsageSummariesByPrinterCollectionPage : CollectionPage<PrintUsageSummaryByPrinter>, IReportRootDailyPrintUsageSummariesByPrinterCollectionPage
+    public partial class ReportRootDailyPrintUsageSummariesByPrinterCollectionPage : CollectionPage<PrintUsageByPrinter>, IReportRootDailyPrintUsageSummariesByPrinterCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest"/> instance.

@@ -31,10 +31,40 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
-        /// Gets or sets approval.
+        /// Gets or sets approval id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approval", Required = Newtonsoft.Json.Required.Default)]
-        public Approval Approval { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "approvalId", Required = Newtonsoft.Json.Required.Default)]
+        public string ApprovalId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets completed date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CompletedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created by.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        public IdentitySet CreatedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom data.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customData", Required = Newtonsoft.Json.Required.Default)]
+        public string CustomData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        public string Status { get; set; }
     
     }
 }

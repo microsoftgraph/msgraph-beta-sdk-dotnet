@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets child category ids.
+        /// List of child ids of the category.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "childCategoryIds", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> ChildCategoryIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Description of the item
         /// </summary>
@@ -59,11 +66,32 @@ namespace Microsoft.Graph
         public string Name { get; set; }
     
         /// <summary>
+        /// Gets or sets parent category id.
+        /// Parent id of the category.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "parentCategoryId", Required = Newtonsoft.Json.Required.Default)]
+        public string ParentCategoryId { get; set; }
+    
+        /// <summary>
         /// Gets or sets platforms.
         /// Platforms types, which settings in the category have. Possible values are: none, macOS, windows10X, windows10.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "platforms", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
+    
+        /// <summary>
+        /// Gets or sets root category id.
+        /// Root id of the category.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCategoryId", Required = Newtonsoft.Json.Required.Default)]
+        public string RootCategoryId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets setting usage.
+        /// Indicates that the category contains settings that are used for Compliance or Configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settingUsage", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.

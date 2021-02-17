@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByPrinter to the collection via POST.
+        /// Adds the specified PrintUsageByPrinter to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByPrinter">The PrintUsageSummaryByPrinter to add.</param>
-        /// <returns>The created PrintUsageSummaryByPrinter.</returns>
-        System.Threading.Tasks.Task<PrintUsageSummaryByPrinter> AddAsync(PrintUsageSummaryByPrinter PrintUsageSummaryByPrinter);
+        /// <param name="printUsageByPrinter">The PrintUsageByPrinter to add.</param>
+        /// <returns>The created PrintUsageByPrinter.</returns>
+        System.Threading.Tasks.Task<PrintUsageByPrinter> AddAsync(PrintUsageByPrinter printUsageByPrinter);
 
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByPrinter to the collection via POST.
+        /// Adds the specified PrintUsageByPrinter to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByPrinter">The PrintUsageSummaryByPrinter to add.</param>
+        /// <param name="printUsageByPrinter">The PrintUsageByPrinter to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrintUsageSummaryByPrinter.</returns>
-        System.Threading.Tasks.Task<PrintUsageSummaryByPrinter> AddAsync(PrintUsageSummaryByPrinter PrintUsageSummaryByPrinter, CancellationToken cancellationToken);
+        /// <returns>The created PrintUsageByPrinter.</returns>
+        System.Threading.Tasks.Task<PrintUsageByPrinter> AddAsync(PrintUsageByPrinter printUsageByPrinter, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest Expand(Expression<Func<PrintUsageSummaryByPrinter, object>> expandExpression);
+        IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest Expand(Expression<Func<PrintUsageByPrinter, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest Select(Expression<Func<PrintUsageSummaryByPrinter, object>> selectExpression);
+        IReportRootDailyPrintUsageSummariesByPrinterCollectionRequest Select(Expression<Func<PrintUsageByPrinter, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

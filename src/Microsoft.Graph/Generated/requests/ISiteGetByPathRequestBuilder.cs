@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         IListRequestBuilder Lists  { get; }
         /// <summary>
         /// Gets the request builder for Onenote.
-        /// 
+        /// Calls the OneNote service for notebook related operations.
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote  { get; }

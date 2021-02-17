@@ -55,6 +55,18 @@ namespace Microsoft.Graph
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }
     
         /// <summary>
+        /// Gets or sets daily print usage by printer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets daily print usage by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+    
+        /// <summary>
         /// Gets or sets daily print usage summaries by printer.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByPrinter", Required = Newtonsoft.Json.Required.Default)]
@@ -65,6 +77,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByUser", Required = Newtonsoft.Json.Required.Default)]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by printer.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by user.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by printer.

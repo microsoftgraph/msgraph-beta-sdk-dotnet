@@ -19,8 +19,7 @@ namespace Microsoft.Graph
     /// The type Security.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
-    public partial class Security
+    public partial class Security : Entity
     {
     
 		///<summary>
@@ -39,6 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alerts.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "alerts", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityAlertsCollectionPage Alerts { get; set; }
@@ -108,18 +108,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userSecurityProfiles", Required = Newtonsoft.Json.Required.Default)]
         public ISecurityUserSecurityProfilesCollectionPage UserSecurityProfiles { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

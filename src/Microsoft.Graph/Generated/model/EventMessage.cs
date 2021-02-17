@@ -45,6 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is delegated.
+        /// True if this meeting request is accessible to a delegate, false otherwise. Default is false.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDelegated", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsDelegated { get; set; }
@@ -63,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting message type.
+        /// The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingMessageType", Required = Newtonsoft.Json.Required.Default)]
         public MeetingMessageType? MeetingMessageType { get; set; }
