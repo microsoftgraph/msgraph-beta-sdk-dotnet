@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IPrintUsageSummaryByUserRequestBuilder"/> for the specified ReportRootPrintUsageSummaryByUser.
+        /// Gets an <see cref="IPrintUsageByUserRequestBuilder"/> for the specified ReportRootPrintUsageByUser.
         /// </summary>
-        /// <param name="id">The ID for the ReportRootPrintUsageSummaryByUser.</param>
-        /// <returns>The <see cref="IPrintUsageSummaryByUserRequestBuilder"/>.</returns>
-        public IPrintUsageSummaryByUserRequestBuilder this[string id]
+        /// <param name="id">The ID for the ReportRootPrintUsageByUser.</param>
+        /// <returns>The <see cref="IPrintUsageByUserRequestBuilder"/>.</returns>
+        public IPrintUsageByUserRequestBuilder this[string id]
         {
             get
             {
-                return new PrintUsageSummaryByUserRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new PrintUsageByUserRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// The interface IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage.
     /// </summary>
     [JsonConverter(typeof(InterfaceConverter<ReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage>))]
-    public interface IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage : ICollectionPage<PrintUsageSummaryByPrinter>
+    public interface IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage : ICollectionPage<PrintUsageByPrinter>
     {
         /// <summary>
         /// Gets the next page <see cref="IReportRootMonthlyPrintUsageSummariesByPrinterCollectionRequest"/> instance.

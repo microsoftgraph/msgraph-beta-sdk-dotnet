@@ -52,5 +52,11 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "templateParameters", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<KeyValuePair> TemplateParameters { get; set; }
     
+        /// <summary>
+        /// Gets or sets TeamsAppId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string TeamsAppId { get; set; }
+    
     }
 }

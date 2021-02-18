@@ -85,6 +85,116 @@ namespace Microsoft.Graph
                 return new RbacApplicationRoleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleDefinitions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for RoleAssignmentRequests.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleAssignmentRequestsCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleAssignmentRequestsCollectionRequestBuilder RoleAssignmentRequests
+        {
+            get
+            {
+                return new RbacApplicationRoleAssignmentRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleAssignmentScheduleInstances.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder RoleAssignmentScheduleInstances
+        {
+            get
+            {
+                return new RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentScheduleInstances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleAssignmentSchedules.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder RoleAssignmentSchedules
+        {
+            get
+            {
+                return new RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleAssignmentSchedules"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleEligibilityRequests.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleEligibilityRequestsCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleEligibilityRequestsCollectionRequestBuilder RoleEligibilityRequests
+        {
+            get
+            {
+                return new RbacApplicationRoleEligibilityRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleEligibilityRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleEligibilityScheduleInstances.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder RoleEligibilityScheduleInstances
+        {
+            get
+            {
+                return new RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleEligibilityScheduleInstances"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for RoleEligibilitySchedules.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder RoleEligibilitySchedules
+        {
+            get
+            {
+                return new RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("roleEligibilitySchedules"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for RbacApplicationRoleScheduleInstances.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleScheduleInstancesRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleScheduleInstancesRequestBuilder RoleScheduleInstances(
+            string directoryScopeId = null,
+            string appScopeId = null,
+            string principalId = null,
+            string roleDefinitionId = null)
+        {
+            return new RbacApplicationRoleScheduleInstancesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.roleScheduleInstances"),
+                this.Client,
+                directoryScopeId,
+                appScopeId,
+                principalId,
+                roleDefinitionId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for RbacApplicationRoleSchedules.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRoleSchedulesRequestBuilder"/>.</returns>
+        public IRbacApplicationRoleSchedulesRequestBuilder RoleSchedules(
+            string directoryScopeId = null,
+            string appScopeId = null,
+            string principalId = null,
+            string roleDefinitionId = null)
+        {
+            return new RbacApplicationRoleSchedulesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.roleSchedules"),
+                this.Client,
+                directoryScopeId,
+                appScopeId,
+                principalId,
+                roleDefinitionId);
+        }
     
     }
 }

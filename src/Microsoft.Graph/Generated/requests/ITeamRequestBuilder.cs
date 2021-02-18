@@ -132,7 +132,8 @@ namespace Microsoft.Graph
             Int64? chainId = null,
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
-            TeamworkNotificationRecipient recipient = null);
+            TeamworkNotificationRecipient recipient = null,
+            string teamsAppId = null);
 
         /// <summary>
         /// Gets the request builder for TeamUnarchive.

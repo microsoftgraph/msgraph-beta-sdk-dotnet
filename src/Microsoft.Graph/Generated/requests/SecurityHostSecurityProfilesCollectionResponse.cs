@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type SecurityHostSecurityProfilesCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class SecurityHostSecurityProfilesCollectionResponse
     {
         /// <summary>

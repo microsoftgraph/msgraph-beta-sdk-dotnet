@@ -156,6 +156,14 @@ namespace Microsoft.Graph
         IServicePrincipalUpdatePasswordSingleSignOnCredentialsRequestBuilder UpdatePasswordSingleSignOnCredentials(
             string id,
             IEnumerable<Credential> credentials);
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalAddTokenSigningCertificate.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalAddTokenSigningCertificateRequestBuilder"/>.</returns>
+        IServicePrincipalAddTokenSigningCertificateRequestBuilder AddTokenSigningCertificate(
+            string displayName = null,
+            DateTimeOffset? endDateTime = null);
     
     }
 }

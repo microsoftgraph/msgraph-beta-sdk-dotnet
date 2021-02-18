@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new UserConsentRequestRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Approval.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
+        public IApprovalRequestBuilder Approval
+        {
+            get
+            {
+                return new ApprovalRequestBuilder(this.AppendSegmentToRequestUrl("approval"), this.Client);
+            }
+        }
+    
     }
 }

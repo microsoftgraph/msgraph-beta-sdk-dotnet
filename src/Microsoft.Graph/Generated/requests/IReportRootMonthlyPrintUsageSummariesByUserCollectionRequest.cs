@@ -22,19 +22,19 @@ namespace Microsoft.Graph
     {
         
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByUser to the collection via POST.
+        /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByUser">The PrintUsageSummaryByUser to add.</param>
-        /// <returns>The created PrintUsageSummaryByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageSummaryByUser> AddAsync(PrintUsageSummaryByUser PrintUsageSummaryByUser);
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
+        /// <returns>The created PrintUsageByUser.</returns>
+        System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser);
 
         /// <summary>
-        /// Adds the specified PrintUsageSummaryByUser to the collection via POST.
+        /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
-        /// <param name="PrintUsageSummaryByUser">The PrintUsageSummaryByUser to add.</param>
+        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PrintUsageSummaryByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageSummaryByUser> AddAsync(PrintUsageSummaryByUser PrintUsageSummaryByUser, CancellationToken cancellationToken);
+        /// <returns>The created PrintUsageByUser.</returns>
+        System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken);
         /// <summary>
         /// Gets the collection page.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IReportRootMonthlyPrintUsageSummariesByUserCollectionRequest Expand(Expression<Func<PrintUsageSummaryByUser, object>> expandExpression);
+        IReportRootMonthlyPrintUsageSummariesByUserCollectionRequest Expand(Expression<Func<PrintUsageByUser, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IReportRootMonthlyPrintUsageSummariesByUserCollectionRequest Select(Expression<Func<PrintUsageSummaryByUser, object>> selectExpression);
+        IReportRootMonthlyPrintUsageSummariesByUserCollectionRequest Select(Expression<Func<PrintUsageByUser, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

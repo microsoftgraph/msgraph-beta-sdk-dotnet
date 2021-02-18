@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         /// Gets or sets reports.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reports", Required = Newtonsoft.Json.Required.Default)]
-        public IPrintReportsCollectionPage Reports { get; set; }
+        public ReportRoot Reports { get; set; }
     
         /// <summary>
         /// Gets or sets services.

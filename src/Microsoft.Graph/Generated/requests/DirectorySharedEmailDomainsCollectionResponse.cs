@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type DirectorySharedEmailDomainsCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class DirectorySharedEmailDomainsCollectionResponse
     {
         /// <summary>

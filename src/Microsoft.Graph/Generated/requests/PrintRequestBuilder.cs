@@ -101,12 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Reports.
         /// </summary>
-        /// <returns>The <see cref="IPrintReportsCollectionRequestBuilder"/>.</returns>
-        public IPrintReportsCollectionRequestBuilder Reports
+        /// <returns>The <see cref="IReportRootRequestBuilder"/>.</returns>
+        public IReportRootRequestBuilder Reports
         {
             get
             {
-                return new PrintReportsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
+                return new ReportRootRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
             }
         }
 

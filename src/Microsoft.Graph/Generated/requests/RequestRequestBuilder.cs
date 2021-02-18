@@ -51,18 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Approval.
-        /// </summary>
-        /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
-        public IApprovalRequestBuilder Approval
-        {
-            get
-            {
-                return new ApprovalRequestBuilder(this.AppendSegmentToRequestUrl("approval"), this.Client);
-            }
-        }
-    
-        /// <summary>
         /// Gets the request builder for RequestStop.
         /// </summary>
         /// <returns>The <see cref="IRequestStopRequestBuilder"/>.</returns>

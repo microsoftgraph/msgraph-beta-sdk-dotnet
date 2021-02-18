@@ -16,7 +16,6 @@ namespace Microsoft.Graph
     /// The type SecuritySecureScoresCollectionResponse.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
     public class SecuritySecureScoresCollectionResponse
     {
         /// <summary>

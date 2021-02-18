@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MicrosoftAuthenticatorMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder MicrosoftAuthenticatorMethods
+        {
+            get
+            {
+                return new AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("microsoftAuthenticatorMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationOperationsCollectionRequestBuilder"/>.</returns>
@@ -131,6 +143,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AuthenticationPhoneMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("phoneMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsHelloForBusinessMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder WindowsHelloForBusinessMethods
+        {
+            get
+            {
+                return new AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsHelloForBusinessMethods"), this.Client);
             }
         }
     

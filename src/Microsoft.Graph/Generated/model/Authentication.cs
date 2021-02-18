@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft authenticator methods.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftAuthenticatorMethods", Required = Newtonsoft.Json.Required.Default)]
+        public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets operations.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operations", Required = Newtonsoft.Json.Required.Default)]
@@ -71,6 +77,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "phoneMethods", Required = Newtonsoft.Json.Required.Default)]
         public IAuthenticationPhoneMethodsCollectionPage PhoneMethods { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows hello for business methods.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsHelloForBusinessMethods", Required = Newtonsoft.Json.Required.Default)]
+        public IAuthenticationWindowsHelloForBusinessMethodsCollectionPage WindowsHelloForBusinessMethods { get; set; }
     
     }
 }

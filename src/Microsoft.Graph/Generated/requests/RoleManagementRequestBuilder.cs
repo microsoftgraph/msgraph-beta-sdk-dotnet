@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EntitlementManagement.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationRequestBuilder"/>.</returns>
+        public IRbacApplicationRequestBuilder EntitlementManagement
+        {
+            get
+            {
+                return new RbacApplicationRequestBuilder(this.AppendSegmentToRequestUrl("entitlementManagement"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagement.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationMultipleRequestBuilder"/>.</returns>

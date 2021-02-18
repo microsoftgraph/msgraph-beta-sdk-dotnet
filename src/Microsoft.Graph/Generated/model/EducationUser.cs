@@ -287,6 +287,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user.
+        /// The directory user corresponding to this user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "user", Required = Newtonsoft.Json.Required.Default)]
         public User User { get; set; }

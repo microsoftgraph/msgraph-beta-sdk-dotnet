@@ -53,6 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isCreationContext.
+        /// Read-only. Indicates whether the plan is created from the specified context. Auto-generated based on whether the context is specified as part of plan creation.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCreationContext", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsCreationContext { get; set; }

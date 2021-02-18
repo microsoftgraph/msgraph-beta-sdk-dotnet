@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets members.
+        /// Retrieves the members of the plannerRoster.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerRosterMembersCollectionPage Members { get; set; }
     
         /// <summary>
         /// Gets or sets plans.
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
         public IPlannerRosterPlansCollectionWithReferencesPage Plans { get; set; }
