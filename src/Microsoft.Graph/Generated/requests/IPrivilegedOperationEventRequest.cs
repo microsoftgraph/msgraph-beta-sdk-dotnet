@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedOperationEvent using POST.
         /// </summary>
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
-        /// <returns>The created PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate);
-
-        /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using POST.
-        /// </summary>
-        /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using POST and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
-        /// </summary>
-        /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate);
+        System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PrivilegedOperationEvent using POST and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrivilegedOperationEvent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PrivilegedOperationEvent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrivilegedOperationEvent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PrivilegedOperationEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrivilegedOperationEvent.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedOperationEvent using PATCH.
         /// </summary>
         /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
-        /// <returns>The updated PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate);
-
-        /// <summary>
-        /// Updates the specified PrivilegedOperationEvent using PATCH.
-        /// </summary>
-        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PrivilegedOperationEvent using PATCH and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
-        /// </summary>
-        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate);
+        System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrivilegedOperationEvent using PATCH and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

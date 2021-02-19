@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
-        /// <returns>The created UnifiedRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment)
-        {
-            return this.AddAsync(unifiedRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleAssignment> AddAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnifiedRoleAssignment>(unifiedRoleAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignment>> AddResponseAsync(UnifiedRoleAssignment unifiedRoleAssignment)
-        {
-            return this.AddResponseAsync(unifiedRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.
         /// </summary>
         /// <param name="unifiedRoleAssignment">The UnifiedRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignment>> AddResponseAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignment>> AddResponseAsync(UnifiedRoleAssignment unifiedRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleAssignment>(unifiedRoleAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<RbacApplicationRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<RbacApplicationRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

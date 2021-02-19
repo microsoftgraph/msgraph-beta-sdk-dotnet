@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PhoneAuthenticationMethod to the collection via POST.
-        /// </summary>
-        /// <param name="phoneAuthenticationMethod">The PhoneAuthenticationMethod to add.</param>
-        /// <returns>The created PhoneAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> AddAsync(PhoneAuthenticationMethod phoneAuthenticationMethod)
-        {
-            return this.AddAsync(phoneAuthenticationMethod, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PhoneAuthenticationMethod to the collection via POST.
         /// </summary>
         /// <param name="phoneAuthenticationMethod">The PhoneAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PhoneAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> AddAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PhoneAuthenticationMethod> AddAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PhoneAuthenticationMethod>(phoneAuthenticationMethod, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PhoneAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.
-        /// </summary>
-        /// <param name="phoneAuthenticationMethod">The PhoneAuthenticationMethod to add.</param>
-        /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> AddResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethod)
-        {
-            return this.AddResponseAsync(phoneAuthenticationMethod, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PhoneAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.
         /// </summary>
         /// <param name="phoneAuthenticationMethod">The PhoneAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PhoneAuthenticationMethod}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> AddResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PhoneAuthenticationMethod>> AddResponseAsync(PhoneAuthenticationMethod phoneAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PhoneAuthenticationMethod>(phoneAuthenticationMethod, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuthenticationPhoneMethodsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuthenticationPhoneMethodsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuthenticationPhoneMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AuthenticationPhoneMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPhoneMethodsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AuthenticationPhoneMethodsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuthenticationPhoneMethodsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationPhoneMethodsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationPhoneMethodsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationPhoneMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationPhoneMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AuthenticationPhoneMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

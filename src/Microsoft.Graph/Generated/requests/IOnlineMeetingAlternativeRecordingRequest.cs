@@ -19,11 +19,6 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOnlineMeetingAlternativeRecordingRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the stream.
-        /// </summary>
-        /// <returns>The stream.</returns>
-        System.Threading.Tasks.Task<Stream> GetAsync();
 
         /// <summary>
         /// Gets the stream.
@@ -31,13 +26,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The stream.</returns>
-        System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
-
-        /// <summary>
-        /// Gets the <see cref="GraphResponse"/> object of the request.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync();
+        System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Gets the <see cref="GraphResponse"/> object of the request.
@@ -45,16 +34,8 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead);
 
-
-        /// <summary>
-        /// PUTs the specified stream.
-        /// </summary>
-        /// <typeparam name="T">The type returned by the PUT call.</typeparam>
-        /// <param name="alternativeRecording">The stream to PUT.</param>
-        /// <returns>The object returned by the PUT call.</returns>
-        System.Threading.Tasks.Task<T> PutAsync<T>(Stream alternativeRecording) where T : OnlineMeeting;
 
         /// <summary>
         /// PUTs the specified stream.
@@ -64,15 +45,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The object returned by the PUT call.</returns>
-        System.Threading.Tasks.Task<T> PutAsync<T>(Stream alternativeRecording, CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting;
-
-        /// <summary>
-        /// PUTs the specified stream and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <typeparam name="T">The type returned by the PUT call.</typeparam>
-        /// <param name="alternativeRecording">The stream to PUT.</param>
-        /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
-        System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream alternativeRecording) where T : OnlineMeeting;
+        System.Threading.Tasks.Task<T> PutAsync<T>(Stream alternativeRecording, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting;
 
         /// <summary>
         /// PUTs the specified stream and returns a <see cref="GraphResponse"/> object.
@@ -82,7 +55,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
-        System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream alternativeRecording, CancellationToken cancellationToken, HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting;
+        System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream alternativeRecording, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : OnlineMeeting;
     
     }
 }

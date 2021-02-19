@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationValueBoolean using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
-        /// <returns>The created GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> CreateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueBoolean using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> CreateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueBoolean using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> CreateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> CreateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified GroupPolicyPresentationValueBoolean using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationValueBooleanToCreate">The GroupPolicyPresentationValueBoolean to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> CreateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationValueBoolean.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> CreateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationValueBoolean.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationValueBoolean and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationValueBoolean and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueBoolean.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyPresentationValueBoolean using PATCH.
         /// </summary>
         /// <param name="groupPolicyPresentationValueBooleanToUpdate">The GroupPolicyPresentationValueBoolean to update.</param>
-        /// <returns>The updated GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> UpdateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationValueBoolean using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueBooleanToUpdate">The GroupPolicyPresentationValueBoolean to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> UpdateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationValueBoolean using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueBooleanToUpdate">The GroupPolicyPresentationValueBoolean to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> UpdateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> UpdateAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationValueBoolean using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> UpdateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> UpdateResponseAsync(GroupPolicyPresentationValueBoolean groupPolicyPresentationValueBooleanToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

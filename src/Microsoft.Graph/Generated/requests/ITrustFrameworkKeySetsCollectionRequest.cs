@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITrustFrameworkKeySetsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TrustFrameworkKeySet to the collection via POST.
-        /// </summary>
-        /// <param name="trustFrameworkKeySet">The TrustFrameworkKeySet to add.</param>
-        /// <returns>The created TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> AddAsync(TrustFrameworkKeySet trustFrameworkKeySet);
-
         /// <summary>
         /// Adds the specified TrustFrameworkKeySet to the collection via POST.
         /// </summary>
         /// <param name="trustFrameworkKeySet">The TrustFrameworkKeySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TrustFrameworkKeySet.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkKeySet> AddAsync(TrustFrameworkKeySet trustFrameworkKeySet, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified TrustFrameworkKeySet to the collection via POST and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.
-        /// </summary>
-        /// <param name="trustFrameworkKeySet">The TrustFrameworkKeySet to add.</param>
-        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> AddResponseAsync(TrustFrameworkKeySet trustFrameworkKeySet);
+        System.Threading.Tasks.Task<TrustFrameworkKeySet> AddAsync(TrustFrameworkKeySet trustFrameworkKeySet, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified TrustFrameworkKeySet to the collection via POST and returns a <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="trustFrameworkKeySet">The TrustFrameworkKeySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> AddResponseAsync(TrustFrameworkKeySet trustFrameworkKeySet, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySet>> AddResponseAsync(TrustFrameworkKeySet trustFrameworkKeySet, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITrustFrameworkKeySetsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITrustFrameworkKeySetsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TrustFrameworkKeySetsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySetsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySetsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ITrustFrameworkKeySetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TrustFrameworkKeySetsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TrustFrameworkKeySetsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkKeySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

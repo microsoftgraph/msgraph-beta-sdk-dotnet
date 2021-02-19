@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExchangeConnector using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
-        /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate)
-        {
-            return this.CreateAsync(deviceManagementExchangeConnectorToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeConnector using POST.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementExchangeConnectorToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeConnector.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementExchangeConnector>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementExchangeConnector using PATCH.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToUpdate">The DeviceManagementExchangeConnector to update.</param>
-        /// <returns>The updated DeviceManagementExchangeConnector.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeConnector> UpdateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementExchangeConnectorToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeConnector using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnectorToUpdate">The DeviceManagementExchangeConnector to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementExchangeConnector.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> UpdateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> UpdateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeConnectorToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeConnectorToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementExchangeConnector using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToUpdate">The DeviceManagementExchangeConnector to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> UpdateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementExchangeConnectorToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeConnector using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnectorToUpdate">The DeviceManagementExchangeConnector to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> UpdateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> UpdateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeConnectorToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementExchangeConnectorToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementExchangeConnectorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeConnectorToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToUpdate, cancellationToken).ConfigureAwait(false);
         }

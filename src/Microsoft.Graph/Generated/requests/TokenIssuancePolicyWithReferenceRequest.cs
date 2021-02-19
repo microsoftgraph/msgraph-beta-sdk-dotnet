@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified TokenIssuancePolicy using POST.
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
-        /// <returns>The created TokenIssuancePolicy.</returns>
-        public System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate)
-        {
-            return this.CreateAsync(tokenIssuancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TokenIssuancePolicy using POST.
-        /// </summary>
-        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
-        public async System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TokenIssuancePolicy>(tokenIssuancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate)
-        {
-            return this.CreateResponseAsync(tokenIssuancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
-        /// </summary>
-        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TokenIssuancePolicy>(tokenIssuancePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified TokenIssuancePolicy using PATCH.
         /// </summary>
         /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
-        /// <returns>The updated TokenIssuancePolicy.</returns>
-        public System.Threading.Tasks.Task<TokenIssuancePolicy> UpdateAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate)
-        {
-            return this.UpdateAsync(tokenIssuancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TokenIssuancePolicy using PATCH.
-        /// </summary>
-        /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TokenIssuancePolicy.</returns>
-        public async System.Threading.Tasks.Task<TokenIssuancePolicy> UpdateAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TokenIssuancePolicy> UpdateAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tokenIssuancePolicyToUpdate.AdditionalData != null)
-			{
-				if (tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenIssuancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tokenIssuancePolicyToUpdate.AdditionalData != null)
-            {
-                if (tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenIssuancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TokenIssuancePolicy>(tokenIssuancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified TokenIssuancePolicy using PATCH and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
         /// </summary>
         /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> UpdateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(tokenIssuancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TokenIssuancePolicy using PATCH and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
-        /// </summary>
-        /// <param name="tokenIssuancePolicyToUpdate">The TokenIssuancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> UpdateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> UpdateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tokenIssuancePolicyToUpdate.AdditionalData != null)
-			{
-				if (tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenIssuancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tokenIssuancePolicyToUpdate.AdditionalData != null)
-            {
-                if (tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tokenIssuancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenIssuancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TokenIssuancePolicy>(tokenIssuancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified TokenIssuancePolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TokenIssuancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TokenIssuancePolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified TokenIssuancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TokenIssuancePolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

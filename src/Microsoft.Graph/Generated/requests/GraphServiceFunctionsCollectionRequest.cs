@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AttributeMappingFunctionSchema to the collection via POST.
-        /// </summary>
-        /// <param name="attributeMappingFunctionSchema">The AttributeMappingFunctionSchema to add.</param>
-        /// <returns>The created AttributeMappingFunctionSchema.</returns>
-        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> AddAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema)
-        {
-            return this.AddAsync(attributeMappingFunctionSchema, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AttributeMappingFunctionSchema to the collection via POST.
         /// </summary>
         /// <param name="attributeMappingFunctionSchema">The AttributeMappingFunctionSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AttributeMappingFunctionSchema.</returns>
-        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> AddAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AttributeMappingFunctionSchema> AddAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AttributeMappingFunctionSchema>(attributeMappingFunctionSchema, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AttributeMappingFunctionSchema to the collection via POST and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.
-        /// </summary>
-        /// <param name="attributeMappingFunctionSchema">The AttributeMappingFunctionSchema to add.</param>
-        /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> AddResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema)
-        {
-            return this.AddResponseAsync(attributeMappingFunctionSchema, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AttributeMappingFunctionSchema to the collection via POST and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.
         /// </summary>
         /// <param name="attributeMappingFunctionSchema">The AttributeMappingFunctionSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> AddResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> AddResponseAsync(AttributeMappingFunctionSchema attributeMappingFunctionSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AttributeMappingFunctionSchema>(attributeMappingFunctionSchema, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceFunctionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceFunctionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceFunctionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceFunctionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceFunctionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceFunctionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceFunctionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceFunctionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceFunctionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceFunctionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceFunctionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceFunctionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

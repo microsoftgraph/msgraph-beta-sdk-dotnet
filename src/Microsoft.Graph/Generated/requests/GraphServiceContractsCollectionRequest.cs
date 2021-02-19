@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Contract to the collection via POST.
-        /// </summary>
-        /// <param name="contract">The Contract to add.</param>
-        /// <returns>The created Contract.</returns>
-        public System.Threading.Tasks.Task<Contract> AddAsync(Contract contract)
-        {
-            return this.AddAsync(contract, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Contract to the collection via POST.
         /// </summary>
         /// <param name="contract">The Contract to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Contract.</returns>
-        public System.Threading.Tasks.Task<Contract> AddAsync(Contract contract, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Contract> AddAsync(Contract contract, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Contract>(contract, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Contract to the collection via POST and returns a <see cref="GraphResponse{Contract}"/> object of the request.
-        /// </summary>
-        /// <param name="contract">The Contract to add.</param>
-        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract)
-        {
-            return this.AddResponseAsync(contract, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Contract to the collection via POST and returns a <see cref="GraphResponse{Contract}"/> object of the request.
         /// </summary>
         /// <param name="contract">The Contract to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Contract>(contract, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceContractsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceContractsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceContractsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceContractsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceContractsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceContractsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceContractsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceContractsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceContractsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceContractsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceContractsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceContractsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

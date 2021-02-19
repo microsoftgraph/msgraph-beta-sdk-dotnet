@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DepEnrollmentBaseProfile using POST.
         /// </summary>
         /// <param name="depEnrollmentBaseProfileToCreate">The DepEnrollmentBaseProfile to create.</param>
-        /// <returns>The created DepEnrollmentBaseProfile.</returns>
-        public System.Threading.Tasks.Task<DepEnrollmentBaseProfile> CreateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate)
-        {
-            return this.CreateAsync(depEnrollmentBaseProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DepEnrollmentBaseProfile using POST.
-        /// </summary>
-        /// <param name="depEnrollmentBaseProfileToCreate">The DepEnrollmentBaseProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DepEnrollmentBaseProfile.</returns>
-        public async System.Threading.Tasks.Task<DepEnrollmentBaseProfile> CreateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepEnrollmentBaseProfile> CreateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DepEnrollmentBaseProfile>(depEnrollmentBaseProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DepEnrollmentBaseProfile using POST and returns a <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object.
         /// </summary>
         /// <param name="depEnrollmentBaseProfileToCreate">The DepEnrollmentBaseProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> CreateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate)
-        {
-            return this.CreateResponseAsync(depEnrollmentBaseProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DepEnrollmentBaseProfile using POST and returns a <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object.
-        /// </summary>
-        /// <param name="depEnrollmentBaseProfileToCreate">The DepEnrollmentBaseProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> CreateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> CreateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DepEnrollmentBaseProfile>(depEnrollmentBaseProfileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DepEnrollmentBaseProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DepEnrollmentBaseProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DepEnrollmentBaseProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DepEnrollmentBaseProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DepEnrollmentBaseProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DepEnrollmentBaseProfile using PATCH.
         /// </summary>
         /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile to update.</param>
-        /// <returns>The updated DepEnrollmentBaseProfile.</returns>
-        public System.Threading.Tasks.Task<DepEnrollmentBaseProfile> UpdateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate)
-        {
-            return this.UpdateAsync(depEnrollmentBaseProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DepEnrollmentBaseProfile using PATCH.
-        /// </summary>
-        /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DepEnrollmentBaseProfile.</returns>
-        public async System.Threading.Tasks.Task<DepEnrollmentBaseProfile> UpdateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepEnrollmentBaseProfile> UpdateAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
-			{
-				if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
-            {
-                if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DepEnrollmentBaseProfile>(depEnrollmentBaseProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DepEnrollmentBaseProfile using PATCH and returns a <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object.
         /// </summary>
         /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> UpdateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate)
-        {
-            return this.UpdateResponseAsync(depEnrollmentBaseProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DepEnrollmentBaseProfile using PATCH and returns a <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object.
-        /// </summary>
-        /// <param name="depEnrollmentBaseProfileToUpdate">The DepEnrollmentBaseProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DepEnrollmentBaseProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> UpdateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DepEnrollmentBaseProfile>> UpdateResponseAsync(DepEnrollmentBaseProfile depEnrollmentBaseProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
-			{
-				if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (depEnrollmentBaseProfileToUpdate.AdditionalData != null)
-            {
-                if (depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    depEnrollmentBaseProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depEnrollmentBaseProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DepEnrollmentBaseProfile>(depEnrollmentBaseProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }

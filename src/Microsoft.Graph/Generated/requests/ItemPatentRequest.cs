@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ItemPatent using POST.
         /// </summary>
         /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
-        /// <returns>The created ItemPatent.</returns>
-        public System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate)
-        {
-            return this.CreateAsync(itemPatentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemPatent using POST.
-        /// </summary>
-        /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPatent.</returns>
-        public async System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ItemPatent>(itemPatentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ItemPatent using POST and returns a <see cref="GraphResponse{ItemPatent}"/> object.
         /// </summary>
         /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemPatent>> CreateResponseAsync(ItemPatent itemPatentToCreate)
-        {
-            return this.CreateResponseAsync(itemPatentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemPatent using POST and returns a <see cref="GraphResponse{ItemPatent}"/> object.
-        /// </summary>
-        /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> CreateResponseAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> CreateResponseAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemPatent>(itemPatentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ItemPatent.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ItemPatent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ItemPatent>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ItemPatent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ItemPatent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ItemPatent using PATCH.
         /// </summary>
         /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
-        /// <returns>The updated ItemPatent.</returns>
-        public System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate)
-        {
-            return this.UpdateAsync(itemPatentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ItemPatent using PATCH.
-        /// </summary>
-        /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemPatent.</returns>
-        public async System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemPatentToUpdate.AdditionalData != null)
-			{
-				if (itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPatentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemPatentToUpdate.AdditionalData != null)
-            {
-                if (itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPatentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ItemPatent>(itemPatentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ItemPatent using PATCH and returns a <see cref="GraphResponse{ItemPatent}"/> object.
         /// </summary>
         /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemPatent>> UpdateResponseAsync(ItemPatent itemPatentToUpdate)
-        {
-            return this.UpdateResponseAsync(itemPatentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ItemPatent using PATCH and returns a <see cref="GraphResponse{ItemPatent}"/> object.
-        /// </summary>
-        /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> UpdateResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> UpdateResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemPatentToUpdate.AdditionalData != null)
-			{
-				if (itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPatentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemPatentToUpdate.AdditionalData != null)
-            {
-                if (itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemPatentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPatentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ItemPatent>(itemPatentToUpdate, cancellationToken).ConfigureAwait(false);
         }

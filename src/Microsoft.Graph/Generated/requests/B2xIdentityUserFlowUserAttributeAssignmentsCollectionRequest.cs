@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
-        /// <returns>The created IdentityUserFlowAttributeAssignment.</returns>
-        public System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment)
-        {
-            return this.AddAsync(identityUserFlowAttributeAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST.
         /// </summary>
         /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityUserFlowAttributeAssignment.</returns>
-        public System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<IdentityUserFlowAttributeAssignment> AddAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<IdentityUserFlowAttributeAssignment>(identityUserFlowAttributeAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST and returns a <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttributeAssignment>> AddResponseAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment)
-        {
-            return this.AddResponseAsync(identityUserFlowAttributeAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IdentityUserFlowAttributeAssignment to the collection via POST and returns a <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.
         /// </summary>
         /// <param name="identityUserFlowAttributeAssignment">The IdentityUserFlowAttributeAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttributeAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttributeAssignment>> AddResponseAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttributeAssignment>> AddResponseAsync(IdentityUserFlowAttributeAssignment identityUserFlowAttributeAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IdentityUserFlowAttributeAssignment>(identityUserFlowAttributeAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IB2xIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IB2xIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IB2xIdentityUserFlowUserAttributeAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<B2xIdentityUserFlowUserAttributeAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

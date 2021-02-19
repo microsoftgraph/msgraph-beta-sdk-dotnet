@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITodoTaskLinkedResourcesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified LinkedResource to the collection via POST.
-        /// </summary>
-        /// <param name="linkedResource">The LinkedResource to add.</param>
-        /// <returns>The created LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> AddAsync(LinkedResource linkedResource);
-
         /// <summary>
         /// Adds the specified LinkedResource to the collection via POST.
         /// </summary>
         /// <param name="linkedResource">The LinkedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> AddAsync(LinkedResource linkedResource, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified LinkedResource to the collection via POST and returns a <see cref="GraphResponse{LinkedResource}"/> object of the request.
-        /// </summary>
-        /// <param name="linkedResource">The LinkedResource to add.</param>
-        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> AddResponseAsync(LinkedResource linkedResource);
+        System.Threading.Tasks.Task<LinkedResource> AddAsync(LinkedResource linkedResource, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified LinkedResource to the collection via POST and returns a <see cref="GraphResponse{LinkedResource}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="linkedResource">The LinkedResource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> AddResponseAsync(LinkedResource linkedResource, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> AddResponseAsync(LinkedResource linkedResource, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITodoTaskLinkedResourcesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITodoTaskLinkedResourcesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TodoTaskLinkedResourcesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TodoTaskLinkedResourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TodoTaskLinkedResourcesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ITodoTaskLinkedResourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TodoTaskLinkedResourcesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTaskLinkedResourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TodoTaskLinkedResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TodoTaskLinkedResourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

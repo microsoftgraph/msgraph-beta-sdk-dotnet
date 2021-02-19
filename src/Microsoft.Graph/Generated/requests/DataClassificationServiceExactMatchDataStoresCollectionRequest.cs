@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ExactMatchDataStore to the collection via POST.
-        /// </summary>
-        /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
-        /// <returns>The created ExactMatchDataStore.</returns>
-        public System.Threading.Tasks.Task<ExactMatchDataStore> AddAsync(ExactMatchDataStore exactMatchDataStore)
-        {
-            return this.AddAsync(exactMatchDataStore, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExactMatchDataStore to the collection via POST.
         /// </summary>
         /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchDataStore.</returns>
-        public System.Threading.Tasks.Task<ExactMatchDataStore> AddAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ExactMatchDataStore> AddAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ExactMatchDataStore>(exactMatchDataStore, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ExactMatchDataStore to the collection via POST and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.
-        /// </summary>
-        /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
-        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> AddResponseAsync(ExactMatchDataStore exactMatchDataStore)
-        {
-            return this.AddResponseAsync(exactMatchDataStore, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExactMatchDataStore to the collection via POST and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.
         /// </summary>
         /// <param name="exactMatchDataStore">The ExactMatchDataStore to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> AddResponseAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> AddResponseAsync(ExactMatchDataStore exactMatchDataStore, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExactMatchDataStore>(exactMatchDataStore, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDataClassificationServiceExactMatchDataStoresCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDataClassificationServiceExactMatchDataStoresCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDataClassificationServiceExactMatchDataStoresCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DataClassificationServiceExactMatchDataStoresCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationServiceExactMatchDataStoresCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DataClassificationServiceExactMatchDataStoresCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

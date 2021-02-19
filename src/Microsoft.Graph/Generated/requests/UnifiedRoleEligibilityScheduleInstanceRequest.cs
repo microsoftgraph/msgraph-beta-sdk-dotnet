@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleEligibilityScheduleInstance using POST.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstanceToCreate">The UnifiedRoleEligibilityScheduleInstance to create.</param>
-        /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> CreateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate)
-        {
-            return this.CreateAsync(unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleEligibilityScheduleInstance using POST.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstanceToCreate">The UnifiedRoleEligibilityScheduleInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> CreateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> CreateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleEligibilityScheduleInstance using POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstanceToCreate">The UnifiedRoleEligibilityScheduleInstance to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> CreateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate)
-        {
-            return this.CreateResponseAsync(unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleEligibilityScheduleInstance using POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstanceToCreate">The UnifiedRoleEligibilityScheduleInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> CreateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> CreateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstanceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRoleEligibilityScheduleInstance.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleEligibilityScheduleInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UnifiedRoleEligibilityScheduleInstance>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRoleEligibilityScheduleInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleEligibilityScheduleInstance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRoleEligibilityScheduleInstance using PATCH.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstanceToUpdate">The UnifiedRoleEligibilityScheduleInstance to update.</param>
-        /// <returns>The updated UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> UpdateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate)
-        {
-            return this.UpdateAsync(unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRoleEligibilityScheduleInstance using PATCH.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstanceToUpdate">The UnifiedRoleEligibilityScheduleInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleEligibilityScheduleInstance.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> UpdateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> UpdateAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleEligibilityScheduleInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleEligibilityScheduleInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRoleEligibilityScheduleInstance using PATCH and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstanceToUpdate">The UnifiedRoleEligibilityScheduleInstance to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> UpdateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate)
-        {
-            return this.UpdateResponseAsync(unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRoleEligibilityScheduleInstance using PATCH and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstanceToUpdate">The UnifiedRoleEligibilityScheduleInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> UpdateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> UpdateResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleEligibilityScheduleInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleEligibilityScheduleInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleEligibilityScheduleInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstanceToUpdate, cancellationToken).ConfigureAwait(false);
         }

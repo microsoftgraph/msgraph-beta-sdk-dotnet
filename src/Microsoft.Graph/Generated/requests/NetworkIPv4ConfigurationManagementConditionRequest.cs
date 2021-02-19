@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
-        /// <returns>The created NetworkIPv4ConfigurationManagementCondition.</returns>
-        public System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate)
-        {
-            return this.CreateAsync(networkIPv4ConfigurationManagementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
-        /// </summary>
-        /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NetworkIPv4ConfigurationManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<NetworkIPv4ConfigurationManagementCondition>(networkIPv4ConfigurationManagementConditionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
-        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> CreateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate)
-        {
-            return this.CreateResponseAsync(networkIPv4ConfigurationManagementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
-        /// </summary>
-        /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> CreateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> CreateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<NetworkIPv4ConfigurationManagementCondition>(networkIPv4ConfigurationManagementConditionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified NetworkIPv4ConfigurationManagementCondition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified NetworkIPv4ConfigurationManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<NetworkIPv4ConfigurationManagementCondition>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
-        /// <returns>The updated NetworkIPv4ConfigurationManagementCondition.</returns>
-        public System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate)
-        {
-            return this.UpdateAsync(networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH.
-        /// </summary>
-        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NetworkIPv4ConfigurationManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
-			{
-				if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
-            {
-                if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<NetworkIPv4ConfigurationManagementCondition>(networkIPv4ConfigurationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
-        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> UpdateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate)
-        {
-            return this.UpdateResponseAsync(networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
-        /// </summary>
-        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> UpdateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> UpdateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
-			{
-				if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData != null)
-            {
-                if (networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    networkIPv4ConfigurationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, networkIPv4ConfigurationManagementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<NetworkIPv4ConfigurationManagementCondition>(networkIPv4ConfigurationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);
         }

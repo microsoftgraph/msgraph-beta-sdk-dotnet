@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PurchaseInvoice using POST.
         /// </summary>
         /// <param name="purchaseInvoiceToCreate">The PurchaseInvoice to create.</param>
-        /// <returns>The created PurchaseInvoice.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoice> CreateAsync(PurchaseInvoice purchaseInvoiceToCreate);
-
-        /// <summary>
-        /// Creates the specified PurchaseInvoice using POST.
-        /// </summary>
-        /// <param name="purchaseInvoiceToCreate">The PurchaseInvoice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PurchaseInvoice.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoice> CreateAsync(PurchaseInvoice purchaseInvoiceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PurchaseInvoice using POST and returns a <see cref="GraphResponse{PurchaseInvoice}"/> object.
-        /// </summary>
-        /// <param name="purchaseInvoiceToCreate">The PurchaseInvoice to create.</param>
-        /// <returns>The <see cref="GraphResponse{PurchaseInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> CreateResponseAsync(PurchaseInvoice purchaseInvoiceToCreate);
+        System.Threading.Tasks.Task<PurchaseInvoice> CreateAsync(PurchaseInvoice purchaseInvoiceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PurchaseInvoice using POST and returns a <see cref="GraphResponse{PurchaseInvoice}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="purchaseInvoiceToCreate">The PurchaseInvoice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PurchaseInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> CreateResponseAsync(PurchaseInvoice purchaseInvoiceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PurchaseInvoice.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> CreateResponseAsync(PurchaseInvoice purchaseInvoiceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PurchaseInvoice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PurchaseInvoice and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PurchaseInvoice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PurchaseInvoice.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PurchaseInvoice using PATCH.
         /// </summary>
         /// <param name="purchaseInvoiceToUpdate">The PurchaseInvoice to update.</param>
-        /// <returns>The updated PurchaseInvoice.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoice> UpdateAsync(PurchaseInvoice purchaseInvoiceToUpdate);
-
-        /// <summary>
-        /// Updates the specified PurchaseInvoice using PATCH.
-        /// </summary>
-        /// <param name="purchaseInvoiceToUpdate">The PurchaseInvoice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PurchaseInvoice.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoice> UpdateAsync(PurchaseInvoice purchaseInvoiceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PurchaseInvoice using PATCH and returns a <see cref="GraphResponse{PurchaseInvoice}"/> object.
-        /// </summary>
-        /// <param name="purchaseInvoiceToUpdate">The PurchaseInvoice to update.</param>
-        /// <returns>The <see cref="GraphResponse{PurchaseInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> UpdateResponseAsync(PurchaseInvoice purchaseInvoiceToUpdate);
+        System.Threading.Tasks.Task<PurchaseInvoice> UpdateAsync(PurchaseInvoice purchaseInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PurchaseInvoice using PATCH and returns a <see cref="GraphResponse{PurchaseInvoice}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PurchaseInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> UpdateResponseAsync(PurchaseInvoice purchaseInvoiceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoice>> UpdateResponseAsync(PurchaseInvoice purchaseInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

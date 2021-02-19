@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRbacResourceAction to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
-        /// <returns>The created UnifiedRbacResourceAction.</returns>
-        public System.Threading.Tasks.Task<UnifiedRbacResourceAction> AddAsync(UnifiedRbacResourceAction unifiedRbacResourceAction)
-        {
-            return this.AddAsync(unifiedRbacResourceAction, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRbacResourceAction to the collection via POST.
         /// </summary>
         /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRbacResourceAction.</returns>
-        public System.Threading.Tasks.Task<UnifiedRbacResourceAction> AddAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRbacResourceAction> AddAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnifiedRbacResourceAction>(unifiedRbacResourceAction, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnifiedRbacResourceAction to the collection via POST and returns a <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.
-        /// </summary>
-        /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceAction>> AddResponseAsync(UnifiedRbacResourceAction unifiedRbacResourceAction)
-        {
-            return this.AddResponseAsync(unifiedRbacResourceAction, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRbacResourceAction to the collection via POST and returns a <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.
         /// </summary>
         /// <param name="unifiedRbacResourceAction">The UnifiedRbacResourceAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceAction}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceAction>> AddResponseAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceAction>> AddResponseAsync(UnifiedRbacResourceAction unifiedRbacResourceAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRbacResourceAction>(unifiedRbacResourceAction, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUnifiedRbacResourceNamespaceResourceActionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUnifiedRbacResourceNamespaceResourceActionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUnifiedRbacResourceNamespaceResourceActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespaceResourceActionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UnifiedRbacResourceNamespaceResourceActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

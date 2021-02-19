@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerRosterMember using POST.
         /// </summary>
         /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
-        /// <returns>The created PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate);
-
-        /// <summary>
-        /// Creates the specified PlannerRosterMember using POST.
-        /// </summary>
-        /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PlannerRosterMember using POST and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
-        /// </summary>
-        /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> CreateResponseAsync(PlannerRosterMember plannerRosterMemberToCreate);
+        System.Threading.Tasks.Task<PlannerRosterMember> CreateAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PlannerRosterMember using POST and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="plannerRosterMemberToCreate">The PlannerRosterMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> CreateResponseAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerRosterMember.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> CreateResponseAsync(PlannerRosterMember plannerRosterMemberToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerRosterMember.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerRosterMember and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerRosterMember and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerRosterMember.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PlannerRosterMember using PATCH.
         /// </summary>
         /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember to update.</param>
-        /// <returns>The updated PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate);
-
-        /// <summary>
-        /// Updates the specified PlannerRosterMember using PATCH.
-        /// </summary>
-        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerRosterMember.</returns>
-        System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PlannerRosterMember using PATCH and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
-        /// </summary>
-        /// <param name="plannerRosterMemberToUpdate">The PlannerRosterMember to update.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> UpdateResponseAsync(PlannerRosterMember plannerRosterMemberToUpdate);
+        System.Threading.Tasks.Task<PlannerRosterMember> UpdateAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerRosterMember using PATCH and returns a <see cref="GraphResponse{PlannerRosterMember}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PlannerRosterMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> UpdateResponseAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerRosterMember>> UpdateResponseAsync(PlannerRosterMember plannerRosterMemberToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

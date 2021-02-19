@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TokenIssuancePolicy to the collection via POST.
-        /// </summary>
-        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
-        /// <returns>The created TokenIssuancePolicy.</returns>
-        public System.Threading.Tasks.Task<TokenIssuancePolicy> AddAsync(TokenIssuancePolicy tokenIssuancePolicy)
-        {
-            return this.AddAsync(tokenIssuancePolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TokenIssuancePolicy to the collection via POST.
         /// </summary>
         /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
-        public System.Threading.Tasks.Task<TokenIssuancePolicy> AddAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TokenIssuancePolicy> AddAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TokenIssuancePolicy>(tokenIssuancePolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TokenIssuancePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy)
-        {
-            return this.AddResponseAsync(tokenIssuancePolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TokenIssuancePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.
         /// </summary>
         /// <param name="tokenIssuancePolicy">The TokenIssuancePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> AddResponseAsync(TokenIssuancePolicy tokenIssuancePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TokenIssuancePolicy>(tokenIssuancePolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicyRootTokenIssuancePoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicyRootTokenIssuancePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicyRootTokenIssuancePoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicyRootTokenIssuancePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootTokenIssuancePoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootTokenIssuancePoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootTokenIssuancePoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootTokenIssuancePoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicyRootTokenIssuancePoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

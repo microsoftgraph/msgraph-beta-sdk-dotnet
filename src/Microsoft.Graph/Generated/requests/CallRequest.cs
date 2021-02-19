@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Call using POST.
         /// </summary>
         /// <param name="callToCreate">The Call to create.</param>
-        /// <returns>The created Call.</returns>
-        public System.Threading.Tasks.Task<Call> CreateAsync(Call callToCreate)
-        {
-            return this.CreateAsync(callToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Call using POST.
-        /// </summary>
-        /// <param name="callToCreate">The Call to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Call.</returns>
-        public async System.Threading.Tasks.Task<Call> CreateAsync(Call callToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Call> CreateAsync(Call callToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Call>(callToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Call using POST and returns a <see cref="GraphResponse{Call}"/> object.
         /// </summary>
         /// <param name="callToCreate">The Call to create.</param>
-        /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Call>> CreateResponseAsync(Call callToCreate)
-        {
-            return this.CreateResponseAsync(callToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Call using POST and returns a <see cref="GraphResponse{Call}"/> object.
-        /// </summary>
-        /// <param name="callToCreate">The Call to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Call>> CreateResponseAsync(Call callToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Call>> CreateResponseAsync(Call callToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Call>(callToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Call.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Call.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Call>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Call and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Call and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Call using PATCH.
         /// </summary>
         /// <param name="callToUpdate">The Call to update.</param>
-        /// <returns>The updated Call.</returns>
-        public System.Threading.Tasks.Task<Call> UpdateAsync(Call callToUpdate)
-        {
-            return this.UpdateAsync(callToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Call using PATCH.
-        /// </summary>
-        /// <param name="callToUpdate">The Call to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Call.</returns>
-        public async System.Threading.Tasks.Task<Call> UpdateAsync(Call callToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Call> UpdateAsync(Call callToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (callToUpdate.AdditionalData != null)
-			{
-				if (callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, callToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (callToUpdate.AdditionalData != null)
-            {
-                if (callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, callToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Call>(callToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Call using PATCH and returns a <see cref="GraphResponse{Call}"/> object.
         /// </summary>
         /// <param name="callToUpdate">The Call to update.</param>
-        /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Call>> UpdateResponseAsync(Call callToUpdate)
-        {
-            return this.UpdateResponseAsync(callToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Call using PATCH and returns a <see cref="GraphResponse{Call}"/> object.
-        /// </summary>
-        /// <param name="callToUpdate">The Call to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Call}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Call>> UpdateResponseAsync(Call callToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Call>> UpdateResponseAsync(Call callToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (callToUpdate.AdditionalData != null)
-			{
-				if (callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, callToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (callToUpdate.AdditionalData != null)
-            {
-                if (callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    callToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, callToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Call>(callToUpdate, cancellationToken).ConfigureAwait(false);
         }

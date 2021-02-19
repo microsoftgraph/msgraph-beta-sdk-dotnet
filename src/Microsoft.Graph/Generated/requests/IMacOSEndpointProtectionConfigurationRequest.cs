@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSEndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
-        /// <returns>The created MacOSEndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> CreateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified MacOSEndpointProtectionConfiguration using POST.
-        /// </summary>
-        /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSEndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> CreateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MacOSEndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> CreateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate);
+        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> CreateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MacOSEndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="macOSEndpointProtectionConfigurationToCreate">The MacOSEndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> CreateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSEndpointProtectionConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> CreateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSEndpointProtectionConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSEndpointProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSEndpointProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSEndpointProtectionConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSEndpointProtectionConfiguration using PATCH.
         /// </summary>
         /// <param name="macOSEndpointProtectionConfigurationToUpdate">The MacOSEndpointProtectionConfiguration to update.</param>
-        /// <returns>The updated MacOSEndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> UpdateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified MacOSEndpointProtectionConfiguration using PATCH.
-        /// </summary>
-        /// <param name="macOSEndpointProtectionConfigurationToUpdate">The MacOSEndpointProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSEndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> UpdateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MacOSEndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSEndpointProtectionConfigurationToUpdate">The MacOSEndpointProtectionConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> UpdateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate);
+        System.Threading.Tasks.Task<MacOSEndpointProtectionConfiguration> UpdateAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSEndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSEndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> UpdateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSEndpointProtectionConfiguration>> UpdateResponseAsync(MacOSEndpointProtectionConfiguration macOSEndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

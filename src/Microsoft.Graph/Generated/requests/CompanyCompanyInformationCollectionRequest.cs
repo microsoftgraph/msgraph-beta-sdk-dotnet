@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CompanyInformation to the collection via POST.
-        /// </summary>
-        /// <param name="companyInformation">The CompanyInformation to add.</param>
-        /// <returns>The created CompanyInformation.</returns>
-        public System.Threading.Tasks.Task<CompanyInformation> AddAsync(CompanyInformation companyInformation)
-        {
-            return this.AddAsync(companyInformation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CompanyInformation to the collection via POST.
         /// </summary>
         /// <param name="companyInformation">The CompanyInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CompanyInformation.</returns>
-        public System.Threading.Tasks.Task<CompanyInformation> AddAsync(CompanyInformation companyInformation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CompanyInformation> AddAsync(CompanyInformation companyInformation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<CompanyInformation>(companyInformation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified CompanyInformation to the collection via POST and returns a <see cref="GraphResponse{CompanyInformation}"/> object of the request.
-        /// </summary>
-        /// <param name="companyInformation">The CompanyInformation to add.</param>
-        /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> AddResponseAsync(CompanyInformation companyInformation)
-        {
-            return this.AddResponseAsync(companyInformation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CompanyInformation to the collection via POST and returns a <see cref="GraphResponse{CompanyInformation}"/> object of the request.
         /// </summary>
         /// <param name="companyInformation">The CompanyInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> AddResponseAsync(CompanyInformation companyInformation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> AddResponseAsync(CompanyInformation companyInformation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CompanyInformation>(companyInformation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyCompanyInformationCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyCompanyInformationCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyCompanyInformationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CompanyCompanyInformationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCompanyInformationCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyCompanyInformationCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyCompanyInformationCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCompanyInformationCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyCompanyInformationCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyCompanyInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyCompanyInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CompanyCompanyInformationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

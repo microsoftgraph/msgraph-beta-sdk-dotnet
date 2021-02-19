@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
-        /// <returns>The created ImportedWindowsAutopilotDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate)
-        {
-            return this.CreateAsync(importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST.
-        /// </summary>
-        /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedWindowsAutopilotDeviceIdentity.</returns>
-        public async System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> CreateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> CreateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate)
-        {
-            return this.CreateResponseAsync(importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ImportedWindowsAutopilotDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedWindowsAutopilotDeviceIdentityToCreate">The ImportedWindowsAutopilotDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> CreateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> CreateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ImportedWindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
-        /// <returns>The updated ImportedWindowsAutopilotDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> UpdateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate)
-        {
-            return this.UpdateAsync(importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH.
-        /// </summary>
-        /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedWindowsAutopilotDeviceIdentity.</returns>
-        public async System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> UpdateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ImportedWindowsAutopilotDeviceIdentity> UpdateAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
-			{
-				if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedWindowsAutopilotDeviceIdentityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
-            {
-                if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedWindowsAutopilotDeviceIdentityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> UpdateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate)
-        {
-            return this.UpdateResponseAsync(importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ImportedWindowsAutopilotDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedWindowsAutopilotDeviceIdentityToUpdate">The ImportedWindowsAutopilotDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ImportedWindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> UpdateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedWindowsAutopilotDeviceIdentity>> UpdateResponseAsync(ImportedWindowsAutopilotDeviceIdentity importedWindowsAutopilotDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
-			{
-				if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedWindowsAutopilotDeviceIdentityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData != null)
-            {
-                if (importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    importedWindowsAutopilotDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedWindowsAutopilotDeviceIdentityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ImportedWindowsAutopilotDeviceIdentity>(importedWindowsAutopilotDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);
         }

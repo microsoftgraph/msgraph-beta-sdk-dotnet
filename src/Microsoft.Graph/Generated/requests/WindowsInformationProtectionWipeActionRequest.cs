@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionWipeAction using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
-        /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate)
-        {
-            return this.CreateAsync(windowsInformationProtectionWipeActionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionWipeAction using POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> CreateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeActionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionWipeAction using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> CreateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate)
-        {
-            return this.CreateResponseAsync(windowsInformationProtectionWipeActionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionWipeAction using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeActionToCreate">The WindowsInformationProtectionWipeAction to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> CreateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> CreateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeActionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionWipeAction.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionWipeAction.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsInformationProtectionWipeAction>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionWipeAction and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionWipeAction and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionWipeAction using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
-        /// <returns>The updated WindowsInformationProtectionWipeAction.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate)
-        {
-            return this.UpdateAsync(windowsInformationProtectionWipeActionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionWipeAction using PATCH.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionWipeAction.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> UpdateAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeActionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionWipeAction using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> UpdateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsInformationProtectionWipeActionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionWipeAction using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeActionToUpdate">The WindowsInformationProtectionWipeAction to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> UpdateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> UpdateResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeActionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionWipeActionToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionWipeActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionWipeActionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeActionToUpdate, cancellationToken).ConfigureAwait(false);
         }

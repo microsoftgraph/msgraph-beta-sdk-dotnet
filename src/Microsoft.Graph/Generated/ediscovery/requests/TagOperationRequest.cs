@@ -39,21 +39,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified TagOperation using POST.
         /// </summary>
         /// <param name="tagOperationToCreate">The TagOperation to create.</param>
-        /// <returns>The created TagOperation.</returns>
-        public System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate)
-        {
-            return this.CreateAsync(tagOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TagOperation using POST.
-        /// </summary>
-        /// <param name="tagOperationToCreate">The TagOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TagOperation.</returns>
-        public async System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TagOperation>(tagOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified TagOperation using POST and returns a <see cref="GraphResponse{TagOperation}"/> object.
         /// </summary>
         /// <param name="tagOperationToCreate">The TagOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TagOperation>> CreateResponseAsync(TagOperation tagOperationToCreate)
-        {
-            return this.CreateResponseAsync(tagOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TagOperation using POST and returns a <see cref="GraphResponse{TagOperation}"/> object.
-        /// </summary>
-        /// <param name="tagOperationToCreate">The TagOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TagOperation>> CreateResponseAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TagOperation>> CreateResponseAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TagOperation>(tagOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified TagOperation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TagOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TagOperation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified TagOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TagOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified TagOperation using PATCH.
         /// </summary>
         /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
-        /// <returns>The updated TagOperation.</returns>
-        public System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate)
-        {
-            return this.UpdateAsync(tagOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TagOperation using PATCH.
-        /// </summary>
-        /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TagOperation.</returns>
-        public async System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tagOperationToUpdate.AdditionalData != null)
-			{
-				if (tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tagOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tagOperationToUpdate.AdditionalData != null)
-            {
-                if (tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tagOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TagOperation>(tagOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified TagOperation using PATCH and returns a <see cref="GraphResponse{TagOperation}"/> object.
         /// </summary>
         /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TagOperation>> UpdateResponseAsync(TagOperation tagOperationToUpdate)
-        {
-            return this.UpdateResponseAsync(tagOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TagOperation using PATCH and returns a <see cref="GraphResponse{TagOperation}"/> object.
-        /// </summary>
-        /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TagOperation>> UpdateResponseAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TagOperation>> UpdateResponseAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tagOperationToUpdate.AdditionalData != null)
-			{
-				if (tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tagOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tagOperationToUpdate.AdditionalData != null)
-            {
-                if (tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tagOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tagOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TagOperation>(tagOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

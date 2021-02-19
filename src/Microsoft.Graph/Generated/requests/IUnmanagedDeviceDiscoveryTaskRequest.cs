@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified UnmanagedDeviceDiscoveryTask using POST.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
-        /// <returns>The created UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate);
-
-        /// <summary>
-        /// Creates the specified UnmanagedDeviceDiscoveryTask using POST.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified UnmanagedDeviceDiscoveryTask using POST and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate);
+        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified UnmanagedDeviceDiscoveryTask using POST and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnmanagedDeviceDiscoveryTask.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnmanagedDeviceDiscoveryTask.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnmanagedDeviceDiscoveryTask.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
-        /// <returns>The updated UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate);
-
-        /// <summary>
-        /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate);
+        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserTeamwork using POST.
         /// </summary>
         /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
-        /// <returns>The created UserTeamwork.</returns>
-        public System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate)
-        {
-            return this.CreateAsync(userTeamworkToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserTeamwork using POST.
-        /// </summary>
-        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserTeamwork.</returns>
-        public async System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserTeamwork>(userTeamworkToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserTeamwork using POST and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
         /// </summary>
         /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate)
-        {
-            return this.CreateResponseAsync(userTeamworkToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserTeamwork using POST and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
-        /// </summary>
-        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserTeamwork>(userTeamworkToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserTeamwork.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserTeamwork.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserTeamwork>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserTeamwork and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserTeamwork and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserTeamwork using PATCH.
         /// </summary>
         /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
-        /// <returns>The updated UserTeamwork.</returns>
-        public System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate)
-        {
-            return this.UpdateAsync(userTeamworkToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserTeamwork using PATCH.
-        /// </summary>
-        /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserTeamwork.</returns>
-        public async System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserTeamwork> UpdateAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userTeamworkToUpdate.AdditionalData != null)
-			{
-				if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userTeamworkToUpdate.AdditionalData != null)
-            {
-                if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserTeamwork>(userTeamworkToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserTeamwork using PATCH and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
         /// </summary>
         /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> UpdateResponseAsync(UserTeamwork userTeamworkToUpdate)
-        {
-            return this.UpdateResponseAsync(userTeamworkToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserTeamwork using PATCH and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
-        /// </summary>
-        /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> UpdateResponseAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> UpdateResponseAsync(UserTeamwork userTeamworkToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userTeamworkToUpdate.AdditionalData != null)
-			{
-				if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userTeamworkToUpdate.AdditionalData != null)
-            {
-                if (userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userTeamworkToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userTeamworkToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserTeamwork>(userTeamworkToUpdate, cancellationToken).ConfigureAwait(false);
         }

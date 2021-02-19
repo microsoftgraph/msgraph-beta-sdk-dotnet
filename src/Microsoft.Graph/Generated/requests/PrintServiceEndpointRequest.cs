@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrintServiceEndpoint using POST.
         /// </summary>
         /// <param name="printServiceEndpointToCreate">The PrintServiceEndpoint to create.</param>
-        /// <returns>The created PrintServiceEndpoint.</returns>
-        public System.Threading.Tasks.Task<PrintServiceEndpoint> CreateAsync(PrintServiceEndpoint printServiceEndpointToCreate)
-        {
-            return this.CreateAsync(printServiceEndpointToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrintServiceEndpoint using POST.
-        /// </summary>
-        /// <param name="printServiceEndpointToCreate">The PrintServiceEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintServiceEndpoint.</returns>
-        public async System.Threading.Tasks.Task<PrintServiceEndpoint> CreateAsync(PrintServiceEndpoint printServiceEndpointToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintServiceEndpoint> CreateAsync(PrintServiceEndpoint printServiceEndpointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrintServiceEndpoint>(printServiceEndpointToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrintServiceEndpoint using POST and returns a <see cref="GraphResponse{PrintServiceEndpoint}"/> object.
         /// </summary>
         /// <param name="printServiceEndpointToCreate">The PrintServiceEndpoint to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrintServiceEndpoint}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> CreateResponseAsync(PrintServiceEndpoint printServiceEndpointToCreate)
-        {
-            return this.CreateResponseAsync(printServiceEndpointToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrintServiceEndpoint using POST and returns a <see cref="GraphResponse{PrintServiceEndpoint}"/> object.
-        /// </summary>
-        /// <param name="printServiceEndpointToCreate">The PrintServiceEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintServiceEndpoint}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> CreateResponseAsync(PrintServiceEndpoint printServiceEndpointToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> CreateResponseAsync(PrintServiceEndpoint printServiceEndpointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrintServiceEndpoint>(printServiceEndpointToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrintServiceEndpoint.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrintServiceEndpoint.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PrintServiceEndpoint>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrintServiceEndpoint and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrintServiceEndpoint and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrintServiceEndpoint using PATCH.
         /// </summary>
         /// <param name="printServiceEndpointToUpdate">The PrintServiceEndpoint to update.</param>
-        /// <returns>The updated PrintServiceEndpoint.</returns>
-        public System.Threading.Tasks.Task<PrintServiceEndpoint> UpdateAsync(PrintServiceEndpoint printServiceEndpointToUpdate)
-        {
-            return this.UpdateAsync(printServiceEndpointToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrintServiceEndpoint using PATCH.
-        /// </summary>
-        /// <param name="printServiceEndpointToUpdate">The PrintServiceEndpoint to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintServiceEndpoint.</returns>
-        public async System.Threading.Tasks.Task<PrintServiceEndpoint> UpdateAsync(PrintServiceEndpoint printServiceEndpointToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintServiceEndpoint> UpdateAsync(PrintServiceEndpoint printServiceEndpointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printServiceEndpointToUpdate.AdditionalData != null)
-			{
-				if (printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printServiceEndpointToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printServiceEndpointToUpdate.AdditionalData != null)
-            {
-                if (printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printServiceEndpointToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrintServiceEndpoint>(printServiceEndpointToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrintServiceEndpoint using PATCH and returns a <see cref="GraphResponse{PrintServiceEndpoint}"/> object.
         /// </summary>
         /// <param name="printServiceEndpointToUpdate">The PrintServiceEndpoint to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrintServiceEndpoint}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> UpdateResponseAsync(PrintServiceEndpoint printServiceEndpointToUpdate)
-        {
-            return this.UpdateResponseAsync(printServiceEndpointToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrintServiceEndpoint using PATCH and returns a <see cref="GraphResponse{PrintServiceEndpoint}"/> object.
-        /// </summary>
-        /// <param name="printServiceEndpointToUpdate">The PrintServiceEndpoint to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrintServiceEndpoint}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> UpdateResponseAsync(PrintServiceEndpoint printServiceEndpointToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintServiceEndpoint>> UpdateResponseAsync(PrintServiceEndpoint printServiceEndpointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printServiceEndpointToUpdate.AdditionalData != null)
-			{
-				if (printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printServiceEndpointToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printServiceEndpointToUpdate.AdditionalData != null)
-            {
-                if (printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printServiceEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printServiceEndpointToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PrintServiceEndpoint>(printServiceEndpointToUpdate, cancellationToken).ConfigureAwait(false);
         }

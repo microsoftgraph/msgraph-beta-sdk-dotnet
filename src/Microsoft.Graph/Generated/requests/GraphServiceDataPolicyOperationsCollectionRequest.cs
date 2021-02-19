@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DataPolicyOperation to the collection via POST.
-        /// </summary>
-        /// <param name="dataPolicyOperation">The DataPolicyOperation to add.</param>
-        /// <returns>The created DataPolicyOperation.</returns>
-        public System.Threading.Tasks.Task<DataPolicyOperation> AddAsync(DataPolicyOperation dataPolicyOperation)
-        {
-            return this.AddAsync(dataPolicyOperation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DataPolicyOperation to the collection via POST.
         /// </summary>
         /// <param name="dataPolicyOperation">The DataPolicyOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataPolicyOperation.</returns>
-        public System.Threading.Tasks.Task<DataPolicyOperation> AddAsync(DataPolicyOperation dataPolicyOperation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DataPolicyOperation> AddAsync(DataPolicyOperation dataPolicyOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DataPolicyOperation>(dataPolicyOperation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DataPolicyOperation to the collection via POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.
-        /// </summary>
-        /// <param name="dataPolicyOperation">The DataPolicyOperation to add.</param>
-        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> AddResponseAsync(DataPolicyOperation dataPolicyOperation)
-        {
-            return this.AddResponseAsync(dataPolicyOperation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DataPolicyOperation to the collection via POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.
         /// </summary>
         /// <param name="dataPolicyOperation">The DataPolicyOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> AddResponseAsync(DataPolicyOperation dataPolicyOperation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> AddResponseAsync(DataPolicyOperation dataPolicyOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DataPolicyOperation>(dataPolicyOperation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceDataPolicyOperationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceDataPolicyOperationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceDataPolicyOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceDataPolicyOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDataPolicyOperationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceDataPolicyOperationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceDataPolicyOperationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDataPolicyOperationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceDataPolicyOperationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDataPolicyOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDataPolicyOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceDataPolicyOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

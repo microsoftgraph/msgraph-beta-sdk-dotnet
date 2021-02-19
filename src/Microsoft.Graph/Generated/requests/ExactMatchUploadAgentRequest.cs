@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchUploadAgent using POST.
         /// </summary>
         /// <param name="exactMatchUploadAgentToCreate">The ExactMatchUploadAgent to create.</param>
-        /// <returns>The created ExactMatchUploadAgent.</returns>
-        public System.Threading.Tasks.Task<ExactMatchUploadAgent> CreateAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate)
-        {
-            return this.CreateAsync(exactMatchUploadAgentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchUploadAgent using POST.
-        /// </summary>
-        /// <param name="exactMatchUploadAgentToCreate">The ExactMatchUploadAgent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchUploadAgent.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchUploadAgent> CreateAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchUploadAgent> CreateAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ExactMatchUploadAgent>(exactMatchUploadAgentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchUploadAgent using POST and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object.
         /// </summary>
         /// <param name="exactMatchUploadAgentToCreate">The ExactMatchUploadAgent to create.</param>
-        /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> CreateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate)
-        {
-            return this.CreateResponseAsync(exactMatchUploadAgentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchUploadAgent using POST and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object.
-        /// </summary>
-        /// <param name="exactMatchUploadAgentToCreate">The ExactMatchUploadAgent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> CreateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> CreateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExactMatchUploadAgent>(exactMatchUploadAgentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExactMatchUploadAgent.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExactMatchUploadAgent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ExactMatchUploadAgent>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExactMatchUploadAgent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExactMatchUploadAgent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExactMatchUploadAgent using PATCH.
         /// </summary>
         /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent to update.</param>
-        /// <returns>The updated ExactMatchUploadAgent.</returns>
-        public System.Threading.Tasks.Task<ExactMatchUploadAgent> UpdateAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate)
-        {
-            return this.UpdateAsync(exactMatchUploadAgentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExactMatchUploadAgent using PATCH.
-        /// </summary>
-        /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchUploadAgent.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchUploadAgent> UpdateAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchUploadAgent> UpdateAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (exactMatchUploadAgentToUpdate.AdditionalData != null)
-			{
-				if (exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchUploadAgentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchUploadAgentToUpdate.AdditionalData != null)
-            {
-                if (exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchUploadAgentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ExactMatchUploadAgent>(exactMatchUploadAgentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExactMatchUploadAgent using PATCH and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object.
         /// </summary>
         /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent to update.</param>
-        /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> UpdateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate)
-        {
-            return this.UpdateResponseAsync(exactMatchUploadAgentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExactMatchUploadAgent using PATCH and returns a <see cref="GraphResponse{ExactMatchUploadAgent}"/> object.
-        /// </summary>
-        /// <param name="exactMatchUploadAgentToUpdate">The ExactMatchUploadAgent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ExactMatchUploadAgent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> UpdateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchUploadAgent>> UpdateResponseAsync(ExactMatchUploadAgent exactMatchUploadAgentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (exactMatchUploadAgentToUpdate.AdditionalData != null)
-			{
-				if (exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchUploadAgentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchUploadAgentToUpdate.AdditionalData != null)
-            {
-                if (exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchUploadAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchUploadAgentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ExactMatchUploadAgent>(exactMatchUploadAgentToUpdate, cancellationToken).ConfigureAwait(false);
         }

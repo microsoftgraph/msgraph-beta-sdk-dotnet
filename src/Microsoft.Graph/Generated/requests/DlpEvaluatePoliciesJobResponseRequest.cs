@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DlpEvaluatePoliciesJobResponse using POST.
         /// </summary>
         /// <param name="dlpEvaluatePoliciesJobResponseToCreate">The DlpEvaluatePoliciesJobResponse to create.</param>
-        /// <returns>The created DlpEvaluatePoliciesJobResponse.</returns>
-        public System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> CreateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate)
-        {
-            return this.CreateAsync(dlpEvaluatePoliciesJobResponseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DlpEvaluatePoliciesJobResponse using POST.
-        /// </summary>
-        /// <param name="dlpEvaluatePoliciesJobResponseToCreate">The DlpEvaluatePoliciesJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DlpEvaluatePoliciesJobResponse.</returns>
-        public async System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> CreateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> CreateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DlpEvaluatePoliciesJobResponse>(dlpEvaluatePoliciesJobResponseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DlpEvaluatePoliciesJobResponse using POST and returns a <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object.
         /// </summary>
         /// <param name="dlpEvaluatePoliciesJobResponseToCreate">The DlpEvaluatePoliciesJobResponse to create.</param>
-        /// <returns>The <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> CreateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate)
-        {
-            return this.CreateResponseAsync(dlpEvaluatePoliciesJobResponseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DlpEvaluatePoliciesJobResponse using POST and returns a <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object.
-        /// </summary>
-        /// <param name="dlpEvaluatePoliciesJobResponseToCreate">The DlpEvaluatePoliciesJobResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> CreateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> CreateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DlpEvaluatePoliciesJobResponse>(dlpEvaluatePoliciesJobResponseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DlpEvaluatePoliciesJobResponse.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DlpEvaluatePoliciesJobResponse.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DlpEvaluatePoliciesJobResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DlpEvaluatePoliciesJobResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DlpEvaluatePoliciesJobResponse and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DlpEvaluatePoliciesJobResponse using PATCH.
         /// </summary>
         /// <param name="dlpEvaluatePoliciesJobResponseToUpdate">The DlpEvaluatePoliciesJobResponse to update.</param>
-        /// <returns>The updated DlpEvaluatePoliciesJobResponse.</returns>
-        public System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> UpdateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate)
-        {
-            return this.UpdateAsync(dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DlpEvaluatePoliciesJobResponse using PATCH.
-        /// </summary>
-        /// <param name="dlpEvaluatePoliciesJobResponseToUpdate">The DlpEvaluatePoliciesJobResponse to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DlpEvaluatePoliciesJobResponse.</returns>
-        public async System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> UpdateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DlpEvaluatePoliciesJobResponse> UpdateAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData != null)
-			{
-				if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dlpEvaluatePoliciesJobResponseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData != null)
-            {
-                if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dlpEvaluatePoliciesJobResponseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DlpEvaluatePoliciesJobResponse>(dlpEvaluatePoliciesJobResponseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DlpEvaluatePoliciesJobResponse using PATCH and returns a <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object.
         /// </summary>
         /// <param name="dlpEvaluatePoliciesJobResponseToUpdate">The DlpEvaluatePoliciesJobResponse to update.</param>
-        /// <returns>The <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> UpdateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate)
-        {
-            return this.UpdateResponseAsync(dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DlpEvaluatePoliciesJobResponse using PATCH and returns a <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object.
-        /// </summary>
-        /// <param name="dlpEvaluatePoliciesJobResponseToUpdate">The DlpEvaluatePoliciesJobResponse to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DlpEvaluatePoliciesJobResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> UpdateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DlpEvaluatePoliciesJobResponse>> UpdateResponseAsync(DlpEvaluatePoliciesJobResponse dlpEvaluatePoliciesJobResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData != null)
-			{
-				if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dlpEvaluatePoliciesJobResponseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData != null)
-            {
-                if (dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dlpEvaluatePoliciesJobResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dlpEvaluatePoliciesJobResponseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DlpEvaluatePoliciesJobResponse>(dlpEvaluatePoliciesJobResponseToUpdate, cancellationToken).ConfigureAwait(false);
         }

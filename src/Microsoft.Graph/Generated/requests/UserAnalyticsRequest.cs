@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserAnalytics using POST.
         /// </summary>
         /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
-        /// <returns>The created UserAnalytics.</returns>
-        public System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate)
-        {
-            return this.CreateAsync(userAnalyticsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserAnalytics using POST.
-        /// </summary>
-        /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAnalytics.</returns>
-        public async System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserAnalytics>(userAnalyticsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserAnalytics using POST and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
         /// </summary>
         /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> CreateResponseAsync(UserAnalytics userAnalyticsToCreate)
-        {
-            return this.CreateResponseAsync(userAnalyticsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserAnalytics using POST and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
-        /// </summary>
-        /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> CreateResponseAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> CreateResponseAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserAnalytics>(userAnalyticsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserAnalytics.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserAnalytics.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserAnalytics>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserAnalytics and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserAnalytics and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserAnalytics using PATCH.
         /// </summary>
         /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
-        /// <returns>The updated UserAnalytics.</returns>
-        public System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate)
-        {
-            return this.UpdateAsync(userAnalyticsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserAnalytics using PATCH.
-        /// </summary>
-        /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserAnalytics.</returns>
-        public async System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userAnalyticsToUpdate.AdditionalData != null)
-			{
-				if (userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAnalyticsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userAnalyticsToUpdate.AdditionalData != null)
-            {
-                if (userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAnalyticsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserAnalytics>(userAnalyticsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserAnalytics using PATCH and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
         /// </summary>
         /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> UpdateResponseAsync(UserAnalytics userAnalyticsToUpdate)
-        {
-            return this.UpdateResponseAsync(userAnalyticsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserAnalytics using PATCH and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
-        /// </summary>
-        /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> UpdateResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> UpdateResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userAnalyticsToUpdate.AdditionalData != null)
-			{
-				if (userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAnalyticsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userAnalyticsToUpdate.AdditionalData != null)
-            {
-                if (userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userAnalyticsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAnalyticsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserAnalytics>(userAnalyticsToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified JournalLine to the collection via POST.
-        /// </summary>
-        /// <param name="journalLine">The JournalLine to add.</param>
-        /// <returns>The created JournalLine.</returns>
-        public System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine)
-        {
-            return this.AddAsync(journalLine, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified JournalLine to the collection via POST.
         /// </summary>
         /// <param name="journalLine">The JournalLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JournalLine.</returns>
-        public System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<JournalLine>(journalLine, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified JournalLine to the collection via POST and returns a <see cref="GraphResponse{JournalLine}"/> object of the request.
-        /// </summary>
-        /// <param name="journalLine">The JournalLine to add.</param>
-        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine)
-        {
-            return this.AddResponseAsync(journalLine, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified JournalLine to the collection via POST and returns a <see cref="GraphResponse{JournalLine}"/> object of the request.
         /// </summary>
         /// <param name="journalLine">The JournalLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<JournalLine>(journalLine, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CompanyJournalLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CompanyJournalLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

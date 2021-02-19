@@ -39,21 +39,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Case using POST.
         /// </summary>
         /// <param name="caseToCreate">The Case to create.</param>
-        /// <returns>The created Case.</returns>
-        public System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate)
-        {
-            return this.CreateAsync(caseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Case using POST.
-        /// </summary>
-        /// <param name="caseToCreate">The Case to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Case.</returns>
-        public async System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Case>(caseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Case using POST and returns a <see cref="GraphResponse{Case}"/> object.
         /// </summary>
         /// <param name="caseToCreate">The Case to create.</param>
-        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Case>> CreateResponseAsync(Case caseToCreate)
-        {
-            return this.CreateResponseAsync(caseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Case using POST and returns a <see cref="GraphResponse{Case}"/> object.
-        /// </summary>
-        /// <param name="caseToCreate">The Case to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Case>> CreateResponseAsync(Case caseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Case>> CreateResponseAsync(Case caseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Case>(caseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified Case.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Case.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Case>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified Case and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Case and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified Case using PATCH.
         /// </summary>
         /// <param name="caseToUpdate">The Case to update.</param>
-        /// <returns>The updated Case.</returns>
-        public System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate)
-        {
-            return this.UpdateAsync(caseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Case using PATCH.
-        /// </summary>
-        /// <param name="caseToUpdate">The Case to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Case.</returns>
-        public async System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (caseToUpdate.AdditionalData != null)
-			{
-				if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (caseToUpdate.AdditionalData != null)
-            {
-                if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Case>(caseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified Case using PATCH and returns a <see cref="GraphResponse{Case}"/> object.
         /// </summary>
         /// <param name="caseToUpdate">The Case to update.</param>
-        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Case>> UpdateResponseAsync(Case caseToUpdate)
-        {
-            return this.UpdateResponseAsync(caseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Case using PATCH and returns a <see cref="GraphResponse{Case}"/> object.
-        /// </summary>
-        /// <param name="caseToUpdate">The Case to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Case>> UpdateResponseAsync(Case caseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Case>> UpdateResponseAsync(Case caseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (caseToUpdate.AdditionalData != null)
-			{
-				if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (caseToUpdate.AdditionalData != null)
-            {
-                if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Case>(caseToUpdate, cancellationToken).ConfigureAwait(false);
         }

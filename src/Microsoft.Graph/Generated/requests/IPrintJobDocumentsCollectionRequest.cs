@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrintJobDocumentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrintDocument to the collection via POST.
-        /// </summary>
-        /// <param name="printDocument">The PrintDocument to add.</param>
-        /// <returns>The created PrintDocument.</returns>
-        System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument);
-
         /// <summary>
         /// Adds the specified PrintDocument to the collection via POST.
         /// </summary>
         /// <param name="printDocument">The PrintDocument to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintDocument.</returns>
-        System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PrintDocument to the collection via POST and returns a <see cref="GraphResponse{PrintDocument}"/> object of the request.
-        /// </summary>
-        /// <param name="printDocument">The PrintDocument to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrintDocument}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintDocument>> AddResponseAsync(PrintDocument printDocument);
+        System.Threading.Tasks.Task<PrintDocument> AddAsync(PrintDocument printDocument, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PrintDocument to the collection via POST and returns a <see cref="GraphResponse{PrintDocument}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="printDocument">The PrintDocument to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintDocument}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintDocument>> AddResponseAsync(PrintDocument printDocument, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintDocument>> AddResponseAsync(PrintDocument printDocument, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJobDocumentsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IPrintJobDocumentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintJobDocumentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJobDocumentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintJobDocumentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

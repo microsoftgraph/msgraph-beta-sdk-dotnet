@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagedDeviceUsersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified User to the collection via POST.
-        /// </summary>
-        /// <param name="user">The User to add.</param>
-        /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> AddAsync(User user);
-
         /// <summary>
         /// Adds the specified User to the collection via POST.
         /// </summary>
         /// <param name="user">The User to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> AddAsync(User user, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
-        /// </summary>
-        /// <param name="user">The User to add.</param>
-        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user);
+        System.Threading.Tasks.Task<User> AddAsync(User user, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="user">The User to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedDeviceUsersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedDeviceUsersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceUsersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceUsersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceUsersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IManagedDeviceUsersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceUsersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceUsersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

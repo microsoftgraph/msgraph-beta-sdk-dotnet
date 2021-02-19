@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PublishedResource using POST.
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
-        /// <returns>The created PublishedResource.</returns>
-        public System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate)
-        {
-            return this.CreateAsync(publishedResourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PublishedResource using POST.
-        /// </summary>
-        /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PublishedResource.</returns>
-        public async System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PublishedResource> CreateAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PublishedResource>(publishedResourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PublishedResource using POST and returns a <see cref="GraphResponse{PublishedResource}"/> object.
         /// </summary>
         /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
-        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate)
-        {
-            return this.CreateResponseAsync(publishedResourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PublishedResource using POST and returns a <see cref="GraphResponse{PublishedResource}"/> object.
-        /// </summary>
-        /// <param name="publishedResourceToCreate">The PublishedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PublishedResource>> CreateResponseAsync(PublishedResource publishedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PublishedResource>(publishedResourceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PublishedResource.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PublishedResource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PublishedResource>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PublishedResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PublishedResource and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PublishedResource using PATCH.
         /// </summary>
         /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
-        /// <returns>The updated PublishedResource.</returns>
-        public System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate)
-        {
-            return this.UpdateAsync(publishedResourceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PublishedResource using PATCH.
-        /// </summary>
-        /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PublishedResource.</returns>
-        public async System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PublishedResource> UpdateAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (publishedResourceToUpdate.AdditionalData != null)
-			{
-				if (publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, publishedResourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (publishedResourceToUpdate.AdditionalData != null)
-            {
-                if (publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, publishedResourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PublishedResource>(publishedResourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PublishedResource using PATCH and returns a <see cref="GraphResponse{PublishedResource}"/> object.
         /// </summary>
         /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
-        /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate)
-        {
-            return this.UpdateResponseAsync(publishedResourceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PublishedResource using PATCH and returns a <see cref="GraphResponse{PublishedResource}"/> object.
-        /// </summary>
-        /// <param name="publishedResourceToUpdate">The PublishedResource to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PublishedResource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PublishedResource>> UpdateResponseAsync(PublishedResource publishedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (publishedResourceToUpdate.AdditionalData != null)
-			{
-				if (publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, publishedResourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (publishedResourceToUpdate.AdditionalData != null)
-            {
-                if (publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    publishedResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, publishedResourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PublishedResource>(publishedResourceToUpdate, cancellationToken).ConfigureAwait(false);
         }

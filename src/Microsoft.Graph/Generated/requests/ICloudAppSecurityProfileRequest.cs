@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified CloudAppSecurityProfile using POST.
         /// </summary>
         /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
-        /// <returns>The created CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate);
-
-        /// <summary>
-        /// Creates the specified CloudAppSecurityProfile using POST.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified CloudAppSecurityProfile using POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate);
+        System.Threading.Tasks.Task<CloudAppSecurityProfile> CreateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified CloudAppSecurityProfile using POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="cloudAppSecurityProfileToCreate">The CloudAppSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudAppSecurityProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> CreateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CloudAppSecurityProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CloudAppSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CloudAppSecurityProfile.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified CloudAppSecurityProfile using PATCH.
         /// </summary>
         /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
-        /// <returns>The updated CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate);
-
-        /// <summary>
-        /// Updates the specified CloudAppSecurityProfile using PATCH.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified CloudAppSecurityProfile using PATCH and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfileToUpdate">The CloudAppSecurityProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate);
+        System.Threading.Tasks.Task<CloudAppSecurityProfile> UpdateAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CloudAppSecurityProfile using PATCH and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> UpdateResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ThreatAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
-        /// <returns>The created ThreatAssessmentRequestObject.</returns>
-        public System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate)
-        {
-            return this.CreateAsync(threatAssessmentRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ThreatAssessmentRequestObject using POST.
-        /// </summary>
-        /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThreatAssessmentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ThreatAssessmentRequestObject>(threatAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ThreatAssessmentRequestObject using POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> CreateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate)
-        {
-            return this.CreateResponseAsync(threatAssessmentRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ThreatAssessmentRequestObject using POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> CreateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> CreateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ThreatAssessmentRequest.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ThreatAssessmentRequest.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ThreatAssessmentRequestObject>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ThreatAssessmentRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ThreatAssessmentRequest and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ThreatAssessmentRequestObject using PATCH.
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
-        /// <returns>The updated ThreatAssessmentRequestObject.</returns>
-        public System.Threading.Tasks.Task<ThreatAssessmentRequestObject> UpdateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate)
-        {
-            return this.UpdateAsync(threatAssessmentRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ThreatAssessmentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ThreatAssessmentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<ThreatAssessmentRequestObject> UpdateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ThreatAssessmentRequestObject> UpdateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ThreatAssessmentRequestObject>(threatAssessmentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate)
-        {
-            return this.UpdateResponseAsync(threatAssessmentRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

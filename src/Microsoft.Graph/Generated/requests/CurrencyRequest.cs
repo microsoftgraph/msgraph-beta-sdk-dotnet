@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Currency using POST.
         /// </summary>
         /// <param name="currencyToCreate">The Currency to create.</param>
-        /// <returns>The created Currency.</returns>
-        public System.Threading.Tasks.Task<Currency> CreateAsync(Currency currencyToCreate)
-        {
-            return this.CreateAsync(currencyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Currency using POST.
-        /// </summary>
-        /// <param name="currencyToCreate">The Currency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Currency.</returns>
-        public async System.Threading.Tasks.Task<Currency> CreateAsync(Currency currencyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Currency> CreateAsync(Currency currencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Currency>(currencyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Currency using POST and returns a <see cref="GraphResponse{Currency}"/> object.
         /// </summary>
         /// <param name="currencyToCreate">The Currency to create.</param>
-        /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Currency>> CreateResponseAsync(Currency currencyToCreate)
-        {
-            return this.CreateResponseAsync(currencyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Currency using POST and returns a <see cref="GraphResponse{Currency}"/> object.
-        /// </summary>
-        /// <param name="currencyToCreate">The Currency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Currency>> CreateResponseAsync(Currency currencyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Currency>> CreateResponseAsync(Currency currencyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Currency>(currencyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Currency.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Currency.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Currency>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Currency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Currency and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Currency using PATCH.
         /// </summary>
         /// <param name="currencyToUpdate">The Currency to update.</param>
-        /// <returns>The updated Currency.</returns>
-        public System.Threading.Tasks.Task<Currency> UpdateAsync(Currency currencyToUpdate)
-        {
-            return this.UpdateAsync(currencyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Currency using PATCH.
-        /// </summary>
-        /// <param name="currencyToUpdate">The Currency to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Currency.</returns>
-        public async System.Threading.Tasks.Task<Currency> UpdateAsync(Currency currencyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Currency> UpdateAsync(Currency currencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (currencyToUpdate.AdditionalData != null)
-			{
-				if (currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, currencyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (currencyToUpdate.AdditionalData != null)
-            {
-                if (currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, currencyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Currency>(currencyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Currency using PATCH and returns a <see cref="GraphResponse{Currency}"/> object.
         /// </summary>
         /// <param name="currencyToUpdate">The Currency to update.</param>
-        /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Currency>> UpdateResponseAsync(Currency currencyToUpdate)
-        {
-            return this.UpdateResponseAsync(currencyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Currency using PATCH and returns a <see cref="GraphResponse{Currency}"/> object.
-        /// </summary>
-        /// <param name="currencyToUpdate">The Currency to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Currency}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Currency>> UpdateResponseAsync(Currency currencyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Currency>> UpdateResponseAsync(Currency currencyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (currencyToUpdate.AdditionalData != null)
-			{
-				if (currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, currencyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (currencyToUpdate.AdditionalData != null)
-            {
-                if (currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    currencyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, currencyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Currency>(currencyToUpdate, cancellationToken).ConfigureAwait(false);
         }

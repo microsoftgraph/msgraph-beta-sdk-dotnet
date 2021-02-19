@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
-        /// <returns>The created WindowsInformationProtectionPolicy.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> AddAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy)
-        {
-            return this.AddAsync(windowsInformationProtectionPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST.
         /// </summary>
         /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> AddAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> AddAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy)
-        {
-            return this.AddResponseAsync(windowsInformationProtectionPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.
         /// </summary>
         /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementWindowsInformationProtectionPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAutopilotSettings using POST.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
-        /// <returns>The created WindowsAutopilotSettings.</returns>
-        public System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate)
-        {
-            return this.CreateAsync(windowsAutopilotSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsAutopilotSettings using POST.
-        /// </summary>
-        /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAutopilotSettings.</returns>
-        public async System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAutopilotSettings> CreateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsAutopilotSettings>(windowsAutopilotSettingsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAutopilotSettings using POST and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> CreateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate)
-        {
-            return this.CreateResponseAsync(windowsAutopilotSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsAutopilotSettings using POST and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
-        /// </summary>
-        /// <param name="windowsAutopilotSettingsToCreate">The WindowsAutopilotSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> CreateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> CreateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsAutopilotSettings>(windowsAutopilotSettingsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsAutopilotSettings.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsAutopilotSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsAutopilotSettings>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsAutopilotSettings and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsAutopilotSettings using PATCH.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
-        /// <returns>The updated WindowsAutopilotSettings.</returns>
-        public System.Threading.Tasks.Task<WindowsAutopilotSettings> UpdateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate)
-        {
-            return this.UpdateAsync(windowsAutopilotSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsAutopilotSettings using PATCH.
-        /// </summary>
-        /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotSettings.</returns>
-        public async System.Threading.Tasks.Task<WindowsAutopilotSettings> UpdateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAutopilotSettings> UpdateAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
-			{
-				if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
-            {
-                if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsAutopilotSettings>(windowsAutopilotSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsAutopilotSettings using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
         /// </summary>
         /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> UpdateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsAutopilotSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsAutopilotSettings using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotSettings}"/> object.
-        /// </summary>
-        /// <param name="windowsAutopilotSettingsToUpdate">The WindowsAutopilotSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> UpdateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotSettings>> UpdateResponseAsync(WindowsAutopilotSettings windowsAutopilotSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
-			{
-				if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsAutopilotSettingsToUpdate.AdditionalData != null)
-            {
-                if (windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsAutopilotSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAutopilotSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsAutopilotSettings>(windowsAutopilotSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }

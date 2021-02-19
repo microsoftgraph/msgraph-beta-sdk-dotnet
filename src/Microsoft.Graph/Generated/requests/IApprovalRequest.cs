@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Approval using POST.
         /// </summary>
         /// <param name="approvalToCreate">The Approval to create.</param>
-        /// <returns>The created Approval.</returns>
-        System.Threading.Tasks.Task<Approval> CreateAsync(Approval approvalToCreate);
-
-        /// <summary>
-        /// Creates the specified Approval using POST.
-        /// </summary>
-        /// <param name="approvalToCreate">The Approval to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Approval.</returns>
-        System.Threading.Tasks.Task<Approval> CreateAsync(Approval approvalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Approval using POST and returns a <see cref="GraphResponse{Approval}"/> object.
-        /// </summary>
-        /// <param name="approvalToCreate">The Approval to create.</param>
-        /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> CreateResponseAsync(Approval approvalToCreate);
+        System.Threading.Tasks.Task<Approval> CreateAsync(Approval approvalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Approval using POST and returns a <see cref="GraphResponse{Approval}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="approvalToCreate">The Approval to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> CreateResponseAsync(Approval approvalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Approval.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Approval>> CreateResponseAsync(Approval approvalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Approval.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Approval and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Approval and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Approval.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Approval using PATCH.
         /// </summary>
         /// <param name="approvalToUpdate">The Approval to update.</param>
-        /// <returns>The updated Approval.</returns>
-        System.Threading.Tasks.Task<Approval> UpdateAsync(Approval approvalToUpdate);
-
-        /// <summary>
-        /// Updates the specified Approval using PATCH.
-        /// </summary>
-        /// <param name="approvalToUpdate">The Approval to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Approval.</returns>
-        System.Threading.Tasks.Task<Approval> UpdateAsync(Approval approvalToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Approval using PATCH and returns a <see cref="GraphResponse{Approval}"/> object.
-        /// </summary>
-        /// <param name="approvalToUpdate">The Approval to update.</param>
-        /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> UpdateResponseAsync(Approval approvalToUpdate);
+        System.Threading.Tasks.Task<Approval> UpdateAsync(Approval approvalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Approval using PATCH and returns a <see cref="GraphResponse{Approval}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> UpdateResponseAsync(Approval approvalToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Approval>> UpdateResponseAsync(Approval approvalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

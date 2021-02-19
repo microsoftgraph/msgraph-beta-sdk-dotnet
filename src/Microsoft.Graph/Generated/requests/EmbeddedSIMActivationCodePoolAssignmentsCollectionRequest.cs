@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
-        /// <returns>The created EmbeddedSIMActivationCodePoolAssignment.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> AddAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment)
-        {
-            return this.AddAsync(embeddedSIMActivationCodePoolAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST.
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMActivationCodePoolAssignment.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> AddAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePoolAssignment> AddAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EmbeddedSIMActivationCodePoolAssignment>(embeddedSIMActivationCodePoolAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> AddResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment)
-        {
-            return this.AddResponseAsync(embeddedSIMActivationCodePoolAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EmbeddedSIMActivationCodePoolAssignment to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolAssignment">The EmbeddedSIMActivationCodePoolAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> AddResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignment>> AddResponseAsync(EmbeddedSIMActivationCodePoolAssignment embeddedSIMActivationCodePoolAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePoolAssignment>(embeddedSIMActivationCodePoolAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePoolAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

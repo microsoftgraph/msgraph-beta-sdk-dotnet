@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
-        /// <returns>The created DeviceManagementIntentDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceState> AddAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState)
-        {
-            return this.AddAsync(deviceManagementIntentDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceState> AddAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceState> AddAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementIntentDeviceState>(deviceManagementIntentDeviceState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceState>> AddResponseAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState)
-        {
-            return this.AddResponseAsync(deviceManagementIntentDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementIntentDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementIntentDeviceState">The DeviceManagementIntentDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceState>> AddResponseAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceState>> AddResponseAsync(DeviceManagementIntentDeviceState deviceManagementIntentDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceState>(deviceManagementIntentDeviceState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementIntentDeviceStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementIntentDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementIntentDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementIntentDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

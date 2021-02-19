@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified CustomerPaymentJournal using POST.
         /// </summary>
         /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
-        /// <returns>The created CustomerPaymentJournal.</returns>
-        public System.Threading.Tasks.Task<CustomerPaymentJournal> CreateAsync(CustomerPaymentJournal customerPaymentJournalToCreate)
-        {
-            return this.CreateAsync(customerPaymentJournalToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CustomerPaymentJournal using POST.
-        /// </summary>
-        /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CustomerPaymentJournal.</returns>
-        public async System.Threading.Tasks.Task<CustomerPaymentJournal> CreateAsync(CustomerPaymentJournal customerPaymentJournalToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CustomerPaymentJournal> CreateAsync(CustomerPaymentJournal customerPaymentJournalToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CustomerPaymentJournal>(customerPaymentJournalToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified CustomerPaymentJournal using POST and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
         /// </summary>
         /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
-        /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> CreateResponseAsync(CustomerPaymentJournal customerPaymentJournalToCreate)
-        {
-            return this.CreateResponseAsync(customerPaymentJournalToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CustomerPaymentJournal using POST and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
-        /// </summary>
-        /// <param name="customerPaymentJournalToCreate">The CustomerPaymentJournal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> CreateResponseAsync(CustomerPaymentJournal customerPaymentJournalToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> CreateResponseAsync(CustomerPaymentJournal customerPaymentJournalToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CustomerPaymentJournal>(customerPaymentJournalToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CustomerPaymentJournal.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CustomerPaymentJournal.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<CustomerPaymentJournal>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CustomerPaymentJournal and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CustomerPaymentJournal and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified CustomerPaymentJournal using PATCH.
         /// </summary>
         /// <param name="customerPaymentJournalToUpdate">The CustomerPaymentJournal to update.</param>
-        /// <returns>The updated CustomerPaymentJournal.</returns>
-        public System.Threading.Tasks.Task<CustomerPaymentJournal> UpdateAsync(CustomerPaymentJournal customerPaymentJournalToUpdate)
-        {
-            return this.UpdateAsync(customerPaymentJournalToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CustomerPaymentJournal using PATCH.
-        /// </summary>
-        /// <param name="customerPaymentJournalToUpdate">The CustomerPaymentJournal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CustomerPaymentJournal.</returns>
-        public async System.Threading.Tasks.Task<CustomerPaymentJournal> UpdateAsync(CustomerPaymentJournal customerPaymentJournalToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CustomerPaymentJournal> UpdateAsync(CustomerPaymentJournal customerPaymentJournalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (customerPaymentJournalToUpdate.AdditionalData != null)
-			{
-				if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (customerPaymentJournalToUpdate.AdditionalData != null)
-            {
-                if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CustomerPaymentJournal>(customerPaymentJournalToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified CustomerPaymentJournal using PATCH and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
         /// </summary>
         /// <param name="customerPaymentJournalToUpdate">The CustomerPaymentJournal to update.</param>
-        /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> UpdateResponseAsync(CustomerPaymentJournal customerPaymentJournalToUpdate)
-        {
-            return this.UpdateResponseAsync(customerPaymentJournalToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CustomerPaymentJournal using PATCH and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
-        /// </summary>
-        /// <param name="customerPaymentJournalToUpdate">The CustomerPaymentJournal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> UpdateResponseAsync(CustomerPaymentJournal customerPaymentJournalToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> UpdateResponseAsync(CustomerPaymentJournal customerPaymentJournalToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (customerPaymentJournalToUpdate.AdditionalData != null)
-			{
-				if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (customerPaymentJournalToUpdate.AdditionalData != null)
-            {
-                if (customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    customerPaymentJournalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, customerPaymentJournalToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CustomerPaymentJournal>(customerPaymentJournalToUpdate, cancellationToken).ConfigureAwait(false);
         }

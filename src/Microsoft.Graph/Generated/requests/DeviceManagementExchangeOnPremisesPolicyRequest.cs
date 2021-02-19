@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
-        /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate)
-        {
-            return this.CreateAsync(deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(deviceManagementExchangeOnPremisesPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeOnPremisesPolicy>(deviceManagementExchangeOnPremisesPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
-        /// <returns>The updated DeviceManagementExchangeOnPremisesPolicy.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementExchangeOnPremisesPolicy.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(deviceManagementExchangeOnPremisesPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementExchangeOnPremisesPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementExchangeOnPremisesPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeOnPremisesPolicy>(deviceManagementExchangeOnPremisesPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementIosUpdateStatusesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IosUpdateDeviceStatus to the collection via POST.
-        /// </summary>
-        /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
-        /// <returns>The created IosUpdateDeviceStatus.</returns>
-        System.Threading.Tasks.Task<IosUpdateDeviceStatus> AddAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus);
-
         /// <summary>
         /// Adds the specified IosUpdateDeviceStatus to the collection via POST.
         /// </summary>
         /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosUpdateDeviceStatus.</returns>
-        System.Threading.Tasks.Task<IosUpdateDeviceStatus> AddAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified IosUpdateDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.
-        /// </summary>
-        /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
-        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> AddResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus);
+        System.Threading.Tasks.Task<IosUpdateDeviceStatus> AddAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified IosUpdateDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="iosUpdateDeviceStatus">The IosUpdateDeviceStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> AddResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> AddResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatus, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementIosUpdateStatusesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementIosUpdateStatusesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementIosUpdateStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIosUpdateStatusesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIosUpdateStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

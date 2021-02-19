@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrintUsageByPrinter using POST.
         /// </summary>
         /// <param name="printUsageByPrinterToCreate">The PrintUsageByPrinter to create.</param>
-        /// <returns>The created PrintUsageByPrinter.</returns>
-        public System.Threading.Tasks.Task<PrintUsageByPrinter> CreateAsync(PrintUsageByPrinter printUsageByPrinterToCreate)
-        {
-            return this.CreateAsync(printUsageByPrinterToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrintUsageByPrinter using POST.
-        /// </summary>
-        /// <param name="printUsageByPrinterToCreate">The PrintUsageByPrinter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintUsageByPrinter.</returns>
-        public async System.Threading.Tasks.Task<PrintUsageByPrinter> CreateAsync(PrintUsageByPrinter printUsageByPrinterToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintUsageByPrinter> CreateAsync(PrintUsageByPrinter printUsageByPrinterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrintUsageByPrinter>(printUsageByPrinterToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrintUsageByPrinter using POST and returns a <see cref="GraphResponse{PrintUsageByPrinter}"/> object.
         /// </summary>
         /// <param name="printUsageByPrinterToCreate">The PrintUsageByPrinter to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrintUsageByPrinter}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> CreateResponseAsync(PrintUsageByPrinter printUsageByPrinterToCreate)
-        {
-            return this.CreateResponseAsync(printUsageByPrinterToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrintUsageByPrinter using POST and returns a <see cref="GraphResponse{PrintUsageByPrinter}"/> object.
-        /// </summary>
-        /// <param name="printUsageByPrinterToCreate">The PrintUsageByPrinter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintUsageByPrinter}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> CreateResponseAsync(PrintUsageByPrinter printUsageByPrinterToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> CreateResponseAsync(PrintUsageByPrinter printUsageByPrinterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrintUsageByPrinter>(printUsageByPrinterToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrintUsageByPrinter.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrintUsageByPrinter.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PrintUsageByPrinter>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrintUsageByPrinter and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrintUsageByPrinter and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrintUsageByPrinter using PATCH.
         /// </summary>
         /// <param name="printUsageByPrinterToUpdate">The PrintUsageByPrinter to update.</param>
-        /// <returns>The updated PrintUsageByPrinter.</returns>
-        public System.Threading.Tasks.Task<PrintUsageByPrinter> UpdateAsync(PrintUsageByPrinter printUsageByPrinterToUpdate)
-        {
-            return this.UpdateAsync(printUsageByPrinterToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrintUsageByPrinter using PATCH.
-        /// </summary>
-        /// <param name="printUsageByPrinterToUpdate">The PrintUsageByPrinter to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintUsageByPrinter.</returns>
-        public async System.Threading.Tasks.Task<PrintUsageByPrinter> UpdateAsync(PrintUsageByPrinter printUsageByPrinterToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrintUsageByPrinter> UpdateAsync(PrintUsageByPrinter printUsageByPrinterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printUsageByPrinterToUpdate.AdditionalData != null)
-			{
-				if (printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printUsageByPrinterToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printUsageByPrinterToUpdate.AdditionalData != null)
-            {
-                if (printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printUsageByPrinterToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrintUsageByPrinter>(printUsageByPrinterToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrintUsageByPrinter using PATCH and returns a <see cref="GraphResponse{PrintUsageByPrinter}"/> object.
         /// </summary>
         /// <param name="printUsageByPrinterToUpdate">The PrintUsageByPrinter to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrintUsageByPrinter}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> UpdateResponseAsync(PrintUsageByPrinter printUsageByPrinterToUpdate)
-        {
-            return this.UpdateResponseAsync(printUsageByPrinterToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrintUsageByPrinter using PATCH and returns a <see cref="GraphResponse{PrintUsageByPrinter}"/> object.
-        /// </summary>
-        /// <param name="printUsageByPrinterToUpdate">The PrintUsageByPrinter to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrintUsageByPrinter}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> UpdateResponseAsync(PrintUsageByPrinter printUsageByPrinterToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByPrinter>> UpdateResponseAsync(PrintUsageByPrinter printUsageByPrinterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printUsageByPrinterToUpdate.AdditionalData != null)
-			{
-				if (printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printUsageByPrinterToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printUsageByPrinterToUpdate.AdditionalData != null)
-            {
-                if (printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printUsageByPrinterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printUsageByPrinterToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PrintUsageByPrinter>(printUsageByPrinterToUpdate, cancellationToken).ConfigureAwait(false);
         }

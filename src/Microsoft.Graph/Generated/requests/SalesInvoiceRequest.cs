@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SalesInvoice using POST.
         /// </summary>
         /// <param name="salesInvoiceToCreate">The SalesInvoice to create.</param>
-        /// <returns>The created SalesInvoice.</returns>
-        public System.Threading.Tasks.Task<SalesInvoice> CreateAsync(SalesInvoice salesInvoiceToCreate)
-        {
-            return this.CreateAsync(salesInvoiceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesInvoice using POST.
-        /// </summary>
-        /// <param name="salesInvoiceToCreate">The SalesInvoice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesInvoice.</returns>
-        public async System.Threading.Tasks.Task<SalesInvoice> CreateAsync(SalesInvoice salesInvoiceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesInvoice> CreateAsync(SalesInvoice salesInvoiceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SalesInvoice>(salesInvoiceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SalesInvoice using POST and returns a <see cref="GraphResponse{SalesInvoice}"/> object.
         /// </summary>
         /// <param name="salesInvoiceToCreate">The SalesInvoice to create.</param>
-        /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> CreateResponseAsync(SalesInvoice salesInvoiceToCreate)
-        {
-            return this.CreateResponseAsync(salesInvoiceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesInvoice using POST and returns a <see cref="GraphResponse{SalesInvoice}"/> object.
-        /// </summary>
-        /// <param name="salesInvoiceToCreate">The SalesInvoice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> CreateResponseAsync(SalesInvoice salesInvoiceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> CreateResponseAsync(SalesInvoice salesInvoiceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SalesInvoice>(salesInvoiceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SalesInvoice.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SalesInvoice.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SalesInvoice>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SalesInvoice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SalesInvoice and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SalesInvoice using PATCH.
         /// </summary>
         /// <param name="salesInvoiceToUpdate">The SalesInvoice to update.</param>
-        /// <returns>The updated SalesInvoice.</returns>
-        public System.Threading.Tasks.Task<SalesInvoice> UpdateAsync(SalesInvoice salesInvoiceToUpdate)
-        {
-            return this.UpdateAsync(salesInvoiceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SalesInvoice using PATCH.
-        /// </summary>
-        /// <param name="salesInvoiceToUpdate">The SalesInvoice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesInvoice.</returns>
-        public async System.Threading.Tasks.Task<SalesInvoice> UpdateAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesInvoice> UpdateAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesInvoiceToUpdate.AdditionalData != null)
-			{
-				if (salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesInvoiceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesInvoiceToUpdate.AdditionalData != null)
-            {
-                if (salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesInvoiceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SalesInvoice>(salesInvoiceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SalesInvoice using PATCH and returns a <see cref="GraphResponse{SalesInvoice}"/> object.
         /// </summary>
         /// <param name="salesInvoiceToUpdate">The SalesInvoice to update.</param>
-        /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> UpdateResponseAsync(SalesInvoice salesInvoiceToUpdate)
-        {
-            return this.UpdateResponseAsync(salesInvoiceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SalesInvoice using PATCH and returns a <see cref="GraphResponse{SalesInvoice}"/> object.
-        /// </summary>
-        /// <param name="salesInvoiceToUpdate">The SalesInvoice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> UpdateResponseAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> UpdateResponseAsync(SalesInvoice salesInvoiceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesInvoiceToUpdate.AdditionalData != null)
-			{
-				if (salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesInvoiceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesInvoiceToUpdate.AdditionalData != null)
-            {
-                if (salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesInvoiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesInvoiceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SalesInvoice>(salesInvoiceToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ApprovalWorkflowProvider using POST.
         /// </summary>
         /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
-        /// <returns>The created ApprovalWorkflowProvider.</returns>
-        System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate);
-
-        /// <summary>
-        /// Creates the specified ApprovalWorkflowProvider using POST.
-        /// </summary>
-        /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalWorkflowProvider.</returns>
-        System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ApprovalWorkflowProvider using POST and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
-        /// </summary>
-        /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
-        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> CreateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate);
+        System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ApprovalWorkflowProvider using POST and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> CreateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ApprovalWorkflowProvider.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> CreateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ApprovalWorkflowProvider.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ApprovalWorkflowProvider and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ApprovalWorkflowProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ApprovalWorkflowProvider.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ApprovalWorkflowProvider using PATCH.
         /// </summary>
         /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider to update.</param>
-        /// <returns>The updated ApprovalWorkflowProvider.</returns>
-        System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate);
-
-        /// <summary>
-        /// Updates the specified ApprovalWorkflowProvider using PATCH.
-        /// </summary>
-        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApprovalWorkflowProvider.</returns>
-        System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ApprovalWorkflowProvider using PATCH and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
-        /// </summary>
-        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider to update.</param>
-        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> UpdateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate);
+        System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ApprovalWorkflowProvider using PATCH and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> UpdateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> UpdateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

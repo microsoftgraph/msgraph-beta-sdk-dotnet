@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IListActivitiesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ItemActivityOLD to the collection via POST.
-        /// </summary>
-        /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
-        /// <returns>The created ItemActivityOLD.</returns>
-        System.Threading.Tasks.Task<ItemActivityOLD> AddAsync(ItemActivityOLD itemActivityOLD);
-
         /// <summary>
         /// Adds the specified ItemActivityOLD to the collection via POST.
         /// </summary>
         /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityOLD.</returns>
-        System.Threading.Tasks.Task<ItemActivityOLD> AddAsync(ItemActivityOLD itemActivityOLD, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ItemActivityOLD to the collection via POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.
-        /// </summary>
-        /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
-        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> AddResponseAsync(ItemActivityOLD itemActivityOLD);
+        System.Threading.Tasks.Task<ItemActivityOLD> AddAsync(ItemActivityOLD itemActivityOLD, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ItemActivityOLD to the collection via POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="itemActivityOLD">The ItemActivityOLD to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> AddResponseAsync(ItemActivityOLD itemActivityOLD, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> AddResponseAsync(ItemActivityOLD itemActivityOLD, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListActivitiesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListActivitiesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ListActivitiesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ListActivitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListActivitiesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IListActivitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ListActivitiesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListActivitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListActivitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ListActivitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

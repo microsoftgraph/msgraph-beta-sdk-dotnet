@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
-        /// <returns>The created ManagedAppRegistration.</returns>
-        public System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate)
-        {
-            return this.CreateAsync(managedAppRegistrationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAppRegistration using POST.
-        /// </summary>
-        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAppRegistration>(managedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate)
-        {
-            return this.CreateResponseAsync(managedAppRegistrationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
-        /// </summary>
-        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAppRegistration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAppRegistration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ManagedAppRegistration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAppRegistration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAppRegistration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAppRegistration using PATCH.
         /// </summary>
         /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
-        /// <returns>The updated ManagedAppRegistration.</returns>
-        public System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate)
-        {
-            return this.UpdateAsync(managedAppRegistrationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAppRegistration using PATCH.
-        /// </summary>
-        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAppRegistration.</returns>
-        public async System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAppRegistration> UpdateAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAppRegistrationToUpdate.AdditionalData != null)
-			{
-				if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAppRegistrationToUpdate.AdditionalData != null)
-            {
-                if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAppRegistration using PATCH and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
         /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> UpdateResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate)
-        {
-            return this.UpdateResponseAsync(managedAppRegistrationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAppRegistration using PATCH and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
-        /// </summary>
-        /// <param name="managedAppRegistrationToUpdate">The ManagedAppRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> UpdateResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> UpdateResponseAsync(ManagedAppRegistration managedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAppRegistrationToUpdate.AdditionalData != null)
-			{
-				if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAppRegistrationToUpdate.AdditionalData != null)
-            {
-                if (managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAppRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppRegistrationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
         }

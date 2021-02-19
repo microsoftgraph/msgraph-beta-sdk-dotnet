@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RoomList using POST.
         /// </summary>
         /// <param name="roomListToCreate">The RoomList to create.</param>
-        /// <returns>The created RoomList.</returns>
-        public System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate)
-        {
-            return this.CreateAsync(roomListToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RoomList using POST.
-        /// </summary>
-        /// <param name="roomListToCreate">The RoomList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoomList.</returns>
-        public async System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RoomList>(roomListToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
         /// </summary>
         /// <param name="roomListToCreate">The RoomList to create.</param>
-        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate)
-        {
-            return this.CreateResponseAsync(roomListToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
-        /// </summary>
-        /// <param name="roomListToCreate">The RoomList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RoomList>(roomListToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RoomList.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RoomList.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RoomList>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RoomList and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RoomList and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RoomList using PATCH.
         /// </summary>
         /// <param name="roomListToUpdate">The RoomList to update.</param>
-        /// <returns>The updated RoomList.</returns>
-        public System.Threading.Tasks.Task<RoomList> UpdateAsync(RoomList roomListToUpdate)
-        {
-            return this.UpdateAsync(roomListToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RoomList using PATCH.
-        /// </summary>
-        /// <param name="roomListToUpdate">The RoomList to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoomList.</returns>
-        public async System.Threading.Tasks.Task<RoomList> UpdateAsync(RoomList roomListToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RoomList> UpdateAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (roomListToUpdate.AdditionalData != null)
-			{
-				if (roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roomListToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (roomListToUpdate.AdditionalData != null)
-            {
-                if (roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roomListToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RoomList>(roomListToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RoomList using PATCH and returns a <see cref="GraphResponse{RoomList}"/> object.
         /// </summary>
         /// <param name="roomListToUpdate">The RoomList to update.</param>
-        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate)
-        {
-            return this.UpdateResponseAsync(roomListToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RoomList using PATCH and returns a <see cref="GraphResponse{RoomList}"/> object.
-        /// </summary>
-        /// <param name="roomListToUpdate">The RoomList to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (roomListToUpdate.AdditionalData != null)
-			{
-				if (roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roomListToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (roomListToUpdate.AdditionalData != null)
-            {
-                if (roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    roomListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roomListToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RoomList>(roomListToUpdate, cancellationToken).ConfigureAwait(false);
         }

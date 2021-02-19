@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementIntentAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignment">The DeviceManagementIntentAssignment to add.</param>
-        /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentAssignment> AddAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment)
-        {
-            return this.AddAsync(deviceManagementIntentAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementIntentAssignment to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementIntentAssignment">The DeviceManagementIntentAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentAssignment> AddAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementIntentAssignment> AddAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementIntentAssignment>(deviceManagementIntentAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementIntentAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignment">The DeviceManagementIntentAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> AddResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment)
-        {
-            return this.AddResponseAsync(deviceManagementIntentAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementIntentAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementIntentAssignment">The DeviceManagementIntentAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> AddResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> AddResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentAssignment>(deviceManagementIntentAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementIntentAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementIntentAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementIntentAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementIntentAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementIntentAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

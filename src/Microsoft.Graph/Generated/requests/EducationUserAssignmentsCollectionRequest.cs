@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EducationAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="educationAssignment">The EducationAssignment to add.</param>
-        /// <returns>The created EducationAssignment.</returns>
-        public System.Threading.Tasks.Task<EducationAssignment> AddAsync(EducationAssignment educationAssignment)
-        {
-            return this.AddAsync(educationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EducationAssignment to the collection via POST.
         /// </summary>
         /// <param name="educationAssignment">The EducationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationAssignment.</returns>
-        public System.Threading.Tasks.Task<EducationAssignment> AddAsync(EducationAssignment educationAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EducationAssignment> AddAsync(EducationAssignment educationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EducationAssignment>(educationAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EducationAssignment to the collection via POST and returns a <see cref="GraphResponse{EducationAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="educationAssignment">The EducationAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{EducationAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> AddResponseAsync(EducationAssignment educationAssignment)
-        {
-            return this.AddResponseAsync(educationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EducationAssignment to the collection via POST and returns a <see cref="GraphResponse{EducationAssignment}"/> object of the request.
         /// </summary>
         /// <param name="educationAssignment">The EducationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> AddResponseAsync(EducationAssignment educationAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> AddResponseAsync(EducationAssignment educationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EducationAssignment>(educationAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEducationUserAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEducationUserAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEducationUserAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<EducationUserAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationUserAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationUserAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationUserAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EducationUserAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationUserAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationUserAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationUserAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<EducationUserAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

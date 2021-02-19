@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntegerSettingInstance using POST.
         /// </summary>
         /// <param name="deviceManagementIntegerSettingInstanceToCreate">The DeviceManagementIntegerSettingInstance to create.</param>
-        /// <returns>The created DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> CreateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntegerSettingInstance using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntegerSettingInstanceToCreate">The DeviceManagementIntegerSettingInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> CreateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntegerSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntegerSettingInstanceToCreate">The DeviceManagementIntegerSettingInstance to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> CreateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate);
+        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> CreateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceManagementIntegerSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementIntegerSettingInstanceToCreate">The DeviceManagementIntegerSettingInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> CreateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntegerSettingInstance.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> CreateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntegerSettingInstance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntegerSettingInstance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntegerSettingInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntegerSettingInstance.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementIntegerSettingInstance using PATCH.
         /// </summary>
         /// <param name="deviceManagementIntegerSettingInstanceToUpdate">The DeviceManagementIntegerSettingInstance to update.</param>
-        /// <returns>The updated DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> UpdateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntegerSettingInstance using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementIntegerSettingInstanceToUpdate">The DeviceManagementIntegerSettingInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> UpdateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntegerSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntegerSettingInstanceToUpdate">The DeviceManagementIntegerSettingInstance to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> UpdateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate);
+        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> UpdateAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntegerSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> UpdateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> UpdateResponseAsync(DeviceManagementIntegerSettingInstance deviceManagementIntegerSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

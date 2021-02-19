@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified IdentityApiConnector to the collection via POST.
-        /// </summary>
-        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
-        /// <returns>The created IdentityApiConnector.</returns>
-        public System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector)
-        {
-            return this.AddAsync(identityApiConnector, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IdentityApiConnector to the collection via POST.
         /// </summary>
         /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityApiConnector.</returns>
-        public System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<IdentityApiConnector> AddAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<IdentityApiConnector>(identityApiConnector, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified IdentityApiConnector to the collection via POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.
-        /// </summary>
-        /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector)
-        {
-            return this.AddResponseAsync(identityApiConnector, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IdentityApiConnector to the collection via POST and returns a <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.
         /// </summary>
         /// <param name="identityApiConnector">The IdentityApiConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityApiConnector}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityApiConnector>> AddResponseAsync(IdentityApiConnector identityApiConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IdentityApiConnector>(identityApiConnector, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IIdentityContainerApiConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<IdentityContainerApiConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityContainerApiConnectorsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityContainerApiConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<IdentityContainerApiConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

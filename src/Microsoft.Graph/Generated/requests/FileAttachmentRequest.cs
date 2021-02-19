@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified FileAttachment using POST.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
-        /// <returns>The created FileAttachment.</returns>
-        public System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate)
-        {
-            return this.CreateAsync(fileAttachmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FileAttachment using POST.
-        /// </summary>
-        /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileAttachment.</returns>
-        public async System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<FileAttachment>(fileAttachmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified FileAttachment using POST and returns a <see cref="GraphResponse{FileAttachment}"/> object.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
-        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate)
-        {
-            return this.CreateResponseAsync(fileAttachmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FileAttachment using POST and returns a <see cref="GraphResponse{FileAttachment}"/> object.
-        /// </summary>
-        /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<FileAttachment>(fileAttachmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FileAttachment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FileAttachment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<FileAttachment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FileAttachment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FileAttachment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified FileAttachment using PATCH.
         /// </summary>
         /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
-        /// <returns>The updated FileAttachment.</returns>
-        public System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate)
-        {
-            return this.UpdateAsync(fileAttachmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FileAttachment using PATCH.
-        /// </summary>
-        /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileAttachment.</returns>
-        public async System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileAttachment> UpdateAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fileAttachmentToUpdate.AdditionalData != null)
-			{
-				if (fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileAttachmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fileAttachmentToUpdate.AdditionalData != null)
-            {
-                if (fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileAttachmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<FileAttachment>(fileAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified FileAttachment using PATCH and returns a <see cref="GraphResponse{FileAttachment}"/> object.
         /// </summary>
         /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
-        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FileAttachment>> UpdateResponseAsync(FileAttachment fileAttachmentToUpdate)
-        {
-            return this.UpdateResponseAsync(fileAttachmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FileAttachment using PATCH and returns a <see cref="GraphResponse{FileAttachment}"/> object.
-        /// </summary>
-        /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FileAttachment>> UpdateResponseAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FileAttachment>> UpdateResponseAsync(FileAttachment fileAttachmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fileAttachmentToUpdate.AdditionalData != null)
-			{
-				if (fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileAttachmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fileAttachmentToUpdate.AdditionalData != null)
-            {
-                if (fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fileAttachmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileAttachmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<FileAttachment>(fileAttachmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

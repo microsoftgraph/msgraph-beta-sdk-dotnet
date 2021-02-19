@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OutlookCategory to the collection via POST.
-        /// </summary>
-        /// <param name="outlookCategory">The OutlookCategory to add.</param>
-        /// <returns>The created OutlookCategory.</returns>
-        public System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory)
-        {
-            return this.AddAsync(outlookCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OutlookCategory to the collection via POST.
         /// </summary>
         /// <param name="outlookCategory">The OutlookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
-        public System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OutlookCategory>(outlookCategory, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified OutlookCategory to the collection via POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object of the request.
-        /// </summary>
-        /// <param name="outlookCategory">The OutlookCategory to add.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory)
-        {
-            return this.AddResponseAsync(outlookCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OutlookCategory to the collection via POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object of the request.
         /// </summary>
         /// <param name="outlookCategory">The OutlookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OutlookCategory>(outlookCategory, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOutlookUserMasterCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OutlookUserMasterCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookUserMasterCategoriesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookUserMasterCategoriesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OutlookUserMasterCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookUserMasterCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OutlookUserMasterCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

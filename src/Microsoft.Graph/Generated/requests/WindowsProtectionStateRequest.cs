@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsProtectionState using POST.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
-        /// <returns>The created WindowsProtectionState.</returns>
-        public System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate)
-        {
-            return this.CreateAsync(windowsProtectionStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsProtectionState using POST.
-        /// </summary>
-        /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsProtectionState.</returns>
-        public async System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsProtectionState> CreateAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsProtectionState>(windowsProtectionStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsProtectionState using POST and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
         /// </summary>
         /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> CreateResponseAsync(WindowsProtectionState windowsProtectionStateToCreate)
-        {
-            return this.CreateResponseAsync(windowsProtectionStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsProtectionState using POST and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
-        /// </summary>
-        /// <param name="windowsProtectionStateToCreate">The WindowsProtectionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> CreateResponseAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> CreateResponseAsync(WindowsProtectionState windowsProtectionStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsProtectionState>(windowsProtectionStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsProtectionState.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsProtectionState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsProtectionState>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsProtectionState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsProtectionState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsProtectionState using PATCH.
         /// </summary>
         /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
-        /// <returns>The updated WindowsProtectionState.</returns>
-        public System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate)
-        {
-            return this.UpdateAsync(windowsProtectionStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsProtectionState using PATCH.
-        /// </summary>
-        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsProtectionState.</returns>
-        public async System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsProtectionState> UpdateAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsProtectionStateToUpdate.AdditionalData != null)
-			{
-				if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsProtectionStateToUpdate.AdditionalData != null)
-            {
-                if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsProtectionState>(windowsProtectionStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsProtectionState using PATCH and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
         /// </summary>
         /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> UpdateResponseAsync(WindowsProtectionState windowsProtectionStateToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsProtectionStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsProtectionState using PATCH and returns a <see cref="GraphResponse{WindowsProtectionState}"/> object.
-        /// </summary>
-        /// <param name="windowsProtectionStateToUpdate">The WindowsProtectionState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsProtectionState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> UpdateResponseAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsProtectionState>> UpdateResponseAsync(WindowsProtectionState windowsProtectionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsProtectionStateToUpdate.AdditionalData != null)
-			{
-				if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsProtectionStateToUpdate.AdditionalData != null)
-            {
-                if (windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsProtectionStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsProtectionStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsProtectionState>(windowsProtectionStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

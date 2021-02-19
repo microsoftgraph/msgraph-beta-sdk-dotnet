@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfilePositionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WorkPosition to the collection via POST.
-        /// </summary>
-        /// <param name="workPosition">The WorkPosition to add.</param>
-        /// <returns>The created WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> AddAsync(WorkPosition workPosition);
-
         /// <summary>
         /// Adds the specified WorkPosition to the collection via POST.
         /// </summary>
         /// <param name="workPosition">The WorkPosition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> AddAsync(WorkPosition workPosition, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified WorkPosition to the collection via POST and returns a <see cref="GraphResponse{WorkPosition}"/> object of the request.
-        /// </summary>
-        /// <param name="workPosition">The WorkPosition to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> AddResponseAsync(WorkPosition workPosition);
+        System.Threading.Tasks.Task<WorkPosition> AddAsync(WorkPosition workPosition, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified WorkPosition to the collection via POST and returns a <see cref="GraphResponse{WorkPosition}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="workPosition">The WorkPosition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> AddResponseAsync(WorkPosition workPosition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> AddResponseAsync(WorkPosition workPosition, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfilePositionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfilePositionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePositionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfilePositionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePositionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IProfilePositionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePositionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePositionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePositionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProfilePositionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharedDriveItem using POST.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
-        /// <returns>The created SharedDriveItem.</returns>
-        public System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate)
-        {
-            return this.CreateAsync(sharedDriveItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharedDriveItem using POST.
-        /// </summary>
-        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedDriveItem.</returns>
-        public async System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SharedDriveItem>(sharedDriveItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate)
-        {
-            return this.CreateResponseAsync(sharedDriveItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
-        /// </summary>
-        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharedDriveItem>(sharedDriveItemToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharedDriveItem.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharedDriveItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SharedDriveItem>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharedDriveItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharedDriveItem and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharedDriveItem using PATCH.
         /// </summary>
         /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
-        /// <returns>The updated SharedDriveItem.</returns>
-        public System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate)
-        {
-            return this.UpdateAsync(sharedDriveItemToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharedDriveItem using PATCH.
-        /// </summary>
-        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedDriveItem.</returns>
-        public async System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharedDriveItemToUpdate.AdditionalData != null)
-			{
-				if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedDriveItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharedDriveItemToUpdate.AdditionalData != null)
-            {
-                if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedDriveItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SharedDriveItem>(sharedDriveItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
         /// </summary>
         /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate)
-        {
-            return this.UpdateResponseAsync(sharedDriveItemToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
-        /// </summary>
-        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharedDriveItemToUpdate.AdditionalData != null)
-			{
-				if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedDriveItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharedDriveItemToUpdate.AdditionalData != null)
-            {
-                if (sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharedDriveItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedDriveItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SharedDriveItem>(sharedDriveItemToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
-        /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate);
-
-        /// <summary>
-        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST.
-        /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
-        /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate);
+        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerProgressTaskBoardTaskFormat.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerProgressTaskBoardTaskFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerProgressTaskBoardTaskFormat.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH.
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>
-        /// <returns>The updated PlannerProgressTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate);
-
-        /// <summary>
-        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH.
-        /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerProgressTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
-        /// </summary>
-        /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> UpdateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate);
+        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> UpdateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> UpdateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> UpdateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

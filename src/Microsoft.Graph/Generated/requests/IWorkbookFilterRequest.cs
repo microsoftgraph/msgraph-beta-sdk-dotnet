@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookFilter using POST.
         /// </summary>
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
-        /// <returns>The created WorkbookFilter.</returns>
-        System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate);
-
-        /// <summary>
-        /// Creates the specified WorkbookFilter using POST.
-        /// </summary>
-        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFilter.</returns>
-        System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
-        /// </summary>
-        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate);
+        System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookFilter.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookFilter.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookFilter and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookFilter and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookFilter.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookFilter using PATCH.
         /// </summary>
         /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
-        /// <returns>The updated WorkbookFilter.</returns>
-        System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate);
-
-        /// <summary>
-        /// Updates the specified WorkbookFilter using PATCH.
-        /// </summary>
-        /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFilter.</returns>
-        System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WorkbookFilter using PATCH and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
-        /// </summary>
-        /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate);
+        System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookFilter using PATCH and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

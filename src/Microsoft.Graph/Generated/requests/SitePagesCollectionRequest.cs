@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SitePage to the collection via POST.
-        /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
-        /// <returns>The created SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage)
-        {
-            return this.AddAsync(sitePage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SitePage to the collection via POST.
         /// </summary>
         /// <param name="sitePage">The SitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SitePage>(sitePage, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
-        /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
-        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage)
-        {
-            return this.AddResponseAsync(sitePage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
         /// </summary>
         /// <param name="sitePage">The SitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SitePage>(sitePage, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISitePagesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISitePagesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISitePagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SitePagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SitePagesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SitePagesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SitePagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SitePagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SitePagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

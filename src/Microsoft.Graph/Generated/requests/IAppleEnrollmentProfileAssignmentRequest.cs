@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AppleEnrollmentProfileAssignment using POST.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
-        /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate);
-
-        /// <summary>
-        /// Creates the specified AppleEnrollmentProfileAssignment using POST.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AppleEnrollmentProfileAssignment using POST and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate);
+        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AppleEnrollmentProfileAssignment using POST and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppleEnrollmentProfileAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppleEnrollmentProfileAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppleEnrollmentProfileAssignment.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AppleEnrollmentProfileAssignment using PATCH.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
-        /// <returns>The updated AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate);
-
-        /// <summary>
-        /// Updates the specified AppleEnrollmentProfileAssignment using PATCH.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AppleEnrollmentProfileAssignment using PATCH and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate);
+        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppleEnrollmentProfileAssignment using PATCH and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

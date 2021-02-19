@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharedInsight using POST.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
-        /// <returns>The created SharedInsight.</returns>
-        public System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate)
-        {
-            return this.CreateAsync(sharedInsightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharedInsight using POST.
-        /// </summary>
-        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedInsight.</returns>
-        public async System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SharedInsight>(sharedInsightToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate)
-        {
-            return this.CreateResponseAsync(sharedInsightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
-        /// </summary>
-        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharedInsight>(sharedInsightToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharedInsight.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharedInsight.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SharedInsight>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharedInsight and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharedInsight and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharedInsight using PATCH.
         /// </summary>
         /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
-        /// <returns>The updated SharedInsight.</returns>
-        public System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate)
-        {
-            return this.UpdateAsync(sharedInsightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharedInsight using PATCH.
-        /// </summary>
-        /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedInsight.</returns>
-        public async System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharedInsightToUpdate.AdditionalData != null)
-			{
-				if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedInsightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharedInsightToUpdate.AdditionalData != null)
-            {
-                if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedInsightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SharedInsight>(sharedInsightToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharedInsight using PATCH and returns a <see cref="GraphResponse{SharedInsight}"/> object.
         /// </summary>
         /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate)
-        {
-            return this.UpdateResponseAsync(sharedInsightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharedInsight using PATCH and returns a <see cref="GraphResponse{SharedInsight}"/> object.
-        /// </summary>
-        /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharedInsightToUpdate.AdditionalData != null)
-			{
-				if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedInsightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharedInsightToUpdate.AdditionalData != null)
-            {
-                if (sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharedInsightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SharedInsight>(sharedInsightToUpdate, cancellationToken).ConfigureAwait(false);
         }

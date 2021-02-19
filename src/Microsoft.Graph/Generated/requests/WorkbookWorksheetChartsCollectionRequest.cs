@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkbookChart to the collection via POST.
-        /// </summary>
-        /// <param name="workbookChart">The WorkbookChart to add.</param>
-        /// <returns>The created WorkbookChart.</returns>
-        public System.Threading.Tasks.Task<WorkbookChart> AddAsync(WorkbookChart workbookChart)
-        {
-            return this.AddAsync(workbookChart, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookChart to the collection via POST.
         /// </summary>
         /// <param name="workbookChart">The WorkbookChart to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChart.</returns>
-        public System.Threading.Tasks.Task<WorkbookChart> AddAsync(WorkbookChart workbookChart, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkbookChart> AddAsync(WorkbookChart workbookChart, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookChart>(workbookChart, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WorkbookChart to the collection via POST and returns a <see cref="GraphResponse{WorkbookChart}"/> object of the request.
-        /// </summary>
-        /// <param name="workbookChart">The WorkbookChart to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChart}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookChart>> AddResponseAsync(WorkbookChart workbookChart)
-        {
-            return this.AddResponseAsync(workbookChart, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookChart to the collection via POST and returns a <see cref="GraphResponse{WorkbookChart}"/> object of the request.
         /// </summary>
         /// <param name="workbookChart">The WorkbookChart to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChart}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChart>> AddResponseAsync(WorkbookChart workbookChart, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChart>> AddResponseAsync(WorkbookChart workbookChart, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookChart>(workbookChart, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWorkbookWorksheetChartsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWorkbookWorksheetChartsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWorkbookWorksheetChartsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WorkbookWorksheetChartsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookWorksheetChartsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetChartsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetChartsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookWorksheetChartsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetChartsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetChartsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetChartsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WorkbookWorksheetChartsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

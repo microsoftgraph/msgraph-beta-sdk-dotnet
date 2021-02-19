@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosCompliancePolicy using POST.
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
-        /// <returns>The created IosCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate)
-        {
-            return this.CreateAsync(iosCompliancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosCompliancePolicy using POST.
-        /// </summary>
-        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosCompliancePolicy>(iosCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate)
-        {
-            return this.CreateResponseAsync(iosCompliancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosCompliancePolicy>(iosCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosCompliancePolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosCompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosCompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosCompliancePolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosCompliancePolicy using PATCH.
         /// </summary>
         /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
-        /// <returns>The updated IosCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<IosCompliancePolicy> UpdateAsync(IosCompliancePolicy iosCompliancePolicyToUpdate)
-        {
-            return this.UpdateAsync(iosCompliancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosCompliancePolicy using PATCH.
-        /// </summary>
-        /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<IosCompliancePolicy> UpdateAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCompliancePolicy> UpdateAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosCompliancePolicyToUpdate.AdditionalData != null)
-            {
-                if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosCompliancePolicy>(iosCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosCompliancePolicy using PATCH and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> UpdateResponseAsync(IosCompliancePolicy iosCompliancePolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(iosCompliancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosCompliancePolicy using PATCH and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> UpdateResponseAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> UpdateResponseAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosCompliancePolicyToUpdate.AdditionalData != null)
-            {
-                if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosCompliancePolicy>(iosCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

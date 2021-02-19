@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartAxisTitleFormat using POST.
         /// </summary>
         /// <param name="workbookChartAxisTitleFormatToCreate">The WorkbookChartAxisTitleFormat to create.</param>
-        /// <returns>The created WorkbookChartAxisTitleFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> CreateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate);
-
-        /// <summary>
-        /// Creates the specified WorkbookChartAxisTitleFormat using POST.
-        /// </summary>
-        /// <param name="workbookChartAxisTitleFormatToCreate">The WorkbookChartAxisTitleFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartAxisTitleFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> CreateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WorkbookChartAxisTitleFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object.
-        /// </summary>
-        /// <param name="workbookChartAxisTitleFormatToCreate">The WorkbookChartAxisTitleFormat to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> CreateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate);
+        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> CreateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WorkbookChartAxisTitleFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="workbookChartAxisTitleFormatToCreate">The WorkbookChartAxisTitleFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> CreateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartAxisTitleFormat.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> CreateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookChartAxisTitleFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartAxisTitleFormat and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookChartAxisTitleFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartAxisTitleFormat.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookChartAxisTitleFormat using PATCH.
         /// </summary>
         /// <param name="workbookChartAxisTitleFormatToUpdate">The WorkbookChartAxisTitleFormat to update.</param>
-        /// <returns>The updated WorkbookChartAxisTitleFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> UpdateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate);
-
-        /// <summary>
-        /// Updates the specified WorkbookChartAxisTitleFormat using PATCH.
-        /// </summary>
-        /// <param name="workbookChartAxisTitleFormatToUpdate">The WorkbookChartAxisTitleFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartAxisTitleFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> UpdateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WorkbookChartAxisTitleFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object.
-        /// </summary>
-        /// <param name="workbookChartAxisTitleFormatToUpdate">The WorkbookChartAxisTitleFormat to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> UpdateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate);
+        System.Threading.Tasks.Task<WorkbookChartAxisTitleFormat> UpdateAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartAxisTitleFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitleFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> UpdateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitleFormat>> UpdateResponseAsync(WorkbookChartAxisTitleFormat workbookChartAxisTitleFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WebAccount to the collection via POST.
-        /// </summary>
-        /// <param name="webAccount">The WebAccount to add.</param>
-        /// <returns>The created WebAccount.</returns>
-        public System.Threading.Tasks.Task<WebAccount> AddAsync(WebAccount webAccount)
-        {
-            return this.AddAsync(webAccount, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WebAccount to the collection via POST.
         /// </summary>
         /// <param name="webAccount">The WebAccount to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WebAccount.</returns>
-        public System.Threading.Tasks.Task<WebAccount> AddAsync(WebAccount webAccount, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WebAccount> AddAsync(WebAccount webAccount, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WebAccount>(webAccount, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WebAccount to the collection via POST and returns a <see cref="GraphResponse{WebAccount}"/> object of the request.
-        /// </summary>
-        /// <param name="webAccount">The WebAccount to add.</param>
-        /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WebAccount>> AddResponseAsync(WebAccount webAccount)
-        {
-            return this.AddResponseAsync(webAccount, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WebAccount to the collection via POST and returns a <see cref="GraphResponse{WebAccount}"/> object of the request.
         /// </summary>
         /// <param name="webAccount">The WebAccount to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WebAccount>> AddResponseAsync(WebAccount webAccount, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WebAccount>> AddResponseAsync(WebAccount webAccount, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WebAccount>(webAccount, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileWebAccountsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileWebAccountsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileWebAccountsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileWebAccountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileWebAccountsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileWebAccountsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileWebAccountsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileWebAccountsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileWebAccountsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileWebAccountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileWebAccountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileWebAccountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

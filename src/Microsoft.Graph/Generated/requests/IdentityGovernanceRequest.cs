@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityGovernance using POST.
         /// </summary>
         /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
-        /// <returns>The created IdentityGovernance.</returns>
-        public System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate)
-        {
-            return this.CreateAsync(identityGovernanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IdentityGovernance using POST.
-        /// </summary>
-        /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityGovernance.</returns>
-        public async System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityGovernance> CreateAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IdentityGovernance>(identityGovernanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityGovernance using POST and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
         /// </summary>
         /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> CreateResponseAsync(IdentityGovernance identityGovernanceToCreate)
-        {
-            return this.CreateResponseAsync(identityGovernanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IdentityGovernance using POST and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
-        /// </summary>
-        /// <param name="identityGovernanceToCreate">The IdentityGovernance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> CreateResponseAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> CreateResponseAsync(IdentityGovernance identityGovernanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IdentityGovernance>(identityGovernanceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IdentityGovernance.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IdentityGovernance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IdentityGovernance>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IdentityGovernance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IdentityGovernance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IdentityGovernance using PATCH.
         /// </summary>
         /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
-        /// <returns>The updated IdentityGovernance.</returns>
-        public System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate)
-        {
-            return this.UpdateAsync(identityGovernanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IdentityGovernance using PATCH.
-        /// </summary>
-        /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityGovernance.</returns>
-        public async System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityGovernance> UpdateAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (identityGovernanceToUpdate.AdditionalData != null)
-			{
-				if (identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityGovernanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (identityGovernanceToUpdate.AdditionalData != null)
-            {
-                if (identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityGovernanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IdentityGovernance>(identityGovernanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IdentityGovernance using PATCH and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
         /// </summary>
         /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> UpdateResponseAsync(IdentityGovernance identityGovernanceToUpdate)
-        {
-            return this.UpdateResponseAsync(identityGovernanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IdentityGovernance using PATCH and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
-        /// </summary>
-        /// <param name="identityGovernanceToUpdate">The IdentityGovernance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> UpdateResponseAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> UpdateResponseAsync(IdentityGovernance identityGovernanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (identityGovernanceToUpdate.AdditionalData != null)
-			{
-				if (identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityGovernanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (identityGovernanceToUpdate.AdditionalData != null)
-            {
-                if (identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    identityGovernanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityGovernanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IdentityGovernance>(identityGovernanceToUpdate, cancellationToken).ConfigureAwait(false);
         }

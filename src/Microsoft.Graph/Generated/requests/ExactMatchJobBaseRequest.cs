@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchJobBase using POST.
         /// </summary>
         /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
-        /// <returns>The created ExactMatchJobBase.</returns>
-        public System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate)
-        {
-            return this.CreateAsync(exactMatchJobBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchJobBase using POST.
-        /// </summary>
-        /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchJobBase.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchJobBase> CreateAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ExactMatchJobBase>(exactMatchJobBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchJobBase using POST and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
         /// </summary>
         /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> CreateResponseAsync(ExactMatchJobBase exactMatchJobBaseToCreate)
-        {
-            return this.CreateResponseAsync(exactMatchJobBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchJobBase using POST and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
-        /// </summary>
-        /// <param name="exactMatchJobBaseToCreate">The ExactMatchJobBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> CreateResponseAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> CreateResponseAsync(ExactMatchJobBase exactMatchJobBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExactMatchJobBase>(exactMatchJobBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExactMatchJobBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExactMatchJobBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ExactMatchJobBase>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExactMatchJobBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExactMatchJobBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExactMatchJobBase using PATCH.
         /// </summary>
         /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
-        /// <returns>The updated ExactMatchJobBase.</returns>
-        public System.Threading.Tasks.Task<ExactMatchJobBase> UpdateAsync(ExactMatchJobBase exactMatchJobBaseToUpdate)
-        {
-            return this.UpdateAsync(exactMatchJobBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExactMatchJobBase using PATCH.
-        /// </summary>
-        /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchJobBase.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchJobBase> UpdateAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchJobBase> UpdateAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (exactMatchJobBaseToUpdate.AdditionalData != null)
-			{
-				if (exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchJobBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchJobBaseToUpdate.AdditionalData != null)
-            {
-                if (exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchJobBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ExactMatchJobBase>(exactMatchJobBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExactMatchJobBase using PATCH and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
         /// </summary>
         /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> UpdateResponseAsync(ExactMatchJobBase exactMatchJobBaseToUpdate)
-        {
-            return this.UpdateResponseAsync(exactMatchJobBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExactMatchJobBase using PATCH and returns a <see cref="GraphResponse{ExactMatchJobBase}"/> object.
-        /// </summary>
-        /// <param name="exactMatchJobBaseToUpdate">The ExactMatchJobBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ExactMatchJobBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> UpdateResponseAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExactMatchJobBase>> UpdateResponseAsync(ExactMatchJobBase exactMatchJobBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (exactMatchJobBaseToUpdate.AdditionalData != null)
-			{
-				if (exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchJobBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchJobBaseToUpdate.AdditionalData != null)
-            {
-                if (exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchJobBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchJobBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ExactMatchJobBase>(exactMatchJobBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

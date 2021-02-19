@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified YammerDeviceUsageUserCounts using POST.
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
-        /// <returns>The created YammerDeviceUsageUserCounts.</returns>
-        public System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate)
-        {
-            return this.CreateAsync(yammerDeviceUsageUserCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified YammerDeviceUsageUserCounts using POST.
-        /// </summary>
-        /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created YammerDeviceUsageUserCounts.</returns>
-        public async System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> CreateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<YammerDeviceUsageUserCounts>(yammerDeviceUsageUserCountsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified YammerDeviceUsageUserCounts using POST and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
-        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> CreateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate)
-        {
-            return this.CreateResponseAsync(yammerDeviceUsageUserCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified YammerDeviceUsageUserCounts using POST and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
-        /// </summary>
-        /// <param name="yammerDeviceUsageUserCountsToCreate">The YammerDeviceUsageUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> CreateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> CreateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<YammerDeviceUsageUserCounts>(yammerDeviceUsageUserCountsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified YammerDeviceUsageUserCounts.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified YammerDeviceUsageUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<YammerDeviceUsageUserCounts>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified YammerDeviceUsageUserCounts and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified YammerDeviceUsageUserCounts using PATCH.
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
-        /// <returns>The updated YammerDeviceUsageUserCounts.</returns>
-        public System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> UpdateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate)
-        {
-            return this.UpdateAsync(yammerDeviceUsageUserCountsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified YammerDeviceUsageUserCounts using PATCH.
-        /// </summary>
-        /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerDeviceUsageUserCounts.</returns>
-        public async System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> UpdateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<YammerDeviceUsageUserCounts> UpdateAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
-			{
-				if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
-            {
-                if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<YammerDeviceUsageUserCounts>(yammerDeviceUsageUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified YammerDeviceUsageUserCounts using PATCH and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
         /// </summary>
         /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
-        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> UpdateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate)
-        {
-            return this.UpdateResponseAsync(yammerDeviceUsageUserCountsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified YammerDeviceUsageUserCounts using PATCH and returns a <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object.
-        /// </summary>
-        /// <param name="yammerDeviceUsageUserCountsToUpdate">The YammerDeviceUsageUserCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserCounts}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> UpdateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserCounts>> UpdateResponseAsync(YammerDeviceUsageUserCounts yammerDeviceUsageUserCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
-			{
-				if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (yammerDeviceUsageUserCountsToUpdate.AdditionalData != null)
-            {
-                if (yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    yammerDeviceUsageUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerDeviceUsageUserCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<YammerDeviceUsageUserCounts>(yammerDeviceUsageUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
         }

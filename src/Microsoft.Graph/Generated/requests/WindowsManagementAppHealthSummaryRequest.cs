@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagementAppHealthSummary using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
-        /// <returns>The created WindowsManagementAppHealthSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate)
-        {
-            return this.CreateAsync(windowsManagementAppHealthSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsManagementAppHealthSummary using POST.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementAppHealthSummary.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsManagementAppHealthSummary>(windowsManagementAppHealthSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagementAppHealthSummary using POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> CreateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate)
-        {
-            return this.CreateResponseAsync(windowsManagementAppHealthSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsManagementAppHealthSummary using POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> CreateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> CreateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsManagementAppHealthSummary>(windowsManagementAppHealthSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsManagementAppHealthSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsManagementAppHealthSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsManagementAppHealthSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsManagementAppHealthSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsManagementAppHealthSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsManagementAppHealthSummary using PATCH.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
-        /// <returns>The updated WindowsManagementAppHealthSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate)
-        {
-            return this.UpdateAsync(windowsManagementAppHealthSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsManagementAppHealthSummary using PATCH.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagementAppHealthSummary.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsManagementAppHealthSummaryToUpdate.AdditionalData != null)
-			{
-				if (windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppHealthSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsManagementAppHealthSummaryToUpdate.AdditionalData != null)
-            {
-                if (windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppHealthSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsManagementAppHealthSummary>(windowsManagementAppHealthSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsManagementAppHealthSummary using PATCH and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> UpdateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsManagementAppHealthSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsManagementAppHealthSummary using PATCH and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> UpdateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> UpdateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsManagementAppHealthSummaryToUpdate.AdditionalData != null)
-			{
-				if (windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppHealthSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsManagementAppHealthSummaryToUpdate.AdditionalData != null)
-            {
-                if (windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsManagementAppHealthSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagementAppHealthSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsManagementAppHealthSummary>(windowsManagementAppHealthSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

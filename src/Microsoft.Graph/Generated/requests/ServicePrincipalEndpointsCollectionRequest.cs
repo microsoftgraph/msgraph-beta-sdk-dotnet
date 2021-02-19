@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Endpoint to the collection via POST.
-        /// </summary>
-        /// <param name="endpoint">The Endpoint to add.</param>
-        /// <returns>The created Endpoint.</returns>
-        public System.Threading.Tasks.Task<Endpoint> AddAsync(Endpoint endpoint)
-        {
-            return this.AddAsync(endpoint, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Endpoint to the collection via POST.
         /// </summary>
         /// <param name="endpoint">The Endpoint to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Endpoint.</returns>
-        public System.Threading.Tasks.Task<Endpoint> AddAsync(Endpoint endpoint, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Endpoint> AddAsync(Endpoint endpoint, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Endpoint>(endpoint, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Endpoint to the collection via POST and returns a <see cref="GraphResponse{Endpoint}"/> object of the request.
-        /// </summary>
-        /// <param name="endpoint">The Endpoint to add.</param>
-        /// <returns>The <see cref="GraphResponse{Endpoint}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Endpoint>> AddResponseAsync(Endpoint endpoint)
-        {
-            return this.AddResponseAsync(endpoint, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Endpoint to the collection via POST and returns a <see cref="GraphResponse{Endpoint}"/> object of the request.
         /// </summary>
         /// <param name="endpoint">The Endpoint to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Endpoint}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Endpoint>> AddResponseAsync(Endpoint endpoint, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Endpoint>> AddResponseAsync(Endpoint endpoint, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Endpoint>(endpoint, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IServicePrincipalEndpointsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IServicePrincipalEndpointsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IServicePrincipalEndpointsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ServicePrincipalEndpointsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ServicePrincipalEndpointsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ServicePrincipalEndpointsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipalEndpointsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ServicePrincipalEndpointsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServicePrincipalEndpointsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipalEndpointsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipalEndpointsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ServicePrincipalEndpointsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

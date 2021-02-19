@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnmanagedDeviceDiscoveryTask using POST.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
-        /// <returns>The created UnmanagedDeviceDiscoveryTask.</returns>
-        public System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate)
-        {
-            return this.CreateAsync(unmanagedDeviceDiscoveryTaskToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnmanagedDeviceDiscoveryTask using POST.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnmanagedDeviceDiscoveryTask.</returns>
-        public async System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> CreateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UnmanagedDeviceDiscoveryTask>(unmanagedDeviceDiscoveryTaskToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnmanagedDeviceDiscoveryTask using POST and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate)
-        {
-            return this.CreateResponseAsync(unmanagedDeviceDiscoveryTaskToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnmanagedDeviceDiscoveryTask using POST and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToCreate">The UnmanagedDeviceDiscoveryTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> CreateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnmanagedDeviceDiscoveryTask>(unmanagedDeviceDiscoveryTaskToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnmanagedDeviceDiscoveryTask.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnmanagedDeviceDiscoveryTask.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UnmanagedDeviceDiscoveryTask>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
-        /// <returns>The updated UnmanagedDeviceDiscoveryTask.</returns>
-        public System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate)
-        {
-            return this.UpdateAsync(unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnmanagedDeviceDiscoveryTask.</returns>
-        public async System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> UpdateAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData != null)
-			{
-				if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmanagedDeviceDiscoveryTaskToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData != null)
-            {
-                if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmanagedDeviceDiscoveryTaskToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnmanagedDeviceDiscoveryTask>(unmanagedDeviceDiscoveryTaskToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
         /// </summary>
         /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate)
-        {
-            return this.UpdateResponseAsync(unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
-        /// </summary>
-        /// <param name="unmanagedDeviceDiscoveryTaskToUpdate">The UnmanagedDeviceDiscoveryTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> UpdateResponseAsync(UnmanagedDeviceDiscoveryTask unmanagedDeviceDiscoveryTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData != null)
-			{
-				if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmanagedDeviceDiscoveryTaskToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData != null)
-            {
-                if (unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unmanagedDeviceDiscoveryTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unmanagedDeviceDiscoveryTaskToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UnmanagedDeviceDiscoveryTask>(unmanagedDeviceDiscoveryTaskToUpdate, cancellationToken).ConfigureAwait(false);
         }

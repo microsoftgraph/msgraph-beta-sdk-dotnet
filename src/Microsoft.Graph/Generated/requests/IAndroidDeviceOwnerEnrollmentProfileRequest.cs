@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
-        /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate);
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> CreateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate);
+        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> CreateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> CreateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerEnrollmentProfile.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH.
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate);
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> UpdateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate);
+        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> UpdateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> UpdateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

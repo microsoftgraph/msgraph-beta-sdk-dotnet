@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Schema using POST.
         /// </summary>
         /// <param name="schemaToCreate">The Schema to create.</param>
-        /// <returns>The created Schema.</returns>
-        public System.Threading.Tasks.Task<Schema> CreateAsync(Schema schemaToCreate)
-        {
-            return this.CreateAsync(schemaToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Schema using POST.
-        /// </summary>
-        /// <param name="schemaToCreate">The Schema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Schema.</returns>
-        public async System.Threading.Tasks.Task<Schema> CreateAsync(Schema schemaToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Schema> CreateAsync(Schema schemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Schema>(schemaToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Schema using POST and returns a <see cref="GraphResponse{Schema}"/> object.
         /// </summary>
         /// <param name="schemaToCreate">The Schema to create.</param>
-        /// <returns>The <see cref="GraphResponse{Schema}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Schema>> CreateResponseAsync(Schema schemaToCreate)
-        {
-            return this.CreateResponseAsync(schemaToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Schema using POST and returns a <see cref="GraphResponse{Schema}"/> object.
-        /// </summary>
-        /// <param name="schemaToCreate">The Schema to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Schema}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Schema>> CreateResponseAsync(Schema schemaToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Schema>> CreateResponseAsync(Schema schemaToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Schema>(schemaToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Schema.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Schema.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Schema>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Schema and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Schema and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Schema using PATCH.
         /// </summary>
         /// <param name="schemaToUpdate">The Schema to update.</param>
-        /// <returns>The updated Schema.</returns>
-        public System.Threading.Tasks.Task<Schema> UpdateAsync(Schema schemaToUpdate)
-        {
-            return this.UpdateAsync(schemaToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Schema using PATCH.
-        /// </summary>
-        /// <param name="schemaToUpdate">The Schema to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Schema.</returns>
-        public async System.Threading.Tasks.Task<Schema> UpdateAsync(Schema schemaToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Schema> UpdateAsync(Schema schemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (schemaToUpdate.AdditionalData != null)
-			{
-				if (schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schemaToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (schemaToUpdate.AdditionalData != null)
-            {
-                if (schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schemaToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Schema>(schemaToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Schema using PATCH and returns a <see cref="GraphResponse{Schema}"/> object.
         /// </summary>
         /// <param name="schemaToUpdate">The Schema to update.</param>
-        /// <returns>The <see cref="GraphResponse{Schema}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Schema>> UpdateResponseAsync(Schema schemaToUpdate)
-        {
-            return this.UpdateResponseAsync(schemaToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Schema using PATCH and returns a <see cref="GraphResponse{Schema}"/> object.
-        /// </summary>
-        /// <param name="schemaToUpdate">The Schema to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Schema}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Schema>> UpdateResponseAsync(Schema schemaToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Schema>> UpdateResponseAsync(Schema schemaToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (schemaToUpdate.AdditionalData != null)
-			{
-				if (schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schemaToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (schemaToUpdate.AdditionalData != null)
-            {
-                if (schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    schemaToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, schemaToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Schema>(schemaToUpdate, cancellationToken).ConfigureAwait(false);
         }

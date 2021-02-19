@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified LicenseDetails to the collection via POST.
-        /// </summary>
-        /// <param name="licenseDetails">The LicenseDetails to add.</param>
-        /// <returns>The created LicenseDetails.</returns>
-        public System.Threading.Tasks.Task<LicenseDetails> AddAsync(LicenseDetails licenseDetails)
-        {
-            return this.AddAsync(licenseDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified LicenseDetails to the collection via POST.
         /// </summary>
         /// <param name="licenseDetails">The LicenseDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
-        public System.Threading.Tasks.Task<LicenseDetails> AddAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<LicenseDetails> AddAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<LicenseDetails>(licenseDetails, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified LicenseDetails to the collection via POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object of the request.
-        /// </summary>
-        /// <param name="licenseDetails">The LicenseDetails to add.</param>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> AddResponseAsync(LicenseDetails licenseDetails)
-        {
-            return this.AddResponseAsync(licenseDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified LicenseDetails to the collection via POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object of the request.
         /// </summary>
         /// <param name="licenseDetails">The LicenseDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> AddResponseAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> AddResponseAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LicenseDetails>(licenseDetails, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserLicenseDetailsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserLicenseDetailsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserLicenseDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserLicenseDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserLicenseDetailsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserLicenseDetailsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserLicenseDetailsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserLicenseDetailsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserLicenseDetailsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserLicenseDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserLicenseDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserLicenseDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

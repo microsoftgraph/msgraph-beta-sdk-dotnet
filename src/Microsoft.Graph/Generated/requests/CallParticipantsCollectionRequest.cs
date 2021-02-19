@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Participant to the collection via POST.
-        /// </summary>
-        /// <param name="participant">The Participant to add.</param>
-        /// <returns>The created Participant.</returns>
-        public System.Threading.Tasks.Task<Participant> AddAsync(Participant participant)
-        {
-            return this.AddAsync(participant, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Participant to the collection via POST.
         /// </summary>
         /// <param name="participant">The Participant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Participant.</returns>
-        public System.Threading.Tasks.Task<Participant> AddAsync(Participant participant, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Participant> AddAsync(Participant participant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Participant>(participant, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Participant to the collection via POST and returns a <see cref="GraphResponse{Participant}"/> object of the request.
-        /// </summary>
-        /// <param name="participant">The Participant to add.</param>
-        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Participant>> AddResponseAsync(Participant participant)
-        {
-            return this.AddResponseAsync(participant, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Participant to the collection via POST and returns a <see cref="GraphResponse{Participant}"/> object of the request.
         /// </summary>
         /// <param name="participant">The Participant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Participant>> AddResponseAsync(Participant participant, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Participant>> AddResponseAsync(Participant participant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Participant>(participant, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICallParticipantsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICallParticipantsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICallParticipantsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CallParticipantsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CallParticipantsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CallParticipantsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CallParticipantsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CallParticipantsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CallParticipantsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CallParticipantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CallParticipantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CallParticipantsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

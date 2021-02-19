@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AdministrativeUnit to the collection via POST.
-        /// </summary>
-        /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
-        /// <returns>The created AdministrativeUnit.</returns>
-        public System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit)
-        {
-            return this.AddAsync(administrativeUnit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AdministrativeUnit to the collection via POST.
         /// </summary>
         /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdministrativeUnit.</returns>
-        public System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AdministrativeUnit> AddAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AdministrativeUnit>(administrativeUnit, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AdministrativeUnit to the collection via POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.
-        /// </summary>
-        /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
-        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> AddResponseAsync(AdministrativeUnit administrativeUnit)
-        {
-            return this.AddResponseAsync(administrativeUnit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AdministrativeUnit to the collection via POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.
         /// </summary>
         /// <param name="administrativeUnit">The AdministrativeUnit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> AddResponseAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> AddResponseAsync(AdministrativeUnit administrativeUnit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnit, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceAdministrativeUnitsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceAdministrativeUnitsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceAdministrativeUnitsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceAdministrativeUnitsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAdministrativeUnitsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceAdministrativeUnitsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceAdministrativeUnitsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAdministrativeUnitsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceAdministrativeUnitsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceAdministrativeUnitsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceAdministrativeUnitsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceAdministrativeUnitsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

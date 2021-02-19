@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEducationAssignmentSubmissionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified EducationSubmission to the collection via POST.
-        /// </summary>
-        /// <param name="educationSubmission">The EducationSubmission to add.</param>
-        /// <returns>The created EducationSubmission.</returns>
-        System.Threading.Tasks.Task<EducationSubmission> AddAsync(EducationSubmission educationSubmission);
-
         /// <summary>
         /// Adds the specified EducationSubmission to the collection via POST.
         /// </summary>
         /// <param name="educationSubmission">The EducationSubmission to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSubmission.</returns>
-        System.Threading.Tasks.Task<EducationSubmission> AddAsync(EducationSubmission educationSubmission, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified EducationSubmission to the collection via POST and returns a <see cref="GraphResponse{EducationSubmission}"/> object of the request.
-        /// </summary>
-        /// <param name="educationSubmission">The EducationSubmission to add.</param>
-        /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> AddResponseAsync(EducationSubmission educationSubmission);
+        System.Threading.Tasks.Task<EducationSubmission> AddAsync(EducationSubmission educationSubmission, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified EducationSubmission to the collection via POST and returns a <see cref="GraphResponse{EducationSubmission}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="educationSubmission">The EducationSubmission to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSubmission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> AddResponseAsync(EducationSubmission educationSubmission, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationSubmission>> AddResponseAsync(EducationSubmission educationSubmission, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationAssignmentSubmissionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationAssignmentSubmissionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EducationAssignmentSubmissionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationAssignmentSubmissionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSubmissionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IEducationAssignmentSubmissionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationAssignmentSubmissionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationAssignmentSubmissionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSubmissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSubmissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified TextClassificationRequestObject using POST.
         /// </summary>
         /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
-        /// <returns>The created TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> CreateAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified TextClassificationRequestObject using POST.
-        /// </summary>
-        /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> CreateAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified TextClassificationRequestObject using POST and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
-        /// </summary>
-        /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> CreateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate);
+        System.Threading.Tasks.Task<TextClassificationRequestObject> CreateAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified TextClassificationRequestObject using POST and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="textClassificationRequestObjectToCreate">The TextClassificationRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> CreateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TextClassificationRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> CreateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TextClassificationRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TextClassificationRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TextClassificationRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TextClassificationRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified TextClassificationRequestObject using PATCH.
         /// </summary>
         /// <param name="textClassificationRequestObjectToUpdate">The TextClassificationRequestObject to update.</param>
-        /// <returns>The updated TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> UpdateAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified TextClassificationRequestObject using PATCH.
-        /// </summary>
-        /// <param name="textClassificationRequestObjectToUpdate">The TextClassificationRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> UpdateAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified TextClassificationRequestObject using PATCH and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
-        /// </summary>
-        /// <param name="textClassificationRequestObjectToUpdate">The TextClassificationRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> UpdateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate);
+        System.Threading.Tasks.Task<TextClassificationRequestObject> UpdateAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TextClassificationRequestObject using PATCH and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> UpdateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> UpdateResponseAsync(TextClassificationRequestObject textClassificationRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

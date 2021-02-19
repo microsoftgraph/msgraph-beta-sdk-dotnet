@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SecurityBaselineDeviceState to the collection via POST.
-        /// </summary>
-        /// <param name="securityBaselineDeviceState">The SecurityBaselineDeviceState to add.</param>
-        /// <returns>The created SecurityBaselineDeviceState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineDeviceState> AddAsync(SecurityBaselineDeviceState securityBaselineDeviceState)
-        {
-            return this.AddAsync(securityBaselineDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SecurityBaselineDeviceState to the collection via POST.
         /// </summary>
         /// <param name="securityBaselineDeviceState">The SecurityBaselineDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineDeviceState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineDeviceState> AddAsync(SecurityBaselineDeviceState securityBaselineDeviceState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SecurityBaselineDeviceState> AddAsync(SecurityBaselineDeviceState securityBaselineDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SecurityBaselineDeviceState>(securityBaselineDeviceState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SecurityBaselineDeviceState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.
-        /// </summary>
-        /// <param name="securityBaselineDeviceState">The SecurityBaselineDeviceState to add.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> AddResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceState)
-        {
-            return this.AddResponseAsync(securityBaselineDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SecurityBaselineDeviceState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.
         /// </summary>
         /// <param name="securityBaselineDeviceState">The SecurityBaselineDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> AddResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineDeviceState>> AddResponseAsync(SecurityBaselineDeviceState securityBaselineDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineDeviceState>(securityBaselineDeviceState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityBaselineTemplateDeviceStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityBaselineTemplateDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityBaselineTemplateDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SecurityBaselineTemplateDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineTemplateDeviceStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateDeviceStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateDeviceStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineTemplateDeviceStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateDeviceStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineTemplateDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

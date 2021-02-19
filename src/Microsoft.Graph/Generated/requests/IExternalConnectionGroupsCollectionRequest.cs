@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IExternalConnectionGroupsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ExternalGroup to the collection via POST.
-        /// </summary>
-        /// <param name="externalGroup">The ExternalGroup to add.</param>
-        /// <returns>The created ExternalGroup.</returns>
-        System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup);
-
         /// <summary>
         /// Adds the specified ExternalGroup to the collection via POST.
         /// </summary>
         /// <param name="externalGroup">The ExternalGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExternalGroup.</returns>
-        System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ExternalGroup to the collection via POST and returns a <see cref="GraphResponse{ExternalGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="externalGroup">The ExternalGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup);
+        System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ExternalGroup to the collection via POST and returns a <see cref="GraphResponse{ExternalGroup}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="externalGroup">The ExternalGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

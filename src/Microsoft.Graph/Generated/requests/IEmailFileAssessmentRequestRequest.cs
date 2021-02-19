@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified EmailFileAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
-        /// <returns>The created EmailFileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified EmailFileAssessmentRequestObject using POST.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailFileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate);
+        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EmailFileAssessmentRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EmailFileAssessmentRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EmailFileAssessmentRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EmailFileAssessmentRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EmailFileAssessmentRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified EmailFileAssessmentRequestObject using PATCH.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
-        /// <returns>The updated EmailFileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified EmailFileAssessmentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailFileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified EmailFileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate);
+        System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EmailFileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

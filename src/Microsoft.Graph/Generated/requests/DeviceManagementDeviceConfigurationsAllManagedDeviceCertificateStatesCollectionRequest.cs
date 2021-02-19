@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
-        /// <returns>The created ManagedAllDeviceCertificateState.</returns>
-        public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> AddAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState)
-        {
-            return this.AddAsync(managedAllDeviceCertificateState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST.
         /// </summary>
         /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAllDeviceCertificateState.</returns>
-        public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> AddAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> AddAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState)
-        {
-            return this.AddResponseAsync(managedAllDeviceCertificateState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAllDeviceCertificateState to the collection via POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.
         /// </summary>
         /// <param name="managedAllDeviceCertificateState">The ManagedAllDeviceCertificateState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> AddResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationsAllManagedDeviceCertificateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

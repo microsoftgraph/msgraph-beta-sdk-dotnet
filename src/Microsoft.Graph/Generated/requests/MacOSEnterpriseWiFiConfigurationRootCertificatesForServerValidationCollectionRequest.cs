@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MacOSTrustedRootCertificate to the collection via POST.
-        /// </summary>
-        /// <param name="macOSTrustedRootCertificate">The MacOSTrustedRootCertificate to add.</param>
-        /// <returns>The created MacOSTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> AddAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate)
-        {
-            return this.AddAsync(macOSTrustedRootCertificate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MacOSTrustedRootCertificate to the collection via POST.
         /// </summary>
         /// <param name="macOSTrustedRootCertificate">The MacOSTrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> AddAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MacOSTrustedRootCertificate> AddAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MacOSTrustedRootCertificate>(macOSTrustedRootCertificate, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MacOSTrustedRootCertificate to the collection via POST and returns a <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.
-        /// </summary>
-        /// <param name="macOSTrustedRootCertificate">The MacOSTrustedRootCertificate to add.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> AddResponseAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate)
-        {
-            return this.AddResponseAsync(macOSTrustedRootCertificate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MacOSTrustedRootCertificate to the collection via POST and returns a <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.
         /// </summary>
         /// <param name="macOSTrustedRootCertificate">The MacOSTrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSTrustedRootCertificate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> AddResponseAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSTrustedRootCertificate>> AddResponseAsync(MacOSTrustedRootCertificate macOSTrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOSTrustedRootCertificate>(macOSTrustedRootCertificate, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MacOSEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

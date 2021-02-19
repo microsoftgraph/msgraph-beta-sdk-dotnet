@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementComanagementEligibleDevicesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ComanagementEligibleDevice to the collection via POST.
-        /// </summary>
-        /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
-        /// <returns>The created ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> AddAsync(ComanagementEligibleDevice comanagementEligibleDevice);
-
         /// <summary>
         /// Adds the specified ComanagementEligibleDevice to the collection via POST.
         /// </summary>
         /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> AddAsync(ComanagementEligibleDevice comanagementEligibleDevice, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ComanagementEligibleDevice to the collection via POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.
-        /// </summary>
-        /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
-        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> AddResponseAsync(ComanagementEligibleDevice comanagementEligibleDevice);
+        System.Threading.Tasks.Task<ComanagementEligibleDevice> AddAsync(ComanagementEligibleDevice comanagementEligibleDevice, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ComanagementEligibleDevice to the collection via POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="comanagementEligibleDevice">The ComanagementEligibleDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> AddResponseAsync(ComanagementEligibleDevice comanagementEligibleDevice, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> AddResponseAsync(ComanagementEligibleDevice comanagementEligibleDevice, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementComanagementEligibleDevicesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementComanagementEligibleDevicesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementComanagementEligibleDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementComanagementEligibleDevicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementComanagementEligibleDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SharePointSiteUsagePages using POST.
         /// </summary>
         /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
-        /// <returns>The created SharePointSiteUsagePages.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsagePages> CreateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate);
-
-        /// <summary>
-        /// Creates the specified SharePointSiteUsagePages using POST.
-        /// </summary>
-        /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointSiteUsagePages.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsagePages> CreateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SharePointSiteUsagePages using POST and returns a <see cref="GraphResponse{SharePointSiteUsagePages}"/> object.
-        /// </summary>
-        /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharePointSiteUsagePages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> CreateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate);
+        System.Threading.Tasks.Task<SharePointSiteUsagePages> CreateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SharePointSiteUsagePages using POST and returns a <see cref="GraphResponse{SharePointSiteUsagePages}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="sharePointSiteUsagePagesToCreate">The SharePointSiteUsagePages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointSiteUsagePages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> CreateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharePointSiteUsagePages.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> CreateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharePointSiteUsagePages.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharePointSiteUsagePages and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharePointSiteUsagePages and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointSiteUsagePages.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SharePointSiteUsagePages using PATCH.
         /// </summary>
         /// <param name="sharePointSiteUsagePagesToUpdate">The SharePointSiteUsagePages to update.</param>
-        /// <returns>The updated SharePointSiteUsagePages.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsagePages> UpdateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate);
-
-        /// <summary>
-        /// Updates the specified SharePointSiteUsagePages using PATCH.
-        /// </summary>
-        /// <param name="sharePointSiteUsagePagesToUpdate">The SharePointSiteUsagePages to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointSiteUsagePages.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsagePages> UpdateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SharePointSiteUsagePages using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsagePages}"/> object.
-        /// </summary>
-        /// <param name="sharePointSiteUsagePagesToUpdate">The SharePointSiteUsagePages to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharePointSiteUsagePages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> UpdateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate);
+        System.Threading.Tasks.Task<SharePointSiteUsagePages> UpdateAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointSiteUsagePages using PATCH and returns a <see cref="GraphResponse{SharePointSiteUsagePages}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharePointSiteUsagePages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> UpdateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsagePages>> UpdateResponseAsync(SharePointSiteUsagePages sharePointSiteUsagePagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

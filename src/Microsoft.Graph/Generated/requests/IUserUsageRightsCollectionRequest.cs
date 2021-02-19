@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserUsageRightsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UsageRight to the collection via POST.
-        /// </summary>
-        /// <param name="usageRight">The UsageRight to add.</param>
-        /// <returns>The created UsageRight.</returns>
-        System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight);
-
         /// <summary>
         /// Adds the specified UsageRight to the collection via POST.
         /// </summary>
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsageRight.</returns>
-        System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UsageRight to the collection via POST and returns a <see cref="GraphResponse{UsageRight}"/> object of the request.
-        /// </summary>
-        /// <param name="usageRight">The UsageRight to add.</param>
-        /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight);
+        System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UsageRight to the collection via POST and returns a <see cref="GraphResponse{UsageRight}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

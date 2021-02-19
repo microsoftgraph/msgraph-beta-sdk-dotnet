@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementDepOnboardingSettingsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DepOnboardingSetting to the collection via POST.
-        /// </summary>
-        /// <param name="depOnboardingSetting">The DepOnboardingSetting to add.</param>
-        /// <returns>The created DepOnboardingSetting.</returns>
-        System.Threading.Tasks.Task<DepOnboardingSetting> AddAsync(DepOnboardingSetting depOnboardingSetting);
-
         /// <summary>
         /// Adds the specified DepOnboardingSetting to the collection via POST.
         /// </summary>
         /// <param name="depOnboardingSetting">The DepOnboardingSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DepOnboardingSetting.</returns>
-        System.Threading.Tasks.Task<DepOnboardingSetting> AddAsync(DepOnboardingSetting depOnboardingSetting, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DepOnboardingSetting to the collection via POST and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.
-        /// </summary>
-        /// <param name="depOnboardingSetting">The DepOnboardingSetting to add.</param>
-        /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> AddResponseAsync(DepOnboardingSetting depOnboardingSetting);
+        System.Threading.Tasks.Task<DepOnboardingSetting> AddAsync(DepOnboardingSetting depOnboardingSetting, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DepOnboardingSetting to the collection via POST and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="depOnboardingSetting">The DepOnboardingSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> AddResponseAsync(DepOnboardingSetting depOnboardingSetting, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> AddResponseAsync(DepOnboardingSetting depOnboardingSetting, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDepOnboardingSettingsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDepOnboardingSettingsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDepOnboardingSettingsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDepOnboardingSettingsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDepOnboardingSettingsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementDepOnboardingSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDepOnboardingSettingsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDepOnboardingSettingsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDepOnboardingSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDepOnboardingSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

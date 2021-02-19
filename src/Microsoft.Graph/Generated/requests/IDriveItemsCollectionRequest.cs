@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDriveItemsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DriveItem to the collection via POST.
-        /// </summary>
-        /// <param name="driveItem">The DriveItem to add.</param>
-        /// <returns>The created DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem);
-
         /// <summary>
         /// Adds the specified DriveItem to the collection via POST.
         /// </summary>
         /// <param name="driveItem">The DriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
-        /// </summary>
-        /// <param name="driveItem">The DriveItem to add.</param>
-        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem);
+        System.Threading.Tasks.Task<DriveItem> AddAsync(DriveItem driveItem, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DriveItem to the collection via POST and returns a <see cref="GraphResponse{DriveItem}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="driveItem">The DriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> AddResponseAsync(DriveItem driveItem, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DriveItemsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItemsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDriveItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItemsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DriveItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

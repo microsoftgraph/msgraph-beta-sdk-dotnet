@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementWindowsQualityUpdateProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsQualityUpdateProfile to the collection via POST.
-        /// </summary>
-        /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
-        /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile);
-
         /// <summary>
         /// Adds the specified WindowsQualityUpdateProfile to the collection via POST.
         /// </summary>
         /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified WindowsQualityUpdateProfile to the collection via POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile);
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified WindowsQualityUpdateProfile to the collection via POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

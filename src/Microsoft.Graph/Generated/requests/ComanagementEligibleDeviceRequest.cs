@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ComanagementEligibleDevice using POST.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
-        /// <returns>The created ComanagementEligibleDevice.</returns>
-        public System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate)
-        {
-            return this.CreateAsync(comanagementEligibleDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ComanagementEligibleDevice using POST.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ComanagementEligibleDevice.</returns>
-        public async System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ComanagementEligibleDevice>(comanagementEligibleDeviceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ComanagementEligibleDevice using POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
-        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate)
-        {
-            return this.CreateResponseAsync(comanagementEligibleDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ComanagementEligibleDevice using POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ComanagementEligibleDevice>(comanagementEligibleDeviceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ComanagementEligibleDevice.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ComanagementEligibleDevice.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ComanagementEligibleDevice>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ComanagementEligibleDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ComanagementEligibleDevice and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ComanagementEligibleDevice using PATCH.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
-        /// <returns>The updated ComanagementEligibleDevice.</returns>
-        public System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate)
-        {
-            return this.UpdateAsync(comanagementEligibleDeviceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ComanagementEligibleDevice using PATCH.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ComanagementEligibleDevice.</returns>
-        public async System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (comanagementEligibleDeviceToUpdate.AdditionalData != null)
-			{
-				if (comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, comanagementEligibleDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (comanagementEligibleDeviceToUpdate.AdditionalData != null)
-            {
-                if (comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, comanagementEligibleDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ComanagementEligibleDevice>(comanagementEligibleDeviceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ComanagementEligibleDevice using PATCH and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
-        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate)
-        {
-            return this.UpdateResponseAsync(comanagementEligibleDeviceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ComanagementEligibleDevice using PATCH and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (comanagementEligibleDeviceToUpdate.AdditionalData != null)
-			{
-				if (comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, comanagementEligibleDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (comanagementEligibleDeviceToUpdate.AdditionalData != null)
-            {
-                if (comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    comanagementEligibleDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, comanagementEligibleDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ComanagementEligibleDevice>(comanagementEligibleDeviceToUpdate, cancellationToken).ConfigureAwait(false);
         }

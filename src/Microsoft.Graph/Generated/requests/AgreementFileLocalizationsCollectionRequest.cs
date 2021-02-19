@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AgreementFileLocalization to the collection via POST.
-        /// </summary>
-        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
-        /// <returns>The created AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization)
-        {
-            return this.AddAsync(agreementFileLocalization, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
         /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileLocalization.</returns>
-        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AgreementFileLocalization>(agreementFileLocalization, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AgreementFileLocalization to the collection via POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.
-        /// </summary>
-        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
-        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization)
-        {
-            return this.AddResponseAsync(agreementFileLocalization, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementFileLocalization to the collection via POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.
         /// </summary>
         /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AgreementFileLocalization>(agreementFileLocalization, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AgreementFileLocalizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AgreementFileLocalizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

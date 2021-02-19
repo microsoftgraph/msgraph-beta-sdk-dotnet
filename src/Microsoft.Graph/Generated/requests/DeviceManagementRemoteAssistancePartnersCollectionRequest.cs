@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified RemoteAssistancePartner to the collection via POST.
-        /// </summary>
-        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
-        /// <returns>The created RemoteAssistancePartner.</returns>
-        public System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner)
-        {
-            return this.AddAsync(remoteAssistancePartner, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RemoteAssistancePartner to the collection via POST.
         /// </summary>
         /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
-        public System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
-        /// </summary>
-        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
-        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner)
-        {
-            return this.AddResponseAsync(remoteAssistancePartner, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
         /// </summary>
         /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementRemoteAssistancePartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementRemoteAssistancePartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteAssistancePartnersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementRemoteAssistancePartnersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteAssistancePartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteAssistancePartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementRemoteAssistancePartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

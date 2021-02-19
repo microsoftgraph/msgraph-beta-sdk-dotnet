@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
-        /// <returns>The created AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate);
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkCompliancePolicy using POST.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate);
+        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AndroidForWorkCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkCompliancePolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidForWorkCompliancePolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkCompliancePolicy.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidForWorkCompliancePolicy using PATCH.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
-        /// <returns>The updated AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate);
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkCompliancePolicy using PATCH.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate);
+        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

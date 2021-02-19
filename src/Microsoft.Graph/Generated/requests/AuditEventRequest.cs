@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AuditEvent using POST.
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
-        /// <returns>The created AuditEvent.</returns>
-        public System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate)
-        {
-            return this.CreateAsync(auditEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AuditEvent using POST.
-        /// </summary>
-        /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuditEvent.</returns>
-        public async System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuditEvent> CreateAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AuditEvent>(auditEventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AuditEvent using POST and returns a <see cref="GraphResponse{AuditEvent}"/> object.
         /// </summary>
         /// <param name="auditEventToCreate">The AuditEvent to create.</param>
-        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuditEvent>> CreateResponseAsync(AuditEvent auditEventToCreate)
-        {
-            return this.CreateResponseAsync(auditEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AuditEvent using POST and returns a <see cref="GraphResponse{AuditEvent}"/> object.
-        /// </summary>
-        /// <param name="auditEventToCreate">The AuditEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuditEvent>> CreateResponseAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuditEvent>> CreateResponseAsync(AuditEvent auditEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AuditEvent>(auditEventToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AuditEvent.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AuditEvent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AuditEvent>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AuditEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AuditEvent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AuditEvent using PATCH.
         /// </summary>
         /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
-        /// <returns>The updated AuditEvent.</returns>
-        public System.Threading.Tasks.Task<AuditEvent> UpdateAsync(AuditEvent auditEventToUpdate)
-        {
-            return this.UpdateAsync(auditEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AuditEvent using PATCH.
-        /// </summary>
-        /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuditEvent.</returns>
-        public async System.Threading.Tasks.Task<AuditEvent> UpdateAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuditEvent> UpdateAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (auditEventToUpdate.AdditionalData != null)
-			{
-				if (auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, auditEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (auditEventToUpdate.AdditionalData != null)
-            {
-                if (auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, auditEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AuditEvent>(auditEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AuditEvent using PATCH and returns a <see cref="GraphResponse{AuditEvent}"/> object.
         /// </summary>
         /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
-        /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuditEvent>> UpdateResponseAsync(AuditEvent auditEventToUpdate)
-        {
-            return this.UpdateResponseAsync(auditEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AuditEvent using PATCH and returns a <see cref="GraphResponse{AuditEvent}"/> object.
-        /// </summary>
-        /// <param name="auditEventToUpdate">The AuditEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AuditEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuditEvent>> UpdateResponseAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuditEvent>> UpdateResponseAsync(AuditEvent auditEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (auditEventToUpdate.AdditionalData != null)
-			{
-				if (auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, auditEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (auditEventToUpdate.AdditionalData != null)
-            {
-                if (auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    auditEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, auditEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AuditEvent>(auditEventToUpdate, cancellationToken).ConfigureAwait(false);
         }

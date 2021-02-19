@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SalesCreditMemo using POST.
         /// </summary>
         /// <param name="salesCreditMemoToCreate">The SalesCreditMemo to create.</param>
-        /// <returns>The created SalesCreditMemo.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemo> CreateAsync(SalesCreditMemo salesCreditMemoToCreate)
-        {
-            return this.CreateAsync(salesCreditMemoToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesCreditMemo using POST.
-        /// </summary>
-        /// <param name="salesCreditMemoToCreate">The SalesCreditMemo to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesCreditMemo.</returns>
-        public async System.Threading.Tasks.Task<SalesCreditMemo> CreateAsync(SalesCreditMemo salesCreditMemoToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesCreditMemo> CreateAsync(SalesCreditMemo salesCreditMemoToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SalesCreditMemo>(salesCreditMemoToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SalesCreditMemo using POST and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object.
         /// </summary>
         /// <param name="salesCreditMemoToCreate">The SalesCreditMemo to create.</param>
-        /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> CreateResponseAsync(SalesCreditMemo salesCreditMemoToCreate)
-        {
-            return this.CreateResponseAsync(salesCreditMemoToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SalesCreditMemo using POST and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object.
-        /// </summary>
-        /// <param name="salesCreditMemoToCreate">The SalesCreditMemo to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> CreateResponseAsync(SalesCreditMemo salesCreditMemoToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> CreateResponseAsync(SalesCreditMemo salesCreditMemoToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SalesCreditMemo>(salesCreditMemoToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SalesCreditMemo.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SalesCreditMemo.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SalesCreditMemo>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SalesCreditMemo and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SalesCreditMemo and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SalesCreditMemo using PATCH.
         /// </summary>
         /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo to update.</param>
-        /// <returns>The updated SalesCreditMemo.</returns>
-        public System.Threading.Tasks.Task<SalesCreditMemo> UpdateAsync(SalesCreditMemo salesCreditMemoToUpdate)
-        {
-            return this.UpdateAsync(salesCreditMemoToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SalesCreditMemo using PATCH.
-        /// </summary>
-        /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesCreditMemo.</returns>
-        public async System.Threading.Tasks.Task<SalesCreditMemo> UpdateAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SalesCreditMemo> UpdateAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesCreditMemoToUpdate.AdditionalData != null)
-			{
-				if (salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesCreditMemoToUpdate.AdditionalData != null)
-            {
-                if (salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SalesCreditMemo>(salesCreditMemoToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SalesCreditMemo using PATCH and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object.
         /// </summary>
         /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo to update.</param>
-        /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> UpdateResponseAsync(SalesCreditMemo salesCreditMemoToUpdate)
-        {
-            return this.UpdateResponseAsync(salesCreditMemoToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SalesCreditMemo using PATCH and returns a <see cref="GraphResponse{SalesCreditMemo}"/> object.
-        /// </summary>
-        /// <param name="salesCreditMemoToUpdate">The SalesCreditMemo to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SalesCreditMemo}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> UpdateResponseAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SalesCreditMemo>> UpdateResponseAsync(SalesCreditMemo salesCreditMemoToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (salesCreditMemoToUpdate.AdditionalData != null)
-			{
-				if (salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (salesCreditMemoToUpdate.AdditionalData != null)
-            {
-                if (salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    salesCreditMemoToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, salesCreditMemoToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SalesCreditMemo>(salesCreditMemoToUpdate, cancellationToken).ConfigureAwait(false);
         }

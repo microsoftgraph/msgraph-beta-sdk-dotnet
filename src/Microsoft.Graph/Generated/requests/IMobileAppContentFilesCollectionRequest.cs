@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMobileAppContentFilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppContentFile to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
-        /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> AddAsync(MobileAppContentFile mobileAppContentFile);
-
         /// <summary>
         /// Adds the specified MobileAppContentFile to the collection via POST.
         /// </summary>
         /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> AddAsync(MobileAppContentFile mobileAppContentFile, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MobileAppContentFile to the collection via POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.
-        /// </summary>
-        /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> AddResponseAsync(MobileAppContentFile mobileAppContentFile);
+        System.Threading.Tasks.Task<MobileAppContentFile> AddAsync(MobileAppContentFile mobileAppContentFile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MobileAppContentFile to the collection via POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> AddResponseAsync(MobileAppContentFile mobileAppContentFile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> AddResponseAsync(MobileAppContentFile mobileAppContentFile, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppContentFilesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppContentFilesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppContentFilesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppContentFilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFilesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IMobileAppContentFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppContentFilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppContentFilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

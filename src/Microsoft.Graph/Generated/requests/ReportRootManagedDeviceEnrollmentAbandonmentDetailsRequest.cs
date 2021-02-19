@@ -34,33 +34,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<Report> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<Report> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return this.SendAsync<Report>(null, cancellationToken);
         }
 
-
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="report">The Report object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Report> PatchAsync(Report report)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Report>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PatchAsync(report, CancellationToken.None);
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Report>(null, cancellationToken).ConfigureAwait(false);
         }
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -69,20 +62,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<Report> PatchAsync(Report report, 
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "PATCH";
             return this.SendAsync<Report>(report, cancellationToken);
-        }        
+        }
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="report">The Report object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<Report> PutAsync(Report report)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="report">The Report object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Report>> PatchResponseAsync(Report report, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return this.PutAsync(report, CancellationToken.None);
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Report>(report, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -92,11 +87,23 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<Report> PutAsync(Report report, 
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "PUT";
             return this.SendAsync<Report>(report, cancellationToken);
-        }        
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="report">The Report object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Report>> PutResponseAsync(Report report, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = "PUT";
+            return await this.SendAsyncWithGraphResponse<Report>(report, cancellationToken).ConfigureAwait(false);
+        }
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsDeviceStartupProcessPerformance to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformance">The UserExperienceAnalyticsDeviceStartupProcessPerformance to add.</param>
-        /// <returns>The created UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> AddAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance)
-        {
-            return this.AddAsync(userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsDeviceStartupProcessPerformance to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformance">The UserExperienceAnalyticsDeviceStartupProcessPerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> AddAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> AddAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformance, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsDeviceStartupProcessPerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformance">The UserExperienceAnalyticsDeviceStartupProcessPerformance to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance)
-        {
-            return this.AddResponseAsync(userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsDeviceStartupProcessPerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformance">The UserExperienceAnalyticsDeviceStartupProcessPerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformance, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupProcessPerformanceCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -33,71 +33,41 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DataSource to the collection via POST.
-        /// </summary>
-        /// <param name="dataSource">The DataSource to add.</param>
-        /// <returns>The created DataSource.</returns>
-        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource)
-        {
-            return this.AddAsync(dataSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DataSource to the collection via POST.
         /// </summary>
         /// <param name="dataSource">The DataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSource.</returns>
-        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             dataSource.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(dataSource.GetType().FullName));
             return this.SendAsync<DataSource>(dataSource, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DataSource to the collection via POST and returns a <see cref="GraphResponse{DataSource}"/> object of the request.
-        /// </summary>
-        /// <param name="dataSource">The DataSource to add.</param>
-        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataSource>> AddResponseAsync(DataSource dataSource)
-        {
-            return this.AddResponseAsync(dataSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DataSource to the collection via POST and returns a <see cref="GraphResponse{DataSource}"/> object of the request.
         /// </summary>
         /// <param name="dataSource">The DataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataSource>> AddResponseAsync(DataSource dataSource, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataSource>> AddResponseAsync(DataSource dataSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             dataSource.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(dataSource.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<DataSource>(dataSource, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SourceCollectionAdditionalSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to create.</param>
-        /// <returns>The created UserExperienceAnalyticsAppHealthDeviceModelPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> CreateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthDeviceModelPerformance.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> CreateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> CreateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDeviceModelPerformance>(userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate)
-        {
-            return this.CreateResponseAsync(userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>(userExperienceAnalyticsAppHealthDeviceModelPerformanceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsAppHealthDeviceModelPerformance>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using PATCH.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsAppHealthDeviceModelPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> UpdateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate)
-        {
-            return this.UpdateAsync(userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using PATCH.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsAppHealthDeviceModelPerformance.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> UpdateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDeviceModelPerformance> UpdateAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDeviceModelPerformance>(userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate)
-        {
-            return this.UpdateResponseAsync(userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsAppHealthDeviceModelPerformance using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate">The UserExperienceAnalyticsAppHealthDeviceModelPerformance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDeviceModelPerformance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDeviceModelPerformance userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDeviceModelPerformance>(userExperienceAnalyticsAppHealthDeviceModelPerformanceToUpdate, cancellationToken).ConfigureAwait(false);
         }

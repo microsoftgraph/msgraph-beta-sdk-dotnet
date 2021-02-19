@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SecurityBaselineCategoryStateSummary to the collection via POST.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummary">The SecurityBaselineCategoryStateSummary to add.</param>
-        /// <returns>The created SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> AddAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary);
-
         /// <summary>
         /// Adds the specified SecurityBaselineCategoryStateSummary to the collection via POST.
         /// </summary>
         /// <param name="securityBaselineCategoryStateSummary">The SecurityBaselineCategoryStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> AddAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SecurityBaselineCategoryStateSummary to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummary">The SecurityBaselineCategoryStateSummary to add.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary);
+        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> AddAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SecurityBaselineCategoryStateSummary to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="securityBaselineCategoryStateSummary">The SecurityBaselineCategoryStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

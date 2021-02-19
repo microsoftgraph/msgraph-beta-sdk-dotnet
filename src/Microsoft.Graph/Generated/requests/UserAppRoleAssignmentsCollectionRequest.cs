@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AppRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
-        /// <returns>The created AppRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<AppRoleAssignment> AddAsync(AppRoleAssignment appRoleAssignment)
-        {
-            return this.AddAsync(appRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<AppRoleAssignment> AddAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AppRoleAssignment> AddAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AppRoleAssignment>(appRoleAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AppRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> AddResponseAsync(AppRoleAssignment appRoleAssignment)
-        {
-            return this.AddResponseAsync(appRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.
         /// </summary>
         /// <param name="appRoleAssignment">The AppRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> AddResponseAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> AddResponseAsync(AppRoleAssignment appRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AppRoleAssignment>(appRoleAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserAppRoleAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserAppRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserAppRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserAppRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAppRoleAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAppRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAppRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserAppRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

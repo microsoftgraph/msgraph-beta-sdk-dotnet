@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedRoleAssignment using POST.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
-        /// <returns>The created PrivilegedRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate)
-        {
-            return this.CreateAsync(privilegedRoleAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedRoleAssignment using POST.
-        /// </summary>
-        /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedRoleAssignment.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedRoleAssignment> CreateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrivilegedRoleAssignment>(privilegedRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedRoleAssignment using POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> CreateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(privilegedRoleAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedRoleAssignment using POST and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
-        /// </summary>
-        /// <param name="privilegedRoleAssignmentToCreate">The PrivilegedRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> CreateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> CreateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrivilegedRoleAssignment>(privilegedRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedRoleAssignment using PATCH.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
-        /// <returns>The updated PrivilegedRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<PrivilegedRoleAssignment> UpdateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate)
-        {
-            return this.UpdateAsync(privilegedRoleAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedRoleAssignment using PATCH.
-        /// </summary>
-        /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedRoleAssignment.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedRoleAssignment> UpdateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedRoleAssignment> UpdateAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedRoleAssignmentToUpdate.AdditionalData != null)
-			{
-				if (privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedRoleAssignmentToUpdate.AdditionalData != null)
-            {
-                if (privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrivilegedRoleAssignment>(privilegedRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedRoleAssignment using PATCH and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
         /// </summary>
         /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> UpdateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(privilegedRoleAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedRoleAssignment using PATCH and returns a <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object.
-        /// </summary>
-        /// <param name="privilegedRoleAssignmentToUpdate">The PrivilegedRoleAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> UpdateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleAssignment>> UpdateResponseAsync(PrivilegedRoleAssignment privilegedRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedRoleAssignmentToUpdate.AdditionalData != null)
-			{
-				if (privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedRoleAssignmentToUpdate.AdditionalData != null)
-            {
-                if (privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedRoleAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedRoleAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PrivilegedRoleAssignment>(privilegedRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified PrivilegedRoleAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedRoleAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PrivilegedRoleAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedRoleAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

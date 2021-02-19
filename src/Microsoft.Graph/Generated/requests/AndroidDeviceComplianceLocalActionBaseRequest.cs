@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
-        /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate)
-        {
-            return this.CreateAsync(androidDeviceComplianceLocalActionBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST.
-        /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionBase>(androidDeviceComplianceLocalActionBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate)
-        {
-            return this.CreateResponseAsync(androidDeviceComplianceLocalActionBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionBase>(androidDeviceComplianceLocalActionBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceComplianceLocalActionBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidDeviceComplianceLocalActionBase>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
-        /// <returns>The updated AndroidDeviceComplianceLocalActionBase.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate)
-        {
-            return this.UpdateAsync(androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH.
-        /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionBase.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionBase>(androidDeviceComplianceLocalActionBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate)
-        {
-            return this.UpdateResponseAsync(androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceComplianceLocalActionBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionBase>(androidDeviceComplianceLocalActionBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ScopedRoleMembership to the collection via POST.
-        /// </summary>
-        /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
-        /// <returns>The created ScopedRoleMembership.</returns>
-        public System.Threading.Tasks.Task<ScopedRoleMembership> AddAsync(ScopedRoleMembership scopedRoleMembership)
-        {
-            return this.AddAsync(scopedRoleMembership, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ScopedRoleMembership to the collection via POST.
         /// </summary>
         /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ScopedRoleMembership.</returns>
-        public System.Threading.Tasks.Task<ScopedRoleMembership> AddAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ScopedRoleMembership> AddAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ScopedRoleMembership>(scopedRoleMembership, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ScopedRoleMembership to the collection via POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.
-        /// </summary>
-        /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
-        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership)
-        {
-            return this.AddResponseAsync(scopedRoleMembership, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ScopedRoleMembership to the collection via POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.
         /// </summary>
         /// <param name="scopedRoleMembership">The ScopedRoleMembership to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> AddResponseAsync(ScopedRoleMembership scopedRoleMembership, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ScopedRoleMembership>(scopedRoleMembership, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAdministrativeUnitScopedRoleMembersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAdministrativeUnitScopedRoleMembersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAdministrativeUnitScopedRoleMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AdministrativeUnitScopedRoleMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AdministrativeUnitScopedRoleMembersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AdministrativeUnitScopedRoleMembersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnitScopedRoleMembersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AdministrativeUnitScopedRoleMembersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AdministrativeUnitScopedRoleMembersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnitScopedRoleMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnitScopedRoleMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AdministrativeUnitScopedRoleMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagementCondition to the collection via POST.
-        /// </summary>
-        /// <param name="managementCondition">The ManagementCondition to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition)
-        {
-            return this.AddAsync(managementCondition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagementCondition to the collection via POST.
         /// </summary>
         /// <param name="managementCondition">The ManagementCondition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(managementCondition.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
-        /// </summary>
-        /// <param name="managementCondition">The ManagementCondition to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementCondition managementCondition)
-        {
-            return this.AddResponseAsync(managementCondition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
         /// </summary>
         /// <param name="managementCondition">The ManagementCondition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(managementCondition.Id))

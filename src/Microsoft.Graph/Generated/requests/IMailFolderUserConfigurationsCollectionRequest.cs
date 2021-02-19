@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMailFolderUserConfigurationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="userConfiguration">The UserConfiguration to add.</param>
-        /// <returns>The created UserConfiguration.</returns>
-        System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration);
-
         /// <summary>
         /// Adds the specified UserConfiguration to the collection via POST.
         /// </summary>
         /// <param name="userConfiguration">The UserConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConfiguration.</returns>
-        System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UserConfiguration to the collection via POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object of the request.
-        /// </summary>
-        /// <param name="userConfiguration">The UserConfiguration to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration);
+        System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UserConfiguration to the collection via POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="userConfiguration">The UserConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

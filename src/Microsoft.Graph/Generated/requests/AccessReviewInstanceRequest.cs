@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AccessReviewInstance using POST.
         /// </summary>
         /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
-        /// <returns>The created AccessReviewInstance.</returns>
-        public System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate)
-        {
-            return this.CreateAsync(accessReviewInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessReviewInstance using POST.
-        /// </summary>
-        /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewInstance.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessReviewInstance> CreateAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AccessReviewInstance>(accessReviewInstanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AccessReviewInstance using POST and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
         /// </summary>
         /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> CreateResponseAsync(AccessReviewInstance accessReviewInstanceToCreate)
-        {
-            return this.CreateResponseAsync(accessReviewInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessReviewInstance using POST and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
-        /// </summary>
-        /// <param name="accessReviewInstanceToCreate">The AccessReviewInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> CreateResponseAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> CreateResponseAsync(AccessReviewInstance accessReviewInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AccessReviewInstance>(accessReviewInstanceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AccessReviewInstance.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AccessReviewInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AccessReviewInstance>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AccessReviewInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AccessReviewInstance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AccessReviewInstance using PATCH.
         /// </summary>
         /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
-        /// <returns>The updated AccessReviewInstance.</returns>
-        public System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate)
-        {
-            return this.UpdateAsync(accessReviewInstanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AccessReviewInstance using PATCH.
-        /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewInstance.</returns>
-        public async System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessReviewInstance> UpdateAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (accessReviewInstanceToUpdate.AdditionalData != null)
-			{
-				if (accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessReviewInstanceToUpdate.AdditionalData != null)
-            {
-                if (accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AccessReviewInstance using PATCH and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
         /// </summary>
         /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> UpdateResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate)
-        {
-            return this.UpdateResponseAsync(accessReviewInstanceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AccessReviewInstance using PATCH and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object.
-        /// </summary>
-        /// <param name="accessReviewInstanceToUpdate">The AccessReviewInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> UpdateResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> UpdateResponseAsync(AccessReviewInstance accessReviewInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (accessReviewInstanceToUpdate.AdditionalData != null)
-			{
-				if (accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessReviewInstanceToUpdate.AdditionalData != null)
-            {
-                if (accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessReviewInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessReviewInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AccessReviewInstance>(accessReviewInstanceToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PolicySetAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
-        /// <returns>The created PolicySetAssignment.</returns>
-        public System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment)
-        {
-            return this.AddAsync(policySetAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PolicySetAssignment to the collection via POST.
         /// </summary>
         /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySetAssignment.</returns>
-        public System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PolicySetAssignment> AddAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PolicySetAssignment>(policySetAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PolicySetAssignment to the collection via POST and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> AddResponseAsync(PolicySetAssignment policySetAssignment)
-        {
-            return this.AddResponseAsync(policySetAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PolicySetAssignment to the collection via POST and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.
         /// </summary>
         /// <param name="policySetAssignment">The PolicySetAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> AddResponseAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> AddResponseAsync(PolicySetAssignment policySetAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PolicySetAssignment>(policySetAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicySetAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicySetAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySetAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySetAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicySetAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicySetAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

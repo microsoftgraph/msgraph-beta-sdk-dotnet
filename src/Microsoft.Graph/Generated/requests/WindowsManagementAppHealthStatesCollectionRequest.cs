@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsManagementAppHealthState to the collection via POST.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
-        /// <returns>The created WindowsManagementAppHealthState.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementAppHealthState> AddAsync(WindowsManagementAppHealthState windowsManagementAppHealthState)
-        {
-            return this.AddAsync(windowsManagementAppHealthState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsManagementAppHealthState to the collection via POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementAppHealthState.</returns>
-        public System.Threading.Tasks.Task<WindowsManagementAppHealthState> AddAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsManagementAppHealthState> AddAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsManagementAppHealthState>(windowsManagementAppHealthState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsManagementAppHealthState to the collection via POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> AddResponseAsync(WindowsManagementAppHealthState windowsManagementAppHealthState)
-        {
-            return this.AddResponseAsync(windowsManagementAppHealthState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsManagementAppHealthState to the collection via POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.
         /// </summary>
         /// <param name="windowsManagementAppHealthState">The WindowsManagementAppHealthState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> AddResponseAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> AddResponseAsync(WindowsManagementAppHealthState windowsManagementAppHealthState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsManagementAppHealthState>(windowsManagementAppHealthState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindowsManagementAppHealthStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindowsManagementAppHealthStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWindowsManagementAppHealthStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WindowsManagementAppHealthStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WindowsManagementAppHealthStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

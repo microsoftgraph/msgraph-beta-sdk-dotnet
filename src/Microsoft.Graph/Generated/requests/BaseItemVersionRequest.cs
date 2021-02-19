@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified BaseItemVersion using POST.
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
-        /// <returns>The created BaseItemVersion.</returns>
-        public System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate)
-        {
-            return this.CreateAsync(baseItemVersionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BaseItemVersion using POST.
-        /// </summary>
-        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BaseItemVersion.</returns>
-        public async System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<BaseItemVersion>(baseItemVersionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
-        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate)
-        {
-            return this.CreateResponseAsync(baseItemVersionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
-        /// </summary>
-        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<BaseItemVersion>(baseItemVersionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified BaseItemVersion.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified BaseItemVersion.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<BaseItemVersion>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified BaseItemVersion and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified BaseItemVersion and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified BaseItemVersion using PATCH.
         /// </summary>
         /// <param name="baseItemVersionToUpdate">The BaseItemVersion to update.</param>
-        /// <returns>The updated BaseItemVersion.</returns>
-        public System.Threading.Tasks.Task<BaseItemVersion> UpdateAsync(BaseItemVersion baseItemVersionToUpdate)
-        {
-            return this.UpdateAsync(baseItemVersionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified BaseItemVersion using PATCH.
-        /// </summary>
-        /// <param name="baseItemVersionToUpdate">The BaseItemVersion to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BaseItemVersion.</returns>
-        public async System.Threading.Tasks.Task<BaseItemVersion> UpdateAsync(BaseItemVersion baseItemVersionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BaseItemVersion> UpdateAsync(BaseItemVersion baseItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (baseItemVersionToUpdate.AdditionalData != null)
-			{
-				if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, baseItemVersionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (baseItemVersionToUpdate.AdditionalData != null)
-            {
-                if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, baseItemVersionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<BaseItemVersion>(baseItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified BaseItemVersion using PATCH and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
         /// </summary>
         /// <param name="baseItemVersionToUpdate">The BaseItemVersion to update.</param>
-        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> UpdateResponseAsync(BaseItemVersion baseItemVersionToUpdate)
-        {
-            return this.UpdateResponseAsync(baseItemVersionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified BaseItemVersion using PATCH and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
-        /// </summary>
-        /// <param name="baseItemVersionToUpdate">The BaseItemVersion to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> UpdateResponseAsync(BaseItemVersion baseItemVersionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> UpdateResponseAsync(BaseItemVersion baseItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (baseItemVersionToUpdate.AdditionalData != null)
-			{
-				if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, baseItemVersionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (baseItemVersionToUpdate.AdditionalData != null)
-            {
-                if (baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    baseItemVersionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, baseItemVersionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<BaseItemVersion>(baseItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
         }

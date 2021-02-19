@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSOfficeSuiteApp using POST.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
-        /// <returns>The created MacOSOfficeSuiteApp.</returns>
-        public System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate)
-        {
-            return this.CreateAsync(macOSOfficeSuiteAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using POST.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSOfficeSuiteApp.</returns>
-        public async System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate)
-        {
-            return this.CreateResponseAsync(macOSOfficeSuiteAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSOfficeSuiteApp.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSOfficeSuiteApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSOfficeSuiteApp>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSOfficeSuiteApp using PATCH.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
-        /// <returns>The updated MacOSOfficeSuiteApp.</returns>
-        public System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate)
-        {
-            return this.UpdateAsync(macOSOfficeSuiteAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSOfficeSuiteApp using PATCH.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSOfficeSuiteApp.</returns>
-        public async System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
-			{
-				if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
-            {
-                if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate)
-        {
-            return this.UpdateResponseAsync(macOSOfficeSuiteAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
-			{
-				if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
-            {
-                if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

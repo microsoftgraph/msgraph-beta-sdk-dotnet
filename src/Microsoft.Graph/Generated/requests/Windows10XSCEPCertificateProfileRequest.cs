@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10XSCEPCertificateProfile using POST.
         /// </summary>
         /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
-        /// <returns>The created Windows10XSCEPCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> CreateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate)
-        {
-            return this.CreateAsync(windows10XSCEPCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10XSCEPCertificateProfile using POST.
-        /// </summary>
-        /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10XSCEPCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> CreateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> CreateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10XSCEPCertificateProfile>(windows10XSCEPCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10XSCEPCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> CreateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate)
-        {
-            return this.CreateResponseAsync(windows10XSCEPCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10XSCEPCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
-        /// </summary>
-        /// <param name="windows10XSCEPCertificateProfileToCreate">The Windows10XSCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> CreateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> CreateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10XSCEPCertificateProfile>(windows10XSCEPCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10XSCEPCertificateProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10XSCEPCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10XSCEPCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10XSCEPCertificateProfile using PATCH.
         /// </summary>
         /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile to update.</param>
-        /// <returns>The updated Windows10XSCEPCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> UpdateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate)
-        {
-            return this.UpdateAsync(windows10XSCEPCertificateProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10XSCEPCertificateProfile using PATCH.
-        /// </summary>
-        /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10XSCEPCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> UpdateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> UpdateAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10XSCEPCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XSCEPCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10XSCEPCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XSCEPCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10XSCEPCertificateProfile>(windows10XSCEPCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10XSCEPCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> UpdateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate)
-        {
-            return this.UpdateResponseAsync(windows10XSCEPCertificateProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10XSCEPCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
-        /// </summary>
-        /// <param name="windows10XSCEPCertificateProfileToUpdate">The Windows10XSCEPCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> UpdateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> UpdateResponseAsync(Windows10XSCEPCertificateProfile windows10XSCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10XSCEPCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XSCEPCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10XSCEPCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10XSCEPCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XSCEPCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10XSCEPCertificateProfile>(windows10XSCEPCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }

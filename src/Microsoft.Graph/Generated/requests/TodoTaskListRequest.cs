@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TodoTaskList using POST.
         /// </summary>
         /// <param name="todoTaskListToCreate">The TodoTaskList to create.</param>
-        /// <returns>The created TodoTaskList.</returns>
-        public System.Threading.Tasks.Task<TodoTaskList> CreateAsync(TodoTaskList todoTaskListToCreate)
-        {
-            return this.CreateAsync(todoTaskListToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TodoTaskList using POST.
-        /// </summary>
-        /// <param name="todoTaskListToCreate">The TodoTaskList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TodoTaskList.</returns>
-        public async System.Threading.Tasks.Task<TodoTaskList> CreateAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TodoTaskList> CreateAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TodoTaskList>(todoTaskListToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TodoTaskList using POST and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
         /// </summary>
         /// <param name="todoTaskListToCreate">The TodoTaskList to create.</param>
-        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> CreateResponseAsync(TodoTaskList todoTaskListToCreate)
-        {
-            return this.CreateResponseAsync(todoTaskListToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TodoTaskList using POST and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
-        /// </summary>
-        /// <param name="todoTaskListToCreate">The TodoTaskList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> CreateResponseAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> CreateResponseAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskListToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TodoTaskList.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TodoTaskList.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TodoTaskList>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TodoTaskList and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TodoTaskList and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TodoTaskList using PATCH.
         /// </summary>
         /// <param name="todoTaskListToUpdate">The TodoTaskList to update.</param>
-        /// <returns>The updated TodoTaskList.</returns>
-        public System.Threading.Tasks.Task<TodoTaskList> UpdateAsync(TodoTaskList todoTaskListToUpdate)
-        {
-            return this.UpdateAsync(todoTaskListToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TodoTaskList using PATCH.
-        /// </summary>
-        /// <param name="todoTaskListToUpdate">The TodoTaskList to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TodoTaskList.</returns>
-        public async System.Threading.Tasks.Task<TodoTaskList> UpdateAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TodoTaskList> UpdateAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (todoTaskListToUpdate.AdditionalData != null)
-			{
-				if (todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, todoTaskListToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (todoTaskListToUpdate.AdditionalData != null)
-            {
-                if (todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, todoTaskListToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TodoTaskList>(todoTaskListToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TodoTaskList using PATCH and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
         /// </summary>
         /// <param name="todoTaskListToUpdate">The TodoTaskList to update.</param>
-        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> UpdateResponseAsync(TodoTaskList todoTaskListToUpdate)
-        {
-            return this.UpdateResponseAsync(todoTaskListToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TodoTaskList using PATCH and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
-        /// </summary>
-        /// <param name="todoTaskListToUpdate">The TodoTaskList to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> UpdateResponseAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> UpdateResponseAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (todoTaskListToUpdate.AdditionalData != null)
-			{
-				if (todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, todoTaskListToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (todoTaskListToUpdate.AdditionalData != null)
-            {
-                if (todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    todoTaskListToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, todoTaskListToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskListToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageAssignmentPolicy using POST.
         /// </summary>
         /// <param name="accessPackageAssignmentPolicyToCreate">The AccessPackageAssignmentPolicy to create.</param>
-        /// <returns>The created AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> CreateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate);
-
-        /// <summary>
-        /// Creates the specified AccessPackageAssignmentPolicy using POST.
-        /// </summary>
-        /// <param name="accessPackageAssignmentPolicyToCreate">The AccessPackageAssignmentPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> CreateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AccessPackageAssignmentPolicy using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
-        /// </summary>
-        /// <param name="accessPackageAssignmentPolicyToCreate">The AccessPackageAssignmentPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> CreateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate);
+        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> CreateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AccessPackageAssignmentPolicy using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="accessPackageAssignmentPolicyToCreate">The AccessPackageAssignmentPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> CreateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackageAssignmentPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> CreateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AccessPackageAssignmentPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackageAssignmentPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AccessPackageAssignmentPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageAssignmentPolicy.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AccessPackageAssignmentPolicy using PATCH.
         /// </summary>
         /// <param name="accessPackageAssignmentPolicyToUpdate">The AccessPackageAssignmentPolicy to update.</param>
-        /// <returns>The updated AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> UpdateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate);
-
-        /// <summary>
-        /// Updates the specified AccessPackageAssignmentPolicy using PATCH.
-        /// </summary>
-        /// <param name="accessPackageAssignmentPolicyToUpdate">The AccessPackageAssignmentPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> UpdateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AccessPackageAssignmentPolicy using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
-        /// </summary>
-        /// <param name="accessPackageAssignmentPolicyToUpdate">The AccessPackageAssignmentPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> UpdateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate);
+        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> UpdateAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackageAssignmentPolicy using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> UpdateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> UpdateResponseAsync(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

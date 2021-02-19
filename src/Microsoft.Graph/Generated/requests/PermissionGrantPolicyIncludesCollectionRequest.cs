@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PermissionGrantConditionSet to the collection via POST.
-        /// </summary>
-        /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
-        /// <returns>The created PermissionGrantConditionSet.</returns>
-        public System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet)
-        {
-            return this.AddAsync(permissionGrantConditionSet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PermissionGrantConditionSet to the collection via POST.
         /// </summary>
         /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PermissionGrantConditionSet.</returns>
-        public System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PermissionGrantConditionSet> AddAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PermissionGrantConditionSet>(permissionGrantConditionSet, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PermissionGrantConditionSet to the collection via POST and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.
-        /// </summary>
-        /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
-        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> AddResponseAsync(PermissionGrantConditionSet permissionGrantConditionSet)
-        {
-            return this.AddResponseAsync(permissionGrantConditionSet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PermissionGrantConditionSet to the collection via POST and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.
         /// </summary>
         /// <param name="permissionGrantConditionSet">The PermissionGrantConditionSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> AddResponseAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> AddResponseAsync(PermissionGrantConditionSet permissionGrantConditionSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PermissionGrantConditionSet>(permissionGrantConditionSet, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPermissionGrantPolicyIncludesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPermissionGrantPolicyIncludesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPermissionGrantPolicyIncludesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PermissionGrantPolicyIncludesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyIncludesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyIncludesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyIncludesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PermissionGrantPolicyIncludesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

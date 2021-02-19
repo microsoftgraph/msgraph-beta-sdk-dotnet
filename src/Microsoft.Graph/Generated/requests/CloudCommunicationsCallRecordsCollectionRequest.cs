@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST.
-        /// </summary>
-        /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
-        /// <returns>The created Microsoft.Graph.CallRecords.CallRecord.</returns>
-        public System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord)
-        {
-            return this.AddAsync(callRecord, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST.
         /// </summary>
         /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Microsoft.Graph.CallRecords.CallRecord.</returns>
-        public System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Microsoft.Graph.CallRecords.CallRecord> AddAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Microsoft.Graph.CallRecords.CallRecord>(callRecord, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.
-        /// </summary>
-        /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
-        /// <returns>The <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.CallRecords.CallRecord>> AddResponseAsync(Microsoft.Graph.CallRecords.CallRecord callRecord)
-        {
-            return this.AddResponseAsync(callRecord, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Microsoft.Graph.CallRecords.CallRecord to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.
         /// </summary>
         /// <param name="callRecord">The Microsoft.Graph.CallRecords.CallRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Microsoft.Graph.CallRecords.CallRecord}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.CallRecords.CallRecord>> AddResponseAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.CallRecords.CallRecord>> AddResponseAsync(Microsoft.Graph.CallRecords.CallRecord callRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Microsoft.Graph.CallRecords.CallRecord>(callRecord, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICloudCommunicationsCallRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CloudCommunicationsCallRecordsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsCallRecordsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudCommunicationsCallRecordsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsCallRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsCallRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CloudCommunicationsCallRecordsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

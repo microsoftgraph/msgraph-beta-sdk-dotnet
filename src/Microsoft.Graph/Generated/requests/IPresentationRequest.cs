@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Presentation using POST.
         /// </summary>
         /// <param name="presentationToCreate">The Presentation to create.</param>
-        /// <returns>The created Presentation.</returns>
-        System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate);
-
-        /// <summary>
-        /// Creates the specified Presentation using POST.
-        /// </summary>
-        /// <param name="presentationToCreate">The Presentation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Presentation.</returns>
-        System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Presentation using POST and returns a <see cref="GraphResponse{Presentation}"/> object.
-        /// </summary>
-        /// <param name="presentationToCreate">The Presentation to create.</param>
-        /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presentation>> CreateResponseAsync(Presentation presentationToCreate);
+        System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Presentation using POST and returns a <see cref="GraphResponse{Presentation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="presentationToCreate">The Presentation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presentation>> CreateResponseAsync(Presentation presentationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Presentation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Presentation>> CreateResponseAsync(Presentation presentationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Presentation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Presentation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Presentation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Presentation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Presentation using PATCH.
         /// </summary>
         /// <param name="presentationToUpdate">The Presentation to update.</param>
-        /// <returns>The updated Presentation.</returns>
-        System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate);
-
-        /// <summary>
-        /// Updates the specified Presentation using PATCH.
-        /// </summary>
-        /// <param name="presentationToUpdate">The Presentation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Presentation.</returns>
-        System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Presentation using PATCH and returns a <see cref="GraphResponse{Presentation}"/> object.
-        /// </summary>
-        /// <param name="presentationToUpdate">The Presentation to update.</param>
-        /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presentation>> UpdateResponseAsync(Presentation presentationToUpdate);
+        System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Presentation using PATCH and returns a <see cref="GraphResponse{Presentation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presentation>> UpdateResponseAsync(Presentation presentationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Presentation>> UpdateResponseAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

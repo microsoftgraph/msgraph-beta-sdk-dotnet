@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsMetricHistory using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricHistoryToCreate">The UserExperienceAnalyticsMetricHistory to create.</param>
-        /// <returns>The created UserExperienceAnalyticsMetricHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> CreateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsMetricHistoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsMetricHistory using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetricHistoryToCreate">The UserExperienceAnalyticsMetricHistory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetricHistory.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> CreateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> CreateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistoryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsMetricHistory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricHistoryToCreate">The UserExperienceAnalyticsMetricHistory to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> CreateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate)
-        {
-            return this.CreateResponseAsync(userExperienceAnalyticsMetricHistoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsMetricHistory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetricHistoryToCreate">The UserExperienceAnalyticsMetricHistory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> CreateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> CreateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsMetricHistory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsMetricHistory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsMetricHistory>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsMetricHistory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsMetricHistory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsMetricHistory using PATCH.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricHistoryToUpdate">The UserExperienceAnalyticsMetricHistory to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsMetricHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> UpdateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate)
-        {
-            return this.UpdateAsync(userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsMetricHistory using PATCH.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetricHistoryToUpdate">The UserExperienceAnalyticsMetricHistory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsMetricHistory.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> UpdateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> UpdateAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsMetricHistoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsMetricHistoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistoryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsMetricHistory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricHistoryToUpdate">The UserExperienceAnalyticsMetricHistory to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> UpdateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate)
-        {
-            return this.UpdateResponseAsync(userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsMetricHistory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetricHistoryToUpdate">The UserExperienceAnalyticsMetricHistory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> UpdateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> UpdateResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsMetricHistoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsMetricHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsMetricHistoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsMetricHistory>(userExperienceAnalyticsMetricHistoryToUpdate, cancellationToken).ConfigureAwait(false);
         }

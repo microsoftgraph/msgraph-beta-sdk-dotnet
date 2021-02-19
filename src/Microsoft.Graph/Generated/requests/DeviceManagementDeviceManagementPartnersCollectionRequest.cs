@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementPartner to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
-        /// <returns>The created DeviceManagementPartner.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner)
-        {
-            return this.AddAsync(deviceManagementPartner, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementPartner to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementPartner>(deviceManagementPartner, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementPartner to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner)
-        {
-            return this.AddResponseAsync(deviceManagementPartner, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementPartner to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementPartner>(deviceManagementPartner, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementDeviceManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementDeviceManagementPartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceManagementPartnersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceManagementPartnersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceManagementPartnersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

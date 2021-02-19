@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AppLogCollectionRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="appLogCollectionRequest">The AppLogCollectionRequestObject to add.</param>
-        /// <returns>The created AppLogCollectionRequestObject.</returns>
-        public System.Threading.Tasks.Task<AppLogCollectionRequestObject> AddAsync(AppLogCollectionRequestObject appLogCollectionRequest)
-        {
-            return this.AddAsync(appLogCollectionRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppLogCollectionRequestObject to the collection via POST.
         /// </summary>
         /// <param name="appLogCollectionRequest">The AppLogCollectionRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppLogCollectionRequestObject.</returns>
-        public System.Threading.Tasks.Task<AppLogCollectionRequestObject> AddAsync(AppLogCollectionRequestObject appLogCollectionRequest, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AppLogCollectionRequestObject> AddAsync(AppLogCollectionRequestObject appLogCollectionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AppLogCollectionRequestObject>(appLogCollectionRequest, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AppLogCollectionRequestObject to the collection via POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.
-        /// </summary>
-        /// <param name="appLogCollectionRequest">The AppLogCollectionRequestObject to add.</param>
-        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> AddResponseAsync(AppLogCollectionRequestObject appLogCollectionRequest)
-        {
-            return this.AddResponseAsync(appLogCollectionRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppLogCollectionRequestObject to the collection via POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.
         /// </summary>
         /// <param name="appLogCollectionRequest">The AppLogCollectionRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> AddResponseAsync(AppLogCollectionRequestObject appLogCollectionRequest, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> AddResponseAsync(AppLogCollectionRequestObject appLogCollectionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AppLogCollectionRequestObject>(appLogCollectionRequest, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMobileAppTroubleshootingEventAppLogCollectionRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MobileAppTroubleshootingEventAppLogCollectionRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

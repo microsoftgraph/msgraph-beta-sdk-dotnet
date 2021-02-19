@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceApplicationTemplatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ApplicationTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
-        /// <returns>The created ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate);
-
         /// <summary>
         /// Adds the specified ApplicationTemplate to the collection via POST.
         /// </summary>
         /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ApplicationTemplate to the collection via POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate);
+        System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ApplicationTemplate to the collection via POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

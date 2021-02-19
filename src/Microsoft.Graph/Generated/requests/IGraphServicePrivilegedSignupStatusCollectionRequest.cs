@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServicePrivilegedSignupStatusCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrivilegedSignupStatus to the collection via POST.
-        /// </summary>
-        /// <param name="privilegedSignupStatus">The PrivilegedSignupStatus to add.</param>
-        /// <returns>The created PrivilegedSignupStatus.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> AddAsync(PrivilegedSignupStatus privilegedSignupStatus);
-
         /// <summary>
         /// Adds the specified PrivilegedSignupStatus to the collection via POST.
         /// </summary>
         /// <param name="privilegedSignupStatus">The PrivilegedSignupStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedSignupStatus.</returns>
-        System.Threading.Tasks.Task<PrivilegedSignupStatus> AddAsync(PrivilegedSignupStatus privilegedSignupStatus, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PrivilegedSignupStatus to the collection via POST and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.
-        /// </summary>
-        /// <param name="privilegedSignupStatus">The PrivilegedSignupStatus to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> AddResponseAsync(PrivilegedSignupStatus privilegedSignupStatus);
+        System.Threading.Tasks.Task<PrivilegedSignupStatus> AddAsync(PrivilegedSignupStatus privilegedSignupStatus, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PrivilegedSignupStatus to the collection via POST and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="privilegedSignupStatus">The PrivilegedSignupStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> AddResponseAsync(PrivilegedSignupStatus privilegedSignupStatus, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> AddResponseAsync(PrivilegedSignupStatus privilegedSignupStatus, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePrivilegedSignupStatusCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePrivilegedSignupStatusCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedSignupStatusCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedSignupStatusCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedSignupStatusCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServicePrivilegedSignupStatusCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedSignupStatusCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedSignupStatusCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedSignupStatusCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedSignupStatusCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

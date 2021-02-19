@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PlannerDelta to the collection via POST.
-        /// </summary>
-        /// <param name="plannerDelta">The PlannerDelta to add.</param>
-        /// <returns>The created PlannerDelta.</returns>
-        public System.Threading.Tasks.Task<PlannerDelta> AddAsync(PlannerDelta plannerDelta)
-        {
-            return this.AddAsync(plannerDelta, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PlannerDelta to the collection via POST.
         /// </summary>
         /// <param name="plannerDelta">The PlannerDelta to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerDelta.</returns>
-        public System.Threading.Tasks.Task<PlannerDelta> AddAsync(PlannerDelta plannerDelta, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PlannerDelta> AddAsync(PlannerDelta plannerDelta, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PlannerDelta>(plannerDelta, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PlannerDelta to the collection via POST and returns a <see cref="GraphResponse{PlannerDelta}"/> object of the request.
-        /// </summary>
-        /// <param name="plannerDelta">The PlannerDelta to add.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerDelta}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> AddResponseAsync(PlannerDelta plannerDelta)
-        {
-            return this.AddResponseAsync(plannerDelta, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PlannerDelta to the collection via POST and returns a <see cref="GraphResponse{PlannerDelta}"/> object of the request.
         /// </summary>
         /// <param name="plannerDelta">The PlannerDelta to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerDelta}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> AddResponseAsync(PlannerDelta plannerDelta, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> AddResponseAsync(PlannerDelta plannerDelta, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PlannerDelta>(plannerDelta, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPlannerUserAllCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPlannerUserAllCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPlannerUserAllCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PlannerUserAllCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PlannerUserAllCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlannerUserAllCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerUserAllCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerUserAllCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerUserAllCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PlannerUserAllCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerUserAllCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PlannerUserAllCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

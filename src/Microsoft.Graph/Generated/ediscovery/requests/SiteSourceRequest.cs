@@ -39,21 +39,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified SiteSource using POST.
         /// </summary>
         /// <param name="siteSourceToCreate">The SiteSource to create.</param>
-        /// <returns>The created SiteSource.</returns>
-        public System.Threading.Tasks.Task<SiteSource> CreateAsync(SiteSource siteSourceToCreate)
-        {
-            return this.CreateAsync(siteSourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SiteSource using POST.
-        /// </summary>
-        /// <param name="siteSourceToCreate">The SiteSource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SiteSource.</returns>
-        public async System.Threading.Tasks.Task<SiteSource> CreateAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SiteSource> CreateAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SiteSource>(siteSourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified SiteSource using POST and returns a <see cref="GraphResponse{SiteSource}"/> object.
         /// </summary>
         /// <param name="siteSourceToCreate">The SiteSource to create.</param>
-        /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> CreateResponseAsync(SiteSource siteSourceToCreate)
-        {
-            return this.CreateResponseAsync(siteSourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SiteSource using POST and returns a <see cref="GraphResponse{SiteSource}"/> object.
-        /// </summary>
-        /// <param name="siteSourceToCreate">The SiteSource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> CreateResponseAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> CreateResponseAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified SiteSource.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SiteSource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SiteSource>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified SiteSource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SiteSource and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified SiteSource using PATCH.
         /// </summary>
         /// <param name="siteSourceToUpdate">The SiteSource to update.</param>
-        /// <returns>The updated SiteSource.</returns>
-        public System.Threading.Tasks.Task<SiteSource> UpdateAsync(SiteSource siteSourceToUpdate)
-        {
-            return this.UpdateAsync(siteSourceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SiteSource using PATCH.
-        /// </summary>
-        /// <param name="siteSourceToUpdate">The SiteSource to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SiteSource.</returns>
-        public async System.Threading.Tasks.Task<SiteSource> UpdateAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SiteSource> UpdateAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (siteSourceToUpdate.AdditionalData != null)
-			{
-				if (siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteSourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (siteSourceToUpdate.AdditionalData != null)
-            {
-                if (siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteSourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SiteSource>(siteSourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified SiteSource using PATCH and returns a <see cref="GraphResponse{SiteSource}"/> object.
         /// </summary>
         /// <param name="siteSourceToUpdate">The SiteSource to update.</param>
-        /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> UpdateResponseAsync(SiteSource siteSourceToUpdate)
-        {
-            return this.UpdateResponseAsync(siteSourceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SiteSource using PATCH and returns a <see cref="GraphResponse{SiteSource}"/> object.
-        /// </summary>
-        /// <param name="siteSourceToUpdate">The SiteSource to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> UpdateResponseAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> UpdateResponseAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (siteSourceToUpdate.AdditionalData != null)
-			{
-				if (siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteSourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (siteSourceToUpdate.AdditionalData != null)
-            {
-                if (siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    siteSourceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, siteSourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToUpdate, cancellationToken).ConfigureAwait(false);
         }

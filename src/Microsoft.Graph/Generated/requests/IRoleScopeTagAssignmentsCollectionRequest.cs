@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRoleScopeTagAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified RoleScopeTagAutoAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="roleScopeTagAutoAssignment">The RoleScopeTagAutoAssignment to add.</param>
-        /// <returns>The created RoleScopeTagAutoAssignment.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> AddAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment);
-
         /// <summary>
         /// Adds the specified RoleScopeTagAutoAssignment to the collection via POST.
         /// </summary>
         /// <param name="roleScopeTagAutoAssignment">The RoleScopeTagAutoAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTagAutoAssignment.</returns>
-        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> AddAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified RoleScopeTagAutoAssignment to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="roleScopeTagAutoAssignment">The RoleScopeTagAutoAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> AddResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment);
+        System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> AddAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified RoleScopeTagAutoAssignment to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="roleScopeTagAutoAssignment">The RoleScopeTagAutoAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> AddResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> AddResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRoleScopeTagAssignmentsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRoleScopeTagAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{RoleScopeTagAssignmentsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RoleScopeTagAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAssignmentsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IRoleScopeTagAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RoleScopeTagAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTagAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

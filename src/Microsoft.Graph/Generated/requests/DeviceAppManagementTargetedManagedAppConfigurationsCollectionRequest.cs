@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TargetedManagedAppConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
-        /// <returns>The created TargetedManagedAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppConfiguration> AddAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration)
-        {
-            return this.AddAsync(targetedManagedAppConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TargetedManagedAppConfiguration to the collection via POST.
         /// </summary>
         /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<TargetedManagedAppConfiguration> AddAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TargetedManagedAppConfiguration> AddAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TargetedManagedAppConfiguration>(targetedManagedAppConfiguration, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TargetedManagedAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.
-        /// </summary>
-        /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
-        /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> AddResponseAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration)
-        {
-            return this.AddResponseAsync(targetedManagedAppConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TargetedManagedAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.
         /// </summary>
         /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> AddResponseAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> AddResponseAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TargetedManagedAppConfiguration>(targetedManagedAppConfiguration, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementTargetedManagedAppConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

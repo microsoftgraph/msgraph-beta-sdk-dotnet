@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectoryDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
-        /// <returns>The created DirectoryDefinition.</returns>
-        public System.Threading.Tasks.Task<DirectoryDefinition> AddAsync(DirectoryDefinition directoryDefinition)
-        {
-            return this.AddAsync(directoryDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryDefinition to the collection via POST.
         /// </summary>
         /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryDefinition.</returns>
-        public System.Threading.Tasks.Task<DirectoryDefinition> AddAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DirectoryDefinition> AddAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectoryDefinition>(directoryDefinition, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DirectoryDefinition to the collection via POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.
-        /// </summary>
-        /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> AddResponseAsync(DirectoryDefinition directoryDefinition)
-        {
-            return this.AddResponseAsync(directoryDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryDefinition to the collection via POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.
         /// </summary>
         /// <param name="directoryDefinition">The DirectoryDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> AddResponseAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> AddResponseAsync(DirectoryDefinition directoryDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryDefinition>(directoryDefinition, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISynchronizationSchemaDirectoriesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISynchronizationSchemaDirectoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISynchronizationSchemaDirectoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SynchronizationSchemaDirectoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationSchemaDirectoriesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SynchronizationSchemaDirectoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

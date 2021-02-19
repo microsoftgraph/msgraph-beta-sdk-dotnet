@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="userConfiguration">The UserConfiguration to add.</param>
-        /// <returns>The created UserConfiguration.</returns>
-        public System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration)
-        {
-            return this.AddAsync(userConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserConfiguration to the collection via POST.
         /// </summary>
         /// <param name="userConfiguration">The UserConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConfiguration.</returns>
-        public System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserConfiguration> AddAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserConfiguration>(userConfiguration, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserConfiguration to the collection via POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object of the request.
-        /// </summary>
-        /// <param name="userConfiguration">The UserConfiguration to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration)
-        {
-            return this.AddResponseAsync(userConfiguration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserConfiguration to the collection via POST and returns a <see cref="GraphResponse{UserConfiguration}"/> object of the request.
         /// </summary>
         /// <param name="userConfiguration">The UserConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserConfiguration>> AddResponseAsync(UserConfiguration userConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserConfiguration>(userConfiguration, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMailFolderUserConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MailFolderUserConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailFolderUserConfigurationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MailFolderUserConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MailFolderUserConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

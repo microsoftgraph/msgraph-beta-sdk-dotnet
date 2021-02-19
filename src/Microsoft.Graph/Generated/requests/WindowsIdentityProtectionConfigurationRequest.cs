@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsIdentityProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
-        /// <returns>The created WindowsIdentityProtectionConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> CreateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsIdentityProtectionConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsIdentityProtectionConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsIdentityProtectionConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> CreateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> CreateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsIdentityProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> CreateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windowsIdentityProtectionConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsIdentityProtectionConfiguration using POST and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsIdentityProtectionConfigurationToCreate">The WindowsIdentityProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> CreateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> CreateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsIdentityProtectionConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsIdentityProtectionConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsIdentityProtectionConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
-        /// <returns>The updated WindowsIdentityProtectionConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> UpdateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windowsIdentityProtectionConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsIdentityProtectionConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> UpdateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> UpdateAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> UpdateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsIdentityProtectionConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsIdentityProtectionConfigurationToUpdate">The WindowsIdentityProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> UpdateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> UpdateResponseAsync(WindowsIdentityProtectionConfiguration windowsIdentityProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsIdentityProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsIdentityProtectionConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsIdentityProtectionConfiguration>(windowsIdentityProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

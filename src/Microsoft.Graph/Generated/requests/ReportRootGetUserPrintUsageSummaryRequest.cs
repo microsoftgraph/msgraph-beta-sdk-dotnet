@@ -34,21 +34,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<UserPrintUsageSummary> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<UserPrintUsageSummary> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return this.SendAsync<UserPrintUsageSummary>(null, cancellationToken);
+        }
+
+        /// <summary>
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserPrintUsageSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserPrintUsageSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
 

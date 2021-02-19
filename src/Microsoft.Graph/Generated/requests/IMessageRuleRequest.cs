@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MessageRule using POST.
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
-        /// <returns>The created MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate);
-
-        /// <summary>
-        /// Creates the specified MessageRule using POST.
-        /// </summary>
-        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
-        /// </summary>
-        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
-        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate);
+        System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MessageRule.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MessageRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MessageRule and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MessageRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MessageRule.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MessageRule using PATCH.
         /// </summary>
         /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
-        /// <returns>The updated MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate);
-
-        /// <summary>
-        /// Updates the specified MessageRule using PATCH.
-        /// </summary>
-        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MessageRule using PATCH and returns a <see cref="GraphResponse{MessageRule}"/> object.
-        /// </summary>
-        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
-        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate);
+        System.Threading.Tasks.Task<MessageRule> UpdateAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MessageRule using PATCH and returns a <see cref="GraphResponse{MessageRule}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

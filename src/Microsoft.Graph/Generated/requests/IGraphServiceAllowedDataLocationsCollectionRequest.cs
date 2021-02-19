@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceAllowedDataLocationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AllowedDataLocation to the collection via POST.
-        /// </summary>
-        /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
-        /// <returns>The created AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation);
-
         /// <summary>
         /// Adds the specified AllowedDataLocation to the collection via POST.
         /// </summary>
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AllowedDataLocation to the collection via POST and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.
-        /// </summary>
-        /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
-        /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation);
+        System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AllowedDataLocation to the collection via POST and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

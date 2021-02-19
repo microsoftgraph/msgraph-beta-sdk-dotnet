@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Windows81TrustedRootCertificate to the collection via POST.
-        /// </summary>
-        /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
-        /// <returns>The created Windows81TrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<Windows81TrustedRootCertificate> AddAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate)
-        {
-            return this.AddAsync(windows81TrustedRootCertificate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Windows81TrustedRootCertificate to the collection via POST.
         /// </summary>
         /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81TrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<Windows81TrustedRootCertificate> AddAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Windows81TrustedRootCertificate> AddAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Windows81TrustedRootCertificate>(windows81TrustedRootCertificate, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Windows81TrustedRootCertificate to the collection via POST and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.
-        /// </summary>
-        /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
-        /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> AddResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate)
-        {
-            return this.AddResponseAsync(windows81TrustedRootCertificate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Windows81TrustedRootCertificate to the collection via POST and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.
         /// </summary>
         /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> AddResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> AddResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows81TrustedRootCertificate>(windows81TrustedRootCertificate, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

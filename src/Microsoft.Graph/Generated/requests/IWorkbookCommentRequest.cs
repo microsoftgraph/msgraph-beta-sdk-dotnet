@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookComment using POST.
         /// </summary>
         /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
-        /// <returns>The created WorkbookComment.</returns>
-        System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate);
-
-        /// <summary>
-        /// Creates the specified WorkbookComment using POST.
-        /// </summary>
-        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookComment.</returns>
-        System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
-        /// </summary>
-        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate);
+        System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookComment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookComment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookComment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookComment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookComment.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookComment using PATCH.
         /// </summary>
         /// <param name="workbookCommentToUpdate">The WorkbookComment to update.</param>
-        /// <returns>The updated WorkbookComment.</returns>
-        System.Threading.Tasks.Task<WorkbookComment> UpdateAsync(WorkbookComment workbookCommentToUpdate);
-
-        /// <summary>
-        /// Updates the specified WorkbookComment using PATCH.
-        /// </summary>
-        /// <param name="workbookCommentToUpdate">The WorkbookComment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookComment.</returns>
-        System.Threading.Tasks.Task<WorkbookComment> UpdateAsync(WorkbookComment workbookCommentToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WorkbookComment using PATCH and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
-        /// </summary>
-        /// <param name="workbookCommentToUpdate">The WorkbookComment to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> UpdateResponseAsync(WorkbookComment workbookCommentToUpdate);
+        System.Threading.Tasks.Task<WorkbookComment> UpdateAsync(WorkbookComment workbookCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookComment using PATCH and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> UpdateResponseAsync(WorkbookComment workbookCommentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> UpdateResponseAsync(WorkbookComment workbookCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

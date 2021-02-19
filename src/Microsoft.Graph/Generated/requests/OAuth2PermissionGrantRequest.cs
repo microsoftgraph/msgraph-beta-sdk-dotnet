@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
-        /// <returns>The created OAuth2PermissionGrant.</returns>
-        public System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate)
-        {
-            return this.CreateAsync(oAuth2PermissionGrantToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OAuth2PermissionGrant using POST.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
-        public async System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OAuth2PermissionGrant>(oAuth2PermissionGrantToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified OAuth2PermissionGrant using POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
-        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate)
-        {
-            return this.CreateResponseAsync(oAuth2PermissionGrantToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OAuth2PermissionGrant using POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OAuth2PermissionGrant>(oAuth2PermissionGrantToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OAuth2PermissionGrant.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OAuth2PermissionGrant.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<OAuth2PermissionGrant>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified OAuth2PermissionGrant using PATCH.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
-        /// <returns>The updated OAuth2PermissionGrant.</returns>
-        public System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate)
-        {
-            return this.UpdateAsync(oAuth2PermissionGrantToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OAuth2PermissionGrant using PATCH.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OAuth2PermissionGrant.</returns>
-        public async System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (oAuth2PermissionGrantToUpdate.AdditionalData != null)
-			{
-				if (oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oAuth2PermissionGrantToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (oAuth2PermissionGrantToUpdate.AdditionalData != null)
-            {
-                if (oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oAuth2PermissionGrantToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OAuth2PermissionGrant>(oAuth2PermissionGrantToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified OAuth2PermissionGrant using PATCH and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
-        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate)
-        {
-            return this.UpdateResponseAsync(oAuth2PermissionGrantToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OAuth2PermissionGrant using PATCH and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
-        /// </summary>
-        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (oAuth2PermissionGrantToUpdate.AdditionalData != null)
-			{
-				if (oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oAuth2PermissionGrantToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (oAuth2PermissionGrantToUpdate.AdditionalData != null)
-            {
-                if (oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    oAuth2PermissionGrantToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, oAuth2PermissionGrantToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OAuth2PermissionGrant>(oAuth2PermissionGrantToUpdate, cancellationToken).ConfigureAwait(false);
         }

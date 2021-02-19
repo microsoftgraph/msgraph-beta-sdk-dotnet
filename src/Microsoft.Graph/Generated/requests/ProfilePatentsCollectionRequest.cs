@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ItemPatent to the collection via POST.
-        /// </summary>
-        /// <param name="itemPatent">The ItemPatent to add.</param>
-        /// <returns>The created ItemPatent.</returns>
-        public System.Threading.Tasks.Task<ItemPatent> AddAsync(ItemPatent itemPatent)
-        {
-            return this.AddAsync(itemPatent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemPatent to the collection via POST.
         /// </summary>
         /// <param name="itemPatent">The ItemPatent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPatent.</returns>
-        public System.Threading.Tasks.Task<ItemPatent> AddAsync(ItemPatent itemPatent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ItemPatent> AddAsync(ItemPatent itemPatent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ItemPatent>(itemPatent, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ItemPatent to the collection via POST and returns a <see cref="GraphResponse{ItemPatent}"/> object of the request.
-        /// </summary>
-        /// <param name="itemPatent">The ItemPatent to add.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemPatent>> AddResponseAsync(ItemPatent itemPatent)
-        {
-            return this.AddResponseAsync(itemPatent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemPatent to the collection via POST and returns a <see cref="GraphResponse{ItemPatent}"/> object of the request.
         /// </summary>
         /// <param name="itemPatent">The ItemPatent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> AddResponseAsync(ItemPatent itemPatent, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemPatent>> AddResponseAsync(ItemPatent itemPatent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemPatent>(itemPatent, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfilePatentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfilePatentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfilePatentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfilePatentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfilePatentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePatentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfilePatentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfilePatentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfilePatentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

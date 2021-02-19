@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SchedulingGroup using POST.
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
-        /// <returns>The created SchedulingGroup.</returns>
-        System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate);
-
-        /// <summary>
-        /// Creates the specified SchedulingGroup using POST.
-        /// </summary>
-        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchedulingGroup.</returns>
-        System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SchedulingGroup using POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
-        /// </summary>
-        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
-        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate);
+        System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SchedulingGroup using POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SchedulingGroup.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SchedulingGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SchedulingGroup and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SchedulingGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SchedulingGroup.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SchedulingGroup using PATCH.
         /// </summary>
         /// <param name="schedulingGroupToUpdate">The SchedulingGroup to update.</param>
-        /// <returns>The updated SchedulingGroup.</returns>
-        System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate);
-
-        /// <summary>
-        /// Updates the specified SchedulingGroup using PATCH.
-        /// </summary>
-        /// <param name="schedulingGroupToUpdate">The SchedulingGroup to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SchedulingGroup.</returns>
-        System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SchedulingGroup using PATCH and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
-        /// </summary>
-        /// <param name="schedulingGroupToUpdate">The SchedulingGroup to update.</param>
-        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> UpdateResponseAsync(SchedulingGroup schedulingGroupToUpdate);
+        System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SchedulingGroup using PATCH and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> UpdateResponseAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> UpdateResponseAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy)
-        {
-            return this.AddAsync(homeRealmDiscoveryPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(homeRealmDiscoveryPolicy.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy)
-        {
-            return this.AddResponseAsync(homeRealmDiscoveryPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(homeRealmDiscoveryPolicy.Id))

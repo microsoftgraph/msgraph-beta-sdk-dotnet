@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified CompanyInformation using POST.
         /// </summary>
         /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
-        /// <returns>The created CompanyInformation.</returns>
-        public System.Threading.Tasks.Task<CompanyInformation> CreateAsync(CompanyInformation companyInformationToCreate)
-        {
-            return this.CreateAsync(companyInformationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CompanyInformation using POST.
-        /// </summary>
-        /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CompanyInformation.</returns>
-        public async System.Threading.Tasks.Task<CompanyInformation> CreateAsync(CompanyInformation companyInformationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CompanyInformation> CreateAsync(CompanyInformation companyInformationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CompanyInformation>(companyInformationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified CompanyInformation using POST and returns a <see cref="GraphResponse{CompanyInformation}"/> object.
         /// </summary>
         /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
-        /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> CreateResponseAsync(CompanyInformation companyInformationToCreate)
-        {
-            return this.CreateResponseAsync(companyInformationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CompanyInformation using POST and returns a <see cref="GraphResponse{CompanyInformation}"/> object.
-        /// </summary>
-        /// <param name="companyInformationToCreate">The CompanyInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> CreateResponseAsync(CompanyInformation companyInformationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> CreateResponseAsync(CompanyInformation companyInformationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CompanyInformation>(companyInformationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CompanyInformation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CompanyInformation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<CompanyInformation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CompanyInformation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CompanyInformation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified CompanyInformation using PATCH.
         /// </summary>
         /// <param name="companyInformationToUpdate">The CompanyInformation to update.</param>
-        /// <returns>The updated CompanyInformation.</returns>
-        public System.Threading.Tasks.Task<CompanyInformation> UpdateAsync(CompanyInformation companyInformationToUpdate)
-        {
-            return this.UpdateAsync(companyInformationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CompanyInformation using PATCH.
-        /// </summary>
-        /// <param name="companyInformationToUpdate">The CompanyInformation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CompanyInformation.</returns>
-        public async System.Threading.Tasks.Task<CompanyInformation> UpdateAsync(CompanyInformation companyInformationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CompanyInformation> UpdateAsync(CompanyInformation companyInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (companyInformationToUpdate.AdditionalData != null)
-			{
-				if (companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, companyInformationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (companyInformationToUpdate.AdditionalData != null)
-            {
-                if (companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, companyInformationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CompanyInformation>(companyInformationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified CompanyInformation using PATCH and returns a <see cref="GraphResponse{CompanyInformation}"/> object.
         /// </summary>
         /// <param name="companyInformationToUpdate">The CompanyInformation to update.</param>
-        /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> UpdateResponseAsync(CompanyInformation companyInformationToUpdate)
-        {
-            return this.UpdateResponseAsync(companyInformationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CompanyInformation using PATCH and returns a <see cref="GraphResponse{CompanyInformation}"/> object.
-        /// </summary>
-        /// <param name="companyInformationToUpdate">The CompanyInformation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CompanyInformation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> UpdateResponseAsync(CompanyInformation companyInformationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyInformation>> UpdateResponseAsync(CompanyInformation companyInformationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (companyInformationToUpdate.AdditionalData != null)
-			{
-				if (companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, companyInformationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (companyInformationToUpdate.AdditionalData != null)
-            {
-                if (companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    companyInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, companyInformationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CompanyInformation>(companyInformationToUpdate, cancellationToken).ConfigureAwait(false);
         }

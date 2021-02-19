@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OnlineMeeting to the collection via POST.
-        /// </summary>
-        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
-        /// <returns>The created OnlineMeeting.</returns>
-        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting)
-        {
-            return this.AddAsync(onlineMeeting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST.
         /// </summary>
         /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnlineMeeting.</returns>
-        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OnlineMeeting> AddAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OnlineMeeting>(onlineMeeting, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified OnlineMeeting to the collection via POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object of the request.
-        /// </summary>
-        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
-        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting)
-        {
-            return this.AddResponseAsync(onlineMeeting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnlineMeeting to the collection via POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object of the request.
         /// </summary>
         /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeeting, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICloudCommunicationsOnlineMeetingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CloudCommunicationsOnlineMeetingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsOnlineMeetingsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudCommunicationsOnlineMeetingsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsOnlineMeetingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudCommunicationsOnlineMeetingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CloudCommunicationsOnlineMeetingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

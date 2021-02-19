@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DefaultManagedAppProtection to the collection via POST.
-        /// </summary>
-        /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
-        /// <returns>The created DefaultManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection)
-        {
-            return this.AddAsync(defaultManagedAppProtection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DefaultManagedAppProtection to the collection via POST.
         /// </summary>
         /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DefaultManagedAppProtection.</returns>
-        public System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DefaultManagedAppProtection> AddAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DefaultManagedAppProtection>(defaultManagedAppProtection, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DefaultManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.
-        /// </summary>
-        /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
-        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> AddResponseAsync(DefaultManagedAppProtection defaultManagedAppProtection)
-        {
-            return this.AddResponseAsync(defaultManagedAppProtection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DefaultManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.
         /// </summary>
         /// <param name="defaultManagedAppProtection">The DefaultManagedAppProtection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> AddResponseAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> AddResponseAsync(DefaultManagedAppProtection defaultManagedAppProtection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DefaultManagedAppProtection>(defaultManagedAppProtection, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementDefaultManagedAppProtectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Document using POST.
         /// </summary>
         /// <param name="documentToCreate">The Document to create.</param>
-        /// <returns>The created Document.</returns>
-        System.Threading.Tasks.Task<Document> CreateAsync(Document documentToCreate);
-
-        /// <summary>
-        /// Creates the specified Document using POST.
-        /// </summary>
-        /// <param name="documentToCreate">The Document to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Document.</returns>
-        System.Threading.Tasks.Task<Document> CreateAsync(Document documentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Document using POST and returns a <see cref="GraphResponse{Document}"/> object.
-        /// </summary>
-        /// <param name="documentToCreate">The Document to create.</param>
-        /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> CreateResponseAsync(Document documentToCreate);
+        System.Threading.Tasks.Task<Document> CreateAsync(Document documentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Document using POST and returns a <see cref="GraphResponse{Document}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="documentToCreate">The Document to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> CreateResponseAsync(Document documentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Document.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Document>> CreateResponseAsync(Document documentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Document.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Document and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Document and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Document.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Document using PATCH.
         /// </summary>
         /// <param name="documentToUpdate">The Document to update.</param>
-        /// <returns>The updated Document.</returns>
-        System.Threading.Tasks.Task<Document> UpdateAsync(Document documentToUpdate);
-
-        /// <summary>
-        /// Updates the specified Document using PATCH.
-        /// </summary>
-        /// <param name="documentToUpdate">The Document to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Document.</returns>
-        System.Threading.Tasks.Task<Document> UpdateAsync(Document documentToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Document using PATCH and returns a <see cref="GraphResponse{Document}"/> object.
-        /// </summary>
-        /// <param name="documentToUpdate">The Document to update.</param>
-        /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> UpdateResponseAsync(Document documentToUpdate);
+        System.Threading.Tasks.Task<Document> UpdateAsync(Document documentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Document using PATCH and returns a <see cref="GraphResponse{Document}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> UpdateResponseAsync(Document documentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Document>> UpdateResponseAsync(Document documentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

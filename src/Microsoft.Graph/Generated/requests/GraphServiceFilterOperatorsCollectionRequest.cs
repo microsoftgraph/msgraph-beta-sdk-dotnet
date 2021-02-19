@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified FilterOperatorSchema to the collection via POST.
-        /// </summary>
-        /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
-        /// <returns>The created FilterOperatorSchema.</returns>
-        public System.Threading.Tasks.Task<FilterOperatorSchema> AddAsync(FilterOperatorSchema filterOperatorSchema)
-        {
-            return this.AddAsync(filterOperatorSchema, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified FilterOperatorSchema to the collection via POST.
         /// </summary>
         /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FilterOperatorSchema.</returns>
-        public System.Threading.Tasks.Task<FilterOperatorSchema> AddAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<FilterOperatorSchema> AddAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<FilterOperatorSchema>(filterOperatorSchema, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified FilterOperatorSchema to the collection via POST and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.
-        /// </summary>
-        /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
-        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> AddResponseAsync(FilterOperatorSchema filterOperatorSchema)
-        {
-            return this.AddResponseAsync(filterOperatorSchema, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified FilterOperatorSchema to the collection via POST and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.
         /// </summary>
         /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> AddResponseAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> AddResponseAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<FilterOperatorSchema>(filterOperatorSchema, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceFilterOperatorsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceFilterOperatorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceFilterOperatorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceFilterOperatorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceFilterOperatorsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceFilterOperatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceFilterOperatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceFilterOperatorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

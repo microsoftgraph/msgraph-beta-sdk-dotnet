@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified RemoteActionAudit to the collection via POST.
-        /// </summary>
-        /// <param name="remoteActionAudit">The RemoteActionAudit to add.</param>
-        /// <returns>The created RemoteActionAudit.</returns>
-        public System.Threading.Tasks.Task<RemoteActionAudit> AddAsync(RemoteActionAudit remoteActionAudit)
-        {
-            return this.AddAsync(remoteActionAudit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RemoteActionAudit to the collection via POST.
         /// </summary>
         /// <param name="remoteActionAudit">The RemoteActionAudit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteActionAudit.</returns>
-        public System.Threading.Tasks.Task<RemoteActionAudit> AddAsync(RemoteActionAudit remoteActionAudit, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<RemoteActionAudit> AddAsync(RemoteActionAudit remoteActionAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RemoteActionAudit>(remoteActionAudit, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified RemoteActionAudit to the collection via POST and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.
-        /// </summary>
-        /// <param name="remoteActionAudit">The RemoteActionAudit to add.</param>
-        /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> AddResponseAsync(RemoteActionAudit remoteActionAudit)
-        {
-            return this.AddResponseAsync(remoteActionAudit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RemoteActionAudit to the collection via POST and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.
         /// </summary>
         /// <param name="remoteActionAudit">The RemoteActionAudit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> AddResponseAsync(RemoteActionAudit remoteActionAudit, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> AddResponseAsync(RemoteActionAudit remoteActionAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RemoteActionAudit>(remoteActionAudit, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementRemoteActionAuditsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementRemoteActionAuditsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementRemoteActionAuditsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementRemoteActionAuditsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRemoteActionAuditsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementRemoteActionAuditsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteActionAuditsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRemoteActionAuditsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementRemoteActionAuditsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteActionAuditsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRemoteActionAuditsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementRemoteActionAuditsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

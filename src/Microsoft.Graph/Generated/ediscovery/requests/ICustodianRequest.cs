@@ -24,23 +24,9 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Custodian using POST.
         /// </summary>
         /// <param name="custodianToCreate">The Custodian to create.</param>
-        /// <returns>The created Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate);
-
-        /// <summary>
-        /// Creates the specified Custodian using POST.
-        /// </summary>
-        /// <param name="custodianToCreate">The Custodian to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Custodian using POST and returns a <see cref="GraphResponse{Custodian}"/> object.
-        /// </summary>
-        /// <param name="custodianToCreate">The Custodian to create.</param>
-        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> CreateResponseAsync(Custodian custodianToCreate);
+        System.Threading.Tasks.Task<Custodian> CreateAsync(Custodian custodianToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Custodian using POST and returns a <see cref="GraphResponse{Custodian}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="custodianToCreate">The Custodian to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> CreateResponseAsync(Custodian custodianToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Custodian.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Custodian>> CreateResponseAsync(Custodian custodianToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Custodian.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Custodian and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Custodian and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Custodian.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified Custodian using PATCH.
         /// </summary>
         /// <param name="custodianToUpdate">The Custodian to update.</param>
-        /// <returns>The updated Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate);
-
-        /// <summary>
-        /// Updates the specified Custodian using PATCH.
-        /// </summary>
-        /// <param name="custodianToUpdate">The Custodian to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Custodian using PATCH and returns a <see cref="GraphResponse{Custodian}"/> object.
-        /// </summary>
-        /// <param name="custodianToUpdate">The Custodian to update.</param>
-        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> UpdateResponseAsync(Custodian custodianToUpdate);
+        System.Threading.Tasks.Task<Custodian> UpdateAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Custodian using PATCH and returns a <see cref="GraphResponse{Custodian}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> UpdateResponseAsync(Custodian custodianToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Custodian>> UpdateResponseAsync(Custodian custodianToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

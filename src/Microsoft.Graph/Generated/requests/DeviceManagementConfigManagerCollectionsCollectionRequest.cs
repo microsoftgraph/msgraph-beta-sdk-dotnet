@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ConfigManagerCollection to the collection via POST.
-        /// </summary>
-        /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
-        /// <returns>The created ConfigManagerCollection.</returns>
-        public System.Threading.Tasks.Task<ConfigManagerCollection> AddAsync(ConfigManagerCollection configManagerCollection)
-        {
-            return this.AddAsync(configManagerCollection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConfigManagerCollection to the collection via POST.
         /// </summary>
         /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConfigManagerCollection.</returns>
-        public System.Threading.Tasks.Task<ConfigManagerCollection> AddAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ConfigManagerCollection> AddAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ConfigManagerCollection>(configManagerCollection, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ConfigManagerCollection to the collection via POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.
-        /// </summary>
-        /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
-        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> AddResponseAsync(ConfigManagerCollection configManagerCollection)
-        {
-            return this.AddResponseAsync(configManagerCollection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConfigManagerCollection to the collection via POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.
         /// </summary>
         /// <param name="configManagerCollection">The ConfigManagerCollection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> AddResponseAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> AddResponseAsync(ConfigManagerCollection configManagerCollection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ConfigManagerCollection>(configManagerCollection, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementConfigManagerCollectionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementConfigManagerCollectionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementConfigManagerCollectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementConfigManagerCollectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigManagerCollectionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementConfigManagerCollectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

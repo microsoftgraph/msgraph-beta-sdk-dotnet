@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MailboxUsageStorage using POST.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
-        /// <returns>The created MailboxUsageStorage.</returns>
-        public System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate)
-        {
-            return this.CreateAsync(mailboxUsageStorageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MailboxUsageStorage using POST.
-        /// </summary>
-        /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailboxUsageStorage.</returns>
-        public async System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MailboxUsageStorage>(mailboxUsageStorageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MailboxUsageStorage using POST and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
-        /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> CreateResponseAsync(MailboxUsageStorage mailboxUsageStorageToCreate)
-        {
-            return this.CreateResponseAsync(mailboxUsageStorageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MailboxUsageStorage using POST and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
-        /// </summary>
-        /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> CreateResponseAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> CreateResponseAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MailboxUsageStorage>(mailboxUsageStorageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MailboxUsageStorage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MailboxUsageStorage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MailboxUsageStorage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MailboxUsageStorage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MailboxUsageStorage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MailboxUsageStorage using PATCH.
         /// </summary>
         /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
-        /// <returns>The updated MailboxUsageStorage.</returns>
-        public System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate)
-        {
-            return this.UpdateAsync(mailboxUsageStorageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MailboxUsageStorage using PATCH.
-        /// </summary>
-        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageStorage.</returns>
-        public async System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mailboxUsageStorageToUpdate.AdditionalData != null)
-			{
-				if (mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageStorageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mailboxUsageStorageToUpdate.AdditionalData != null)
-            {
-                if (mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageStorageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MailboxUsageStorage>(mailboxUsageStorageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MailboxUsageStorage using PATCH and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
         /// </summary>
         /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
-        /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> UpdateResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate)
-        {
-            return this.UpdateResponseAsync(mailboxUsageStorageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MailboxUsageStorage using PATCH and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
-        /// </summary>
-        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> UpdateResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> UpdateResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mailboxUsageStorageToUpdate.AdditionalData != null)
-			{
-				if (mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageStorageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mailboxUsageStorageToUpdate.AdditionalData != null)
-            {
-                if (mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mailboxUsageStorageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mailboxUsageStorageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MailboxUsageStorage>(mailboxUsageStorageToUpdate, cancellationToken).ConfigureAwait(false);
         }

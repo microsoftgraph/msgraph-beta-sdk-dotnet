@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementDomainJoinConnectorsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementDomainJoinConnector to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementDomainJoinConnector">The DeviceManagementDomainJoinConnector to add.</param>
-        /// <returns>The created DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> AddAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector);
-
         /// <summary>
         /// Adds the specified DeviceManagementDomainJoinConnector to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementDomainJoinConnector">The DeviceManagementDomainJoinConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> AddAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementDomainJoinConnector to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementDomainJoinConnector">The DeviceManagementDomainJoinConnector to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> AddResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector);
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> AddAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DeviceManagementDomainJoinConnector to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDomainJoinConnector">The DeviceManagementDomainJoinConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> AddResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> AddResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnector, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDomainJoinConnectorsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDomainJoinConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnectorsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnectorsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnectorsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementDomainJoinConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnectorsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnectorsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

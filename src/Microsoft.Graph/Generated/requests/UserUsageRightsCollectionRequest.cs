@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UsageRight to the collection via POST.
-        /// </summary>
-        /// <param name="usageRight">The UsageRight to add.</param>
-        /// <returns>The created UsageRight.</returns>
-        public System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight)
-        {
-            return this.AddAsync(usageRight, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UsageRight to the collection via POST.
         /// </summary>
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsageRight.</returns>
-        public System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UsageRight>(usageRight, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UsageRight to the collection via POST and returns a <see cref="GraphResponse{UsageRight}"/> object of the request.
-        /// </summary>
-        /// <param name="usageRight">The UsageRight to add.</param>
-        /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight)
-        {
-            return this.AddResponseAsync(usageRight, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UsageRight to the collection via POST and returns a <see cref="GraphResponse{UsageRight}"/> object of the request.
         /// </summary>
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UsageRight>(usageRight, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserUsageRightsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserUsageRightsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserUsageRightsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

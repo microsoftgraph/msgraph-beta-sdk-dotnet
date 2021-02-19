@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignmentMultiple to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultiple">The UnifiedRoleAssignmentMultiple to add.</param>
-        /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> AddAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple)
-        {
-            return this.AddAsync(unifiedRoleAssignmentMultiple, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignmentMultiple to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultiple">The UnifiedRoleAssignmentMultiple to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> AddAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> AddAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultiple, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignmentMultiple to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultiple">The UnifiedRoleAssignmentMultiple to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> AddResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple)
-        {
-            return this.AddResponseAsync(unifiedRoleAssignmentMultiple, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignmentMultiple to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultiple">The UnifiedRoleAssignmentMultiple to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> AddResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> AddResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultiple, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultiple, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRbacApplicationMultipleRoleAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationMultipleRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRbacApplicationMultipleRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<RbacApplicationMultipleRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationMultipleRoleAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{RbacApplicationMultipleRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultipleRoleAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationMultipleRoleAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationMultipleRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultipleRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultipleRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<RbacApplicationMultipleRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

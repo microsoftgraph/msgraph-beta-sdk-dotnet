@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOutlookUserTaskGroupsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OutlookTaskGroup to the collection via POST.
-        /// </summary>
-        /// <param name="outlookTaskGroup">The OutlookTaskGroup to add.</param>
-        /// <returns>The created OutlookTaskGroup.</returns>
-        System.Threading.Tasks.Task<OutlookTaskGroup> AddAsync(OutlookTaskGroup outlookTaskGroup);
-
         /// <summary>
         /// Adds the specified OutlookTaskGroup to the collection via POST.
         /// </summary>
         /// <param name="outlookTaskGroup">The OutlookTaskGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTaskGroup.</returns>
-        System.Threading.Tasks.Task<OutlookTaskGroup> AddAsync(OutlookTaskGroup outlookTaskGroup, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified OutlookTaskGroup to the collection via POST and returns a <see cref="GraphResponse{OutlookTaskGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="outlookTaskGroup">The OutlookTaskGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookTaskGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookTaskGroup>> AddResponseAsync(OutlookTaskGroup outlookTaskGroup);
+        System.Threading.Tasks.Task<OutlookTaskGroup> AddAsync(OutlookTaskGroup outlookTaskGroup, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified OutlookTaskGroup to the collection via POST and returns a <see cref="GraphResponse{OutlookTaskGroup}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="outlookTaskGroup">The OutlookTaskGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTaskGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookTaskGroup>> AddResponseAsync(OutlookTaskGroup outlookTaskGroup, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookTaskGroup>> AddResponseAsync(OutlookTaskGroup outlookTaskGroup, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserTaskGroupsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserTaskGroupsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserTaskGroupsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OutlookUserTaskGroupsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUserTaskGroupsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IOutlookUserTaskGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserTaskGroupsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookUserTaskGroupsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUserTaskGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookUserTaskGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

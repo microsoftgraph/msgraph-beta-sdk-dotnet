@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMobileAppAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
-        /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> AddAsync(MobileAppAssignment mobileAppAssignment);
-
         /// <summary>
         /// Adds the specified MobileAppAssignment to the collection via POST.
         /// </summary>
         /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> AddAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment);
+        System.Threading.Tasks.Task<MobileAppAssignment> AddAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppAssignmentsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignmentsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IMobileAppAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

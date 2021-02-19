@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSCustomConfiguration using POST.
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
-        /// <returns>The created MacOSCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate)
-        {
-            return this.CreateAsync(macOSCustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSCustomConfiguration using POST.
-        /// </summary>
-        /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MacOSCustomConfiguration>(macOSCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSCustomConfiguration using POST and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> CreateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(macOSCustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSCustomConfiguration using POST and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> CreateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> CreateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOSCustomConfiguration>(macOSCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSCustomConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSCustomConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSCustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSCustomConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSCustomConfiguration using PATCH.
         /// </summary>
         /// <param name="macOSCustomConfigurationToUpdate">The MacOSCustomConfiguration to update.</param>
-        /// <returns>The updated MacOSCustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<MacOSCustomConfiguration> UpdateAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate)
-        {
-            return this.UpdateAsync(macOSCustomConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSCustomConfiguration using PATCH.
-        /// </summary>
-        /// <param name="macOSCustomConfigurationToUpdate">The MacOSCustomConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSCustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<MacOSCustomConfiguration> UpdateAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSCustomConfiguration> UpdateAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSCustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSCustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSCustomConfiguration>(macOSCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSCustomConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSCustomConfigurationToUpdate">The MacOSCustomConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> UpdateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(macOSCustomConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSCustomConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSCustomConfigurationToUpdate">The MacOSCustomConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> UpdateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> UpdateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSCustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSCustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSCustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MacOSCustomConfiguration>(macOSCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

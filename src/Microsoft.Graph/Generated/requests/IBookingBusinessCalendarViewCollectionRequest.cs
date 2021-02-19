@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IBookingBusinessCalendarViewCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified BookingAppointment to the collection via POST.
-        /// </summary>
-        /// <param name="bookingAppointment">The BookingAppointment to add.</param>
-        /// <returns>The created BookingAppointment.</returns>
-        System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment);
-
         /// <summary>
         /// Adds the specified BookingAppointment to the collection via POST.
         /// </summary>
         /// <param name="bookingAppointment">The BookingAppointment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingAppointment.</returns>
-        System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified BookingAppointment to the collection via POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object of the request.
-        /// </summary>
-        /// <param name="bookingAppointment">The BookingAppointment to add.</param>
-        /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment);
+        System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified BookingAppointment to the collection via POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="bookingAppointment">The BookingAppointment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IBookingBusinessCalendarViewCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IBookingBusinessCalendarViewCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessCalendarViewCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BookingBusinessCalendarViewCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingBusinessCalendarViewCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IBookingBusinessCalendarViewCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessCalendarViewCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingBusinessCalendarViewCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingBusinessCalendarViewCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingBusinessCalendarViewCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

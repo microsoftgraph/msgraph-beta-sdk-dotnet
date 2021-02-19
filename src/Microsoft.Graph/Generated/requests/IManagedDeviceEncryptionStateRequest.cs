@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDeviceEncryptionState using POST.
         /// </summary>
         /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
-        /// <returns>The created ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> CreateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate);
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceEncryptionState using POST.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> CreateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceEncryptionState using POST and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> CreateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate);
+        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> CreateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ManagedDeviceEncryptionState using POST and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceEncryptionStateToCreate">The ManagedDeviceEncryptionState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> CreateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedDeviceEncryptionState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> CreateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedDeviceEncryptionState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedDeviceEncryptionState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedDeviceEncryptionState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceEncryptionState.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedDeviceEncryptionState using PATCH.
         /// </summary>
         /// <param name="managedDeviceEncryptionStateToUpdate">The ManagedDeviceEncryptionState to update.</param>
-        /// <returns>The updated ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> UpdateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate);
-
-        /// <summary>
-        /// Updates the specified ManagedDeviceEncryptionState using PATCH.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionStateToUpdate">The ManagedDeviceEncryptionState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> UpdateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ManagedDeviceEncryptionState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionStateToUpdate">The ManagedDeviceEncryptionState to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> UpdateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate);
+        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> UpdateAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceEncryptionState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> UpdateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> UpdateResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

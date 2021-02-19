@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosCertificateProfileBase using POST.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
-        /// <returns>The created IosCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<IosCertificateProfileBase> CreateAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate)
-        {
-            return this.CreateAsync(iosCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosCertificateProfileBase using POST.
-        /// </summary>
-        /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<IosCertificateProfileBase> CreateAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCertificateProfileBase> CreateAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosCertificateProfileBase>(iosCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosCertificateProfileBase using POST and returns a <see cref="GraphResponse{IosCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosCertificateProfileBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> CreateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate)
-        {
-            return this.CreateResponseAsync(iosCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosCertificateProfileBase using POST and returns a <see cref="GraphResponse{IosCertificateProfileBase}"/> object.
-        /// </summary>
-        /// <param name="iosCertificateProfileBaseToCreate">The IosCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosCertificateProfileBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> CreateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> CreateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosCertificateProfileBase>(iosCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosCertificateProfileBase using PATCH.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToUpdate">The IosCertificateProfileBase to update.</param>
-        /// <returns>The updated IosCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<IosCertificateProfileBase> UpdateAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate)
-        {
-            return this.UpdateAsync(iosCertificateProfileBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosCertificateProfileBase using PATCH.
-        /// </summary>
-        /// <param name="iosCertificateProfileBaseToUpdate">The IosCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<IosCertificateProfileBase> UpdateAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosCertificateProfileBase> UpdateAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosCertificateProfileBase>(iosCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{IosCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="iosCertificateProfileBaseToUpdate">The IosCertificateProfileBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosCertificateProfileBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> UpdateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate)
-        {
-            return this.UpdateResponseAsync(iosCertificateProfileBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{IosCertificateProfileBase}"/> object.
-        /// </summary>
-        /// <param name="iosCertificateProfileBaseToUpdate">The IosCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosCertificateProfileBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> UpdateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosCertificateProfileBase>> UpdateResponseAsync(IosCertificateProfileBase iosCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosCertificateProfileBase>(iosCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified IosCertificateProfileBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosCertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified IosCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

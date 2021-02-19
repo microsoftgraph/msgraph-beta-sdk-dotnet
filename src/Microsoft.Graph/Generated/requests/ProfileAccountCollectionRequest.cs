@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserAccountInformation to the collection via POST.
-        /// </summary>
-        /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
-        /// <returns>The created UserAccountInformation.</returns>
-        public System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation)
-        {
-            return this.AddAsync(userAccountInformation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserAccountInformation to the collection via POST.
         /// </summary>
         /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAccountInformation.</returns>
-        public System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserAccountInformation>(userAccountInformation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserAccountInformation to the collection via POST and returns a <see cref="GraphResponse{UserAccountInformation}"/> object of the request.
-        /// </summary>
-        /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation)
-        {
-            return this.AddResponseAsync(userAccountInformation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserAccountInformation to the collection via POST and returns a <see cref="GraphResponse{UserAccountInformation}"/> object of the request.
         /// </summary>
         /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserAccountInformation>(userAccountInformation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileAccountCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileAccountCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

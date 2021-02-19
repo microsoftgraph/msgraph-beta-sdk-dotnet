@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedSignupStatus using POST.
         /// </summary>
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
-        /// <returns>The created PrivilegedSignupStatus.</returns>
-        public System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate)
-        {
-            return this.CreateAsync(privilegedSignupStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedSignupStatus using POST.
-        /// </summary>
-        /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedSignupStatus.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedSignupStatus> CreateAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrivilegedSignupStatus>(privilegedSignupStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedSignupStatus using POST and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
         /// </summary>
         /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> CreateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate)
-        {
-            return this.CreateResponseAsync(privilegedSignupStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedSignupStatus using POST and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
-        /// </summary>
-        /// <param name="privilegedSignupStatusToCreate">The PrivilegedSignupStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> CreateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> CreateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrivilegedSignupStatus>(privilegedSignupStatusToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrivilegedSignupStatus.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedSignupStatus.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PrivilegedSignupStatus>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrivilegedSignupStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedSignupStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedSignupStatus using PATCH.
         /// </summary>
         /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus to update.</param>
-        /// <returns>The updated PrivilegedSignupStatus.</returns>
-        public System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate)
-        {
-            return this.UpdateAsync(privilegedSignupStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedSignupStatus using PATCH.
-        /// </summary>
-        /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedSignupStatus.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedSignupStatus> UpdateAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedSignupStatusToUpdate.AdditionalData != null)
-			{
-				if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedSignupStatusToUpdate.AdditionalData != null)
-            {
-                if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrivilegedSignupStatus>(privilegedSignupStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedSignupStatus using PATCH and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
         /// </summary>
         /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> UpdateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate)
-        {
-            return this.UpdateResponseAsync(privilegedSignupStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedSignupStatus using PATCH and returns a <see cref="GraphResponse{PrivilegedSignupStatus}"/> object.
-        /// </summary>
-        /// <param name="privilegedSignupStatusToUpdate">The PrivilegedSignupStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedSignupStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> UpdateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedSignupStatus>> UpdateResponseAsync(PrivilegedSignupStatus privilegedSignupStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedSignupStatusToUpdate.AdditionalData != null)
-			{
-				if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedSignupStatusToUpdate.AdditionalData != null)
-            {
-                if (privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedSignupStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedSignupStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PrivilegedSignupStatus>(privilegedSignupStatusToUpdate, cancellationToken).ConfigureAwait(false);
         }

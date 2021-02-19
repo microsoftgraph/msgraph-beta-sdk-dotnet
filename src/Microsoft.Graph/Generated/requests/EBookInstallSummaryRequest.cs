@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EBookInstallSummary using POST.
         /// </summary>
         /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
-        /// <returns>The created EBookInstallSummary.</returns>
-        public System.Threading.Tasks.Task<EBookInstallSummary> CreateAsync(EBookInstallSummary eBookInstallSummaryToCreate)
-        {
-            return this.CreateAsync(eBookInstallSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EBookInstallSummary using POST.
-        /// </summary>
-        /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EBookInstallSummary.</returns>
-        public async System.Threading.Tasks.Task<EBookInstallSummary> CreateAsync(EBookInstallSummary eBookInstallSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EBookInstallSummary> CreateAsync(EBookInstallSummary eBookInstallSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EBookInstallSummary>(eBookInstallSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EBookInstallSummary using POST and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
         /// </summary>
         /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> CreateResponseAsync(EBookInstallSummary eBookInstallSummaryToCreate)
-        {
-            return this.CreateResponseAsync(eBookInstallSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EBookInstallSummary using POST and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
-        /// </summary>
-        /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> CreateResponseAsync(EBookInstallSummary eBookInstallSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> CreateResponseAsync(EBookInstallSummary eBookInstallSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EBookInstallSummary>(eBookInstallSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EBookInstallSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EBookInstallSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EBookInstallSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EBookInstallSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EBookInstallSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EBookInstallSummary using PATCH.
         /// </summary>
         /// <param name="eBookInstallSummaryToUpdate">The EBookInstallSummary to update.</param>
-        /// <returns>The updated EBookInstallSummary.</returns>
-        public System.Threading.Tasks.Task<EBookInstallSummary> UpdateAsync(EBookInstallSummary eBookInstallSummaryToUpdate)
-        {
-            return this.UpdateAsync(eBookInstallSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EBookInstallSummary using PATCH.
-        /// </summary>
-        /// <param name="eBookInstallSummaryToUpdate">The EBookInstallSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EBookInstallSummary.</returns>
-        public async System.Threading.Tasks.Task<EBookInstallSummary> UpdateAsync(EBookInstallSummary eBookInstallSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EBookInstallSummary> UpdateAsync(EBookInstallSummary eBookInstallSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (eBookInstallSummaryToUpdate.AdditionalData != null)
-			{
-				if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eBookInstallSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (eBookInstallSummaryToUpdate.AdditionalData != null)
-            {
-                if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eBookInstallSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EBookInstallSummary>(eBookInstallSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EBookInstallSummary using PATCH and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
         /// </summary>
         /// <param name="eBookInstallSummaryToUpdate">The EBookInstallSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> UpdateResponseAsync(EBookInstallSummary eBookInstallSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(eBookInstallSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EBookInstallSummary using PATCH and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
-        /// </summary>
-        /// <param name="eBookInstallSummaryToUpdate">The EBookInstallSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> UpdateResponseAsync(EBookInstallSummary eBookInstallSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> UpdateResponseAsync(EBookInstallSummary eBookInstallSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (eBookInstallSummaryToUpdate.AdditionalData != null)
-			{
-				if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eBookInstallSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (eBookInstallSummaryToUpdate.AdditionalData != null)
-            {
-                if (eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    eBookInstallSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eBookInstallSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EBookInstallSummary>(eBookInstallSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
-        /// <returns>The created Security.</returns>
-        public System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate)
-        {
-            return this.CreateAsync(securityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Security using POST.
-        /// </summary>
-        /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Security.</returns>
-        public async System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Security>(securityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
-        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate)
-        {
-            return this.CreateResponseAsync(securityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
-        /// </summary>
-        /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Security>(securityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Security.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Security.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Security>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Security and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Security and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Security using PATCH.
         /// </summary>
         /// <param name="securityToUpdate">The Security to update.</param>
-        /// <returns>The updated Security.</returns>
-        public System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate)
-        {
-            return this.UpdateAsync(securityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Security using PATCH.
-        /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Security.</returns>
-        public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Security> UpdateAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityToUpdate.AdditionalData != null)
-			{
-				if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityToUpdate.AdditionalData != null)
-            {
-                if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Security>(securityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Security using PATCH and returns a <see cref="GraphResponse{Security}"/> object.
         /// </summary>
         /// <param name="securityToUpdate">The Security to update.</param>
-        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Security>> UpdateResponseAsync(Security securityToUpdate)
-        {
-            return this.UpdateResponseAsync(securityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Security using PATCH and returns a <see cref="GraphResponse{Security}"/> object.
-        /// </summary>
-        /// <param name="securityToUpdate">The Security to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Security>> UpdateResponseAsync(Security securityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Security>> UpdateResponseAsync(Security securityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityToUpdate.AdditionalData != null)
-			{
-				if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityToUpdate.AdditionalData != null)
-            {
-                if (securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Security>(securityToUpdate, cancellationToken).ConfigureAwait(false);
         }

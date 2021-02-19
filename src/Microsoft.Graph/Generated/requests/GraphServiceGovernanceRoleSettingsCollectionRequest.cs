@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GovernanceRoleSetting to the collection via POST.
-        /// </summary>
-        /// <param name="governanceRoleSetting">The GovernanceRoleSetting to add.</param>
-        /// <returns>The created GovernanceRoleSetting.</returns>
-        public System.Threading.Tasks.Task<GovernanceRoleSetting> AddAsync(GovernanceRoleSetting governanceRoleSetting)
-        {
-            return this.AddAsync(governanceRoleSetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GovernanceRoleSetting to the collection via POST.
         /// </summary>
         /// <param name="governanceRoleSetting">The GovernanceRoleSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleSetting.</returns>
-        public System.Threading.Tasks.Task<GovernanceRoleSetting> AddAsync(GovernanceRoleSetting governanceRoleSetting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GovernanceRoleSetting> AddAsync(GovernanceRoleSetting governanceRoleSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<GovernanceRoleSetting>(governanceRoleSetting, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified GovernanceRoleSetting to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.
-        /// </summary>
-        /// <param name="governanceRoleSetting">The GovernanceRoleSetting to add.</param>
-        /// <returns>The <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> AddResponseAsync(GovernanceRoleSetting governanceRoleSetting)
-        {
-            return this.AddResponseAsync(governanceRoleSetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GovernanceRoleSetting to the collection via POST and returns a <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.
         /// </summary>
         /// <param name="governanceRoleSetting">The GovernanceRoleSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> AddResponseAsync(GovernanceRoleSetting governanceRoleSetting, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> AddResponseAsync(GovernanceRoleSetting governanceRoleSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GovernanceRoleSetting>(governanceRoleSetting, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceGovernanceRoleSettingsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceGovernanceRoleSettingsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceGovernanceRoleSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceGovernanceRoleSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceRoleSettingsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleSettingsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleSettingsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGovernanceRoleSettingsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceGovernanceRoleSettingsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceGovernanceRoleSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceGovernanceRoleSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

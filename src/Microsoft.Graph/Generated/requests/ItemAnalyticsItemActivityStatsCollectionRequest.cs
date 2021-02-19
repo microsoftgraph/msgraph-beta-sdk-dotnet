@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ItemActivityStat to the collection via POST.
-        /// </summary>
-        /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
-        /// <returns>The created ItemActivityStat.</returns>
-        public System.Threading.Tasks.Task<ItemActivityStat> AddAsync(ItemActivityStat itemActivityStat)
-        {
-            return this.AddAsync(itemActivityStat, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemActivityStat to the collection via POST.
         /// </summary>
         /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityStat.</returns>
-        public System.Threading.Tasks.Task<ItemActivityStat> AddAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ItemActivityStat> AddAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ItemActivityStat>(itemActivityStat, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ItemActivityStat to the collection via POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object of the request.
-        /// </summary>
-        /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
-        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> AddResponseAsync(ItemActivityStat itemActivityStat)
-        {
-            return this.AddResponseAsync(itemActivityStat, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemActivityStat to the collection via POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object of the request.
         /// </summary>
         /// <param name="itemActivityStat">The ItemActivityStat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> AddResponseAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> AddResponseAsync(ItemActivityStat itemActivityStat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemActivityStat>(itemActivityStat, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IItemAnalyticsItemActivityStatsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IItemAnalyticsItemActivityStatsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IItemAnalyticsItemActivityStatsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ItemAnalyticsItemActivityStatsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ItemAnalyticsItemActivityStatsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemAnalyticsItemActivityStatsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ItemAnalyticsItemActivityStatsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemAnalyticsItemActivityStatsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ItemAnalyticsItemActivityStatsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

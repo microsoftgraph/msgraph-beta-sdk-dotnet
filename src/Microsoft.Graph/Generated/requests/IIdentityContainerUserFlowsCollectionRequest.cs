@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IIdentityContainerUserFlowsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IdentityUserFlow to the collection via POST.
-        /// </summary>
-        /// <param name="identityUserFlow">The IdentityUserFlow to add.</param>
-        /// <returns>The created IdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlow> AddAsync(IdentityUserFlow identityUserFlow);
-
         /// <summary>
         /// Adds the specified IdentityUserFlow to the collection via POST.
         /// </summary>
         /// <param name="identityUserFlow">The IdentityUserFlow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlow> AddAsync(IdentityUserFlow identityUserFlow, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified IdentityUserFlow to the collection via POST and returns a <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.
-        /// </summary>
-        /// <param name="identityUserFlow">The IdentityUserFlow to add.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> AddResponseAsync(IdentityUserFlow identityUserFlow);
+        System.Threading.Tasks.Task<IdentityUserFlow> AddAsync(IdentityUserFlow identityUserFlow, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified IdentityUserFlow to the collection via POST and returns a <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="identityUserFlow">The IdentityUserFlow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> AddResponseAsync(IdentityUserFlow identityUserFlow, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> AddResponseAsync(IdentityUserFlow identityUserFlow, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIdentityContainerUserFlowsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIdentityContainerUserFlowsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerUserFlowsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityContainerUserFlowsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainerUserFlowsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IIdentityContainerUserFlowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{IdentityContainerUserFlowsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityContainerUserFlowsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainerUserFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainerUserFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

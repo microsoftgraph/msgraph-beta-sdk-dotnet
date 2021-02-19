@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UsageRight using POST.
         /// </summary>
         /// <param name="usageRightToCreate">The UsageRight to create.</param>
-        /// <returns>The created UsageRight.</returns>
-        public System.Threading.Tasks.Task<UsageRight> CreateAsync(UsageRight usageRightToCreate)
-        {
-            return this.CreateAsync(usageRightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UsageRight using POST.
-        /// </summary>
-        /// <param name="usageRightToCreate">The UsageRight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsageRight.</returns>
-        public async System.Threading.Tasks.Task<UsageRight> CreateAsync(UsageRight usageRightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UsageRight> CreateAsync(UsageRight usageRightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UsageRight>(usageRightToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UsageRight using POST and returns a <see cref="GraphResponse{UsageRight}"/> object.
         /// </summary>
         /// <param name="usageRightToCreate">The UsageRight to create.</param>
-        /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UsageRight>> CreateResponseAsync(UsageRight usageRightToCreate)
-        {
-            return this.CreateResponseAsync(usageRightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UsageRight using POST and returns a <see cref="GraphResponse{UsageRight}"/> object.
-        /// </summary>
-        /// <param name="usageRightToCreate">The UsageRight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> CreateResponseAsync(UsageRight usageRightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> CreateResponseAsync(UsageRight usageRightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UsageRight>(usageRightToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UsageRight.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UsageRight.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UsageRight>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UsageRight and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UsageRight and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UsageRight using PATCH.
         /// </summary>
         /// <param name="usageRightToUpdate">The UsageRight to update.</param>
-        /// <returns>The updated UsageRight.</returns>
-        public System.Threading.Tasks.Task<UsageRight> UpdateAsync(UsageRight usageRightToUpdate)
-        {
-            return this.UpdateAsync(usageRightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UsageRight using PATCH.
-        /// </summary>
-        /// <param name="usageRightToUpdate">The UsageRight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UsageRight.</returns>
-        public async System.Threading.Tasks.Task<UsageRight> UpdateAsync(UsageRight usageRightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UsageRight> UpdateAsync(UsageRight usageRightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (usageRightToUpdate.AdditionalData != null)
-			{
-				if (usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usageRightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (usageRightToUpdate.AdditionalData != null)
-            {
-                if (usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usageRightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UsageRight>(usageRightToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UsageRight using PATCH and returns a <see cref="GraphResponse{UsageRight}"/> object.
         /// </summary>
         /// <param name="usageRightToUpdate">The UsageRight to update.</param>
-        /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UsageRight>> UpdateResponseAsync(UsageRight usageRightToUpdate)
-        {
-            return this.UpdateResponseAsync(usageRightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UsageRight using PATCH and returns a <see cref="GraphResponse{UsageRight}"/> object.
-        /// </summary>
-        /// <param name="usageRightToUpdate">The UsageRight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> UpdateResponseAsync(UsageRight usageRightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> UpdateResponseAsync(UsageRight usageRightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (usageRightToUpdate.AdditionalData != null)
-			{
-				if (usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usageRightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (usageRightToUpdate.AdditionalData != null)
-            {
-                if (usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    usageRightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usageRightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UsageRight>(usageRightToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationSettings using POST.
         /// </summary>
         /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
-        /// <returns>The created OrganizationSettings.</returns>
-        public System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate)
-        {
-            return this.CreateAsync(organizationSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OrganizationSettings using POST.
-        /// </summary>
-        /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationSettings.</returns>
-        public async System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationSettings> CreateAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OrganizationSettings>(organizationSettingsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationSettings using POST and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
         /// </summary>
         /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
-        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> CreateResponseAsync(OrganizationSettings organizationSettingsToCreate)
-        {
-            return this.CreateResponseAsync(organizationSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OrganizationSettings using POST and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
-        /// </summary>
-        /// <param name="organizationSettingsToCreate">The OrganizationSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> CreateResponseAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> CreateResponseAsync(OrganizationSettings organizationSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OrganizationSettings>(organizationSettingsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OrganizationSettings.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OrganizationSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<OrganizationSettings>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OrganizationSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OrganizationSettings and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified OrganizationSettings using PATCH.
         /// </summary>
         /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
-        /// <returns>The updated OrganizationSettings.</returns>
-        public System.Threading.Tasks.Task<OrganizationSettings> UpdateAsync(OrganizationSettings organizationSettingsToUpdate)
-        {
-            return this.UpdateAsync(organizationSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OrganizationSettings using PATCH.
-        /// </summary>
-        /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationSettings.</returns>
-        public async System.Threading.Tasks.Task<OrganizationSettings> UpdateAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationSettings> UpdateAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (organizationSettingsToUpdate.AdditionalData != null)
-			{
-				if (organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationSettingsToUpdate.AdditionalData != null)
-            {
-                if (organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OrganizationSettings>(organizationSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified OrganizationSettings using PATCH and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
         /// </summary>
         /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
-        /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> UpdateResponseAsync(OrganizationSettings organizationSettingsToUpdate)
-        {
-            return this.UpdateResponseAsync(organizationSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OrganizationSettings using PATCH and returns a <see cref="GraphResponse{OrganizationSettings}"/> object.
-        /// </summary>
-        /// <param name="organizationSettingsToUpdate">The OrganizationSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OrganizationSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> UpdateResponseAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettings>> UpdateResponseAsync(OrganizationSettings organizationSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (organizationSettingsToUpdate.AdditionalData != null)
-			{
-				if (organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationSettingsToUpdate.AdditionalData != null)
-            {
-                if (organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OrganizationSettings>(organizationSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }

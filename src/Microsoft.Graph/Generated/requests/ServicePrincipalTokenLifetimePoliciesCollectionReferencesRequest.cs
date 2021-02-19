@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TokenLifetimePolicy to the collection via POST.
-        /// </summary>
-        /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(TokenLifetimePolicy tokenLifetimePolicy)
-        {
-            return this.AddAsync(tokenLifetimePolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TokenLifetimePolicy to the collection via POST.
         /// </summary>
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(tokenLifetimePolicy.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TokenLifetimePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy)
-        {
-            return this.AddResponseAsync(tokenLifetimePolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TokenLifetimePolicy to the collection via POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.
         /// </summary>
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(tokenLifetimePolicy.Id))

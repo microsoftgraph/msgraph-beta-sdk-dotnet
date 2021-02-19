@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISecurityHostSecurityProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified HostSecurityProfile to the collection via POST.
-        /// </summary>
-        /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
-        /// <returns>The created HostSecurityProfile.</returns>
-        System.Threading.Tasks.Task<HostSecurityProfile> AddAsync(HostSecurityProfile hostSecurityProfile);
-
         /// <summary>
         /// Adds the specified HostSecurityProfile to the collection via POST.
         /// </summary>
         /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created HostSecurityProfile.</returns>
-        System.Threading.Tasks.Task<HostSecurityProfile> AddAsync(HostSecurityProfile hostSecurityProfile, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified HostSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> AddResponseAsync(HostSecurityProfile hostSecurityProfile);
+        System.Threading.Tasks.Task<HostSecurityProfile> AddAsync(HostSecurityProfile hostSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified HostSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="hostSecurityProfile">The HostSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{HostSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> AddResponseAsync(HostSecurityProfile hostSecurityProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<HostSecurityProfile>> AddResponseAsync(HostSecurityProfile hostSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityHostSecurityProfilesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityHostSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityHostSecurityProfilesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISecurityHostSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityHostSecurityProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityHostSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityHostSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ThumbnailSet using POST.
         /// </summary>
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
-        /// <returns>The created ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate);
-
-        /// <summary>
-        /// Creates the specified ThumbnailSet using POST.
-        /// </summary>
-        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
-        /// </summary>
-        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
-        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate);
+        System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ThumbnailSet.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ThumbnailSet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ThumbnailSet and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ThumbnailSet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ThumbnailSet.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ThumbnailSet using PATCH.
         /// </summary>
         /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
-        /// <returns>The updated ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate);
-
-        /// <summary>
-        /// Updates the specified ThumbnailSet using PATCH.
-        /// </summary>
-        /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ThumbnailSet using PATCH and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
-        /// </summary>
-        /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
-        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate);
+        System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ThumbnailSet using PATCH and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

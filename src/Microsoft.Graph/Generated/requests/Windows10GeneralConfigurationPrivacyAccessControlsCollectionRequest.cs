@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST.
-        /// </summary>
-        /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
-        /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
-        public System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem)
-        {
-            return this.AddAsync(windowsPrivacyDataAccessControlItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST.
         /// </summary>
         /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPrivacyDataAccessControlItem.</returns>
-        public System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsPrivacyDataAccessControlItem> AddAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsPrivacyDataAccessControlItem>(windowsPrivacyDataAccessControlItem, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> AddResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem)
-        {
-            return this.AddResponseAsync(windowsPrivacyDataAccessControlItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsPrivacyDataAccessControlItem to the collection via POST and returns a <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.
         /// </summary>
         /// <param name="windowsPrivacyDataAccessControlItem">The WindowsPrivacyDataAccessControlItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPrivacyDataAccessControlItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> AddResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPrivacyDataAccessControlItem>> AddResponseAsync(WindowsPrivacyDataAccessControlItem windowsPrivacyDataAccessControlItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsPrivacyDataAccessControlItem>(windowsPrivacyDataAccessControlItem, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<Windows10GeneralConfigurationPrivacyAccessControlsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

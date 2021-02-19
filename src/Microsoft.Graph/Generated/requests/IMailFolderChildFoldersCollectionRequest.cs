@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMailFolderChildFoldersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MailFolder to the collection via POST.
-        /// </summary>
-        /// <param name="mailFolder">The MailFolder to add.</param>
-        /// <returns>The created MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> AddAsync(MailFolder mailFolder);
-
         /// <summary>
         /// Adds the specified MailFolder to the collection via POST.
         /// </summary>
         /// <param name="mailFolder">The MailFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> AddAsync(MailFolder mailFolder, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MailFolder to the collection via POST and returns a <see cref="GraphResponse{MailFolder}"/> object of the request.
-        /// </summary>
-        /// <param name="mailFolder">The MailFolder to add.</param>
-        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolder>> AddResponseAsync(MailFolder mailFolder);
+        System.Threading.Tasks.Task<MailFolder> AddAsync(MailFolder mailFolder, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MailFolder to the collection via POST and returns a <see cref="GraphResponse{MailFolder}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="mailFolder">The MailFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolder>> AddResponseAsync(MailFolder mailFolder, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> AddResponseAsync(MailFolder mailFolder, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderChildFoldersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMailFolderChildFoldersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderChildFoldersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MailFolderChildFoldersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolderChildFoldersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IMailFolderChildFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MailFolderChildFoldersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailFolderChildFoldersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailFolderChildFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailFolderChildFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

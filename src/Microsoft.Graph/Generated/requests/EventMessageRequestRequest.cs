@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EventMessageRequestObject using POST.
         /// </summary>
         /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
-        /// <returns>The created EventMessageRequestObject.</returns>
-        public System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate)
-        {
-            return this.CreateAsync(eventMessageRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EventMessageRequestObject using POST.
-        /// </summary>
-        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EventMessageRequestObject.</returns>
-        public async System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EventMessageRequestObject>(eventMessageRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
         /// </summary>
         /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate)
-        {
-            return this.CreateResponseAsync(eventMessageRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
-        /// </summary>
-        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EventMessageRequestObject>(eventMessageRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EventMessageRequest.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EventMessageRequest.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EventMessageRequestObject>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EventMessageRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EventMessageRequest and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EventMessageRequestObject using PATCH.
         /// </summary>
         /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
-        /// <returns>The updated EventMessageRequestObject.</returns>
-        public System.Threading.Tasks.Task<EventMessageRequestObject> UpdateAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate)
-        {
-            return this.UpdateAsync(eventMessageRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EventMessageRequestObject using PATCH.
-        /// </summary>
-        /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EventMessageRequestObject.</returns>
-        public async System.Threading.Tasks.Task<EventMessageRequestObject> UpdateAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EventMessageRequestObject> UpdateAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (eventMessageRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (eventMessageRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EventMessageRequestObject>(eventMessageRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EventMessageRequestObject using PATCH and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
         /// </summary>
         /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> UpdateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate)
-        {
-            return this.UpdateResponseAsync(eventMessageRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EventMessageRequestObject using PATCH and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
-        /// </summary>
-        /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> UpdateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> UpdateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (eventMessageRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (eventMessageRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EventMessageRequestObject>(eventMessageRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

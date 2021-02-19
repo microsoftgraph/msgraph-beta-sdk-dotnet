@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsTab using POST.
         /// </summary>
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
-        /// <returns>The created TeamsTab.</returns>
-        public System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate)
-        {
-            return this.CreateAsync(teamsTabToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsTab using POST.
-        /// </summary>
-        /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTab.</returns>
-        public async System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TeamsTab>(teamsTabToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsTab using POST and returns a <see cref="GraphResponse{TeamsTab}"/> object.
         /// </summary>
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate)
-        {
-            return this.CreateResponseAsync(teamsTabToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsTab using POST and returns a <see cref="GraphResponse{TeamsTab}"/> object.
-        /// </summary>
-        /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsTab>(teamsTabToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TeamsTab.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TeamsTab.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TeamsTab>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TeamsTab and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TeamsTab and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TeamsTab using PATCH.
         /// </summary>
         /// <param name="teamsTabToUpdate">The TeamsTab to update.</param>
-        /// <returns>The updated TeamsTab.</returns>
-        public System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate)
-        {
-            return this.UpdateAsync(teamsTabToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TeamsTab using PATCH.
-        /// </summary>
-        /// <param name="teamsTabToUpdate">The TeamsTab to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsTab.</returns>
-        public async System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (teamsTabToUpdate.AdditionalData != null)
-			{
-				if (teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTabToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsTabToUpdate.AdditionalData != null)
-            {
-                if (teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTabToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsTab>(teamsTabToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TeamsTab using PATCH and returns a <see cref="GraphResponse{TeamsTab}"/> object.
         /// </summary>
         /// <param name="teamsTabToUpdate">The TeamsTab to update.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate)
-        {
-            return this.UpdateResponseAsync(teamsTabToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TeamsTab using PATCH and returns a <see cref="GraphResponse{TeamsTab}"/> object.
-        /// </summary>
-        /// <param name="teamsTabToUpdate">The TeamsTab to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (teamsTabToUpdate.AdditionalData != null)
-			{
-				if (teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTabToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsTabToUpdate.AdditionalData != null)
-            {
-                if (teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsTabToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsTabToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TeamsTab>(teamsTabToUpdate, cancellationToken).ConfigureAwait(false);
         }

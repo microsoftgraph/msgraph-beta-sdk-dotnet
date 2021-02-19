@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementReportsReportSchedulesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementReportSchedule to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementReportSchedule">The DeviceManagementReportSchedule to add.</param>
-        /// <returns>The created DeviceManagementReportSchedule.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReportSchedule> AddAsync(DeviceManagementReportSchedule deviceManagementReportSchedule);
-
         /// <summary>
         /// Adds the specified DeviceManagementReportSchedule to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementReportSchedule">The DeviceManagementReportSchedule to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReportSchedule.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReportSchedule> AddAsync(DeviceManagementReportSchedule deviceManagementReportSchedule, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementReportSchedule to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementReportSchedule">The DeviceManagementReportSchedule to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> AddResponseAsync(DeviceManagementReportSchedule deviceManagementReportSchedule);
+        System.Threading.Tasks.Task<DeviceManagementReportSchedule> AddAsync(DeviceManagementReportSchedule deviceManagementReportSchedule, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DeviceManagementReportSchedule to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementReportSchedule">The DeviceManagementReportSchedule to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementReportSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> AddResponseAsync(DeviceManagementReportSchedule deviceManagementReportSchedule, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportSchedule>> AddResponseAsync(DeviceManagementReportSchedule deviceManagementReportSchedule, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReportsReportSchedulesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementReportsReportSchedulesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsReportSchedulesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementReportsReportSchedulesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsReportSchedulesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementReportsReportSchedulesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsReportSchedulesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementReportsReportSchedulesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsReportSchedulesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsReportSchedulesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

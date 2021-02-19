@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SingleValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
-        /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate)
-        {
-            return this.CreateAsync(singleValueLegacyExtendedPropertyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SingleValueLegacyExtendedProperty using POST.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
-        public async System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedPropertyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SingleValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
-        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> CreateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate)
-        {
-            return this.CreateResponseAsync(singleValueLegacyExtendedPropertyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SingleValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> CreateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> CreateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedPropertyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SingleValueLegacyExtendedProperty.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SingleValueLegacyExtendedProperty.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SingleValueLegacyExtendedProperty>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SingleValueLegacyExtendedProperty and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SingleValueLegacyExtendedProperty and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SingleValueLegacyExtendedProperty using PATCH.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToUpdate">The SingleValueLegacyExtendedProperty to update.</param>
-        /// <returns>The updated SingleValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> UpdateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate)
-        {
-            return this.UpdateAsync(singleValueLegacyExtendedPropertyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SingleValueLegacyExtendedProperty using PATCH.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedPropertyToUpdate">The SingleValueLegacyExtendedProperty to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SingleValueLegacyExtendedProperty.</returns>
-        public async System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> UpdateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> UpdateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
-			{
-				if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, singleValueLegacyExtendedPropertyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
-            {
-                if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, singleValueLegacyExtendedPropertyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedPropertyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SingleValueLegacyExtendedProperty using PATCH and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToUpdate">The SingleValueLegacyExtendedProperty to update.</param>
-        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> UpdateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate)
-        {
-            return this.UpdateResponseAsync(singleValueLegacyExtendedPropertyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SingleValueLegacyExtendedProperty using PATCH and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedPropertyToUpdate">The SingleValueLegacyExtendedProperty to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> UpdateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> UpdateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
-			{
-				if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, singleValueLegacyExtendedPropertyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData != null)
-            {
-                if (singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    singleValueLegacyExtendedPropertyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, singleValueLegacyExtendedPropertyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedPropertyToUpdate, cancellationToken).ConfigureAwait(false);
         }

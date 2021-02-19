@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EmbeddedSIMDeviceState to the collection via POST.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceState">The EmbeddedSIMDeviceState to add.</param>
-        /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMDeviceState> AddAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState)
-        {
-            return this.AddAsync(embeddedSIMDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EmbeddedSIMDeviceState to the collection via POST.
         /// </summary>
         /// <param name="embeddedSIMDeviceState">The EmbeddedSIMDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMDeviceState> AddAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EmbeddedSIMDeviceState> AddAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EmbeddedSIMDeviceState>(embeddedSIMDeviceState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EmbeddedSIMDeviceState to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceState">The EmbeddedSIMDeviceState to add.</param>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> AddResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState)
-        {
-            return this.AddResponseAsync(embeddedSIMDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EmbeddedSIMDeviceState to the collection via POST and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.
         /// </summary>
         /// <param name="embeddedSIMDeviceState">The EmbeddedSIMDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> AddResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> AddResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMDeviceState>(embeddedSIMDeviceState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolDeviceStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEmbeddedSIMActivationCodePoolDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePoolDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

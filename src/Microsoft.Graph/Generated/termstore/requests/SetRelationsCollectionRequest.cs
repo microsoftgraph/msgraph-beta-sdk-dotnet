@@ -33,69 +33,39 @@ namespace Microsoft.Graph.TermStore
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Relation to the collection via POST.
-        /// </summary>
-        /// <param name="relation">The Relation to add.</param>
-        /// <returns>The created Relation.</returns>
-        public System.Threading.Tasks.Task<Relation> AddAsync(Relation relation)
-        {
-            return this.AddAsync(relation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Relation to the collection via POST.
         /// </summary>
         /// <param name="relation">The Relation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Relation.</returns>
-        public System.Threading.Tasks.Task<Relation> AddAsync(Relation relation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Relation> AddAsync(Relation relation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Relation>(relation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Relation to the collection via POST and returns a <see cref="GraphResponse{Relation}"/> object of the request.
-        /// </summary>
-        /// <param name="relation">The Relation to add.</param>
-        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Relation>> AddResponseAsync(Relation relation)
-        {
-            return this.AddResponseAsync(relation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Relation to the collection via POST and returns a <see cref="GraphResponse{Relation}"/> object of the request.
         /// </summary>
         /// <param name="relation">The Relation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Relation>> AddResponseAsync(Relation relation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Relation>> AddResponseAsync(Relation relation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Relation>(relation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISetRelationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISetRelationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISetRelationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SetRelationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SetRelationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SetRelationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SetRelationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SetRelationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SetRelationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SetRelationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SetRelationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SetRelationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

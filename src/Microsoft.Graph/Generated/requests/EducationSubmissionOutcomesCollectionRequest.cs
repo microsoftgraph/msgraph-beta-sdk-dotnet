@@ -33,71 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EducationOutcome to the collection via POST.
-        /// </summary>
-        /// <param name="educationOutcome">The EducationOutcome to add.</param>
-        /// <returns>The created EducationOutcome.</returns>
-        public System.Threading.Tasks.Task<EducationOutcome> AddAsync(EducationOutcome educationOutcome)
-        {
-            return this.AddAsync(educationOutcome, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EducationOutcome to the collection via POST.
         /// </summary>
         /// <param name="educationOutcome">The EducationOutcome to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationOutcome.</returns>
-        public System.Threading.Tasks.Task<EducationOutcome> AddAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EducationOutcome> AddAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             educationOutcome.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(educationOutcome.GetType().FullName));
             return this.SendAsync<EducationOutcome>(educationOutcome, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EducationOutcome to the collection via POST and returns a <see cref="GraphResponse{EducationOutcome}"/> object of the request.
-        /// </summary>
-        /// <param name="educationOutcome">The EducationOutcome to add.</param>
-        /// <returns>The <see cref="GraphResponse{EducationOutcome}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome)
-        {
-            return this.AddResponseAsync(educationOutcome, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EducationOutcome to the collection via POST and returns a <see cref="GraphResponse{EducationOutcome}"/> object of the request.
         /// </summary>
         /// <param name="educationOutcome">The EducationOutcome to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationOutcome}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             educationOutcome.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(educationOutcome.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<EducationOutcome>(educationOutcome, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEducationSubmissionOutcomesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEducationSubmissionOutcomesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEducationSubmissionOutcomesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<EducationSubmissionOutcomesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<EducationSubmissionOutcomesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

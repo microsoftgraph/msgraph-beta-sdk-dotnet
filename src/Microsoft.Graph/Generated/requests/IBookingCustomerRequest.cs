@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified BookingCustomer using POST.
         /// </summary>
         /// <param name="bookingCustomerToCreate">The BookingCustomer to create.</param>
-        /// <returns>The created BookingCustomer.</returns>
-        System.Threading.Tasks.Task<BookingCustomer> CreateAsync(BookingCustomer bookingCustomerToCreate);
-
-        /// <summary>
-        /// Creates the specified BookingCustomer using POST.
-        /// </summary>
-        /// <param name="bookingCustomerToCreate">The BookingCustomer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingCustomer.</returns>
-        System.Threading.Tasks.Task<BookingCustomer> CreateAsync(BookingCustomer bookingCustomerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified BookingCustomer using POST and returns a <see cref="GraphResponse{BookingCustomer}"/> object.
-        /// </summary>
-        /// <param name="bookingCustomerToCreate">The BookingCustomer to create.</param>
-        /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> CreateResponseAsync(BookingCustomer bookingCustomerToCreate);
+        System.Threading.Tasks.Task<BookingCustomer> CreateAsync(BookingCustomer bookingCustomerToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified BookingCustomer using POST and returns a <see cref="GraphResponse{BookingCustomer}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="bookingCustomerToCreate">The BookingCustomer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> CreateResponseAsync(BookingCustomer bookingCustomerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BookingCustomer.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> CreateResponseAsync(BookingCustomer bookingCustomerToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified BookingCustomer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BookingCustomer and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified BookingCustomer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BookingCustomer.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified BookingCustomer using PATCH.
         /// </summary>
         /// <param name="bookingCustomerToUpdate">The BookingCustomer to update.</param>
-        /// <returns>The updated BookingCustomer.</returns>
-        System.Threading.Tasks.Task<BookingCustomer> UpdateAsync(BookingCustomer bookingCustomerToUpdate);
-
-        /// <summary>
-        /// Updates the specified BookingCustomer using PATCH.
-        /// </summary>
-        /// <param name="bookingCustomerToUpdate">The BookingCustomer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingCustomer.</returns>
-        System.Threading.Tasks.Task<BookingCustomer> UpdateAsync(BookingCustomer bookingCustomerToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified BookingCustomer using PATCH and returns a <see cref="GraphResponse{BookingCustomer}"/> object.
-        /// </summary>
-        /// <param name="bookingCustomerToUpdate">The BookingCustomer to update.</param>
-        /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> UpdateResponseAsync(BookingCustomer bookingCustomerToUpdate);
+        System.Threading.Tasks.Task<BookingCustomer> UpdateAsync(BookingCustomer bookingCustomerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BookingCustomer using PATCH and returns a <see cref="GraphResponse{BookingCustomer}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{BookingCustomer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> UpdateResponseAsync(BookingCustomer bookingCustomerToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingCustomer>> UpdateResponseAsync(BookingCustomer bookingCustomerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

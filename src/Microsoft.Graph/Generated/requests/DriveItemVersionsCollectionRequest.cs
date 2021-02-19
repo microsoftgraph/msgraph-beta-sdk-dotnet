@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DriveItemVersion to the collection via POST.
-        /// </summary>
-        /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
-        /// <returns>The created DriveItemVersion.</returns>
-        public System.Threading.Tasks.Task<DriveItemVersion> AddAsync(DriveItemVersion driveItemVersion)
-        {
-            return this.AddAsync(driveItemVersion, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DriveItemVersion to the collection via POST.
         /// </summary>
         /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItemVersion.</returns>
-        public System.Threading.Tasks.Task<DriveItemVersion> AddAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DriveItemVersion> AddAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DriveItemVersion>(driveItemVersion, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DriveItemVersion to the collection via POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object of the request.
-        /// </summary>
-        /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
-        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion)
-        {
-            return this.AddResponseAsync(driveItemVersion, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DriveItemVersion to the collection via POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object of the request.
         /// </summary>
         /// <param name="driveItemVersion">The DriveItemVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DriveItemVersion>(driveItemVersion, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDriveItemVersionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDriveItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDriveItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DriveItemVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DriveItemVersionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItemVersionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DriveItemVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

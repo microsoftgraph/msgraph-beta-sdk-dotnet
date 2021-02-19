@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AssignmentFilterEvaluationStatusDetails to the collection via POST.
-        /// </summary>
-        /// <param name="assignmentFilterEvaluationStatusDetails">The AssignmentFilterEvaluationStatusDetails to add.</param>
-        /// <returns>The created AssignmentFilterEvaluationStatusDetails.</returns>
-        public System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> AddAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails)
-        {
-            return this.AddAsync(assignmentFilterEvaluationStatusDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AssignmentFilterEvaluationStatusDetails to the collection via POST.
         /// </summary>
         /// <param name="assignmentFilterEvaluationStatusDetails">The AssignmentFilterEvaluationStatusDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AssignmentFilterEvaluationStatusDetails.</returns>
-        public System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> AddAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> AddAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AssignmentFilterEvaluationStatusDetails>(assignmentFilterEvaluationStatusDetails, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AssignmentFilterEvaluationStatusDetails to the collection via POST and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.
-        /// </summary>
-        /// <param name="assignmentFilterEvaluationStatusDetails">The AssignmentFilterEvaluationStatusDetails to add.</param>
-        /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> AddResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails)
-        {
-            return this.AddResponseAsync(assignmentFilterEvaluationStatusDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AssignmentFilterEvaluationStatusDetails to the collection via POST and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.
         /// </summary>
         /// <param name="assignmentFilterEvaluationStatusDetails">The AssignmentFilterEvaluationStatusDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> AddResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> AddResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AssignmentFilterEvaluationStatusDetails>(assignmentFilterEvaluationStatusDetails, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

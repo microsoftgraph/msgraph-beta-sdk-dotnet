@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AllowedDataLocation to the collection via POST.
-        /// </summary>
-        /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
-        /// <returns>The created AllowedDataLocation.</returns>
-        public System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation)
-        {
-            return this.AddAsync(allowedDataLocation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AllowedDataLocation to the collection via POST.
         /// </summary>
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AllowedDataLocation.</returns>
-        public System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AllowedDataLocation>(allowedDataLocation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AllowedDataLocation to the collection via POST and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.
-        /// </summary>
-        /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
-        /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation)
-        {
-            return this.AddResponseAsync(allowedDataLocation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AllowedDataLocation to the collection via POST and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.
         /// </summary>
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AllowedDataLocation>(allowedDataLocation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceAllowedDataLocationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

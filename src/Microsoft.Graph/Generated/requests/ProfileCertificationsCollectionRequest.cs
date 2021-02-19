@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PersonCertification to the collection via POST.
-        /// </summary>
-        /// <param name="personCertification">The PersonCertification to add.</param>
-        /// <returns>The created PersonCertification.</returns>
-        public System.Threading.Tasks.Task<PersonCertification> AddAsync(PersonCertification personCertification)
-        {
-            return this.AddAsync(personCertification, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PersonCertification to the collection via POST.
         /// </summary>
         /// <param name="personCertification">The PersonCertification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonCertification.</returns>
-        public System.Threading.Tasks.Task<PersonCertification> AddAsync(PersonCertification personCertification, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PersonCertification> AddAsync(PersonCertification personCertification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PersonCertification>(personCertification, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PersonCertification to the collection via POST and returns a <see cref="GraphResponse{PersonCertification}"/> object of the request.
-        /// </summary>
-        /// <param name="personCertification">The PersonCertification to add.</param>
-        /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonCertification>> AddResponseAsync(PersonCertification personCertification)
-        {
-            return this.AddResponseAsync(personCertification, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PersonCertification to the collection via POST and returns a <see cref="GraphResponse{PersonCertification}"/> object of the request.
         /// </summary>
         /// <param name="personCertification">The PersonCertification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonCertification}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonCertification>> AddResponseAsync(PersonCertification personCertification, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonCertification>> AddResponseAsync(PersonCertification personCertification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PersonCertification>(personCertification, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileCertificationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileCertificationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileCertificationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileCertificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileCertificationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileCertificationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileCertificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileCertificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileCertificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

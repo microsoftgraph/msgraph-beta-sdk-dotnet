@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
-        /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> CreateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate);
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> CreateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionAppLearningSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> CreateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionAppLearningSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionAppLearningSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionAppLearningSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsInformationProtectionAppLearningSummary.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary to update.</param>
-        /// <returns>The updated WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> UpdateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH.
-        /// </summary>
-        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> UpdateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate);
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> UpdateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

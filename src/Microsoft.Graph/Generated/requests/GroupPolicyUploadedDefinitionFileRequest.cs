@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyUploadedDefinitionFile using POST.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
-        /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate)
-        {
-            return this.CreateAsync(groupPolicyUploadedDefinitionFileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyUploadedDefinitionFile using POST.
-        /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyUploadedDefinitionFile.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> CreateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyUploadedDefinitionFile using POST and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> CreateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate)
-        {
-            return this.CreateResponseAsync(groupPolicyUploadedDefinitionFileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyUploadedDefinitionFile using POST and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFileToCreate">The GroupPolicyUploadedDefinitionFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> CreateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> CreateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupPolicyUploadedDefinitionFile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyUploadedDefinitionFile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<GroupPolicyUploadedDefinitionFile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupPolicyUploadedDefinitionFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyUploadedDefinitionFile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
-        /// <returns>The updated GroupPolicyUploadedDefinitionFile.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate)
-        {
-            return this.UpdateAsync(groupPolicyUploadedDefinitionFileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyUploadedDefinitionFile.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> UpdateAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyUploadedDefinitionFileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyUploadedDefinitionFileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
         /// </summary>
         /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> UpdateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate)
-        {
-            return this.UpdateResponseAsync(groupPolicyUploadedDefinitionFileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyUploadedDefinitionFile using PATCH and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyUploadedDefinitionFileToUpdate">The GroupPolicyUploadedDefinitionFile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> UpdateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> UpdateResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyUploadedDefinitionFileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyUploadedDefinitionFileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyUploadedDefinitionFileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFileToUpdate, cancellationToken).ConfigureAwait(false);
         }

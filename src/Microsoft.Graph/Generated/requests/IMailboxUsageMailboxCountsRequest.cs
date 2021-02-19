@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MailboxUsageMailboxCounts using POST.
         /// </summary>
         /// <param name="mailboxUsageMailboxCountsToCreate">The MailboxUsageMailboxCounts to create.</param>
-        /// <returns>The created MailboxUsageMailboxCounts.</returns>
-        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> CreateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate);
-
-        /// <summary>
-        /// Creates the specified MailboxUsageMailboxCounts using POST.
-        /// </summary>
-        /// <param name="mailboxUsageMailboxCountsToCreate">The MailboxUsageMailboxCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailboxUsageMailboxCounts.</returns>
-        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> CreateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MailboxUsageMailboxCounts using POST and returns a <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object.
-        /// </summary>
-        /// <param name="mailboxUsageMailboxCountsToCreate">The MailboxUsageMailboxCounts to create.</param>
-        /// <returns>The <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> CreateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate);
+        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> CreateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MailboxUsageMailboxCounts using POST and returns a <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="mailboxUsageMailboxCountsToCreate">The MailboxUsageMailboxCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> CreateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MailboxUsageMailboxCounts.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> CreateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MailboxUsageMailboxCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MailboxUsageMailboxCounts and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MailboxUsageMailboxCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MailboxUsageMailboxCounts.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MailboxUsageMailboxCounts using PATCH.
         /// </summary>
         /// <param name="mailboxUsageMailboxCountsToUpdate">The MailboxUsageMailboxCounts to update.</param>
-        /// <returns>The updated MailboxUsageMailboxCounts.</returns>
-        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> UpdateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate);
-
-        /// <summary>
-        /// Updates the specified MailboxUsageMailboxCounts using PATCH.
-        /// </summary>
-        /// <param name="mailboxUsageMailboxCountsToUpdate">The MailboxUsageMailboxCounts to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageMailboxCounts.</returns>
-        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> UpdateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MailboxUsageMailboxCounts using PATCH and returns a <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object.
-        /// </summary>
-        /// <param name="mailboxUsageMailboxCountsToUpdate">The MailboxUsageMailboxCounts to update.</param>
-        /// <returns>The <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> UpdateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate);
+        System.Threading.Tasks.Task<MailboxUsageMailboxCounts> UpdateAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MailboxUsageMailboxCounts using PATCH and returns a <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MailboxUsageMailboxCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> UpdateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageMailboxCounts>> UpdateResponseAsync(MailboxUsageMailboxCounts mailboxUsageMailboxCountsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

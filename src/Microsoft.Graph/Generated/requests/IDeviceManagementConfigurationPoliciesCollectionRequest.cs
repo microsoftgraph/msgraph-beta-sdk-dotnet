@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementConfigurationPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
-        /// <returns>The created DeviceManagementConfigurationPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> AddAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy);
-
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> AddAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> AddResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy);
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> AddAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationPolicy to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementConfigurationPolicy">The DeviceManagementConfigurationPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> AddResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> AddResponseAsync(DeviceManagementConfigurationPolicy deviceManagementConfigurationPolicy, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementConfigurationPoliciesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementConfigurationPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementConfigurationPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

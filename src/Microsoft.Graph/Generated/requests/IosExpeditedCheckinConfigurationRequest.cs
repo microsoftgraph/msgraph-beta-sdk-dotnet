@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosExpeditedCheckinConfiguration using POST.
         /// </summary>
         /// <param name="iosExpeditedCheckinConfigurationToCreate">The IosExpeditedCheckinConfiguration to create.</param>
-        /// <returns>The created IosExpeditedCheckinConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> CreateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate)
-        {
-            return this.CreateAsync(iosExpeditedCheckinConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosExpeditedCheckinConfiguration using POST.
-        /// </summary>
-        /// <param name="iosExpeditedCheckinConfigurationToCreate">The IosExpeditedCheckinConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosExpeditedCheckinConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> CreateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> CreateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosExpeditedCheckinConfiguration>(iosExpeditedCheckinConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosExpeditedCheckinConfiguration using POST and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
         /// </summary>
         /// <param name="iosExpeditedCheckinConfigurationToCreate">The IosExpeditedCheckinConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> CreateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(iosExpeditedCheckinConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosExpeditedCheckinConfiguration using POST and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosExpeditedCheckinConfigurationToCreate">The IosExpeditedCheckinConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> CreateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> CreateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosExpeditedCheckinConfiguration>(iosExpeditedCheckinConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosExpeditedCheckinConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosExpeditedCheckinConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosExpeditedCheckinConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosExpeditedCheckinConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosExpeditedCheckinConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosExpeditedCheckinConfiguration using PATCH.
         /// </summary>
         /// <param name="iosExpeditedCheckinConfigurationToUpdate">The IosExpeditedCheckinConfiguration to update.</param>
-        /// <returns>The updated IosExpeditedCheckinConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> UpdateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate)
-        {
-            return this.UpdateAsync(iosExpeditedCheckinConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosExpeditedCheckinConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosExpeditedCheckinConfigurationToUpdate">The IosExpeditedCheckinConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosExpeditedCheckinConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> UpdateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> UpdateAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosExpeditedCheckinConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosExpeditedCheckinConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosExpeditedCheckinConfiguration>(iosExpeditedCheckinConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosExpeditedCheckinConfiguration using PATCH and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
         /// </summary>
         /// <param name="iosExpeditedCheckinConfigurationToUpdate">The IosExpeditedCheckinConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> UpdateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(iosExpeditedCheckinConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosExpeditedCheckinConfiguration using PATCH and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosExpeditedCheckinConfigurationToUpdate">The IosExpeditedCheckinConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> UpdateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> UpdateResponseAsync(IosExpeditedCheckinConfiguration iosExpeditedCheckinConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosExpeditedCheckinConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosExpeditedCheckinConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosExpeditedCheckinConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosExpeditedCheckinConfiguration>(iosExpeditedCheckinConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

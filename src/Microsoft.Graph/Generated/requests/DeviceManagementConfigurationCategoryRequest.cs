@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementConfigurationCategory using POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationCategoryToCreate">The DeviceManagementConfigurationCategory to create.</param>
-        /// <returns>The created DeviceManagementConfigurationCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> CreateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate)
-        {
-            return this.CreateAsync(deviceManagementConfigurationCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementConfigurationCategory using POST.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationCategoryToCreate">The DeviceManagementConfigurationCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationCategory.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> CreateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> CreateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementConfigurationCategory>(deviceManagementConfigurationCategoryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementConfigurationCategory using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
         /// </summary>
         /// <param name="deviceManagementConfigurationCategoryToCreate">The DeviceManagementConfigurationCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> CreateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementConfigurationCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementConfigurationCategory using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationCategoryToCreate">The DeviceManagementConfigurationCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> CreateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> CreateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationCategory>(deviceManagementConfigurationCategoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementConfigurationCategory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementConfigurationCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementConfigurationCategory>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementConfigurationCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementConfigurationCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementConfigurationCategory using PATCH.
         /// </summary>
         /// <param name="deviceManagementConfigurationCategoryToUpdate">The DeviceManagementConfigurationCategory to update.</param>
-        /// <returns>The updated DeviceManagementConfigurationCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> UpdateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementConfigurationCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementConfigurationCategory using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationCategoryToUpdate">The DeviceManagementConfigurationCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementConfigurationCategory.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> UpdateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> UpdateAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementConfigurationCategoryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementConfigurationCategoryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementConfigurationCategory>(deviceManagementConfigurationCategoryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementConfigurationCategory using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
         /// </summary>
         /// <param name="deviceManagementConfigurationCategoryToUpdate">The DeviceManagementConfigurationCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> UpdateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementConfigurationCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementConfigurationCategory using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationCategoryToUpdate">The DeviceManagementConfigurationCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> UpdateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> UpdateResponseAsync(DeviceManagementConfigurationCategory deviceManagementConfigurationCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementConfigurationCategoryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementConfigurationCategoryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementConfigurationCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationCategory>(deviceManagementConfigurationCategoryToUpdate, cancellationToken).ConfigureAwait(false);
         }

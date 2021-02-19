@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PurchaseInvoiceLine to the collection via POST.
-        /// </summary>
-        /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
-        /// <returns>The created PurchaseInvoiceLine.</returns>
-        public System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine)
-        {
-            return this.AddAsync(purchaseInvoiceLine, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PurchaseInvoiceLine to the collection via POST.
         /// </summary>
         /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PurchaseInvoiceLine.</returns>
-        public System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PurchaseInvoiceLine>(purchaseInvoiceLine, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PurchaseInvoiceLine to the collection via POST and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.
-        /// </summary>
-        /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
-        /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> AddResponseAsync(PurchaseInvoiceLine purchaseInvoiceLine)
-        {
-            return this.AddResponseAsync(purchaseInvoiceLine, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PurchaseInvoiceLine to the collection via POST and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.
         /// </summary>
         /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> AddResponseAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> AddResponseAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(purchaseInvoiceLine, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPurchaseInvoicePurchaseInvoiceLinesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPurchaseInvoicePurchaseInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPurchaseInvoicePurchaseInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PurchaseInvoicePurchaseInvoiceLinesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PurchaseInvoicePurchaseInvoiceLinesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PurchaseInvoicePurchaseInvoiceLinesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PurchaseInvoicePurchaseInvoiceLinesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PurchaseInvoicePurchaseInvoiceLinesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

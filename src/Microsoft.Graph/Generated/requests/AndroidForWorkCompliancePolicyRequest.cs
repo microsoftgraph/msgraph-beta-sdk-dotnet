@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
-        /// <returns>The created AndroidForWorkCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate)
-        {
-            return this.CreateAsync(androidForWorkCompliancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkCompliancePolicy using POST.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> CreateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidForWorkCompliancePolicy>(androidForWorkCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate)
-        {
-            return this.CreateResponseAsync(androidForWorkCompliancePolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToCreate">The AndroidForWorkCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> CreateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidForWorkCompliancePolicy>(androidForWorkCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidForWorkCompliancePolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkCompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidForWorkCompliancePolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidForWorkCompliancePolicy using PATCH.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
-        /// <returns>The updated AndroidForWorkCompliancePolicy.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate)
-        {
-            return this.UpdateAsync(androidForWorkCompliancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkCompliancePolicy using PATCH.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkCompliancePolicy.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> UpdateAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidForWorkCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkCompliancePolicyToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCompliancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidForWorkCompliancePolicy>(androidForWorkCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidForWorkCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(androidForWorkCompliancePolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkCompliancePolicy using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkCompliancePolicyToUpdate">The AndroidForWorkCompliancePolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> UpdateResponseAsync(AndroidForWorkCompliancePolicy androidForWorkCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidForWorkCompliancePolicyToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCompliancePolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkCompliancePolicyToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkCompliancePolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidForWorkCompliancePolicy>(androidForWorkCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

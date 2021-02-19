@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified CommsApplication using POST.
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
-        /// <returns>The created CommsApplication.</returns>
-        public System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate)
-        {
-            return this.CreateAsync(commsApplicationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CommsApplication using POST.
-        /// </summary>
-        /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CommsApplication.</returns>
-        public async System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CommsApplication> CreateAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CommsApplication>(commsApplicationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified CommsApplication using POST and returns a <see cref="GraphResponse{CommsApplication}"/> object.
         /// </summary>
         /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
-        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CommsApplication>> CreateResponseAsync(CommsApplication commsApplicationToCreate)
-        {
-            return this.CreateResponseAsync(commsApplicationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CommsApplication using POST and returns a <see cref="GraphResponse{CommsApplication}"/> object.
-        /// </summary>
-        /// <param name="commsApplicationToCreate">The CommsApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CommsApplication>> CreateResponseAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CommsApplication>> CreateResponseAsync(CommsApplication commsApplicationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CommsApplication>(commsApplicationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CommsApplication.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CommsApplication.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<CommsApplication>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CommsApplication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CommsApplication and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified CommsApplication using PATCH.
         /// </summary>
         /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
-        /// <returns>The updated CommsApplication.</returns>
-        public System.Threading.Tasks.Task<CommsApplication> UpdateAsync(CommsApplication commsApplicationToUpdate)
-        {
-            return this.UpdateAsync(commsApplicationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CommsApplication using PATCH.
-        /// </summary>
-        /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CommsApplication.</returns>
-        public async System.Threading.Tasks.Task<CommsApplication> UpdateAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CommsApplication> UpdateAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (commsApplicationToUpdate.AdditionalData != null)
-			{
-				if (commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, commsApplicationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (commsApplicationToUpdate.AdditionalData != null)
-            {
-                if (commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, commsApplicationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CommsApplication>(commsApplicationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified CommsApplication using PATCH and returns a <see cref="GraphResponse{CommsApplication}"/> object.
         /// </summary>
         /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
-        /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CommsApplication>> UpdateResponseAsync(CommsApplication commsApplicationToUpdate)
-        {
-            return this.UpdateResponseAsync(commsApplicationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CommsApplication using PATCH and returns a <see cref="GraphResponse{CommsApplication}"/> object.
-        /// </summary>
-        /// <param name="commsApplicationToUpdate">The CommsApplication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CommsApplication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CommsApplication>> UpdateResponseAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CommsApplication>> UpdateResponseAsync(CommsApplication commsApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (commsApplicationToUpdate.AdditionalData != null)
-			{
-				if (commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, commsApplicationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (commsApplicationToUpdate.AdditionalData != null)
-            {
-                if (commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    commsApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, commsApplicationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CommsApplication>(commsApplicationToUpdate, cancellationToken).ConfigureAwait(false);
         }

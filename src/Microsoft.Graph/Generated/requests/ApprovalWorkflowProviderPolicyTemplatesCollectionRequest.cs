@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GovernancePolicyTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
-        /// <returns>The created GovernancePolicyTemplate.</returns>
-        public System.Threading.Tasks.Task<GovernancePolicyTemplate> AddAsync(GovernancePolicyTemplate governancePolicyTemplate)
-        {
-            return this.AddAsync(governancePolicyTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GovernancePolicyTemplate to the collection via POST.
         /// </summary>
         /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernancePolicyTemplate.</returns>
-        public System.Threading.Tasks.Task<GovernancePolicyTemplate> AddAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GovernancePolicyTemplate> AddAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<GovernancePolicyTemplate>(governancePolicyTemplate, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified GovernancePolicyTemplate to the collection via POST and returns a <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> AddResponseAsync(GovernancePolicyTemplate governancePolicyTemplate)
-        {
-            return this.AddResponseAsync(governancePolicyTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GovernancePolicyTemplate to the collection via POST and returns a <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.
         /// </summary>
         /// <param name="governancePolicyTemplate">The GovernancePolicyTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernancePolicyTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> AddResponseAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GovernancePolicyTemplate>> AddResponseAsync(GovernancePolicyTemplate governancePolicyTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GovernancePolicyTemplate>(governancePolicyTemplate, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IApprovalWorkflowProviderPolicyTemplatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IApprovalWorkflowProviderPolicyTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IApprovalWorkflowProviderPolicyTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProviderPolicyTemplatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ApprovalWorkflowProviderPolicyTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

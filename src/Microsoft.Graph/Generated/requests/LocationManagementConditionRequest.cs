@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified LocationManagementCondition using POST.
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
-        /// <returns>The created LocationManagementCondition.</returns>
-        public System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate)
-        {
-            return this.CreateAsync(locationManagementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LocationManagementCondition using POST.
-        /// </summary>
-        /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocationManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LocationManagementCondition> CreateAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<LocationManagementCondition>(locationManagementConditionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified LocationManagementCondition using POST and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
         /// </summary>
         /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
-        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> CreateResponseAsync(LocationManagementCondition locationManagementConditionToCreate)
-        {
-            return this.CreateResponseAsync(locationManagementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LocationManagementCondition using POST and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
-        /// </summary>
-        /// <param name="locationManagementConditionToCreate">The LocationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> CreateResponseAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> CreateResponseAsync(LocationManagementCondition locationManagementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LocationManagementCondition>(locationManagementConditionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LocationManagementCondition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LocationManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<LocationManagementCondition>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LocationManagementCondition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LocationManagementCondition and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified LocationManagementCondition using PATCH.
         /// </summary>
         /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
-        /// <returns>The updated LocationManagementCondition.</returns>
-        public System.Threading.Tasks.Task<LocationManagementCondition> UpdateAsync(LocationManagementCondition locationManagementConditionToUpdate)
-        {
-            return this.UpdateAsync(locationManagementConditionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LocationManagementCondition using PATCH.
-        /// </summary>
-        /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LocationManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<LocationManagementCondition> UpdateAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LocationManagementCondition> UpdateAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (locationManagementConditionToUpdate.AdditionalData != null)
-			{
-				if (locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locationManagementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (locationManagementConditionToUpdate.AdditionalData != null)
-            {
-                if (locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locationManagementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LocationManagementCondition>(locationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified LocationManagementCondition using PATCH and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
         /// </summary>
         /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
-        /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> UpdateResponseAsync(LocationManagementCondition locationManagementConditionToUpdate)
-        {
-            return this.UpdateResponseAsync(locationManagementConditionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LocationManagementCondition using PATCH and returns a <see cref="GraphResponse{LocationManagementCondition}"/> object.
-        /// </summary>
-        /// <param name="locationManagementConditionToUpdate">The LocationManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LocationManagementCondition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> UpdateResponseAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LocationManagementCondition>> UpdateResponseAsync(LocationManagementCondition locationManagementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (locationManagementConditionToUpdate.AdditionalData != null)
-			{
-				if (locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locationManagementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (locationManagementConditionToUpdate.AdditionalData != null)
-            {
-                if (locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    locationManagementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, locationManagementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<LocationManagementCondition>(locationManagementConditionToUpdate, cancellationToken).ConfigureAwait(false);
         }

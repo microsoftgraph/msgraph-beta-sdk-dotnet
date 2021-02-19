@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SingleValueLegacyExtendedProperty to the collection via POST.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedProperty">The SingleValueLegacyExtendedProperty to add.</param>
-        /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> AddAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty)
-        {
-            return this.AddAsync(singleValueLegacyExtendedProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SingleValueLegacyExtendedProperty to the collection via POST.
         /// </summary>
         /// <param name="singleValueLegacyExtendedProperty">The SingleValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> AddAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> AddAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SingleValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.
-        /// </summary>
-        /// <param name="singleValueLegacyExtendedProperty">The SingleValueLegacyExtendedProperty to add.</param>
-        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty)
-        {
-            return this.AddResponseAsync(singleValueLegacyExtendedProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SingleValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.
         /// </summary>
         /// <param name="singleValueLegacyExtendedProperty">The SingleValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOutlookTaskFolderSingleValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OutlookTaskFolderSingleValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

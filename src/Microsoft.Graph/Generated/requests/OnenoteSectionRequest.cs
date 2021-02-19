@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified OnenoteSection using POST.
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
-        /// <returns>The created OnenoteSection.</returns>
-        public System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate)
-        {
-            return this.CreateAsync(onenoteSectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OnenoteSection using POST.
-        /// </summary>
-        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteSection.</returns>
-        public async System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OnenoteSection>(onenoteSectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
-        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate)
-        {
-            return this.CreateResponseAsync(onenoteSectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
-        /// </summary>
-        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnenoteSection>(onenoteSectionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OnenoteSection.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OnenoteSection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<OnenoteSection>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OnenoteSection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OnenoteSection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified OnenoteSection using PATCH.
         /// </summary>
         /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
-        /// <returns>The updated OnenoteSection.</returns>
-        public System.Threading.Tasks.Task<OnenoteSection> UpdateAsync(OnenoteSection onenoteSectionToUpdate)
-        {
-            return this.UpdateAsync(onenoteSectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OnenoteSection using PATCH.
-        /// </summary>
-        /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnenoteSection.</returns>
-        public async System.Threading.Tasks.Task<OnenoteSection> UpdateAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnenoteSection> UpdateAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (onenoteSectionToUpdate.AdditionalData != null)
-			{
-				if (onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteSectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onenoteSectionToUpdate.AdditionalData != null)
-            {
-                if (onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteSectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OnenoteSection>(onenoteSectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified OnenoteSection using PATCH and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
         /// </summary>
         /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
-        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> UpdateResponseAsync(OnenoteSection onenoteSectionToUpdate)
-        {
-            return this.UpdateResponseAsync(onenoteSectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OnenoteSection using PATCH and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
-        /// </summary>
-        /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> UpdateResponseAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> UpdateResponseAsync(OnenoteSection onenoteSectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (onenoteSectionToUpdate.AdditionalData != null)
-			{
-				if (onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteSectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onenoteSectionToUpdate.AdditionalData != null)
-            {
-                if (onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onenoteSectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteSectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OnenoteSection>(onenoteSectionToUpdate, cancellationToken).ConfigureAwait(false);
         }

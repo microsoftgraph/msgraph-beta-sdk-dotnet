@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ConnectorGroup to the collection via POST.
-        /// </summary>
-        /// <param name="connectorGroup">The ConnectorGroup to add.</param>
-        /// <returns>The created ConnectorGroup.</returns>
-        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup)
-        {
-            return this.AddAsync(connectorGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConnectorGroup to the collection via POST.
         /// </summary>
         /// <param name="connectorGroup">The ConnectorGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectorGroup.</returns>
-        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ConnectorGroup>(connectorGroup, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ConnectorGroup to the collection via POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="connectorGroup">The ConnectorGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup)
-        {
-            return this.AddResponseAsync(connectorGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConnectorGroup to the collection via POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object of the request.
         /// </summary>
         /// <param name="connectorGroup">The ConnectorGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ConnectorGroup>(connectorGroup, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ConnectorMemberOfCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ConnectorMemberOfCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

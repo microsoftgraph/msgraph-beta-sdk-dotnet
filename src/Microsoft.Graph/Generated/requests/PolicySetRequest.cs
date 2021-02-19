@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PolicySet using POST.
         /// </summary>
         /// <param name="policySetToCreate">The PolicySet to create.</param>
-        /// <returns>The created PolicySet.</returns>
-        public System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate)
-        {
-            return this.CreateAsync(policySetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PolicySet using POST.
-        /// </summary>
-        /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySet.</returns>
-        public async System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PolicySet>(policySetToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
         /// </summary>
         /// <param name="policySetToCreate">The PolicySet to create.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate)
-        {
-            return this.CreateResponseAsync(policySetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
-        /// </summary>
-        /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PolicySet>(policySetToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PolicySet.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PolicySet.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PolicySet>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PolicySet using PATCH.
         /// </summary>
         /// <param name="policySetToUpdate">The PolicySet to update.</param>
-        /// <returns>The updated PolicySet.</returns>
-        public System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate)
-        {
-            return this.UpdateAsync(policySetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PolicySet using PATCH.
-        /// </summary>
-        /// <param name="policySetToUpdate">The PolicySet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicySet.</returns>
-        public async System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (policySetToUpdate.AdditionalData != null)
-			{
-				if (policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (policySetToUpdate.AdditionalData != null)
-            {
-                if (policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PolicySet>(policySetToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
         /// </summary>
         /// <param name="policySetToUpdate">The PolicySet to update.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate)
-        {
-            return this.UpdateResponseAsync(policySetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
-        /// </summary>
-        /// <param name="policySetToUpdate">The PolicySet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (policySetToUpdate.AdditionalData != null)
-			{
-				if (policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (policySetToUpdate.AdditionalData != null)
-            {
-                if (policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    policySetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PolicySet>(policySetToUpdate, cancellationToken).ConfigureAwait(false);
         }

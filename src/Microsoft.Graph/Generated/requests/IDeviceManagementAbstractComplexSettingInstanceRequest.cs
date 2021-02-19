@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST.
         /// </summary>
         /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
-        /// <returns>The created DeviceManagementAbstractComplexSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST.
-        /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementAbstractComplexSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> CreateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate);
+        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> CreateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementAbstractComplexSettingInstance.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> CreateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementAbstractComplexSettingInstance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementAbstractComplexSettingInstance and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementAbstractComplexSettingInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementAbstractComplexSettingInstance.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH.
         /// </summary>
         /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance to update.</param>
-        /// <returns>The updated DeviceManagementAbstractComplexSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementAbstractComplexSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> UpdateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate);
+        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> UpdateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> UpdateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

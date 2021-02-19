@@ -33,71 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementResourceAccessProfileBase to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
-        /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> AddAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase)
-        {
-            return this.AddAsync(deviceManagementResourceAccessProfileBase, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementResourceAccessProfileBase to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> AddAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> AddAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             deviceManagementResourceAccessProfileBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementResourceAccessProfileBase.GetType().FullName));
             return this.SendAsync<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBase, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementResourceAccessProfileBase to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> AddResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase)
-        {
-            return this.AddResponseAsync(deviceManagementResourceAccessProfileBase, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementResourceAccessProfileBase to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementResourceAccessProfileBase">The DeviceManagementResourceAccessProfileBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> AddResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> AddResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBase, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             deviceManagementResourceAccessProfileBase.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementResourceAccessProfileBase.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfileBase>(deviceManagementResourceAccessProfileBase, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfilesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementResourceAccessProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementResourceAccessProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementResourceAccessProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

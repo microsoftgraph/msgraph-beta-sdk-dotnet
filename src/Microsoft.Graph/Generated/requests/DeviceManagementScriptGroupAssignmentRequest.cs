@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementScriptGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
-        /// <returns>The created DeviceManagementScriptGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate)
-        {
-            return this.CreateAsync(deviceManagementScriptGroupAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementScriptGroupAssignment using POST.
-        /// </summary>
-        /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementScriptGroupAssignment>(deviceManagementScriptGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementScriptGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> CreateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementScriptGroupAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementScriptGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> CreateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> CreateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementScriptGroupAssignment>(deviceManagementScriptGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementScriptGroupAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementScriptGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
-        /// <returns>The updated DeviceManagementScriptGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementScriptGroupAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementScriptGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptGroupAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptGroupAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementScriptGroupAssignment>(deviceManagementScriptGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> UpdateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementScriptGroupAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> UpdateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> UpdateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptGroupAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementScriptGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptGroupAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementScriptGroupAssignment>(deviceManagementScriptGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Invitation to the collection via POST.
-        /// </summary>
-        /// <param name="invitation">The Invitation to add.</param>
-        /// <returns>The created Invitation.</returns>
-        public System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation)
-        {
-            return this.AddAsync(invitation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Invitation to the collection via POST.
         /// </summary>
         /// <param name="invitation">The Invitation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Invitation.</returns>
-        public System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Invitation>(invitation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Invitation to the collection via POST and returns a <see cref="GraphResponse{Invitation}"/> object of the request.
-        /// </summary>
-        /// <param name="invitation">The Invitation to add.</param>
-        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation)
-        {
-            return this.AddResponseAsync(invitation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Invitation to the collection via POST and returns a <see cref="GraphResponse{Invitation}"/> object of the request.
         /// </summary>
         /// <param name="invitation">The Invitation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Invitation>(invitation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceInvitationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceInvitationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceInvitationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceInvitationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

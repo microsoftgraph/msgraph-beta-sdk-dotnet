@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DomainDnsTxtRecord using POST.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
-        /// <returns>The created DomainDnsTxtRecord.</returns>
-        public System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate)
-        {
-            return this.CreateAsync(domainDnsTxtRecordToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DomainDnsTxtRecord using POST.
-        /// </summary>
-        /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsTxtRecord.</returns>
-        public async System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DomainDnsTxtRecord>(domainDnsTxtRecordToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DomainDnsTxtRecord using POST and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
         /// </summary>
         /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
-        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> CreateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate)
-        {
-            return this.CreateResponseAsync(domainDnsTxtRecordToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DomainDnsTxtRecord using POST and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
-        /// </summary>
-        /// <param name="domainDnsTxtRecordToCreate">The DomainDnsTxtRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> CreateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> CreateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DomainDnsTxtRecord>(domainDnsTxtRecordToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DomainDnsTxtRecord.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DomainDnsTxtRecord.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DomainDnsTxtRecord>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DomainDnsTxtRecord using PATCH.
         /// </summary>
         /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
-        /// <returns>The updated DomainDnsTxtRecord.</returns>
-        public System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate)
-        {
-            return this.UpdateAsync(domainDnsTxtRecordToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DomainDnsTxtRecord using PATCH.
-        /// </summary>
-        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainDnsTxtRecord.</returns>
-        public async System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (domainDnsTxtRecordToUpdate.AdditionalData != null)
-			{
-				if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsTxtRecordToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (domainDnsTxtRecordToUpdate.AdditionalData != null)
-            {
-                if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsTxtRecordToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DomainDnsTxtRecord>(domainDnsTxtRecordToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DomainDnsTxtRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
         /// </summary>
         /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
-        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> UpdateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate)
-        {
-            return this.UpdateResponseAsync(domainDnsTxtRecordToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DomainDnsTxtRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
-        /// </summary>
-        /// <param name="domainDnsTxtRecordToUpdate">The DomainDnsTxtRecord to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> UpdateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> UpdateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (domainDnsTxtRecordToUpdate.AdditionalData != null)
-			{
-				if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsTxtRecordToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (domainDnsTxtRecordToUpdate.AdditionalData != null)
-            {
-                if (domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    domainDnsTxtRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsTxtRecordToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DomainDnsTxtRecord>(domainDnsTxtRecordToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified VulnerableManagedDevice to the collection via POST.
-        /// </summary>
-        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
-        /// <returns>The created VulnerableManagedDevice.</returns>
-        public System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice)
-        {
-            return this.AddAsync(vulnerableManagedDevice, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified VulnerableManagedDevice to the collection via POST.
         /// </summary>
         /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VulnerableManagedDevice.</returns>
-        public System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<VulnerableManagedDevice> AddAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<VulnerableManagedDevice>(vulnerableManagedDevice, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified VulnerableManagedDevice to the collection via POST and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.
-        /// </summary>
-        /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
-        /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> AddResponseAsync(VulnerableManagedDevice vulnerableManagedDevice)
-        {
-            return this.AddResponseAsync(vulnerableManagedDevice, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified VulnerableManagedDevice to the collection via POST and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.
         /// </summary>
         /// <param name="vulnerableManagedDevice">The VulnerableManagedDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> AddResponseAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> AddResponseAsync(VulnerableManagedDevice vulnerableManagedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<VulnerableManagedDevice>(vulnerableManagedDevice, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityConfigurationTaskManagedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SecurityConfigurationTaskManagedDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityConfigurationTaskManagedDevicesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SecurityConfigurationTaskManagedDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

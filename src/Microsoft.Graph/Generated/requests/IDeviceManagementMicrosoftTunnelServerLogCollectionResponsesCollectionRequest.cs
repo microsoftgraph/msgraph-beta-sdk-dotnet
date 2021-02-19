@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST.
-        /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
-        /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse);
-
         /// <summary>
         /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.
-        /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse);
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

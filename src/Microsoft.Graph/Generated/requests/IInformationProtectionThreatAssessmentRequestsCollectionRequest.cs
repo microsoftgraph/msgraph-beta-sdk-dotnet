@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IInformationProtectionThreatAssessmentRequestsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ThreatAssessmentRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
-        /// <returns>The created ThreatAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> AddAsync(ThreatAssessmentRequestObject threatAssessmentRequest);
-
         /// <summary>
         /// Adds the specified ThreatAssessmentRequestObject to the collection via POST.
         /// </summary>
         /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThreatAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> AddAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ThreatAssessmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.
-        /// </summary>
-        /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
-        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest);
+        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> AddAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ThreatAssessmentRequestObject to the collection via POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IInformationProtectionThreatAssessmentRequestsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IInformationProtectionThreatAssessmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IInformationProtectionThreatAssessmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,23 +24,9 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified LegalHold using POST.
         /// </summary>
         /// <param name="legalHoldToCreate">The LegalHold to create.</param>
-        /// <returns>The created LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate);
-
-        /// <summary>
-        /// Creates the specified LegalHold using POST.
-        /// </summary>
-        /// <param name="legalHoldToCreate">The LegalHold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified LegalHold using POST and returns a <see cref="GraphResponse{LegalHold}"/> object.
-        /// </summary>
-        /// <param name="legalHoldToCreate">The LegalHold to create.</param>
-        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LegalHold>> CreateResponseAsync(LegalHold legalHoldToCreate);
+        System.Threading.Tasks.Task<LegalHold> CreateAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified LegalHold using POST and returns a <see cref="GraphResponse{LegalHold}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="legalHoldToCreate">The LegalHold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LegalHold>> CreateResponseAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LegalHold.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<LegalHold>> CreateResponseAsync(LegalHold legalHoldToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LegalHold.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LegalHold and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LegalHold and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LegalHold.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified LegalHold using PATCH.
         /// </summary>
         /// <param name="legalHoldToUpdate">The LegalHold to update.</param>
-        /// <returns>The updated LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate);
-
-        /// <summary>
-        /// Updates the specified LegalHold using PATCH.
-        /// </summary>
-        /// <param name="legalHoldToUpdate">The LegalHold to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified LegalHold using PATCH and returns a <see cref="GraphResponse{LegalHold}"/> object.
-        /// </summary>
-        /// <param name="legalHoldToUpdate">The LegalHold to update.</param>
-        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LegalHold>> UpdateResponseAsync(LegalHold legalHoldToUpdate);
+        System.Threading.Tasks.Task<LegalHold> UpdateAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LegalHold using PATCH and returns a <see cref="GraphResponse{LegalHold}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LegalHold>> UpdateResponseAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LegalHold>> UpdateResponseAsync(LegalHold legalHoldToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

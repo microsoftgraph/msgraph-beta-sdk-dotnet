@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
-        /// <returns>The created WindowsDeliveryOptimizationConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDeliveryOptimizationConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> CreateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate);
+        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> CreateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsDeliveryOptimizationConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> CreateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsDeliveryOptimizationConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsDeliveryOptimizationConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsDeliveryOptimizationConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsDeliveryOptimizationConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
-        /// <returns>The updated WindowsDeliveryOptimizationConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDeliveryOptimizationConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> UpdateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate);
+        System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> UpdateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> UpdateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

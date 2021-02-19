@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Domain to the collection via POST.
-        /// </summary>
-        /// <param name="domain">The Domain to add.</param>
-        /// <returns>The created Domain.</returns>
-        public System.Threading.Tasks.Task<Domain> AddAsync(Domain domain)
-        {
-            return this.AddAsync(domain, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Domain to the collection via POST.
         /// </summary>
         /// <param name="domain">The Domain to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Domain.</returns>
-        public System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Domain>(domain, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
-        /// </summary>
-        /// <param name="domain">The Domain to add.</param>
-        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain)
-        {
-            return this.AddResponseAsync(domain, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
         /// </summary>
         /// <param name="domain">The Domain to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Domain>(domain, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceDomainsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceDomainsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

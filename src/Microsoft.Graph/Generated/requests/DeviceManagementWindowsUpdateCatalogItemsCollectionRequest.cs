@@ -33,71 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsUpdateCatalogItem to the collection via POST.
-        /// </summary>
-        /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
-        /// <returns>The created WindowsUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem)
-        {
-            return this.AddAsync(windowsUpdateCatalogItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsUpdateCatalogItem to the collection via POST.
         /// </summary>
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             windowsUpdateCatalogItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsUpdateCatalogItem.GetType().FullName));
             return this.SendAsync<WindowsUpdateCatalogItem>(windowsUpdateCatalogItem, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsUpdateCatalogItem to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem)
-        {
-            return this.AddResponseAsync(windowsUpdateCatalogItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsUpdateCatalogItem to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.
         /// </summary>
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             windowsUpdateCatalogItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsUpdateCatalogItem.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<WindowsUpdateCatalogItem>(windowsUpdateCatalogItem, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

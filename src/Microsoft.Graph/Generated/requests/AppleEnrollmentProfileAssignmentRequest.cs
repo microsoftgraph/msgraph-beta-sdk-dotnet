@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AppleEnrollmentProfileAssignment using POST.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
-        /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate)
-        {
-            return this.CreateAsync(appleEnrollmentProfileAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppleEnrollmentProfileAssignment using POST.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleEnrollmentProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> CreateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AppleEnrollmentProfileAssignment using POST and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(appleEnrollmentProfileAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AppleEnrollmentProfileAssignment using POST and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToCreate">The AppleEnrollmentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> CreateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AppleEnrollmentProfileAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AppleEnrollmentProfileAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AppleEnrollmentProfileAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AppleEnrollmentProfileAssignment using PATCH.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
-        /// <returns>The updated AppleEnrollmentProfileAssignment.</returns>
-        public System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate)
-        {
-            return this.UpdateAsync(appleEnrollmentProfileAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AppleEnrollmentProfileAssignment using PATCH.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppleEnrollmentProfileAssignment.</returns>
-        public async System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> UpdateAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData != null)
-			{
-				if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleEnrollmentProfileAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData != null)
-            {
-                if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleEnrollmentProfileAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AppleEnrollmentProfileAssignment using PATCH and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
         /// </summary>
         /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(appleEnrollmentProfileAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AppleEnrollmentProfileAssignment using PATCH and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="appleEnrollmentProfileAssignmentToUpdate">The AppleEnrollmentProfileAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> UpdateResponseAsync(AppleEnrollmentProfileAssignment appleEnrollmentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData != null)
-			{
-				if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleEnrollmentProfileAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData != null)
-            {
-                if (appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    appleEnrollmentProfileAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, appleEnrollmentProfileAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AppleEnrollmentProfileAssignment>(appleEnrollmentProfileAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

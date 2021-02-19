@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Command to the collection via POST.
-        /// </summary>
-        /// <param name="command">The Command to add.</param>
-        /// <returns>The created Command.</returns>
-        public System.Threading.Tasks.Task<Command> AddAsync(Command command)
-        {
-            return this.AddAsync(command, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Command to the collection via POST.
         /// </summary>
         /// <param name="command">The Command to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Command.</returns>
-        public System.Threading.Tasks.Task<Command> AddAsync(Command command, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Command> AddAsync(Command command, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Command>(command, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
-        /// </summary>
-        /// <param name="command">The Command to add.</param>
-        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command)
-        {
-            return this.AddResponseAsync(command, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
         /// </summary>
         /// <param name="command">The Command to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Command>(command, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceCommandsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceCommandsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SensitivityLabel to the collection via POST.
-        /// </summary>
-        /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
-        /// <returns>The created SensitivityLabel.</returns>
-        public System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel)
-        {
-            return this.AddAsync(sensitivityLabel, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SensitivityLabel to the collection via POST.
         /// </summary>
         /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitivityLabel.</returns>
-        public System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SensitivityLabel> AddAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SensitivityLabel>(sensitivityLabel, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SensitivityLabel to the collection via POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object of the request.
-        /// </summary>
-        /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
-        /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel)
-        {
-            return this.AddResponseAsync(sensitivityLabel, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SensitivityLabel to the collection via POST and returns a <see cref="GraphResponse{SensitivityLabel}"/> object of the request.
         /// </summary>
         /// <param name="sensitivityLabel">The SensitivityLabel to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitivityLabel}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SensitivityLabel>> AddResponseAsync(SensitivityLabel sensitivityLabel, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SensitivityLabel>(sensitivityLabel, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDataClassificationServiceSensitivityLabelsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDataClassificationServiceSensitivityLabelsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDataClassificationServiceSensitivityLabelsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DataClassificationServiceSensitivityLabelsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitivityLabelsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DataClassificationServiceSensitivityLabelsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

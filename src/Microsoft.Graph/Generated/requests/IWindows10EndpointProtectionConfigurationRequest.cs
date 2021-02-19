@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10EndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
-        /// <returns>The created Windows10EndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified Windows10EndpointProtectionConfiguration using POST.
-        /// </summary>
-        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);
+        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Windows10EndpointProtectionConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Windows10EndpointProtectionConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Windows10EndpointProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Windows10EndpointProtectionConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10EndpointProtectionConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToUpdate">The Windows10EndpointProtectionConfiguration to update.</param>
-        /// <returns>The updated Windows10EndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> UpdateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windows10EndpointProtectionConfigurationToUpdate">The Windows10EndpointProtectionConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10EndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> UpdateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10EndpointProtectionConfigurationToUpdate">The Windows10EndpointProtectionConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> UpdateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate);
+        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> UpdateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> UpdateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> UpdateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

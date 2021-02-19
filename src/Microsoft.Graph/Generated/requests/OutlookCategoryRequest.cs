@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookCategory using POST.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
-        /// <returns>The created OutlookCategory.</returns>
-        public System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate)
-        {
-            return this.CreateAsync(outlookCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OutlookCategory using POST.
-        /// </summary>
-        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
-        public async System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OutlookCategory>(outlookCategoryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate)
-        {
-            return this.CreateResponseAsync(outlookCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
-        /// </summary>
-        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OutlookCategory>(outlookCategoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OutlookCategory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OutlookCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<OutlookCategory>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OutlookCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OutlookCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified OutlookCategory using PATCH.
         /// </summary>
         /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
-        /// <returns>The updated OutlookCategory.</returns>
-        public System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate)
-        {
-            return this.UpdateAsync(outlookCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OutlookCategory using PATCH.
-        /// </summary>
-        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookCategory.</returns>
-        public async System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (outlookCategoryToUpdate.AdditionalData != null)
-			{
-				if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (outlookCategoryToUpdate.AdditionalData != null)
-            {
-                if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OutlookCategory>(outlookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
         /// </summary>
         /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate)
-        {
-            return this.UpdateResponseAsync(outlookCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
-        /// </summary>
-        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (outlookCategoryToUpdate.AdditionalData != null)
-			{
-				if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (outlookCategoryToUpdate.AdditionalData != null)
-            {
-                if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OutlookCategory>(outlookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
         }

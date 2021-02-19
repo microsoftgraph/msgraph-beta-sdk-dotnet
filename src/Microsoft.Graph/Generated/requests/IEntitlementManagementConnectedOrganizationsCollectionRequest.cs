@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEntitlementManagementConnectedOrganizationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ConnectedOrganization to the collection via POST.
-        /// </summary>
-        /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
-        /// <returns>The created ConnectedOrganization.</returns>
-        System.Threading.Tasks.Task<ConnectedOrganization> AddAsync(ConnectedOrganization connectedOrganization);
-
         /// <summary>
         /// Adds the specified ConnectedOrganization to the collection via POST.
         /// </summary>
         /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectedOrganization.</returns>
-        System.Threading.Tasks.Task<ConnectedOrganization> AddAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ConnectedOrganization to the collection via POST and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.
-        /// </summary>
-        /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
-        /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> AddResponseAsync(ConnectedOrganization connectedOrganization);
+        System.Threading.Tasks.Task<ConnectedOrganization> AddAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ConnectedOrganization to the collection via POST and returns a <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="connectedOrganization">The ConnectedOrganization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectedOrganization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> AddResponseAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConnectedOrganization>> AddResponseAsync(ConnectedOrganization connectedOrganization, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementConnectedOrganizationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementConnectedOrganizationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementConnectedOrganizationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EntitlementManagementConnectedOrganizationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IEntitlementManagementConnectedOrganizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementConnectedOrganizationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EntitlementManagementConnectedOrganizationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementConnectedOrganizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

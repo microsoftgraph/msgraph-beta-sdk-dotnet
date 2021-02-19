@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedDeviceCertificateState using POST.
         /// </summary>
         /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
-        /// <returns>The created ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> CreateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate);
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceCertificateState using POST.
-        /// </summary>
-        /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> CreateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ManagedDeviceCertificateState using POST and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
-        /// </summary>
-        /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> CreateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate);
+        System.Threading.Tasks.Task<ManagedDeviceCertificateState> CreateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ManagedDeviceCertificateState using POST and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceCertificateStateToCreate">The ManagedDeviceCertificateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> CreateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedDeviceCertificateState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> CreateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedDeviceCertificateState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedDeviceCertificateState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedDeviceCertificateState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceCertificateState.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedDeviceCertificateState using PATCH.
         /// </summary>
         /// <param name="managedDeviceCertificateStateToUpdate">The ManagedDeviceCertificateState to update.</param>
-        /// <returns>The updated ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> UpdateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate);
-
-        /// <summary>
-        /// Updates the specified ManagedDeviceCertificateState using PATCH.
-        /// </summary>
-        /// <param name="managedDeviceCertificateStateToUpdate">The ManagedDeviceCertificateState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> UpdateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ManagedDeviceCertificateState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
-        /// </summary>
-        /// <param name="managedDeviceCertificateStateToUpdate">The ManagedDeviceCertificateState to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> UpdateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate);
+        System.Threading.Tasks.Task<ManagedDeviceCertificateState> UpdateAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceCertificateState using PATCH and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> UpdateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> UpdateResponseAsync(ManagedDeviceCertificateState managedDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

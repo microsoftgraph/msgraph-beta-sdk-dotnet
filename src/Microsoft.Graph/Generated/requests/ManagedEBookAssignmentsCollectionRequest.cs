@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
-        /// <returns>The created ManagedEBookAssignment.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment)
-        {
-            return this.AddAsync(managedEBookAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedEBookAssignment to the collection via POST.
         /// </summary>
         /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBookAssignment.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedEBookAssignment> AddAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedEBookAssignment>(managedEBookAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookAssignment to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> AddResponseAsync(ManagedEBookAssignment managedEBookAssignment)
-        {
-            return this.AddResponseAsync(managedEBookAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedEBookAssignment to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.
         /// </summary>
         /// <param name="managedEBookAssignment">The ManagedEBookAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> AddResponseAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> AddResponseAsync(ManagedEBookAssignment managedEBookAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(managedEBookAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedEBookAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagedEBookAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBookAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagedEBookAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

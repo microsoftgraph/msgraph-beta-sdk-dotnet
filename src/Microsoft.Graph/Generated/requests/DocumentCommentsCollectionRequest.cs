@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DocumentComment to the collection via POST.
-        /// </summary>
-        /// <param name="documentComment">The DocumentComment to add.</param>
-        /// <returns>The created DocumentComment.</returns>
-        public System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment)
-        {
-            return this.AddAsync(documentComment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DocumentComment to the collection via POST.
         /// </summary>
         /// <param name="documentComment">The DocumentComment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DocumentComment.</returns>
-        public System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DocumentComment>(documentComment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DocumentComment to the collection via POST and returns a <see cref="GraphResponse{DocumentComment}"/> object of the request.
-        /// </summary>
-        /// <param name="documentComment">The DocumentComment to add.</param>
-        /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment)
-        {
-            return this.AddResponseAsync(documentComment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DocumentComment to the collection via POST and returns a <see cref="GraphResponse{DocumentComment}"/> object of the request.
         /// </summary>
         /// <param name="documentComment">The DocumentComment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DocumentComment>(documentComment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DocumentCommentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DocumentCommentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DocumentCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DocumentCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DocumentCommentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppContentFile using POST.
         /// </summary>
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
-        /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate);
-
-        /// <summary>
-        /// Creates the specified MobileAppContentFile using POST.
-        /// </summary>
-        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
-        /// </summary>
-        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate);
+        System.Threading.Tasks.Task<MobileAppContentFile> CreateAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppContentFile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MobileAppContentFile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppContentFile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MobileAppContentFile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppContentFile.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppContentFile using PATCH.
         /// </summary>
         /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
-        /// <returns>The updated MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate);
-
-        /// <summary>
-        /// Updates the specified MobileAppContentFile using PATCH.
-        /// </summary>
-        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppContentFile.</returns>
-        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MobileAppContentFile using PATCH and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
-        /// </summary>
-        /// <param name="mobileAppContentFileToUpdate">The MobileAppContentFile to update.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate);
+        System.Threading.Tasks.Task<MobileAppContentFile> UpdateAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppContentFile using PATCH and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> UpdateResponseAsync(MobileAppContentFile mobileAppContentFileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

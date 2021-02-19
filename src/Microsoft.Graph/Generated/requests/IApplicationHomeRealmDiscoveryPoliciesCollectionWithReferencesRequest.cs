@@ -20,31 +20,20 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

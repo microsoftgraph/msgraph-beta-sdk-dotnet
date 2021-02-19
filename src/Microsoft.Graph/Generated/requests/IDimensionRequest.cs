@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Dimension using POST.
         /// </summary>
         /// <param name="dimensionToCreate">The Dimension to create.</param>
-        /// <returns>The created Dimension.</returns>
-        System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate);
-
-        /// <summary>
-        /// Creates the specified Dimension using POST.
-        /// </summary>
-        /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Dimension.</returns>
-        System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Dimension using POST and returns a <see cref="GraphResponse{Dimension}"/> object.
-        /// </summary>
-        /// <param name="dimensionToCreate">The Dimension to create.</param>
-        /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate);
+        System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Dimension using POST and returns a <see cref="GraphResponse{Dimension}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Dimension.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Dimension.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Dimension and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Dimension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Dimension.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Dimension using PATCH.
         /// </summary>
         /// <param name="dimensionToUpdate">The Dimension to update.</param>
-        /// <returns>The updated Dimension.</returns>
-        System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate);
-
-        /// <summary>
-        /// Updates the specified Dimension using PATCH.
-        /// </summary>
-        /// <param name="dimensionToUpdate">The Dimension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Dimension.</returns>
-        System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Dimension using PATCH and returns a <see cref="GraphResponse{Dimension}"/> object.
-        /// </summary>
-        /// <param name="dimensionToUpdate">The Dimension to update.</param>
-        /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate);
+        System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Dimension using PATCH and returns a <see cref="GraphResponse{Dimension}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

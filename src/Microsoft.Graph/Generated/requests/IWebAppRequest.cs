@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WebApp using POST.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
-        /// <returns>The created WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate);
-
-        /// <summary>
-        /// Creates the specified WebApp using POST.
-        /// </summary>
-        /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
-        /// </summary>
-        /// <param name="webAppToCreate">The WebApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate);
+        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WebApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WebApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WebApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WebApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WebApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WebApp using PATCH.
         /// </summary>
         /// <param name="webAppToUpdate">The WebApp to update.</param>
-        /// <returns>The updated WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified WebApp using PATCH.
-        /// </summary>
-        /// <param name="webAppToUpdate">The WebApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WebApp using PATCH and returns a <see cref="GraphResponse{WebApp}"/> object.
-        /// </summary>
-        /// <param name="webAppToUpdate">The WebApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate);
+        System.Threading.Tasks.Task<WebApp> UpdateAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WebApp using PATCH and returns a <see cref="GraphResponse{WebApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

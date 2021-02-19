@@ -33,69 +33,39 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Tag to the collection via POST.
-        /// </summary>
-        /// <param name="tag">The Tag to add.</param>
-        /// <returns>The created Tag.</returns>
-        public System.Threading.Tasks.Task<Tag> AddAsync(Tag tag)
-        {
-            return this.AddAsync(tag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Tag to the collection via POST.
         /// </summary>
         /// <param name="tag">The Tag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Tag.</returns>
-        public System.Threading.Tasks.Task<Tag> AddAsync(Tag tag, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Tag> AddAsync(Tag tag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Tag>(tag, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Tag to the collection via POST and returns a <see cref="GraphResponse{Tag}"/> object of the request.
-        /// </summary>
-        /// <param name="tag">The Tag to add.</param>
-        /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag)
-        {
-            return this.AddResponseAsync(tag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Tag to the collection via POST and returns a <see cref="GraphResponse{Tag}"/> object of the request.
         /// </summary>
         /// <param name="tag">The Tag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Tag>(tag, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CaseTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CaseTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

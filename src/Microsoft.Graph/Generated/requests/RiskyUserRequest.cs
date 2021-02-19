@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RiskyUser using POST.
         /// </summary>
         /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
-        /// <returns>The created RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate)
-        {
-            return this.CreateAsync(riskyUserToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RiskyUser using POST.
-        /// </summary>
-        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RiskyUser>(riskyUserToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RiskyUser using POST and returns a <see cref="GraphResponse{RiskyUser}"/> object.
         /// </summary>
         /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> CreateResponseAsync(RiskyUser riskyUserToCreate)
-        {
-            return this.CreateResponseAsync(riskyUserToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RiskyUser using POST and returns a <see cref="GraphResponse{RiskyUser}"/> object.
-        /// </summary>
-        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RiskyUser>> CreateResponseAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RiskyUser>> CreateResponseAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RiskyUser.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RiskyUser.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RiskyUser>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RiskyUser and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RiskyUser and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RiskyUser using PATCH.
         /// </summary>
         /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
-        /// <returns>The updated RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate)
-        {
-            return this.UpdateAsync(riskyUserToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RiskyUser using PATCH.
-        /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (riskyUserToUpdate.AdditionalData != null)
-			{
-				if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (riskyUserToUpdate.AdditionalData != null)
-            {
-                if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RiskyUser using PATCH and returns a <see cref="GraphResponse{RiskyUser}"/> object.
         /// </summary>
         /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> UpdateResponseAsync(RiskyUser riskyUserToUpdate)
-        {
-            return this.UpdateResponseAsync(riskyUserToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RiskyUser using PATCH and returns a <see cref="GraphResponse{RiskyUser}"/> object.
-        /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RiskyUser>> UpdateResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RiskyUser>> UpdateResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (riskyUserToUpdate.AdditionalData != null)
-			{
-				if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (riskyUserToUpdate.AdditionalData != null)
-            {
-                if (riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    riskyUserToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, riskyUserToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
         }

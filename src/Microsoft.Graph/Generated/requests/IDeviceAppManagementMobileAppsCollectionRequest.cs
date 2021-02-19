@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementMobileAppsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileApp to the collection via POST.
-        /// </summary>
-        /// <param name="mobileApp">The MobileApp to add.</param>
-        /// <returns>The created MobileApp.</returns>
-        System.Threading.Tasks.Task<MobileApp> AddAsync(MobileApp mobileApp);
-
         /// <summary>
         /// Adds the specified MobileApp to the collection via POST.
         /// </summary>
         /// <param name="mobileApp">The MobileApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileApp.</returns>
-        System.Threading.Tasks.Task<MobileApp> AddAsync(MobileApp mobileApp, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MobileApp to the collection via POST and returns a <see cref="GraphResponse{MobileApp}"/> object of the request.
-        /// </summary>
-        /// <param name="mobileApp">The MobileApp to add.</param>
-        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp);
+        System.Threading.Tasks.Task<MobileApp> AddAsync(MobileApp mobileApp, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MobileApp to the collection via POST and returns a <see cref="GraphResponse{MobileApp}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="mobileApp">The MobileApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementMobileAppsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceAppManagementMobileAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementMobileAppsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelSite to the collection via POST.
-        /// </summary>
-        /// <param name="microsoftTunnelSite">The MicrosoftTunnelSite to add.</param>
-        /// <returns>The created MicrosoftTunnelSite.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelSite> AddAsync(MicrosoftTunnelSite microsoftTunnelSite)
-        {
-            return this.AddAsync(microsoftTunnelSite, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftTunnelSite to the collection via POST.
         /// </summary>
         /// <param name="microsoftTunnelSite">The MicrosoftTunnelSite to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelSite.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelSite> AddAsync(MicrosoftTunnelSite microsoftTunnelSite, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MicrosoftTunnelSite> AddAsync(MicrosoftTunnelSite microsoftTunnelSite, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MicrosoftTunnelSite>(microsoftTunnelSite, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelSite to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.
-        /// </summary>
-        /// <param name="microsoftTunnelSite">The MicrosoftTunnelSite to add.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> AddResponseAsync(MicrosoftTunnelSite microsoftTunnelSite)
-        {
-            return this.AddResponseAsync(microsoftTunnelSite, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftTunnelSite to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.
         /// </summary>
         /// <param name="microsoftTunnelSite">The MicrosoftTunnelSite to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> AddResponseAsync(MicrosoftTunnelSite microsoftTunnelSite, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> AddResponseAsync(MicrosoftTunnelSite microsoftTunnelSite, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftTunnelSite>(microsoftTunnelSite, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelSitesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelSitesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelSitesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementMicrosoftTunnelSitesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelSitesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelSitesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelSitesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelSitesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelSitesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelSitesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelSitesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementMicrosoftTunnelSitesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

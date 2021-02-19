@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
-        /// <returns>The created LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);
-
-        /// <summary>
-        /// Creates the specified LicenseDetails using POST.
-        /// </summary>
-        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
-        /// </summary>
-        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate);
+        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LicenseDetails.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LicenseDetails.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LicenseDetails.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified LicenseDetails using PATCH.
         /// </summary>
         /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
-        /// <returns>The updated LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate);
-
-        /// <summary>
-        /// Updates the specified LicenseDetails using PATCH.
-        /// </summary>
-        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
-        /// </summary>
-        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate);
+        System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

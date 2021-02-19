@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITargetedManagedAppConfigurationAppsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedMobileApp to the collection via POST.
-        /// </summary>
-        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
-        /// <returns>The created ManagedMobileApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp);
-
         /// <summary>
         /// Adds the specified ManagedMobileApp to the collection via POST.
         /// </summary>
         /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedMobileApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ManagedMobileApp to the collection via POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.
-        /// </summary>
-        /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp);
+        System.Threading.Tasks.Task<ManagedMobileApp> AddAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ManagedMobileApp to the collection via POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="managedMobileApp">The ManagedMobileApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> AddResponseAsync(ManagedMobileApp managedMobileApp, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITargetedManagedAppConfigurationAppsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITargetedManagedAppConfigurationAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationAppsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfigurationAppsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationAppsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ITargetedManagedAppConfigurationAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TargetedManagedAppConfigurationAppsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfigurationAppsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfigurationAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

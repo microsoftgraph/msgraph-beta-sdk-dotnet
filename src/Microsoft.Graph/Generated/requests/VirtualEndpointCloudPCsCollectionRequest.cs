@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CloudPC to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPC">The CloudPC to add.</param>
-        /// <returns>The created CloudPC.</returns>
-        public System.Threading.Tasks.Task<CloudPC> AddAsync(CloudPC cloudPC)
-        {
-            return this.AddAsync(cloudPC, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CloudPC to the collection via POST.
         /// </summary>
         /// <param name="cloudPC">The CloudPC to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPC.</returns>
-        public System.Threading.Tasks.Task<CloudPC> AddAsync(CloudPC cloudPC, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CloudPC> AddAsync(CloudPC cloudPC, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<CloudPC>(cloudPC, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified CloudPC to the collection via POST and returns a <see cref="GraphResponse{CloudPC}"/> object of the request.
-        /// </summary>
-        /// <param name="cloudPC">The CloudPC to add.</param>
-        /// <returns>The <see cref="GraphResponse{CloudPC}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPC>> AddResponseAsync(CloudPC cloudPC)
-        {
-            return this.AddResponseAsync(cloudPC, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CloudPC to the collection via POST and returns a <see cref="GraphResponse{CloudPC}"/> object of the request.
         /// </summary>
         /// <param name="cloudPC">The CloudPC to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPC}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudPC>> AddResponseAsync(CloudPC cloudPC, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPC>> AddResponseAsync(CloudPC cloudPC, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CloudPC>(cloudPC, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IVirtualEndpointCloudPCsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IVirtualEndpointCloudPCsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IVirtualEndpointCloudPCsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<VirtualEndpointCloudPCsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointCloudPCsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpointCloudPCsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpointCloudPCsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<VirtualEndpointCloudPCsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

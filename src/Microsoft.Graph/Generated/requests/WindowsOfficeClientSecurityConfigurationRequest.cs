@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
-        /// <returns>The created WindowsOfficeClientSecurityConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsOfficeClientSecurityConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsOfficeClientSecurityConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsOfficeClientSecurityConfiguration>(windowsOfficeClientSecurityConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> CreateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windowsOfficeClientSecurityConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> CreateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> CreateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsOfficeClientSecurityConfiguration>(windowsOfficeClientSecurityConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsOfficeClientSecurityConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsOfficeClientSecurityConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsOfficeClientSecurityConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
-        /// <returns>The updated WindowsOfficeClientSecurityConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsOfficeClientSecurityConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsOfficeClientSecurityConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsOfficeClientSecurityConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsOfficeClientSecurityConfiguration>(windowsOfficeClientSecurityConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> UpdateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> UpdateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> UpdateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsOfficeClientSecurityConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsOfficeClientSecurityConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsOfficeClientSecurityConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsOfficeClientSecurityConfiguration>(windowsOfficeClientSecurityConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

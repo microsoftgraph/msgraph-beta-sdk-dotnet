@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified UnsupportedDeviceConfiguration using POST.
         /// </summary>
         /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
-        /// <returns>The created UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> CreateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified UnsupportedDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> CreateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified UnsupportedDeviceConfiguration using POST and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> CreateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate);
+        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> CreateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified UnsupportedDeviceConfiguration using POST and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="unsupportedDeviceConfigurationToCreate">The UnsupportedDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> CreateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnsupportedDeviceConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> CreateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnsupportedDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnsupportedDeviceConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified UnsupportedDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
-        /// <returns>The updated UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> UpdateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified UnsupportedDeviceConfiguration using PATCH.
-        /// </summary>
-        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> UpdateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified UnsupportedDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="unsupportedDeviceConfigurationToUpdate">The UnsupportedDeviceConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate);
+        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> UpdateAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnsupportedDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> UpdateResponseAsync(UnsupportedDeviceConfiguration unsupportedDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

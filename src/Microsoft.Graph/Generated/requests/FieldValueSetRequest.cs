@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified FieldValueSet using POST.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
-        /// <returns>The created FieldValueSet.</returns>
-        public System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate)
-        {
-            return this.CreateAsync(fieldValueSetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FieldValueSet using POST.
-        /// </summary>
-        /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FieldValueSet.</returns>
-        public async System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FieldValueSet> CreateAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<FieldValueSet>(fieldValueSetToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified FieldValueSet using POST and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
         /// </summary>
         /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
-        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate)
-        {
-            return this.CreateResponseAsync(fieldValueSetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FieldValueSet using POST and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
-        /// </summary>
-        /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<FieldValueSet>(fieldValueSetToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FieldValueSet.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FieldValueSet.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<FieldValueSet>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FieldValueSet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FieldValueSet and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified FieldValueSet using PATCH.
         /// </summary>
         /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
-        /// <returns>The updated FieldValueSet.</returns>
-        public System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate)
-        {
-            return this.UpdateAsync(fieldValueSetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FieldValueSet using PATCH.
-        /// </summary>
-        /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FieldValueSet.</returns>
-        public async System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FieldValueSet> UpdateAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fieldValueSetToUpdate.AdditionalData != null)
-			{
-				if (fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fieldValueSetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fieldValueSetToUpdate.AdditionalData != null)
-            {
-                if (fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fieldValueSetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<FieldValueSet>(fieldValueSetToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified FieldValueSet using PATCH and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
         /// </summary>
         /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
-        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> UpdateResponseAsync(FieldValueSet fieldValueSetToUpdate)
-        {
-            return this.UpdateResponseAsync(fieldValueSetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FieldValueSet using PATCH and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
-        /// </summary>
-        /// <param name="fieldValueSetToUpdate">The FieldValueSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> UpdateResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> UpdateResponseAsync(FieldValueSet fieldValueSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fieldValueSetToUpdate.AdditionalData != null)
-			{
-				if (fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fieldValueSetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fieldValueSetToUpdate.AdditionalData != null)
-            {
-                if (fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fieldValueSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fieldValueSetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<FieldValueSet>(fieldValueSetToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -20,28 +20,13 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface IEdiscoveryrootCasesCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Case to the collection via POST.
-        /// </summary>
-        /// <param name="casesCase">The Case to add.</param>
-        /// <returns>The created Case.</returns>
-        System.Threading.Tasks.Task<Case> AddAsync(Case casesCase);
-
         /// <summary>
         /// Adds the specified Case to the collection via POST.
         /// </summary>
         /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Case.</returns>
-        System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Case to the collection via POST and returns a <see cref="GraphResponse{Case}"/> object of the request.
-        /// </summary>
-        /// <param name="casesCase">The Case to add.</param>
-        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Case>> AddResponseAsync(Case casesCase);
+        System.Threading.Tasks.Task<Case> AddAsync(Case casesCase, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Case to the collection via POST and returns a <see cref="GraphResponse{Case}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="casesCase">The Case to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Case>> AddResponseAsync(Case casesCase, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Case>> AddResponseAsync(Case casesCase, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEdiscoveryrootCasesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEdiscoveryrootCasesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EdiscoveryrootCasesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EdiscoveryrootCasesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EdiscoveryrootCasesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IEdiscoveryrootCasesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EdiscoveryrootCasesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EdiscoveryrootCasesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EdiscoveryrootCasesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EdiscoveryrootCasesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

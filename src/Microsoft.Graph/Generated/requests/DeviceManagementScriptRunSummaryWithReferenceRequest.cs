@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementScriptRunSummary using POST.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
-        /// <returns>The created DeviceManagementScriptRunSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate)
-        {
-            return this.CreateAsync(deviceManagementScriptRunSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementScriptRunSummary using POST.
-        /// </summary>
-        /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptRunSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> CreateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementScriptRunSummary>(deviceManagementScriptRunSummaryToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> CreateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementScriptRunSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementScriptRunSummaryToCreate">The DeviceManagementScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> CreateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> CreateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementScriptRunSummary>(deviceManagementScriptRunSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementScriptRunSummary using PATCH.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
-        /// <returns>The updated DeviceManagementScriptRunSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementScriptRunSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementScriptRunSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementScriptRunSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> UpdateAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementScriptRunSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptRunSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementScriptRunSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptRunSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementScriptRunSummary>(deviceManagementScriptRunSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> UpdateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementScriptRunSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementScriptRunSummaryToUpdate">The DeviceManagementScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> UpdateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> UpdateResponseAsync(DeviceManagementScriptRunSummary deviceManagementScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementScriptRunSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptRunSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementScriptRunSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementScriptRunSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementScriptRunSummary>(deviceManagementScriptRunSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified DeviceManagementScriptRunSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementScriptRunSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

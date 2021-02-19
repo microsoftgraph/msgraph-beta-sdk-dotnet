@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PolicySet to the collection via POST.
-        /// </summary>
-        /// <param name="policySet">The PolicySet to add.</param>
-        /// <returns>The created PolicySet.</returns>
-        public System.Threading.Tasks.Task<PolicySet> AddAsync(PolicySet policySet)
-        {
-            return this.AddAsync(policySet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PolicySet to the collection via POST.
         /// </summary>
         /// <param name="policySet">The PolicySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySet.</returns>
-        public System.Threading.Tasks.Task<PolicySet> AddAsync(PolicySet policySet, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PolicySet> AddAsync(PolicySet policySet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PolicySet>(policySet, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PolicySet to the collection via POST and returns a <see cref="GraphResponse{PolicySet}"/> object of the request.
-        /// </summary>
-        /// <param name="policySet">The PolicySet to add.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicySet>> AddResponseAsync(PolicySet policySet)
-        {
-            return this.AddResponseAsync(policySet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PolicySet to the collection via POST and returns a <see cref="GraphResponse{PolicySet}"/> object of the request.
         /// </summary>
         /// <param name="policySet">The PolicySet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> AddResponseAsync(PolicySet policySet, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicySet>> AddResponseAsync(PolicySet policySet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PolicySet>(policySet, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementPolicySetsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementPolicySetsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementPolicySetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementPolicySetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementPolicySetsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementPolicySetsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementPolicySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementPolicySetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementPolicySetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

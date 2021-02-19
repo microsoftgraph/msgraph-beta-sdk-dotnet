@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsAppInstallation using POST.
         /// </summary>
         /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> CreateAsync(TeamsAppInstallation teamsAppInstallationToCreate);
-
-        /// <summary>
-        /// Creates the specified TeamsAppInstallation using POST.
-        /// </summary>
-        /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> CreateAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified TeamsAppInstallation using POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
-        /// </summary>
-        /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate);
+        System.Threading.Tasks.Task<TeamsAppInstallation> CreateAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified TeamsAppInstallation using POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TeamsAppInstallation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TeamsAppInstallation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TeamsAppInstallation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified TeamsAppInstallation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamsAppInstallation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified TeamsAppInstallation using PATCH.
         /// </summary>
         /// <param name="teamsAppInstallationToUpdate">The TeamsAppInstallation to update.</param>
-        /// <returns>The updated TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> UpdateAsync(TeamsAppInstallation teamsAppInstallationToUpdate);
-
-        /// <summary>
-        /// Updates the specified TeamsAppInstallation using PATCH.
-        /// </summary>
-        /// <param name="teamsAppInstallationToUpdate">The TeamsAppInstallation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> UpdateAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified TeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
-        /// </summary>
-        /// <param name="teamsAppInstallationToUpdate">The TeamsAppInstallation to update.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> UpdateResponseAsync(TeamsAppInstallation teamsAppInstallationToUpdate);
+        System.Threading.Tasks.Task<TeamsAppInstallation> UpdateAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> UpdateResponseAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> UpdateResponseAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

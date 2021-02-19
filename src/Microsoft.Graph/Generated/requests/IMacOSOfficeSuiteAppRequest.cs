@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSOfficeSuiteApp using POST.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
-        /// <returns>The created MacOSOfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate);
-
-        /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using POST.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSOfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate);
+        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> CreateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSOfficeSuiteApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSOfficeSuiteApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSOfficeSuiteApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSOfficeSuiteApp using PATCH.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
-        /// <returns>The updated MacOSOfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified MacOSOfficeSuiteApp using PATCH.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSOfficeSuiteApp.</returns>
-        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
-        /// </summary>
-        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate);
+        System.Threading.Tasks.Task<MacOSOfficeSuiteApp> UpdateAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

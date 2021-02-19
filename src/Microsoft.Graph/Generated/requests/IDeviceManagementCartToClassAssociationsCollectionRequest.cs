@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementCartToClassAssociationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CartToClassAssociation to the collection via POST.
-        /// </summary>
-        /// <param name="cartToClassAssociation">The CartToClassAssociation to add.</param>
-        /// <returns>The created CartToClassAssociation.</returns>
-        System.Threading.Tasks.Task<CartToClassAssociation> AddAsync(CartToClassAssociation cartToClassAssociation);
-
         /// <summary>
         /// Adds the specified CartToClassAssociation to the collection via POST.
         /// </summary>
         /// <param name="cartToClassAssociation">The CartToClassAssociation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CartToClassAssociation.</returns>
-        System.Threading.Tasks.Task<CartToClassAssociation> AddAsync(CartToClassAssociation cartToClassAssociation, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified CartToClassAssociation to the collection via POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.
-        /// </summary>
-        /// <param name="cartToClassAssociation">The CartToClassAssociation to add.</param>
-        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> AddResponseAsync(CartToClassAssociation cartToClassAssociation);
+        System.Threading.Tasks.Task<CartToClassAssociation> AddAsync(CartToClassAssociation cartToClassAssociation, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified CartToClassAssociation to the collection via POST and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="cartToClassAssociation">The CartToClassAssociation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> AddResponseAsync(CartToClassAssociation cartToClassAssociation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> AddResponseAsync(CartToClassAssociation cartToClassAssociation, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementCartToClassAssociationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementCartToClassAssociationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementCartToClassAssociationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementCartToClassAssociationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCartToClassAssociationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementCartToClassAssociationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementCartToClassAssociationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCartToClassAssociationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCartToClassAssociationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCartToClassAssociationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph.TermStore
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Set to the collection via POST.
-        /// </summary>
-        /// <param name="set">The Set to add.</param>
-        /// <returns>The created Set.</returns>
-        public System.Threading.Tasks.Task<Set> AddAsync(Set set)
-        {
-            return this.AddAsync(set, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Set to the collection via POST.
         /// </summary>
         /// <param name="set">The Set to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Set.</returns>
-        public System.Threading.Tasks.Task<Set> AddAsync(Set set, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Set> AddAsync(Set set, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Set>(set, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Set to the collection via POST and returns a <see cref="GraphResponse{Set}"/> object of the request.
-        /// </summary>
-        /// <param name="set">The Set to add.</param>
-        /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Set>> AddResponseAsync(Set set)
-        {
-            return this.AddResponseAsync(set, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Set to the collection via POST and returns a <see cref="GraphResponse{Set}"/> object of the request.
         /// </summary>
         /// <param name="set">The Set to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Set>> AddResponseAsync(Set set, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Set>> AddResponseAsync(Set set, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Set>(set, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGroupSetsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGroupSetsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGroupSetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GroupSetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GroupSetsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupSetsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupSetsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GroupSetsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupSetsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GroupSetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

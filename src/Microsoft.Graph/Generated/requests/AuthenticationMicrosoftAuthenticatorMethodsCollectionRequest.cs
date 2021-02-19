@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
-        /// <returns>The created MicrosoftAuthenticatorAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethod> AddAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod)
-        {
-            return this.AddAsync(microsoftAuthenticatorAuthenticationMethod, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST.
         /// </summary>
         /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftAuthenticatorAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethod> AddAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethod> AddAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MicrosoftAuthenticatorAuthenticationMethod>(microsoftAuthenticatorAuthenticationMethod, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod)
-        {
-            return this.AddResponseAsync(microsoftAuthenticatorAuthenticationMethod, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
         /// </summary>
         /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftAuthenticatorAuthenticationMethod>(microsoftAuthenticatorAuthenticationMethod, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AuthenticationMicrosoftAuthenticatorMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

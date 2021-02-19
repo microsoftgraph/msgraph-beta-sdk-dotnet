@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserContactFoldersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ContactFolder to the collection via POST.
-        /// </summary>
-        /// <param name="contactFolder">The ContactFolder to add.</param>
-        /// <returns>The created ContactFolder.</returns>
-        System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder);
-
         /// <summary>
         /// Adds the specified ContactFolder to the collection via POST.
         /// </summary>
         /// <param name="contactFolder">The ContactFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContactFolder.</returns>
-        System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ContactFolder to the collection via POST and returns a <see cref="GraphResponse{ContactFolder}"/> object of the request.
-        /// </summary>
-        /// <param name="contactFolder">The ContactFolder to add.</param>
-        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder);
+        System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ContactFolder to the collection via POST and returns a <see cref="GraphResponse{ContactFolder}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="contactFolder">The ContactFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserContactFoldersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserContactFoldersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserContactFoldersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserContactFoldersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserContactFoldersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IUserContactFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserContactFoldersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserContactFoldersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserContactFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserContactFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

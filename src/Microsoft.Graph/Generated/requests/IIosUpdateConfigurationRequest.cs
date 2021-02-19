@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified IosUpdateConfiguration using POST.
         /// </summary>
         /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
-        /// <returns>The created IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified IosUpdateConfiguration using POST.
-        /// </summary>
-        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified IosUpdateConfiguration using POST and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate);
+        System.Threading.Tasks.Task<IosUpdateConfiguration> CreateAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified IosUpdateConfiguration using POST and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosUpdateConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosUpdateConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosUpdateConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosUpdateConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosUpdateConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified IosUpdateConfiguration using PATCH.
         /// </summary>
         /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
-        /// <returns>The updated IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified IosUpdateConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified IosUpdateConfiguration using PATCH and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosUpdateConfigurationToUpdate">The IosUpdateConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> UpdateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate);
+        System.Threading.Tasks.Task<IosUpdateConfiguration> UpdateAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosUpdateConfiguration using PATCH and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> UpdateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> UpdateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

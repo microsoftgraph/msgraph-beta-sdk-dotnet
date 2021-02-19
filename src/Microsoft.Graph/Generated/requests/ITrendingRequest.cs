@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Trending using POST.
         /// </summary>
         /// <param name="trendingToCreate">The Trending to create.</param>
-        /// <returns>The created Trending.</returns>
-        System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate);
-
-        /// <summary>
-        /// Creates the specified Trending using POST.
-        /// </summary>
-        /// <param name="trendingToCreate">The Trending to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Trending.</returns>
-        System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
-        /// </summary>
-        /// <param name="trendingToCreate">The Trending to create.</param>
-        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate);
+        System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="trendingToCreate">The Trending to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Trending.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Trending.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Trending and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Trending and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Trending.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Trending using PATCH.
         /// </summary>
         /// <param name="trendingToUpdate">The Trending to update.</param>
-        /// <returns>The updated Trending.</returns>
-        System.Threading.Tasks.Task<Trending> UpdateAsync(Trending trendingToUpdate);
-
-        /// <summary>
-        /// Updates the specified Trending using PATCH.
-        /// </summary>
-        /// <param name="trendingToUpdate">The Trending to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Trending.</returns>
-        System.Threading.Tasks.Task<Trending> UpdateAsync(Trending trendingToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
-        /// </summary>
-        /// <param name="trendingToUpdate">The Trending to update.</param>
-        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate);
+        System.Threading.Tasks.Task<Trending> UpdateAsync(Trending trendingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

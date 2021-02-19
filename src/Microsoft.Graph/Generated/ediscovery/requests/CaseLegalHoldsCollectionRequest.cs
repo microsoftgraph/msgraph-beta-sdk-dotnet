@@ -33,69 +33,39 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified LegalHold to the collection via POST.
-        /// </summary>
-        /// <param name="legalHold">The LegalHold to add.</param>
-        /// <returns>The created LegalHold.</returns>
-        public System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold)
-        {
-            return this.AddAsync(legalHold, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified LegalHold to the collection via POST.
         /// </summary>
         /// <param name="legalHold">The LegalHold to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LegalHold.</returns>
-        public System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<LegalHold>(legalHold, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified LegalHold to the collection via POST and returns a <see cref="GraphResponse{LegalHold}"/> object of the request.
-        /// </summary>
-        /// <param name="legalHold">The LegalHold to add.</param>
-        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LegalHold>> AddResponseAsync(LegalHold legalHold)
-        {
-            return this.AddResponseAsync(legalHold, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified LegalHold to the collection via POST and returns a <see cref="GraphResponse{LegalHold}"/> object of the request.
         /// </summary>
         /// <param name="legalHold">The LegalHold to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LegalHold>> AddResponseAsync(LegalHold legalHold, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LegalHold>> AddResponseAsync(LegalHold legalHold, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LegalHold>(legalHold, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CaseLegalHoldsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CaseLegalHoldsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CaseLegalHoldsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CaseLegalHoldsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CaseLegalHoldsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

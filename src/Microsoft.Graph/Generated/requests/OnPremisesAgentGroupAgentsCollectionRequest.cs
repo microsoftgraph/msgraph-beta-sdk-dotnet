@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OnPremisesAgent to the collection via POST.
-        /// </summary>
-        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
-        /// <returns>The created OnPremisesAgent.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgent> AddAsync(OnPremisesAgent onPremisesAgent)
-        {
-            return this.AddAsync(onPremisesAgent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnPremisesAgent to the collection via POST.
         /// </summary>
         /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesAgent.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgent> AddAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OnPremisesAgent> AddAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OnPremisesAgent>(onPremisesAgent, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
-        /// </summary>
-        /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
-        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent)
-        {
-            return this.AddResponseAsync(onPremisesAgent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnPremisesAgent to the collection via POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.
         /// </summary>
         /// <param name="onPremisesAgent">The OnPremisesAgent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> AddResponseAsync(OnPremisesAgent onPremisesAgent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnPremisesAgent>(onPremisesAgent, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOnPremisesAgentGroupAgentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOnPremisesAgentGroupAgentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOnPremisesAgentGroupAgentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OnPremisesAgentGroupAgentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroupAgentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OnPremisesAgentGroupAgentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

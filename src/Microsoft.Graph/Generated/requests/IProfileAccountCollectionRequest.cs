@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileAccountCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserAccountInformation to the collection via POST.
-        /// </summary>
-        /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
-        /// <returns>The created UserAccountInformation.</returns>
-        System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation);
-
         /// <summary>
         /// Adds the specified UserAccountInformation to the collection via POST.
         /// </summary>
         /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAccountInformation.</returns>
-        System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UserAccountInformation to the collection via POST and returns a <see cref="GraphResponse{UserAccountInformation}"/> object of the request.
-        /// </summary>
-        /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation);
+        System.Threading.Tasks.Task<UserAccountInformation> AddAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UserAccountInformation to the collection via POST and returns a <see cref="GraphResponse{UserAccountInformation}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="userAccountInformation">The UserAccountInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> AddResponseAsync(UserAccountInformation userAccountInformation, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IProfileAccountCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileAccountCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProfileAccountCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

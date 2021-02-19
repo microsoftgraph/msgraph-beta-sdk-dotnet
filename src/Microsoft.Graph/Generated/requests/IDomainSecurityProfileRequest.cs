@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DomainSecurityProfile using POST.
         /// </summary>
         /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
-        /// <returns>The created DomainSecurityProfile.</returns>
-        System.Threading.Tasks.Task<DomainSecurityProfile> CreateAsync(DomainSecurityProfile domainSecurityProfileToCreate);
-
-        /// <summary>
-        /// Creates the specified DomainSecurityProfile using POST.
-        /// </summary>
-        /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainSecurityProfile.</returns>
-        System.Threading.Tasks.Task<DomainSecurityProfile> CreateAsync(DomainSecurityProfile domainSecurityProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DomainSecurityProfile using POST and returns a <see cref="GraphResponse{DomainSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{DomainSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> CreateResponseAsync(DomainSecurityProfile domainSecurityProfileToCreate);
+        System.Threading.Tasks.Task<DomainSecurityProfile> CreateAsync(DomainSecurityProfile domainSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DomainSecurityProfile using POST and returns a <see cref="GraphResponse{DomainSecurityProfile}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="domainSecurityProfileToCreate">The DomainSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> CreateResponseAsync(DomainSecurityProfile domainSecurityProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DomainSecurityProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> CreateResponseAsync(DomainSecurityProfile domainSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DomainSecurityProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DomainSecurityProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DomainSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DomainSecurityProfile.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DomainSecurityProfile using PATCH.
         /// </summary>
         /// <param name="domainSecurityProfileToUpdate">The DomainSecurityProfile to update.</param>
-        /// <returns>The updated DomainSecurityProfile.</returns>
-        System.Threading.Tasks.Task<DomainSecurityProfile> UpdateAsync(DomainSecurityProfile domainSecurityProfileToUpdate);
-
-        /// <summary>
-        /// Updates the specified DomainSecurityProfile using PATCH.
-        /// </summary>
-        /// <param name="domainSecurityProfileToUpdate">The DomainSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DomainSecurityProfile.</returns>
-        System.Threading.Tasks.Task<DomainSecurityProfile> UpdateAsync(DomainSecurityProfile domainSecurityProfileToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DomainSecurityProfile using PATCH and returns a <see cref="GraphResponse{DomainSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="domainSecurityProfileToUpdate">The DomainSecurityProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{DomainSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> UpdateResponseAsync(DomainSecurityProfile domainSecurityProfileToUpdate);
+        System.Threading.Tasks.Task<DomainSecurityProfile> UpdateAsync(DomainSecurityProfile domainSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DomainSecurityProfile using PATCH and returns a <see cref="GraphResponse{DomainSecurityProfile}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DomainSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> UpdateResponseAsync(DomainSecurityProfile domainSecurityProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DomainSecurityProfile>> UpdateResponseAsync(DomainSecurityProfile domainSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

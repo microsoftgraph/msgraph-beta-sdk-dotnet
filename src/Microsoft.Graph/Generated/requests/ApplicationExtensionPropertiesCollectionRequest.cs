@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ExtensionProperty to the collection via POST.
-        /// </summary>
-        /// <param name="extensionProperty">The ExtensionProperty to add.</param>
-        /// <returns>The created ExtensionProperty.</returns>
-        public System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty)
-        {
-            return this.AddAsync(extensionProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExtensionProperty to the collection via POST.
         /// </summary>
         /// <param name="extensionProperty">The ExtensionProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExtensionProperty.</returns>
-        public System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ExtensionProperty>(extensionProperty, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ExtensionProperty to the collection via POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object of the request.
-        /// </summary>
-        /// <param name="extensionProperty">The ExtensionProperty to add.</param>
-        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty)
-        {
-            return this.AddResponseAsync(extensionProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExtensionProperty to the collection via POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object of the request.
         /// </summary>
         /// <param name="extensionProperty">The ExtensionProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExtensionProperty>(extensionProperty, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IApplicationExtensionPropertiesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IApplicationExtensionPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IApplicationExtensionPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ApplicationExtensionPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApplicationExtensionPropertiesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApplicationExtensionPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ApplicationExtensionPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ApplicationExtensionPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

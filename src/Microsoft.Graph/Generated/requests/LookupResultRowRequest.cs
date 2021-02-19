@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified LookupResultRow using POST.
         /// </summary>
         /// <param name="lookupResultRowToCreate">The LookupResultRow to create.</param>
-        /// <returns>The created LookupResultRow.</returns>
-        public System.Threading.Tasks.Task<LookupResultRow> CreateAsync(LookupResultRow lookupResultRowToCreate)
-        {
-            return this.CreateAsync(lookupResultRowToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LookupResultRow using POST.
-        /// </summary>
-        /// <param name="lookupResultRowToCreate">The LookupResultRow to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LookupResultRow.</returns>
-        public async System.Threading.Tasks.Task<LookupResultRow> CreateAsync(LookupResultRow lookupResultRowToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LookupResultRow> CreateAsync(LookupResultRow lookupResultRowToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<LookupResultRow>(lookupResultRowToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified LookupResultRow using POST and returns a <see cref="GraphResponse{LookupResultRow}"/> object.
         /// </summary>
         /// <param name="lookupResultRowToCreate">The LookupResultRow to create.</param>
-        /// <returns>The <see cref="GraphResponse{LookupResultRow}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> CreateResponseAsync(LookupResultRow lookupResultRowToCreate)
-        {
-            return this.CreateResponseAsync(lookupResultRowToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LookupResultRow using POST and returns a <see cref="GraphResponse{LookupResultRow}"/> object.
-        /// </summary>
-        /// <param name="lookupResultRowToCreate">The LookupResultRow to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LookupResultRow}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> CreateResponseAsync(LookupResultRow lookupResultRowToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> CreateResponseAsync(LookupResultRow lookupResultRowToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LookupResultRow>(lookupResultRowToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LookupResultRow.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LookupResultRow.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<LookupResultRow>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LookupResultRow and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LookupResultRow and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified LookupResultRow using PATCH.
         /// </summary>
         /// <param name="lookupResultRowToUpdate">The LookupResultRow to update.</param>
-        /// <returns>The updated LookupResultRow.</returns>
-        public System.Threading.Tasks.Task<LookupResultRow> UpdateAsync(LookupResultRow lookupResultRowToUpdate)
-        {
-            return this.UpdateAsync(lookupResultRowToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LookupResultRow using PATCH.
-        /// </summary>
-        /// <param name="lookupResultRowToUpdate">The LookupResultRow to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LookupResultRow.</returns>
-        public async System.Threading.Tasks.Task<LookupResultRow> UpdateAsync(LookupResultRow lookupResultRowToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LookupResultRow> UpdateAsync(LookupResultRow lookupResultRowToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (lookupResultRowToUpdate.AdditionalData != null)
-			{
-				if (lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, lookupResultRowToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (lookupResultRowToUpdate.AdditionalData != null)
-            {
-                if (lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, lookupResultRowToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LookupResultRow>(lookupResultRowToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified LookupResultRow using PATCH and returns a <see cref="GraphResponse{LookupResultRow}"/> object.
         /// </summary>
         /// <param name="lookupResultRowToUpdate">The LookupResultRow to update.</param>
-        /// <returns>The <see cref="GraphResponse{LookupResultRow}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> UpdateResponseAsync(LookupResultRow lookupResultRowToUpdate)
-        {
-            return this.UpdateResponseAsync(lookupResultRowToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LookupResultRow using PATCH and returns a <see cref="GraphResponse{LookupResultRow}"/> object.
-        /// </summary>
-        /// <param name="lookupResultRowToUpdate">The LookupResultRow to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LookupResultRow}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> UpdateResponseAsync(LookupResultRow lookupResultRowToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> UpdateResponseAsync(LookupResultRow lookupResultRowToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (lookupResultRowToUpdate.AdditionalData != null)
-			{
-				if (lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, lookupResultRowToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (lookupResultRowToUpdate.AdditionalData != null)
-            {
-                if (lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    lookupResultRowToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, lookupResultRowToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<LookupResultRow>(lookupResultRowToUpdate, cancellationToken).ConfigureAwait(false);
         }

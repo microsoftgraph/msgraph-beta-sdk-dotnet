@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
-        /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate)
-        {
-            return this.CreateAsync(windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionDeviceRegistration.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate)
-        {
-            return this.CreateResponseAsync(windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionDeviceRegistration using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
-        /// <returns>The updated WindowsInformationProtectionDeviceRegistration.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate)
-        {
-            return this.UpdateAsync(windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH.
-        /// </summary>
-        /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionDeviceRegistration.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionDeviceRegistration using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionDeviceRegistrationToUpdate">The WindowsInformationProtectionDeviceRegistration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionDeviceRegistrationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionDeviceRegistrationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified WindowsInformationProtectionDeviceRegistration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionDeviceRegistration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

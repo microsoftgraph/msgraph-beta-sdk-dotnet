@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAppManagementTask using POST.
         /// </summary>
         /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
-        /// <returns>The created DeviceAppManagementTask.</returns>
-        public System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate)
-        {
-            return this.CreateAsync(deviceAppManagementTaskToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceAppManagementTask using POST.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAppManagementTask.</returns>
-        public async System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceAppManagementTask>(deviceAppManagementTaskToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
         /// </summary>
         /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate)
-        {
-            return this.CreateResponseAsync(deviceAppManagementTaskToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementTask>(deviceAppManagementTaskToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceAppManagementTask.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceAppManagementTask.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceAppManagementTask>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceAppManagementTask using PATCH.
         /// </summary>
         /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
-        /// <returns>The updated DeviceAppManagementTask.</returns>
-        public System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate)
-        {
-            return this.UpdateAsync(deviceAppManagementTaskToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceAppManagementTask using PATCH.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAppManagementTask.</returns>
-        public async System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceAppManagementTaskToUpdate.AdditionalData != null)
-			{
-				if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceAppManagementTaskToUpdate.AdditionalData != null)
-            {
-                if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceAppManagementTask>(deviceAppManagementTaskToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
         /// </summary>
         /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceAppManagementTaskToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceAppManagementTaskToUpdate.AdditionalData != null)
-			{
-				if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceAppManagementTaskToUpdate.AdditionalData != null)
-            {
-                if (deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceAppManagementTaskToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceAppManagementTaskToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementTask>(deviceAppManagementTaskToUpdate, cancellationToken).ConfigureAwait(false);
         }

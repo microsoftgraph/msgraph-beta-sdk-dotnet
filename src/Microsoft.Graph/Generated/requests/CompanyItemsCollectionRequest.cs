@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Item to the collection via POST.
-        /// </summary>
-        /// <param name="item">The Item to add.</param>
-        /// <returns>The created Item.</returns>
-        public System.Threading.Tasks.Task<Item> AddAsync(Item item)
-        {
-            return this.AddAsync(item, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Item to the collection via POST.
         /// </summary>
         /// <param name="item">The Item to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Item.</returns>
-        public System.Threading.Tasks.Task<Item> AddAsync(Item item, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Item> AddAsync(Item item, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Item>(item, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Item to the collection via POST and returns a <see cref="GraphResponse{Item}"/> object of the request.
-        /// </summary>
-        /// <param name="item">The Item to add.</param>
-        /// <returns>The <see cref="GraphResponse{Item}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Item>> AddResponseAsync(Item item)
-        {
-            return this.AddResponseAsync(item, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Item to the collection via POST and returns a <see cref="GraphResponse{Item}"/> object of the request.
         /// </summary>
         /// <param name="item">The Item to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Item}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Item>> AddResponseAsync(Item item, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Item>> AddResponseAsync(Item item, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Item>(item, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyItemsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyItemsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CompanyItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyItemsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyItemsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyItemsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyItemsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyItemsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CompanyItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

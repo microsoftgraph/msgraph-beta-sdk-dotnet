@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TaxGroup to the collection via POST.
-        /// </summary>
-        /// <param name="taxGroup">The TaxGroup to add.</param>
-        /// <returns>The created TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup)
-        {
-            return this.AddAsync(taxGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TaxGroup to the collection via POST.
         /// </summary>
         /// <param name="taxGroup">The TaxGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TaxGroup>(taxGroup, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TaxGroup to the collection via POST and returns a <see cref="GraphResponse{TaxGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="taxGroup">The TaxGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup)
-        {
-            return this.AddResponseAsync(taxGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TaxGroup to the collection via POST and returns a <see cref="GraphResponse{TaxGroup}"/> object of the request.
         /// </summary>
         /// <param name="taxGroup">The TaxGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TaxGroup>(taxGroup, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CompanyTaxGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CompanyTaxGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

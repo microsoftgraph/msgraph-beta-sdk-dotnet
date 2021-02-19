@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementConfigurationSettingDefinition using POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinitionToCreate">The DeviceManagementConfigurationSettingDefinition to create.</param>
-        /// <returns>The created DeviceManagementConfigurationSettingDefinition.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> CreateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate)
-        {
-            return this.CreateAsync(deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementConfigurationSettingDefinition using POST.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinitionToCreate">The DeviceManagementConfigurationSettingDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationSettingDefinition.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> CreateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> CreateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementConfigurationSettingDefinition>(deviceManagementConfigurationSettingDefinitionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementConfigurationSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinitionToCreate">The DeviceManagementConfigurationSettingDefinition to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> CreateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementConfigurationSettingDefinition using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinitionToCreate">The DeviceManagementConfigurationSettingDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> CreateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> CreateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationSettingDefinition>(deviceManagementConfigurationSettingDefinitionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementConfigurationSettingDefinition using PATCH.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinitionToUpdate">The DeviceManagementConfigurationSettingDefinition to update.</param>
-        /// <returns>The updated DeviceManagementConfigurationSettingDefinition.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> UpdateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementConfigurationSettingDefinition using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinitionToUpdate">The DeviceManagementConfigurationSettingDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementConfigurationSettingDefinition.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> UpdateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementConfigurationSettingDefinition> UpdateAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSettingDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSettingDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementConfigurationSettingDefinition>(deviceManagementConfigurationSettingDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementConfigurationSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinitionToUpdate">The DeviceManagementConfigurationSettingDefinition to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementConfigurationSettingDefinition using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinitionToUpdate">The DeviceManagementConfigurationSettingDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationSettingDefinition>> UpdateResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSettingDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementConfigurationSettingDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementConfigurationSettingDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementConfigurationSettingDefinition>(deviceManagementConfigurationSettingDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified DeviceManagementConfigurationSettingDefinition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementConfigurationSettingDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementConfigurationSettingDefinition>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified DeviceManagementConfigurationSettingDefinition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementConfigurationSettingDefinition and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

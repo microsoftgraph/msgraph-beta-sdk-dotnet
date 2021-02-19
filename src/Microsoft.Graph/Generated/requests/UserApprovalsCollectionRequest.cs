@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Approval to the collection via POST.
-        /// </summary>
-        /// <param name="approval">The Approval to add.</param>
-        /// <returns>The created Approval.</returns>
-        public System.Threading.Tasks.Task<Approval> AddAsync(Approval approval)
-        {
-            return this.AddAsync(approval, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Approval to the collection via POST.
         /// </summary>
         /// <param name="approval">The Approval to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Approval.</returns>
-        public System.Threading.Tasks.Task<Approval> AddAsync(Approval approval, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Approval> AddAsync(Approval approval, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Approval>(approval, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Approval to the collection via POST and returns a <see cref="GraphResponse{Approval}"/> object of the request.
-        /// </summary>
-        /// <param name="approval">The Approval to add.</param>
-        /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Approval>> AddResponseAsync(Approval approval)
-        {
-            return this.AddResponseAsync(approval, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Approval to the collection via POST and returns a <see cref="GraphResponse{Approval}"/> object of the request.
         /// </summary>
         /// <param name="approval">The Approval to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Approval>> AddResponseAsync(Approval approval, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Approval>> AddResponseAsync(Approval approval, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Approval>(approval, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserApprovalsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserApprovalsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserApprovalsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserApprovalsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserApprovalsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserApprovalsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserApprovalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserApprovalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserApprovalsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TextClassificationRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="textClassificationRequest">The TextClassificationRequestObject to add.</param>
-        /// <returns>The created TextClassificationRequestObject.</returns>
-        public System.Threading.Tasks.Task<TextClassificationRequestObject> AddAsync(TextClassificationRequestObject textClassificationRequest)
-        {
-            return this.AddAsync(textClassificationRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TextClassificationRequestObject to the collection via POST.
         /// </summary>
         /// <param name="textClassificationRequest">The TextClassificationRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TextClassificationRequestObject.</returns>
-        public System.Threading.Tasks.Task<TextClassificationRequestObject> AddAsync(TextClassificationRequestObject textClassificationRequest, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TextClassificationRequestObject> AddAsync(TextClassificationRequestObject textClassificationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TextClassificationRequestObject>(textClassificationRequest, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TextClassificationRequestObject to the collection via POST and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.
-        /// </summary>
-        /// <param name="textClassificationRequest">The TextClassificationRequestObject to add.</param>
-        /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> AddResponseAsync(TextClassificationRequestObject textClassificationRequest)
-        {
-            return this.AddResponseAsync(textClassificationRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TextClassificationRequestObject to the collection via POST and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.
         /// </summary>
         /// <param name="textClassificationRequest">The TextClassificationRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> AddResponseAsync(TextClassificationRequestObject textClassificationRequest, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> AddResponseAsync(TextClassificationRequestObject textClassificationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TextClassificationRequestObject>(textClassificationRequest, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DataClassificationServiceClassifyTextCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyTextCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyTextCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyTextCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyTextCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DataClassificationServiceClassifyTextCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

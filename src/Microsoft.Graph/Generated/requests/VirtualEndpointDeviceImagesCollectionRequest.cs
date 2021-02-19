@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CloudPcDeviceImage to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
-        /// <returns>The created CloudPcDeviceImage.</returns>
-        public System.Threading.Tasks.Task<CloudPcDeviceImage> AddAsync(CloudPcDeviceImage cloudPcDeviceImage)
-        {
-            return this.AddAsync(cloudPcDeviceImage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CloudPcDeviceImage to the collection via POST.
         /// </summary>
         /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDeviceImage.</returns>
-        public System.Threading.Tasks.Task<CloudPcDeviceImage> AddAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CloudPcDeviceImage> AddAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<CloudPcDeviceImage>(cloudPcDeviceImage, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified CloudPcDeviceImage to the collection via POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.
-        /// </summary>
-        /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
-        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage)
-        {
-            return this.AddResponseAsync(cloudPcDeviceImage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CloudPcDeviceImage to the collection via POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.
         /// </summary>
         /// <param name="cloudPcDeviceImage">The CloudPcDeviceImage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> AddResponseAsync(CloudPcDeviceImage cloudPcDeviceImage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CloudPcDeviceImage>(cloudPcDeviceImage, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IVirtualEndpointDeviceImagesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IVirtualEndpointDeviceImagesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IVirtualEndpointDeviceImagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<VirtualEndpointDeviceImagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpointDeviceImagesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpointDeviceImagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<VirtualEndpointDeviceImagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

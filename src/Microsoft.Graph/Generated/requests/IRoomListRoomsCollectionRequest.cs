@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRoomListRoomsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Room to the collection via POST.
-        /// </summary>
-        /// <param name="room">The Room to add.</param>
-        /// <returns>The created Room.</returns>
-        System.Threading.Tasks.Task<Room> AddAsync(Room room);
-
         /// <summary>
         /// Adds the specified Room to the collection via POST.
         /// </summary>
         /// <param name="room">The Room to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Room.</returns>
-        System.Threading.Tasks.Task<Room> AddAsync(Room room, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Room to the collection via POST and returns a <see cref="GraphResponse{Room}"/> object of the request.
-        /// </summary>
-        /// <param name="room">The Room to add.</param>
-        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Room>> AddResponseAsync(Room room);
+        System.Threading.Tasks.Task<Room> AddAsync(Room room, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Room to the collection via POST and returns a <see cref="GraphResponse{Room}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="room">The Room to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Room>> AddResponseAsync(Room room, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Room>> AddResponseAsync(Room room, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoomListRoomsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IRoomListRoomsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoomListRoomsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoomListRoomsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RoomListRoomsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ApplicationTemplate using POST.
         /// </summary>
         /// <param name="applicationTemplateToCreate">The ApplicationTemplate to create.</param>
-        /// <returns>The created ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> CreateAsync(ApplicationTemplate applicationTemplateToCreate);
-
-        /// <summary>
-        /// Creates the specified ApplicationTemplate using POST.
-        /// </summary>
-        /// <param name="applicationTemplateToCreate">The ApplicationTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> CreateAsync(ApplicationTemplate applicationTemplateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ApplicationTemplate using POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
-        /// </summary>
-        /// <param name="applicationTemplateToCreate">The ApplicationTemplate to create.</param>
-        /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> CreateResponseAsync(ApplicationTemplate applicationTemplateToCreate);
+        System.Threading.Tasks.Task<ApplicationTemplate> CreateAsync(ApplicationTemplate applicationTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ApplicationTemplate using POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="applicationTemplateToCreate">The ApplicationTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> CreateResponseAsync(ApplicationTemplate applicationTemplateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ApplicationTemplate.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> CreateResponseAsync(ApplicationTemplate applicationTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ApplicationTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ApplicationTemplate and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ApplicationTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ApplicationTemplate.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ApplicationTemplate using PATCH.
         /// </summary>
         /// <param name="applicationTemplateToUpdate">The ApplicationTemplate to update.</param>
-        /// <returns>The updated ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> UpdateAsync(ApplicationTemplate applicationTemplateToUpdate);
-
-        /// <summary>
-        /// Updates the specified ApplicationTemplate using PATCH.
-        /// </summary>
-        /// <param name="applicationTemplateToUpdate">The ApplicationTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> UpdateAsync(ApplicationTemplate applicationTemplateToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ApplicationTemplate using PATCH and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
-        /// </summary>
-        /// <param name="applicationTemplateToUpdate">The ApplicationTemplate to update.</param>
-        /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> UpdateResponseAsync(ApplicationTemplate applicationTemplateToUpdate);
+        System.Threading.Tasks.Task<ApplicationTemplate> UpdateAsync(ApplicationTemplate applicationTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ApplicationTemplate using PATCH and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> UpdateResponseAsync(ApplicationTemplate applicationTemplateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> UpdateResponseAsync(ApplicationTemplate applicationTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADLicenseUsage using POST.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
-        /// <returns>The created AzureADLicenseUsage.</returns>
-        public System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate)
-        {
-            return this.CreateAsync(azureADLicenseUsageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AzureADLicenseUsage using POST.
-        /// </summary>
-        /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AzureADLicenseUsage.</returns>
-        public async System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADLicenseUsage> CreateAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AzureADLicenseUsage>(azureADLicenseUsageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADLicenseUsage using POST and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
         /// </summary>
         /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
-        /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> CreateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToCreate)
-        {
-            return this.CreateResponseAsync(azureADLicenseUsageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AzureADLicenseUsage using POST and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
-        /// </summary>
-        /// <param name="azureADLicenseUsageToCreate">The AzureADLicenseUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> CreateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> CreateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AzureADLicenseUsage>(azureADLicenseUsageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AzureADLicenseUsage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AzureADLicenseUsage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AzureADLicenseUsage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AzureADLicenseUsage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AzureADLicenseUsage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AzureADLicenseUsage using PATCH.
         /// </summary>
         /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
-        /// <returns>The updated AzureADLicenseUsage.</returns>
-        public System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate)
-        {
-            return this.UpdateAsync(azureADLicenseUsageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AzureADLicenseUsage using PATCH.
-        /// </summary>
-        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADLicenseUsage.</returns>
-        public async System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADLicenseUsage> UpdateAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (azureADLicenseUsageToUpdate.AdditionalData != null)
-			{
-				if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (azureADLicenseUsageToUpdate.AdditionalData != null)
-            {
-                if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AzureADLicenseUsage>(azureADLicenseUsageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AzureADLicenseUsage using PATCH and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
         /// </summary>
         /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
-        /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> UpdateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate)
-        {
-            return this.UpdateResponseAsync(azureADLicenseUsageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AzureADLicenseUsage using PATCH and returns a <see cref="GraphResponse{AzureADLicenseUsage}"/> object.
-        /// </summary>
-        /// <param name="azureADLicenseUsageToUpdate">The AzureADLicenseUsage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AzureADLicenseUsage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> UpdateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AzureADLicenseUsage>> UpdateResponseAsync(AzureADLicenseUsage azureADLicenseUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (azureADLicenseUsageToUpdate.AdditionalData != null)
-			{
-				if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (azureADLicenseUsageToUpdate.AdditionalData != null)
-            {
-                if (azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    azureADLicenseUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADLicenseUsageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AzureADLicenseUsage>(azureADLicenseUsageToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TeamworkTag using POST.
         /// </summary>
         /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
-        /// <returns>The created TeamworkTag.</returns>
-        public System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate)
-        {
-            return this.CreateAsync(teamworkTagToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamworkTag using POST.
-        /// </summary>
-        /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkTag.</returns>
-        public async System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TeamworkTag>(teamworkTagToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TeamworkTag using POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
         /// </summary>
         /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
-        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> CreateResponseAsync(TeamworkTag teamworkTagToCreate)
-        {
-            return this.CreateResponseAsync(teamworkTagToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamworkTag using POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
-        /// </summary>
-        /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> CreateResponseAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> CreateResponseAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamworkTag>(teamworkTagToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TeamworkTag.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TeamworkTag.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TeamworkTag>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TeamworkTag and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TeamworkTag and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TeamworkTag using PATCH.
         /// </summary>
         /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
-        /// <returns>The updated TeamworkTag.</returns>
-        public System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate)
-        {
-            return this.UpdateAsync(teamworkTagToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TeamworkTag using PATCH.
-        /// </summary>
-        /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamworkTag.</returns>
-        public async System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (teamworkTagToUpdate.AdditionalData != null)
-			{
-				if (teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkTagToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamworkTagToUpdate.AdditionalData != null)
-            {
-                if (teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkTagToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamworkTag>(teamworkTagToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TeamworkTag using PATCH and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
         /// </summary>
         /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
-        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> UpdateResponseAsync(TeamworkTag teamworkTagToUpdate)
-        {
-            return this.UpdateResponseAsync(teamworkTagToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TeamworkTag using PATCH and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
-        /// </summary>
-        /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> UpdateResponseAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> UpdateResponseAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (teamworkTagToUpdate.AdditionalData != null)
-			{
-				if (teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkTagToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamworkTagToUpdate.AdditionalData != null)
-            {
-                if (teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamworkTagToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamworkTagToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TeamworkTag>(teamworkTagToUpdate, cancellationToken).ConfigureAwait(false);
         }

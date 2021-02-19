@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeFill using POST.
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
-        /// <returns>The created WorkbookRangeFill.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate)
-        {
-            return this.CreateAsync(workbookRangeFillToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeFill using POST.
-        /// </summary>
-        /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeFill.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookRangeFill>(workbookRangeFillToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeFill using POST and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> CreateResponseAsync(WorkbookRangeFill workbookRangeFillToCreate)
-        {
-            return this.CreateResponseAsync(workbookRangeFillToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeFill using POST and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
-        /// </summary>
-        /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> CreateResponseAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> CreateResponseAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeFill>(workbookRangeFillToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookRangeFill.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookRangeFill.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookRangeFill>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookRangeFill and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookRangeFill and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookRangeFill using PATCH.
         /// </summary>
         /// <param name="workbookRangeFillToUpdate">The WorkbookRangeFill to update.</param>
-        /// <returns>The updated WorkbookRangeFill.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFill> UpdateAsync(WorkbookRangeFill workbookRangeFillToUpdate)
-        {
-            return this.UpdateAsync(workbookRangeFillToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookRangeFill using PATCH.
-        /// </summary>
-        /// <param name="workbookRangeFillToUpdate">The WorkbookRangeFill to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeFill.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFill> UpdateAsync(WorkbookRangeFill workbookRangeFillToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFill> UpdateAsync(WorkbookRangeFill workbookRangeFillToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookRangeFillToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFillToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeFillToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFillToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookRangeFill>(workbookRangeFillToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookRangeFill using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
         /// </summary>
         /// <param name="workbookRangeFillToUpdate">The WorkbookRangeFill to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> UpdateResponseAsync(WorkbookRangeFill workbookRangeFillToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookRangeFillToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookRangeFill using PATCH and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
-        /// </summary>
-        /// <param name="workbookRangeFillToUpdate">The WorkbookRangeFill to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> UpdateResponseAsync(WorkbookRangeFill workbookRangeFillToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> UpdateResponseAsync(WorkbookRangeFill workbookRangeFillToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookRangeFillToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFillToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeFillToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeFillToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeFillToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeFill>(workbookRangeFillToUpdate, cancellationToken).ConfigureAwait(false);
         }

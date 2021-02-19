@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrinterShare to the collection via POST.
-        /// </summary>
-        /// <param name="printerShare">The PrinterShare to add.</param>
-        /// <returns>The created PrinterShare.</returns>
-        public System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare)
-        {
-            return this.AddAsync(printerShare, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrinterShare to the collection via POST.
         /// </summary>
         /// <param name="printerShare">The PrinterShare to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrinterShare.</returns>
-        public System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PrinterShare>(printerShare, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PrinterShare to the collection via POST and returns a <see cref="GraphResponse{PrinterShare}"/> object of the request.
-        /// </summary>
-        /// <param name="printerShare">The PrinterShare to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare)
-        {
-            return this.AddResponseAsync(printerShare, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrinterShare to the collection via POST and returns a <see cref="GraphResponse{PrinterShare}"/> object of the request.
         /// </summary>
         /// <param name="printerShare">The PrinterShare to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrinterShare>(printerShare, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PrintSharesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PrintSharesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

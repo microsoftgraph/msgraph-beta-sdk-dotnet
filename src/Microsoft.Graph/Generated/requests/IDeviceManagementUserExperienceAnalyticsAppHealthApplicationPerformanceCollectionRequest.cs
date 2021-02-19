@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsAppHealthApplicationPerformance to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthApplicationPerformance">The UserExperienceAnalyticsAppHealthApplicationPerformance to add.</param>
-        /// <returns>The created UserExperienceAnalyticsAppHealthApplicationPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthApplicationPerformance> AddAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsAppHealthApplicationPerformance to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthApplicationPerformance">The UserExperienceAnalyticsAppHealthApplicationPerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthApplicationPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthApplicationPerformance> AddAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsAppHealthApplicationPerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthApplicationPerformance}"/> object of the request.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthApplicationPerformance">The UserExperienceAnalyticsAppHealthApplicationPerformance to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthApplicationPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthApplicationPerformance>> AddResponseAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthApplicationPerformance> AddAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsAppHealthApplicationPerformance to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthApplicationPerformance}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsAppHealthApplicationPerformance">The UserExperienceAnalyticsAppHealthApplicationPerformance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthApplicationPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthApplicationPerformance>> AddResponseAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthApplicationPerformance>> AddResponseAsync(UserExperienceAnalyticsAppHealthApplicationPerformance userExperienceAnalyticsAppHealthApplicationPerformance, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

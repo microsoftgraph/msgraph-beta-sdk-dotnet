@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified IosLobAppProvisioningConfigurationAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="iosLobAppProvisioningConfigurationAssignment">The IosLobAppProvisioningConfigurationAssignment to add.</param>
-        /// <returns>The created IosLobAppProvisioningConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> AddAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment)
-        {
-            return this.AddAsync(iosLobAppProvisioningConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IosLobAppProvisioningConfigurationAssignment to the collection via POST.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationAssignment">The IosLobAppProvisioningConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosLobAppProvisioningConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> AddAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> AddAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<IosLobAppProvisioningConfigurationAssignment>(iosLobAppProvisioningConfigurationAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified IosLobAppProvisioningConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="iosLobAppProvisioningConfigurationAssignment">The IosLobAppProvisioningConfigurationAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> AddResponseAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment)
-        {
-            return this.AddResponseAsync(iosLobAppProvisioningConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified IosLobAppProvisioningConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.
         /// </summary>
         /// <param name="iosLobAppProvisioningConfigurationAssignment">The IosLobAppProvisioningConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> AddResponseAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> AddResponseAsync(IosLobAppProvisioningConfigurationAssignment iosLobAppProvisioningConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationAssignment>(iosLobAppProvisioningConfigurationAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<IosLobAppProvisioningConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<IosLobAppProvisioningConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

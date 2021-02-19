@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
-        /// <returns>The created WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> AddAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary)
-        {
-            return this.AddAsync(windowsInformationProtectionNetworkLearningSummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> AddAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> AddAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummary, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> AddResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary)
-        {
-            return this.AddResponseAsync(windowsInformationProtectionNetworkLearningSummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionNetworkLearningSummary to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummary">The WindowsInformationProtectionNetworkLearningSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> AddResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> AddResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummary, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

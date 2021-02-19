@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ItemActivityOLD using POST.
         /// </summary>
         /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
-        /// <returns>The created ItemActivityOLD.</returns>
-        public System.Threading.Tasks.Task<ItemActivityOLD> CreateAsync(ItemActivityOLD itemActivityOLDToCreate)
-        {
-            return this.CreateAsync(itemActivityOLDToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemActivityOLD using POST.
-        /// </summary>
-        /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityOLD.</returns>
-        public async System.Threading.Tasks.Task<ItemActivityOLD> CreateAsync(ItemActivityOLD itemActivityOLDToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemActivityOLD> CreateAsync(ItemActivityOLD itemActivityOLDToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ItemActivityOLD>(itemActivityOLDToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ItemActivityOLD using POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
         /// </summary>
         /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
-        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> CreateResponseAsync(ItemActivityOLD itemActivityOLDToCreate)
-        {
-            return this.CreateResponseAsync(itemActivityOLDToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemActivityOLD using POST and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
-        /// </summary>
-        /// <param name="itemActivityOLDToCreate">The ItemActivityOLD to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> CreateResponseAsync(ItemActivityOLD itemActivityOLDToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> CreateResponseAsync(ItemActivityOLD itemActivityOLDToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemActivityOLD>(itemActivityOLDToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ItemActivityOLD.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ItemActivityOLD.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ItemActivityOLD>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ItemActivityOLD and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ItemActivityOLD and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ItemActivityOLD using PATCH.
         /// </summary>
         /// <param name="itemActivityOLDToUpdate">The ItemActivityOLD to update.</param>
-        /// <returns>The updated ItemActivityOLD.</returns>
-        public System.Threading.Tasks.Task<ItemActivityOLD> UpdateAsync(ItemActivityOLD itemActivityOLDToUpdate)
-        {
-            return this.UpdateAsync(itemActivityOLDToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ItemActivityOLD using PATCH.
-        /// </summary>
-        /// <param name="itemActivityOLDToUpdate">The ItemActivityOLD to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemActivityOLD.</returns>
-        public async System.Threading.Tasks.Task<ItemActivityOLD> UpdateAsync(ItemActivityOLD itemActivityOLDToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemActivityOLD> UpdateAsync(ItemActivityOLD itemActivityOLDToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemActivityOLDToUpdate.AdditionalData != null)
-			{
-				if (itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityOLDToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemActivityOLDToUpdate.AdditionalData != null)
-            {
-                if (itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityOLDToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ItemActivityOLD>(itemActivityOLDToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ItemActivityOLD using PATCH and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
         /// </summary>
         /// <param name="itemActivityOLDToUpdate">The ItemActivityOLD to update.</param>
-        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> UpdateResponseAsync(ItemActivityOLD itemActivityOLDToUpdate)
-        {
-            return this.UpdateResponseAsync(itemActivityOLDToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ItemActivityOLD using PATCH and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
-        /// </summary>
-        /// <param name="itemActivityOLDToUpdate">The ItemActivityOLD to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> UpdateResponseAsync(ItemActivityOLD itemActivityOLDToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> UpdateResponseAsync(ItemActivityOLD itemActivityOLDToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (itemActivityOLDToUpdate.AdditionalData != null)
-			{
-				if (itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityOLDToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemActivityOLDToUpdate.AdditionalData != null)
-            {
-                if (itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemActivityOLDToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityOLDToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ItemActivityOLD>(itemActivityOLDToUpdate, cancellationToken).ConfigureAwait(false);
         }

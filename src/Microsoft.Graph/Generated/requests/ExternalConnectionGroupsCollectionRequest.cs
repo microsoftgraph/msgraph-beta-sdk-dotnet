@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ExternalGroup to the collection via POST.
-        /// </summary>
-        /// <param name="externalGroup">The ExternalGroup to add.</param>
-        /// <returns>The created ExternalGroup.</returns>
-        public System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup)
-        {
-            return this.AddAsync(externalGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExternalGroup to the collection via POST.
         /// </summary>
         /// <param name="externalGroup">The ExternalGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExternalGroup.</returns>
-        public System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ExternalGroup> AddAsync(ExternalGroup externalGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ExternalGroup>(externalGroup, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ExternalGroup to the collection via POST and returns a <see cref="GraphResponse{ExternalGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="externalGroup">The ExternalGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup)
-        {
-            return this.AddResponseAsync(externalGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ExternalGroup to the collection via POST and returns a <see cref="GraphResponse{ExternalGroup}"/> object of the request.
         /// </summary>
         /// <param name="externalGroup">The ExternalGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> AddResponseAsync(ExternalGroup externalGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExternalGroup>(externalGroup, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IExternalConnectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ExternalConnectionGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalConnectionGroupsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ExternalConnectionGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

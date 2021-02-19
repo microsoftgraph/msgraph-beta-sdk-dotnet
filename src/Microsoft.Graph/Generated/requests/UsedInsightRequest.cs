@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UsedInsight using POST.
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
-        /// <returns>The created UsedInsight.</returns>
-        public System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate)
-        {
-            return this.CreateAsync(usedInsightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UsedInsight using POST.
-        /// </summary>
-        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsedInsight.</returns>
-        public async System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UsedInsight>(usedInsightToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
-        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate)
-        {
-            return this.CreateResponseAsync(usedInsightToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
-        /// </summary>
-        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UsedInsight>(usedInsightToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UsedInsight.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UsedInsight.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UsedInsight>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UsedInsight and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UsedInsight and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UsedInsight using PATCH.
         /// </summary>
         /// <param name="usedInsightToUpdate">The UsedInsight to update.</param>
-        /// <returns>The updated UsedInsight.</returns>
-        public System.Threading.Tasks.Task<UsedInsight> UpdateAsync(UsedInsight usedInsightToUpdate)
-        {
-            return this.UpdateAsync(usedInsightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UsedInsight using PATCH.
-        /// </summary>
-        /// <param name="usedInsightToUpdate">The UsedInsight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UsedInsight.</returns>
-        public async System.Threading.Tasks.Task<UsedInsight> UpdateAsync(UsedInsight usedInsightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UsedInsight> UpdateAsync(UsedInsight usedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (usedInsightToUpdate.AdditionalData != null)
-			{
-				if (usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usedInsightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (usedInsightToUpdate.AdditionalData != null)
-            {
-                if (usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usedInsightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UsedInsight>(usedInsightToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UsedInsight using PATCH and returns a <see cref="GraphResponse{UsedInsight}"/> object.
         /// </summary>
         /// <param name="usedInsightToUpdate">The UsedInsight to update.</param>
-        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UsedInsight>> UpdateResponseAsync(UsedInsight usedInsightToUpdate)
-        {
-            return this.UpdateResponseAsync(usedInsightToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UsedInsight using PATCH and returns a <see cref="GraphResponse{UsedInsight}"/> object.
-        /// </summary>
-        /// <param name="usedInsightToUpdate">The UsedInsight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> UpdateResponseAsync(UsedInsight usedInsightToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> UpdateResponseAsync(UsedInsight usedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (usedInsightToUpdate.AdditionalData != null)
-			{
-				if (usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usedInsightToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (usedInsightToUpdate.AdditionalData != null)
-            {
-                if (usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    usedInsightToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, usedInsightToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UsedInsight>(usedInsightToUpdate, cancellationToken).ConfigureAwait(false);
         }

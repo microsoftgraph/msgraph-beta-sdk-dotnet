@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDriveItemSubscriptionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Subscription to the collection via POST.
-        /// </summary>
-        /// <param name="subscription">The Subscription to add.</param>
-        /// <returns>The created Subscription.</returns>
-        System.Threading.Tasks.Task<Subscription> AddAsync(Subscription subscription);
-
         /// <summary>
         /// Adds the specified Subscription to the collection via POST.
         /// </summary>
         /// <param name="subscription">The Subscription to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Subscription.</returns>
-        System.Threading.Tasks.Task<Subscription> AddAsync(Subscription subscription, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Subscription to the collection via POST and returns a <see cref="GraphResponse{Subscription}"/> object of the request.
-        /// </summary>
-        /// <param name="subscription">The Subscription to add.</param>
-        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Subscription>> AddResponseAsync(Subscription subscription);
+        System.Threading.Tasks.Task<Subscription> AddAsync(Subscription subscription, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Subscription to the collection via POST and returns a <see cref="GraphResponse{Subscription}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="subscription">The Subscription to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Subscription>> AddResponseAsync(Subscription subscription, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> AddResponseAsync(Subscription subscription, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemSubscriptionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDriveItemSubscriptionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemSubscriptionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DriveItemSubscriptionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItemSubscriptionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDriveItemSubscriptionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DriveItemSubscriptionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItemSubscriptionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItemSubscriptionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DriveItemSubscriptionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkbookRangeView to the collection via POST.
-        /// </summary>
-        /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
-        /// <returns>The created WorkbookRangeView.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> AddAsync(WorkbookRangeView workbookRangeView)
-        {
-            return this.AddAsync(workbookRangeView, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookRangeView to the collection via POST.
         /// </summary>
         /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeView.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeView> AddAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkbookRangeView> AddAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookRangeView>(workbookRangeView, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WorkbookRangeView to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.
-        /// </summary>
-        /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> AddResponseAsync(WorkbookRangeView workbookRangeView)
-        {
-            return this.AddResponseAsync(workbookRangeView, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookRangeView to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.
         /// </summary>
         /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> AddResponseAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> AddResponseAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookRangeView, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWorkbookRangeViewRowsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWorkbookRangeViewRowsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWorkbookRangeViewRowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WorkbookRangeViewRowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookRangeViewRowsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeViewRowsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeViewRowsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookRangeViewRowsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeViewRowsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeViewRowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeViewRowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeViewRowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

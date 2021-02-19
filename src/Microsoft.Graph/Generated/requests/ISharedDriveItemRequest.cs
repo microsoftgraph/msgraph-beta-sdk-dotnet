@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SharedDriveItem using POST.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
-        /// <returns>The created SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate);
-
-        /// <summary>
-        /// Creates the specified SharedDriveItem using POST.
-        /// </summary>
-        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
-        /// </summary>
-        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate);
+        System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharedDriveItem.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharedDriveItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharedDriveItem and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharedDriveItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharedDriveItem.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SharedDriveItem using PATCH.
         /// </summary>
         /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
-        /// <returns>The updated SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate);
-
-        /// <summary>
-        /// Updates the specified SharedDriveItem using PATCH.
-        /// </summary>
-        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
-        /// </summary>
-        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate);
+        System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

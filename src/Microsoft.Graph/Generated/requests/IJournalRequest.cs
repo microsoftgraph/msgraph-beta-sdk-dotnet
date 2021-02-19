@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Journal using POST.
         /// </summary>
         /// <param name="journalToCreate">The Journal to create.</param>
-        /// <returns>The created Journal.</returns>
-        System.Threading.Tasks.Task<Journal> CreateAsync(Journal journalToCreate);
-
-        /// <summary>
-        /// Creates the specified Journal using POST.
-        /// </summary>
-        /// <param name="journalToCreate">The Journal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Journal.</returns>
-        System.Threading.Tasks.Task<Journal> CreateAsync(Journal journalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Journal using POST and returns a <see cref="GraphResponse{Journal}"/> object.
-        /// </summary>
-        /// <param name="journalToCreate">The Journal to create.</param>
-        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> CreateResponseAsync(Journal journalToCreate);
+        System.Threading.Tasks.Task<Journal> CreateAsync(Journal journalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Journal using POST and returns a <see cref="GraphResponse{Journal}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="journalToCreate">The Journal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> CreateResponseAsync(Journal journalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Journal.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Journal>> CreateResponseAsync(Journal journalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Journal.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Journal and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Journal and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Journal.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Journal using PATCH.
         /// </summary>
         /// <param name="journalToUpdate">The Journal to update.</param>
-        /// <returns>The updated Journal.</returns>
-        System.Threading.Tasks.Task<Journal> UpdateAsync(Journal journalToUpdate);
-
-        /// <summary>
-        /// Updates the specified Journal using PATCH.
-        /// </summary>
-        /// <param name="journalToUpdate">The Journal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Journal.</returns>
-        System.Threading.Tasks.Task<Journal> UpdateAsync(Journal journalToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Journal using PATCH and returns a <see cref="GraphResponse{Journal}"/> object.
-        /// </summary>
-        /// <param name="journalToUpdate">The Journal to update.</param>
-        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate);
+        System.Threading.Tasks.Task<Journal> UpdateAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Journal using PATCH and returns a <see cref="GraphResponse{Journal}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Journal>> UpdateResponseAsync(Journal journalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

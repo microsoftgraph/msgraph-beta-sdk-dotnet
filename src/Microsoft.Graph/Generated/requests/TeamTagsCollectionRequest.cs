@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TeamworkTag to the collection via POST.
-        /// </summary>
-        /// <param name="teamworkTag">The TeamworkTag to add.</param>
-        /// <returns>The created TeamworkTag.</returns>
-        public System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag)
-        {
-            return this.AddAsync(teamworkTag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamworkTag to the collection via POST.
         /// </summary>
         /// <param name="teamworkTag">The TeamworkTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkTag.</returns>
-        public System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TeamworkTag> AddAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamworkTag>(teamworkTag, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TeamworkTag to the collection via POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object of the request.
-        /// </summary>
-        /// <param name="teamworkTag">The TeamworkTag to add.</param>
-        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> AddResponseAsync(TeamworkTag teamworkTag)
-        {
-            return this.AddResponseAsync(teamworkTag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamworkTag to the collection via POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object of the request.
         /// </summary>
         /// <param name="teamworkTag">The TeamworkTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> AddResponseAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> AddResponseAsync(TeamworkTag teamworkTag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamworkTag>(teamworkTag, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ITeamTagsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<TeamTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamTagsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamTagsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<TeamTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

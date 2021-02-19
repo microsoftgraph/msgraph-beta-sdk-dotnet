@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SensitivityPolicySettings using POST.
         /// </summary>
         /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
-        /// <returns>The created SensitivityPolicySettings.</returns>
-        public System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate)
-        {
-            return this.CreateAsync(sensitivityPolicySettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SensitivityPolicySettings using POST.
-        /// </summary>
-        /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitivityPolicySettings.</returns>
-        public async System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SensitivityPolicySettings> CreateAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SensitivityPolicySettings>(sensitivityPolicySettingsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SensitivityPolicySettings using POST and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
         /// </summary>
         /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
-        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> CreateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate)
-        {
-            return this.CreateResponseAsync(sensitivityPolicySettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SensitivityPolicySettings using POST and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
-        /// </summary>
-        /// <param name="sensitivityPolicySettingsToCreate">The SensitivityPolicySettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> CreateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> CreateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SensitivityPolicySettings>(sensitivityPolicySettingsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SensitivityPolicySettings.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SensitivityPolicySettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SensitivityPolicySettings>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SensitivityPolicySettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SensitivityPolicySettings and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SensitivityPolicySettings using PATCH.
         /// </summary>
         /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
-        /// <returns>The updated SensitivityPolicySettings.</returns>
-        public System.Threading.Tasks.Task<SensitivityPolicySettings> UpdateAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate)
-        {
-            return this.UpdateAsync(sensitivityPolicySettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SensitivityPolicySettings using PATCH.
-        /// </summary>
-        /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SensitivityPolicySettings.</returns>
-        public async System.Threading.Tasks.Task<SensitivityPolicySettings> UpdateAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SensitivityPolicySettings> UpdateAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sensitivityPolicySettingsToUpdate.AdditionalData != null)
-			{
-				if (sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sensitivityPolicySettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sensitivityPolicySettingsToUpdate.AdditionalData != null)
-            {
-                if (sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sensitivityPolicySettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SensitivityPolicySettings>(sensitivityPolicySettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SensitivityPolicySettings using PATCH and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
         /// </summary>
         /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
-        /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> UpdateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate)
-        {
-            return this.UpdateResponseAsync(sensitivityPolicySettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SensitivityPolicySettings using PATCH and returns a <see cref="GraphResponse{SensitivityPolicySettings}"/> object.
-        /// </summary>
-        /// <param name="sensitivityPolicySettingsToUpdate">The SensitivityPolicySettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SensitivityPolicySettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> UpdateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SensitivityPolicySettings>> UpdateResponseAsync(SensitivityPolicySettings sensitivityPolicySettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sensitivityPolicySettingsToUpdate.AdditionalData != null)
-			{
-				if (sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sensitivityPolicySettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sensitivityPolicySettingsToUpdate.AdditionalData != null)
-            {
-                if (sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sensitivityPolicySettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sensitivityPolicySettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SensitivityPolicySettings>(sensitivityPolicySettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }

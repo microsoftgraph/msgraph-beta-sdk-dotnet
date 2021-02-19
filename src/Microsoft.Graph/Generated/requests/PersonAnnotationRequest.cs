@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAnnotation using POST.
         /// </summary>
         /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
-        /// <returns>The created PersonAnnotation.</returns>
-        public System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate)
-        {
-            return this.CreateAsync(personAnnotationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PersonAnnotation using POST.
-        /// </summary>
-        /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAnnotation.</returns>
-        public async System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PersonAnnotation>(personAnnotationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAnnotation using POST and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
         /// </summary>
         /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> CreateResponseAsync(PersonAnnotation personAnnotationToCreate)
-        {
-            return this.CreateResponseAsync(personAnnotationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PersonAnnotation using POST and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
-        /// </summary>
-        /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> CreateResponseAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> CreateResponseAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PersonAnnotation>(personAnnotationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PersonAnnotation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PersonAnnotation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PersonAnnotation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PersonAnnotation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PersonAnnotation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PersonAnnotation using PATCH.
         /// </summary>
         /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
-        /// <returns>The updated PersonAnnotation.</returns>
-        public System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate)
-        {
-            return this.UpdateAsync(personAnnotationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PersonAnnotation using PATCH.
-        /// </summary>
-        /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonAnnotation.</returns>
-        public async System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personAnnotationToUpdate.AdditionalData != null)
-			{
-				if (personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAnnotationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personAnnotationToUpdate.AdditionalData != null)
-            {
-                if (personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAnnotationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PersonAnnotation>(personAnnotationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PersonAnnotation using PATCH and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
         /// </summary>
         /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> UpdateResponseAsync(PersonAnnotation personAnnotationToUpdate)
-        {
-            return this.UpdateResponseAsync(personAnnotationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PersonAnnotation using PATCH and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
-        /// </summary>
-        /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> UpdateResponseAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> UpdateResponseAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personAnnotationToUpdate.AdditionalData != null)
-			{
-				if (personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAnnotationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personAnnotationToUpdate.AdditionalData != null)
-            {
-                if (personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personAnnotationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAnnotationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PersonAnnotation>(personAnnotationToUpdate, cancellationToken).ConfigureAwait(false);
         }

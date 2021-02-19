@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ActivityBasedTimeoutPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
-        /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        public System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> AddAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy)
-        {
-            return this.AddAsync(activityBasedTimeoutPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ActivityBasedTimeoutPolicy to the collection via POST.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        public System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> AddAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> AddAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ActivityBasedTimeoutPolicy to the collection via POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> AddResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy)
-        {
-            return this.AddResponseAsync(activityBasedTimeoutPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ActivityBasedTimeoutPolicy to the collection via POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicy">The ActivityBasedTimeoutPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> AddResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> AddResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicyRootActivityBasedTimeoutPoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicyRootActivityBasedTimeoutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicyRootActivityBasedTimeoutPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootActivityBasedTimeoutPoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicyRootActivityBasedTimeoutPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

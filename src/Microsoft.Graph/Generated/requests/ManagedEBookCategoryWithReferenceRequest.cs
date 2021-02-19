@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedEBookCategory using POST.
         /// </summary>
         /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
-        /// <returns>The created ManagedEBookCategory.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookCategory> CreateAsync(ManagedEBookCategory managedEBookCategoryToCreate)
-        {
-            return this.CreateAsync(managedEBookCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedEBookCategory using POST.
-        /// </summary>
-        /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBookCategory.</returns>
-        public async System.Threading.Tasks.Task<ManagedEBookCategory> CreateAsync(ManagedEBookCategory managedEBookCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedEBookCategory> CreateAsync(ManagedEBookCategory managedEBookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedEBookCategory>(managedEBookCategoryToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedEBookCategory using POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
         /// </summary>
         /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> CreateResponseAsync(ManagedEBookCategory managedEBookCategoryToCreate)
-        {
-            return this.CreateResponseAsync(managedEBookCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedEBookCategory using POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
-        /// </summary>
-        /// <param name="managedEBookCategoryToCreate">The ManagedEBookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> CreateResponseAsync(ManagedEBookCategory managedEBookCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> CreateResponseAsync(ManagedEBookCategory managedEBookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedEBookCategory>(managedEBookCategoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedEBookCategory using PATCH.
         /// </summary>
         /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory to update.</param>
-        /// <returns>The updated ManagedEBookCategory.</returns>
-        public System.Threading.Tasks.Task<ManagedEBookCategory> UpdateAsync(ManagedEBookCategory managedEBookCategoryToUpdate)
-        {
-            return this.UpdateAsync(managedEBookCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedEBookCategory using PATCH.
-        /// </summary>
-        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedEBookCategory.</returns>
-        public async System.Threading.Tasks.Task<ManagedEBookCategory> UpdateAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedEBookCategory> UpdateAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedEBookCategoryToUpdate.AdditionalData != null)
-			{
-				if (managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedEBookCategoryToUpdate.AdditionalData != null)
-            {
-                if (managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedEBookCategory>(managedEBookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedEBookCategory using PATCH and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
         /// </summary>
         /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> UpdateResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate)
-        {
-            return this.UpdateResponseAsync(managedEBookCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedEBookCategory using PATCH and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object.
-        /// </summary>
-        /// <param name="managedEBookCategoryToUpdate">The ManagedEBookCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> UpdateResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookCategory>> UpdateResponseAsync(ManagedEBookCategory managedEBookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedEBookCategoryToUpdate.AdditionalData != null)
-			{
-				if (managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedEBookCategoryToUpdate.AdditionalData != null)
-            {
-                if (managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedEBookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedEBookCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedEBookCategory>(managedEBookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified ManagedEBookCategory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedEBookCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ManagedEBookCategory>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified ManagedEBookCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedEBookCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

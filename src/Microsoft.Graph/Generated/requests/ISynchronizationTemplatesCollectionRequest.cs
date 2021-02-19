@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISynchronizationTemplatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SynchronizationTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
-        /// <returns>The created SynchronizationTemplate.</returns>
-        System.Threading.Tasks.Task<SynchronizationTemplate> AddAsync(SynchronizationTemplate synchronizationTemplate);
-
         /// <summary>
         /// Adds the specified SynchronizationTemplate to the collection via POST.
         /// </summary>
         /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SynchronizationTemplate.</returns>
-        System.Threading.Tasks.Task<SynchronizationTemplate> AddAsync(SynchronizationTemplate synchronizationTemplate, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SynchronizationTemplate to the collection via POST and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> AddResponseAsync(SynchronizationTemplate synchronizationTemplate);
+        System.Threading.Tasks.Task<SynchronizationTemplate> AddAsync(SynchronizationTemplate synchronizationTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SynchronizationTemplate to the collection via POST and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="synchronizationTemplate">The SynchronizationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> AddResponseAsync(SynchronizationTemplate synchronizationTemplate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> AddResponseAsync(SynchronizationTemplate synchronizationTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISynchronizationTemplatesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISynchronizationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplatesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISynchronizationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

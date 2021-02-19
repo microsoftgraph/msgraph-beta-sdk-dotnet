@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyCategory to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
-        /// <returns>The created GroupPolicyCategory.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyCategory> AddAsync(GroupPolicyCategory groupPolicyCategory)
-        {
-            return this.AddAsync(groupPolicyCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupPolicyCategory to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyCategory.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyCategory> AddAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GroupPolicyCategory> AddAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<GroupPolicyCategory>(groupPolicyCategory, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
-        /// </summary>
-        /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> AddResponseAsync(GroupPolicyCategory groupPolicyCategory)
-        {
-            return this.AddResponseAsync(groupPolicyCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupPolicyCategory to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.
         /// </summary>
         /// <param name="groupPolicyCategory">The GroupPolicyCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> AddResponseAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> AddResponseAsync(GroupPolicyCategory groupPolicyCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupPolicyCategory>(groupPolicyCategory, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementGroupPolicyCategoriesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementGroupPolicyCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementGroupPolicyCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementGroupPolicyCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyCategoriesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementGroupPolicyCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

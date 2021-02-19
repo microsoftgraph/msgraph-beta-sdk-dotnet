@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADFeatureUsage using POST.
         /// </summary>
         /// <param name="azureADFeatureUsageToCreate">The AzureADFeatureUsage to create.</param>
-        /// <returns>The created AzureADFeatureUsage.</returns>
-        public System.Threading.Tasks.Task<AzureADFeatureUsage> CreateAsync(AzureADFeatureUsage azureADFeatureUsageToCreate)
-        {
-            return this.CreateAsync(azureADFeatureUsageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AzureADFeatureUsage using POST.
-        /// </summary>
-        /// <param name="azureADFeatureUsageToCreate">The AzureADFeatureUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AzureADFeatureUsage.</returns>
-        public async System.Threading.Tasks.Task<AzureADFeatureUsage> CreateAsync(AzureADFeatureUsage azureADFeatureUsageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADFeatureUsage> CreateAsync(AzureADFeatureUsage azureADFeatureUsageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AzureADFeatureUsage>(azureADFeatureUsageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AzureADFeatureUsage using POST and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
         /// </summary>
         /// <param name="azureADFeatureUsageToCreate">The AzureADFeatureUsage to create.</param>
-        /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> CreateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToCreate)
-        {
-            return this.CreateResponseAsync(azureADFeatureUsageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AzureADFeatureUsage using POST and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
-        /// </summary>
-        /// <param name="azureADFeatureUsageToCreate">The AzureADFeatureUsage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> CreateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> CreateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AzureADFeatureUsage>(azureADFeatureUsageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AzureADFeatureUsage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AzureADFeatureUsage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AzureADFeatureUsage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AzureADFeatureUsage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AzureADFeatureUsage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AzureADFeatureUsage using PATCH.
         /// </summary>
         /// <param name="azureADFeatureUsageToUpdate">The AzureADFeatureUsage to update.</param>
-        /// <returns>The updated AzureADFeatureUsage.</returns>
-        public System.Threading.Tasks.Task<AzureADFeatureUsage> UpdateAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate)
-        {
-            return this.UpdateAsync(azureADFeatureUsageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AzureADFeatureUsage using PATCH.
-        /// </summary>
-        /// <param name="azureADFeatureUsageToUpdate">The AzureADFeatureUsage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AzureADFeatureUsage.</returns>
-        public async System.Threading.Tasks.Task<AzureADFeatureUsage> UpdateAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AzureADFeatureUsage> UpdateAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (azureADFeatureUsageToUpdate.AdditionalData != null)
-			{
-				if (azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADFeatureUsageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (azureADFeatureUsageToUpdate.AdditionalData != null)
-            {
-                if (azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADFeatureUsageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AzureADFeatureUsage>(azureADFeatureUsageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AzureADFeatureUsage using PATCH and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
         /// </summary>
         /// <param name="azureADFeatureUsageToUpdate">The AzureADFeatureUsage to update.</param>
-        /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> UpdateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate)
-        {
-            return this.UpdateResponseAsync(azureADFeatureUsageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AzureADFeatureUsage using PATCH and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
-        /// </summary>
-        /// <param name="azureADFeatureUsageToUpdate">The AzureADFeatureUsage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> UpdateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> UpdateResponseAsync(AzureADFeatureUsage azureADFeatureUsageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (azureADFeatureUsageToUpdate.AdditionalData != null)
-			{
-				if (azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADFeatureUsageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (azureADFeatureUsageToUpdate.AdditionalData != null)
-            {
-                if (azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    azureADFeatureUsageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, azureADFeatureUsageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AzureADFeatureUsage>(azureADFeatureUsageToUpdate, cancellationToken).ConfigureAwait(false);
         }

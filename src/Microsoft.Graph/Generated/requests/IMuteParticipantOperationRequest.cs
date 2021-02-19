@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MuteParticipantOperation using POST.
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
-        /// <returns>The created MuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate);
-
-        /// <summary>
-        /// Creates the specified MuteParticipantOperation using POST.
-        /// </summary>
-        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
-        /// </summary>
-        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate);
+        System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MuteParticipantOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MuteParticipantOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MuteParticipantOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MuteParticipantOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MuteParticipantOperation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MuteParticipantOperation using PATCH.
         /// </summary>
         /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>
-        /// <returns>The updated MuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate);
-
-        /// <summary>
-        /// Updates the specified MuteParticipantOperation using PATCH.
-        /// </summary>
-        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MuteParticipantOperation using PATCH and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
-        /// </summary>
-        /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> UpdateResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate);
+        System.Threading.Tasks.Task<MuteParticipantOperation> UpdateAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MuteParticipantOperation using PATCH and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> UpdateResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> UpdateResponseAsync(MuteParticipantOperation muteParticipantOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

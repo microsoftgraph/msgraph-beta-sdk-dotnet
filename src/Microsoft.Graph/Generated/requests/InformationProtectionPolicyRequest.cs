@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified InformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
-        /// <returns>The created InformationProtectionPolicy.</returns>
-        public System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate)
-        {
-            return this.CreateAsync(informationProtectionPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified InformationProtectionPolicy using POST.
-        /// </summary>
-        /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtectionPolicy.</returns>
-        public async System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InformationProtectionPolicy> CreateAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<InformationProtectionPolicy>(informationProtectionPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified InformationProtectionPolicy using POST and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
         /// </summary>
         /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> CreateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToCreate)
-        {
-            return this.CreateResponseAsync(informationProtectionPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified InformationProtectionPolicy using POST and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
-        /// </summary>
-        /// <param name="informationProtectionPolicyToCreate">The InformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> CreateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> CreateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<InformationProtectionPolicy>(informationProtectionPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified InformationProtectionPolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified InformationProtectionPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<InformationProtectionPolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified InformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified InformationProtectionPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified InformationProtectionPolicy using PATCH.
         /// </summary>
         /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
-        /// <returns>The updated InformationProtectionPolicy.</returns>
-        public System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate)
-        {
-            return this.UpdateAsync(informationProtectionPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified InformationProtectionPolicy using PATCH.
-        /// </summary>
-        /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InformationProtectionPolicy.</returns>
-        public async System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InformationProtectionPolicy> UpdateAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (informationProtectionPolicyToUpdate.AdditionalData != null)
-			{
-				if (informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (informationProtectionPolicyToUpdate.AdditionalData != null)
-            {
-                if (informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<InformationProtectionPolicy>(informationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified InformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
         /// </summary>
         /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> UpdateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(informationProtectionPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified InformationProtectionPolicy using PATCH and returns a <see cref="GraphResponse{InformationProtectionPolicy}"/> object.
-        /// </summary>
-        /// <param name="informationProtectionPolicyToUpdate">The InformationProtectionPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{InformationProtectionPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> UpdateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionPolicy>> UpdateResponseAsync(InformationProtectionPolicy informationProtectionPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (informationProtectionPolicyToUpdate.AdditionalData != null)
-			{
-				if (informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (informationProtectionPolicyToUpdate.AdditionalData != null)
-            {
-                if (informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    informationProtectionPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<InformationProtectionPolicy>(informationProtectionPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

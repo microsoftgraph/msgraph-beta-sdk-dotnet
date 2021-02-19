@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileAwardsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PersonAward to the collection via POST.
-        /// </summary>
-        /// <param name="personAward">The PersonAward to add.</param>
-        /// <returns>The created PersonAward.</returns>
-        System.Threading.Tasks.Task<PersonAward> AddAsync(PersonAward personAward);
-
         /// <summary>
         /// Adds the specified PersonAward to the collection via POST.
         /// </summary>
         /// <param name="personAward">The PersonAward to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAward.</returns>
-        System.Threading.Tasks.Task<PersonAward> AddAsync(PersonAward personAward, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PersonAward to the collection via POST and returns a <see cref="GraphResponse{PersonAward}"/> object of the request.
-        /// </summary>
-        /// <param name="personAward">The PersonAward to add.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAward>> AddResponseAsync(PersonAward personAward);
+        System.Threading.Tasks.Task<PersonAward> AddAsync(PersonAward personAward, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PersonAward to the collection via POST and returns a <see cref="GraphResponse{PersonAward}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="personAward">The PersonAward to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAward>> AddResponseAsync(PersonAward personAward, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonAward>> AddResponseAsync(PersonAward personAward, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAwardsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAwardsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAwardsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IProfileAwardsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileAwardsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAwardsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProfileAwardsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

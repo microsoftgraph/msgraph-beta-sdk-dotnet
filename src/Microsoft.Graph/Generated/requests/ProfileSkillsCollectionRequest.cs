@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SkillProficiency to the collection via POST.
-        /// </summary>
-        /// <param name="skillProficiency">The SkillProficiency to add.</param>
-        /// <returns>The created SkillProficiency.</returns>
-        public System.Threading.Tasks.Task<SkillProficiency> AddAsync(SkillProficiency skillProficiency)
-        {
-            return this.AddAsync(skillProficiency, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SkillProficiency to the collection via POST.
         /// </summary>
         /// <param name="skillProficiency">The SkillProficiency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkillProficiency.</returns>
-        public System.Threading.Tasks.Task<SkillProficiency> AddAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SkillProficiency> AddAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SkillProficiency>(skillProficiency, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SkillProficiency to the collection via POST and returns a <see cref="GraphResponse{SkillProficiency}"/> object of the request.
-        /// </summary>
-        /// <param name="skillProficiency">The SkillProficiency to add.</param>
-        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> AddResponseAsync(SkillProficiency skillProficiency)
-        {
-            return this.AddResponseAsync(skillProficiency, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SkillProficiency to the collection via POST and returns a <see cref="GraphResponse{SkillProficiency}"/> object of the request.
         /// </summary>
         /// <param name="skillProficiency">The SkillProficiency to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> AddResponseAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> AddResponseAsync(SkillProficiency skillProficiency, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SkillProficiency>(skillProficiency, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileSkillsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileSkillsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileSkillsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileSkillsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileSkillsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileSkillsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileSkillsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileSkillsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileSkillsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

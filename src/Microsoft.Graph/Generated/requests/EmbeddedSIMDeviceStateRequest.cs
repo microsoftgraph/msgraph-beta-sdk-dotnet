@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EmbeddedSIMDeviceState using POST.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
-        /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate)
-        {
-            return this.CreateAsync(embeddedSIMDeviceStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmbeddedSIMDeviceState using POST.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMDeviceState.</returns>
-        public async System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmbeddedSIMDeviceState> CreateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EmbeddedSIMDeviceState>(embeddedSIMDeviceStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EmbeddedSIMDeviceState using POST and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> CreateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate)
-        {
-            return this.CreateResponseAsync(embeddedSIMDeviceStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmbeddedSIMDeviceState using POST and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceStateToCreate">The EmbeddedSIMDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> CreateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> CreateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMDeviceState>(embeddedSIMDeviceStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EmbeddedSIMDeviceState.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EmbeddedSIMDeviceState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EmbeddedSIMDeviceState>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EmbeddedSIMDeviceState using PATCH.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
-        /// <returns>The updated EmbeddedSIMDeviceState.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate)
-        {
-            return this.UpdateAsync(embeddedSIMDeviceStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EmbeddedSIMDeviceState using PATCH.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmbeddedSIMDeviceState.</returns>
-        public async System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmbeddedSIMDeviceState> UpdateAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (embeddedSIMDeviceStateToUpdate.AdditionalData != null)
-			{
-				if (embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMDeviceStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (embeddedSIMDeviceStateToUpdate.AdditionalData != null)
-            {
-                if (embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMDeviceStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmbeddedSIMDeviceState>(embeddedSIMDeviceStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EmbeddedSIMDeviceState using PATCH and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
         /// </summary>
         /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> UpdateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate)
-        {
-            return this.UpdateResponseAsync(embeddedSIMDeviceStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EmbeddedSIMDeviceState using PATCH and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
-        /// </summary>
-        /// <param name="embeddedSIMDeviceStateToUpdate">The EmbeddedSIMDeviceState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> UpdateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> UpdateResponseAsync(EmbeddedSIMDeviceState embeddedSIMDeviceStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (embeddedSIMDeviceStateToUpdate.AdditionalData != null)
-			{
-				if (embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMDeviceStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (embeddedSIMDeviceStateToUpdate.AdditionalData != null)
-            {
-                if (embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    embeddedSIMDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMDeviceStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EmbeddedSIMDeviceState>(embeddedSIMDeviceStateToUpdate, cancellationToken).ConfigureAwait(false);
         }
