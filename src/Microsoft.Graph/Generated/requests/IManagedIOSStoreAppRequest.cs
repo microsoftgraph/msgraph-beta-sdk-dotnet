@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedIOSStoreApp using POST.
         /// </summary>
         /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
-        /// <returns>The created ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> CreateAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate);
-
-        /// <summary>
-        /// Creates the specified ManagedIOSStoreApp using POST.
-        /// </summary>
-        /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> CreateAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ManagedIOSStoreApp using POST and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
-        /// </summary>
-        /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> CreateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate);
+        System.Threading.Tasks.Task<ManagedIOSStoreApp> CreateAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ManagedIOSStoreApp using POST and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> CreateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedIOSStoreApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> CreateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedIOSStoreApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagedIOSStoreApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ManagedIOSStoreApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedIOSStoreApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedIOSStoreApp using PATCH.
         /// </summary>
         /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp to update.</param>
-        /// <returns>The updated ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> UpdateAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified ManagedIOSStoreApp using PATCH.
-        /// </summary>
-        /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> UpdateAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ManagedIOSStoreApp using PATCH and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
-        /// </summary>
-        /// <param name="managedIOSStoreAppToUpdate">The ManagedIOSStoreApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> UpdateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate);
+        System.Threading.Tasks.Task<ManagedIOSStoreApp> UpdateAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedIOSStoreApp using PATCH and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> UpdateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> UpdateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

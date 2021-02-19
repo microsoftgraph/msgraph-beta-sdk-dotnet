@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Trending to the collection via POST.
-        /// </summary>
-        /// <param name="trending">The Trending to add.</param>
-        /// <returns>The created Trending.</returns>
-        public System.Threading.Tasks.Task<Trending> AddAsync(Trending trending)
-        {
-            return this.AddAsync(trending, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Trending to the collection via POST.
         /// </summary>
         /// <param name="trending">The Trending to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Trending.</returns>
-        public System.Threading.Tasks.Task<Trending> AddAsync(Trending trending, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Trending> AddAsync(Trending trending, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Trending>(trending, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Trending to the collection via POST and returns a <see cref="GraphResponse{Trending}"/> object of the request.
-        /// </summary>
-        /// <param name="trending">The Trending to add.</param>
-        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending)
-        {
-            return this.AddResponseAsync(trending, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Trending to the collection via POST and returns a <see cref="GraphResponse{Trending}"/> object of the request.
         /// </summary>
         /// <param name="trending">The Trending to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Trending>(trending, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOfficeGraphInsightsTrendingCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOfficeGraphInsightsTrendingCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOfficeGraphInsightsTrendingCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OfficeGraphInsightsTrendingCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsTrendingCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsTrendingCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsTrendingCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsTrendingCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsTrendingCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsTrendingCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsTrendingCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OfficeGraphInsightsTrendingCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

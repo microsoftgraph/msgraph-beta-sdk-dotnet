@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified YammerActivityUserDetail using POST.
         /// </summary>
         /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
-        /// <returns>The created YammerActivityUserDetail.</returns>
-        public System.Threading.Tasks.Task<YammerActivityUserDetail> CreateAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate)
-        {
-            return this.CreateAsync(yammerActivityUserDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified YammerActivityUserDetail using POST.
-        /// </summary>
-        /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created YammerActivityUserDetail.</returns>
-        public async System.Threading.Tasks.Task<YammerActivityUserDetail> CreateAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<YammerActivityUserDetail> CreateAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<YammerActivityUserDetail>(yammerActivityUserDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified YammerActivityUserDetail using POST and returns a <see cref="GraphResponse{YammerActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
-        /// <returns>The <see cref="GraphResponse{YammerActivityUserDetail}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> CreateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate)
-        {
-            return this.CreateResponseAsync(yammerActivityUserDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified YammerActivityUserDetail using POST and returns a <see cref="GraphResponse{YammerActivityUserDetail}"/> object.
-        /// </summary>
-        /// <param name="yammerActivityUserDetailToCreate">The YammerActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerActivityUserDetail}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> CreateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> CreateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<YammerActivityUserDetail>(yammerActivityUserDetailToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified YammerActivityUserDetail.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified YammerActivityUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<YammerActivityUserDetail>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified YammerActivityUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified YammerActivityUserDetail and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified YammerActivityUserDetail using PATCH.
         /// </summary>
         /// <param name="yammerActivityUserDetailToUpdate">The YammerActivityUserDetail to update.</param>
-        /// <returns>The updated YammerActivityUserDetail.</returns>
-        public System.Threading.Tasks.Task<YammerActivityUserDetail> UpdateAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate)
-        {
-            return this.UpdateAsync(yammerActivityUserDetailToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified YammerActivityUserDetail using PATCH.
-        /// </summary>
-        /// <param name="yammerActivityUserDetailToUpdate">The YammerActivityUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerActivityUserDetail.</returns>
-        public async System.Threading.Tasks.Task<YammerActivityUserDetail> UpdateAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<YammerActivityUserDetail> UpdateAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (yammerActivityUserDetailToUpdate.AdditionalData != null)
-			{
-				if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (yammerActivityUserDetailToUpdate.AdditionalData != null)
-            {
-                if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<YammerActivityUserDetail>(yammerActivityUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified YammerActivityUserDetail using PATCH and returns a <see cref="GraphResponse{YammerActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="yammerActivityUserDetailToUpdate">The YammerActivityUserDetail to update.</param>
-        /// <returns>The <see cref="GraphResponse{YammerActivityUserDetail}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> UpdateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate)
-        {
-            return this.UpdateResponseAsync(yammerActivityUserDetailToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified YammerActivityUserDetail using PATCH and returns a <see cref="GraphResponse{YammerActivityUserDetail}"/> object.
-        /// </summary>
-        /// <param name="yammerActivityUserDetailToUpdate">The YammerActivityUserDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{YammerActivityUserDetail}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> UpdateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<YammerActivityUserDetail>> UpdateResponseAsync(YammerActivityUserDetail yammerActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (yammerActivityUserDetailToUpdate.AdditionalData != null)
-			{
-				if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (yammerActivityUserDetailToUpdate.AdditionalData != null)
-            {
-                if (yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    yammerActivityUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, yammerActivityUserDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<YammerActivityUserDetail>(yammerActivityUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
         }

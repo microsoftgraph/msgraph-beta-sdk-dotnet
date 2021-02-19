@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified UserAppInstallStatus using POST.
         /// </summary>
         /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
-        /// <returns>The created UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate);
-
-        /// <summary>
-        /// Creates the specified UserAppInstallStatus using POST.
-        /// </summary>
-        /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified UserAppInstallStatus using POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
-        /// </summary>
-        /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> CreateResponseAsync(UserAppInstallStatus userAppInstallStatusToCreate);
+        System.Threading.Tasks.Task<UserAppInstallStatus> CreateAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified UserAppInstallStatus using POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="userAppInstallStatusToCreate">The UserAppInstallStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> CreateResponseAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserAppInstallStatus.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> CreateResponseAsync(UserAppInstallStatus userAppInstallStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserAppInstallStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserAppInstallStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserAppInstallStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserAppInstallStatus.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified UserAppInstallStatus using PATCH.
         /// </summary>
         /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus to update.</param>
-        /// <returns>The updated UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate);
-
-        /// <summary>
-        /// Updates the specified UserAppInstallStatus using PATCH.
-        /// </summary>
-        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified UserAppInstallStatus using PATCH and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
-        /// </summary>
-        /// <param name="userAppInstallStatusToUpdate">The UserAppInstallStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> UpdateResponseAsync(UserAppInstallStatus userAppInstallStatusToUpdate);
+        System.Threading.Tasks.Task<UserAppInstallStatus> UpdateAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserAppInstallStatus using PATCH and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> UpdateResponseAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> UpdateResponseAsync(UserAppInstallStatus userAppInstallStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

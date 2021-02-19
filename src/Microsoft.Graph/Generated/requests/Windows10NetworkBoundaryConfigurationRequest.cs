@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10NetworkBoundaryConfiguration using POST.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
-        /// <returns>The created Windows10NetworkBoundaryConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> CreateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate)
-        {
-            return this.CreateAsync(windows10NetworkBoundaryConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10NetworkBoundaryConfiguration using POST.
-        /// </summary>
-        /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10NetworkBoundaryConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> CreateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> CreateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10NetworkBoundaryConfiguration using POST and returns a <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> CreateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windows10NetworkBoundaryConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10NetworkBoundaryConfiguration using POST and returns a <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10NetworkBoundaryConfigurationToCreate">The Windows10NetworkBoundaryConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> CreateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> CreateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10NetworkBoundaryConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10NetworkBoundaryConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10NetworkBoundaryConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10NetworkBoundaryConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10NetworkBoundaryConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10NetworkBoundaryConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
-        /// <returns>The updated Windows10NetworkBoundaryConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> UpdateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windows10NetworkBoundaryConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10NetworkBoundaryConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10NetworkBoundaryConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> UpdateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10NetworkBoundaryConfiguration> UpdateAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10NetworkBoundaryConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> UpdateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windows10NetworkBoundaryConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10NetworkBoundaryConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10NetworkBoundaryConfigurationToUpdate">The Windows10NetworkBoundaryConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10NetworkBoundaryConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> UpdateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10NetworkBoundaryConfiguration>> UpdateResponseAsync(Windows10NetworkBoundaryConfiguration windows10NetworkBoundaryConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10NetworkBoundaryConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10NetworkBoundaryConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10NetworkBoundaryConfiguration>(windows10NetworkBoundaryConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

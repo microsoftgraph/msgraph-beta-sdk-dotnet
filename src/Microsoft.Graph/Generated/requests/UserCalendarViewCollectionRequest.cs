@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Event to the collection via POST.
-        /// </summary>
-        /// <param name="calendarViewEvent">The Event to add.</param>
-        /// <returns>The created Event.</returns>
-        public System.Threading.Tasks.Task<Event> AddAsync(Event calendarViewEvent)
-        {
-            return this.AddAsync(calendarViewEvent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Event to the collection via POST.
         /// </summary>
         /// <param name="calendarViewEvent">The Event to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Event.</returns>
-        public System.Threading.Tasks.Task<Event> AddAsync(Event calendarViewEvent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Event> AddAsync(Event calendarViewEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Event>(calendarViewEvent, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
-        /// </summary>
-        /// <param name="calendarViewEvent">The Event to add.</param>
-        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event calendarViewEvent)
-        {
-            return this.AddResponseAsync(calendarViewEvent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Event to the collection via POST and returns a <see cref="GraphResponse{Event}"/> object of the request.
         /// </summary>
         /// <param name="calendarViewEvent">The Event to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event calendarViewEvent, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event calendarViewEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Event>(calendarViewEvent, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserCalendarViewCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserCalendarViewCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserCalendarViewCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserCalendarViewCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserCalendarViewCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserCalendarViewCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserCalendarViewCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserCalendarViewCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserCalendarViewCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserCalendarViewCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserCalendarViewCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserCalendarViewCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSMicrosoftEdgeApp using POST.
         /// </summary>
         /// <param name="macOSMicrosoftEdgeAppToCreate">The MacOSMicrosoftEdgeApp to create.</param>
-        /// <returns>The created MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> CreateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate);
-
-        /// <summary>
-        /// Creates the specified MacOSMicrosoftEdgeApp using POST.
-        /// </summary>
-        /// <param name="macOSMicrosoftEdgeAppToCreate">The MacOSMicrosoftEdgeApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> CreateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MacOSMicrosoftEdgeApp using POST and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
-        /// </summary>
-        /// <param name="macOSMicrosoftEdgeAppToCreate">The MacOSMicrosoftEdgeApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> CreateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate);
+        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> CreateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MacOSMicrosoftEdgeApp using POST and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="macOSMicrosoftEdgeAppToCreate">The MacOSMicrosoftEdgeApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> CreateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSMicrosoftEdgeApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> CreateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSMicrosoftEdgeApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSMicrosoftEdgeApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MacOSMicrosoftEdgeApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSMicrosoftEdgeApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSMicrosoftEdgeApp using PATCH.
         /// </summary>
         /// <param name="macOSMicrosoftEdgeAppToUpdate">The MacOSMicrosoftEdgeApp to update.</param>
-        /// <returns>The updated MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> UpdateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified MacOSMicrosoftEdgeApp using PATCH.
-        /// </summary>
-        /// <param name="macOSMicrosoftEdgeAppToUpdate">The MacOSMicrosoftEdgeApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> UpdateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MacOSMicrosoftEdgeApp using PATCH and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
-        /// </summary>
-        /// <param name="macOSMicrosoftEdgeAppToUpdate">The MacOSMicrosoftEdgeApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> UpdateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate);
+        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> UpdateAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSMicrosoftEdgeApp using PATCH and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> UpdateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> UpdateResponseAsync(MacOSMicrosoftEdgeApp macOSMicrosoftEdgeAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

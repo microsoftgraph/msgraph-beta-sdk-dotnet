@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
-        /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
-        /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);
+        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceScheduledActionForRule.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComplianceScheduledActionForRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceScheduledActionForRule.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
-        /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH.
-        /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScheduledActionForRule.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> UpdateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate);
+        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> UpdateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> UpdateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> UpdateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookPivotTable using POST.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
-        /// <returns>The created WorkbookPivotTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate)
-        {
-            return this.CreateAsync(workbookPivotTableToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookPivotTable using POST.
-        /// </summary>
-        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
-        public async System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookPivotTable>(workbookPivotTableToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate)
-        {
-            return this.CreateResponseAsync(workbookPivotTableToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
-        /// </summary>
-        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTableToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookPivotTable.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookPivotTable.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookPivotTable>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookPivotTable and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookPivotTable and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookPivotTable using PATCH.
         /// </summary>
         /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
-        /// <returns>The updated WorkbookPivotTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookPivotTable> UpdateAsync(WorkbookPivotTable workbookPivotTableToUpdate)
-        {
-            return this.UpdateAsync(workbookPivotTableToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookPivotTable using PATCH.
-        /// </summary>
-        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookPivotTable.</returns>
-        public async System.Threading.Tasks.Task<WorkbookPivotTable> UpdateAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookPivotTable> UpdateAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookPivotTableToUpdate.AdditionalData != null)
-			{
-				if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookPivotTableToUpdate.AdditionalData != null)
-            {
-                if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookPivotTable>(workbookPivotTableToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
         /// </summary>
         /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookPivotTableToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
-        /// </summary>
-        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookPivotTableToUpdate.AdditionalData != null)
-			{
-				if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookPivotTableToUpdate.AdditionalData != null)
-            {
-                if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTableToUpdate, cancellationToken).ConfigureAwait(false);
         }

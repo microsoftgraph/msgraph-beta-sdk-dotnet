@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TeamsTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
-        /// <returns>The created TeamsTemplate.</returns>
-        public System.Threading.Tasks.Task<TeamsTemplate> AddAsync(TeamsTemplate teamsTemplate)
-        {
-            return this.AddAsync(teamsTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamsTemplate to the collection via POST.
         /// </summary>
         /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTemplate.</returns>
-        public System.Threading.Tasks.Task<TeamsTemplate> AddAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TeamsTemplate> AddAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamsTemplate>(teamsTemplate, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TeamsTemplate to the collection via POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> AddResponseAsync(TeamsTemplate teamsTemplate)
-        {
-            return this.AddResponseAsync(teamsTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamsTemplate to the collection via POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object of the request.
         /// </summary>
         /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> AddResponseAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> AddResponseAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsTemplate>(teamsTemplate, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceTeamsTemplatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceTeamsTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceTeamsTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceTeamsTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceTeamsTemplatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceTeamsTemplatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceTeamsTemplatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceTeamsTemplatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceTeamsTemplatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceTeamsTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceTeamsTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceTeamsTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

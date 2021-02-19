@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDimensionDimensionValuesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DimensionValue to the collection via POST.
-        /// </summary>
-        /// <param name="dimensionValue">The DimensionValue to add.</param>
-        /// <returns>The created DimensionValue.</returns>
-        System.Threading.Tasks.Task<DimensionValue> AddAsync(DimensionValue dimensionValue);
-
         /// <summary>
         /// Adds the specified DimensionValue to the collection via POST.
         /// </summary>
         /// <param name="dimensionValue">The DimensionValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DimensionValue.</returns>
-        System.Threading.Tasks.Task<DimensionValue> AddAsync(DimensionValue dimensionValue, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
-        /// </summary>
-        /// <param name="dimensionValue">The DimensionValue to add.</param>
-        /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue);
+        System.Threading.Tasks.Task<DimensionValue> AddAsync(DimensionValue dimensionValue, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DimensionValue to the collection via POST and returns a <see cref="GraphResponse{DimensionValue}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="dimensionValue">The DimensionValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DimensionValue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DimensionValue>> AddResponseAsync(DimensionValue dimensionValue, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDimensionDimensionValuesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDimensionDimensionValuesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DimensionDimensionValuesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DimensionDimensionValuesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DimensionDimensionValuesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDimensionDimensionValuesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DimensionDimensionValuesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DimensionDimensionValuesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DimensionDimensionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DimensionDimensionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

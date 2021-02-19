@@ -35,18 +35,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified User reference.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified User reference.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<User>(null, cancellationToken).ConfigureAwait(false);
@@ -55,18 +46,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified User reference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified User reference and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -76,19 +58,9 @@ namespace Microsoft.Graph
         /// Puts the specified User reference.
         /// </summary>
         /// <param name="id">The User reference to update.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task PutAsync(string id)
-        {
-            return this.PutAsync(id, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Puts the specified User reference.
-        /// </summary>
-        /// <param name="id">The User reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default(CancellationToken))
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
@@ -102,7 +74,7 @@ namespace Microsoft.Graph
             }
             var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             this.Method = "PUT";
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             await this.SendAsync(payload, cancellationToken).ConfigureAwait(false);
         }
 
@@ -110,19 +82,9 @@ namespace Microsoft.Graph
         /// Puts the specified User reference and returns <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="id">The User reference to update.</param>
-        /// <returns>The task to await of <see cref="GraphResponse"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id)
-        {
-            return this.PutResponseAsync(id, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Puts the specified User reference and returns <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="id">The User reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await of <see cref="GraphResponse"/>.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default(CancellationToken))
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
@@ -136,7 +98,7 @@ namespace Microsoft.Graph
             }
             var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             this.Method = "PUT";
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             return await this.SendAsyncWithGraphResponse(payload, cancellationToken).ConfigureAwait(false);
         }
     }

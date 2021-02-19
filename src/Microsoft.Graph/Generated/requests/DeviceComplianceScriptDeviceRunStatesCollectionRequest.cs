@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceComplianceScriptDeviceState to the collection via POST.
-        /// </summary>
-        /// <param name="deviceComplianceScriptDeviceState">The DeviceComplianceScriptDeviceState to add.</param>
-        /// <returns>The created DeviceComplianceScriptDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> AddAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState)
-        {
-            return this.AddAsync(deviceComplianceScriptDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceComplianceScriptDeviceState to the collection via POST.
         /// </summary>
         /// <param name="deviceComplianceScriptDeviceState">The DeviceComplianceScriptDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScriptDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> AddAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> AddAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceComplianceScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceComplianceScriptDeviceState">The DeviceComplianceScriptDeviceState to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> AddResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState)
-        {
-            return this.AddResponseAsync(deviceComplianceScriptDeviceState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceComplianceScriptDeviceState to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.
         /// </summary>
         /// <param name="deviceComplianceScriptDeviceState">The DeviceComplianceScriptDeviceState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> AddResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> AddResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceComplianceScriptDeviceRunStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceComplianceScriptDeviceRunStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceComplianceScriptDeviceRunStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceComplianceScriptDeviceRunStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceRunStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceRunStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceRunStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceRunStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceRunStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceRunStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceRunStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

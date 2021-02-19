@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
-        /// <returns>The created AndroidGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified AndroidGeneralDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate);
+        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidGeneralDeviceConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidGeneralDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AndroidGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidGeneralDeviceConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidGeneralDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="androidGeneralDeviceConfigurationToUpdate">The AndroidGeneralDeviceConfiguration to update.</param>
-        /// <returns>The updated AndroidGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> UpdateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified AndroidGeneralDeviceConfiguration using PATCH.
-        /// </summary>
-        /// <param name="androidGeneralDeviceConfigurationToUpdate">The AndroidGeneralDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> UpdateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AndroidGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidGeneralDeviceConfigurationToUpdate">The AndroidGeneralDeviceConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate);
+        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> UpdateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

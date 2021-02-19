@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAllDeviceCertificateState using POST.
         /// </summary>
         /// <param name="managedAllDeviceCertificateStateToCreate">The ManagedAllDeviceCertificateState to create.</param>
-        /// <returns>The created ManagedAllDeviceCertificateState.</returns>
-        public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> CreateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate)
-        {
-            return this.CreateAsync(managedAllDeviceCertificateStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAllDeviceCertificateState using POST.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateStateToCreate">The ManagedAllDeviceCertificateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAllDeviceCertificateState.</returns>
-        public async System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> CreateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> CreateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAllDeviceCertificateState using POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object.
         /// </summary>
         /// <param name="managedAllDeviceCertificateStateToCreate">The ManagedAllDeviceCertificateState to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> CreateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate)
-        {
-            return this.CreateResponseAsync(managedAllDeviceCertificateStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAllDeviceCertificateState using POST and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateStateToCreate">The ManagedAllDeviceCertificateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> CreateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> CreateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAllDeviceCertificateState.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAllDeviceCertificateState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ManagedAllDeviceCertificateState>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAllDeviceCertificateState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAllDeviceCertificateState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAllDeviceCertificateState using PATCH.
         /// </summary>
         /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState to update.</param>
-        /// <returns>The updated ManagedAllDeviceCertificateState.</returns>
-        public System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> UpdateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate)
-        {
-            return this.UpdateAsync(managedAllDeviceCertificateStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAllDeviceCertificateState using PATCH.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAllDeviceCertificateState.</returns>
-        public async System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> UpdateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAllDeviceCertificateState> UpdateAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAllDeviceCertificateStateToUpdate.AdditionalData != null)
-			{
-				if (managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAllDeviceCertificateStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAllDeviceCertificateStateToUpdate.AdditionalData != null)
-            {
-                if (managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAllDeviceCertificateStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAllDeviceCertificateState using PATCH and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object.
         /// </summary>
         /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> UpdateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate)
-        {
-            return this.UpdateResponseAsync(managedAllDeviceCertificateStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAllDeviceCertificateState using PATCH and returns a <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object.
-        /// </summary>
-        /// <param name="managedAllDeviceCertificateStateToUpdate">The ManagedAllDeviceCertificateState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedAllDeviceCertificateState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> UpdateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAllDeviceCertificateState>> UpdateResponseAsync(ManagedAllDeviceCertificateState managedAllDeviceCertificateStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAllDeviceCertificateStateToUpdate.AdditionalData != null)
-			{
-				if (managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAllDeviceCertificateStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAllDeviceCertificateStateToUpdate.AdditionalData != null)
-            {
-                if (managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAllDeviceCertificateStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAllDeviceCertificateStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAllDeviceCertificateState>(managedAllDeviceCertificateStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

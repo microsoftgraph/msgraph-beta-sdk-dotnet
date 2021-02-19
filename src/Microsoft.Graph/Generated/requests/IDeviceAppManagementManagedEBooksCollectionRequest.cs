@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceAppManagementManagedEBooksCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedEBook to the collection via POST.
-        /// </summary>
-        /// <param name="managedEBook">The ManagedEBook to add.</param>
-        /// <returns>The created ManagedEBook.</returns>
-        System.Threading.Tasks.Task<ManagedEBook> AddAsync(ManagedEBook managedEBook);
-
         /// <summary>
         /// Adds the specified ManagedEBook to the collection via POST.
         /// </summary>
         /// <param name="managedEBook">The ManagedEBook to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBook.</returns>
-        System.Threading.Tasks.Task<ManagedEBook> AddAsync(ManagedEBook managedEBook, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ManagedEBook to the collection via POST and returns a <see cref="GraphResponse{ManagedEBook}"/> object of the request.
-        /// </summary>
-        /// <param name="managedEBook">The ManagedEBook to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> AddResponseAsync(ManagedEBook managedEBook);
+        System.Threading.Tasks.Task<ManagedEBook> AddAsync(ManagedEBook managedEBook, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ManagedEBook to the collection via POST and returns a <see cref="GraphResponse{ManagedEBook}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="managedEBook">The ManagedEBook to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> AddResponseAsync(ManagedEBook managedEBook, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> AddResponseAsync(ManagedEBook managedEBook, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementManagedEBooksCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceAppManagementManagedEBooksCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedEBooksCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedEBooksCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedEBooksCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceAppManagementManagedEBooksCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedEBooksCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedEBooksCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedEBooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedEBooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

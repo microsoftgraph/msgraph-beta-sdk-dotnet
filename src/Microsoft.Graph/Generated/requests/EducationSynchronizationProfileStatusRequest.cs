@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EducationSynchronizationProfileStatus using POST.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
-        /// <returns>The created EducationSynchronizationProfileStatus.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate)
-        {
-            return this.CreateAsync(educationSynchronizationProfileStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationSynchronizationProfileStatus using POST.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationProfileStatus.</returns>
-        public async System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EducationSynchronizationProfileStatus>(educationSynchronizationProfileStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EducationSynchronizationProfileStatus using POST and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate)
-        {
-            return this.CreateResponseAsync(educationSynchronizationProfileStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationSynchronizationProfileStatus using POST and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EducationSynchronizationProfileStatus>(educationSynchronizationProfileStatusToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EducationSynchronizationProfileStatus.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EducationSynchronizationProfileStatus.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationSynchronizationProfileStatus>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EducationSynchronizationProfileStatus using PATCH.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
-        /// <returns>The updated EducationSynchronizationProfileStatus.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate)
-        {
-            return this.UpdateAsync(educationSynchronizationProfileStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EducationSynchronizationProfileStatus using PATCH.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSynchronizationProfileStatus.</returns>
-        public async System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (educationSynchronizationProfileStatusToUpdate.AdditionalData != null)
-			{
-				if (educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationProfileStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationSynchronizationProfileStatusToUpdate.AdditionalData != null)
-            {
-                if (educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationProfileStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EducationSynchronizationProfileStatus>(educationSynchronizationProfileStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EducationSynchronizationProfileStatus using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate)
-        {
-            return this.UpdateResponseAsync(educationSynchronizationProfileStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EducationSynchronizationProfileStatus using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (educationSynchronizationProfileStatusToUpdate.AdditionalData != null)
-			{
-				if (educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationProfileStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationSynchronizationProfileStatusToUpdate.AdditionalData != null)
-            {
-                if (educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationSynchronizationProfileStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationProfileStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EducationSynchronizationProfileStatus>(educationSynchronizationProfileStatusToUpdate, cancellationToken).ConfigureAwait(false);
         }

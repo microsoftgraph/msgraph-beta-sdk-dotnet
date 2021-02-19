@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition)
-        {
-            return this.AddAsync(deviceManagementConfigurationSettingDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(deviceManagementConfigurationSettingDefinition.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition)
-        {
-            return this.AddResponseAsync(deviceManagementConfigurationSettingDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementConfigurationSettingDefinition to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationSettingDefinition}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementConfigurationSettingDefinition">The DeviceManagementConfigurationSettingDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceManagementConfigurationSettingDefinition deviceManagementConfigurationSettingDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(deviceManagementConfigurationSettingDefinition.Id))

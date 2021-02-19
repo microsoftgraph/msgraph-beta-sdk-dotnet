@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserFlowLanguageConfigurationDefaultPagesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserFlowLanguagePage to the collection via POST.
-        /// </summary>
-        /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
-        /// <returns>The created UserFlowLanguagePage.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage);
-
         /// <summary>
         /// Adds the specified UserFlowLanguagePage to the collection via POST.
         /// </summary>
         /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserFlowLanguagePage.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UserFlowLanguagePage to the collection via POST and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.
-        /// </summary>
-        /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage);
+        System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UserFlowLanguagePage to the collection via POST and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserFlowLanguageConfigurationDefaultPagesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserFlowLanguageConfigurationDefaultPagesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserFlowLanguageConfigurationDefaultPagesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfigurationDefaultPagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationDefaultPagesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IUserFlowLanguageConfigurationDefaultPagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserFlowLanguageConfigurationDefaultPagesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfigurationDefaultPagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationDefaultPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationDefaultPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

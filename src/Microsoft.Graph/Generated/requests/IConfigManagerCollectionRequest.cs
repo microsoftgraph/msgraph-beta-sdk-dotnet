@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ConfigManagerCollection using POST.
         /// </summary>
         /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
-        /// <returns>The created ConfigManagerCollection.</returns>
-        System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate);
-
-        /// <summary>
-        /// Creates the specified ConfigManagerCollection using POST.
-        /// </summary>
-        /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConfigManagerCollection.</returns>
-        System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ConfigManagerCollection using POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
-        /// </summary>
-        /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
-        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> CreateResponseAsync(ConfigManagerCollection configManagerCollectionToCreate);
+        System.Threading.Tasks.Task<ConfigManagerCollection> CreateAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ConfigManagerCollection using POST and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="configManagerCollectionToCreate">The ConfigManagerCollection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> CreateResponseAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ConfigManagerCollection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> CreateResponseAsync(ConfigManagerCollection configManagerCollectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ConfigManagerCollection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ConfigManagerCollection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ConfigManagerCollection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConfigManagerCollection.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ConfigManagerCollection using PATCH.
         /// </summary>
         /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection to update.</param>
-        /// <returns>The updated ConfigManagerCollection.</returns>
-        System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate);
-
-        /// <summary>
-        /// Updates the specified ConfigManagerCollection using PATCH.
-        /// </summary>
-        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConfigManagerCollection.</returns>
-        System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ConfigManagerCollection using PATCH and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
-        /// </summary>
-        /// <param name="configManagerCollectionToUpdate">The ConfigManagerCollection to update.</param>
-        /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> UpdateResponseAsync(ConfigManagerCollection configManagerCollectionToUpdate);
+        System.Threading.Tasks.Task<ConfigManagerCollection> UpdateAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConfigManagerCollection using PATCH and returns a <see cref="GraphResponse{ConfigManagerCollection}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ConfigManagerCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> UpdateResponseAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConfigManagerCollection>> UpdateResponseAsync(ConfigManagerCollection configManagerCollectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

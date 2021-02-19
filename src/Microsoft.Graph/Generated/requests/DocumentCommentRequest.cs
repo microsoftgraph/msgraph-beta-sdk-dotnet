@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DocumentComment using POST.
         /// </summary>
         /// <param name="documentCommentToCreate">The DocumentComment to create.</param>
-        /// <returns>The created DocumentComment.</returns>
-        public System.Threading.Tasks.Task<DocumentComment> CreateAsync(DocumentComment documentCommentToCreate)
-        {
-            return this.CreateAsync(documentCommentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DocumentComment using POST.
-        /// </summary>
-        /// <param name="documentCommentToCreate">The DocumentComment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DocumentComment.</returns>
-        public async System.Threading.Tasks.Task<DocumentComment> CreateAsync(DocumentComment documentCommentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DocumentComment> CreateAsync(DocumentComment documentCommentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DocumentComment>(documentCommentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DocumentComment using POST and returns a <see cref="GraphResponse{DocumentComment}"/> object.
         /// </summary>
         /// <param name="documentCommentToCreate">The DocumentComment to create.</param>
-        /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DocumentComment>> CreateResponseAsync(DocumentComment documentCommentToCreate)
-        {
-            return this.CreateResponseAsync(documentCommentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DocumentComment using POST and returns a <see cref="GraphResponse{DocumentComment}"/> object.
-        /// </summary>
-        /// <param name="documentCommentToCreate">The DocumentComment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> CreateResponseAsync(DocumentComment documentCommentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> CreateResponseAsync(DocumentComment documentCommentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DocumentComment>(documentCommentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DocumentComment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DocumentComment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DocumentComment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DocumentComment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DocumentComment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DocumentComment using PATCH.
         /// </summary>
         /// <param name="documentCommentToUpdate">The DocumentComment to update.</param>
-        /// <returns>The updated DocumentComment.</returns>
-        public System.Threading.Tasks.Task<DocumentComment> UpdateAsync(DocumentComment documentCommentToUpdate)
-        {
-            return this.UpdateAsync(documentCommentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DocumentComment using PATCH.
-        /// </summary>
-        /// <param name="documentCommentToUpdate">The DocumentComment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DocumentComment.</returns>
-        public async System.Threading.Tasks.Task<DocumentComment> UpdateAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DocumentComment> UpdateAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (documentCommentToUpdate.AdditionalData != null)
-			{
-				if (documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, documentCommentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (documentCommentToUpdate.AdditionalData != null)
-            {
-                if (documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, documentCommentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DocumentComment>(documentCommentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DocumentComment using PATCH and returns a <see cref="GraphResponse{DocumentComment}"/> object.
         /// </summary>
         /// <param name="documentCommentToUpdate">The DocumentComment to update.</param>
-        /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DocumentComment>> UpdateResponseAsync(DocumentComment documentCommentToUpdate)
-        {
-            return this.UpdateResponseAsync(documentCommentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DocumentComment using PATCH and returns a <see cref="GraphResponse{DocumentComment}"/> object.
-        /// </summary>
-        /// <param name="documentCommentToUpdate">The DocumentComment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> UpdateResponseAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DocumentComment>> UpdateResponseAsync(DocumentComment documentCommentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (documentCommentToUpdate.AdditionalData != null)
-			{
-				if (documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, documentCommentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (documentCommentToUpdate.AdditionalData != null)
-            {
-                if (documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    documentCommentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, documentCommentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DocumentComment>(documentCommentToUpdate, cancellationToken).ConfigureAwait(false);
         }

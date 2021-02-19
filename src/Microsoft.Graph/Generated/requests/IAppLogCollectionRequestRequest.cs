@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AppLogCollectionRequestObject using POST.
         /// </summary>
         /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
-        /// <returns>The created AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> CreateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified AppLogCollectionRequestObject using POST.
-        /// </summary>
-        /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> CreateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AppLogCollectionRequestObject using POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
-        /// </summary>
-        /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> CreateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate);
+        System.Threading.Tasks.Task<AppLogCollectionRequestObject> CreateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AppLogCollectionRequestObject using POST and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="appLogCollectionRequestObjectToCreate">The AppLogCollectionRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> CreateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppLogCollectionRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> CreateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppLogCollectionRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppLogCollectionRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AppLogCollectionRequestObject using PATCH.
         /// </summary>
         /// <param name="appLogCollectionRequestObjectToUpdate">The AppLogCollectionRequestObject to update.</param>
-        /// <returns>The updated AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> UpdateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified AppLogCollectionRequestObject using PATCH.
-        /// </summary>
-        /// <param name="appLogCollectionRequestObjectToUpdate">The AppLogCollectionRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> UpdateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AppLogCollectionRequestObject using PATCH and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
-        /// </summary>
-        /// <param name="appLogCollectionRequestObjectToUpdate">The AppLogCollectionRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> UpdateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate);
+        System.Threading.Tasks.Task<AppLogCollectionRequestObject> UpdateAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppLogCollectionRequestObject using PATCH and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> UpdateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> UpdateResponseAsync(AppLogCollectionRequestObject appLogCollectionRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RbacApplication using POST.
         /// </summary>
         /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
-        /// <returns>The created RbacApplication.</returns>
-        public System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate)
-        {
-            return this.CreateAsync(rbacApplicationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RbacApplication using POST.
-        /// </summary>
-        /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RbacApplication.</returns>
-        public async System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RbacApplication>(rbacApplicationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RbacApplication using POST and returns a <see cref="GraphResponse{RbacApplication}"/> object.
         /// </summary>
         /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
-        /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> CreateResponseAsync(RbacApplication rbacApplicationToCreate)
-        {
-            return this.CreateResponseAsync(rbacApplicationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RbacApplication using POST and returns a <see cref="GraphResponse{RbacApplication}"/> object.
-        /// </summary>
-        /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RbacApplication>> CreateResponseAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplication>> CreateResponseAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RbacApplication>(rbacApplicationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RbacApplication.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RbacApplication.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RbacApplication>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RbacApplication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RbacApplication and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RbacApplication using PATCH.
         /// </summary>
         /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
-        /// <returns>The updated RbacApplication.</returns>
-        public System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate)
-        {
-            return this.UpdateAsync(rbacApplicationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RbacApplication using PATCH.
-        /// </summary>
-        /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RbacApplication.</returns>
-        public async System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (rbacApplicationToUpdate.AdditionalData != null)
-			{
-				if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (rbacApplicationToUpdate.AdditionalData != null)
-            {
-                if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RbacApplication>(rbacApplicationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RbacApplication using PATCH and returns a <see cref="GraphResponse{RbacApplication}"/> object.
         /// </summary>
         /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
-        /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> UpdateResponseAsync(RbacApplication rbacApplicationToUpdate)
-        {
-            return this.UpdateResponseAsync(rbacApplicationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RbacApplication using PATCH and returns a <see cref="GraphResponse{RbacApplication}"/> object.
-        /// </summary>
-        /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RbacApplication>> UpdateResponseAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplication>> UpdateResponseAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (rbacApplicationToUpdate.AdditionalData != null)
-			{
-				if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (rbacApplicationToUpdate.AdditionalData != null)
-            {
-                if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RbacApplication>(rbacApplicationToUpdate, cancellationToken).ConfigureAwait(false);
         }

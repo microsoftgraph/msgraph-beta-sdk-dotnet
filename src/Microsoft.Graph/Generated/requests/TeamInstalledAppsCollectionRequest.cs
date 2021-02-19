@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST.
-        /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
-        /// <returns>The created TeamsAppInstallation.</returns>
-        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation)
-        {
-            return this.AddAsync(teamsAppInstallation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamsAppInstallation to the collection via POST.
         /// </summary>
         /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAppInstallation.</returns>
-        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamsAppInstallation>(teamsAppInstallation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.
-        /// </summary>
-        /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation)
-        {
-            return this.AddResponseAsync(teamsAppInstallation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.
         /// </summary>
         /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsAppInstallation>(teamsAppInstallation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ITeamInstalledAppsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITeamInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ITeamInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<TeamInstalledAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TeamInstalledAppsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamInstalledAppsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamInstalledAppsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TeamInstalledAppsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamInstalledAppsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<TeamInstalledAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

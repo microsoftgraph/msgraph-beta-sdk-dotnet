@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified FileSecurityProfile using POST.
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
-        /// <returns>The created FileSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate)
-        {
-            return this.CreateAsync(fileSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FileSecurityProfile using POST.
-        /// </summary>
-        /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileSecurityProfile> CreateAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<FileSecurityProfile>(fileSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified FileSecurityProfile using POST and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
         /// </summary>
         /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> CreateResponseAsync(FileSecurityProfile fileSecurityProfileToCreate)
-        {
-            return this.CreateResponseAsync(fileSecurityProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FileSecurityProfile using POST and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="fileSecurityProfileToCreate">The FileSecurityProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> CreateResponseAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> CreateResponseAsync(FileSecurityProfile fileSecurityProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<FileSecurityProfile>(fileSecurityProfileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FileSecurityProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FileSecurityProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<FileSecurityProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified FileSecurityProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified FileSecurityProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified FileSecurityProfile using PATCH.
         /// </summary>
         /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
-        /// <returns>The updated FileSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<FileSecurityProfile> UpdateAsync(FileSecurityProfile fileSecurityProfileToUpdate)
-        {
-            return this.UpdateAsync(fileSecurityProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FileSecurityProfile using PATCH.
-        /// </summary>
-        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileSecurityProfile.</returns>
-        public async System.Threading.Tasks.Task<FileSecurityProfile> UpdateAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FileSecurityProfile> UpdateAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fileSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fileSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<FileSecurityProfile>(fileSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified FileSecurityProfile using PATCH and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
         /// </summary>
         /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate)
-        {
-            return this.UpdateResponseAsync(fileSecurityProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified FileSecurityProfile using PATCH and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object.
-        /// </summary>
-        /// <param name="fileSecurityProfileToUpdate">The FileSecurityProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> UpdateResponseAsync(FileSecurityProfile fileSecurityProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (fileSecurityProfileToUpdate.AdditionalData != null)
-			{
-				if (fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileSecurityProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (fileSecurityProfileToUpdate.AdditionalData != null)
-            {
-                if (fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    fileSecurityProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, fileSecurityProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<FileSecurityProfile>(fileSecurityProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }

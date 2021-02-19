@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified LanguageProficiency using POST.
         /// </summary>
         /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
-        /// <returns>The created LanguageProficiency.</returns>
-        System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate);
-
-        /// <summary>
-        /// Creates the specified LanguageProficiency using POST.
-        /// </summary>
-        /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LanguageProficiency.</returns>
-        System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified LanguageProficiency using POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
-        /// </summary>
-        /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
-        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> CreateResponseAsync(LanguageProficiency languageProficiencyToCreate);
+        System.Threading.Tasks.Task<LanguageProficiency> CreateAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified LanguageProficiency using POST and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="languageProficiencyToCreate">The LanguageProficiency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> CreateResponseAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LanguageProficiency.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> CreateResponseAsync(LanguageProficiency languageProficiencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LanguageProficiency.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LanguageProficiency and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LanguageProficiency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LanguageProficiency.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified LanguageProficiency using PATCH.
         /// </summary>
         /// <param name="languageProficiencyToUpdate">The LanguageProficiency to update.</param>
-        /// <returns>The updated LanguageProficiency.</returns>
-        System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate);
-
-        /// <summary>
-        /// Updates the specified LanguageProficiency using PATCH.
-        /// </summary>
-        /// <param name="languageProficiencyToUpdate">The LanguageProficiency to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LanguageProficiency.</returns>
-        System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified LanguageProficiency using PATCH and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
-        /// </summary>
-        /// <param name="languageProficiencyToUpdate">The LanguageProficiency to update.</param>
-        /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> UpdateResponseAsync(LanguageProficiency languageProficiencyToUpdate);
+        System.Threading.Tasks.Task<LanguageProficiency> UpdateAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LanguageProficiency using PATCH and returns a <see cref="GraphResponse{LanguageProficiency}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LanguageProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> UpdateResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LanguageProficiency>> UpdateResponseAsync(LanguageProficiency languageProficiencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

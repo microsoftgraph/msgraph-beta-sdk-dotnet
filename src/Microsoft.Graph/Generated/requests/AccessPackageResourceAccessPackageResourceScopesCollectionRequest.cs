@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AccessPackageResourceScope to the collection via POST.
-        /// </summary>
-        /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
-        /// <returns>The created AccessPackageResourceScope.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResourceScope> AddAsync(AccessPackageResourceScope accessPackageResourceScope)
-        {
-            return this.AddAsync(accessPackageResourceScope, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AccessPackageResourceScope to the collection via POST.
         /// </summary>
         /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceScope.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResourceScope> AddAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AccessPackageResourceScope> AddAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AccessPackageResourceScope>(accessPackageResourceScope, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AccessPackageResourceScope to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.
-        /// </summary>
-        /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> AddResponseAsync(AccessPackageResourceScope accessPackageResourceScope)
-        {
-            return this.AddResponseAsync(accessPackageResourceScope, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AccessPackageResourceScope to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.
         /// </summary>
         /// <param name="accessPackageResourceScope">The AccessPackageResourceScope to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> AddResponseAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> AddResponseAsync(AccessPackageResourceScope accessPackageResourceScope, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AccessPackageResourceScope>(accessPackageResourceScope, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAccessPackageResourceAccessPackageResourceScopesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAccessPackageResourceAccessPackageResourceScopesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAccessPackageResourceAccessPackageResourceScopesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AccessPackageResourceAccessPackageResourceScopesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceScopesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceScopesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceScopesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceScopesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceAccessPackageResourceScopesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceAccessPackageResourceScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AccessPackageResourceAccessPackageResourceScopesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

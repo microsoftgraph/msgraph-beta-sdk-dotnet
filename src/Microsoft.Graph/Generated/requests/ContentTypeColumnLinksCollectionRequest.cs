@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ColumnLink to the collection via POST.
-        /// </summary>
-        /// <param name="columnLink">The ColumnLink to add.</param>
-        /// <returns>The created ColumnLink.</returns>
-        public System.Threading.Tasks.Task<ColumnLink> AddAsync(ColumnLink columnLink)
-        {
-            return this.AddAsync(columnLink, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ColumnLink to the collection via POST.
         /// </summary>
         /// <param name="columnLink">The ColumnLink to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnLink.</returns>
-        public System.Threading.Tasks.Task<ColumnLink> AddAsync(ColumnLink columnLink, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ColumnLink> AddAsync(ColumnLink columnLink, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ColumnLink>(columnLink, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ColumnLink to the collection via POST and returns a <see cref="GraphResponse{ColumnLink}"/> object of the request.
-        /// </summary>
-        /// <param name="columnLink">The ColumnLink to add.</param>
-        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> AddResponseAsync(ColumnLink columnLink)
-        {
-            return this.AddResponseAsync(columnLink, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ColumnLink to the collection via POST and returns a <see cref="GraphResponse{ColumnLink}"/> object of the request.
         /// </summary>
         /// <param name="columnLink">The ColumnLink to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ColumnLink>> AddResponseAsync(ColumnLink columnLink, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ColumnLink>> AddResponseAsync(ColumnLink columnLink, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ColumnLink>(columnLink, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IContentTypeColumnLinksCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IContentTypeColumnLinksCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IContentTypeColumnLinksCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ContentTypeColumnLinksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ContentTypeColumnLinksCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ContentTypeColumnLinksCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ContentTypeColumnLinksCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ContentTypeColumnLinksCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContentTypeColumnLinksCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ContentTypeColumnLinksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ContentTypeColumnLinksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ContentTypeColumnLinksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

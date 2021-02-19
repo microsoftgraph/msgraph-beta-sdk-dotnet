@@ -20,31 +20,20 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ISourceCollectionNoncustodialSourcesCollectionWithReferencesRequest : Microsoft.Graph.IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISourceCollectionNoncustodialSourcesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SourceCollectionNoncustodialSourcesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

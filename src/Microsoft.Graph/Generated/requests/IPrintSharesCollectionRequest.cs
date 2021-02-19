@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPrintSharesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrinterShare to the collection via POST.
-        /// </summary>
-        /// <param name="printerShare">The PrinterShare to add.</param>
-        /// <returns>The created PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare);
-
         /// <summary>
         /// Adds the specified PrinterShare to the collection via POST.
         /// </summary>
         /// <param name="printerShare">The PrinterShare to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrinterShare.</returns>
-        System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PrinterShare to the collection via POST and returns a <see cref="GraphResponse{PrinterShare}"/> object of the request.
-        /// </summary>
-        /// <param name="printerShare">The PrinterShare to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare);
+        System.Threading.Tasks.Task<PrinterShare> AddAsync(PrinterShare printerShare, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PrinterShare to the collection via POST and returns a <see cref="GraphResponse{PrinterShare}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="printerShare">The PrinterShare to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrinterShare}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrinterShare>> AddResponseAsync(PrinterShare printerShare, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IPrintSharesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintSharesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

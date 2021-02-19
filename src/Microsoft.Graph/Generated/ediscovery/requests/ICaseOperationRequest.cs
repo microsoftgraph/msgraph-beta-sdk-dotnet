@@ -24,23 +24,9 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified CaseOperation using POST.
         /// </summary>
         /// <param name="caseOperationToCreate">The CaseOperation to create.</param>
-        /// <returns>The created CaseOperation.</returns>
-        System.Threading.Tasks.Task<CaseOperation> CreateAsync(CaseOperation caseOperationToCreate);
-
-        /// <summary>
-        /// Creates the specified CaseOperation using POST.
-        /// </summary>
-        /// <param name="caseOperationToCreate">The CaseOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CaseOperation.</returns>
-        System.Threading.Tasks.Task<CaseOperation> CreateAsync(CaseOperation caseOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified CaseOperation using POST and returns a <see cref="GraphResponse{CaseOperation}"/> object.
-        /// </summary>
-        /// <param name="caseOperationToCreate">The CaseOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{CaseOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> CreateResponseAsync(CaseOperation caseOperationToCreate);
+        System.Threading.Tasks.Task<CaseOperation> CreateAsync(CaseOperation caseOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified CaseOperation using POST and returns a <see cref="GraphResponse{CaseOperation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="caseOperationToCreate">The CaseOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> CreateResponseAsync(CaseOperation caseOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CaseOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> CreateResponseAsync(CaseOperation caseOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CaseOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CaseOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CaseOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CaseOperation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified CaseOperation using PATCH.
         /// </summary>
         /// <param name="caseOperationToUpdate">The CaseOperation to update.</param>
-        /// <returns>The updated CaseOperation.</returns>
-        System.Threading.Tasks.Task<CaseOperation> UpdateAsync(CaseOperation caseOperationToUpdate);
-
-        /// <summary>
-        /// Updates the specified CaseOperation using PATCH.
-        /// </summary>
-        /// <param name="caseOperationToUpdate">The CaseOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CaseOperation.</returns>
-        System.Threading.Tasks.Task<CaseOperation> UpdateAsync(CaseOperation caseOperationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified CaseOperation using PATCH and returns a <see cref="GraphResponse{CaseOperation}"/> object.
-        /// </summary>
-        /// <param name="caseOperationToUpdate">The CaseOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{CaseOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> UpdateResponseAsync(CaseOperation caseOperationToUpdate);
+        System.Threading.Tasks.Task<CaseOperation> UpdateAsync(CaseOperation caseOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CaseOperation using PATCH and returns a <see cref="GraphResponse{CaseOperation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CaseOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> UpdateResponseAsync(CaseOperation caseOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CaseOperation>> UpdateResponseAsync(CaseOperation caseOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

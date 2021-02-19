@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy);
-
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy);
+        System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageResourceRoleScope using POST.
         /// </summary>
         /// <param name="accessPackageResourceRoleScopeToCreate">The AccessPackageResourceRoleScope to create.</param>
-        /// <returns>The created AccessPackageResourceRoleScope.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResourceRoleScope> CreateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate)
-        {
-            return this.CreateAsync(accessPackageResourceRoleScopeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessPackageResourceRoleScope using POST.
-        /// </summary>
-        /// <param name="accessPackageResourceRoleScopeToCreate">The AccessPackageResourceRoleScope to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceRoleScope.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageResourceRoleScope> CreateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageResourceRoleScope> CreateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AccessPackageResourceRoleScope>(accessPackageResourceRoleScopeToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageResourceRoleScope using POST and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object.
         /// </summary>
         /// <param name="accessPackageResourceRoleScopeToCreate">The AccessPackageResourceRoleScope to create.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> CreateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate)
-        {
-            return this.CreateResponseAsync(accessPackageResourceRoleScopeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessPackageResourceRoleScope using POST and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object.
-        /// </summary>
-        /// <param name="accessPackageResourceRoleScopeToCreate">The AccessPackageResourceRoleScope to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> CreateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> CreateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AccessPackageResourceRoleScope>(accessPackageResourceRoleScopeToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AccessPackageResourceRoleScope.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AccessPackageResourceRoleScope.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AccessPackageResourceRoleScope>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AccessPackageResourceRoleScope and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AccessPackageResourceRoleScope and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AccessPackageResourceRoleScope using PATCH.
         /// </summary>
         /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope to update.</param>
-        /// <returns>The updated AccessPackageResourceRoleScope.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResourceRoleScope> UpdateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate)
-        {
-            return this.UpdateAsync(accessPackageResourceRoleScopeToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AccessPackageResourceRoleScope using PATCH.
-        /// </summary>
-        /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageResourceRoleScope.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageResourceRoleScope> UpdateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageResourceRoleScope> UpdateAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (accessPackageResourceRoleScopeToUpdate.AdditionalData != null)
-			{
-				if (accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceRoleScopeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessPackageResourceRoleScopeToUpdate.AdditionalData != null)
-            {
-                if (accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceRoleScopeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AccessPackageResourceRoleScope>(accessPackageResourceRoleScopeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AccessPackageResourceRoleScope using PATCH and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object.
         /// </summary>
         /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope to update.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> UpdateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate)
-        {
-            return this.UpdateResponseAsync(accessPackageResourceRoleScopeToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AccessPackageResourceRoleScope using PATCH and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object.
-        /// </summary>
-        /// <param name="accessPackageResourceRoleScopeToUpdate">The AccessPackageResourceRoleScope to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> UpdateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> UpdateResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScopeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (accessPackageResourceRoleScopeToUpdate.AdditionalData != null)
-			{
-				if (accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceRoleScopeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessPackageResourceRoleScopeToUpdate.AdditionalData != null)
-            {
-                if (accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessPackageResourceRoleScopeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceRoleScopeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AccessPackageResourceRoleScope>(accessPackageResourceRoleScopeToUpdate, cancellationToken).ConfigureAwait(false);
         }

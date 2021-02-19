@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PrintJob using POST.
         /// </summary>
         /// <param name="printJobToCreate">The PrintJob to create.</param>
-        /// <returns>The created PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate);
-
-        /// <summary>
-        /// Creates the specified PrintJob using POST.
-        /// </summary>
-        /// <param name="printJobToCreate">The PrintJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PrintJob using POST and returns a <see cref="GraphResponse{PrintJob}"/> object.
-        /// </summary>
-        /// <param name="printJobToCreate">The PrintJob to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate);
+        System.Threading.Tasks.Task<PrintJob> CreateAsync(PrintJob printJobToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PrintJob using POST and returns a <see cref="GraphResponse{PrintJob}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="printJobToCreate">The PrintJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrintJob.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> CreateResponseAsync(PrintJob printJobToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PrintJob.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PrintJob and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PrintJob and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrintJob.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PrintJob using PATCH.
         /// </summary>
         /// <param name="printJobToUpdate">The PrintJob to update.</param>
-        /// <returns>The updated PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate);
-
-        /// <summary>
-        /// Updates the specified PrintJob using PATCH.
-        /// </summary>
-        /// <param name="printJobToUpdate">The PrintJob to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PrintJob using PATCH and returns a <see cref="GraphResponse{PrintJob}"/> object.
-        /// </summary>
-        /// <param name="printJobToUpdate">The PrintJob to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate);
+        System.Threading.Tasks.Task<PrintJob> UpdateAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrintJob using PATCH and returns a <see cref="GraphResponse{PrintJob}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> UpdateResponseAsync(PrintJob printJobToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

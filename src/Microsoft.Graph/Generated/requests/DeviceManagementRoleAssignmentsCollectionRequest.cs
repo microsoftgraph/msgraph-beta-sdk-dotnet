@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceAndAppManagementRoleAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="deviceAndAppManagementRoleAssignment">The DeviceAndAppManagementRoleAssignment to add.</param>
-        /// <returns>The created DeviceAndAppManagementRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> AddAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment)
-        {
-            return this.AddAsync(deviceAndAppManagementRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceAndAppManagementRoleAssignment to the collection via POST.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleAssignment">The DeviceAndAppManagementRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementRoleAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> AddAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> AddAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceAndAppManagementRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceAndAppManagementRoleAssignment">The DeviceAndAppManagementRoleAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> AddResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment)
-        {
-            return this.AddResponseAsync(deviceAndAppManagementRoleAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceAndAppManagementRoleAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleAssignment">The DeviceAndAppManagementRoleAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> AddResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> AddResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementRoleAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementRoleAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementRoleAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementRoleAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

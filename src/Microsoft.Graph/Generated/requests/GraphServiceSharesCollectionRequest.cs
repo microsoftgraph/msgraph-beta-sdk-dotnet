@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SharedDriveItem to the collection via POST.
-        /// </summary>
-        /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
-        /// <returns>The created SharedDriveItem.</returns>
-        public System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem)
-        {
-            return this.AddAsync(sharedDriveItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SharedDriveItem to the collection via POST.
         /// </summary>
         /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedDriveItem.</returns>
-        public System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SharedDriveItem>(sharedDriveItem, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SharedDriveItem to the collection via POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object of the request.
-        /// </summary>
-        /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> AddResponseAsync(SharedDriveItem sharedDriveItem)
-        {
-            return this.AddResponseAsync(sharedDriveItem, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SharedDriveItem to the collection via POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object of the request.
         /// </summary>
         /// <param name="sharedDriveItem">The SharedDriveItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> AddResponseAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> AddResponseAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharedDriveItem>(sharedDriveItem, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceSharesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceSharesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceSharesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceSharesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceSharesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceSharesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

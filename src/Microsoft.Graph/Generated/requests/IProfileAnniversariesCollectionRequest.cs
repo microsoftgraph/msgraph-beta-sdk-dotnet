@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileAnniversariesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
-        /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary);
-
         /// <summary>
         /// Adds the specified PersonAnniversary to the collection via POST.
         /// </summary>
         /// <param name="personAnniversary">The PersonAnniversary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST and returns a <see cref="GraphResponse{PersonAnniversary}"/> object of the request.
-        /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> AddResponseAsync(PersonAnniversary personAnniversary);
+        System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PersonAnniversary to the collection via POST and returns a <see cref="GraphResponse{PersonAnniversary}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="personAnniversary">The PersonAnniversary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> AddResponseAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> AddResponseAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAnniversariesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IProfileAnniversariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileAnniversariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfileAnniversariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProfileAnniversariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

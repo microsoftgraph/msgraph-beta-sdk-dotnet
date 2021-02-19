@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedAppOperation to the collection via POST.
-        /// </summary>
-        /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
-        /// <returns>The created ManagedAppOperation.</returns>
-        public System.Threading.Tasks.Task<ManagedAppOperation> AddAsync(ManagedAppOperation managedAppOperation)
-        {
-            return this.AddAsync(managedAppOperation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAppOperation to the collection via POST.
         /// </summary>
         /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppOperation.</returns>
-        public System.Threading.Tasks.Task<ManagedAppOperation> AddAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedAppOperation> AddAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedAppOperation>(managedAppOperation, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagedAppOperation to the collection via POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.
-        /// </summary>
-        /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation)
-        {
-            return this.AddResponseAsync(managedAppOperation, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAppOperation to the collection via POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.
         /// </summary>
         /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAppOperation>(managedAppOperation, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedAppRegistrationOperationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedAppRegistrationOperationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedAppRegistrationOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagedAppRegistrationOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedAppRegistrationOperationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedAppRegistrationOperationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistrationOperationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedAppRegistrationOperationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistrationOperationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistrationOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistrationOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagedAppRegistrationOperationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

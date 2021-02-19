@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyCustomersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Customer to the collection via POST.
-        /// </summary>
-        /// <param name="customer">The Customer to add.</param>
-        /// <returns>The created Customer.</returns>
-        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer);
-
         /// <summary>
         /// Adds the specified Customer to the collection via POST.
         /// </summary>
         /// <param name="customer">The Customer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Customer.</returns>
-        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Customer to the collection via POST and returns a <see cref="GraphResponse{Customer}"/> object of the request.
-        /// </summary>
-        /// <param name="customer">The Customer to add.</param>
-        /// <returns>The <see cref="GraphResponse{Customer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Customer>> AddResponseAsync(Customer customer);
+        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Customer to the collection via POST and returns a <see cref="GraphResponse{Customer}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="customer">The Customer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Customer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Customer>> AddResponseAsync(Customer customer, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Customer>> AddResponseAsync(Customer customer, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyCustomersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyCustomersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CompanyCustomersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

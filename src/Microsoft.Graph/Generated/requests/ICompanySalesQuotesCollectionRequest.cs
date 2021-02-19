@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanySalesQuotesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SalesQuote to the collection via POST.
-        /// </summary>
-        /// <param name="salesQuote">The SalesQuote to add.</param>
-        /// <returns>The created SalesQuote.</returns>
-        System.Threading.Tasks.Task<SalesQuote> AddAsync(SalesQuote salesQuote);
-
         /// <summary>
         /// Adds the specified SalesQuote to the collection via POST.
         /// </summary>
         /// <param name="salesQuote">The SalesQuote to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesQuote.</returns>
-        System.Threading.Tasks.Task<SalesQuote> AddAsync(SalesQuote salesQuote, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SalesQuote to the collection via POST and returns a <see cref="GraphResponse{SalesQuote}"/> object of the request.
-        /// </summary>
-        /// <param name="salesQuote">The SalesQuote to add.</param>
-        /// <returns>The <see cref="GraphResponse{SalesQuote}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> AddResponseAsync(SalesQuote salesQuote);
+        System.Threading.Tasks.Task<SalesQuote> AddAsync(SalesQuote salesQuote, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SalesQuote to the collection via POST and returns a <see cref="GraphResponse{SalesQuote}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="salesQuote">The SalesQuote to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesQuote}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> AddResponseAsync(SalesQuote salesQuote, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> AddResponseAsync(SalesQuote salesQuote, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesQuotesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesQuotesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesQuotesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanySalesQuotesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesQuotesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICompanySalesQuotesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesQuotesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanySalesQuotesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesQuotesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesQuotesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

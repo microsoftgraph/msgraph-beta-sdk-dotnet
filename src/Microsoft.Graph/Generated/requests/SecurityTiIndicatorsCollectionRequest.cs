@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TiIndicator to the collection via POST.
-        /// </summary>
-        /// <param name="tiIndicator">The TiIndicator to add.</param>
-        /// <returns>The created TiIndicator.</returns>
-        public System.Threading.Tasks.Task<TiIndicator> AddAsync(TiIndicator tiIndicator)
-        {
-            return this.AddAsync(tiIndicator, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TiIndicator to the collection via POST.
         /// </summary>
         /// <param name="tiIndicator">The TiIndicator to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TiIndicator.</returns>
-        public System.Threading.Tasks.Task<TiIndicator> AddAsync(TiIndicator tiIndicator, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TiIndicator> AddAsync(TiIndicator tiIndicator, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TiIndicator>(tiIndicator, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TiIndicator to the collection via POST and returns a <see cref="GraphResponse{TiIndicator}"/> object of the request.
-        /// </summary>
-        /// <param name="tiIndicator">The TiIndicator to add.</param>
-        /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TiIndicator>> AddResponseAsync(TiIndicator tiIndicator)
-        {
-            return this.AddResponseAsync(tiIndicator, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TiIndicator to the collection via POST and returns a <see cref="GraphResponse{TiIndicator}"/> object of the request.
         /// </summary>
         /// <param name="tiIndicator">The TiIndicator to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> AddResponseAsync(TiIndicator tiIndicator, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> AddResponseAsync(TiIndicator tiIndicator, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TiIndicator>(tiIndicator, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityTiIndicatorsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityTiIndicatorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityTiIndicatorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SecurityTiIndicatorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityTiIndicatorsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityTiIndicatorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityTiIndicatorsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityTiIndicatorsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityTiIndicatorsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityTiIndicatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityTiIndicatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SecurityTiIndicatorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

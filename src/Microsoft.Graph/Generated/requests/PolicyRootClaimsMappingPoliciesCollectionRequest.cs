@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        /// <returns>The created ClaimsMappingPolicy.</returns>
-        public System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy)
-        {
-            return this.AddAsync(claimsMappingPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ClaimsMappingPolicy.</returns>
-        public System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ClaimsMappingPolicy> AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ClaimsMappingPolicy>(claimsMappingPolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy)
-        {
-            return this.AddResponseAsync(claimsMappingPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ClaimsMappingPolicy>(claimsMappingPolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicyRootClaimsMappingPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicyRootClaimsMappingPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyRootClaimsMappingPoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootClaimsMappingPoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootClaimsMappingPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootClaimsMappingPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicyRootClaimsMappingPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

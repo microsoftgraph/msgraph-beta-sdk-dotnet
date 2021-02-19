@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
-        /// <returns>The created ImportedDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate)
-        {
-            return this.CreateAsync(importedDeviceIdentityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ImportedDeviceIdentity using POST.
-        /// </summary>
-        /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedDeviceIdentity.</returns>
-        public async System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ImportedDeviceIdentity> CreateAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ImportedDeviceIdentity>(importedDeviceIdentityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> CreateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate)
-        {
-            return this.CreateResponseAsync(importedDeviceIdentityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ImportedDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedDeviceIdentityToCreate">The ImportedDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> CreateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> CreateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ImportedDeviceIdentity>(importedDeviceIdentityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ImportedDeviceIdentity.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ImportedDeviceIdentity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ImportedDeviceIdentity>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ImportedDeviceIdentity using PATCH.
         /// </summary>
         /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
-        /// <returns>The updated ImportedDeviceIdentity.</returns>
-        public System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate)
-        {
-            return this.UpdateAsync(importedDeviceIdentityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ImportedDeviceIdentity using PATCH.
-        /// </summary>
-        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedDeviceIdentity.</returns>
-        public async System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ImportedDeviceIdentity> UpdateAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (importedDeviceIdentityToUpdate.AdditionalData != null)
-			{
-				if (importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedDeviceIdentityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (importedDeviceIdentityToUpdate.AdditionalData != null)
-            {
-                if (importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedDeviceIdentityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ImportedDeviceIdentity>(importedDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ImportedDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> UpdateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate)
-        {
-            return this.UpdateResponseAsync(importedDeviceIdentityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ImportedDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedDeviceIdentityToUpdate">The ImportedDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> UpdateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> UpdateResponseAsync(ImportedDeviceIdentity importedDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (importedDeviceIdentityToUpdate.AdditionalData != null)
-			{
-				if (importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedDeviceIdentityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (importedDeviceIdentityToUpdate.AdditionalData != null)
-            {
-                if (importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    importedDeviceIdentityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, importedDeviceIdentityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ImportedDeviceIdentity>(importedDeviceIdentityToUpdate, cancellationToken).ConfigureAwait(false);
         }

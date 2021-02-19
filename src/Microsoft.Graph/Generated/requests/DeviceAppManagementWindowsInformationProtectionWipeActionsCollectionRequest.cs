@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
-        /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction)
-        {
-            return this.AddAsync(windowsInformationProtectionWipeAction, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionWipeAction.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsInformationProtectionWipeAction> AddAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeAction, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> AddResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction)
-        {
-            return this.AddResponseAsync(windowsInformationProtectionWipeAction, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsInformationProtectionWipeAction to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.
         /// </summary>
         /// <param name="windowsInformationProtectionWipeAction">The WindowsInformationProtectionWipeAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionWipeAction}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> AddResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionWipeAction>> AddResponseAsync(WindowsInformationProtectionWipeAction windowsInformationProtectionWipeAction, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionWipeAction>(windowsInformationProtectionWipeAction, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementWindowsInformationProtectionWipeActionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

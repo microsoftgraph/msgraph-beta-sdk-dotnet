@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Person using POST.
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
-        /// <returns>The created Person.</returns>
-        public System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate)
-        {
-            return this.CreateAsync(personToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Person using POST.
-        /// </summary>
-        /// <param name="personToCreate">The Person to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Person.</returns>
-        public async System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Person>(personToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Person using POST and returns a <see cref="GraphResponse{Person}"/> object.
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
-        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Person>> CreateResponseAsync(Person personToCreate)
-        {
-            return this.CreateResponseAsync(personToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Person using POST and returns a <see cref="GraphResponse{Person}"/> object.
-        /// </summary>
-        /// <param name="personToCreate">The Person to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Person>> CreateResponseAsync(Person personToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Person>> CreateResponseAsync(Person personToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Person>(personToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Person.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Person.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Person>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Person and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Person and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Person using PATCH.
         /// </summary>
         /// <param name="personToUpdate">The Person to update.</param>
-        /// <returns>The updated Person.</returns>
-        public System.Threading.Tasks.Task<Person> UpdateAsync(Person personToUpdate)
-        {
-            return this.UpdateAsync(personToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Person using PATCH.
-        /// </summary>
-        /// <param name="personToUpdate">The Person to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Person.</returns>
-        public async System.Threading.Tasks.Task<Person> UpdateAsync(Person personToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Person> UpdateAsync(Person personToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personToUpdate.AdditionalData != null)
-			{
-				if (personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personToUpdate.AdditionalData != null)
-            {
-                if (personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Person>(personToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Person using PATCH and returns a <see cref="GraphResponse{Person}"/> object.
         /// </summary>
         /// <param name="personToUpdate">The Person to update.</param>
-        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Person>> UpdateResponseAsync(Person personToUpdate)
-        {
-            return this.UpdateResponseAsync(personToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Person using PATCH and returns a <see cref="GraphResponse{Person}"/> object.
-        /// </summary>
-        /// <param name="personToUpdate">The Person to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Person>> UpdateResponseAsync(Person personToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Person>> UpdateResponseAsync(Person personToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personToUpdate.AdditionalData != null)
-			{
-				if (personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personToUpdate.AdditionalData != null)
-            {
-                if (personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Person>(personToUpdate, cancellationToken).ConfigureAwait(false);
         }

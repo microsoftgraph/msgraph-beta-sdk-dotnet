@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceDomainsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Domain to the collection via POST.
-        /// </summary>
-        /// <param name="domain">The Domain to add.</param>
-        /// <returns>The created Domain.</returns>
-        System.Threading.Tasks.Task<Domain> AddAsync(Domain domain);
-
         /// <summary>
         /// Adds the specified Domain to the collection via POST.
         /// </summary>
         /// <param name="domain">The Domain to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Domain.</returns>
-        System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
-        /// </summary>
-        /// <param name="domain">The Domain to add.</param>
-        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain);
+        System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="domain">The Domain to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceDomainsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceDomainsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDomainsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceLogCollectionResponse to the collection via POST.
-        /// </summary>
-        /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
-        /// <returns>The created DeviceLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> AddAsync(DeviceLogCollectionResponse deviceLogCollectionResponse)
-        {
-            return this.AddAsync(deviceLogCollectionResponse, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceLogCollectionResponse to the collection via POST.
         /// </summary>
         /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> AddAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceLogCollectionResponse> AddAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceLogCollectionResponse>(deviceLogCollectionResponse, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> AddResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponse)
-        {
-            return this.AddResponseAsync(deviceLogCollectionResponse, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.
         /// </summary>
         /// <param name="deviceLogCollectionResponse">The DeviceLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> AddResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> AddResponseAsync(DeviceLogCollectionResponse deviceLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceLogCollectionResponse>(deviceLogCollectionResponse, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedDeviceLogCollectionRequestsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedDeviceLogCollectionRequestsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedDeviceLogCollectionRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagedDeviceLogCollectionRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceLogCollectionRequestsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagedDeviceLogCollectionRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

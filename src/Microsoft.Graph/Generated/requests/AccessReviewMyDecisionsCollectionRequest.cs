@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AccessReviewDecision to the collection via POST.
-        /// </summary>
-        /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
-        /// <returns>The created AccessReviewDecision.</returns>
-        public System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision)
-        {
-            return this.AddAsync(accessReviewDecision, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AccessReviewDecision to the collection via POST.
         /// </summary>
         /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewDecision.</returns>
-        public System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AccessReviewDecision>(accessReviewDecision, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AccessReviewDecision to the collection via POST and returns a <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.
-        /// </summary>
-        /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision)
-        {
-            return this.AddResponseAsync(accessReviewDecision, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AccessReviewDecision to the collection via POST and returns a <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.
         /// </summary>
         /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AccessReviewDecision>(accessReviewDecision, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAccessReviewMyDecisionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAccessReviewMyDecisionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAccessReviewMyDecisionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AccessReviewMyDecisionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewMyDecisionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessReviewMyDecisionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewMyDecisionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AccessReviewMyDecisionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewMyDecisionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewMyDecisionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AccessReviewMyDecisionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AccessReviewMyDecisionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

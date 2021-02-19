@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementExportJob to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementExportJob">The DeviceManagementExportJob to add.</param>
-        /// <returns>The created DeviceManagementExportJob.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExportJob> AddAsync(DeviceManagementExportJob deviceManagementExportJob)
-        {
-            return this.AddAsync(deviceManagementExportJob, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementExportJob to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementExportJob">The DeviceManagementExportJob to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExportJob.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExportJob> AddAsync(DeviceManagementExportJob deviceManagementExportJob, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementExportJob> AddAsync(DeviceManagementExportJob deviceManagementExportJob, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementExportJob>(deviceManagementExportJob, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementExportJob to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementExportJob">The DeviceManagementExportJob to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> AddResponseAsync(DeviceManagementExportJob deviceManagementExportJob)
-        {
-            return this.AddResponseAsync(deviceManagementExportJob, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementExportJob to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementExportJob">The DeviceManagementExportJob to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> AddResponseAsync(DeviceManagementExportJob deviceManagementExportJob, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> AddResponseAsync(DeviceManagementExportJob deviceManagementExportJob, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExportJob>(deviceManagementExportJob, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementReportsExportJobsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementReportsExportJobsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementReportsExportJobsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementReportsExportJobsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsExportJobsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementReportsExportJobsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsExportJobsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementReportsExportJobsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementReportsExportJobsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsExportJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementReportsExportJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementReportsExportJobsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

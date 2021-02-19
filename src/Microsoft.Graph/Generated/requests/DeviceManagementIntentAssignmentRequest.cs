@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
-        /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate)
-        {
-            return this.CreateAsync(deviceManagementIntentAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentAssignment using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementIntentAssignment>(deviceManagementIntentAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> CreateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(deviceManagementIntentAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> CreateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> CreateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentAssignment>(deviceManagementIntentAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementIntentAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntentAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceManagementIntentAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceManagementIntentAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntentAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementIntentAssignment using PATCH.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
-        /// <returns>The updated DeviceManagementIntentAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate)
-        {
-            return this.UpdateAsync(deviceManagementIntentAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntentAssignment using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementIntentAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementIntentAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementIntentAssignment>(deviceManagementIntentAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementIntentAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> UpdateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceManagementIntentAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntentAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> UpdateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> UpdateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceManagementIntentAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementIntentAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementIntentAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementIntentAssignment>(deviceManagementIntentAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

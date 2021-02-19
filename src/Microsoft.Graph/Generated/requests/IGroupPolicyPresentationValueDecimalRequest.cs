@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationValueDecimal using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
-        /// <returns>The created GroupPolicyPresentationValueDecimal.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueDecimal using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationValueDecimal.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueDecimal using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> CreateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified GroupPolicyPresentationValueDecimal using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> CreateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationValueDecimal.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> CreateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationValueDecimal.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationValueDecimal and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationValueDecimal and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueDecimal.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH.
         /// </summary>
         /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
-        /// <returns>The updated GroupPolicyPresentationValueDecimal.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationValueDecimal.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> UpdateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> UpdateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> UpdateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

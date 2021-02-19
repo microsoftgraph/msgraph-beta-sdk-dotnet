@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Office365GroupsActivityDetail using POST.
         /// </summary>
         /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
-        /// <returns>The created Office365GroupsActivityDetail.</returns>
-        public System.Threading.Tasks.Task<Office365GroupsActivityDetail> CreateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate)
-        {
-            return this.CreateAsync(office365GroupsActivityDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Office365GroupsActivityDetail using POST.
-        /// </summary>
-        /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365GroupsActivityDetail.</returns>
-        public async System.Threading.Tasks.Task<Office365GroupsActivityDetail> CreateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Office365GroupsActivityDetail> CreateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Office365GroupsActivityDetail>(office365GroupsActivityDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Office365GroupsActivityDetail using POST and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
         /// </summary>
         /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
-        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> CreateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate)
-        {
-            return this.CreateResponseAsync(office365GroupsActivityDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Office365GroupsActivityDetail using POST and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
-        /// </summary>
-        /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> CreateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> CreateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Office365GroupsActivityDetail>(office365GroupsActivityDetailToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Office365GroupsActivityDetail.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Office365GroupsActivityDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Office365GroupsActivityDetail>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Office365GroupsActivityDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Office365GroupsActivityDetail and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Office365GroupsActivityDetail using PATCH.
         /// </summary>
         /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail to update.</param>
-        /// <returns>The updated Office365GroupsActivityDetail.</returns>
-        public System.Threading.Tasks.Task<Office365GroupsActivityDetail> UpdateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate)
-        {
-            return this.UpdateAsync(office365GroupsActivityDetailToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Office365GroupsActivityDetail using PATCH.
-        /// </summary>
-        /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityDetail.</returns>
-        public async System.Threading.Tasks.Task<Office365GroupsActivityDetail> UpdateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Office365GroupsActivityDetail> UpdateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (office365GroupsActivityDetailToUpdate.AdditionalData != null)
-			{
-				if (office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (office365GroupsActivityDetailToUpdate.AdditionalData != null)
-            {
-                if (office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Office365GroupsActivityDetail>(office365GroupsActivityDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Office365GroupsActivityDetail using PATCH and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
         /// </summary>
         /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail to update.</param>
-        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> UpdateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate)
-        {
-            return this.UpdateResponseAsync(office365GroupsActivityDetailToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Office365GroupsActivityDetail using PATCH and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
-        /// </summary>
-        /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> UpdateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> UpdateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (office365GroupsActivityDetailToUpdate.AdditionalData != null)
-			{
-				if (office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (office365GroupsActivityDetailToUpdate.AdditionalData != null)
-            {
-                if (office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    office365GroupsActivityDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, office365GroupsActivityDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Office365GroupsActivityDetail>(office365GroupsActivityDetailToUpdate, cancellationToken).ConfigureAwait(false);
         }

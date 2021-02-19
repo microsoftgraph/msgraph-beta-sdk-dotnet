@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsScoreHistory using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsScoreHistoryToCreate">The UserExperienceAnalyticsScoreHistory to create.</param>
-        /// <returns>The created UserExperienceAnalyticsScoreHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> CreateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsScoreHistoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsScoreHistory using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsScoreHistoryToCreate">The UserExperienceAnalyticsScoreHistory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsScoreHistory.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> CreateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> CreateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsScoreHistory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsScoreHistoryToCreate">The UserExperienceAnalyticsScoreHistory to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> CreateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate)
-        {
-            return this.CreateResponseAsync(userExperienceAnalyticsScoreHistoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsScoreHistory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsScoreHistoryToCreate">The UserExperienceAnalyticsScoreHistory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> CreateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> CreateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsScoreHistory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsScoreHistory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserExperienceAnalyticsScoreHistory>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsScoreHistory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsScoreHistory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsScoreHistory using PATCH.
         /// </summary>
         /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsScoreHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> UpdateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate)
-        {
-            return this.UpdateAsync(userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsScoreHistory using PATCH.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsScoreHistory.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> UpdateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsScoreHistory> UpdateAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsScoreHistoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsScoreHistoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserExperienceAnalyticsScoreHistory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> UpdateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate)
-        {
-            return this.UpdateResponseAsync(userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserExperienceAnalyticsScoreHistory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsScoreHistoryToUpdate">The UserExperienceAnalyticsScoreHistory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsScoreHistory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> UpdateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsScoreHistory>> UpdateResponseAsync(UserExperienceAnalyticsScoreHistory userExperienceAnalyticsScoreHistoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsScoreHistoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsScoreHistoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsScoreHistoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsScoreHistory>(userExperienceAnalyticsScoreHistoryToUpdate, cancellationToken).ConfigureAwait(false);
         }

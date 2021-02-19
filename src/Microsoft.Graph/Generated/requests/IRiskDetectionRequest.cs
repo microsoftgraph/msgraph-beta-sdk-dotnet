@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified RiskDetection using POST.
         /// </summary>
         /// <param name="riskDetectionToCreate">The RiskDetection to create.</param>
-        /// <returns>The created RiskDetection.</returns>
-        System.Threading.Tasks.Task<RiskDetection> CreateAsync(RiskDetection riskDetectionToCreate);
-
-        /// <summary>
-        /// Creates the specified RiskDetection using POST.
-        /// </summary>
-        /// <param name="riskDetectionToCreate">The RiskDetection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskDetection.</returns>
-        System.Threading.Tasks.Task<RiskDetection> CreateAsync(RiskDetection riskDetectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified RiskDetection using POST and returns a <see cref="GraphResponse{RiskDetection}"/> object.
-        /// </summary>
-        /// <param name="riskDetectionToCreate">The RiskDetection to create.</param>
-        /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> CreateResponseAsync(RiskDetection riskDetectionToCreate);
+        System.Threading.Tasks.Task<RiskDetection> CreateAsync(RiskDetection riskDetectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified RiskDetection using POST and returns a <see cref="GraphResponse{RiskDetection}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="riskDetectionToCreate">The RiskDetection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> CreateResponseAsync(RiskDetection riskDetectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RiskDetection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> CreateResponseAsync(RiskDetection riskDetectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified RiskDetection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RiskDetection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified RiskDetection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RiskDetection.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified RiskDetection using PATCH.
         /// </summary>
         /// <param name="riskDetectionToUpdate">The RiskDetection to update.</param>
-        /// <returns>The updated RiskDetection.</returns>
-        System.Threading.Tasks.Task<RiskDetection> UpdateAsync(RiskDetection riskDetectionToUpdate);
-
-        /// <summary>
-        /// Updates the specified RiskDetection using PATCH.
-        /// </summary>
-        /// <param name="riskDetectionToUpdate">The RiskDetection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RiskDetection.</returns>
-        System.Threading.Tasks.Task<RiskDetection> UpdateAsync(RiskDetection riskDetectionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified RiskDetection using PATCH and returns a <see cref="GraphResponse{RiskDetection}"/> object.
-        /// </summary>
-        /// <param name="riskDetectionToUpdate">The RiskDetection to update.</param>
-        /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> UpdateResponseAsync(RiskDetection riskDetectionToUpdate);
+        System.Threading.Tasks.Task<RiskDetection> UpdateAsync(RiskDetection riskDetectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RiskDetection using PATCH and returns a <see cref="GraphResponse{RiskDetection}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> UpdateResponseAsync(RiskDetection riskDetectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RiskDetection>> UpdateResponseAsync(RiskDetection riskDetectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

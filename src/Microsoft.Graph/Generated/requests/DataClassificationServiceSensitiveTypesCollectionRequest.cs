@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SensitiveType to the collection via POST.
-        /// </summary>
-        /// <param name="sensitiveType">The SensitiveType to add.</param>
-        /// <returns>The created SensitiveType.</returns>
-        public System.Threading.Tasks.Task<SensitiveType> AddAsync(SensitiveType sensitiveType)
-        {
-            return this.AddAsync(sensitiveType, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SensitiveType to the collection via POST.
         /// </summary>
         /// <param name="sensitiveType">The SensitiveType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitiveType.</returns>
-        public System.Threading.Tasks.Task<SensitiveType> AddAsync(SensitiveType sensitiveType, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SensitiveType> AddAsync(SensitiveType sensitiveType, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SensitiveType>(sensitiveType, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SensitiveType to the collection via POST and returns a <see cref="GraphResponse{SensitiveType}"/> object of the request.
-        /// </summary>
-        /// <param name="sensitiveType">The SensitiveType to add.</param>
-        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SensitiveType>> AddResponseAsync(SensitiveType sensitiveType)
-        {
-            return this.AddResponseAsync(sensitiveType, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SensitiveType to the collection via POST and returns a <see cref="GraphResponse{SensitiveType}"/> object of the request.
         /// </summary>
         /// <param name="sensitiveType">The SensitiveType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SensitiveType>> AddResponseAsync(SensitiveType sensitiveType, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SensitiveType>> AddResponseAsync(SensitiveType sensitiveType, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SensitiveType>(sensitiveType, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDataClassificationServiceSensitiveTypesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDataClassificationServiceSensitiveTypesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDataClassificationServiceSensitiveTypesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DataClassificationServiceSensitiveTypesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitiveTypesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitiveTypesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitiveTypesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceSensitiveTypesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationServiceSensitiveTypesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitiveTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceSensitiveTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DataClassificationServiceSensitiveTypesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

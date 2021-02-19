@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Alert to the collection via POST.
-        /// </summary>
-        /// <param name="alert">The Alert to add.</param>
-        /// <returns>The created Alert.</returns>
-        public System.Threading.Tasks.Task<Alert> AddAsync(Alert alert)
-        {
-            return this.AddAsync(alert, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Alert to the collection via POST.
         /// </summary>
         /// <param name="alert">The Alert to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Alert.</returns>
-        public System.Threading.Tasks.Task<Alert> AddAsync(Alert alert, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Alert> AddAsync(Alert alert, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Alert>(alert, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Alert to the collection via POST and returns a <see cref="GraphResponse{Alert}"/> object of the request.
-        /// </summary>
-        /// <param name="alert">The Alert to add.</param>
-        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Alert>> AddResponseAsync(Alert alert)
-        {
-            return this.AddResponseAsync(alert, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Alert to the collection via POST and returns a <see cref="GraphResponse{Alert}"/> object of the request.
         /// </summary>
         /// <param name="alert">The Alert to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Alert>> AddResponseAsync(Alert alert, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Alert>> AddResponseAsync(Alert alert, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Alert>(alert, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityAlertsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityAlertsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityAlertsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SecurityAlertsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityAlertsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityAlertsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityAlertsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityAlertsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityAlertsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityAlertsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityAlertsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SecurityAlertsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

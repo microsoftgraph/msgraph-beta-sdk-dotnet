@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Profile using POST.
         /// </summary>
         /// <param name="profileToCreate">The Profile to create.</param>
-        /// <returns>The created Profile.</returns>
-        System.Threading.Tasks.Task<Profile> CreateAsync(Profile profileToCreate);
-
-        /// <summary>
-        /// Creates the specified Profile using POST.
-        /// </summary>
-        /// <param name="profileToCreate">The Profile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Profile.</returns>
-        System.Threading.Tasks.Task<Profile> CreateAsync(Profile profileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Profile using POST and returns a <see cref="GraphResponse{Profile}"/> object.
-        /// </summary>
-        /// <param name="profileToCreate">The Profile to create.</param>
-        /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> CreateResponseAsync(Profile profileToCreate);
+        System.Threading.Tasks.Task<Profile> CreateAsync(Profile profileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Profile using POST and returns a <see cref="GraphResponse{Profile}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="profileToCreate">The Profile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> CreateResponseAsync(Profile profileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Profile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Profile>> CreateResponseAsync(Profile profileToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Profile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Profile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Profile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Profile.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Profile using PATCH.
         /// </summary>
         /// <param name="profileToUpdate">The Profile to update.</param>
-        /// <returns>The updated Profile.</returns>
-        System.Threading.Tasks.Task<Profile> UpdateAsync(Profile profileToUpdate);
-
-        /// <summary>
-        /// Updates the specified Profile using PATCH.
-        /// </summary>
-        /// <param name="profileToUpdate">The Profile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Profile.</returns>
-        System.Threading.Tasks.Task<Profile> UpdateAsync(Profile profileToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Profile using PATCH and returns a <see cref="GraphResponse{Profile}"/> object.
-        /// </summary>
-        /// <param name="profileToUpdate">The Profile to update.</param>
-        /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> UpdateResponseAsync(Profile profileToUpdate);
+        System.Threading.Tasks.Task<Profile> UpdateAsync(Profile profileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Profile using PATCH and returns a <see cref="GraphResponse{Profile}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> UpdateResponseAsync(Profile profileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Profile>> UpdateResponseAsync(Profile profileToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

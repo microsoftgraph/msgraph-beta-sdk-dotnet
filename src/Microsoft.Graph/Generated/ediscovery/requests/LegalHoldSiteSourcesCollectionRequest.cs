@@ -33,69 +33,39 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SiteSource to the collection via POST.
-        /// </summary>
-        /// <param name="siteSource">The SiteSource to add.</param>
-        /// <returns>The created SiteSource.</returns>
-        public System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource)
-        {
-            return this.AddAsync(siteSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SiteSource to the collection via POST.
         /// </summary>
         /// <param name="siteSource">The SiteSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SiteSource.</returns>
-        public System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SiteSource>(siteSource, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SiteSource to the collection via POST and returns a <see cref="GraphResponse{SiteSource}"/> object of the request.
-        /// </summary>
-        /// <param name="siteSource">The SiteSource to add.</param>
-        /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource)
-        {
-            return this.AddResponseAsync(siteSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SiteSource to the collection via POST and returns a <see cref="GraphResponse{SiteSource}"/> object of the request.
         /// </summary>
         /// <param name="siteSource">The SiteSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SiteSource>(siteSource, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ILegalHoldSiteSourcesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ILegalHoldSiteSourcesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ILegalHoldSiteSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<LegalHoldSiteSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{LegalHoldSiteSourcesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{LegalHoldSiteSourcesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LegalHoldSiteSourcesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{LegalHoldSiteSourcesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LegalHoldSiteSourcesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LegalHoldSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LegalHoldSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<LegalHoldSiteSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

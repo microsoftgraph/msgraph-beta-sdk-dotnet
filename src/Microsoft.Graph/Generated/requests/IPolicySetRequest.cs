@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PolicySet using POST.
         /// </summary>
         /// <param name="policySetToCreate">The PolicySet to create.</param>
-        /// <returns>The created PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate);
-
-        /// <summary>
-        /// Creates the specified PolicySet using POST.
-        /// </summary>
-        /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
-        /// </summary>
-        /// <param name="policySetToCreate">The PolicySet to create.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate);
+        System.Threading.Tasks.Task<PolicySet> CreateAsync(PolicySet policySetToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PolicySet using POST and returns a <see cref="GraphResponse{PolicySet}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="policySetToCreate">The PolicySet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PolicySet.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> CreateResponseAsync(PolicySet policySetToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PolicySet.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PolicySet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PolicySet.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PolicySet using PATCH.
         /// </summary>
         /// <param name="policySetToUpdate">The PolicySet to update.</param>
-        /// <returns>The updated PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate);
-
-        /// <summary>
-        /// Updates the specified PolicySet using PATCH.
-        /// </summary>
-        /// <param name="policySetToUpdate">The PolicySet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicySet.</returns>
-        System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
-        /// </summary>
-        /// <param name="policySetToUpdate">The PolicySet to update.</param>
-        /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate);
+        System.Threading.Tasks.Task<PolicySet> UpdateAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PolicySet using PATCH and returns a <see cref="GraphResponse{PolicySet}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PolicySet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PolicySet>> UpdateResponseAsync(PolicySet policySetToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

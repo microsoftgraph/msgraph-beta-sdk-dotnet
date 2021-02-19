@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified RoleScopeTag to the collection via POST.
-        /// </summary>
-        /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
-        /// <returns>The created RoleScopeTag.</returns>
-        public System.Threading.Tasks.Task<RoleScopeTag> AddAsync(RoleScopeTag roleScopeTag)
-        {
-            return this.AddAsync(roleScopeTag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RoleScopeTag to the collection via POST.
         /// </summary>
         /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTag.</returns>
-        public System.Threading.Tasks.Task<RoleScopeTag> AddAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<RoleScopeTag> AddAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RoleScopeTag>(roleScopeTag, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified RoleScopeTag to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object of the request.
-        /// </summary>
-        /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
-        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> AddResponseAsync(RoleScopeTag roleScopeTag)
-        {
-            return this.AddResponseAsync(roleScopeTag, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RoleScopeTag to the collection via POST and returns a <see cref="GraphResponse{RoleScopeTag}"/> object of the request.
         /// </summary>
         /// <param name="roleScopeTag">The RoleScopeTag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> AddResponseAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> AddResponseAsync(RoleScopeTag roleScopeTag, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RoleScopeTag>(roleScopeTag, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementRoleScopeTagsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementRoleScopeTagsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementRoleScopeTagsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementRoleScopeTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementRoleScopeTagsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementRoleScopeTagsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

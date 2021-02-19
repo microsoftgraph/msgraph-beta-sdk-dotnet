@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
-        /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric)
-        {
-            return this.AddAsync(userExperienceAnalyticsMetric, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> AddAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserExperienceAnalyticsMetric>(userExperienceAnalyticsMetric, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> AddResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric)
-        {
-            return this.AddResponseAsync(userExperienceAnalyticsMetric, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsMetric to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetric">The UserExperienceAnalyticsMetric to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> AddResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> AddResponseAsync(UserExperienceAnalyticsMetric userExperienceAnalyticsMetric, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsMetric>(userExperienceAnalyticsMetric, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserExperienceAnalyticsCategoryMetricValuesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsCategoryMetricValuesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserExperienceAnalyticsCategoryMetricValuesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserExperienceAnalyticsCategoryMetricValuesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategoryMetricValuesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategoryMetricValuesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategoryMetricValuesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategoryMetricValuesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategoryMetricValuesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategoryMetricValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategoryMetricValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsCategoryMetricValuesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

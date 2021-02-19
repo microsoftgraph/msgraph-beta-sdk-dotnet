@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartSeries using POST.
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
-        /// <returns>The created WorkbookChartSeries.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate)
-        {
-            return this.CreateAsync(workbookChartSeriesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookChartSeries using POST.
-        /// </summary>
-        /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartSeries.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookChartSeries>(workbookChartSeriesToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartSeries using POST and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate)
-        {
-            return this.CreateResponseAsync(workbookChartSeriesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookChartSeries using POST and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
-        /// </summary>
-        /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookChartSeries>(workbookChartSeriesToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookChartSeries.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartSeries.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookChartSeries>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookChartSeries and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartSeries and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookChartSeries using PATCH.
         /// </summary>
         /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
-        /// <returns>The updated WorkbookChartSeries.</returns>
-        public System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate)
-        {
-            return this.UpdateAsync(workbookChartSeriesToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookChartSeries using PATCH.
-        /// </summary>
-        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartSeries.</returns>
-        public async System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookChartSeries> UpdateAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookChartSeriesToUpdate.AdditionalData != null)
-			{
-				if (workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartSeriesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookChartSeriesToUpdate.AdditionalData != null)
-            {
-                if (workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartSeriesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartSeries>(workbookChartSeriesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookChartSeries using PATCH and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
         /// </summary>
         /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> UpdateResponseAsync(WorkbookChartSeries workbookChartSeriesToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookChartSeriesToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookChartSeries using PATCH and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
-        /// </summary>
-        /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> UpdateResponseAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> UpdateResponseAsync(WorkbookChartSeries workbookChartSeriesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookChartSeriesToUpdate.AdditionalData != null)
-			{
-				if (workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartSeriesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookChartSeriesToUpdate.AdditionalData != null)
-            {
-                if (workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookChartSeriesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartSeriesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookChartSeries>(workbookChartSeriesToUpdate, cancellationToken).ConfigureAwait(false);
         }

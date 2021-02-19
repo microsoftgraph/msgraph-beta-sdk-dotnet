@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
-        /// <returns>The created WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> CreateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate)
-        {
-            return this.CreateAsync(windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> CreateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> CreateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> CreateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate)
-        {
-            return this.CreateResponseAsync(windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtectionNetworkLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummaryToCreate">The WindowsInformationProtectionNetworkLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> CreateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> CreateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionNetworkLearningSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionNetworkLearningSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsInformationProtectionNetworkLearningSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionNetworkLearningSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtectionNetworkLearningSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionNetworkLearningSummary using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToUpdate">The WindowsInformationProtectionNetworkLearningSummary to update.</param>
-        /// <returns>The updated WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> UpdateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate)
-        {
-            return this.UpdateAsync(windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionNetworkLearningSummary using PATCH.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummaryToUpdate">The WindowsInformationProtectionNetworkLearningSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtectionNetworkLearningSummary.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> UpdateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> UpdateAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionNetworkLearningSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionNetworkLearningSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtectionNetworkLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToUpdate">The WindowsInformationProtectionNetworkLearningSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtectionNetworkLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionNetworkLearningSummaryToUpdate">The WindowsInformationProtectionNetworkLearningSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionNetworkLearningSummary windowsInformationProtectionNetworkLearningSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData != null)
-			{
-				if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionNetworkLearningSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData != null)
-            {
-                if (windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsInformationProtectionNetworkLearningSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsInformationProtectionNetworkLearningSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionNetworkLearningSummary>(windowsInformationProtectionNetworkLearningSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

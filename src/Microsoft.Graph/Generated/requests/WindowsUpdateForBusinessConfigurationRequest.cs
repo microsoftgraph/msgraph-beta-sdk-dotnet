@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsUpdateForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
-        /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsUpdateForBusinessConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windowsUpdateForBusinessConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsUpdateForBusinessConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsUpdateForBusinessConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsUpdateForBusinessConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsUpdateForBusinessConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsUpdateForBusinessConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsUpdateForBusinessConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToUpdate">The WindowsUpdateForBusinessConfiguration to update.</param>
-        /// <returns>The updated WindowsUpdateForBusinessConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> UpdateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windowsUpdateForBusinessConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsUpdateForBusinessConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windowsUpdateForBusinessConfigurationToUpdate">The WindowsUpdateForBusinessConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsUpdateForBusinessConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> UpdateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> UpdateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUpdateForBusinessConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUpdateForBusinessConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsUpdateForBusinessConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToUpdate">The WindowsUpdateForBusinessConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> UpdateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsUpdateForBusinessConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsUpdateForBusinessConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsUpdateForBusinessConfigurationToUpdate">The WindowsUpdateForBusinessConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> UpdateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> UpdateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUpdateForBusinessConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsUpdateForBusinessConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsUpdateForBusinessConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

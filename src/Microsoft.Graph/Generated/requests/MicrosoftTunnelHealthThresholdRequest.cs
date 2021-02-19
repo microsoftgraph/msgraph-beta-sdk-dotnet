@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelHealthThreshold using POST.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
-        /// <returns>The created MicrosoftTunnelHealthThreshold.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate)
-        {
-            return this.CreateAsync(microsoftTunnelHealthThresholdToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelHealthThreshold using POST.
-        /// </summary>
-        /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelHealthThreshold.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> CreateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelHealthThreshold using POST and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> CreateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate)
-        {
-            return this.CreateResponseAsync(microsoftTunnelHealthThresholdToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelHealthThreshold using POST and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
-        /// </summary>
-        /// <param name="microsoftTunnelHealthThresholdToCreate">The MicrosoftTunnelHealthThreshold to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> CreateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> CreateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MicrosoftTunnelHealthThreshold.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelHealthThreshold.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MicrosoftTunnelHealthThreshold>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MicrosoftTunnelHealthThreshold and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelHealthThreshold and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
-        /// <returns>The updated MicrosoftTunnelHealthThreshold.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate)
-        {
-            return this.UpdateAsync(microsoftTunnelHealthThresholdToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH.
-        /// </summary>
-        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelHealthThreshold.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelHealthThreshold> UpdateAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (microsoftTunnelHealthThresholdToUpdate.AdditionalData != null)
-			{
-				if (microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelHealthThresholdToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftTunnelHealthThresholdToUpdate.AdditionalData != null)
-            {
-                if (microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelHealthThresholdToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
         /// </summary>
         /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> UpdateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate)
-        {
-            return this.UpdateResponseAsync(microsoftTunnelHealthThresholdToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MicrosoftTunnelHealthThreshold using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object.
-        /// </summary>
-        /// <param name="microsoftTunnelHealthThresholdToUpdate">The MicrosoftTunnelHealthThreshold to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelHealthThreshold}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> UpdateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelHealthThreshold>> UpdateResponseAsync(MicrosoftTunnelHealthThreshold microsoftTunnelHealthThresholdToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (microsoftTunnelHealthThresholdToUpdate.AdditionalData != null)
-			{
-				if (microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelHealthThresholdToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftTunnelHealthThresholdToUpdate.AdditionalData != null)
-            {
-                if (microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftTunnelHealthThresholdToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelHealthThresholdToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MicrosoftTunnelHealthThreshold>(microsoftTunnelHealthThresholdToUpdate, cancellationToken).ConfigureAwait(false);
         }

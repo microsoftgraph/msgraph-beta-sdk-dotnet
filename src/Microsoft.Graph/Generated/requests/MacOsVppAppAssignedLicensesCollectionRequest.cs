@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST.
-        /// </summary>
-        /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
-        /// <returns>The created MacOsVppAppAssignedLicense.</returns>
-        public System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense)
-        {
-            return this.AddAsync(macOsVppAppAssignedLicense, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST.
         /// </summary>
         /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOsVppAppAssignedLicense.</returns>
-        public System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MacOsVppAppAssignedLicense> AddAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MacOsVppAppAssignedLicense>(macOsVppAppAssignedLicense, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.
-        /// </summary>
-        /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
-        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> AddResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense)
-        {
-            return this.AddResponseAsync(macOsVppAppAssignedLicense, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MacOsVppAppAssignedLicense to the collection via POST and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.
         /// </summary>
         /// <param name="macOsVppAppAssignedLicense">The MacOsVppAppAssignedLicense to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicense}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> AddResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicense>> AddResponseAsync(MacOsVppAppAssignedLicense macOsVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOsVppAppAssignedLicense>(macOsVppAppAssignedLicense, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMacOsVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MacOsVppAppAssignedLicensesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicensesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOsVppAppAssignedLicensesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicensesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOsVppAppAssignedLicensesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MacOsVppAppAssignedLicensesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

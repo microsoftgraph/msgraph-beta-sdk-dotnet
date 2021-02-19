@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceDevicesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Device to the collection via POST.
-        /// </summary>
-        /// <param name="device">The Device to add.</param>
-        /// <returns>The created Device.</returns>
-        System.Threading.Tasks.Task<Device> AddAsync(Device device);
-
         /// <summary>
         /// Adds the specified Device to the collection via POST.
         /// </summary>
         /// <param name="device">The Device to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Device.</returns>
-        System.Threading.Tasks.Task<Device> AddAsync(Device device, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
-        /// </summary>
-        /// <param name="device">The Device to add.</param>
-        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device);
+        System.Threading.Tasks.Task<Device> AddAsync(Device device, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="device">The Device to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDevicesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceDevicesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDevicesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceDevicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceDevicesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceDevicesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceDevicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

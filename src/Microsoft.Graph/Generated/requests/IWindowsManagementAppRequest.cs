@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagementApp using POST.
         /// </summary>
         /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
-        /// <returns>The created WindowsManagementApp.</returns>
-        System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsManagementApp using POST.
-        /// </summary>
-        /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementApp.</returns>
-        System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsManagementApp using POST and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
-        /// </summary>
-        /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> CreateResponseAsync(WindowsManagementApp windowsManagementAppToCreate);
+        System.Threading.Tasks.Task<WindowsManagementApp> CreateAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsManagementApp using POST and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsManagementAppToCreate">The WindowsManagementApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> CreateResponseAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsManagementApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> CreateResponseAsync(WindowsManagementApp windowsManagementAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsManagementApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsManagementApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsManagementApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsManagementApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsManagementApp using PATCH.
         /// </summary>
         /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
-        /// <returns>The updated WindowsManagementApp.</returns>
-        System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsManagementApp using PATCH.
-        /// </summary>
-        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagementApp.</returns>
-        System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsManagementApp using PATCH and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
-        /// </summary>
-        /// <param name="windowsManagementAppToUpdate">The WindowsManagementApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> UpdateResponseAsync(WindowsManagementApp windowsManagementAppToUpdate);
+        System.Threading.Tasks.Task<WindowsManagementApp> UpdateAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsManagementApp using PATCH and returns a <see cref="GraphResponse{WindowsManagementApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsManagementApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> UpdateResponseAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementApp>> UpdateResponseAsync(WindowsManagementApp windowsManagementAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOfficeClientConfigurationAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
-        /// <returns>The created OfficeClientConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> AddAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment);
-
         /// <summary>
         /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST.
         /// </summary>
         /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeClientConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> AddAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> AddResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment);
+        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> AddAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified OfficeClientConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfigurationAssignment">The OfficeClientConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> AddResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> AddResponseAsync(OfficeClientConfigurationAssignment officeClientConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOfficeClientConfigurationAssignmentsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOfficeClientConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IOfficeClientConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

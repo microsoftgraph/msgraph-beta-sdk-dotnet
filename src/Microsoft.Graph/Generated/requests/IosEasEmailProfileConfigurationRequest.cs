@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
-        /// <returns>The created IosEasEmailProfileConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate)
-        {
-            return this.CreateAsync(iosEasEmailProfileConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using POST.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosEasEmailProfileConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosEasEmailProfileConfiguration>(iosEasEmailProfileConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(iosEasEmailProfileConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosEasEmailProfileConfiguration>(iosEasEmailProfileConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosEasEmailProfileConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosEasEmailProfileConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosEasEmailProfileConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosEasEmailProfileConfiguration using PATCH.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
-        /// <returns>The updated IosEasEmailProfileConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate)
-        {
-            return this.UpdateAsync(iosEasEmailProfileConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosEasEmailProfileConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosEasEmailProfileConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosEasEmailProfileConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEasEmailProfileConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosEasEmailProfileConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEasEmailProfileConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosEasEmailProfileConfiguration>(iosEasEmailProfileConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(iosEasEmailProfileConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosEasEmailProfileConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEasEmailProfileConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosEasEmailProfileConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosEasEmailProfileConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEasEmailProfileConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosEasEmailProfileConfiguration>(iosEasEmailProfileConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

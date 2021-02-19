@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
-        /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy)
-        {
-            return this.AddAsync(unifiedRoleManagementPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> AddResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy)
-        {
-            return this.AddResponseAsync(unifiedRoleManagementPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> AddResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> AddResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicyRootRoleManagementPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyRootRoleManagementPoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootRoleManagementPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootRoleManagementPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicyRootRoleManagementPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

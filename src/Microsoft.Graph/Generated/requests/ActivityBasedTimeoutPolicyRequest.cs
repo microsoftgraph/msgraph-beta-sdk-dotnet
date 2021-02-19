@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ActivityBasedTimeoutPolicy using POST.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
-        /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        public System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate)
-        {
-            return this.CreateAsync(activityBasedTimeoutPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ActivityBasedTimeoutPolicy using POST.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
-        public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ActivityBasedTimeoutPolicy using POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> CreateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate)
-        {
-            return this.CreateResponseAsync(activityBasedTimeoutPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ActivityBasedTimeoutPolicy using POST and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicyToCreate">The ActivityBasedTimeoutPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> CreateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> CreateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ActivityBasedTimeoutPolicy.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ActivityBasedTimeoutPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ActivityBasedTimeoutPolicy>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ActivityBasedTimeoutPolicy using PATCH.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
-        /// <returns>The updated ActivityBasedTimeoutPolicy.</returns>
-        public System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate)
-        {
-            return this.UpdateAsync(activityBasedTimeoutPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ActivityBasedTimeoutPolicy using PATCH.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ActivityBasedTimeoutPolicy.</returns>
-        public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (activityBasedTimeoutPolicyToUpdate.AdditionalData != null)
-			{
-				if (activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activityBasedTimeoutPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (activityBasedTimeoutPolicyToUpdate.AdditionalData != null)
-            {
-                if (activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activityBasedTimeoutPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ActivityBasedTimeoutPolicy using PATCH and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> UpdateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate)
-        {
-            return this.UpdateResponseAsync(activityBasedTimeoutPolicyToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ActivityBasedTimeoutPolicy using PATCH and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
-        /// </summary>
-        /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> UpdateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> UpdateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (activityBasedTimeoutPolicyToUpdate.AdditionalData != null)
-			{
-				if (activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activityBasedTimeoutPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (activityBasedTimeoutPolicyToUpdate.AdditionalData != null)
-            {
-                if (activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    activityBasedTimeoutPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, activityBasedTimeoutPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AppRoleAssignment using POST.
         /// </summary>
         /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
-        /// <returns>The created AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> CreateAsync(AppRoleAssignment appRoleAssignmentToCreate);
-
-        /// <summary>
-        /// Creates the specified AppRoleAssignment using POST.
-        /// </summary>
-        /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> CreateAsync(AppRoleAssignment appRoleAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AppRoleAssignment using POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
-        /// </summary>
-        /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> CreateResponseAsync(AppRoleAssignment appRoleAssignmentToCreate);
+        System.Threading.Tasks.Task<AppRoleAssignment> CreateAsync(AppRoleAssignment appRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AppRoleAssignment using POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> CreateResponseAsync(AppRoleAssignment appRoleAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppRoleAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> CreateResponseAsync(AppRoleAssignment appRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppRoleAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AppRoleAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AppRoleAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppRoleAssignment.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AppRoleAssignment using PATCH.
         /// </summary>
         /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>
-        /// <returns>The updated AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> UpdateAsync(AppRoleAssignment appRoleAssignmentToUpdate);
-
-        /// <summary>
-        /// Updates the specified AppRoleAssignment using PATCH.
-        /// </summary>
-        /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> UpdateAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AppRoleAssignment using PATCH and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
-        /// </summary>
-        /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> UpdateResponseAsync(AppRoleAssignment appRoleAssignmentToUpdate);
+        System.Threading.Tasks.Task<AppRoleAssignment> UpdateAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppRoleAssignment using PATCH and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> UpdateResponseAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> UpdateResponseAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

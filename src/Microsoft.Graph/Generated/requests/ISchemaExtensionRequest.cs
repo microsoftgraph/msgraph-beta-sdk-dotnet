@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SchemaExtension using POST.
         /// </summary>
         /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
-        /// <returns>The created SchemaExtension.</returns>
-        System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate);
-
-        /// <summary>
-        /// Creates the specified SchemaExtension using POST.
-        /// </summary>
-        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchemaExtension.</returns>
-        System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
-        /// </summary>
-        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
-        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate);
+        System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SchemaExtension.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SchemaExtension.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SchemaExtension and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SchemaExtension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SchemaExtension.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SchemaExtension using PATCH.
         /// </summary>
         /// <param name="schemaExtensionToUpdate">The SchemaExtension to update.</param>
-        /// <returns>The updated SchemaExtension.</returns>
-        System.Threading.Tasks.Task<SchemaExtension> UpdateAsync(SchemaExtension schemaExtensionToUpdate);
-
-        /// <summary>
-        /// Updates the specified SchemaExtension using PATCH.
-        /// </summary>
-        /// <param name="schemaExtensionToUpdate">The SchemaExtension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SchemaExtension.</returns>
-        System.Threading.Tasks.Task<SchemaExtension> UpdateAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SchemaExtension using PATCH and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
-        /// </summary>
-        /// <param name="schemaExtensionToUpdate">The SchemaExtension to update.</param>
-        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> UpdateResponseAsync(SchemaExtension schemaExtensionToUpdate);
+        System.Threading.Tasks.Task<SchemaExtension> UpdateAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SchemaExtension using PATCH and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> UpdateResponseAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> UpdateResponseAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

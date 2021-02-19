@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharePointActivityPages using POST.
         /// </summary>
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
-        /// <returns>The created SharePointActivityPages.</returns>
-        public System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate)
-        {
-            return this.CreateAsync(sharePointActivityPagesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharePointActivityPages using POST.
-        /// </summary>
-        /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointActivityPages.</returns>
-        public async System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SharePointActivityPages>(sharePointActivityPagesToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SharePointActivityPages using POST and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
         /// </summary>
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> CreateResponseAsync(SharePointActivityPages sharePointActivityPagesToCreate)
-        {
-            return this.CreateResponseAsync(sharePointActivityPagesToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SharePointActivityPages using POST and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
-        /// </summary>
-        /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> CreateResponseAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> CreateResponseAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharePointActivityPages>(sharePointActivityPagesToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharePointActivityPages.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharePointActivityPages.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SharePointActivityPages>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SharePointActivityPages and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SharePointActivityPages and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharePointActivityPages using PATCH.
         /// </summary>
         /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages to update.</param>
-        /// <returns>The updated SharePointActivityPages.</returns>
-        public System.Threading.Tasks.Task<SharePointActivityPages> UpdateAsync(SharePointActivityPages sharePointActivityPagesToUpdate)
-        {
-            return this.UpdateAsync(sharePointActivityPagesToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharePointActivityPages using PATCH.
-        /// </summary>
-        /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointActivityPages.</returns>
-        public async System.Threading.Tasks.Task<SharePointActivityPages> UpdateAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharePointActivityPages> UpdateAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharePointActivityPagesToUpdate.AdditionalData != null)
-			{
-				if (sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointActivityPagesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharePointActivityPagesToUpdate.AdditionalData != null)
-            {
-                if (sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointActivityPagesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SharePointActivityPages>(sharePointActivityPagesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SharePointActivityPages using PATCH and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
         /// </summary>
         /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> UpdateResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate)
-        {
-            return this.UpdateResponseAsync(sharePointActivityPagesToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SharePointActivityPages using PATCH and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
-        /// </summary>
-        /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> UpdateResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> UpdateResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (sharePointActivityPagesToUpdate.AdditionalData != null)
-			{
-				if (sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointActivityPagesToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sharePointActivityPagesToUpdate.AdditionalData != null)
-            {
-                if (sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sharePointActivityPagesToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sharePointActivityPagesToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SharePointActivityPages>(sharePointActivityPagesToUpdate, cancellationToken).ConfigureAwait(false);
         }

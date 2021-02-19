@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRbacResourceNamespace using POST.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
-        /// <returns>The created UnifiedRbacResourceNamespace.</returns>
-        public System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate)
-        {
-            return this.CreateAsync(unifiedRbacResourceNamespaceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRbacResourceNamespace using POST.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRbacResourceNamespace.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UnifiedRbacResourceNamespace>(unifiedRbacResourceNamespaceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRbacResourceNamespace using POST and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate)
-        {
-            return this.CreateResponseAsync(unifiedRbacResourceNamespaceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRbacResourceNamespace using POST and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRbacResourceNamespace>(unifiedRbacResourceNamespaceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRbacResourceNamespace.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRbacResourceNamespace.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UnifiedRbacResourceNamespace>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRbacResourceNamespace using PATCH.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
-        /// <returns>The updated UnifiedRbacResourceNamespace.</returns>
-        public System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate)
-        {
-            return this.UpdateAsync(unifiedRbacResourceNamespaceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRbacResourceNamespace using PATCH.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRbacResourceNamespace.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRbacResourceNamespaceToUpdate.AdditionalData != null)
-			{
-				if (unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRbacResourceNamespaceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRbacResourceNamespaceToUpdate.AdditionalData != null)
-            {
-                if (unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRbacResourceNamespaceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnifiedRbacResourceNamespace>(unifiedRbacResourceNamespaceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRbacResourceNamespace using PATCH and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate)
-        {
-            return this.UpdateResponseAsync(unifiedRbacResourceNamespaceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRbacResourceNamespace using PATCH and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRbacResourceNamespaceToUpdate.AdditionalData != null)
-			{
-				if (unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRbacResourceNamespaceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRbacResourceNamespaceToUpdate.AdditionalData != null)
-            {
-                if (unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRbacResourceNamespaceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRbacResourceNamespaceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UnifiedRbacResourceNamespace>(unifiedRbacResourceNamespaceToUpdate, cancellationToken).ConfigureAwait(false);
         }

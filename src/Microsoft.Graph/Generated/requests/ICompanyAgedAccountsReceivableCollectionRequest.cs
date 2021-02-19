@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyAgedAccountsReceivableCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AgedAccountsReceivable to the collection via POST.
-        /// </summary>
-        /// <param name="agedAccountsReceivable">The AgedAccountsReceivable to add.</param>
-        /// <returns>The created AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> AddAsync(AgedAccountsReceivable agedAccountsReceivable);
-
         /// <summary>
         /// Adds the specified AgedAccountsReceivable to the collection via POST.
         /// </summary>
         /// <param name="agedAccountsReceivable">The AgedAccountsReceivable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> AddAsync(AgedAccountsReceivable agedAccountsReceivable, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AgedAccountsReceivable to the collection via POST and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.
-        /// </summary>
-        /// <param name="agedAccountsReceivable">The AgedAccountsReceivable to add.</param>
-        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> AddResponseAsync(AgedAccountsReceivable agedAccountsReceivable);
+        System.Threading.Tasks.Task<AgedAccountsReceivable> AddAsync(AgedAccountsReceivable agedAccountsReceivable, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AgedAccountsReceivable to the collection via POST and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="agedAccountsReceivable">The AgedAccountsReceivable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> AddResponseAsync(AgedAccountsReceivable agedAccountsReceivable, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> AddResponseAsync(AgedAccountsReceivable agedAccountsReceivable, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyAgedAccountsReceivableCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyAgedAccountsReceivableCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyAgedAccountsReceivableCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanyAgedAccountsReceivableCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsReceivableCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICompanyAgedAccountsReceivableCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyAgedAccountsReceivableCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyAgedAccountsReceivableCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsReceivableCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CompanyAgedAccountsReceivableCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

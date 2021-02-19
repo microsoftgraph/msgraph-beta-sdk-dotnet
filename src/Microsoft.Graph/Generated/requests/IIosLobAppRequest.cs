@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified IosLobApp using POST.
         /// </summary>
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
-        /// <returns>The created IosLobApp.</returns>
-        System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate);
-
-        /// <summary>
-        /// Creates the specified IosLobApp using POST.
-        /// </summary>
-        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosLobApp.</returns>
-        System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
-        /// </summary>
-        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate);
+        System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosLobApp.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosLobApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosLobApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosLobApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosLobApp.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified IosLobApp using PATCH.
         /// </summary>
         /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>
-        /// <returns>The updated IosLobApp.</returns>
-        System.Threading.Tasks.Task<IosLobApp> UpdateAsync(IosLobApp iosLobAppToUpdate);
-
-        /// <summary>
-        /// Updates the specified IosLobApp using PATCH.
-        /// </summary>
-        /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosLobApp.</returns>
-        System.Threading.Tasks.Task<IosLobApp> UpdateAsync(IosLobApp iosLobAppToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified IosLobApp using PATCH and returns a <see cref="GraphResponse{IosLobApp}"/> object.
-        /// </summary>
-        /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> UpdateResponseAsync(IosLobApp iosLobAppToUpdate);
+        System.Threading.Tasks.Task<IosLobApp> UpdateAsync(IosLobApp iosLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosLobApp using PATCH and returns a <see cref="GraphResponse{IosLobApp}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> UpdateResponseAsync(IosLobApp iosLobAppToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> UpdateResponseAsync(IosLobApp iosLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

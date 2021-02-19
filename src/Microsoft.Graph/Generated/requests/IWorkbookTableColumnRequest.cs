@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookTableColumn using POST.
         /// </summary>
         /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
-        /// <returns>The created WorkbookTableColumn.</returns>
-        System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate);
-
-        /// <summary>
-        /// Creates the specified WorkbookTableColumn using POST.
-        /// </summary>
-        /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTableColumn.</returns>
-        System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WorkbookTableColumn using POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
-        /// </summary>
-        /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate);
+        System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WorkbookTableColumn using POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookTableColumn.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookTableColumn.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookTableColumn and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookTableColumn and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookTableColumn.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookTableColumn using PATCH.
         /// </summary>
         /// <param name="workbookTableColumnToUpdate">The WorkbookTableColumn to update.</param>
-        /// <returns>The updated WorkbookTableColumn.</returns>
-        System.Threading.Tasks.Task<WorkbookTableColumn> UpdateAsync(WorkbookTableColumn workbookTableColumnToUpdate);
-
-        /// <summary>
-        /// Updates the specified WorkbookTableColumn using PATCH.
-        /// </summary>
-        /// <param name="workbookTableColumnToUpdate">The WorkbookTableColumn to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookTableColumn.</returns>
-        System.Threading.Tasks.Task<WorkbookTableColumn> UpdateAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WorkbookTableColumn using PATCH and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
-        /// </summary>
-        /// <param name="workbookTableColumnToUpdate">The WorkbookTableColumn to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> UpdateResponseAsync(WorkbookTableColumn workbookTableColumnToUpdate);
+        System.Threading.Tasks.Task<WorkbookTableColumn> UpdateAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookTableColumn using PATCH and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> UpdateResponseAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> UpdateResponseAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

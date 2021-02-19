@@ -20,31 +20,20 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ITagChildTagsCollectionWithReferencesRequest : Microsoft.Graph.IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITagChildTagsCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITagChildTagsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TagChildTagsCollectionWithReferencesResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TagChildTagsCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TagChildTagsCollectionWithReferencesResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ITagChildTagsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TagChildTagsCollectionWithReferencesResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TagChildTagsCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TagChildTagsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TagChildTagsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

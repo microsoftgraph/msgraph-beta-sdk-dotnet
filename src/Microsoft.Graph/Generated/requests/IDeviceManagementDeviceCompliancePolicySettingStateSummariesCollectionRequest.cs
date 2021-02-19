@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceCompliancePolicySettingStateSummary to the collection via POST.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummary">The DeviceCompliancePolicySettingStateSummary to add.</param>
-        /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> AddAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary);
-
         /// <summary>
         /// Adds the specified DeviceCompliancePolicySettingStateSummary to the collection via POST.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummary">The DeviceCompliancePolicySettingStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> AddAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DeviceCompliancePolicySettingStateSummary to the collection via POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummary">The DeviceCompliancePolicySettingStateSummary to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> AddResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary);
+        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> AddAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DeviceCompliancePolicySettingStateSummary to the collection via POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="deviceCompliancePolicySettingStateSummary">The DeviceCompliancePolicySettingStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> AddResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> AddResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummary, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

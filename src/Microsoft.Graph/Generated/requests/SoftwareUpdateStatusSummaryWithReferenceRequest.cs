@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified SoftwareUpdateStatusSummary using POST.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
-        /// <returns>The created SoftwareUpdateStatusSummary.</returns>
-        public System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate)
-        {
-            return this.CreateAsync(softwareUpdateStatusSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SoftwareUpdateStatusSummary using POST.
-        /// </summary>
-        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SoftwareUpdateStatusSummary.</returns>
-        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified SoftwareUpdateStatusSummary using POST and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> CreateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate)
-        {
-            return this.CreateResponseAsync(softwareUpdateStatusSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SoftwareUpdateStatusSummary using POST and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
-        /// </summary>
-        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> CreateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> CreateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
-        /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
-        public System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate)
-        {
-            return this.UpdateAsync(softwareUpdateStatusSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SoftwareUpdateStatusSummary using PATCH.
-        /// </summary>
-        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SoftwareUpdateStatusSummary.</returns>
-        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
-			{
-				if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, softwareUpdateStatusSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
-            {
-                if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, softwareUpdateStatusSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified SoftwareUpdateStatusSummary using PATCH and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(softwareUpdateStatusSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SoftwareUpdateStatusSummary using PATCH and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
-        /// </summary>
-        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
-			{
-				if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, softwareUpdateStatusSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (softwareUpdateStatusSummaryToUpdate.AdditionalData != null)
-            {
-                if (softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    softwareUpdateStatusSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, softwareUpdateStatusSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SoftwareUpdateStatusSummary>(softwareUpdateStatusSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified SoftwareUpdateStatusSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SoftwareUpdateStatusSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SoftwareUpdateStatusSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

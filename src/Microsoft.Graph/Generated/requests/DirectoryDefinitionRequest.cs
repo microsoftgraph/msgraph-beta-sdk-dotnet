@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryDefinition using POST.
         /// </summary>
         /// <param name="directoryDefinitionToCreate">The DirectoryDefinition to create.</param>
-        /// <returns>The created DirectoryDefinition.</returns>
-        public System.Threading.Tasks.Task<DirectoryDefinition> CreateAsync(DirectoryDefinition directoryDefinitionToCreate)
-        {
-            return this.CreateAsync(directoryDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryDefinition using POST.
-        /// </summary>
-        /// <param name="directoryDefinitionToCreate">The DirectoryDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryDefinition.</returns>
-        public async System.Threading.Tasks.Task<DirectoryDefinition> CreateAsync(DirectoryDefinition directoryDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryDefinition> CreateAsync(DirectoryDefinition directoryDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DirectoryDefinition>(directoryDefinitionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryDefinition using POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object.
         /// </summary>
         /// <param name="directoryDefinitionToCreate">The DirectoryDefinition to create.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> CreateResponseAsync(DirectoryDefinition directoryDefinitionToCreate)
-        {
-            return this.CreateResponseAsync(directoryDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryDefinition using POST and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object.
-        /// </summary>
-        /// <param name="directoryDefinitionToCreate">The DirectoryDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> CreateResponseAsync(DirectoryDefinition directoryDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> CreateResponseAsync(DirectoryDefinition directoryDefinitionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryDefinition>(directoryDefinitionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DirectoryDefinition.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DirectoryDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DirectoryDefinition>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DirectoryDefinition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DirectoryDefinition and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DirectoryDefinition using PATCH.
         /// </summary>
         /// <param name="directoryDefinitionToUpdate">The DirectoryDefinition to update.</param>
-        /// <returns>The updated DirectoryDefinition.</returns>
-        public System.Threading.Tasks.Task<DirectoryDefinition> UpdateAsync(DirectoryDefinition directoryDefinitionToUpdate)
-        {
-            return this.UpdateAsync(directoryDefinitionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DirectoryDefinition using PATCH.
-        /// </summary>
-        /// <param name="directoryDefinitionToUpdate">The DirectoryDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryDefinition.</returns>
-        public async System.Threading.Tasks.Task<DirectoryDefinition> UpdateAsync(DirectoryDefinition directoryDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryDefinition> UpdateAsync(DirectoryDefinition directoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (directoryDefinitionToUpdate.AdditionalData != null)
-			{
-				if (directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryDefinitionToUpdate.AdditionalData != null)
-            {
-                if (directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DirectoryDefinition>(directoryDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DirectoryDefinition using PATCH and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object.
         /// </summary>
         /// <param name="directoryDefinitionToUpdate">The DirectoryDefinition to update.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> UpdateResponseAsync(DirectoryDefinition directoryDefinitionToUpdate)
-        {
-            return this.UpdateResponseAsync(directoryDefinitionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DirectoryDefinition using PATCH and returns a <see cref="GraphResponse{DirectoryDefinition}"/> object.
-        /// </summary>
-        /// <param name="directoryDefinitionToUpdate">The DirectoryDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DirectoryDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> UpdateResponseAsync(DirectoryDefinition directoryDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryDefinition>> UpdateResponseAsync(DirectoryDefinition directoryDefinitionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (directoryDefinitionToUpdate.AdditionalData != null)
-			{
-				if (directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryDefinitionToUpdate.AdditionalData != null)
-            {
-                if (directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DirectoryDefinition>(directoryDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
         }

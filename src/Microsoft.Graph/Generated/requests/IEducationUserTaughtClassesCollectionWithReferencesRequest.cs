@@ -20,31 +20,20 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEducationUserTaughtClassesCollectionWithReferencesRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationUserTaughtClassesCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationUserTaughtClassesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EducationUserTaughtClassesCollectionWithReferencesResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationUserTaughtClassesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationUserTaughtClassesCollectionWithReferencesResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IEducationUserTaughtClassesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationUserTaughtClassesCollectionWithReferencesResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationUserTaughtClassesCollectionWithReferencesResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationUserTaughtClassesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationUserTaughtClassesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

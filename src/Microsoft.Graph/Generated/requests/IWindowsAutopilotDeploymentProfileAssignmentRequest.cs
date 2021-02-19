@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
-        /// <returns>The created WindowsAutopilotDeploymentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAutopilotDeploymentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> CreateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate);
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> CreateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsAutopilotDeploymentProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToCreate">The WindowsAutopilotDeploymentProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> CreateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> CreateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsAutopilotDeploymentProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsAutopilotDeploymentProfileAssignment.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfileAssignmentToUpdate">The WindowsAutopilotDeploymentProfileAssignment to update.</param>
-        /// <returns>The updated WindowsAutopilotDeploymentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToUpdate">The WindowsAutopilotDeploymentProfileAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAutopilotDeploymentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfileAssignmentToUpdate">The WindowsAutopilotDeploymentProfileAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> UpdateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate);
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfileAssignment> UpdateAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsAutopilotDeploymentProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> UpdateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignment>> UpdateResponseAsync(WindowsAutopilotDeploymentProfileAssignment windowsAutopilotDeploymentProfileAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

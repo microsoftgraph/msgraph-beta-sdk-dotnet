@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
-        /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate);
+        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> CreateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceManagementExchangeOnPremisesPolicy using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementExchangeOnPremisesPolicyToCreate">The DeviceManagementExchangeOnPremisesPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> CreateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementExchangeOnPremisesPolicy.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH.
         /// </summary>
         /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
-        /// <returns>The updated DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementExchangeOnPremisesPolicyToUpdate">The DeviceManagementExchangeOnPremisesPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate);
+        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> UpdateAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> UpdateResponseAsync(DeviceManagementExchangeOnPremisesPolicy deviceManagementExchangeOnPremisesPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

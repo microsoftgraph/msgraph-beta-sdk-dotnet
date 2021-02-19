@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentUserStateSummary using POST.
         /// </summary>
         /// <param name="deviceManagementIntentUserStateSummaryToCreate">The DeviceManagementIntentUserStateSummary to create.</param>
-        /// <returns>The created DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> CreateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentUserStateSummary using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentUserStateSummaryToCreate">The DeviceManagementIntentUserStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> CreateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentUserStateSummary using POST and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntentUserStateSummaryToCreate">The DeviceManagementIntentUserStateSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> CreateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate);
+        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> CreateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceManagementIntentUserStateSummary using POST and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementIntentUserStateSummaryToCreate">The DeviceManagementIntentUserStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> CreateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntentUserStateSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> CreateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntentUserStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntentUserStateSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntentUserStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentUserStateSummary.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementIntentUserStateSummary using PATCH.
         /// </summary>
         /// <param name="deviceManagementIntentUserStateSummaryToUpdate">The DeviceManagementIntentUserStateSummary to update.</param>
-        /// <returns>The updated DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> UpdateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntentUserStateSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementIntentUserStateSummaryToUpdate">The DeviceManagementIntentUserStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> UpdateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementIntentUserStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementIntentUserStateSummaryToUpdate">The DeviceManagementIntentUserStateSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> UpdateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate);
+        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> UpdateAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentUserStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> UpdateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> UpdateResponseAsync(DeviceManagementIntentUserStateSummary deviceManagementIntentUserStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

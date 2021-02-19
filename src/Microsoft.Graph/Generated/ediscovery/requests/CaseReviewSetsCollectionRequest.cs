@@ -33,69 +33,39 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ReviewSet to the collection via POST.
-        /// </summary>
-        /// <param name="reviewSet">The ReviewSet to add.</param>
-        /// <returns>The created ReviewSet.</returns>
-        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet)
-        {
-            return this.AddAsync(reviewSet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ReviewSet to the collection via POST.
         /// </summary>
         /// <param name="reviewSet">The ReviewSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReviewSet.</returns>
-        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ReviewSet> AddAsync(ReviewSet reviewSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ReviewSet>(reviewSet, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ReviewSet to the collection via POST and returns a <see cref="GraphResponse{ReviewSet}"/> object of the request.
-        /// </summary>
-        /// <param name="reviewSet">The ReviewSet to add.</param>
-        /// <returns>The <see cref="GraphResponse{ReviewSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReviewSet>> AddResponseAsync(ReviewSet reviewSet)
-        {
-            return this.AddResponseAsync(reviewSet, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ReviewSet to the collection via POST and returns a <see cref="GraphResponse{ReviewSet}"/> object of the request.
         /// </summary>
         /// <param name="reviewSet">The ReviewSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReviewSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReviewSet>> AddResponseAsync(ReviewSet reviewSet, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ReviewSet>> AddResponseAsync(ReviewSet reviewSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ReviewSet>(reviewSet, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICaseReviewSetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CaseReviewSetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CaseReviewSetsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseReviewSetsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CaseReviewSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CaseReviewSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CaseReviewSetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

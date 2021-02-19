@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserActivity using POST.
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
-        /// <returns>The created UserActivity.</returns>
-        public System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate)
-        {
-            return this.CreateAsync(userActivityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserActivity using POST.
-        /// </summary>
-        /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserActivity.</returns>
-        public async System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserActivity>(userActivityToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified UserActivity using POST and returns a <see cref="GraphResponse{UserActivity}"/> object.
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate)
-        {
-            return this.CreateResponseAsync(userActivityToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserActivity using POST and returns a <see cref="GraphResponse{UserActivity}"/> object.
-        /// </summary>
-        /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserActivity>(userActivityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserActivity using PATCH.
         /// </summary>
         /// <param name="userActivityToUpdate">The UserActivity to update.</param>
-        /// <returns>The updated UserActivity.</returns>
-        public System.Threading.Tasks.Task<UserActivity> UpdateAsync(UserActivity userActivityToUpdate)
-        {
-            return this.UpdateAsync(userActivityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserActivity using PATCH.
-        /// </summary>
-        /// <param name="userActivityToUpdate">The UserActivity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserActivity.</returns>
-        public async System.Threading.Tasks.Task<UserActivity> UpdateAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserActivity> UpdateAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userActivityToUpdate.AdditionalData != null)
-			{
-				if (userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userActivityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userActivityToUpdate.AdditionalData != null)
-            {
-                if (userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userActivityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserActivity>(userActivityToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified UserActivity using PATCH and returns a <see cref="GraphResponse{UserActivity}"/> object.
         /// </summary>
         /// <param name="userActivityToUpdate">The UserActivity to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserActivity>> UpdateResponseAsync(UserActivity userActivityToUpdate)
-        {
-            return this.UpdateResponseAsync(userActivityToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UserActivity using PATCH and returns a <see cref="GraphResponse{UserActivity}"/> object.
-        /// </summary>
-        /// <param name="userActivityToUpdate">The UserActivity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> UpdateResponseAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> UpdateResponseAsync(UserActivity userActivityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (userActivityToUpdate.AdditionalData != null)
-			{
-				if (userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userActivityToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userActivityToUpdate.AdditionalData != null)
-            {
-                if (userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userActivityToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserActivity>(userActivityToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified UserActivity.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserActivity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UserActivity>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified UserActivity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UserActivity and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

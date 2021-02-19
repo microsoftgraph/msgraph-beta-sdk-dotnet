@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrintTaskDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="printTaskDefinition">The PrintTaskDefinition to add.</param>
-        /// <returns>The created PrintTaskDefinition.</returns>
-        public System.Threading.Tasks.Task<PrintTaskDefinition> AddAsync(PrintTaskDefinition printTaskDefinition)
-        {
-            return this.AddAsync(printTaskDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrintTaskDefinition to the collection via POST.
         /// </summary>
         /// <param name="printTaskDefinition">The PrintTaskDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintTaskDefinition.</returns>
-        public System.Threading.Tasks.Task<PrintTaskDefinition> AddAsync(PrintTaskDefinition printTaskDefinition, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PrintTaskDefinition> AddAsync(PrintTaskDefinition printTaskDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PrintTaskDefinition>(printTaskDefinition, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PrintTaskDefinition to the collection via POST and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.
-        /// </summary>
-        /// <param name="printTaskDefinition">The PrintTaskDefinition to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> AddResponseAsync(PrintTaskDefinition printTaskDefinition)
-        {
-            return this.AddResponseAsync(printTaskDefinition, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrintTaskDefinition to the collection via POST and returns a <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.
         /// </summary>
         /// <param name="printTaskDefinition">The PrintTaskDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTaskDefinition}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> AddResponseAsync(PrintTaskDefinition printTaskDefinition, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinition>> AddResponseAsync(PrintTaskDefinition printTaskDefinition, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrintTaskDefinition>(printTaskDefinition, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPrintTaskDefinitionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPrintTaskDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPrintTaskDefinitionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PrintTaskDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PrintTaskDefinitionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintTaskDefinitionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinitionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PrintTaskDefinitionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTaskDefinitionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintTaskDefinitionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PrintTaskDefinitionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

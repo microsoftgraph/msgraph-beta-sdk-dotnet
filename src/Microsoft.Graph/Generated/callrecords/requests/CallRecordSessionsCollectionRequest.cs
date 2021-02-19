@@ -33,69 +33,39 @@ namespace Microsoft.Graph.CallRecords
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Session to the collection via POST.
-        /// </summary>
-        /// <param name="session">The Session to add.</param>
-        /// <returns>The created Session.</returns>
-        public System.Threading.Tasks.Task<Session> AddAsync(Session session)
-        {
-            return this.AddAsync(session, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Session to the collection via POST.
         /// </summary>
         /// <param name="session">The Session to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Session.</returns>
-        public System.Threading.Tasks.Task<Session> AddAsync(Session session, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Session> AddAsync(Session session, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Session>(session, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Session to the collection via POST and returns a <see cref="GraphResponse{Session}"/> object of the request.
-        /// </summary>
-        /// <param name="session">The Session to add.</param>
-        /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session)
-        {
-            return this.AddResponseAsync(session, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Session to the collection via POST and returns a <see cref="GraphResponse{Session}"/> object of the request.
         /// </summary>
         /// <param name="session">The Session to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Session>(session, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CallRecordSessionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.CallRecords
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CallRecordSessionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

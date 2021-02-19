@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified EducationSynchronizationProfileStatus using POST.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
-        /// <returns>The created EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate);
-
-        /// <summary>
-        /// Creates the specified EducationSynchronizationProfileStatus using POST.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified EducationSynchronizationProfileStatus using POST and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate);
+        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> CreateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified EducationSynchronizationProfileStatus using POST and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="educationSynchronizationProfileStatusToCreate">The EducationSynchronizationProfileStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EducationSynchronizationProfileStatus.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> CreateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EducationSynchronizationProfileStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationSynchronizationProfileStatus.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified EducationSynchronizationProfileStatus using PATCH.
         /// </summary>
         /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
-        /// <returns>The updated EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate);
-
-        /// <summary>
-        /// Updates the specified EducationSynchronizationProfileStatus using PATCH.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified EducationSynchronizationProfileStatus using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
-        /// </summary>
-        /// <param name="educationSynchronizationProfileStatusToUpdate">The EducationSynchronizationProfileStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate);
+        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> UpdateAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationSynchronizationProfileStatus using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> UpdateResponseAsync(EducationSynchronizationProfileStatus educationSynchronizationProfileStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

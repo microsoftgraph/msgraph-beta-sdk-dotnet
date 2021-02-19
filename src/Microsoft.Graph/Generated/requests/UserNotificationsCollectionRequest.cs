@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Notification to the collection via POST.
-        /// </summary>
-        /// <param name="notification">The Notification to add.</param>
-        /// <returns>The created Notification.</returns>
-        public System.Threading.Tasks.Task<Notification> AddAsync(Notification notification)
-        {
-            return this.AddAsync(notification, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Notification to the collection via POST.
         /// </summary>
         /// <param name="notification">The Notification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notification.</returns>
-        public System.Threading.Tasks.Task<Notification> AddAsync(Notification notification, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Notification> AddAsync(Notification notification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Notification>(notification, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Notification to the collection via POST and returns a <see cref="GraphResponse{Notification}"/> object of the request.
-        /// </summary>
-        /// <param name="notification">The Notification to add.</param>
-        /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification)
-        {
-            return this.AddResponseAsync(notification, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Notification to the collection via POST and returns a <see cref="GraphResponse{Notification}"/> object of the request.
         /// </summary>
         /// <param name="notification">The Notification to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Notification>> AddResponseAsync(Notification notification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Notification>(notification, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserNotificationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserNotificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserNotificationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserNotificationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserNotificationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

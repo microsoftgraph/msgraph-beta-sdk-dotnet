@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RecordOperation using POST.
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
-        /// <returns>The created RecordOperation.</returns>
-        public System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate)
-        {
-            return this.CreateAsync(recordOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RecordOperation using POST.
-        /// </summary>
-        /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RecordOperation.</returns>
-        public async System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RecordOperation>(recordOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RecordOperation using POST and returns a <see cref="GraphResponse{RecordOperation}"/> object.
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate)
-        {
-            return this.CreateResponseAsync(recordOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RecordOperation using POST and returns a <see cref="GraphResponse{RecordOperation}"/> object.
-        /// </summary>
-        /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RecordOperation>(recordOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RecordOperation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RecordOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RecordOperation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RecordOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RecordOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RecordOperation using PATCH.
         /// </summary>
         /// <param name="recordOperationToUpdate">The RecordOperation to update.</param>
-        /// <returns>The updated RecordOperation.</returns>
-        public System.Threading.Tasks.Task<RecordOperation> UpdateAsync(RecordOperation recordOperationToUpdate)
-        {
-            return this.UpdateAsync(recordOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RecordOperation using PATCH.
-        /// </summary>
-        /// <param name="recordOperationToUpdate">The RecordOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RecordOperation.</returns>
-        public async System.Threading.Tasks.Task<RecordOperation> UpdateAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RecordOperation> UpdateAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (recordOperationToUpdate.AdditionalData != null)
-			{
-				if (recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, recordOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (recordOperationToUpdate.AdditionalData != null)
-            {
-                if (recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, recordOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RecordOperation>(recordOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RecordOperation using PATCH and returns a <see cref="GraphResponse{RecordOperation}"/> object.
         /// </summary>
         /// <param name="recordOperationToUpdate">The RecordOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RecordOperation>> UpdateResponseAsync(RecordOperation recordOperationToUpdate)
-        {
-            return this.UpdateResponseAsync(recordOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RecordOperation using PATCH and returns a <see cref="GraphResponse{RecordOperation}"/> object.
-        /// </summary>
-        /// <param name="recordOperationToUpdate">The RecordOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RecordOperation>> UpdateResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RecordOperation>> UpdateResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (recordOperationToUpdate.AdditionalData != null)
-			{
-				if (recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, recordOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (recordOperationToUpdate.AdditionalData != null)
-            {
-                if (recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    recordOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, recordOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RecordOperation>(recordOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

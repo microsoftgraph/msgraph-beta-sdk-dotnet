@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified OutlookCategory using POST.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
-        /// <returns>The created OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate);
-
-        /// <summary>
-        /// Creates the specified OutlookCategory using POST.
-        /// </summary>
-        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
-        /// </summary>
-        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate);
+        System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OutlookCategory.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified OutlookCategory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified OutlookCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified OutlookCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OutlookCategory.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified OutlookCategory using PATCH.
         /// </summary>
         /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
-        /// <returns>The updated OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate);
-
-        /// <summary>
-        /// Updates the specified OutlookCategory using PATCH.
-        /// </summary>
-        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
-        /// </summary>
-        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate);
+        System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

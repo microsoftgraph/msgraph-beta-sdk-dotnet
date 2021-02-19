@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified CountryNamedLocation using POST.
         /// </summary>
         /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
-        /// <returns>The created CountryNamedLocation.</returns>
-        System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate);
-
-        /// <summary>
-        /// Creates the specified CountryNamedLocation using POST.
-        /// </summary>
-        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CountryNamedLocation.</returns>
-        System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
-        /// </summary>
-        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
-        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate);
+        System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CountryNamedLocation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CountryNamedLocation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CountryNamedLocation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CountryNamedLocation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CountryNamedLocation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified CountryNamedLocation using PATCH.
         /// </summary>
         /// <param name="countryNamedLocationToUpdate">The CountryNamedLocation to update.</param>
-        /// <returns>The updated CountryNamedLocation.</returns>
-        System.Threading.Tasks.Task<CountryNamedLocation> UpdateAsync(CountryNamedLocation countryNamedLocationToUpdate);
-
-        /// <summary>
-        /// Updates the specified CountryNamedLocation using PATCH.
-        /// </summary>
-        /// <param name="countryNamedLocationToUpdate">The CountryNamedLocation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CountryNamedLocation.</returns>
-        System.Threading.Tasks.Task<CountryNamedLocation> UpdateAsync(CountryNamedLocation countryNamedLocationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified CountryNamedLocation using PATCH and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
-        /// </summary>
-        /// <param name="countryNamedLocationToUpdate">The CountryNamedLocation to update.</param>
-        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> UpdateResponseAsync(CountryNamedLocation countryNamedLocationToUpdate);
+        System.Threading.Tasks.Task<CountryNamedLocation> UpdateAsync(CountryNamedLocation countryNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CountryNamedLocation using PATCH and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> UpdateResponseAsync(CountryNamedLocation countryNamedLocationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> UpdateResponseAsync(CountryNamedLocation countryNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

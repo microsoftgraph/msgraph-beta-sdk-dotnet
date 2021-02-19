@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AgreementFileVersion to the collection via POST.
-        /// </summary>
-        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
-        /// <returns>The created AgreementFileVersion.</returns>
-        public System.Threading.Tasks.Task<AgreementFileVersion> AddAsync(AgreementFileVersion agreementFileVersion)
-        {
-            return this.AddAsync(agreementFileVersion, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementFileVersion to the collection via POST.
         /// </summary>
         /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileVersion.</returns>
-        public System.Threading.Tasks.Task<AgreementFileVersion> AddAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AgreementFileVersion> AddAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AgreementFileVersion>(agreementFileVersion, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
-        /// </summary>
-        /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
-        /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion)
-        {
-            return this.AddResponseAsync(agreementFileVersion, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AgreementFileVersion to the collection via POST and returns a <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.
         /// </summary>
         /// <param name="agreementFileVersion">The AgreementFileVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileVersion}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileVersion>> AddResponseAsync(AgreementFileVersion agreementFileVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AgreementFileVersion>(agreementFileVersion, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAgreementFileLocalizationVersionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAgreementFileLocalizationVersionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAgreementFileLocalizationVersionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AgreementFileLocalizationVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationVersionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AgreementFileLocalizationVersionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

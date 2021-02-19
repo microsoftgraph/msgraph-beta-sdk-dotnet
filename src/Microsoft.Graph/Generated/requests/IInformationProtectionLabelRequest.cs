@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified InformationProtectionLabel using POST.
         /// </summary>
         /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
-        /// <returns>The created InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate);
-
-        /// <summary>
-        /// Creates the specified InformationProtectionLabel using POST.
-        /// </summary>
-        /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified InformationProtectionLabel using POST and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
-        /// </summary>
-        /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> CreateResponseAsync(InformationProtectionLabel informationProtectionLabelToCreate);
+        System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified InformationProtectionLabel using POST and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> CreateResponseAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified InformationProtectionLabel.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> CreateResponseAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified InformationProtectionLabel.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified InformationProtectionLabel and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified InformationProtectionLabel and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified InformationProtectionLabel.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified InformationProtectionLabel using PATCH.
         /// </summary>
         /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel to update.</param>
-        /// <returns>The updated InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate);
-
-        /// <summary>
-        /// Updates the specified InformationProtectionLabel using PATCH.
-        /// </summary>
-        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified InformationProtectionLabel using PATCH and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
-        /// </summary>
-        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel to update.</param>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> UpdateResponseAsync(InformationProtectionLabel informationProtectionLabelToUpdate);
+        System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified InformationProtectionLabel using PATCH and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> UpdateResponseAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> UpdateResponseAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

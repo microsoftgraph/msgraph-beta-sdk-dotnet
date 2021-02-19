@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsUpdateState to the collection via POST.
-        /// </summary>
-        /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
-        /// <returns>The created WindowsUpdateState.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateState> AddAsync(WindowsUpdateState windowsUpdateState)
-        {
-            return this.AddAsync(windowsUpdateState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsUpdateState to the collection via POST.
         /// </summary>
         /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateState.</returns>
-        public System.Threading.Tasks.Task<WindowsUpdateState> AddAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsUpdateState> AddAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsUpdateState>(windowsUpdateState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsUpdateState to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> AddResponseAsync(WindowsUpdateState windowsUpdateState)
-        {
-            return this.AddResponseAsync(windowsUpdateState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsUpdateState to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.
         /// </summary>
         /// <param name="windowsUpdateState">The WindowsUpdateState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> AddResponseAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> AddResponseAsync(WindowsUpdateState windowsUpdateState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateState>(windowsUpdateState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

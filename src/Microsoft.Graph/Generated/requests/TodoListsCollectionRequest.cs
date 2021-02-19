@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TodoTaskList to the collection via POST.
-        /// </summary>
-        /// <param name="todoTaskList">The TodoTaskList to add.</param>
-        /// <returns>The created TodoTaskList.</returns>
-        public System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList)
-        {
-            return this.AddAsync(todoTaskList, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TodoTaskList to the collection via POST.
         /// </summary>
         /// <param name="todoTaskList">The TodoTaskList to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TodoTaskList.</returns>
-        public System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TodoTaskList>(todoTaskList, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TodoTaskList to the collection via POST and returns a <see cref="GraphResponse{TodoTaskList}"/> object of the request.
-        /// </summary>
-        /// <param name="todoTaskList">The TodoTaskList to add.</param>
-        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> AddResponseAsync(TodoTaskList todoTaskList)
-        {
-            return this.AddResponseAsync(todoTaskList, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TodoTaskList to the collection via POST and returns a <see cref="GraphResponse{TodoTaskList}"/> object of the request.
         /// </summary>
         /// <param name="todoTaskList">The TodoTaskList to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> AddResponseAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> AddResponseAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskList, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ITodoListsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<TodoListsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoListsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoListsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TodoListsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TodoListsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<TodoListsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ComanagementEligibleDevice using POST.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
-        /// <returns>The created ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate);
-
-        /// <summary>
-        /// Creates the specified ComanagementEligibleDevice using POST.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ComanagementEligibleDevice using POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
-        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate);
+        System.Threading.Tasks.Task<ComanagementEligibleDevice> CreateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ComanagementEligibleDevice using POST and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="comanagementEligibleDeviceToCreate">The ComanagementEligibleDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ComanagementEligibleDevice.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> CreateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ComanagementEligibleDevice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ComanagementEligibleDevice and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ComanagementEligibleDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ComanagementEligibleDevice.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ComanagementEligibleDevice using PATCH.
         /// </summary>
         /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
-        /// <returns>The updated ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate);
-
-        /// <summary>
-        /// Updates the specified ComanagementEligibleDevice using PATCH.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ComanagementEligibleDevice.</returns>
-        System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ComanagementEligibleDevice using PATCH and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
-        /// </summary>
-        /// <param name="comanagementEligibleDeviceToUpdate">The ComanagementEligibleDevice to update.</param>
-        /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate);
+        System.Threading.Tasks.Task<ComanagementEligibleDevice> UpdateAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ComanagementEligibleDevice using PATCH and returns a <see cref="GraphResponse{ComanagementEligibleDevice}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ComanagementEligibleDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ComanagementEligibleDevice>> UpdateResponseAsync(ComanagementEligibleDevice comanagementEligibleDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

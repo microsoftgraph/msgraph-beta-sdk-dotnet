@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Printer using POST.
         /// </summary>
         /// <param name="printerToCreate">The Printer to create.</param>
-        /// <returns>The created Printer.</returns>
-        public System.Threading.Tasks.Task<Printer> CreateAsync(Printer printerToCreate)
-        {
-            return this.CreateAsync(printerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Printer using POST.
-        /// </summary>
-        /// <param name="printerToCreate">The Printer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Printer.</returns>
-        public async System.Threading.Tasks.Task<Printer> CreateAsync(Printer printerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Printer> CreateAsync(Printer printerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Printer>(printerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Printer using POST and returns a <see cref="GraphResponse{Printer}"/> object.
         /// </summary>
         /// <param name="printerToCreate">The Printer to create.</param>
-        /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Printer>> CreateResponseAsync(Printer printerToCreate)
-        {
-            return this.CreateResponseAsync(printerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Printer using POST and returns a <see cref="GraphResponse{Printer}"/> object.
-        /// </summary>
-        /// <param name="printerToCreate">The Printer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Printer>> CreateResponseAsync(Printer printerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Printer>> CreateResponseAsync(Printer printerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Printer>(printerToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Printer.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Printer.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Printer>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Printer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Printer and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Printer using PATCH.
         /// </summary>
         /// <param name="printerToUpdate">The Printer to update.</param>
-        /// <returns>The updated Printer.</returns>
-        public System.Threading.Tasks.Task<Printer> UpdateAsync(Printer printerToUpdate)
-        {
-            return this.UpdateAsync(printerToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Printer using PATCH.
-        /// </summary>
-        /// <param name="printerToUpdate">The Printer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Printer.</returns>
-        public async System.Threading.Tasks.Task<Printer> UpdateAsync(Printer printerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Printer> UpdateAsync(Printer printerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printerToUpdate.AdditionalData != null)
-			{
-				if (printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printerToUpdate.AdditionalData != null)
-            {
-                if (printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Printer>(printerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Printer using PATCH and returns a <see cref="GraphResponse{Printer}"/> object.
         /// </summary>
         /// <param name="printerToUpdate">The Printer to update.</param>
-        /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Printer>> UpdateResponseAsync(Printer printerToUpdate)
-        {
-            return this.UpdateResponseAsync(printerToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Printer using PATCH and returns a <see cref="GraphResponse{Printer}"/> object.
-        /// </summary>
-        /// <param name="printerToUpdate">The Printer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Printer>> UpdateResponseAsync(Printer printerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Printer>> UpdateResponseAsync(Printer printerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (printerToUpdate.AdditionalData != null)
-			{
-				if (printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (printerToUpdate.AdditionalData != null)
-            {
-                if (printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    printerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, printerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Printer>(printerToUpdate, cancellationToken).ConfigureAwait(false);
         }

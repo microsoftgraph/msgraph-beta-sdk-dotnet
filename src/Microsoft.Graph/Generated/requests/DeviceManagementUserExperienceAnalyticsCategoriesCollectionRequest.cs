@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsCategory to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsCategory">The UserExperienceAnalyticsCategory to add.</param>
-        /// <returns>The created UserExperienceAnalyticsCategory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> AddAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory)
-        {
-            return this.AddAsync(userExperienceAnalyticsCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsCategory to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsCategory">The UserExperienceAnalyticsCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsCategory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> AddAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> AddAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserExperienceAnalyticsCategory>(userExperienceAnalyticsCategory, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsCategory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsCategory">The UserExperienceAnalyticsCategory to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> AddResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory)
-        {
-            return this.AddResponseAsync(userExperienceAnalyticsCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsCategory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.
         /// </summary>
         /// <param name="userExperienceAnalyticsCategory">The UserExperienceAnalyticsCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> AddResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> AddResponseAsync(UserExperienceAnalyticsCategory userExperienceAnalyticsCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsCategory>(userExperienceAnalyticsCategory, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

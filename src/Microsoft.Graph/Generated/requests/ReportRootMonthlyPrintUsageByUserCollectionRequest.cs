@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrintUsageByUser to the collection via POST.
-        /// </summary>
-        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
-        /// <returns>The created PrintUsageByUser.</returns>
-        public System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser)
-        {
-            return this.AddAsync(printUsageByUser, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrintUsageByUser to the collection via POST.
         /// </summary>
         /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintUsageByUser.</returns>
-        public System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PrintUsageByUser> AddAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PrintUsageByUser>(printUsageByUser, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PrintUsageByUser to the collection via POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.
-        /// </summary>
-        /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser)
-        {
-            return this.AddResponseAsync(printUsageByUser, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrintUsageByUser to the collection via POST and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.
         /// </summary>
         /// <param name="printUsageByUser">The PrintUsageByUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> AddResponseAsync(PrintUsageByUser printUsageByUser, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrintUsageByUser>(printUsageByUser, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IReportRootMonthlyPrintUsageByUserCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IReportRootMonthlyPrintUsageByUserCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IReportRootMonthlyPrintUsageByUserCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ReportRootMonthlyPrintUsageByUserCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootMonthlyPrintUsageByUserCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ReportRootMonthlyPrintUsageByUserCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootMonthlyPrintUsageByUserCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootMonthlyPrintUsageByUserCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootMonthlyPrintUsageByUserCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootMonthlyPrintUsageByUserCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ReportRootMonthlyPrintUsageByUserCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ReportRootMonthlyPrintUsageByUserCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

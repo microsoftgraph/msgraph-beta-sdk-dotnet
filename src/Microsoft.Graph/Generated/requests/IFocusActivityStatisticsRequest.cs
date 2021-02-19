@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified FocusActivityStatistics using POST.
         /// </summary>
         /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
-        /// <returns>The created FocusActivityStatistics.</returns>
-        System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate);
-
-        /// <summary>
-        /// Creates the specified FocusActivityStatistics using POST.
-        /// </summary>
-        /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FocusActivityStatistics.</returns>
-        System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified FocusActivityStatistics using POST and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
-        /// </summary>
-        /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
-        /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> CreateResponseAsync(FocusActivityStatistics focusActivityStatisticsToCreate);
+        System.Threading.Tasks.Task<FocusActivityStatistics> CreateAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified FocusActivityStatistics using POST and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="focusActivityStatisticsToCreate">The FocusActivityStatistics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> CreateResponseAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FocusActivityStatistics.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> CreateResponseAsync(FocusActivityStatistics focusActivityStatisticsToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified FocusActivityStatistics.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FocusActivityStatistics and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified FocusActivityStatistics and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FocusActivityStatistics.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified FocusActivityStatistics using PATCH.
         /// </summary>
         /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics to update.</param>
-        /// <returns>The updated FocusActivityStatistics.</returns>
-        System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate);
-
-        /// <summary>
-        /// Updates the specified FocusActivityStatistics using PATCH.
-        /// </summary>
-        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FocusActivityStatistics.</returns>
-        System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified FocusActivityStatistics using PATCH and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
-        /// </summary>
-        /// <param name="focusActivityStatisticsToUpdate">The FocusActivityStatistics to update.</param>
-        /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> UpdateResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate);
+        System.Threading.Tasks.Task<FocusActivityStatistics> UpdateAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FocusActivityStatistics using PATCH and returns a <see cref="GraphResponse{FocusActivityStatistics}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{FocusActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> UpdateResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FocusActivityStatistics>> UpdateResponseAsync(FocusActivityStatistics focusActivityStatisticsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

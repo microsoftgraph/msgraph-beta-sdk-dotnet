@@ -39,21 +39,11 @@ namespace Microsoft.Graph.TermStore
         /// Creates the specified Relation using POST.
         /// </summary>
         /// <param name="relationToCreate">The Relation to create.</param>
-        /// <returns>The created Relation.</returns>
-        public System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate)
-        {
-            return this.CreateAsync(relationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Relation using POST.
-        /// </summary>
-        /// <param name="relationToCreate">The Relation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Relation.</returns>
-        public async System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Relation> CreateAsync(Relation relationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Relation>(relationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph.TermStore
         /// Creates the specified Relation using POST and returns a <see cref="GraphResponse{Relation}"/> object.
         /// </summary>
         /// <param name="relationToCreate">The Relation to create.</param>
-        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Relation>> CreateResponseAsync(Relation relationToCreate)
-        {
-            return this.CreateResponseAsync(relationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Relation using POST and returns a <see cref="GraphResponse{Relation}"/> object.
-        /// </summary>
-        /// <param name="relationToCreate">The Relation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Relation>> CreateResponseAsync(Relation relationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Relation>> CreateResponseAsync(Relation relationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Relation>(relationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Deletes the specified Relation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Relation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Relation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Deletes the specified Relation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Relation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph.TermStore
         /// Updates the specified Relation using PATCH.
         /// </summary>
         /// <param name="relationToUpdate">The Relation to update.</param>
-        /// <returns>The updated Relation.</returns>
-        public System.Threading.Tasks.Task<Relation> UpdateAsync(Relation relationToUpdate)
-        {
-            return this.UpdateAsync(relationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Relation using PATCH.
-        /// </summary>
-        /// <param name="relationToUpdate">The Relation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Relation.</returns>
-        public async System.Threading.Tasks.Task<Relation> UpdateAsync(Relation relationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Relation> UpdateAsync(Relation relationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (relationToUpdate.AdditionalData != null)
-			{
-				if (relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (relationToUpdate.AdditionalData != null)
-            {
-                if (relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Relation>(relationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph.TermStore
         /// Updates the specified Relation using PATCH and returns a <see cref="GraphResponse{Relation}"/> object.
         /// </summary>
         /// <param name="relationToUpdate">The Relation to update.</param>
-        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Relation>> UpdateResponseAsync(Relation relationToUpdate)
-        {
-            return this.UpdateResponseAsync(relationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Relation using PATCH and returns a <see cref="GraphResponse{Relation}"/> object.
-        /// </summary>
-        /// <param name="relationToUpdate">The Relation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Relation>> UpdateResponseAsync(Relation relationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Relation>> UpdateResponseAsync(Relation relationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (relationToUpdate.AdditionalData != null)
-			{
-				if (relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (relationToUpdate.AdditionalData != null)
-            {
-                if (relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    relationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Relation>(relationToUpdate, cancellationToken).ConfigureAwait(false);
         }

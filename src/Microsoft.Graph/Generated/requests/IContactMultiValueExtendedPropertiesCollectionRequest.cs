@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IContactMultiValueExtendedPropertiesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
-        /// </summary>
-        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
-        /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty);
-
         /// <summary>
         /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.
-        /// </summary>
-        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
-        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty);
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IContactMultiValueExtendedPropertiesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IContactMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ContactMultiValueExtendedPropertiesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ContactMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IContactMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ContactMultiValueExtendedPropertiesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ContactMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

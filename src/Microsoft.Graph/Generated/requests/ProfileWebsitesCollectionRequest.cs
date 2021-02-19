@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PersonWebsite to the collection via POST.
-        /// </summary>
-        /// <param name="personWebsite">The PersonWebsite to add.</param>
-        /// <returns>The created PersonWebsite.</returns>
-        public System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite)
-        {
-            return this.AddAsync(personWebsite, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PersonWebsite to the collection via POST.
         /// </summary>
         /// <param name="personWebsite">The PersonWebsite to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonWebsite.</returns>
-        public System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PersonWebsite>(personWebsite, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PersonWebsite to the collection via POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object of the request.
-        /// </summary>
-        /// <param name="personWebsite">The PersonWebsite to add.</param>
-        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> AddResponseAsync(PersonWebsite personWebsite)
-        {
-            return this.AddResponseAsync(personWebsite, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PersonWebsite to the collection via POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object of the request.
         /// </summary>
         /// <param name="personWebsite">The PersonWebsite to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> AddResponseAsync(PersonWebsite personWebsite, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> AddResponseAsync(PersonWebsite personWebsite, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PersonWebsite>(personWebsite, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileWebsitesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileWebsitesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileWebsitesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileWebsitesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileWebsitesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

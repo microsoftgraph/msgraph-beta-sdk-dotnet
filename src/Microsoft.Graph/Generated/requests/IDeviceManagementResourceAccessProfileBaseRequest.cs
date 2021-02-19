@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementResourceAccessProfileBase using POST.
         /// </summary>
         /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
-        /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
-        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> CreateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementResourceAccessProfileBase using POST.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementResourceAccessProfileBase.</returns>
-        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> CreateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceManagementResourceAccessProfileBase using POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate);
+        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> CreateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceManagementResourceAccessProfileBase using POST and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementResourceAccessProfileBaseToCreate">The DeviceManagementResourceAccessProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementResourceAccessProfileBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> CreateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementResourceAccessProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceManagementResourceAccessProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementResourceAccessProfileBase.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH.
         /// </summary>
         /// <param name="deviceManagementResourceAccessProfileBaseToUpdate">The DeviceManagementResourceAccessProfileBase to update.</param>
-        /// <returns>The updated DeviceManagementResourceAccessProfileBase.</returns>
-        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> UpdateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBaseToUpdate">The DeviceManagementResourceAccessProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementResourceAccessProfileBase.</returns>
-        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> UpdateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
-        /// </summary>
-        /// <param name="deviceManagementResourceAccessProfileBaseToUpdate">The DeviceManagementResourceAccessProfileBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate);
+        System.Threading.Tasks.Task<DeviceManagementResourceAccessProfileBase> UpdateAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementResourceAccessProfileBase using PATCH and returns a <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementResourceAccessProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementResourceAccessProfileBase>> UpdateResponseAsync(DeviceManagementResourceAccessProfileBase deviceManagementResourceAccessProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

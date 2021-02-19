@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ContactFolder to the collection via POST.
-        /// </summary>
-        /// <param name="contactFolder">The ContactFolder to add.</param>
-        /// <returns>The created ContactFolder.</returns>
-        public System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder)
-        {
-            return this.AddAsync(contactFolder, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ContactFolder to the collection via POST.
         /// </summary>
         /// <param name="contactFolder">The ContactFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContactFolder.</returns>
-        public System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ContactFolder> AddAsync(ContactFolder contactFolder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ContactFolder>(contactFolder, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ContactFolder to the collection via POST and returns a <see cref="GraphResponse{ContactFolder}"/> object of the request.
-        /// </summary>
-        /// <param name="contactFolder">The ContactFolder to add.</param>
-        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder)
-        {
-            return this.AddResponseAsync(contactFolder, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ContactFolder to the collection via POST and returns a <see cref="GraphResponse{ContactFolder}"/> object of the request.
         /// </summary>
         /// <param name="contactFolder">The ContactFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ContactFolder>> AddResponseAsync(ContactFolder contactFolder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ContactFolder>(contactFolder, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IContactFolderChildFoldersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IContactFolderChildFoldersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IContactFolderChildFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ContactFolderChildFoldersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ContactFolderChildFoldersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ContactFolderChildFoldersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ContactFolderChildFoldersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ContactFolderChildFoldersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactFolderChildFoldersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ContactFolderChildFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ContactFolderChildFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ContactFolderChildFoldersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

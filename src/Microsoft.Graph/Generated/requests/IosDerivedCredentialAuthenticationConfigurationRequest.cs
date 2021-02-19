@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
-        /// <returns>The created IosDerivedCredentialAuthenticationConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> CreateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate)
-        {
-            return this.CreateAsync(iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST.
-        /// </summary>
-        /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosDerivedCredentialAuthenticationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> CreateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> CreateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosDerivedCredentialAuthenticationConfiguration>(iosDerivedCredentialAuthenticationConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> CreateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosDerivedCredentialAuthenticationConfiguration using POST and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosDerivedCredentialAuthenticationConfigurationToCreate">The IosDerivedCredentialAuthenticationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> CreateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> CreateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosDerivedCredentialAuthenticationConfiguration>(iosDerivedCredentialAuthenticationConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosDerivedCredentialAuthenticationConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosDerivedCredentialAuthenticationConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosDerivedCredentialAuthenticationConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosDerivedCredentialAuthenticationConfiguration using PATCH.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToUpdate">The IosDerivedCredentialAuthenticationConfiguration to update.</param>
-        /// <returns>The updated IosDerivedCredentialAuthenticationConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> UpdateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate)
-        {
-            return this.UpdateAsync(iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosDerivedCredentialAuthenticationConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosDerivedCredentialAuthenticationConfigurationToUpdate">The IosDerivedCredentialAuthenticationConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosDerivedCredentialAuthenticationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> UpdateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> UpdateAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosDerivedCredentialAuthenticationConfiguration>(iosDerivedCredentialAuthenticationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosDerivedCredentialAuthenticationConfiguration using PATCH and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
         /// </summary>
         /// <param name="iosDerivedCredentialAuthenticationConfigurationToUpdate">The IosDerivedCredentialAuthenticationConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> UpdateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosDerivedCredentialAuthenticationConfiguration using PATCH and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosDerivedCredentialAuthenticationConfigurationToUpdate">The IosDerivedCredentialAuthenticationConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> UpdateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> UpdateResponseAsync(IosDerivedCredentialAuthenticationConfiguration iosDerivedCredentialAuthenticationConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosDerivedCredentialAuthenticationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosDerivedCredentialAuthenticationConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosDerivedCredentialAuthenticationConfiguration>(iosDerivedCredentialAuthenticationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

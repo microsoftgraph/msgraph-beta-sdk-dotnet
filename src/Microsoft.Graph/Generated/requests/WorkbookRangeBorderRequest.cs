@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeBorder using POST.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
-        /// <returns>The created WorkbookRangeBorder.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate)
-        {
-            return this.CreateAsync(workbookRangeBorderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeBorder using POST.
-        /// </summary>
-        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookRangeBorder>(workbookRangeBorderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate)
-        {
-            return this.CreateResponseAsync(workbookRangeBorderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
-        /// </summary>
-        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorderToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookRangeBorder.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookRangeBorder.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookRangeBorder>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookRangeBorder and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookRangeBorder and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookRangeBorder using PATCH.
         /// </summary>
         /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
-        /// <returns>The updated WorkbookRangeBorder.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeBorder> UpdateAsync(WorkbookRangeBorder workbookRangeBorderToUpdate)
-        {
-            return this.UpdateAsync(workbookRangeBorderToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookRangeBorder using PATCH.
-        /// </summary>
-        /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookRangeBorder.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeBorder> UpdateAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeBorder> UpdateAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookRangeBorderToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeBorderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeBorderToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeBorderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookRangeBorder>(workbookRangeBorderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookRangeBorder using PATCH and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
         /// </summary>
         /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> UpdateResponseAsync(WorkbookRangeBorder workbookRangeBorderToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookRangeBorderToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookRangeBorder using PATCH and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
-        /// </summary>
-        /// <param name="workbookRangeBorderToUpdate">The WorkbookRangeBorder to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> UpdateResponseAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> UpdateResponseAsync(WorkbookRangeBorder workbookRangeBorderToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookRangeBorderToUpdate.AdditionalData != null)
-			{
-				if (workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeBorderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookRangeBorderToUpdate.AdditionalData != null)
-            {
-                if (workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookRangeBorderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookRangeBorderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorderToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerTask using POST.
         /// </summary>
         /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
-        /// <returns>The created PlannerTask.</returns>
-        System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate);
-
-        /// <summary>
-        /// Creates the specified PlannerTask using POST.
-        /// </summary>
-        /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerTask.</returns>
-        System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PlannerTask using POST and returns a <see cref="GraphResponse{PlannerTask}"/> object.
-        /// </summary>
-        /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> CreateResponseAsync(PlannerTask plannerTaskToCreate);
+        System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PlannerTask using POST and returns a <see cref="GraphResponse{PlannerTask}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> CreateResponseAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerTask.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> CreateResponseAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerTask.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerTask and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerTask.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PlannerTask using PATCH.
         /// </summary>
         /// <param name="plannerTaskToUpdate">The PlannerTask to update.</param>
-        /// <returns>The updated PlannerTask.</returns>
-        System.Threading.Tasks.Task<PlannerTask> UpdateAsync(PlannerTask plannerTaskToUpdate);
-
-        /// <summary>
-        /// Updates the specified PlannerTask using PATCH.
-        /// </summary>
-        /// <param name="plannerTaskToUpdate">The PlannerTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerTask.</returns>
-        System.Threading.Tasks.Task<PlannerTask> UpdateAsync(PlannerTask plannerTaskToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PlannerTask using PATCH and returns a <see cref="GraphResponse{PlannerTask}"/> object.
-        /// </summary>
-        /// <param name="plannerTaskToUpdate">The PlannerTask to update.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> UpdateResponseAsync(PlannerTask plannerTaskToUpdate);
+        System.Threading.Tasks.Task<PlannerTask> UpdateAsync(PlannerTask plannerTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerTask using PATCH and returns a <see cref="GraphResponse{PlannerTask}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> UpdateResponseAsync(PlannerTask plannerTaskToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> UpdateResponseAsync(PlannerTask plannerTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

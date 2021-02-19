@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WindowsQualityUpdateProfile to the collection via POST.
-        /// </summary>
-        /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
-        /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile)
-        {
-            return this.AddAsync(windowsQualityUpdateProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsQualityUpdateProfile to the collection via POST.
         /// </summary>
         /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> AddAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsQualityUpdateProfile>(windowsQualityUpdateProfile, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WindowsQualityUpdateProfile to the collection via POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile)
-        {
-            return this.AddResponseAsync(windowsQualityUpdateProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WindowsQualityUpdateProfile to the collection via POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.
         /// </summary>
         /// <param name="windowsQualityUpdateProfile">The WindowsQualityUpdateProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> AddResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsQualityUpdateProfile>(windowsQualityUpdateProfile, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementWindowsQualityUpdateProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsQualityUpdateProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementWindowsQualityUpdateProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

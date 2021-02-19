@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExternalConnection using POST.
         /// </summary>
         /// <param name="externalConnectionToCreate">The ExternalConnection to create.</param>
-        /// <returns>The created ExternalConnection.</returns>
-        public System.Threading.Tasks.Task<ExternalConnection> CreateAsync(ExternalConnection externalConnectionToCreate)
-        {
-            return this.CreateAsync(externalConnectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExternalConnection using POST.
-        /// </summary>
-        /// <param name="externalConnectionToCreate">The ExternalConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExternalConnection.</returns>
-        public async System.Threading.Tasks.Task<ExternalConnection> CreateAsync(ExternalConnection externalConnectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExternalConnection> CreateAsync(ExternalConnection externalConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ExternalConnection>(externalConnectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ExternalConnection using POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
         /// </summary>
         /// <param name="externalConnectionToCreate">The ExternalConnection to create.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> CreateResponseAsync(ExternalConnection externalConnectionToCreate)
-        {
-            return this.CreateResponseAsync(externalConnectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExternalConnection using POST and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
-        /// </summary>
-        /// <param name="externalConnectionToCreate">The ExternalConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> CreateResponseAsync(ExternalConnection externalConnectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> CreateResponseAsync(ExternalConnection externalConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExternalConnection>(externalConnectionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExternalConnection.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExternalConnection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ExternalConnection>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ExternalConnection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ExternalConnection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExternalConnection using PATCH.
         /// </summary>
         /// <param name="externalConnectionToUpdate">The ExternalConnection to update.</param>
-        /// <returns>The updated ExternalConnection.</returns>
-        public System.Threading.Tasks.Task<ExternalConnection> UpdateAsync(ExternalConnection externalConnectionToUpdate)
-        {
-            return this.UpdateAsync(externalConnectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExternalConnection using PATCH.
-        /// </summary>
-        /// <param name="externalConnectionToUpdate">The ExternalConnection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExternalConnection.</returns>
-        public async System.Threading.Tasks.Task<ExternalConnection> UpdateAsync(ExternalConnection externalConnectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExternalConnection> UpdateAsync(ExternalConnection externalConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (externalConnectionToUpdate.AdditionalData != null)
-			{
-				if (externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalConnectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (externalConnectionToUpdate.AdditionalData != null)
-            {
-                if (externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalConnectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ExternalConnection>(externalConnectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ExternalConnection using PATCH and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
         /// </summary>
         /// <param name="externalConnectionToUpdate">The ExternalConnection to update.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> UpdateResponseAsync(ExternalConnection externalConnectionToUpdate)
-        {
-            return this.UpdateResponseAsync(externalConnectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ExternalConnection using PATCH and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
-        /// </summary>
-        /// <param name="externalConnectionToUpdate">The ExternalConnection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> UpdateResponseAsync(ExternalConnection externalConnectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> UpdateResponseAsync(ExternalConnection externalConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (externalConnectionToUpdate.AdditionalData != null)
-			{
-				if (externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalConnectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (externalConnectionToUpdate.AdditionalData != null)
-            {
-                if (externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    externalConnectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalConnectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ExternalConnection>(externalConnectionToUpdate, cancellationToken).ConfigureAwait(false);
         }

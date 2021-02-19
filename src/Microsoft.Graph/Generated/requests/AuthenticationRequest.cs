@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Authentication using POST.
         /// </summary>
         /// <param name="authenticationToCreate">The Authentication to create.</param>
-        /// <returns>The created Authentication.</returns>
-        public System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate)
-        {
-            return this.CreateAsync(authenticationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Authentication using POST.
-        /// </summary>
-        /// <param name="authenticationToCreate">The Authentication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Authentication.</returns>
-        public async System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Authentication> CreateAsync(Authentication authenticationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Authentication>(authenticationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Authentication using POST and returns a <see cref="GraphResponse{Authentication}"/> object.
         /// </summary>
         /// <param name="authenticationToCreate">The Authentication to create.</param>
-        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate)
-        {
-            return this.CreateResponseAsync(authenticationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Authentication using POST and returns a <see cref="GraphResponse{Authentication}"/> object.
-        /// </summary>
-        /// <param name="authenticationToCreate">The Authentication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> CreateResponseAsync(Authentication authenticationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Authentication>(authenticationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Authentication.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Authentication.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Authentication>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Authentication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Authentication and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Authentication using PATCH.
         /// </summary>
         /// <param name="authenticationToUpdate">The Authentication to update.</param>
-        /// <returns>The updated Authentication.</returns>
-        public System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate)
-        {
-            return this.UpdateAsync(authenticationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Authentication using PATCH.
-        /// </summary>
-        /// <param name="authenticationToUpdate">The Authentication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Authentication.</returns>
-        public async System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Authentication> UpdateAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (authenticationToUpdate.AdditionalData != null)
-			{
-				if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationToUpdate.AdditionalData != null)
-            {
-                if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Authentication using PATCH and returns a <see cref="GraphResponse{Authentication}"/> object.
         /// </summary>
         /// <param name="authenticationToUpdate">The Authentication to update.</param>
-        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate)
-        {
-            return this.UpdateResponseAsync(authenticationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Authentication using PATCH and returns a <see cref="GraphResponse{Authentication}"/> object.
-        /// </summary>
-        /// <param name="authenticationToUpdate">The Authentication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> UpdateResponseAsync(Authentication authenticationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (authenticationToUpdate.AdditionalData != null)
-			{
-				if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationToUpdate.AdditionalData != null)
-            {
-                if (authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Authentication>(authenticationToUpdate, cancellationToken).ConfigureAwait(false);
         }

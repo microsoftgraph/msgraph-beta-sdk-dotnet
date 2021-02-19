@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified JobResponseBase to the collection via POST.
-        /// </summary>
-        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
-        /// <returns>The created JobResponseBase.</returns>
-        public System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase)
-        {
-            return this.AddAsync(jobResponseBase, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified JobResponseBase to the collection via POST.
         /// </summary>
         /// <param name="jobResponseBase">The JobResponseBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JobResponseBase.</returns>
-        public System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<JobResponseBase>(jobResponseBase, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified JobResponseBase to the collection via POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object of the request.
-        /// </summary>
-        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
-        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase)
-        {
-            return this.AddResponseAsync(jobResponseBase, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified JobResponseBase to the collection via POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object of the request.
         /// </summary>
         /// <param name="jobResponseBase">The JobResponseBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<JobResponseBase>(jobResponseBase, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDataClassificationServiceClassifyFileJobsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDataClassificationServiceClassifyFileJobsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDataClassificationServiceClassifyFileJobsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DataClassificationServiceClassifyFileJobsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyFileJobsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyFileJobsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyFileJobsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyFileJobsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyFileJobsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyFileJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyFileJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DataClassificationServiceClassifyFileJobsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

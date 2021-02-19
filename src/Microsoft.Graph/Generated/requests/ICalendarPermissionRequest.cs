@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified CalendarPermission using POST.
         /// </summary>
         /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
-        /// <returns>The created CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> CreateAsync(CalendarPermission calendarPermissionToCreate);
-
-        /// <summary>
-        /// Creates the specified CalendarPermission using POST.
-        /// </summary>
-        /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> CreateAsync(CalendarPermission calendarPermissionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified CalendarPermission using POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
-        /// </summary>
-        /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
-        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> CreateResponseAsync(CalendarPermission calendarPermissionToCreate);
+        System.Threading.Tasks.Task<CalendarPermission> CreateAsync(CalendarPermission calendarPermissionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified CalendarPermission using POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> CreateResponseAsync(CalendarPermission calendarPermissionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CalendarPermission.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> CreateResponseAsync(CalendarPermission calendarPermissionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CalendarPermission.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CalendarPermission and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified CalendarPermission and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CalendarPermission.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified CalendarPermission using PATCH.
         /// </summary>
         /// <param name="calendarPermissionToUpdate">The CalendarPermission to update.</param>
-        /// <returns>The updated CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> UpdateAsync(CalendarPermission calendarPermissionToUpdate);
-
-        /// <summary>
-        /// Updates the specified CalendarPermission using PATCH.
-        /// </summary>
-        /// <param name="calendarPermissionToUpdate">The CalendarPermission to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> UpdateAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified CalendarPermission using PATCH and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
-        /// </summary>
-        /// <param name="calendarPermissionToUpdate">The CalendarPermission to update.</param>
-        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> UpdateResponseAsync(CalendarPermission calendarPermissionToUpdate);
+        System.Threading.Tasks.Task<CalendarPermission> UpdateAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CalendarPermission using PATCH and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> UpdateResponseAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> UpdateResponseAsync(CalendarPermission calendarPermissionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

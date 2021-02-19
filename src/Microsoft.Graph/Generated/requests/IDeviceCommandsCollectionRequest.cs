@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceCommandsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Command to the collection via POST.
-        /// </summary>
-        /// <param name="command">The Command to add.</param>
-        /// <returns>The created Command.</returns>
-        System.Threading.Tasks.Task<Command> AddAsync(Command command);
-
         /// <summary>
         /// Adds the specified Command to the collection via POST.
         /// </summary>
         /// <param name="command">The Command to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Command.</returns>
-        System.Threading.Tasks.Task<Command> AddAsync(Command command, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
-        /// </summary>
-        /// <param name="command">The Command to add.</param>
-        /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command);
+        System.Threading.Tasks.Task<Command> AddAsync(Command command, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Command to the collection via POST and returns a <see cref="GraphResponse{Command}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="command">The Command to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Command}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Command>> AddResponseAsync(Command command, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceCommandsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCommandsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceCommandsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

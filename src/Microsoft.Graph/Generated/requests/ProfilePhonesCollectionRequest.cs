@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ItemPhone to the collection via POST.
-        /// </summary>
-        /// <param name="itemPhone">The ItemPhone to add.</param>
-        /// <returns>The created ItemPhone.</returns>
-        public System.Threading.Tasks.Task<ItemPhone> AddAsync(ItemPhone itemPhone)
-        {
-            return this.AddAsync(itemPhone, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemPhone to the collection via POST.
         /// </summary>
         /// <param name="itemPhone">The ItemPhone to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPhone.</returns>
-        public System.Threading.Tasks.Task<ItemPhone> AddAsync(ItemPhone itemPhone, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ItemPhone> AddAsync(ItemPhone itemPhone, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ItemPhone>(itemPhone, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ItemPhone to the collection via POST and returns a <see cref="GraphResponse{ItemPhone}"/> object of the request.
-        /// </summary>
-        /// <param name="itemPhone">The ItemPhone to add.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemPhone>> AddResponseAsync(ItemPhone itemPhone)
-        {
-            return this.AddResponseAsync(itemPhone, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemPhone to the collection via POST and returns a <see cref="GraphResponse{ItemPhone}"/> object of the request.
         /// </summary>
         /// <param name="itemPhone">The ItemPhone to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemPhone>> AddResponseAsync(ItemPhone itemPhone, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemPhone>> AddResponseAsync(ItemPhone itemPhone, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemPhone>(itemPhone, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfilePhonesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfilePhonesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfilePhonesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfilePhonesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePhonesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfilePhonesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfilePhonesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePhonesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePhonesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfilePhonesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfilePhonesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfilePhonesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

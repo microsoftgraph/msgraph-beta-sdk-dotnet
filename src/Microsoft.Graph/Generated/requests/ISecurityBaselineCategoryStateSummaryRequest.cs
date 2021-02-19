@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityBaselineCategoryStateSummary using POST.
         /// </summary>
         /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
-        /// <returns>The created SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> CreateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate);
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineCategoryStateSummary using POST.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> CreateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineCategoryStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> CreateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate);
+        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> CreateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SecurityBaselineCategoryStateSummary using POST and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="securityBaselineCategoryStateSummaryToCreate">The SecurityBaselineCategoryStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> CreateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineCategoryStateSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> CreateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SecurityBaselineCategoryStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SecurityBaselineCategoryStateSummary.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH.
         /// </summary>
         /// <param name="securityBaselineCategoryStateSummaryToUpdate">The SecurityBaselineCategoryStateSummary to update.</param>
-        /// <returns>The updated SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> UpdateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate);
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummaryToUpdate">The SecurityBaselineCategoryStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> UpdateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineCategoryStateSummaryToUpdate">The SecurityBaselineCategoryStateSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> UpdateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate);
+        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> UpdateAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> UpdateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> UpdateResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

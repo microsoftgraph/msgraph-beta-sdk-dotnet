@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
-        /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance)
-        {
-            return this.AddAsync(unifiedRoleEligibilityScheduleInstance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstance, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> AddResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance)
-        {
-            return this.AddResponseAsync(unifiedRoleEligibilityScheduleInstance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> AddResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> AddResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstance, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

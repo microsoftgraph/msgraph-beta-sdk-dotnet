@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified BookingAppointment to the collection via POST.
-        /// </summary>
-        /// <param name="bookingAppointment">The BookingAppointment to add.</param>
-        /// <returns>The created BookingAppointment.</returns>
-        public System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment)
-        {
-            return this.AddAsync(bookingAppointment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified BookingAppointment to the collection via POST.
         /// </summary>
         /// <param name="bookingAppointment">The BookingAppointment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingAppointment.</returns>
-        public System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<BookingAppointment> AddAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<BookingAppointment>(bookingAppointment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified BookingAppointment to the collection via POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object of the request.
-        /// </summary>
-        /// <param name="bookingAppointment">The BookingAppointment to add.</param>
-        /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment)
-        {
-            return this.AddResponseAsync(bookingAppointment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified BookingAppointment to the collection via POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object of the request.
         /// </summary>
         /// <param name="bookingAppointment">The BookingAppointment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> AddResponseAsync(BookingAppointment bookingAppointment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<BookingAppointment>(bookingAppointment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IBookingBusinessAppointmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IBookingBusinessAppointmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IBookingBusinessAppointmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<BookingBusinessAppointmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessAppointmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{BookingBusinessAppointmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BookingBusinessAppointmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessAppointmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingBusinessAppointmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BookingBusinessAppointmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BookingBusinessAppointmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<BookingBusinessAppointmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

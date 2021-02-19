@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST.
-        /// </summary>
-        /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
-        /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter)
-        {
-            return this.AddAsync(deviceAndAppManagementAssignmentFilter, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST.
         /// </summary>
         /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter)
-        {
-            return this.AddResponseAsync(deviceAndAppManagementAssignmentFilter, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.
         /// </summary>
         /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementAssignmentFilter>(deviceAndAppManagementAssignmentFilter, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementAssignmentFiltersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

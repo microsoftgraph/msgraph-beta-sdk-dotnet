@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST.
-        /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
-        /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse)
-        {
-            return this.AddAsync(microsoftTunnelServerLogCollectionResponse, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> AddAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponse, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.
-        /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse)
-        {
-            return this.AddResponseAsync(microsoftTunnelServerLogCollectionResponse, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MicrosoftTunnelServerLogCollectionResponse to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponse">The MicrosoftTunnelServerLogCollectionResponse to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> AddResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponse, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponse, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementMicrosoftTunnelServerLogCollectionResponsesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

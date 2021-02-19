@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
-        /// <returns>The created LicenseDetails.</returns>
-        public System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate)
-        {
-            return this.CreateAsync(licenseDetailsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LicenseDetails using POST.
-        /// </summary>
-        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
-        public async System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<LicenseDetails>(licenseDetailsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate)
-        {
-            return this.CreateResponseAsync(licenseDetailsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
-        /// </summary>
-        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LicenseDetails>(licenseDetailsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LicenseDetails.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LicenseDetails.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<LicenseDetails>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LicenseDetails and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified LicenseDetails using PATCH.
         /// </summary>
         /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
-        /// <returns>The updated LicenseDetails.</returns>
-        public System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate)
-        {
-            return this.UpdateAsync(licenseDetailsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LicenseDetails using PATCH.
-        /// </summary>
-        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LicenseDetails.</returns>
-        public async System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LicenseDetails> UpdateAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (licenseDetailsToUpdate.AdditionalData != null)
-			{
-				if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (licenseDetailsToUpdate.AdditionalData != null)
-            {
-                if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LicenseDetails>(licenseDetailsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
         /// </summary>
         /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate)
-        {
-            return this.UpdateResponseAsync(licenseDetailsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
-        /// </summary>
-        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (licenseDetailsToUpdate.AdditionalData != null)
-			{
-				if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (licenseDetailsToUpdate.AdditionalData != null)
-            {
-                if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<LicenseDetails>(licenseDetailsToUpdate, cancellationToken).ConfigureAwait(false);
         }

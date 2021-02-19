@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
-        /// <returns>The created GroupPolicyPresentationLongDecimalTextBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate)
-        {
-            return this.CreateAsync(groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationLongDecimalTextBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> CreateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<GroupPolicyPresentationLongDecimalTextBox>(groupPolicyPresentationLongDecimalTextBoxToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate)
-        {
-            return this.CreateResponseAsync(groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationLongDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationLongDecimalTextBoxToCreate">The GroupPolicyPresentationLongDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupPolicyPresentationLongDecimalTextBox>(groupPolicyPresentationLongDecimalTextBoxToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<GroupPolicyPresentationLongDecimalTextBox>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationLongDecimalTextBox and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH.
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
-        /// <returns>The updated GroupPolicyPresentationLongDecimalTextBox.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> UpdateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate)
-        {
-            return this.UpdateAsync(groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationLongDecimalTextBox.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> UpdateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationLongDecimalTextBox> UpdateAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationLongDecimalTextBox>(groupPolicyPresentationLongDecimalTextBoxToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
         /// </summary>
         /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate)
-        {
-            return this.UpdateResponseAsync(groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationLongDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationLongDecimalTextBoxToUpdate">The GroupPolicyPresentationLongDecimalTextBox to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationLongDecimalTextBox}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationLongDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationLongDecimalTextBox groupPolicyPresentationLongDecimalTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyPresentationLongDecimalTextBoxToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationLongDecimalTextBoxToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<GroupPolicyPresentationLongDecimalTextBox>(groupPolicyPresentationLongDecimalTextBoxToUpdate, cancellationToken).ConfigureAwait(false);
         }

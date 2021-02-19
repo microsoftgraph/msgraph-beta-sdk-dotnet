@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISecuritySecurityActionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SecurityAction to the collection via POST.
-        /// </summary>
-        /// <param name="securityAction">The SecurityAction to add.</param>
-        /// <returns>The created SecurityAction.</returns>
-        System.Threading.Tasks.Task<SecurityAction> AddAsync(SecurityAction securityAction);
-
         /// <summary>
         /// Adds the specified SecurityAction to the collection via POST.
         /// </summary>
         /// <param name="securityAction">The SecurityAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityAction.</returns>
-        System.Threading.Tasks.Task<SecurityAction> AddAsync(SecurityAction securityAction, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SecurityAction to the collection via POST and returns a <see cref="GraphResponse{SecurityAction}"/> object of the request.
-        /// </summary>
-        /// <param name="securityAction">The SecurityAction to add.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction);
+        System.Threading.Tasks.Task<SecurityAction> AddAsync(SecurityAction securityAction, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SecurityAction to the collection via POST and returns a <see cref="GraphResponse{SecurityAction}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="securityAction">The SecurityAction to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityAction>> AddResponseAsync(SecurityAction securityAction, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecuritySecurityActionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecuritySecurityActionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISecuritySecurityActionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecuritySecurityActionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecuritySecurityActionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

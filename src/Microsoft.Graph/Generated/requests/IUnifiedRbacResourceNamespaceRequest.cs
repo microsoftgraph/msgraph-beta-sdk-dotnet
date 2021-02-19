@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRbacResourceNamespace using POST.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
-        /// <returns>The created UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate);
-
-        /// <summary>
-        /// Creates the specified UnifiedRbacResourceNamespace using POST.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified UnifiedRbacResourceNamespace using POST and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate);
+        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> CreateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified UnifiedRbacResourceNamespace using POST and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="unifiedRbacResourceNamespaceToCreate">The UnifiedRbacResourceNamespace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRbacResourceNamespace.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> CreateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnifiedRbacResourceNamespace.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRbacResourceNamespace.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRbacResourceNamespace using PATCH.
         /// </summary>
         /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
-        /// <returns>The updated UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate);
-
-        /// <summary>
-        /// Updates the specified UnifiedRbacResourceNamespace using PATCH.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified UnifiedRbacResourceNamespace using PATCH and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
-        /// </summary>
-        /// <param name="unifiedRbacResourceNamespaceToUpdate">The UnifiedRbacResourceNamespace to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate);
+        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> UpdateAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRbacResourceNamespace using PATCH and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> UpdateResponseAsync(UnifiedRbacResourceNamespace unifiedRbacResourceNamespaceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

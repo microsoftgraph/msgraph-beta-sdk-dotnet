@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationalBrandingLocalization using POST.
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
-        /// <returns>The created OrganizationalBrandingLocalization.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate)
-        {
-            return this.CreateAsync(organizationalBrandingLocalizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OrganizationalBrandingLocalization using POST.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBrandingLocalization.</returns>
-        public async System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationalBrandingLocalization> CreateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OrganizationalBrandingLocalization>(organizationalBrandingLocalizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified OrganizationalBrandingLocalization using POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
-        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> CreateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate)
-        {
-            return this.CreateResponseAsync(organizationalBrandingLocalizationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OrganizationalBrandingLocalization using POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalizationToCreate">The OrganizationalBrandingLocalization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> CreateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> CreateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalization>(organizationalBrandingLocalizationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OrganizationalBrandingLocalization.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OrganizationalBrandingLocalization.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<OrganizationalBrandingLocalization>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified OrganizationalBrandingLocalization and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified OrganizationalBrandingLocalization using PATCH.
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
-        /// <returns>The updated OrganizationalBrandingLocalization.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> UpdateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate)
-        {
-            return this.UpdateAsync(organizationalBrandingLocalizationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OrganizationalBrandingLocalization using PATCH.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OrganizationalBrandingLocalization.</returns>
-        public async System.Threading.Tasks.Task<OrganizationalBrandingLocalization> UpdateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OrganizationalBrandingLocalization> UpdateAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (organizationalBrandingLocalizationToUpdate.AdditionalData != null)
-			{
-				if (organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingLocalizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationalBrandingLocalizationToUpdate.AdditionalData != null)
-            {
-                if (organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingLocalizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OrganizationalBrandingLocalization>(organizationalBrandingLocalizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified OrganizationalBrandingLocalization using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
         /// </summary>
         /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
-        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> UpdateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate)
-        {
-            return this.UpdateResponseAsync(organizationalBrandingLocalizationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified OrganizationalBrandingLocalization using PATCH and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalizationToUpdate">The OrganizationalBrandingLocalization to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> UpdateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> UpdateResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (organizationalBrandingLocalizationToUpdate.AdditionalData != null)
-			{
-				if (organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingLocalizationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (organizationalBrandingLocalizationToUpdate.AdditionalData != null)
-            {
-                if (organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationalBrandingLocalizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationalBrandingLocalizationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalization>(organizationalBrandingLocalizationToUpdate, cancellationToken).ConfigureAwait(false);
         }

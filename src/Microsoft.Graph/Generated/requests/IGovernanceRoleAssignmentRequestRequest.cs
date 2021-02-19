@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified GovernanceRoleAssignmentRequestObject using POST.
         /// </summary>
         /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
-        /// <returns>The created GovernanceRoleAssignmentRequestObject.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> CreateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified GovernanceRoleAssignmentRequestObject using POST.
-        /// </summary>
-        /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleAssignmentRequestObject.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> CreateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified GovernanceRoleAssignmentRequestObject using POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> CreateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate);
+        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> CreateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified GovernanceRoleAssignmentRequestObject using POST and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="governanceRoleAssignmentRequestObjectToCreate">The GovernanceRoleAssignmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> CreateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GovernanceRoleAssignmentRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> CreateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GovernanceRoleAssignmentRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GovernanceRoleAssignmentRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GovernanceRoleAssignmentRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GovernanceRoleAssignmentRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified GovernanceRoleAssignmentRequestObject using PATCH.
         /// </summary>
         /// <param name="governanceRoleAssignmentRequestObjectToUpdate">The GovernanceRoleAssignmentRequestObject to update.</param>
-        /// <returns>The updated GovernanceRoleAssignmentRequestObject.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> UpdateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified GovernanceRoleAssignmentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="governanceRoleAssignmentRequestObjectToUpdate">The GovernanceRoleAssignmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceRoleAssignmentRequestObject.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> UpdateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified GovernanceRoleAssignmentRequestObject using PATCH and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="governanceRoleAssignmentRequestObjectToUpdate">The GovernanceRoleAssignmentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> UpdateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate);
+        System.Threading.Tasks.Task<GovernanceRoleAssignmentRequestObject> UpdateAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GovernanceRoleAssignmentRequestObject using PATCH and returns a <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> UpdateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignmentRequestObject>> UpdateResponseAsync(GovernanceRoleAssignmentRequestObject governanceRoleAssignmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

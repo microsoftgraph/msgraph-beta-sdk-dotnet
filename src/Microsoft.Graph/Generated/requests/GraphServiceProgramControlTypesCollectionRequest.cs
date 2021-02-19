@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ProgramControlType to the collection via POST.
-        /// </summary>
-        /// <param name="programControlType">The ProgramControlType to add.</param>
-        /// <returns>The created ProgramControlType.</returns>
-        public System.Threading.Tasks.Task<ProgramControlType> AddAsync(ProgramControlType programControlType)
-        {
-            return this.AddAsync(programControlType, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ProgramControlType to the collection via POST.
         /// </summary>
         /// <param name="programControlType">The ProgramControlType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProgramControlType.</returns>
-        public System.Threading.Tasks.Task<ProgramControlType> AddAsync(ProgramControlType programControlType, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ProgramControlType> AddAsync(ProgramControlType programControlType, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ProgramControlType>(programControlType, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ProgramControlType to the collection via POST and returns a <see cref="GraphResponse{ProgramControlType}"/> object of the request.
-        /// </summary>
-        /// <param name="programControlType">The ProgramControlType to add.</param>
-        /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> AddResponseAsync(ProgramControlType programControlType)
-        {
-            return this.AddResponseAsync(programControlType, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ProgramControlType to the collection via POST and returns a <see cref="GraphResponse{ProgramControlType}"/> object of the request.
         /// </summary>
         /// <param name="programControlType">The ProgramControlType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> AddResponseAsync(ProgramControlType programControlType, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> AddResponseAsync(ProgramControlType programControlType, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ProgramControlType>(programControlType, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceProgramControlTypesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceProgramControlTypesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceProgramControlTypesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceProgramControlTypesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceProgramControlTypesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceProgramControlTypesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceProgramControlTypesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceProgramControlTypesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceProgramControlTypesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceProgramControlTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceProgramControlTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceProgramControlTypesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

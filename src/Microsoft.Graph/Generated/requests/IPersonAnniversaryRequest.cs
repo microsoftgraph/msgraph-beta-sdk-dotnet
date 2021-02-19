@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAnniversary using POST.
         /// </summary>
         /// <param name="personAnniversaryToCreate">The PersonAnniversary to create.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> CreateAsync(PersonAnniversary personAnniversaryToCreate);
-
-        /// <summary>
-        /// Creates the specified PersonAnniversary using POST.
-        /// </summary>
-        /// <param name="personAnniversaryToCreate">The PersonAnniversary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> CreateAsync(PersonAnniversary personAnniversaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PersonAnniversary using POST and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
-        /// </summary>
-        /// <param name="personAnniversaryToCreate">The PersonAnniversary to create.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> CreateResponseAsync(PersonAnniversary personAnniversaryToCreate);
+        System.Threading.Tasks.Task<PersonAnniversary> CreateAsync(PersonAnniversary personAnniversaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PersonAnniversary using POST and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="personAnniversaryToCreate">The PersonAnniversary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> CreateResponseAsync(PersonAnniversary personAnniversaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PersonAnniversary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> CreateResponseAsync(PersonAnniversary personAnniversaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PersonAnniversary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PersonAnniversary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PersonAnniversary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PersonAnniversary.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PersonAnniversary using PATCH.
         /// </summary>
         /// <param name="personAnniversaryToUpdate">The PersonAnniversary to update.</param>
-        /// <returns>The updated PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> UpdateAsync(PersonAnniversary personAnniversaryToUpdate);
-
-        /// <summary>
-        /// Updates the specified PersonAnniversary using PATCH.
-        /// </summary>
-        /// <param name="personAnniversaryToUpdate">The PersonAnniversary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> UpdateAsync(PersonAnniversary personAnniversaryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PersonAnniversary using PATCH and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
-        /// </summary>
-        /// <param name="personAnniversaryToUpdate">The PersonAnniversary to update.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> UpdateResponseAsync(PersonAnniversary personAnniversaryToUpdate);
+        System.Threading.Tasks.Task<PersonAnniversary> UpdateAsync(PersonAnniversary personAnniversaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PersonAnniversary using PATCH and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> UpdateResponseAsync(PersonAnniversary personAnniversaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> UpdateResponseAsync(PersonAnniversary personAnniversaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

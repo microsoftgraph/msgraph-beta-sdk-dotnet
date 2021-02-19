@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PolicyBase using POST.
         /// </summary>
         /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
-        /// <returns>The created PolicyBase.</returns>
-        public System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate)
-        {
-            return this.CreateAsync(policyBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PolicyBase using POST.
-        /// </summary>
-        /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicyBase.</returns>
-        public async System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PolicyBase>(policyBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PolicyBase using POST and returns a <see cref="GraphResponse{PolicyBase}"/> object.
         /// </summary>
         /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate)
-        {
-            return this.CreateResponseAsync(policyBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PolicyBase using POST and returns a <see cref="GraphResponse{PolicyBase}"/> object.
-        /// </summary>
-        /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PolicyBase>(policyBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PolicyBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PolicyBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PolicyBase>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PolicyBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PolicyBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PolicyBase using PATCH.
         /// </summary>
         /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
-        /// <returns>The updated PolicyBase.</returns>
-        public System.Threading.Tasks.Task<PolicyBase> UpdateAsync(PolicyBase policyBaseToUpdate)
-        {
-            return this.UpdateAsync(policyBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PolicyBase using PATCH.
-        /// </summary>
-        /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicyBase.</returns>
-        public async System.Threading.Tasks.Task<PolicyBase> UpdateAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicyBase> UpdateAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (policyBaseToUpdate.AdditionalData != null)
-			{
-				if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (policyBaseToUpdate.AdditionalData != null)
-            {
-                if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PolicyBase>(policyBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PolicyBase using PATCH and returns a <see cref="GraphResponse{PolicyBase}"/> object.
         /// </summary>
         /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate)
-        {
-            return this.UpdateResponseAsync(policyBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PolicyBase using PATCH and returns a <see cref="GraphResponse{PolicyBase}"/> object.
-        /// </summary>
-        /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (policyBaseToUpdate.AdditionalData != null)
-			{
-				if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (policyBaseToUpdate.AdditionalData != null)
-            {
-                if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PolicyBase>(policyBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

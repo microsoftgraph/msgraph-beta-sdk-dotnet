@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkforceIntegration to the collection via POST.
-        /// </summary>
-        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
-        /// <returns>The created WorkforceIntegration.</returns>
-        public System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration)
-        {
-            return this.AddAsync(workforceIntegration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkforceIntegration to the collection via POST.
         /// </summary>
         /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkforceIntegration.</returns>
-        public System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkforceIntegration>(workforceIntegration, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
-        /// </summary>
-        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration)
-        {
-            return this.AddResponseAsync(workforceIntegration, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
         /// </summary>
         /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkforceIntegration>(workforceIntegration, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<TeamworkWorkforceIntegrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

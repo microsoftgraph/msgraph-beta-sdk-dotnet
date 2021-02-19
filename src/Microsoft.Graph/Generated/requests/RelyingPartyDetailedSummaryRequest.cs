@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RelyingPartyDetailedSummary using POST.
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
-        /// <returns>The created RelyingPartyDetailedSummary.</returns>
-        public System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate)
-        {
-            return this.CreateAsync(relyingPartyDetailedSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RelyingPartyDetailedSummary using POST.
-        /// </summary>
-        /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RelyingPartyDetailedSummary.</returns>
-        public async System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RelyingPartyDetailedSummary> CreateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RelyingPartyDetailedSummary>(relyingPartyDetailedSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RelyingPartyDetailedSummary using POST and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> CreateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate)
-        {
-            return this.CreateResponseAsync(relyingPartyDetailedSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RelyingPartyDetailedSummary using POST and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
-        /// </summary>
-        /// <param name="relyingPartyDetailedSummaryToCreate">The RelyingPartyDetailedSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> CreateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> CreateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RelyingPartyDetailedSummary>(relyingPartyDetailedSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RelyingPartyDetailedSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RelyingPartyDetailedSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RelyingPartyDetailedSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RelyingPartyDetailedSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RelyingPartyDetailedSummary using PATCH.
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
-        /// <returns>The updated RelyingPartyDetailedSummary.</returns>
-        public System.Threading.Tasks.Task<RelyingPartyDetailedSummary> UpdateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate)
-        {
-            return this.UpdateAsync(relyingPartyDetailedSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RelyingPartyDetailedSummary using PATCH.
-        /// </summary>
-        /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RelyingPartyDetailedSummary.</returns>
-        public async System.Threading.Tasks.Task<RelyingPartyDetailedSummary> UpdateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RelyingPartyDetailedSummary> UpdateAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (relyingPartyDetailedSummaryToUpdate.AdditionalData != null)
-			{
-				if (relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relyingPartyDetailedSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (relyingPartyDetailedSummaryToUpdate.AdditionalData != null)
-            {
-                if (relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relyingPartyDetailedSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RelyingPartyDetailedSummary>(relyingPartyDetailedSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RelyingPartyDetailedSummary using PATCH and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
         /// </summary>
         /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> UpdateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(relyingPartyDetailedSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RelyingPartyDetailedSummary using PATCH and returns a <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object.
-        /// </summary>
-        /// <param name="relyingPartyDetailedSummaryToUpdate">The RelyingPartyDetailedSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RelyingPartyDetailedSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> UpdateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RelyingPartyDetailedSummary>> UpdateResponseAsync(RelyingPartyDetailedSummary relyingPartyDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (relyingPartyDetailedSummaryToUpdate.AdditionalData != null)
-			{
-				if (relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relyingPartyDetailedSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (relyingPartyDetailedSummaryToUpdate.AdditionalData != null)
-            {
-                if (relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    relyingPartyDetailedSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, relyingPartyDetailedSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RelyingPartyDetailedSummary>(relyingPartyDetailedSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

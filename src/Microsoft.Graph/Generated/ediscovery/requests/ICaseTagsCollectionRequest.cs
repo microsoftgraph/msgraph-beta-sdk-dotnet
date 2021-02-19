@@ -20,28 +20,13 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ICaseTagsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Tag to the collection via POST.
-        /// </summary>
-        /// <param name="tag">The Tag to add.</param>
-        /// <returns>The created Tag.</returns>
-        System.Threading.Tasks.Task<Tag> AddAsync(Tag tag);
-
         /// <summary>
         /// Adds the specified Tag to the collection via POST.
         /// </summary>
         /// <param name="tag">The Tag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Tag.</returns>
-        System.Threading.Tasks.Task<Tag> AddAsync(Tag tag, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Tag to the collection via POST and returns a <see cref="GraphResponse{Tag}"/> object of the request.
-        /// </summary>
-        /// <param name="tag">The Tag to add.</param>
-        /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag);
+        System.Threading.Tasks.Task<Tag> AddAsync(Tag tag, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Tag to the collection via POST and returns a <see cref="GraphResponse{Tag}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="tag">The Tag to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Tag>> AddResponseAsync(Tag tag, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICaseTagsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseTagsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CaseTagsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServicePermissionGrantsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST.
-        /// </summary>
-        /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
-        /// <returns>The created ResourceSpecificPermissionGrant.</returns>
-        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> AddAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant);
-
         /// <summary>
         /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST.
         /// </summary>
         /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ResourceSpecificPermissionGrant.</returns>
-        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> AddAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.
-        /// </summary>
-        /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
-        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant);
+        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> AddAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ResourceSpecificPermissionGrant to the collection via POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="resourceSpecificPermissionGrant">The ResourceSpecificPermissionGrant to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePermissionGrantsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePermissionGrantsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePermissionGrantsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServicePermissionGrantsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServicePermissionGrantsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServicePermissionGrantsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePermissionGrantsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServicePermissionGrantsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServicePermissionGrantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServicePermissionGrantsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

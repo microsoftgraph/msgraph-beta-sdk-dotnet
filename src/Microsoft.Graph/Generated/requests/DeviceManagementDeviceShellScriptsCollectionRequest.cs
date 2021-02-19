@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceShellScript to the collection via POST.
-        /// </summary>
-        /// <param name="deviceShellScript">The DeviceShellScript to add.</param>
-        /// <returns>The created DeviceShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceShellScript> AddAsync(DeviceShellScript deviceShellScript)
-        {
-            return this.AddAsync(deviceShellScript, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceShellScript to the collection via POST.
         /// </summary>
         /// <param name="deviceShellScript">The DeviceShellScript to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceShellScript> AddAsync(DeviceShellScript deviceShellScript, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceShellScript> AddAsync(DeviceShellScript deviceShellScript, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceShellScript>(deviceShellScript, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceShellScript to the collection via POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceShellScript">The DeviceShellScript to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> AddResponseAsync(DeviceShellScript deviceShellScript)
-        {
-            return this.AddResponseAsync(deviceShellScript, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceShellScript to the collection via POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object of the request.
         /// </summary>
         /// <param name="deviceShellScript">The DeviceShellScript to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> AddResponseAsync(DeviceShellScript deviceShellScript, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> AddResponseAsync(DeviceShellScript deviceShellScript, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScript, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementDeviceShellScriptsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementDeviceShellScriptsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementDeviceShellScriptsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementDeviceShellScriptsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceShellScriptsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceShellScriptsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceShellScriptsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceShellScriptsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceShellScriptsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceShellScriptsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceShellScriptsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceShellScriptsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

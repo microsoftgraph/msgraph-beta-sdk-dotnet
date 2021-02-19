@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserCredentialUsageDetails to the collection via POST.
-        /// </summary>
-        /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
-        /// <returns>The created UserCredentialUsageDetails.</returns>
-        public System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails)
-        {
-            return this.AddAsync(userCredentialUsageDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserCredentialUsageDetails to the collection via POST.
         /// </summary>
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
-        public System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserCredentialUsageDetails>(userCredentialUsageDetails, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserCredentialUsageDetails to the collection via POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.
-        /// </summary>
-        /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails)
-        {
-            return this.AddResponseAsync(userCredentialUsageDetails, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserCredentialUsageDetails to the collection via POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.
         /// </summary>
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserCredentialUsageDetails>(userCredentialUsageDetails, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ReportRootUserCredentialUsageDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

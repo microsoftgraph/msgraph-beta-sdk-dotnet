@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsDeviceStartupHistory to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupHistory">The UserExperienceAnalyticsDeviceStartupHistory to add.</param>
-        /// <returns>The created UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> AddAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory)
-        {
-            return this.AddAsync(userExperienceAnalyticsDeviceStartupHistory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsDeviceStartupHistory to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupHistory">The UserExperienceAnalyticsDeviceStartupHistory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> AddAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> AddAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserExperienceAnalyticsDeviceStartupHistory>(userExperienceAnalyticsDeviceStartupHistory, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsDeviceStartupHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupHistory">The UserExperienceAnalyticsDeviceStartupHistory to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory)
-        {
-            return this.AddResponseAsync(userExperienceAnalyticsDeviceStartupHistory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsDeviceStartupHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupHistory">The UserExperienceAnalyticsDeviceStartupHistory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> AddResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupHistory>(userExperienceAnalyticsDeviceStartupHistory, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsDeviceStartupHistoryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

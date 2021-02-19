@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementExchangeConnector to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
-        /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeConnector> AddAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector)
-        {
-            return this.AddAsync(deviceManagementExchangeConnector, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementExchangeConnector to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementExchangeConnector> AddAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementExchangeConnector> AddAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementExchangeConnector>(deviceManagementExchangeConnector, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementExchangeConnector to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> AddResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector)
-        {
-            return this.AddResponseAsync(deviceManagementExchangeConnector, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementExchangeConnector to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> AddResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> AddResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnector, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementExchangeConnectorsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementExchangeConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementExchangeConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementExchangeConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

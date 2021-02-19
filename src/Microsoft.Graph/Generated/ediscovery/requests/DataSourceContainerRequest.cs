@@ -39,21 +39,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified DataSourceContainer using POST.
         /// </summary>
         /// <param name="dataSourceContainerToCreate">The DataSourceContainer to create.</param>
-        /// <returns>The created DataSourceContainer.</returns>
-        public System.Threading.Tasks.Task<DataSourceContainer> CreateAsync(DataSourceContainer dataSourceContainerToCreate)
-        {
-            return this.CreateAsync(dataSourceContainerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DataSourceContainer using POST.
-        /// </summary>
-        /// <param name="dataSourceContainerToCreate">The DataSourceContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSourceContainer.</returns>
-        public async System.Threading.Tasks.Task<DataSourceContainer> CreateAsync(DataSourceContainer dataSourceContainerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataSourceContainer> CreateAsync(DataSourceContainer dataSourceContainerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DataSourceContainer>(dataSourceContainerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified DataSourceContainer using POST and returns a <see cref="GraphResponse{DataSourceContainer}"/> object.
         /// </summary>
         /// <param name="dataSourceContainerToCreate">The DataSourceContainer to create.</param>
-        /// <returns>The <see cref="GraphResponse{DataSourceContainer}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> CreateResponseAsync(DataSourceContainer dataSourceContainerToCreate)
-        {
-            return this.CreateResponseAsync(dataSourceContainerToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DataSourceContainer using POST and returns a <see cref="GraphResponse{DataSourceContainer}"/> object.
-        /// </summary>
-        /// <param name="dataSourceContainerToCreate">The DataSourceContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataSourceContainer}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> CreateResponseAsync(DataSourceContainer dataSourceContainerToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> CreateResponseAsync(DataSourceContainer dataSourceContainerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DataSourceContainer>(dataSourceContainerToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified DataSourceContainer.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DataSourceContainer.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DataSourceContainer>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Deletes the specified DataSourceContainer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DataSourceContainer and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified DataSourceContainer using PATCH.
         /// </summary>
         /// <param name="dataSourceContainerToUpdate">The DataSourceContainer to update.</param>
-        /// <returns>The updated DataSourceContainer.</returns>
-        public System.Threading.Tasks.Task<DataSourceContainer> UpdateAsync(DataSourceContainer dataSourceContainerToUpdate)
-        {
-            return this.UpdateAsync(dataSourceContainerToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DataSourceContainer using PATCH.
-        /// </summary>
-        /// <param name="dataSourceContainerToUpdate">The DataSourceContainer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataSourceContainer.</returns>
-        public async System.Threading.Tasks.Task<DataSourceContainer> UpdateAsync(DataSourceContainer dataSourceContainerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataSourceContainer> UpdateAsync(DataSourceContainer dataSourceContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dataSourceContainerToUpdate.AdditionalData != null)
-			{
-				if (dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSourceContainerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dataSourceContainerToUpdate.AdditionalData != null)
-            {
-                if (dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSourceContainerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DataSourceContainer>(dataSourceContainerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph.Ediscovery
         /// Updates the specified DataSourceContainer using PATCH and returns a <see cref="GraphResponse{DataSourceContainer}"/> object.
         /// </summary>
         /// <param name="dataSourceContainerToUpdate">The DataSourceContainer to update.</param>
-        /// <returns>The <see cref="GraphResponse{DataSourceContainer}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> UpdateResponseAsync(DataSourceContainer dataSourceContainerToUpdate)
-        {
-            return this.UpdateResponseAsync(dataSourceContainerToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DataSourceContainer using PATCH and returns a <see cref="GraphResponse{DataSourceContainer}"/> object.
-        /// </summary>
-        /// <param name="dataSourceContainerToUpdate">The DataSourceContainer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DataSourceContainer}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> UpdateResponseAsync(DataSourceContainer dataSourceContainerToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DataSourceContainer>> UpdateResponseAsync(DataSourceContainer dataSourceContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dataSourceContainerToUpdate.AdditionalData != null)
-			{
-				if (dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSourceContainerToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dataSourceContainerToUpdate.AdditionalData != null)
-            {
-                if (dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dataSourceContainerToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataSourceContainerToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DataSourceContainer>(dataSourceContainerToUpdate, cancellationToken).ConfigureAwait(false);
         }

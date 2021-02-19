@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceInstallState to the collection via POST.
-        /// </summary>
-        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
-        /// <returns>The created DeviceInstallState.</returns>
-        public System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState)
-        {
-            return this.AddAsync(deviceInstallState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceInstallState to the collection via POST.
         /// </summary>
         /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceInstallState.</returns>
-        public System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceInstallState>(deviceInstallState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceInstallState to the collection via POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState)
-        {
-            return this.AddResponseAsync(deviceInstallState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceInstallState to the collection via POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object of the request.
         /// </summary>
         /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceInstallState>(deviceInstallState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedEBookDeviceStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagedEBookDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookDeviceStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBookDeviceStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookDeviceStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagedEBookDeviceStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

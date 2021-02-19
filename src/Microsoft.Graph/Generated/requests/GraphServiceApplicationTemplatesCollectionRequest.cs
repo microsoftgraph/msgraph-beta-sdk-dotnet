@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ApplicationTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
-        /// <returns>The created ApplicationTemplate.</returns>
-        public System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate)
-        {
-            return this.AddAsync(applicationTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ApplicationTemplate to the collection via POST.
         /// </summary>
         /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationTemplate.</returns>
-        public System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ApplicationTemplate>(applicationTemplate, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ApplicationTemplate to the collection via POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate)
-        {
-            return this.AddResponseAsync(applicationTemplate, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ApplicationTemplate to the collection via POST and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.
         /// </summary>
         /// <param name="applicationTemplate">The ApplicationTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ApplicationTemplate>(applicationTemplate, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceApplicationTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceApplicationTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceApplicationTemplatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceApplicationTemplatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryRole using POST.
         /// </summary>
         /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
-        /// <returns>The created DirectoryRole.</returns>
-        public System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate)
-        {
-            return this.CreateAsync(directoryRoleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryRole using POST.
-        /// </summary>
-        /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRole.</returns>
-        public async System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DirectoryRole>(directoryRoleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DirectoryRole using POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
         /// </summary>
         /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> CreateResponseAsync(DirectoryRole directoryRoleToCreate)
-        {
-            return this.CreateResponseAsync(directoryRoleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DirectoryRole using POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
-        /// </summary>
-        /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> CreateResponseAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> CreateResponseAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryRole>(directoryRoleToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DirectoryRole.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DirectoryRole.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DirectoryRole>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DirectoryRole and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DirectoryRole and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DirectoryRole using PATCH.
         /// </summary>
         /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
-        /// <returns>The updated DirectoryRole.</returns>
-        public System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate)
-        {
-            return this.UpdateAsync(directoryRoleToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DirectoryRole using PATCH.
-        /// </summary>
-        /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectoryRole.</returns>
-        public async System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (directoryRoleToUpdate.AdditionalData != null)
-			{
-				if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryRoleToUpdate.AdditionalData != null)
-            {
-                if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DirectoryRole>(directoryRoleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DirectoryRole using PATCH and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
         /// </summary>
         /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> UpdateResponseAsync(DirectoryRole directoryRoleToUpdate)
-        {
-            return this.UpdateResponseAsync(directoryRoleToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DirectoryRole using PATCH and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
-        /// </summary>
-        /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> UpdateResponseAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> UpdateResponseAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (directoryRoleToUpdate.AdditionalData != null)
-			{
-				if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (directoryRoleToUpdate.AdditionalData != null)
-            {
-                if (directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    directoryRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryRoleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DirectoryRole>(directoryRoleToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TermsAndConditionsAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
-        /// <returns>The created TermsAndConditionsAssignment.</returns>
-        public System.Threading.Tasks.Task<TermsAndConditionsAssignment> AddAsync(TermsAndConditionsAssignment termsAndConditionsAssignment)
-        {
-            return this.AddAsync(termsAndConditionsAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TermsAndConditionsAssignment to the collection via POST.
         /// </summary>
         /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsAssignment.</returns>
-        public System.Threading.Tasks.Task<TermsAndConditionsAssignment> AddAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TermsAndConditionsAssignment> AddAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TermsAndConditionsAssignment>(termsAndConditionsAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified TermsAndConditionsAssignment to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> AddResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignment)
-        {
-            return this.AddResponseAsync(termsAndConditionsAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TermsAndConditionsAssignment to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.
         /// </summary>
         /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> AddResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> AddResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(termsAndConditionsAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ITermsAndConditionsAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITermsAndConditionsAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ITermsAndConditionsAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<TermsAndConditionsAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

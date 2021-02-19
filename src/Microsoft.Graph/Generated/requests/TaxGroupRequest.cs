@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TaxGroup using POST.
         /// </summary>
         /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
-        /// <returns>The created TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> CreateAsync(TaxGroup taxGroupToCreate)
-        {
-            return this.CreateAsync(taxGroupToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TaxGroup using POST.
-        /// </summary>
-        /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TaxGroup.</returns>
-        public async System.Threading.Tasks.Task<TaxGroup> CreateAsync(TaxGroup taxGroupToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TaxGroup> CreateAsync(TaxGroup taxGroupToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TaxGroup>(taxGroupToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TaxGroup using POST and returns a <see cref="GraphResponse{TaxGroup}"/> object.
         /// </summary>
         /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
-        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TaxGroup>> CreateResponseAsync(TaxGroup taxGroupToCreate)
-        {
-            return this.CreateResponseAsync(taxGroupToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TaxGroup using POST and returns a <see cref="GraphResponse{TaxGroup}"/> object.
-        /// </summary>
-        /// <param name="taxGroupToCreate">The TaxGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> CreateResponseAsync(TaxGroup taxGroupToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> CreateResponseAsync(TaxGroup taxGroupToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TaxGroup>(taxGroupToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TaxGroup.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TaxGroup.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TaxGroup>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TaxGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TaxGroup and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TaxGroup using PATCH.
         /// </summary>
         /// <param name="taxGroupToUpdate">The TaxGroup to update.</param>
-        /// <returns>The updated TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> UpdateAsync(TaxGroup taxGroupToUpdate)
-        {
-            return this.UpdateAsync(taxGroupToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TaxGroup using PATCH.
-        /// </summary>
-        /// <param name="taxGroupToUpdate">The TaxGroup to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TaxGroup.</returns>
-        public async System.Threading.Tasks.Task<TaxGroup> UpdateAsync(TaxGroup taxGroupToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TaxGroup> UpdateAsync(TaxGroup taxGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (taxGroupToUpdate.AdditionalData != null)
-			{
-				if (taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, taxGroupToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (taxGroupToUpdate.AdditionalData != null)
-            {
-                if (taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, taxGroupToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TaxGroup>(taxGroupToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TaxGroup using PATCH and returns a <see cref="GraphResponse{TaxGroup}"/> object.
         /// </summary>
         /// <param name="taxGroupToUpdate">The TaxGroup to update.</param>
-        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TaxGroup>> UpdateResponseAsync(TaxGroup taxGroupToUpdate)
-        {
-            return this.UpdateResponseAsync(taxGroupToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TaxGroup using PATCH and returns a <see cref="GraphResponse{TaxGroup}"/> object.
-        /// </summary>
-        /// <param name="taxGroupToUpdate">The TaxGroup to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> UpdateResponseAsync(TaxGroup taxGroupToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TaxGroup>> UpdateResponseAsync(TaxGroup taxGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (taxGroupToUpdate.AdditionalData != null)
-			{
-				if (taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, taxGroupToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (taxGroupToUpdate.AdditionalData != null)
-            {
-                if (taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    taxGroupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, taxGroupToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TaxGroup>(taxGroupToUpdate, cancellationToken).ConfigureAwait(false);
         }

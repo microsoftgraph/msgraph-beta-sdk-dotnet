@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityContainer using POST.
         /// </summary>
         /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
-        /// <returns>The created IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate);
-
-        /// <summary>
-        /// Creates the specified IdentityContainer using POST.
-        /// </summary>
-        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
-        /// </summary>
-        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate);
+        System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IdentityContainer.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IdentityContainer.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IdentityContainer and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IdentityContainer and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityContainer.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified IdentityContainer using PATCH.
         /// </summary>
         /// <param name="identityContainerToUpdate">The IdentityContainer to update.</param>
-        /// <returns>The updated IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> UpdateAsync(IdentityContainer identityContainerToUpdate);
-
-        /// <summary>
-        /// Updates the specified IdentityContainer using PATCH.
-        /// </summary>
-        /// <param name="identityContainerToUpdate">The IdentityContainer to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> UpdateAsync(IdentityContainer identityContainerToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified IdentityContainer using PATCH and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
-        /// </summary>
-        /// <param name="identityContainerToUpdate">The IdentityContainer to update.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> UpdateResponseAsync(IdentityContainer identityContainerToUpdate);
+        System.Threading.Tasks.Task<IdentityContainer> UpdateAsync(IdentityContainer identityContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityContainer using PATCH and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> UpdateResponseAsync(IdentityContainer identityContainerToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> UpdateResponseAsync(IdentityContainer identityContainerToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

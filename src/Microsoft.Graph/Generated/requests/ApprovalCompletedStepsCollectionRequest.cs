@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ApprovalStep to the collection via POST.
-        /// </summary>
-        /// <param name="approvalStep">The ApprovalStep to add.</param>
-        /// <returns>The created ApprovalStep.</returns>
-        public System.Threading.Tasks.Task<ApprovalStep> AddAsync(ApprovalStep approvalStep)
-        {
-            return this.AddAsync(approvalStep, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ApprovalStep to the collection via POST.
         /// </summary>
         /// <param name="approvalStep">The ApprovalStep to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalStep.</returns>
-        public System.Threading.Tasks.Task<ApprovalStep> AddAsync(ApprovalStep approvalStep, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ApprovalStep> AddAsync(ApprovalStep approvalStep, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ApprovalStep>(approvalStep, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ApprovalStep to the collection via POST and returns a <see cref="GraphResponse{ApprovalStep}"/> object of the request.
-        /// </summary>
-        /// <param name="approvalStep">The ApprovalStep to add.</param>
-        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> AddResponseAsync(ApprovalStep approvalStep)
-        {
-            return this.AddResponseAsync(approvalStep, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ApprovalStep to the collection via POST and returns a <see cref="GraphResponse{ApprovalStep}"/> object of the request.
         /// </summary>
         /// <param name="approvalStep">The ApprovalStep to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> AddResponseAsync(ApprovalStep approvalStep, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> AddResponseAsync(ApprovalStep approvalStep, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ApprovalStep>(approvalStep, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IApprovalCompletedStepsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IApprovalCompletedStepsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IApprovalCompletedStepsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ApprovalCompletedStepsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalCompletedStepsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApprovalCompletedStepsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApprovalCompletedStepsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ApprovalCompletedStepsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalCompletedStepsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApprovalCompletedStepsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ApprovalCompletedStepsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ApprovalCompletedStepsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

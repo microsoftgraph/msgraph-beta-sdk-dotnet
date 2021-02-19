@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IScheduleTimesOffCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TimeOff to the collection via POST.
-        /// </summary>
-        /// <param name="timeOff">The TimeOff to add.</param>
-        /// <returns>The created TimeOff.</returns>
-        System.Threading.Tasks.Task<TimeOff> AddAsync(TimeOff timeOff);
-
         /// <summary>
         /// Adds the specified TimeOff to the collection via POST.
         /// </summary>
         /// <param name="timeOff">The TimeOff to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeOff.</returns>
-        System.Threading.Tasks.Task<TimeOff> AddAsync(TimeOff timeOff, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified TimeOff to the collection via POST and returns a <see cref="GraphResponse{TimeOff}"/> object of the request.
-        /// </summary>
-        /// <param name="timeOff">The TimeOff to add.</param>
-        /// <returns>The <see cref="GraphResponse{TimeOff}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TimeOff>> AddResponseAsync(TimeOff timeOff);
+        System.Threading.Tasks.Task<TimeOff> AddAsync(TimeOff timeOff, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified TimeOff to the collection via POST and returns a <see cref="GraphResponse{TimeOff}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="timeOff">The TimeOff to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TimeOff}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TimeOff>> AddResponseAsync(TimeOff timeOff, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TimeOff>> AddResponseAsync(TimeOff timeOff, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimesOffCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IScheduleTimesOffCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimesOffCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ScheduleTimesOffCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ScheduleTimesOffCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IScheduleTimesOffCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ScheduleTimesOffCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ScheduleTimesOffCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ScheduleTimesOffCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ScheduleTimesOffCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

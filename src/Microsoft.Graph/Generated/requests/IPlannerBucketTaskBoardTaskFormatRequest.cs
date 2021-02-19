@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
-        /// <returns>The created PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);
-
-        /// <summary>
-        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST.
-        /// </summary>
-        /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
-        /// </summary>
-        /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> CreateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);
+        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> CreateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerBucketTaskBoardTaskFormat.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> CreateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerBucketTaskBoardTaskFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerBucketTaskBoardTaskFormat and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified PlannerBucketTaskBoardTaskFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerBucketTaskBoardTaskFormat.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH.
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat to update.</param>
-        /// <returns>The updated PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> UpdateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate);
-
-        /// <summary>
-        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH.
-        /// </summary>
-        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> UpdateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
-        /// </summary>
-        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat to update.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate);
+        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> UpdateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IChannelTabsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified TeamsTab to the collection via POST.
-        /// </summary>
-        /// <param name="teamsTab">The TeamsTab to add.</param>
-        /// <returns>The created TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> AddAsync(TeamsTab teamsTab);
-
         /// <summary>
         /// Adds the specified TeamsTab to the collection via POST.
         /// </summary>
         /// <param name="teamsTab">The TeamsTab to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> AddAsync(TeamsTab teamsTab, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified TeamsTab to the collection via POST and returns a <see cref="GraphResponse{TeamsTab}"/> object of the request.
-        /// </summary>
-        /// <param name="teamsTab">The TeamsTab to add.</param>
-        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab);
+        System.Threading.Tasks.Task<TeamsTab> AddAsync(TeamsTab teamsTab, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified TeamsTab to the collection via POST and returns a <see cref="GraphResponse{TeamsTab}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="teamsTab">The TeamsTab to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IChannelTabsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IChannelTabsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ChannelTabsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ChannelTabsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChannelTabsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IChannelTabsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ChannelTabsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChannelTabsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChannelTabsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ChannelTabsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

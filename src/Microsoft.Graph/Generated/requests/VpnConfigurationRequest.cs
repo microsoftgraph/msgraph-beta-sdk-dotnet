@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified VpnConfiguration using POST.
         /// </summary>
         /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
-        /// <returns>The created VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate)
-        {
-            return this.CreateAsync(vpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified VpnConfiguration using POST.
-        /// </summary>
-        /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<VpnConfiguration>(vpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified VpnConfiguration using POST and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> CreateResponseAsync(VpnConfiguration vpnConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(vpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified VpnConfiguration using POST and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
-        /// </summary>
-        /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> CreateResponseAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> CreateResponseAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<VpnConfiguration>(vpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified VpnConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified VpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<VpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified VpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified VpnConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified VpnConfiguration using PATCH.
         /// </summary>
         /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
-        /// <returns>The updated VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate)
-        {
-            return this.UpdateAsync(vpnConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified VpnConfiguration using PATCH.
-        /// </summary>
-        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (vpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, vpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (vpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, vpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<VpnConfiguration>(vpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified VpnConfiguration using PATCH and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> UpdateResponseAsync(VpnConfiguration vpnConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(vpnConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified VpnConfiguration using PATCH and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
-        /// </summary>
-        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> UpdateResponseAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> UpdateResponseAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (vpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, vpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (vpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    vpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, vpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<VpnConfiguration>(vpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

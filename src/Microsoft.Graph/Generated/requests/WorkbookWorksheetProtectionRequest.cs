@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookWorksheetProtection using POST.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
-        /// <returns>The created WorkbookWorksheetProtection.</returns>
-        public System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate)
-        {
-            return this.CreateAsync(workbookWorksheetProtectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookWorksheetProtection using POST.
-        /// </summary>
-        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookWorksheetProtection.</returns>
-        public async System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookWorksheetProtection> CreateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookWorksheetProtection>(workbookWorksheetProtectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate)
-        {
-            return this.CreateResponseAsync(workbookWorksheetProtectionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
-        /// </summary>
-        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookWorksheetProtection>(workbookWorksheetProtectionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookWorksheetProtection.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookWorksheetProtection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookWorksheetProtection>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookWorksheetProtection using PATCH.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
-        /// <returns>The updated WorkbookWorksheetProtection.</returns>
-        public System.Threading.Tasks.Task<WorkbookWorksheetProtection> UpdateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate)
-        {
-            return this.UpdateAsync(workbookWorksheetProtectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookWorksheetProtection using PATCH.
-        /// </summary>
-        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookWorksheetProtection.</returns>
-        public async System.Threading.Tasks.Task<WorkbookWorksheetProtection> UpdateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookWorksheetProtection> UpdateAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
-			{
-				if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
-            {
-                if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookWorksheetProtection>(workbookWorksheetProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
         /// </summary>
         /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookWorksheetProtectionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
-        /// </summary>
-        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
-			{
-				if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
-            {
-                if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookWorksheetProtection>(workbookWorksheetProtectionToUpdate, cancellationToken).ConfigureAwait(false);
         }

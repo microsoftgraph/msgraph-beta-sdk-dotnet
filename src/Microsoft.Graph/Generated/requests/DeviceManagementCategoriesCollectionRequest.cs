@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementSettingCategory to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementSettingCategory">The DeviceManagementSettingCategory to add.</param>
-        /// <returns>The created DeviceManagementSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementSettingCategory> AddAsync(DeviceManagementSettingCategory deviceManagementSettingCategory)
-        {
-            return this.AddAsync(deviceManagementSettingCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementSettingCategory to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementSettingCategory">The DeviceManagementSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementSettingCategory> AddAsync(DeviceManagementSettingCategory deviceManagementSettingCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceManagementSettingCategory> AddAsync(DeviceManagementSettingCategory deviceManagementSettingCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementSettingCategory>(deviceManagementSettingCategory, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementSettingCategory to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceManagementSettingCategory">The DeviceManagementSettingCategory to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> AddResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategory)
-        {
-            return this.AddResponseAsync(deviceManagementSettingCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceManagementSettingCategory to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.
         /// </summary>
         /// <param name="deviceManagementSettingCategory">The DeviceManagementSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementSettingCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> AddResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategory, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingCategory>> AddResponseAsync(DeviceManagementSettingCategory deviceManagementSettingCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementSettingCategory>(deviceManagementSettingCategory, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementCategoriesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementCategoriesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementCategoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementCategoriesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementCategoriesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCategoriesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

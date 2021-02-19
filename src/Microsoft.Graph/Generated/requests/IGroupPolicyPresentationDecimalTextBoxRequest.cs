@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
-        /// <returns>The created GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> CreateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> CreateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> CreateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified GroupPolicyPresentationDecimalTextBox using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationDecimalTextBoxToCreate">The GroupPolicyPresentationDecimalTextBox to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationDecimalTextBox.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> CreateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationDecimalTextBox.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyPresentationDecimalTextBox and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationDecimalTextBox and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDecimalTextBox.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyPresentationDecimalTextBox using PATCH.
         /// </summary>
         /// <param name="groupPolicyPresentationDecimalTextBoxToUpdate">The GroupPolicyPresentationDecimalTextBox to update.</param>
-        /// <returns>The updated GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> UpdateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationDecimalTextBox using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyPresentationDecimalTextBoxToUpdate">The GroupPolicyPresentationDecimalTextBox to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> UpdateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyPresentationDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyPresentationDecimalTextBoxToUpdate">The GroupPolicyPresentationDecimalTextBox to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate);
+        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> UpdateAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDecimalTextBox using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> UpdateResponseAsync(GroupPolicyPresentationDecimalTextBox groupPolicyPresentationDecimalTextBoxToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

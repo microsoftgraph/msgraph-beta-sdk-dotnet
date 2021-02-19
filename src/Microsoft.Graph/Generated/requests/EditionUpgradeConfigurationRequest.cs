@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EditionUpgradeConfiguration using POST.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
-        /// <returns>The created EditionUpgradeConfiguration.</returns>
-        public System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate)
-        {
-            return this.CreateAsync(editionUpgradeConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EditionUpgradeConfiguration using POST.
-        /// </summary>
-        /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EditionUpgradeConfiguration.</returns>
-        public async System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EditionUpgradeConfiguration> CreateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EditionUpgradeConfiguration>(editionUpgradeConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EditionUpgradeConfiguration using POST and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> CreateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(editionUpgradeConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EditionUpgradeConfiguration using POST and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
-        /// </summary>
-        /// <param name="editionUpgradeConfigurationToCreate">The EditionUpgradeConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> CreateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> CreateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EditionUpgradeConfiguration>(editionUpgradeConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EditionUpgradeConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EditionUpgradeConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EditionUpgradeConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EditionUpgradeConfiguration using PATCH.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
-        /// <returns>The updated EditionUpgradeConfiguration.</returns>
-        public System.Threading.Tasks.Task<EditionUpgradeConfiguration> UpdateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate)
-        {
-            return this.UpdateAsync(editionUpgradeConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EditionUpgradeConfiguration using PATCH.
-        /// </summary>
-        /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EditionUpgradeConfiguration.</returns>
-        public async System.Threading.Tasks.Task<EditionUpgradeConfiguration> UpdateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EditionUpgradeConfiguration> UpdateAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
-			{
-				if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, editionUpgradeConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
-            {
-                if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, editionUpgradeConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EditionUpgradeConfiguration>(editionUpgradeConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EditionUpgradeConfiguration using PATCH and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> UpdateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(editionUpgradeConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EditionUpgradeConfiguration using PATCH and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
-        /// </summary>
-        /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> UpdateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> UpdateResponseAsync(EditionUpgradeConfiguration editionUpgradeConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
-			{
-				if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, editionUpgradeConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (editionUpgradeConfigurationToUpdate.AdditionalData != null)
-            {
-                if (editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    editionUpgradeConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, editionUpgradeConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EditionUpgradeConfiguration>(editionUpgradeConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

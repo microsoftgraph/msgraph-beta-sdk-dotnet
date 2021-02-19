@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
-        /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate)
-        {
-            return this.CreateAsync(deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceCompliancePolicySettingStateSummary>(deviceCompliancePolicySettingStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> CreateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate)
-        {
-            return this.CreateResponseAsync(deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> CreateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> CreateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicySettingStateSummary>(deviceCompliancePolicySettingStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicySettingStateSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceCompliancePolicySettingStateSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceCompliancePolicySettingStateSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicySettingStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceCompliancePolicySettingStateSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceCompliancePolicySettingStateSummary using PATCH.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary to update.</param>
-        /// <returns>The updated DeviceCompliancePolicySettingStateSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> UpdateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate)
-        {
-            return this.UpdateAsync(deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceCompliancePolicySettingStateSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceCompliancePolicySettingStateSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> UpdateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> UpdateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicySettingStateSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicySettingStateSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceCompliancePolicySettingStateSummary>(deviceCompliancePolicySettingStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceCompliancePolicySettingStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> UpdateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceCompliancePolicySettingStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceCompliancePolicySettingStateSummaryToUpdate">The DeviceCompliancePolicySettingStateSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> UpdateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> UpdateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicySettingStateSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceCompliancePolicySettingStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicySettingStateSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicySettingStateSummary>(deviceCompliancePolicySettingStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ProfileCardProperty to the collection via POST.
-        /// </summary>
-        /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
-        /// <returns>The created ProfileCardProperty.</returns>
-        public System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty)
-        {
-            return this.AddAsync(profileCardProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ProfileCardProperty to the collection via POST.
         /// </summary>
         /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProfileCardProperty.</returns>
-        public System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ProfileCardProperty> AddAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ProfileCardProperty>(profileCardProperty, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ProfileCardProperty to the collection via POST and returns a <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.
-        /// </summary>
-        /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
-        /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> AddResponseAsync(ProfileCardProperty profileCardProperty)
-        {
-            return this.AddResponseAsync(profileCardProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ProfileCardProperty to the collection via POST and returns a <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.
         /// </summary>
         /// <param name="profileCardProperty">The ProfileCardProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileCardProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> AddResponseAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileCardProperty>> AddResponseAsync(ProfileCardProperty profileCardProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ProfileCardProperty>(profileCardProperty, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOrganizationSettingsProfileCardPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OrganizationSettingsProfileCardPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationSettingsProfileCardPropertiesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrganizationSettingsProfileCardPropertiesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettingsProfileCardPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationSettingsProfileCardPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OrganizationSettingsProfileCardPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

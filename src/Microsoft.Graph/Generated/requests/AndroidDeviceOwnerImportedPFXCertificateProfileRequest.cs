@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToCreate">The AndroidDeviceOwnerImportedPFXCertificateProfile to create.</param>
-        /// <returns>The created AndroidDeviceOwnerImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> CreateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToCreate">The AndroidDeviceOwnerImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> CreateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> CreateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidDeviceOwnerImportedPFXCertificateProfile>(androidDeviceOwnerImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToCreate">The AndroidDeviceOwnerImportedPFXCertificateProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> CreateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate)
-        {
-            return this.CreateResponseAsync(androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToCreate">The AndroidDeviceOwnerImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> CreateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> CreateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>(androidDeviceOwnerImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerImportedPFXCertificateProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerImportedPFXCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidDeviceOwnerImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidDeviceOwnerImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using PATCH.
         /// </summary>
         /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToUpdate">The AndroidDeviceOwnerImportedPFXCertificateProfile to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> UpdateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate)
-        {
-            return this.UpdateAsync(androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using PATCH.
-        /// </summary>
-        /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToUpdate">The AndroidDeviceOwnerImportedPFXCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> UpdateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerImportedPFXCertificateProfile> UpdateAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerImportedPFXCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerImportedPFXCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerImportedPFXCertificateProfile>(androidDeviceOwnerImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToUpdate">The AndroidDeviceOwnerImportedPFXCertificateProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> UpdateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate)
-        {
-            return this.UpdateResponseAsync(androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidDeviceOwnerImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <param name="androidDeviceOwnerImportedPFXCertificateProfileToUpdate">The AndroidDeviceOwnerImportedPFXCertificateProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerImportedPFXCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> UpdateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>> UpdateResponseAsync(AndroidDeviceOwnerImportedPFXCertificateProfile androidDeviceOwnerImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerImportedPFXCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerImportedPFXCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidDeviceOwnerImportedPFXCertificateProfile>(androidDeviceOwnerImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }

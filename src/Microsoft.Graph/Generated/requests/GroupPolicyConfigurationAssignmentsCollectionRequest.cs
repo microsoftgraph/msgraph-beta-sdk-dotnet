@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyConfigurationAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyConfigurationAssignment">The GroupPolicyConfigurationAssignment to add.</param>
-        /// <returns>The created GroupPolicyConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyConfigurationAssignment> AddAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment)
-        {
-            return this.AddAsync(groupPolicyConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupPolicyConfigurationAssignment to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyConfigurationAssignment">The GroupPolicyConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyConfigurationAssignment> AddAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GroupPolicyConfigurationAssignment> AddAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<GroupPolicyConfigurationAssignment>(groupPolicyConfigurationAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyConfigurationAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="groupPolicyConfigurationAssignment">The GroupPolicyConfigurationAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignment>> AddResponseAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment)
-        {
-            return this.AddResponseAsync(groupPolicyConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupPolicyConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyConfigurationAssignment}"/> object of the request.
         /// </summary>
         /// <param name="groupPolicyConfigurationAssignment">The GroupPolicyConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignment>> AddResponseAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignment>> AddResponseAsync(GroupPolicyConfigurationAssignment groupPolicyConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupPolicyConfigurationAssignment>(groupPolicyConfigurationAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGroupPolicyConfigurationAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGroupPolicyConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGroupPolicyConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GroupPolicyConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyConfigurationAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyConfigurationAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GroupPolicyConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

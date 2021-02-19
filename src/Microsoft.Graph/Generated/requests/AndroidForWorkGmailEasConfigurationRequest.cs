@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkGmailEasConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
-        /// <returns>The created AndroidForWorkGmailEasConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> CreateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate)
-        {
-            return this.CreateAsync(androidForWorkGmailEasConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkGmailEasConfiguration using POST.
-        /// </summary>
-        /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkGmailEasConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> CreateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> CreateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidForWorkGmailEasConfiguration>(androidForWorkGmailEasConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkGmailEasConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> CreateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(androidForWorkGmailEasConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkGmailEasConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkGmailEasConfigurationToCreate">The AndroidForWorkGmailEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> CreateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> CreateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidForWorkGmailEasConfiguration>(androidForWorkGmailEasConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidForWorkGmailEasConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkGmailEasConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidForWorkGmailEasConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidForWorkGmailEasConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkGmailEasConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidForWorkGmailEasConfiguration using PATCH.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkGmailEasConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> UpdateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate)
-        {
-            return this.UpdateAsync(androidForWorkGmailEasConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkGmailEasConfiguration using PATCH.
-        /// </summary>
-        /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkGmailEasConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> UpdateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> UpdateAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGmailEasConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGmailEasConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidForWorkGmailEasConfiguration>(androidForWorkGmailEasConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidForWorkGmailEasConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
         /// </summary>
         /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> UpdateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(androidForWorkGmailEasConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidForWorkGmailEasConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidForWorkGmailEasConfigurationToUpdate">The AndroidForWorkGmailEasConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> UpdateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> UpdateResponseAsync(AndroidForWorkGmailEasConfiguration androidForWorkGmailEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGmailEasConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkGmailEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkGmailEasConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidForWorkGmailEasConfiguration>(androidForWorkGmailEasConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

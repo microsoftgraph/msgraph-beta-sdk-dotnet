@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
-        /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate)
-        {
-            return this.CreateAsync(windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
-        /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate)
-        {
-            return this.UpdateAsync(windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData != null)
-			{
-				if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData != null)
-            {
-                if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyAssignment using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData != null)
-			{
-				if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData != null)
-            {
-                if (windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

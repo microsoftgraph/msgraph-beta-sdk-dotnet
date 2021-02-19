@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DeviceConfigurationConflictSummary to the collection via POST.
-        /// </summary>
-        /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
-        /// <returns>The created DeviceConfigurationConflictSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> AddAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary)
-        {
-            return this.AddAsync(deviceConfigurationConflictSummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceConfigurationConflictSummary to the collection via POST.
         /// </summary>
         /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationConflictSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> AddAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> AddAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceConfigurationConflictSummary>(deviceConfigurationConflictSummary, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DeviceConfigurationConflictSummary to the collection via POST and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> AddResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary)
-        {
-            return this.AddResponseAsync(deviceConfigurationConflictSummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DeviceConfigurationConflictSummary to the collection via POST and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.
         /// </summary>
         /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> AddResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> AddResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceConfigurationConflictSummary>(deviceConfigurationConflictSummary, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SideLoadingKey to the collection via POST.
-        /// </summary>
-        /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
-        /// <returns>The created SideLoadingKey.</returns>
-        public System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey)
-        {
-            return this.AddAsync(sideLoadingKey, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SideLoadingKey to the collection via POST.
         /// </summary>
         /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SideLoadingKey.</returns>
-        public System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SideLoadingKey> AddAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SideLoadingKey>(sideLoadingKey, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SideLoadingKey to the collection via POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object of the request.
-        /// </summary>
-        /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
-        /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> AddResponseAsync(SideLoadingKey sideLoadingKey)
-        {
-            return this.AddResponseAsync(sideLoadingKey, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SideLoadingKey to the collection via POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object of the request.
         /// </summary>
         /// <param name="sideLoadingKey">The SideLoadingKey to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> AddResponseAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> AddResponseAsync(SideLoadingKey sideLoadingKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SideLoadingKey>(sideLoadingKey, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementSideLoadingKeysCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementSideLoadingKeysCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementSideLoadingKeysCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementSideLoadingKeysCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementSideLoadingKeysCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementSideLoadingKeysCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementSideLoadingKeysCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

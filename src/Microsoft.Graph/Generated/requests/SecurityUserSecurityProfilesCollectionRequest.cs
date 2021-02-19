@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserSecurityProfile to the collection via POST.
-        /// </summary>
-        /// <param name="userSecurityProfile">The UserSecurityProfile to add.</param>
-        /// <returns>The created UserSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<UserSecurityProfile> AddAsync(UserSecurityProfile userSecurityProfile)
-        {
-            return this.AddAsync(userSecurityProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserSecurityProfile to the collection via POST.
         /// </summary>
         /// <param name="userSecurityProfile">The UserSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSecurityProfile.</returns>
-        public System.Threading.Tasks.Task<UserSecurityProfile> AddAsync(UserSecurityProfile userSecurityProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserSecurityProfile> AddAsync(UserSecurityProfile userSecurityProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserSecurityProfile>(userSecurityProfile, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="userSecurityProfile">The UserSecurityProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> AddResponseAsync(UserSecurityProfile userSecurityProfile)
-        {
-            return this.AddResponseAsync(userSecurityProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.
         /// </summary>
         /// <param name="userSecurityProfile">The UserSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserSecurityProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> AddResponseAsync(UserSecurityProfile userSecurityProfile, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserSecurityProfile>> AddResponseAsync(UserSecurityProfile userSecurityProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserSecurityProfile>(userSecurityProfile, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISecurityUserSecurityProfilesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISecurityUserSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISecurityUserSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<SecurityUserSecurityProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityUserSecurityProfilesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityUserSecurityProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityUserSecurityProfilesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityUserSecurityProfilesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityUserSecurityProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityUserSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityUserSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<SecurityUserSecurityProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

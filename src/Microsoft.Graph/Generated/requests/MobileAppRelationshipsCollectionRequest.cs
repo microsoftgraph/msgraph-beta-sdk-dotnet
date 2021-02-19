@@ -33,71 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileAppRelationship to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
-        /// <returns>The created MobileAppRelationship.</returns>
-        public System.Threading.Tasks.Task<MobileAppRelationship> AddAsync(MobileAppRelationship mobileAppRelationship)
-        {
-            return this.AddAsync(mobileAppRelationship, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppRelationship to the collection via POST.
         /// </summary>
         /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppRelationship.</returns>
-        public System.Threading.Tasks.Task<MobileAppRelationship> AddAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MobileAppRelationship> AddAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             mobileAppRelationship.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileAppRelationship.GetType().FullName));
             return this.SendAsync<MobileAppRelationship>(mobileAppRelationship, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MobileAppRelationship to the collection via POST and returns a <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.
-        /// </summary>
-        /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppRelationship>> AddResponseAsync(MobileAppRelationship mobileAppRelationship)
-        {
-            return this.AddResponseAsync(mobileAppRelationship, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppRelationship to the collection via POST and returns a <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.
         /// </summary>
         /// <param name="mobileAppRelationship">The MobileAppRelationship to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppRelationship}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppRelationship>> AddResponseAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppRelationship>> AddResponseAsync(MobileAppRelationship mobileAppRelationship, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             mobileAppRelationship.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileAppRelationship.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<MobileAppRelationship>(mobileAppRelationship, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMobileAppRelationshipsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMobileAppRelationshipsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMobileAppRelationshipsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MobileAppRelationshipsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppRelationshipsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppRelationshipsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppRelationshipsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppRelationshipsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MobileAppRelationshipsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

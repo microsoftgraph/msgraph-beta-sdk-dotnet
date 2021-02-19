@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageAssignmentResourceRole using POST.
         /// </summary>
         /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
-        /// <returns>The created AccessPackageAssignmentResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate);
-
-        /// <summary>
-        /// Creates the specified AccessPackageAssignmentResourceRole using POST.
-        /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageAssignmentResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified AccessPackageAssignmentResourceRole using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
-        /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> CreateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate);
+        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified AccessPackageAssignmentResourceRole using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> CreateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackageAssignmentResourceRole.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> CreateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AccessPackageAssignmentResourceRole.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackageAssignmentResourceRole and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified AccessPackageAssignmentResourceRole and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageAssignmentResourceRole.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified AccessPackageAssignmentResourceRole using PATCH.
         /// </summary>
         /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole to update.</param>
-        /// <returns>The updated AccessPackageAssignmentResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate);
-
-        /// <summary>
-        /// Updates the specified AccessPackageAssignmentResourceRole using PATCH.
-        /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageAssignmentResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified AccessPackageAssignmentResourceRole using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
-        /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole to update.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> UpdateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate);
+        System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackageAssignmentResourceRole using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> UpdateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> UpdateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

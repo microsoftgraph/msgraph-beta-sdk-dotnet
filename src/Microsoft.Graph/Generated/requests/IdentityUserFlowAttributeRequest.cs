@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityUserFlowAttribute using POST.
         /// </summary>
         /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
-        /// <returns>The created IdentityUserFlowAttribute.</returns>
-        public System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate)
-        {
-            return this.CreateAsync(identityUserFlowAttributeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IdentityUserFlowAttribute using POST.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityUserFlowAttribute.</returns>
-        public async System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityUserFlowAttribute> CreateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IdentityUserFlowAttribute>(identityUserFlowAttributeToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityUserFlowAttribute using POST and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> CreateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate)
-        {
-            return this.CreateResponseAsync(identityUserFlowAttributeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IdentityUserFlowAttribute using POST and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeToCreate">The IdentityUserFlowAttribute to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> CreateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> CreateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IdentityUserFlowAttribute>(identityUserFlowAttributeToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IdentityUserFlowAttribute.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IdentityUserFlowAttribute.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IdentityUserFlowAttribute>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IdentityUserFlowAttribute using PATCH.
         /// </summary>
         /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
-        /// <returns>The updated IdentityUserFlowAttribute.</returns>
-        public System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate)
-        {
-            return this.UpdateAsync(identityUserFlowAttributeToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IdentityUserFlowAttribute using PATCH.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityUserFlowAttribute.</returns>
-        public async System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityUserFlowAttribute> UpdateAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (identityUserFlowAttributeToUpdate.AdditionalData != null)
-			{
-				if (identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityUserFlowAttributeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (identityUserFlowAttributeToUpdate.AdditionalData != null)
-            {
-                if (identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityUserFlowAttributeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IdentityUserFlowAttribute>(identityUserFlowAttributeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IdentityUserFlowAttribute using PATCH and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> UpdateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate)
-        {
-            return this.UpdateResponseAsync(identityUserFlowAttributeToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IdentityUserFlowAttribute using PATCH and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
-        /// </summary>
-        /// <param name="identityUserFlowAttributeToUpdate">The IdentityUserFlowAttribute to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> UpdateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> UpdateResponseAsync(IdentityUserFlowAttribute identityUserFlowAttributeToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (identityUserFlowAttributeToUpdate.AdditionalData != null)
-			{
-				if (identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityUserFlowAttributeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (identityUserFlowAttributeToUpdate.AdditionalData != null)
-            {
-                if (identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    identityUserFlowAttributeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityUserFlowAttributeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IdentityUserFlowAttribute>(identityUserFlowAttributeToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAward using POST.
         /// </summary>
         /// <param name="personAwardToCreate">The PersonAward to create.</param>
-        /// <returns>The created PersonAward.</returns>
-        public System.Threading.Tasks.Task<PersonAward> CreateAsync(PersonAward personAwardToCreate)
-        {
-            return this.CreateAsync(personAwardToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PersonAward using POST.
-        /// </summary>
-        /// <param name="personAwardToCreate">The PersonAward to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAward.</returns>
-        public async System.Threading.Tasks.Task<PersonAward> CreateAsync(PersonAward personAwardToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonAward> CreateAsync(PersonAward personAwardToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PersonAward>(personAwardToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAward using POST and returns a <see cref="GraphResponse{PersonAward}"/> object.
         /// </summary>
         /// <param name="personAwardToCreate">The PersonAward to create.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonAward>> CreateResponseAsync(PersonAward personAwardToCreate)
-        {
-            return this.CreateResponseAsync(personAwardToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PersonAward using POST and returns a <see cref="GraphResponse{PersonAward}"/> object.
-        /// </summary>
-        /// <param name="personAwardToCreate">The PersonAward to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonAward>> CreateResponseAsync(PersonAward personAwardToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonAward>> CreateResponseAsync(PersonAward personAwardToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PersonAward>(personAwardToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PersonAward.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PersonAward.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PersonAward>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PersonAward and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PersonAward and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PersonAward using PATCH.
         /// </summary>
         /// <param name="personAwardToUpdate">The PersonAward to update.</param>
-        /// <returns>The updated PersonAward.</returns>
-        public System.Threading.Tasks.Task<PersonAward> UpdateAsync(PersonAward personAwardToUpdate)
-        {
-            return this.UpdateAsync(personAwardToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PersonAward using PATCH.
-        /// </summary>
-        /// <param name="personAwardToUpdate">The PersonAward to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonAward.</returns>
-        public async System.Threading.Tasks.Task<PersonAward> UpdateAsync(PersonAward personAwardToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonAward> UpdateAsync(PersonAward personAwardToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personAwardToUpdate.AdditionalData != null)
-			{
-				if (personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAwardToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personAwardToUpdate.AdditionalData != null)
-            {
-                if (personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAwardToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PersonAward>(personAwardToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PersonAward using PATCH and returns a <see cref="GraphResponse{PersonAward}"/> object.
         /// </summary>
         /// <param name="personAwardToUpdate">The PersonAward to update.</param>
-        /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PersonAward>> UpdateResponseAsync(PersonAward personAwardToUpdate)
-        {
-            return this.UpdateResponseAsync(personAwardToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PersonAward using PATCH and returns a <see cref="GraphResponse{PersonAward}"/> object.
-        /// </summary>
-        /// <param name="personAwardToUpdate">The PersonAward to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PersonAward}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PersonAward>> UpdateResponseAsync(PersonAward personAwardToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PersonAward>> UpdateResponseAsync(PersonAward personAwardToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (personAwardToUpdate.AdditionalData != null)
-			{
-				if (personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAwardToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personAwardToUpdate.AdditionalData != null)
-            {
-                if (personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personAwardToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personAwardToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PersonAward>(personAwardToUpdate, cancellationToken).ConfigureAwait(false);
         }

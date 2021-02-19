@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Dimension using POST.
         /// </summary>
         /// <param name="dimensionToCreate">The Dimension to create.</param>
-        /// <returns>The created Dimension.</returns>
-        public System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate)
-        {
-            return this.CreateAsync(dimensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Dimension using POST.
-        /// </summary>
-        /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Dimension.</returns>
-        public async System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Dimension> CreateAsync(Dimension dimensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Dimension>(dimensionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Dimension using POST and returns a <see cref="GraphResponse{Dimension}"/> object.
         /// </summary>
         /// <param name="dimensionToCreate">The Dimension to create.</param>
-        /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate)
-        {
-            return this.CreateResponseAsync(dimensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Dimension using POST and returns a <see cref="GraphResponse{Dimension}"/> object.
-        /// </summary>
-        /// <param name="dimensionToCreate">The Dimension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Dimension>> CreateResponseAsync(Dimension dimensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Dimension>(dimensionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Dimension.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Dimension.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Dimension>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Dimension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Dimension and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Dimension using PATCH.
         /// </summary>
         /// <param name="dimensionToUpdate">The Dimension to update.</param>
-        /// <returns>The updated Dimension.</returns>
-        public System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate)
-        {
-            return this.UpdateAsync(dimensionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Dimension using PATCH.
-        /// </summary>
-        /// <param name="dimensionToUpdate">The Dimension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Dimension.</returns>
-        public async System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Dimension> UpdateAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dimensionToUpdate.AdditionalData != null)
-			{
-				if (dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dimensionToUpdate.AdditionalData != null)
-            {
-                if (dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Dimension>(dimensionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Dimension using PATCH and returns a <see cref="GraphResponse{Dimension}"/> object.
         /// </summary>
         /// <param name="dimensionToUpdate">The Dimension to update.</param>
-        /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate)
-        {
-            return this.UpdateResponseAsync(dimensionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Dimension using PATCH and returns a <see cref="GraphResponse{Dimension}"/> object.
-        /// </summary>
-        /// <param name="dimensionToUpdate">The Dimension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Dimension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Dimension>> UpdateResponseAsync(Dimension dimensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (dimensionToUpdate.AdditionalData != null)
-			{
-				if (dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dimensionToUpdate.AdditionalData != null)
-            {
-                if (dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dimensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dimensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Dimension>(dimensionToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppSupersedence using POST.
         /// </summary>
         /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
-        /// <returns>The created MobileAppSupersedence.</returns>
-        public System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate)
-        {
-            return this.CreateAsync(mobileAppSupersedenceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppSupersedence using POST.
-        /// </summary>
-        /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppSupersedence.</returns>
-        public async System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileAppSupersedence>(mobileAppSupersedenceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppSupersedence using POST and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
         /// </summary>
         /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> CreateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToCreate)
-        {
-            return this.CreateResponseAsync(mobileAppSupersedenceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppSupersedence using POST and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
-        /// </summary>
-        /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> CreateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> CreateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileAppSupersedence>(mobileAppSupersedenceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppSupersedence.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppSupersedence.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileAppSupersedence>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppSupersedence and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppSupersedence and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppSupersedence using PATCH.
         /// </summary>
         /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
-        /// <returns>The updated MobileAppSupersedence.</returns>
-        public System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate)
-        {
-            return this.UpdateAsync(mobileAppSupersedenceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppSupersedence using PATCH.
-        /// </summary>
-        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppSupersedence.</returns>
-        public async System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppSupersedenceToUpdate.AdditionalData != null)
-			{
-				if (mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppSupersedenceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppSupersedenceToUpdate.AdditionalData != null)
-            {
-                if (mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppSupersedenceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppSupersedence>(mobileAppSupersedenceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppSupersedence using PATCH and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
         /// </summary>
         /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> UpdateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate)
-        {
-            return this.UpdateResponseAsync(mobileAppSupersedenceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppSupersedence using PATCH and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
-        /// </summary>
-        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> UpdateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> UpdateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppSupersedenceToUpdate.AdditionalData != null)
-			{
-				if (mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppSupersedenceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppSupersedenceToUpdate.AdditionalData != null)
-            {
-                if (mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppSupersedenceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppSupersedenceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MobileAppSupersedence>(mobileAppSupersedenceToUpdate, cancellationToken).ConfigureAwait(false);
         }

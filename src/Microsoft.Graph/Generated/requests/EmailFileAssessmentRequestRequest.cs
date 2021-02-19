@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EmailFileAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
-        /// <returns>The created EmailFileAssessmentRequestObject.</returns>
-        public System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate)
-        {
-            return this.CreateAsync(emailFileAssessmentRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmailFileAssessmentRequestObject using POST.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailFileAssessmentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> CreateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EmailFileAssessmentRequestObject>(emailFileAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate)
-        {
-            return this.CreateResponseAsync(emailFileAssessmentRequestObjectToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EmailFileAssessmentRequestObject>(emailFileAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EmailFileAssessmentRequest.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EmailFileAssessmentRequest.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EmailFileAssessmentRequestObject>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EmailFileAssessmentRequest and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EmailFileAssessmentRequest and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EmailFileAssessmentRequestObject using PATCH.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
-        /// <returns>The updated EmailFileAssessmentRequestObject.</returns>
-        public System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate)
-        {
-            return this.UpdateAsync(emailFileAssessmentRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EmailFileAssessmentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailFileAssessmentRequestObject.</returns>
-        public async System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmailFileAssessmentRequestObject> UpdateAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (emailFileAssessmentRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailFileAssessmentRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (emailFileAssessmentRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailFileAssessmentRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EmailFileAssessmentRequestObject>(emailFileAssessmentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EmailFileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
         /// </summary>
         /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate)
-        {
-            return this.UpdateResponseAsync(emailFileAssessmentRequestObjectToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EmailFileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="emailFileAssessmentRequestObjectToUpdate">The EmailFileAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> UpdateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (emailFileAssessmentRequestObjectToUpdate.AdditionalData != null)
-			{
-				if (emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailFileAssessmentRequestObjectToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (emailFileAssessmentRequestObjectToUpdate.AdditionalData != null)
-            {
-                if (emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    emailFileAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, emailFileAssessmentRequestObjectToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EmailFileAssessmentRequestObject>(emailFileAssessmentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

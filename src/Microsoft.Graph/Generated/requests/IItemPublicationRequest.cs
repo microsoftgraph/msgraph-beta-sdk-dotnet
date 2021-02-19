@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ItemPublication using POST.
         /// </summary>
         /// <param name="itemPublicationToCreate">The ItemPublication to create.</param>
-        /// <returns>The created ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> CreateAsync(ItemPublication itemPublicationToCreate);
-
-        /// <summary>
-        /// Creates the specified ItemPublication using POST.
-        /// </summary>
-        /// <param name="itemPublicationToCreate">The ItemPublication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> CreateAsync(ItemPublication itemPublicationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ItemPublication using POST and returns a <see cref="GraphResponse{ItemPublication}"/> object.
-        /// </summary>
-        /// <param name="itemPublicationToCreate">The ItemPublication to create.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> CreateResponseAsync(ItemPublication itemPublicationToCreate);
+        System.Threading.Tasks.Task<ItemPublication> CreateAsync(ItemPublication itemPublicationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ItemPublication using POST and returns a <see cref="GraphResponse{ItemPublication}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="itemPublicationToCreate">The ItemPublication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> CreateResponseAsync(ItemPublication itemPublicationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ItemPublication.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> CreateResponseAsync(ItemPublication itemPublicationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ItemPublication.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ItemPublication and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ItemPublication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemPublication.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ItemPublication using PATCH.
         /// </summary>
         /// <param name="itemPublicationToUpdate">The ItemPublication to update.</param>
-        /// <returns>The updated ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> UpdateAsync(ItemPublication itemPublicationToUpdate);
-
-        /// <summary>
-        /// Updates the specified ItemPublication using PATCH.
-        /// </summary>
-        /// <param name="itemPublicationToUpdate">The ItemPublication to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> UpdateAsync(ItemPublication itemPublicationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ItemPublication using PATCH and returns a <see cref="GraphResponse{ItemPublication}"/> object.
-        /// </summary>
-        /// <param name="itemPublicationToUpdate">The ItemPublication to update.</param>
-        /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> UpdateResponseAsync(ItemPublication itemPublicationToUpdate);
+        System.Threading.Tasks.Task<ItemPublication> UpdateAsync(ItemPublication itemPublicationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemPublication using PATCH and returns a <see cref="GraphResponse{ItemPublication}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> UpdateResponseAsync(ItemPublication itemPublicationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> UpdateResponseAsync(ItemPublication itemPublicationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

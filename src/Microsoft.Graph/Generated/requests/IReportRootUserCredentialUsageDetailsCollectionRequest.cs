@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IReportRootUserCredentialUsageDetailsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserCredentialUsageDetails to the collection via POST.
-        /// </summary>
-        /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
-        /// <returns>The created UserCredentialUsageDetails.</returns>
-        System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails);
-
         /// <summary>
         /// Adds the specified UserCredentialUsageDetails to the collection via POST.
         /// </summary>
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserCredentialUsageDetails.</returns>
-        System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified UserCredentialUsageDetails to the collection via POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.
-        /// </summary>
-        /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails);
+        System.Threading.Tasks.Task<UserCredentialUsageDetails> AddAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified UserCredentialUsageDetails to the collection via POST and returns a <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="userCredentialUsageDetails">The UserCredentialUsageDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserCredentialUsageDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserCredentialUsageDetails>> AddResponseAsync(UserCredentialUsageDetails userCredentialUsageDetails, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IReportRootUserCredentialUsageDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootUserCredentialUsageDetailsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ReportRootUserCredentialUsageDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

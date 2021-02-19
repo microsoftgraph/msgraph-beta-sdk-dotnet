@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ChatMessageHostedContent to the collection via POST.
-        /// </summary>
-        /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
-        /// <returns>The created ChatMessageHostedContent.</returns>
-        public System.Threading.Tasks.Task<ChatMessageHostedContent> AddAsync(ChatMessageHostedContent chatMessageHostedContent)
-        {
-            return this.AddAsync(chatMessageHostedContent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ChatMessageHostedContent to the collection via POST.
         /// </summary>
         /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ChatMessageHostedContent.</returns>
-        public System.Threading.Tasks.Task<ChatMessageHostedContent> AddAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ChatMessageHostedContent> AddAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ChatMessageHostedContent>(chatMessageHostedContent, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ChatMessageHostedContent to the collection via POST and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.
-        /// </summary>
-        /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
-        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> AddResponseAsync(ChatMessageHostedContent chatMessageHostedContent)
-        {
-            return this.AddResponseAsync(chatMessageHostedContent, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ChatMessageHostedContent to the collection via POST and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.
         /// </summary>
         /// <param name="chatMessageHostedContent">The ChatMessageHostedContent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> AddResponseAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> AddResponseAsync(ChatMessageHostedContent chatMessageHostedContent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ChatMessageHostedContent>(chatMessageHostedContent, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IChatMessageHostedContentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IChatMessageHostedContentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IChatMessageHostedContentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ChatMessageHostedContentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatMessageHostedContentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ChatMessageHostedContentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

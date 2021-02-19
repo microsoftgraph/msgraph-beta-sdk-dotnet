@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceUserStatus using POST.
         /// </summary>
         /// <param name="deviceComplianceUserStatusToCreate">The DeviceComplianceUserStatus to create.</param>
-        /// <returns>The created DeviceComplianceUserStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceUserStatus> CreateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceUserStatus using POST.
-        /// </summary>
-        /// <param name="deviceComplianceUserStatusToCreate">The DeviceComplianceUserStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceUserStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceUserStatus> CreateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceUserStatus using POST and returns a <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceUserStatusToCreate">The DeviceComplianceUserStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> CreateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate);
+        System.Threading.Tasks.Task<DeviceComplianceUserStatus> CreateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceComplianceUserStatus using POST and returns a <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceComplianceUserStatusToCreate">The DeviceComplianceUserStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> CreateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceUserStatus.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> CreateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComplianceUserStatus.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceUserStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComplianceUserStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceUserStatus.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceComplianceUserStatus using PATCH.
         /// </summary>
         /// <param name="deviceComplianceUserStatusToUpdate">The DeviceComplianceUserStatus to update.</param>
-        /// <returns>The updated DeviceComplianceUserStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceUserStatus> UpdateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceUserStatus using PATCH.
-        /// </summary>
-        /// <param name="deviceComplianceUserStatusToUpdate">The DeviceComplianceUserStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceUserStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceUserStatus> UpdateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceUserStatus using PATCH and returns a <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceUserStatusToUpdate">The DeviceComplianceUserStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> UpdateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate);
+        System.Threading.Tasks.Task<DeviceComplianceUserStatus> UpdateAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceUserStatus using PATCH and returns a <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceUserStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> UpdateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceUserStatus>> UpdateResponseAsync(DeviceComplianceUserStatus deviceComplianceUserStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AppConsentRequestObject to the collection via POST.
-        /// </summary>
-        /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
-        /// <returns>The created AppConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<AppConsentRequestObject> AddAsync(AppConsentRequestObject appConsentRequest)
-        {
-            return this.AddAsync(appConsentRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppConsentRequestObject to the collection via POST.
         /// </summary>
         /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppConsentRequestObject.</returns>
-        public System.Threading.Tasks.Task<AppConsentRequestObject> AddAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AppConsentRequestObject> AddAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AppConsentRequestObject>(appConsentRequest, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified AppConsentRequestObject to the collection via POST and returns a <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.
-        /// </summary>
-        /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
-        /// <returns>The <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> AddResponseAsync(AppConsentRequestObject appConsentRequest)
-        {
-            return this.AddResponseAsync(appConsentRequest, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AppConsentRequestObject to the collection via POST and returns a <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.
         /// </summary>
         /// <param name="appConsentRequest">The AppConsentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> AddResponseAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> AddResponseAsync(AppConsentRequestObject appConsentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AppConsentRequestObject>(appConsentRequest, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserAppConsentRequestsForApprovalCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserAppConsentRequestsForApprovalCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserAppConsentRequestsForApprovalCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserAppConsentRequestsForApprovalCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserAppConsentRequestsForApprovalCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserAppConsentRequestsForApprovalCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserAppConsentRequestsForApprovalCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppConsentRequestsForApprovalCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserAppConsentRequestsForApprovalCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

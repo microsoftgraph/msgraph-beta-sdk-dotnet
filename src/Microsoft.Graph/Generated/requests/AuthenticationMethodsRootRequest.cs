@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AuthenticationMethodsRoot using POST.
         /// </summary>
         /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
-        /// <returns>The created AuthenticationMethodsRoot.</returns>
-        public System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate)
-        {
-            return this.CreateAsync(authenticationMethodsRootToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AuthenticationMethodsRoot using POST.
-        /// </summary>
-        /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationMethodsRoot.</returns>
-        public async System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuthenticationMethodsRoot> CreateAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AuthenticationMethodsRoot>(authenticationMethodsRootToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AuthenticationMethodsRoot using POST and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
         /// </summary>
         /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
-        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> CreateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate)
-        {
-            return this.CreateResponseAsync(authenticationMethodsRootToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AuthenticationMethodsRoot using POST and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
-        /// </summary>
-        /// <param name="authenticationMethodsRootToCreate">The AuthenticationMethodsRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> CreateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> CreateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AuthenticationMethodsRoot>(authenticationMethodsRootToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AuthenticationMethodsRoot.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AuthenticationMethodsRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AuthenticationMethodsRoot>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AuthenticationMethodsRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AuthenticationMethodsRoot and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AuthenticationMethodsRoot using PATCH.
         /// </summary>
         /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
-        /// <returns>The updated AuthenticationMethodsRoot.</returns>
-        public System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate)
-        {
-            return this.UpdateAsync(authenticationMethodsRootToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AuthenticationMethodsRoot using PATCH.
-        /// </summary>
-        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AuthenticationMethodsRoot.</returns>
-        public async System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AuthenticationMethodsRoot> UpdateAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (authenticationMethodsRootToUpdate.AdditionalData != null)
-			{
-				if (authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationMethodsRootToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationMethodsRootToUpdate.AdditionalData != null)
-            {
-                if (authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationMethodsRootToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AuthenticationMethodsRoot>(authenticationMethodsRootToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AuthenticationMethodsRoot using PATCH and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
         /// </summary>
         /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
-        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> UpdateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate)
-        {
-            return this.UpdateResponseAsync(authenticationMethodsRootToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AuthenticationMethodsRoot using PATCH and returns a <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object.
-        /// </summary>
-        /// <param name="authenticationMethodsRootToUpdate">The AuthenticationMethodsRoot to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodsRoot}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> UpdateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsRoot>> UpdateResponseAsync(AuthenticationMethodsRoot authenticationMethodsRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (authenticationMethodsRootToUpdate.AdditionalData != null)
-			{
-				if (authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationMethodsRootToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (authenticationMethodsRootToUpdate.AdditionalData != null)
-            {
-                if (authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    authenticationMethodsRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, authenticationMethodsRootToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AuthenticationMethodsRoot>(authenticationMethodsRootToUpdate, cancellationToken).ConfigureAwait(false);
         }

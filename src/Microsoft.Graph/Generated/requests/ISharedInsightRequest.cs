@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified SharedInsight using POST.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
-        /// <returns>The created SharedInsight.</returns>
-        System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate);
-
-        /// <summary>
-        /// Creates the specified SharedInsight using POST.
-        /// </summary>
-        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedInsight.</returns>
-        System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
-        /// </summary>
-        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
-        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate);
+        System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharedInsight.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharedInsight.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SharedInsight and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified SharedInsight and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharedInsight.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified SharedInsight using PATCH.
         /// </summary>
         /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
-        /// <returns>The updated SharedInsight.</returns>
-        System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate);
-
-        /// <summary>
-        /// Updates the specified SharedInsight using PATCH.
-        /// </summary>
-        /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharedInsight.</returns>
-        System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified SharedInsight using PATCH and returns a <see cref="GraphResponse{SharedInsight}"/> object.
-        /// </summary>
-        /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>
-        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate);
+        System.Threading.Tasks.Task<SharedInsight> UpdateAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharedInsight using PATCH and returns a <see cref="GraphResponse{SharedInsight}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> UpdateResponseAsync(SharedInsight sharedInsightToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

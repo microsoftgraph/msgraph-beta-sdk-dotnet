@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
-        /// <returns>The created EnrollmentConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> AddAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment)
-        {
-            return this.AddAsync(enrollmentConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentConfigurationAssignment.</returns>
-        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> AddAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> AddAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignment, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
-        /// </summary>
-        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
-        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment)
-        {
-            return this.AddResponseAsync(enrollmentConfigurationAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignment, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceEnrollmentConfigurationAssignmentsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceEnrollmentConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceEnrollmentConfigurationAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfigurationAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceEnrollmentConfigurationAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

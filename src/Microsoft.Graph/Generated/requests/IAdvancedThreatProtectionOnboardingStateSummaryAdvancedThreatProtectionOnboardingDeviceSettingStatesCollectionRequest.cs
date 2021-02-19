@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AdvancedThreatProtectionOnboardingDeviceSettingState to the collection via POST.
-        /// </summary>
-        /// <param name="advancedThreatProtectionOnboardingDeviceSettingState">The AdvancedThreatProtectionOnboardingDeviceSettingState to add.</param>
-        /// <returns>The created AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
-        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> AddAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState);
-
         /// <summary>
         /// Adds the specified AdvancedThreatProtectionOnboardingDeviceSettingState to the collection via POST.
         /// </summary>
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingState">The AdvancedThreatProtectionOnboardingDeviceSettingState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdvancedThreatProtectionOnboardingDeviceSettingState.</returns>
-        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> AddAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AdvancedThreatProtectionOnboardingDeviceSettingState to the collection via POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.
-        /// </summary>
-        /// <param name="advancedThreatProtectionOnboardingDeviceSettingState">The AdvancedThreatProtectionOnboardingDeviceSettingState to add.</param>
-        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> AddResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState);
+        System.Threading.Tasks.Task<AdvancedThreatProtectionOnboardingDeviceSettingState> AddAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AdvancedThreatProtectionOnboardingDeviceSettingState to the collection via POST and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="advancedThreatProtectionOnboardingDeviceSettingState">The AdvancedThreatProtectionOnboardingDeviceSettingState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingDeviceSettingState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> AddResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingDeviceSettingState>> AddResponseAsync(AdvancedThreatProtectionOnboardingDeviceSettingState advancedThreatProtectionOnboardingDeviceSettingState, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

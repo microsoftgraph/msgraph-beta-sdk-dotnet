@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppIntentAndState using POST.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
-        /// <returns>The created MobileAppIntentAndState.</returns>
-        public System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate)
-        {
-            return this.CreateAsync(mobileAppIntentAndStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppIntentAndState using POST.
-        /// </summary>
-        /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppIntentAndState.</returns>
-        public async System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppIntentAndState> CreateAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileAppIntentAndState>(mobileAppIntentAndStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppIntentAndState using POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> CreateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate)
-        {
-            return this.CreateResponseAsync(mobileAppIntentAndStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppIntentAndState using POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
-        /// </summary>
-        /// <param name="mobileAppIntentAndStateToCreate">The MobileAppIntentAndState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> CreateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> CreateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileAppIntentAndState>(mobileAppIntentAndStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppIntentAndState.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppIntentAndState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileAppIntentAndState>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppIntentAndState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppIntentAndState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppIntentAndState using PATCH.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
-        /// <returns>The updated MobileAppIntentAndState.</returns>
-        public System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate)
-        {
-            return this.UpdateAsync(mobileAppIntentAndStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppIntentAndState using PATCH.
-        /// </summary>
-        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppIntentAndState.</returns>
-        public async System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppIntentAndState> UpdateAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppIntentAndStateToUpdate.AdditionalData != null)
-			{
-				if (mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppIntentAndStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppIntentAndStateToUpdate.AdditionalData != null)
-            {
-                if (mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppIntentAndStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppIntentAndState>(mobileAppIntentAndStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppIntentAndState using PATCH and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
         /// </summary>
         /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> UpdateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate)
-        {
-            return this.UpdateResponseAsync(mobileAppIntentAndStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppIntentAndState using PATCH and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
-        /// </summary>
-        /// <param name="mobileAppIntentAndStateToUpdate">The MobileAppIntentAndState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> UpdateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> UpdateResponseAsync(MobileAppIntentAndState mobileAppIntentAndStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppIntentAndStateToUpdate.AdditionalData != null)
-			{
-				if (mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppIntentAndStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppIntentAndStateToUpdate.AdditionalData != null)
-            {
-                if (mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppIntentAndStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppIntentAndStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MobileAppIntentAndState>(mobileAppIntentAndStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

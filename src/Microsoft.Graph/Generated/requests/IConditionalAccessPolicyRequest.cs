@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ConditionalAccessPolicy using POST.
         /// </summary>
         /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
-        /// <returns>The created ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate);
-
-        /// <summary>
-        /// Creates the specified ConditionalAccessPolicy using POST.
-        /// </summary>
-        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
-        /// </summary>
-        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
-        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate);
+        System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ConditionalAccessPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ConditionalAccessPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConditionalAccessPolicy.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ConditionalAccessPolicy using PATCH.
         /// </summary>
         /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
-        /// <returns>The updated ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> UpdateAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate);
-
-        /// <summary>
-        /// Updates the specified ConditionalAccessPolicy using PATCH.
-        /// </summary>
-        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> UpdateAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
-        /// </summary>
-        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
-        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate);
+        System.Threading.Tasks.Task<ConditionalAccessPolicy> UpdateAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

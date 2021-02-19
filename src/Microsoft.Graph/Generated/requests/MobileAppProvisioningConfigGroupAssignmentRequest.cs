@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
-        /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate)
-        {
-            return this.CreateAsync(mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST.
-        /// </summary>
-        /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate)
-        {
-            return this.CreateResponseAsync(mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppProvisioningConfigGroupAssignment using POST and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
-        /// </summary>
-        /// <param name="mobileAppProvisioningConfigGroupAssignmentToCreate">The MobileAppProvisioningConfigGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppProvisioningConfigGroupAssignment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppProvisioningConfigGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
-        /// <returns>The updated MobileAppProvisioningConfigGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate)
-        {
-            return this.UpdateAsync(mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH.
-        /// </summary>
-        /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppProvisioningConfigGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
-			{
-				if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
-            {
-                if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate)
-        {
-            return this.UpdateResponseAsync(mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
-        /// </summary>
-        /// <param name="mobileAppProvisioningConfigGroupAssignmentToUpdate">The MobileAppProvisioningConfigGroupAssignment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
-			{
-				if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData != null)
-            {
-                if (mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppProvisioningConfigGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppProvisioningConfigGroupAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

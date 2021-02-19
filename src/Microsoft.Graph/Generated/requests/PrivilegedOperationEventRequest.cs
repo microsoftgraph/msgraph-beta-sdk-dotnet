@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedOperationEvent using POST.
         /// </summary>
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
-        /// <returns>The created PrivilegedOperationEvent.</returns>
-        public System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate)
-        {
-            return this.CreateAsync(privilegedOperationEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using POST.
-        /// </summary>
-        /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedOperationEvent.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedOperationEvent> CreateAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PrivilegedOperationEvent>(privilegedOperationEventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified PrivilegedOperationEvent using POST and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
         /// </summary>
         /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate)
-        {
-            return this.CreateResponseAsync(privilegedOperationEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PrivilegedOperationEvent using POST and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
-        /// </summary>
-        /// <param name="privilegedOperationEventToCreate">The PrivilegedOperationEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> CreateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrivilegedOperationEvent>(privilegedOperationEventToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrivilegedOperationEvent.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedOperationEvent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<PrivilegedOperationEvent>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified PrivilegedOperationEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified PrivilegedOperationEvent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedOperationEvent using PATCH.
         /// </summary>
         /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
-        /// <returns>The updated PrivilegedOperationEvent.</returns>
-        public System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate)
-        {
-            return this.UpdateAsync(privilegedOperationEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedOperationEvent using PATCH.
-        /// </summary>
-        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedOperationEvent.</returns>
-        public async System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PrivilegedOperationEvent> UpdateAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedOperationEventToUpdate.AdditionalData != null)
-			{
-				if (privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedOperationEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedOperationEventToUpdate.AdditionalData != null)
-            {
-                if (privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedOperationEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PrivilegedOperationEvent>(privilegedOperationEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified PrivilegedOperationEvent using PATCH and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
         /// </summary>
         /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate)
-        {
-            return this.UpdateResponseAsync(privilegedOperationEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified PrivilegedOperationEvent using PATCH and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object.
-        /// </summary>
-        /// <param name="privilegedOperationEventToUpdate">The PrivilegedOperationEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> UpdateResponseAsync(PrivilegedOperationEvent privilegedOperationEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (privilegedOperationEventToUpdate.AdditionalData != null)
-			{
-				if (privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedOperationEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (privilegedOperationEventToUpdate.AdditionalData != null)
-            {
-                if (privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    privilegedOperationEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, privilegedOperationEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PrivilegedOperationEvent>(privilegedOperationEventToUpdate, cancellationToken).ConfigureAwait(false);
         }

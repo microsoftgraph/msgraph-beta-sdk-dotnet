@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceAccessReviewDecisionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessReviewDecision to the collection via POST.
-        /// </summary>
-        /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
-        /// <returns>The created AccessReviewDecision.</returns>
-        System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision);
-
         /// <summary>
         /// Adds the specified AccessReviewDecision to the collection via POST.
         /// </summary>
         /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewDecision.</returns>
-        System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AccessReviewDecision to the collection via POST and returns a <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.
-        /// </summary>
-        /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
-        /// <returns>The <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision);
+        System.Threading.Tasks.Task<AccessReviewDecision> AddAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AccessReviewDecision to the collection via POST and returns a <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="accessReviewDecision">The AccessReviewDecision to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewDecision}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewDecision>> AddResponseAsync(AccessReviewDecision accessReviewDecision, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceAccessReviewDecisionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceAccessReviewDecisionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAccessReviewDecisionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceAccessReviewDecisionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceAccessReviewDecisionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceAccessReviewDecisionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceAccessReviewDecisionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceAccessReviewDecisionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceAccessReviewDecisionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceAccessReviewDecisionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

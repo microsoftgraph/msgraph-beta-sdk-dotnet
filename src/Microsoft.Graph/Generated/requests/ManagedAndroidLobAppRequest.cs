@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAndroidLobApp using POST.
         /// </summary>
         /// <param name="managedAndroidLobAppToCreate">The ManagedAndroidLobApp to create.</param>
-        /// <returns>The created ManagedAndroidLobApp.</returns>
-        public System.Threading.Tasks.Task<ManagedAndroidLobApp> CreateAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate)
-        {
-            return this.CreateAsync(managedAndroidLobAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAndroidLobApp using POST.
-        /// </summary>
-        /// <param name="managedAndroidLobAppToCreate">The ManagedAndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAndroidLobApp.</returns>
-        public async System.Threading.Tasks.Task<ManagedAndroidLobApp> CreateAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAndroidLobApp> CreateAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAndroidLobApp>(managedAndroidLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ManagedAndroidLobApp using POST and returns a <see cref="GraphResponse{ManagedAndroidLobApp}"/> object.
         /// </summary>
         /// <param name="managedAndroidLobAppToCreate">The ManagedAndroidLobApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> CreateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate)
-        {
-            return this.CreateResponseAsync(managedAndroidLobAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagedAndroidLobApp using POST and returns a <see cref="GraphResponse{ManagedAndroidLobApp}"/> object.
-        /// </summary>
-        /// <param name="managedAndroidLobAppToCreate">The ManagedAndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> CreateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> CreateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAndroidLobApp>(managedAndroidLobAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAndroidLobApp.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAndroidLobApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ManagedAndroidLobApp>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ManagedAndroidLobApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ManagedAndroidLobApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAndroidLobApp using PATCH.
         /// </summary>
         /// <param name="managedAndroidLobAppToUpdate">The ManagedAndroidLobApp to update.</param>
-        /// <returns>The updated ManagedAndroidLobApp.</returns>
-        public System.Threading.Tasks.Task<ManagedAndroidLobApp> UpdateAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate)
-        {
-            return this.UpdateAsync(managedAndroidLobAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAndroidLobApp using PATCH.
-        /// </summary>
-        /// <param name="managedAndroidLobAppToUpdate">The ManagedAndroidLobApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedAndroidLobApp.</returns>
-        public async System.Threading.Tasks.Task<ManagedAndroidLobApp> UpdateAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagedAndroidLobApp> UpdateAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAndroidLobAppToUpdate.AdditionalData != null)
-			{
-				if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidLobAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAndroidLobAppToUpdate.AdditionalData != null)
-            {
-                if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidLobAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAndroidLobApp>(managedAndroidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ManagedAndroidLobApp using PATCH and returns a <see cref="GraphResponse{ManagedAndroidLobApp}"/> object.
         /// </summary>
         /// <param name="managedAndroidLobAppToUpdate">The ManagedAndroidLobApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> UpdateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate)
-        {
-            return this.UpdateResponseAsync(managedAndroidLobAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ManagedAndroidLobApp using PATCH and returns a <see cref="GraphResponse{ManagedAndroidLobApp}"/> object.
-        /// </summary>
-        /// <param name="managedAndroidLobAppToUpdate">The ManagedAndroidLobApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> UpdateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> UpdateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (managedAndroidLobAppToUpdate.AdditionalData != null)
-			{
-				if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidLobAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managedAndroidLobAppToUpdate.AdditionalData != null)
-            {
-                if (managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managedAndroidLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAndroidLobAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAndroidLobApp>(managedAndroidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

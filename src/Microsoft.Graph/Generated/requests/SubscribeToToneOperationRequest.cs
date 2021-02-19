@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SubscribeToToneOperation using POST.
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
-        /// <returns>The created SubscribeToToneOperation.</returns>
-        public System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate)
-        {
-            return this.CreateAsync(subscribeToToneOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SubscribeToToneOperation using POST.
-        /// </summary>
-        /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SubscribeToToneOperation.</returns>
-        public async System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SubscribeToToneOperation>(subscribeToToneOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SubscribeToToneOperation using POST and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate)
-        {
-            return this.CreateResponseAsync(subscribeToToneOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SubscribeToToneOperation using POST and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
-        /// </summary>
-        /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SubscribeToToneOperation>(subscribeToToneOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SubscribeToToneOperation.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SubscribeToToneOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SubscribeToToneOperation>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SubscribeToToneOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SubscribeToToneOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SubscribeToToneOperation using PATCH.
         /// </summary>
         /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
-        /// <returns>The updated SubscribeToToneOperation.</returns>
-        public System.Threading.Tasks.Task<SubscribeToToneOperation> UpdateAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate)
-        {
-            return this.UpdateAsync(subscribeToToneOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SubscribeToToneOperation using PATCH.
-        /// </summary>
-        /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SubscribeToToneOperation.</returns>
-        public async System.Threading.Tasks.Task<SubscribeToToneOperation> UpdateAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SubscribeToToneOperation> UpdateAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (subscribeToToneOperationToUpdate.AdditionalData != null)
-			{
-				if (subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeToToneOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (subscribeToToneOperationToUpdate.AdditionalData != null)
-            {
-                if (subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeToToneOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SubscribeToToneOperation>(subscribeToToneOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SubscribeToToneOperation using PATCH and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
         /// </summary>
         /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate)
-        {
-            return this.UpdateResponseAsync(subscribeToToneOperationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SubscribeToToneOperation using PATCH and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
-        /// </summary>
-        /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (subscribeToToneOperationToUpdate.AdditionalData != null)
-			{
-				if (subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeToToneOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (subscribeToToneOperationToUpdate.AdditionalData != null)
-            {
-                if (subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    subscribeToToneOperationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, subscribeToToneOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SubscribeToToneOperation>(subscribeToToneOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

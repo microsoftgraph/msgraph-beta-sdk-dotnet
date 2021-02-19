@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
-        /// </summary>
-        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
-        /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty)
-        {
-            return this.AddAsync(multiValueLegacyExtendedProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> AddAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.
-        /// </summary>
-        /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
-        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty)
-        {
-            return this.AddResponseAsync(multiValueLegacyExtendedProperty, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MultiValueLegacyExtendedProperty to the collection via POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.
         /// </summary>
         /// <param name="multiValueLegacyExtendedProperty">The MultiValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> AddResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedProperty, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IEventMultiValueExtendedPropertiesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEventMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IEventMultiValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<EventMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EventMultiValueExtendedPropertiesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{EventMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EventMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{EventMultiValueExtendedPropertiesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EventMultiValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EventMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EventMultiValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<EventMultiValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

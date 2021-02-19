@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectoryAudit to the collection via POST.
-        /// </summary>
-        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
-        /// <returns>The created DirectoryAudit.</returns>
-        public System.Threading.Tasks.Task<DirectoryAudit> AddAsync(DirectoryAudit directoryAudit)
-        {
-            return this.AddAsync(directoryAudit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryAudit to the collection via POST.
         /// </summary>
         /// <param name="directoryAudit">The DirectoryAudit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryAudit.</returns>
-        public System.Threading.Tasks.Task<DirectoryAudit> AddAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DirectoryAudit> AddAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectoryAudit>(directoryAudit, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
-        /// </summary>
-        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit)
-        {
-            return this.AddResponseAsync(directoryAudit, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
         /// </summary>
         /// <param name="directoryAudit">The DirectoryAudit to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAudit, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IAuditLogRootDirectoryAuditsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuditLogRootDirectoryAuditsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IAuditLogRootDirectoryAuditsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<AuditLogRootDirectoryAuditsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootDirectoryAuditsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AuditLogRootDirectoryAuditsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuditLogRootDirectoryAuditsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootDirectoryAuditsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuditLogRootDirectoryAuditsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AuditLogRootDirectoryAuditsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AuditLogRootDirectoryAuditsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<AuditLogRootDirectoryAuditsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

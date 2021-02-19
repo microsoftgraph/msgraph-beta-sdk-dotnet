@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftStoreForBusinessContainedApp using POST.
         /// </summary>
         /// <param name="microsoftStoreForBusinessContainedAppToCreate">The MicrosoftStoreForBusinessContainedApp to create.</param>
-        /// <returns>The created MicrosoftStoreForBusinessContainedApp.</returns>
-        public System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> CreateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate)
-        {
-            return this.CreateAsync(microsoftStoreForBusinessContainedAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftStoreForBusinessContainedApp using POST.
-        /// </summary>
-        /// <param name="microsoftStoreForBusinessContainedAppToCreate">The MicrosoftStoreForBusinessContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftStoreForBusinessContainedApp.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> CreateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> CreateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MicrosoftStoreForBusinessContainedApp>(microsoftStoreForBusinessContainedAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftStoreForBusinessContainedApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
         /// </summary>
         /// <param name="microsoftStoreForBusinessContainedAppToCreate">The MicrosoftStoreForBusinessContainedApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> CreateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate)
-        {
-            return this.CreateResponseAsync(microsoftStoreForBusinessContainedAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftStoreForBusinessContainedApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
-        /// </summary>
-        /// <param name="microsoftStoreForBusinessContainedAppToCreate">The MicrosoftStoreForBusinessContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> CreateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> CreateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftStoreForBusinessContainedApp>(microsoftStoreForBusinessContainedAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MicrosoftStoreForBusinessContainedApp.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MicrosoftStoreForBusinessContainedApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MicrosoftStoreForBusinessContainedApp>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MicrosoftStoreForBusinessContainedApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MicrosoftStoreForBusinessContainedApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftStoreForBusinessContainedApp using PATCH.
         /// </summary>
         /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp to update.</param>
-        /// <returns>The updated MicrosoftStoreForBusinessContainedApp.</returns>
-        public System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> UpdateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate)
-        {
-            return this.UpdateAsync(microsoftStoreForBusinessContainedAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MicrosoftStoreForBusinessContainedApp using PATCH.
-        /// </summary>
-        /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftStoreForBusinessContainedApp.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> UpdateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> UpdateAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData != null)
-			{
-				if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftStoreForBusinessContainedAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData != null)
-            {
-                if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftStoreForBusinessContainedAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MicrosoftStoreForBusinessContainedApp>(microsoftStoreForBusinessContainedAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftStoreForBusinessContainedApp using PATCH and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
         /// </summary>
         /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> UpdateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate)
-        {
-            return this.UpdateResponseAsync(microsoftStoreForBusinessContainedAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MicrosoftStoreForBusinessContainedApp using PATCH and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
-        /// </summary>
-        /// <param name="microsoftStoreForBusinessContainedAppToUpdate">The MicrosoftStoreForBusinessContainedApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> UpdateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> UpdateResponseAsync(MicrosoftStoreForBusinessContainedApp microsoftStoreForBusinessContainedAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData != null)
-			{
-				if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftStoreForBusinessContainedAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData != null)
-            {
-                if (microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftStoreForBusinessContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftStoreForBusinessContainedAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MicrosoftStoreForBusinessContainedApp>(microsoftStoreForBusinessContainedAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

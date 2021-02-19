@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceAppManagementTask using POST.
         /// </summary>
         /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
-        /// <returns>The created DeviceAppManagementTask.</returns>
-        System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceAppManagementTask using POST.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAppManagementTask.</returns>
-        System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate);
+        System.Threading.Tasks.Task<DeviceAppManagementTask> CreateAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceAppManagementTask using POST and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceAppManagementTaskToCreate">The DeviceAppManagementTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceAppManagementTask.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> CreateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceAppManagementTask.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceAppManagementTask and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceAppManagementTask.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceAppManagementTask using PATCH.
         /// </summary>
         /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
-        /// <returns>The updated DeviceAppManagementTask.</returns>
-        System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceAppManagementTask using PATCH.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceAppManagementTask.</returns>
-        System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
-        /// </summary>
-        /// <param name="deviceAppManagementTaskToUpdate">The DeviceAppManagementTask to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate);
+        System.Threading.Tasks.Task<DeviceAppManagementTask> UpdateAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceAppManagementTask using PATCH and returns a <see cref="GraphResponse{DeviceAppManagementTask}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementTask>> UpdateResponseAsync(DeviceAppManagementTask deviceAppManagementTaskToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

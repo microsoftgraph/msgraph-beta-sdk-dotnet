@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified RegionalAndLanguageSettings using POST.
         /// </summary>
         /// <param name="regionalAndLanguageSettingsToCreate">The RegionalAndLanguageSettings to create.</param>
-        /// <returns>The created RegionalAndLanguageSettings.</returns>
-        public System.Threading.Tasks.Task<RegionalAndLanguageSettings> CreateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate)
-        {
-            return this.CreateAsync(regionalAndLanguageSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RegionalAndLanguageSettings using POST.
-        /// </summary>
-        /// <param name="regionalAndLanguageSettingsToCreate">The RegionalAndLanguageSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RegionalAndLanguageSettings.</returns>
-        public async System.Threading.Tasks.Task<RegionalAndLanguageSettings> CreateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RegionalAndLanguageSettings> CreateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<RegionalAndLanguageSettings>(regionalAndLanguageSettingsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified RegionalAndLanguageSettings using POST and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
         /// </summary>
         /// <param name="regionalAndLanguageSettingsToCreate">The RegionalAndLanguageSettings to create.</param>
-        /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> CreateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate)
-        {
-            return this.CreateResponseAsync(regionalAndLanguageSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RegionalAndLanguageSettings using POST and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
-        /// </summary>
-        /// <param name="regionalAndLanguageSettingsToCreate">The RegionalAndLanguageSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> CreateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> CreateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RegionalAndLanguageSettings>(regionalAndLanguageSettingsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RegionalAndLanguageSettings.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RegionalAndLanguageSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<RegionalAndLanguageSettings>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified RegionalAndLanguageSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified RegionalAndLanguageSettings and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified RegionalAndLanguageSettings using PATCH.
         /// </summary>
         /// <param name="regionalAndLanguageSettingsToUpdate">The RegionalAndLanguageSettings to update.</param>
-        /// <returns>The updated RegionalAndLanguageSettings.</returns>
-        public System.Threading.Tasks.Task<RegionalAndLanguageSettings> UpdateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate)
-        {
-            return this.UpdateAsync(regionalAndLanguageSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RegionalAndLanguageSettings using PATCH.
-        /// </summary>
-        /// <param name="regionalAndLanguageSettingsToUpdate">The RegionalAndLanguageSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RegionalAndLanguageSettings.</returns>
-        public async System.Threading.Tasks.Task<RegionalAndLanguageSettings> UpdateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RegionalAndLanguageSettings> UpdateAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (regionalAndLanguageSettingsToUpdate.AdditionalData != null)
-			{
-				if (regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, regionalAndLanguageSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (regionalAndLanguageSettingsToUpdate.AdditionalData != null)
-            {
-                if (regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, regionalAndLanguageSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<RegionalAndLanguageSettings>(regionalAndLanguageSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified RegionalAndLanguageSettings using PATCH and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
         /// </summary>
         /// <param name="regionalAndLanguageSettingsToUpdate">The RegionalAndLanguageSettings to update.</param>
-        /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> UpdateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate)
-        {
-            return this.UpdateResponseAsync(regionalAndLanguageSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified RegionalAndLanguageSettings using PATCH and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
-        /// </summary>
-        /// <param name="regionalAndLanguageSettingsToUpdate">The RegionalAndLanguageSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> UpdateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> UpdateResponseAsync(RegionalAndLanguageSettings regionalAndLanguageSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (regionalAndLanguageSettingsToUpdate.AdditionalData != null)
-			{
-				if (regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, regionalAndLanguageSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (regionalAndLanguageSettingsToUpdate.AdditionalData != null)
-            {
-                if (regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    regionalAndLanguageSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, regionalAndLanguageSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<RegionalAndLanguageSettings>(regionalAndLanguageSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }

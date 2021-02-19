@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PlannerRoster to the collection via POST.
-        /// </summary>
-        /// <param name="plannerRoster">The PlannerRoster to add.</param>
-        /// <returns>The created PlannerRoster.</returns>
-        public System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster)
-        {
-            return this.AddAsync(plannerRoster, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PlannerRoster to the collection via POST.
         /// </summary>
         /// <param name="plannerRoster">The PlannerRoster to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerRoster.</returns>
-        public System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PlannerRoster>(plannerRoster, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PlannerRoster to the collection via POST and returns a <see cref="GraphResponse{PlannerRoster}"/> object of the request.
-        /// </summary>
-        /// <param name="plannerRoster">The PlannerRoster to add.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerRoster}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster)
-        {
-            return this.AddResponseAsync(plannerRoster, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PlannerRoster to the collection via POST and returns a <see cref="GraphResponse{PlannerRoster}"/> object of the request.
         /// </summary>
         /// <param name="plannerRoster">The PlannerRoster to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerRoster}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PlannerRoster>(plannerRoster, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PlannerRostersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PlannerRostersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

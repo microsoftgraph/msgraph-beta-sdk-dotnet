@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10SecureAssessmentConfiguration using POST.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
-        /// <returns>The created Windows10SecureAssessmentConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate)
-        {
-            return this.CreateAsync(windows10SecureAssessmentConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10SecureAssessmentConfiguration using POST.
-        /// </summary>
-        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10SecureAssessmentConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windows10SecureAssessmentConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10SecureAssessmentConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10SecureAssessmentConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10SecureAssessmentConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10SecureAssessmentConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10SecureAssessmentConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
-        /// <returns>The updated Windows10SecureAssessmentConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> UpdateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windows10SecureAssessmentConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10SecureAssessmentConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> UpdateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> UpdateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> UpdateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windows10SecureAssessmentConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> UpdateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> UpdateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

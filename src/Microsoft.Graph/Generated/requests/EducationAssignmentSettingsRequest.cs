@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified EducationAssignmentSettings using POST.
         /// </summary>
         /// <param name="educationAssignmentSettingsToCreate">The EducationAssignmentSettings to create.</param>
-        /// <returns>The created EducationAssignmentSettings.</returns>
-        public System.Threading.Tasks.Task<EducationAssignmentSettings> CreateAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate)
-        {
-            return this.CreateAsync(educationAssignmentSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationAssignmentSettings using POST.
-        /// </summary>
-        /// <param name="educationAssignmentSettingsToCreate">The EducationAssignmentSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationAssignmentSettings.</returns>
-        public async System.Threading.Tasks.Task<EducationAssignmentSettings> CreateAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationAssignmentSettings> CreateAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EducationAssignmentSettings>(educationAssignmentSettingsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified EducationAssignmentSettings using POST and returns a <see cref="GraphResponse{EducationAssignmentSettings}"/> object.
         /// </summary>
         /// <param name="educationAssignmentSettingsToCreate">The EducationAssignmentSettings to create.</param>
-        /// <returns>The <see cref="GraphResponse{EducationAssignmentSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> CreateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate)
-        {
-            return this.CreateResponseAsync(educationAssignmentSettingsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationAssignmentSettings using POST and returns a <see cref="GraphResponse{EducationAssignmentSettings}"/> object.
-        /// </summary>
-        /// <param name="educationAssignmentSettingsToCreate">The EducationAssignmentSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationAssignmentSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> CreateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> CreateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EducationAssignmentSettings>(educationAssignmentSettingsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EducationAssignmentSettings.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EducationAssignmentSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<EducationAssignmentSettings>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified EducationAssignmentSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified EducationAssignmentSettings and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified EducationAssignmentSettings using PATCH.
         /// </summary>
         /// <param name="educationAssignmentSettingsToUpdate">The EducationAssignmentSettings to update.</param>
-        /// <returns>The updated EducationAssignmentSettings.</returns>
-        public System.Threading.Tasks.Task<EducationAssignmentSettings> UpdateAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate)
-        {
-            return this.UpdateAsync(educationAssignmentSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EducationAssignmentSettings using PATCH.
-        /// </summary>
-        /// <param name="educationAssignmentSettingsToUpdate">The EducationAssignmentSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationAssignmentSettings.</returns>
-        public async System.Threading.Tasks.Task<EducationAssignmentSettings> UpdateAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationAssignmentSettings> UpdateAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (educationAssignmentSettingsToUpdate.AdditionalData != null)
-			{
-				if (educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationAssignmentSettingsToUpdate.AdditionalData != null)
-            {
-                if (educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EducationAssignmentSettings>(educationAssignmentSettingsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified EducationAssignmentSettings using PATCH and returns a <see cref="GraphResponse{EducationAssignmentSettings}"/> object.
         /// </summary>
         /// <param name="educationAssignmentSettingsToUpdate">The EducationAssignmentSettings to update.</param>
-        /// <returns>The <see cref="GraphResponse{EducationAssignmentSettings}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> UpdateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate)
-        {
-            return this.UpdateResponseAsync(educationAssignmentSettingsToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified EducationAssignmentSettings using PATCH and returns a <see cref="GraphResponse{EducationAssignmentSettings}"/> object.
-        /// </summary>
-        /// <param name="educationAssignmentSettingsToUpdate">The EducationAssignmentSettings to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EducationAssignmentSettings}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> UpdateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EducationAssignmentSettings>> UpdateResponseAsync(EducationAssignmentSettings educationAssignmentSettingsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (educationAssignmentSettingsToUpdate.AdditionalData != null)
-			{
-				if (educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentSettingsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationAssignmentSettingsToUpdate.AdditionalData != null)
-            {
-                if (educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationAssignmentSettingsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationAssignmentSettingsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EducationAssignmentSettings>(educationAssignmentSettingsToUpdate, cancellationToken).ConfigureAwait(false);
         }

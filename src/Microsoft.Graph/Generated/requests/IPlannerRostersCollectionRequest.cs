@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPlannerRostersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PlannerRoster to the collection via POST.
-        /// </summary>
-        /// <param name="plannerRoster">The PlannerRoster to add.</param>
-        /// <returns>The created PlannerRoster.</returns>
-        System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster);
-
         /// <summary>
         /// Adds the specified PlannerRoster to the collection via POST.
         /// </summary>
         /// <param name="plannerRoster">The PlannerRoster to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerRoster.</returns>
-        System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified PlannerRoster to the collection via POST and returns a <see cref="GraphResponse{PlannerRoster}"/> object of the request.
-        /// </summary>
-        /// <param name="plannerRoster">The PlannerRoster to add.</param>
-        /// <returns>The <see cref="GraphResponse{PlannerRoster}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster);
+        System.Threading.Tasks.Task<PlannerRoster> AddAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified PlannerRoster to the collection via POST and returns a <see cref="GraphResponse{PlannerRoster}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="plannerRoster">The PlannerRoster to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerRoster}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerRoster>> AddResponseAsync(PlannerRoster plannerRoster, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IPlannerRostersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerRostersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerRostersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

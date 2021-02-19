@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectorySetting to the collection via POST.
-        /// </summary>
-        /// <param name="directorySetting">The DirectorySetting to add.</param>
-        /// <returns>The created DirectorySetting.</returns>
-        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting)
-        {
-            return this.AddAsync(directorySetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectorySetting to the collection via POST.
         /// </summary>
         /// <param name="directorySetting">The DirectorySetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectorySetting.</returns>
-        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DirectorySetting> AddAsync(DirectorySetting directorySetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectorySetting>(directorySetting, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DirectorySetting to the collection via POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object of the request.
-        /// </summary>
-        /// <param name="directorySetting">The DirectorySetting to add.</param>
-        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> AddResponseAsync(DirectorySetting directorySetting)
-        {
-            return this.AddResponseAsync(directorySetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectorySetting to the collection via POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object of the request.
         /// </summary>
         /// <param name="directorySetting">The DirectorySetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> AddResponseAsync(DirectorySetting directorySetting, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> AddResponseAsync(DirectorySetting directorySetting, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectorySetting>(directorySetting, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceSettingsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceSettingsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

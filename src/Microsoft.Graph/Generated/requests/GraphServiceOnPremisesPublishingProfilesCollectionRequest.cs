@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OnPremisesPublishingProfile to the collection via POST.
-        /// </summary>
-        /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
-        /// <returns>The created OnPremisesPublishingProfile.</returns>
-        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile)
-        {
-            return this.AddAsync(onPremisesPublishingProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnPremisesPublishingProfile to the collection via POST.
         /// </summary>
         /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesPublishingProfile.</returns>
-        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OnPremisesPublishingProfile>(onPremisesPublishingProfile, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified OnPremisesPublishingProfile to the collection via POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> AddResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfile)
-        {
-            return this.AddResponseAsync(onPremisesPublishingProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnPremisesPublishingProfile to the collection via POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.
         /// </summary>
         /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> AddResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> AddResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(onPremisesPublishingProfile, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceOnPremisesPublishingProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

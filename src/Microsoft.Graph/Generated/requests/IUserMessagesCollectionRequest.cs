@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserMessagesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Message to the collection via POST.
-        /// </summary>
-        /// <param name="message">The Message to add.</param>
-        /// <returns>The created Message.</returns>
-        System.Threading.Tasks.Task<Message> AddAsync(Message message);
-
         /// <summary>
         /// Adds the specified Message to the collection via POST.
         /// </summary>
         /// <param name="message">The Message to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Message.</returns>
-        System.Threading.Tasks.Task<Message> AddAsync(Message message, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Message to the collection via POST and returns a <see cref="GraphResponse{Message}"/> object of the request.
-        /// </summary>
-        /// <param name="message">The Message to add.</param>
-        /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Message>> AddResponseAsync(Message message);
+        System.Threading.Tasks.Task<Message> AddAsync(Message message, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Message to the collection via POST and returns a <see cref="GraphResponse{Message}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="message">The Message to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Message>> AddResponseAsync(Message message, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Message>> AddResponseAsync(Message message, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMessagesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMessagesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserMessagesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserMessagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserMessagesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IUserMessagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserMessagesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserMessagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

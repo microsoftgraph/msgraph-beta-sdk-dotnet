@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAccessPackageCatalogAccessPackagesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessPackage to the collection via POST.
-        /// </summary>
-        /// <param name="accessPackage">The AccessPackage to add.</param>
-        /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage);
-
         /// <summary>
         /// Adds the specified AccessPackage to the collection via POST.
         /// </summary>
         /// <param name="accessPackage">The AccessPackage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AccessPackage to the collection via POST and returns a <see cref="GraphResponse{AccessPackage}"/> object of the request.
-        /// </summary>
-        /// <param name="accessPackage">The AccessPackage to add.</param>
-        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage);
+        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AccessPackage to the collection via POST and returns a <see cref="GraphResponse{AccessPackage}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="accessPackage">The AccessPackage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAccessPackageCatalogAccessPackagesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAccessPackageCatalogAccessPackagesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageCatalogAccessPackagesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageCatalogAccessPackagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalogAccessPackagesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IAccessPackageCatalogAccessPackagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AccessPackageCatalogAccessPackagesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageCatalogAccessPackagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalogAccessPackagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalogAccessPackagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

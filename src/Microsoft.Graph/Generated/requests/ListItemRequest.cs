@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ListItem using POST.
         /// </summary>
         /// <param name="listItemToCreate">The ListItem to create.</param>
-        /// <returns>The created ListItem.</returns>
-        public System.Threading.Tasks.Task<ListItem> CreateAsync(ListItem listItemToCreate)
-        {
-            return this.CreateAsync(listItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ListItem using POST.
-        /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> CreateAsync(ListItem listItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ListItem> CreateAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ListItem>(listItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ListItem using POST and returns a <see cref="GraphResponse{ListItem}"/> object.
         /// </summary>
         /// <param name="listItemToCreate">The ListItem to create.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> CreateResponseAsync(ListItem listItemToCreate)
-        {
-            return this.CreateResponseAsync(listItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ListItem using POST and returns a <see cref="GraphResponse{ListItem}"/> object.
-        /// </summary>
-        /// <param name="listItemToCreate">The ListItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> CreateResponseAsync(ListItem listItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> CreateResponseAsync(ListItem listItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ListItem>(listItemToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ListItem.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ListItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ListItem>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ListItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ListItem and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ListItem using PATCH.
         /// </summary>
         /// <param name="listItemToUpdate">The ListItem to update.</param>
-        /// <returns>The updated ListItem.</returns>
-        public System.Threading.Tasks.Task<ListItem> UpdateAsync(ListItem listItemToUpdate)
-        {
-            return this.UpdateAsync(listItemToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ListItem using PATCH.
-        /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ListItem.</returns>
-        public async System.Threading.Tasks.Task<ListItem> UpdateAsync(ListItem listItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ListItem> UpdateAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (listItemToUpdate.AdditionalData != null)
-			{
-				if (listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (listItemToUpdate.AdditionalData != null)
-            {
-                if (listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ListItem using PATCH and returns a <see cref="GraphResponse{ListItem}"/> object.
         /// </summary>
         /// <param name="listItemToUpdate">The ListItem to update.</param>
-        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ListItem>> UpdateResponseAsync(ListItem listItemToUpdate)
-        {
-            return this.UpdateResponseAsync(listItemToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ListItem using PATCH and returns a <see cref="GraphResponse{ListItem}"/> object.
-        /// </summary>
-        /// <param name="listItemToUpdate">The ListItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> UpdateResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> UpdateResponseAsync(ListItem listItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (listItemToUpdate.AdditionalData != null)
-			{
-				if (listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (listItemToUpdate.AdditionalData != null)
-            {
-                if (listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    listItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, listItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ListItem>(listItemToUpdate, cancellationToken).ConfigureAwait(false);
         }

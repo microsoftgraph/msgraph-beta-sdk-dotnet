@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Site to the collection via POST.
-        /// </summary>
-        /// <param name="site">The Site to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(Site site)
-        {
-            return this.AddAsync(site, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Site to the collection via POST.
         /// </summary>
         /// <param name="site">The Site to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(Site site, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(Site site, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(site.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Site to the collection via POST and returns a <see cref="GraphResponse{Site}"/> object of the request.
-        /// </summary>
-        /// <param name="site">The Site to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Site site)
-        {
-            return this.AddResponseAsync(site, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Site to the collection via POST and returns a <see cref="GraphResponse{Site}"/> object of the request.
         /// </summary>
         /// <param name="site">The Site to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Site site, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Site site, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(site.Id))

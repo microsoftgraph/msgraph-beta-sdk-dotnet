@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceHealthScriptRunSummary using POST.
         /// </summary>
         /// <param name="deviceHealthScriptRunSummaryToCreate">The DeviceHealthScriptRunSummary to create.</param>
-        /// <returns>The created DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> CreateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceHealthScriptRunSummary using POST.
-        /// </summary>
-        /// <param name="deviceHealthScriptRunSummaryToCreate">The DeviceHealthScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> CreateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceHealthScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceHealthScriptRunSummaryToCreate">The DeviceHealthScriptRunSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> CreateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate);
+        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> CreateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceHealthScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceHealthScriptRunSummaryToCreate">The DeviceHealthScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> CreateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceHealthScriptRunSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> CreateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceHealthScriptRunSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceHealthScriptRunSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceHealthScriptRunSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceHealthScriptRunSummary.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceHealthScriptRunSummary using PATCH.
         /// </summary>
         /// <param name="deviceHealthScriptRunSummaryToUpdate">The DeviceHealthScriptRunSummary to update.</param>
-        /// <returns>The updated DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> UpdateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceHealthScriptRunSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceHealthScriptRunSummaryToUpdate">The DeviceHealthScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> UpdateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceHealthScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceHealthScriptRunSummaryToUpdate">The DeviceHealthScriptRunSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> UpdateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate);
+        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> UpdateAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceHealthScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> UpdateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> UpdateResponseAsync(DeviceHealthScriptRunSummary deviceHealthScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

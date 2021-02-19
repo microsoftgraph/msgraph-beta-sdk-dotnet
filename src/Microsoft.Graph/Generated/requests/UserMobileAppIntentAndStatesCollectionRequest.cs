@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MobileAppIntentAndState to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
-        /// <returns>The created MobileAppIntentAndState.</returns>
-        public System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState)
-        {
-            return this.AddAsync(mobileAppIntentAndState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppIntentAndState to the collection via POST.
         /// </summary>
         /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppIntentAndState.</returns>
-        public System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MobileAppIntentAndState>(mobileAppIntentAndState, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified MobileAppIntentAndState to the collection via POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.
-        /// </summary>
-        /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> AddResponseAsync(MobileAppIntentAndState mobileAppIntentAndState)
-        {
-            return this.AddResponseAsync(mobileAppIntentAndState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MobileAppIntentAndState to the collection via POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.
         /// </summary>
         /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> AddResponseAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> AddResponseAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileAppIntentAndState>(mobileAppIntentAndState, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserMobileAppIntentAndStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserMobileAppIntentAndStatesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserMobileAppIntentAndStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserMobileAppIntentAndStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserMobileAppIntentAndStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

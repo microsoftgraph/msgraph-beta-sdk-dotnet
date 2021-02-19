@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceSubscribedSkusCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SubscribedSku to the collection via POST.
-        /// </summary>
-        /// <param name="subscribedSku">The SubscribedSku to add.</param>
-        /// <returns>The created SubscribedSku.</returns>
-        System.Threading.Tasks.Task<SubscribedSku> AddAsync(SubscribedSku subscribedSku);
-
         /// <summary>
         /// Adds the specified SubscribedSku to the collection via POST.
         /// </summary>
         /// <param name="subscribedSku">The SubscribedSku to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SubscribedSku.</returns>
-        System.Threading.Tasks.Task<SubscribedSku> AddAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SubscribedSku to the collection via POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object of the request.
-        /// </summary>
-        /// <param name="subscribedSku">The SubscribedSku to add.</param>
-        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku);
+        System.Threading.Tasks.Task<SubscribedSku> AddAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SubscribedSku to the collection via POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="subscribedSku">The SubscribedSku to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceSubscribedSkusCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceSubscribedSkusCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSubscribedSkusCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceSubscribedSkusCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceSubscribedSkusCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceSubscribedSkusCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceSubscribedSkusCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceSubscribedSkusCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceSubscribedSkusCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceSubscribedSkusCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

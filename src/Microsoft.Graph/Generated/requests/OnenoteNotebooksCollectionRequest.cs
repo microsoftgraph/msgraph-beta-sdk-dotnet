@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Notebook to the collection via POST.
-        /// </summary>
-        /// <param name="notebook">The Notebook to add.</param>
-        /// <returns>The created Notebook.</returns>
-        public System.Threading.Tasks.Task<Notebook> AddAsync(Notebook notebook)
-        {
-            return this.AddAsync(notebook, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Notebook to the collection via POST.
         /// </summary>
         /// <param name="notebook">The Notebook to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notebook.</returns>
-        public System.Threading.Tasks.Task<Notebook> AddAsync(Notebook notebook, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Notebook> AddAsync(Notebook notebook, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Notebook>(notebook, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
-        /// </summary>
-        /// <param name="notebook">The Notebook to add.</param>
-        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook)
-        {
-            return this.AddResponseAsync(notebook, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
         /// </summary>
         /// <param name="notebook">The Notebook to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Notebook>(notebook, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOnenoteNotebooksCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOnenoteNotebooksCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOnenoteNotebooksCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OnenoteNotebooksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnenoteNotebooksCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnenoteNotebooksCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnenoteNotebooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteNotebooksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OnenoteNotebooksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

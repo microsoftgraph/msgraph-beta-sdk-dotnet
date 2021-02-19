@@ -19,31 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
-        System.Threading.Tasks.Task AddAsync(DeviceConfiguration deviceConfiguration);
-
         /// <summary>
         /// Adds the specified DeviceConfiguration to the collection via POST.
         /// </summary>
         /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified DeviceConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.
-        /// </summary>
-        /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceConfiguration deviceConfiguration);
+        System.Threading.Tasks.Task AddAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified DeviceConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.
         /// </summary>
         /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+
     }
 }

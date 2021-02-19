@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SharedInsight to the collection via POST.
-        /// </summary>
-        /// <param name="sharedInsight">The SharedInsight to add.</param>
-        /// <returns>The created SharedInsight.</returns>
-        public System.Threading.Tasks.Task<SharedInsight> AddAsync(SharedInsight sharedInsight)
-        {
-            return this.AddAsync(sharedInsight, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SharedInsight to the collection via POST.
         /// </summary>
         /// <param name="sharedInsight">The SharedInsight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedInsight.</returns>
-        public System.Threading.Tasks.Task<SharedInsight> AddAsync(SharedInsight sharedInsight, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SharedInsight> AddAsync(SharedInsight sharedInsight, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SharedInsight>(sharedInsight, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SharedInsight to the collection via POST and returns a <see cref="GraphResponse{SharedInsight}"/> object of the request.
-        /// </summary>
-        /// <param name="sharedInsight">The SharedInsight to add.</param>
-        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedInsight>> AddResponseAsync(SharedInsight sharedInsight)
-        {
-            return this.AddResponseAsync(sharedInsight, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SharedInsight to the collection via POST and returns a <see cref="GraphResponse{SharedInsight}"/> object of the request.
         /// </summary>
         /// <param name="sharedInsight">The SharedInsight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> AddResponseAsync(SharedInsight sharedInsight, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> AddResponseAsync(SharedInsight sharedInsight, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharedInsight>(sharedInsight, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOfficeGraphInsightsSharedCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOfficeGraphInsightsSharedCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOfficeGraphInsightsSharedCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OfficeGraphInsightsSharedCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsSharedCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeGraphInsightsSharedCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsSharedCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsightsSharedCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OfficeGraphInsightsSharedCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
-        /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity);
-
         /// <summary>
         /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST.
         /// </summary>
         /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity);
+        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> AddAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ImportedAppleDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="importedAppleDeviceIdentity">The ImportedAppleDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> AddResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDepOnboardingSettingImportedAppleDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingImportedAppleDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

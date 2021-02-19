@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
-        /// <returns>The created AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate)
-        {
-            return this.CreateAsync(androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
-        /// </summary>
-        /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidWorkProfileNineWorkEasConfiguration>(androidWorkProfileNineWorkEasConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> CreateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> CreateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> CreateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidWorkProfileNineWorkEasConfiguration>(androidWorkProfileNineWorkEasConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<AndroidWorkProfileNineWorkEasConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
-        /// <returns>The updated AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate)
-        {
-            return this.UpdateAsync(androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH.
-        /// </summary>
-        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWorkProfileNineWorkEasConfiguration>(androidWorkProfileNineWorkEasConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> UpdateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
-        /// </summary>
-        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> UpdateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> UpdateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidWorkProfileNineWorkEasConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidWorkProfileNineWorkEasConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidWorkProfileNineWorkEasConfiguration>(androidWorkProfileNineWorkEasConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

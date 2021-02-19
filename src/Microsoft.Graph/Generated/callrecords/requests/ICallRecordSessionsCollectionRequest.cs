@@ -20,28 +20,13 @@ namespace Microsoft.Graph.CallRecords
     /// </summary>
     public partial interface ICallRecordSessionsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Session to the collection via POST.
-        /// </summary>
-        /// <param name="session">The Session to add.</param>
-        /// <returns>The created Session.</returns>
-        System.Threading.Tasks.Task<Session> AddAsync(Session session);
-
         /// <summary>
         /// Adds the specified Session to the collection via POST.
         /// </summary>
         /// <param name="session">The Session to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Session.</returns>
-        System.Threading.Tasks.Task<Session> AddAsync(Session session, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified Session to the collection via POST and returns a <see cref="GraphResponse{Session}"/> object of the request.
-        /// </summary>
-        /// <param name="session">The Session to add.</param>
-        /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session);
+        System.Threading.Tasks.Task<Session> AddAsync(Session session, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified Session to the collection via POST and returns a <see cref="GraphResponse{Session}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph.CallRecords
         /// <param name="session">The Session to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Session>> AddResponseAsync(Session session, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICallRecordSessionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CallRecordSessionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CallRecordSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

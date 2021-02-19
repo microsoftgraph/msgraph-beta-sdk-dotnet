@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DirectoryObject to the collection via POST.
-        /// </summary>
-        /// <param name="directoryObject">The DirectoryObject to add.</param>
-        /// <returns>The created DirectoryObject.</returns>
-        public System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject)
-        {
-            return this.AddAsync(directoryObject, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryObject to the collection via POST.
         /// </summary>
         /// <param name="directoryObject">The DirectoryObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryObject.</returns>
-        public System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DirectoryObject> AddAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectoryObject>(directoryObject, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
-        /// </summary>
-        /// <param name="directoryObject">The DirectoryObject to add.</param>
-        /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> AddResponseAsync(DirectoryObject directoryObject)
-        {
-            return this.AddResponseAsync(directoryObject, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DirectoryObject to the collection via POST and returns a <see cref="GraphResponse{DirectoryObject}"/> object of the request.
         /// </summary>
         /// <param name="directoryObject">The DirectoryObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> AddResponseAsync(DirectoryObject directoryObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryObject>(directoryObject, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IConnectedOrganizationExternalSponsorsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IConnectedOrganizationExternalSponsorsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IConnectedOrganizationExternalSponsorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ConnectedOrganizationExternalSponsorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ConnectedOrganizationExternalSponsorsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConnectedOrganizationExternalSponsorsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ConnectedOrganizationExternalSponsorsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ConnectedOrganizationExternalSponsorsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectedOrganizationExternalSponsorsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ConnectedOrganizationExternalSponsorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ConnectedOrganizationExternalSponsorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ConnectedOrganizationExternalSponsorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

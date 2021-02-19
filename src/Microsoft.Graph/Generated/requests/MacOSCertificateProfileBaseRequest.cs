@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSCertificateProfileBase using POST.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
-        /// <returns>The created MacOSCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate)
-        {
-            return this.CreateAsync(macOSCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSCertificateProfileBase using POST.
-        /// </summary>
-        /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSCertificateProfileBase> CreateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MacOSCertificateProfileBase>(macOSCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSCertificateProfileBase using POST and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> CreateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate)
-        {
-            return this.CreateResponseAsync(macOSCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSCertificateProfileBase using POST and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
-        /// </summary>
-        /// <param name="macOSCertificateProfileBaseToCreate">The MacOSCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> CreateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> CreateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOSCertificateProfileBase>(macOSCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSCertificateProfileBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSCertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSCertificateProfileBase using PATCH.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
-        /// <returns>The updated MacOSCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate)
-        {
-            return this.UpdateAsync(macOSCertificateProfileBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSCertificateProfileBase using PATCH.
-        /// </summary>
-        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSCertificateProfileBase> UpdateAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSCertificateProfileBase>(macOSCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> UpdateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate)
-        {
-            return this.UpdateResponseAsync(macOSCertificateProfileBaseToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object.
-        /// </summary>
-        /// <param name="macOSCertificateProfileBaseToUpdate">The MacOSCertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSCertificateProfileBase}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> UpdateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSCertificateProfileBase>> UpdateResponseAsync(MacOSCertificateProfileBase macOSCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MacOSCertificateProfileBase>(macOSCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

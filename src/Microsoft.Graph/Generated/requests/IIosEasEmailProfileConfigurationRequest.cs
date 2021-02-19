@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified IosEasEmailProfileConfiguration using POST.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
-        /// <returns>The created IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using POST.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified IosEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate);
+        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> CreateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified IosEasEmailProfileConfiguration using POST and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="iosEasEmailProfileConfigurationToCreate">The IosEasEmailProfileConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosEasEmailProfileConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> CreateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosEasEmailProfileConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosEasEmailProfileConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified IosEasEmailProfileConfiguration using PATCH.
         /// </summary>
         /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
-        /// <returns>The updated IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified IosEasEmailProfileConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified IosEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEasEmailProfileConfigurationToUpdate">The IosEasEmailProfileConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate);
+        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> UpdateAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosEasEmailProfileConfiguration using PATCH and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> UpdateResponseAsync(IosEasEmailProfileConfiguration iosEasEmailProfileConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

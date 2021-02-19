@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanySalesInvoicesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SalesInvoice to the collection via POST.
-        /// </summary>
-        /// <param name="salesInvoice">The SalesInvoice to add.</param>
-        /// <returns>The created SalesInvoice.</returns>
-        System.Threading.Tasks.Task<SalesInvoice> AddAsync(SalesInvoice salesInvoice);
-
         /// <summary>
         /// Adds the specified SalesInvoice to the collection via POST.
         /// </summary>
         /// <param name="salesInvoice">The SalesInvoice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesInvoice.</returns>
-        System.Threading.Tasks.Task<SalesInvoice> AddAsync(SalesInvoice salesInvoice, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SalesInvoice to the collection via POST and returns a <see cref="GraphResponse{SalesInvoice}"/> object of the request.
-        /// </summary>
-        /// <param name="salesInvoice">The SalesInvoice to add.</param>
-        /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> AddResponseAsync(SalesInvoice salesInvoice);
+        System.Threading.Tasks.Task<SalesInvoice> AddAsync(SalesInvoice salesInvoice, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SalesInvoice to the collection via POST and returns a <see cref="GraphResponse{SalesInvoice}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="salesInvoice">The SalesInvoice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesInvoice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> AddResponseAsync(SalesInvoice salesInvoice, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SalesInvoice>> AddResponseAsync(SalesInvoice salesInvoice, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesInvoicesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesInvoicesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesInvoicesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanySalesInvoicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesInvoicesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICompanySalesInvoicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesInvoicesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanySalesInvoicesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesInvoicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesInvoicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

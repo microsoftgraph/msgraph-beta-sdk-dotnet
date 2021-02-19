@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Mention to the collection via POST.
-        /// </summary>
-        /// <param name="mention">The Mention to add.</param>
-        /// <returns>The created Mention.</returns>
-        public System.Threading.Tasks.Task<Mention> AddAsync(Mention mention)
-        {
-            return this.AddAsync(mention, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Mention to the collection via POST.
         /// </summary>
         /// <param name="mention">The Mention to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Mention.</returns>
-        public System.Threading.Tasks.Task<Mention> AddAsync(Mention mention, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Mention> AddAsync(Mention mention, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Mention>(mention, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Mention to the collection via POST and returns a <see cref="GraphResponse{Mention}"/> object of the request.
-        /// </summary>
-        /// <param name="mention">The Mention to add.</param>
-        /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Mention>> AddResponseAsync(Mention mention)
-        {
-            return this.AddResponseAsync(mention, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Mention to the collection via POST and returns a <see cref="GraphResponse{Mention}"/> object of the request.
         /// </summary>
         /// <param name="mention">The Mention to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Mention}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Mention>> AddResponseAsync(Mention mention, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Mention>> AddResponseAsync(Mention mention, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Mention>(mention, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPostMentionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPostMentionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPostMentionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PostMentionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PostMentionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PostMentionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PostMentionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PostMentionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PostMentionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PostMentionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PostMentionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PostMentionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -80,21 +80,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyCategory using POST.
         /// </summary>
         /// <param name="groupPolicyCategoryToCreate">The GroupPolicyCategory to create.</param>
-        /// <returns>The created GroupPolicyCategory.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyCategory> CreateAsync(GroupPolicyCategory groupPolicyCategoryToCreate)
-        {
-            return this.CreateAsync(groupPolicyCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyCategory using POST.
-        /// </summary>
-        /// <param name="groupPolicyCategoryToCreate">The GroupPolicyCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyCategory.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyCategory> CreateAsync(GroupPolicyCategory groupPolicyCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyCategory> CreateAsync(GroupPolicyCategory groupPolicyCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<GroupPolicyCategory>(groupPolicyCategoryToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -104,21 +94,11 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyCategory using POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object.
         /// </summary>
         /// <param name="groupPolicyCategoryToCreate">The GroupPolicyCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> CreateResponseAsync(GroupPolicyCategory groupPolicyCategoryToCreate)
-        {
-            return this.CreateResponseAsync(groupPolicyCategoryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyCategory using POST and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyCategoryToCreate">The GroupPolicyCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> CreateResponseAsync(GroupPolicyCategory groupPolicyCategoryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> CreateResponseAsync(GroupPolicyCategory groupPolicyCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupPolicyCategory>(groupPolicyCategoryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -127,48 +107,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyCategory using PATCH.
         /// </summary>
         /// <param name="groupPolicyCategoryToUpdate">The GroupPolicyCategory to update.</param>
-        /// <returns>The updated GroupPolicyCategory.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyCategory> UpdateAsync(GroupPolicyCategory groupPolicyCategoryToUpdate)
-        {
-            return this.UpdateAsync(groupPolicyCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyCategory using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyCategoryToUpdate">The GroupPolicyCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyCategory.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyCategory> UpdateAsync(GroupPolicyCategory groupPolicyCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyCategory> UpdateAsync(GroupPolicyCategory groupPolicyCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyCategoryToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyCategoryToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupPolicyCategory>(groupPolicyCategoryToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -178,48 +122,12 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyCategory using PATCH and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object.
         /// </summary>
         /// <param name="groupPolicyCategoryToUpdate">The GroupPolicyCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> UpdateResponseAsync(GroupPolicyCategory groupPolicyCategoryToUpdate)
-        {
-            return this.UpdateResponseAsync(groupPolicyCategoryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupPolicyCategory using PATCH and returns a <see cref="GraphResponse{GroupPolicyCategory}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyCategoryToUpdate">The GroupPolicyCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyCategory}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> UpdateResponseAsync(GroupPolicyCategory groupPolicyCategoryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyCategory>> UpdateResponseAsync(GroupPolicyCategory groupPolicyCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupPolicyCategoryToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyCategoryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyCategoryToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyCategoryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<GroupPolicyCategory>(groupPolicyCategoryToUpdate, cancellationToken).ConfigureAwait(false);
         }
@@ -227,18 +135,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified GroupPolicyCategory.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<GroupPolicyCategory>(null, cancellationToken).ConfigureAwait(false);
@@ -247,18 +146,9 @@ namespace Microsoft.Graph
 		/// <summary>
         /// Deletes the specified GroupPolicyCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserAppInstallStatus to the collection via POST.
-        /// </summary>
-        /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
-        /// <returns>The created UserAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus)
-        {
-            return this.AddAsync(userAppInstallStatus, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserAppInstallStatus to the collection via POST.
         /// </summary>
         /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserAppInstallStatus>(userAppInstallStatus, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.
-        /// </summary>
-        /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> AddResponseAsync(UserAppInstallStatus userAppInstallStatus)
-        {
-            return this.AddResponseAsync(userAppInstallStatus, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.
         /// </summary>
         /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> AddResponseAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> AddResponseAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserAppInstallStatus>(userAppInstallStatus, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<MobileAppUserStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppUserStatusesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppUserStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppUserStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<MobileAppUserStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

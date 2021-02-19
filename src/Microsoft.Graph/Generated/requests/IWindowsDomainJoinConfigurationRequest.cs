@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDomainJoinConfiguration using POST.
         /// </summary>
         /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
-        /// <returns>The created WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> CreateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsDomainJoinConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> CreateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsDomainJoinConfiguration using POST and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> CreateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate);
+        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> CreateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsDomainJoinConfiguration using POST and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsDomainJoinConfigurationToCreate">The WindowsDomainJoinConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> CreateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsDomainJoinConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> CreateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsDomainJoinConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsDomainJoinConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsDomainJoinConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsDomainJoinConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsDomainJoinConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsDomainJoinConfigurationToUpdate">The WindowsDomainJoinConfiguration to update.</param>
-        /// <returns>The updated WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> UpdateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsDomainJoinConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windowsDomainJoinConfigurationToUpdate">The WindowsDomainJoinConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> UpdateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsDomainJoinConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windowsDomainJoinConfigurationToUpdate">The WindowsDomainJoinConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> UpdateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate);
+        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> UpdateAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsDomainJoinConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> UpdateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> UpdateResponseAsync(WindowsDomainJoinConfiguration windowsDomainJoinConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

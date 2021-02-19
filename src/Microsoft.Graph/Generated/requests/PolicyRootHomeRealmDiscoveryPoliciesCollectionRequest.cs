@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy)
-        {
-            return this.AddAsync(homeRealmDiscoveryPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
-        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicy, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
-        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy)
-        {
-            return this.AddResponseAsync(homeRealmDiscoveryPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified HomeRealmDiscoveryPolicy to the collection via POST and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.
         /// </summary>
         /// <param name="homeRealmDiscoveryPolicy">The HomeRealmDiscoveryPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicy, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<PolicyRootHomeRealmDiscoveryPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

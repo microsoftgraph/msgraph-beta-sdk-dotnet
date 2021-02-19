@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10CustomConfiguration using POST.
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
-        /// <returns>The created Windows10CustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate)
-        {
-            return this.CreateAsync(windows10CustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10CustomConfiguration using POST.
-        /// </summary>
-        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10CustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10CustomConfiguration>(windows10CustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(windows10CustomConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10CustomConfiguration>(windows10CustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10CustomConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10CustomConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Windows10CustomConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Windows10CustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Windows10CustomConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10CustomConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
-        /// <returns>The updated Windows10CustomConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10CustomConfiguration> UpdateAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate)
-        {
-            return this.UpdateAsync(windows10CustomConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10CustomConfiguration using PATCH.
-        /// </summary>
-        /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10CustomConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10CustomConfiguration> UpdateAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10CustomConfiguration> UpdateAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10CustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10CustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10CustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10CustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10CustomConfiguration>(windows10CustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Windows10CustomConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
         /// </summary>
         /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> UpdateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(windows10CustomConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Windows10CustomConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
-        /// </summary>
-        /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> UpdateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> UpdateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windows10CustomConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10CustomConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10CustomConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10CustomConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10CustomConfiguration>(windows10CustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

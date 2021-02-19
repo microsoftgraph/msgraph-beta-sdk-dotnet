@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyMigrationReport using POST.
         /// </summary>
         /// <param name="groupPolicyMigrationReportToCreate">The GroupPolicyMigrationReport to create.</param>
-        /// <returns>The created GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> CreateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyMigrationReport using POST.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReportToCreate">The GroupPolicyMigrationReport to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> CreateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified GroupPolicyMigrationReport using POST and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReportToCreate">The GroupPolicyMigrationReport to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> CreateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate);
+        System.Threading.Tasks.Task<GroupPolicyMigrationReport> CreateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified GroupPolicyMigrationReport using POST and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyMigrationReportToCreate">The GroupPolicyMigrationReport to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> CreateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyMigrationReport.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> CreateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyMigrationReport.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified GroupPolicyMigrationReport and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified GroupPolicyMigrationReport and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyMigrationReport.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified GroupPolicyMigrationReport using PATCH.
         /// </summary>
         /// <param name="groupPolicyMigrationReportToUpdate">The GroupPolicyMigrationReport to update.</param>
-        /// <returns>The updated GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> UpdateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyMigrationReport using PATCH.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReportToUpdate">The GroupPolicyMigrationReport to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> UpdateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified GroupPolicyMigrationReport using PATCH and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReportToUpdate">The GroupPolicyMigrationReport to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> UpdateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate);
+        System.Threading.Tasks.Task<GroupPolicyMigrationReport> UpdateAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyMigrationReport using PATCH and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> UpdateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> UpdateResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReportToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

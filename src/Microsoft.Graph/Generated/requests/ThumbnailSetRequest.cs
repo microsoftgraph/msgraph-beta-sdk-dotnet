@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified ThumbnailSet using POST.
         /// </summary>
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
-        /// <returns>The created ThumbnailSet.</returns>
-        public System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate)
-        {
-            return this.CreateAsync(thumbnailSetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ThumbnailSet using POST.
-        /// </summary>
-        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThumbnailSet.</returns>
-        public async System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ThumbnailSet>(thumbnailSetToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
         /// </summary>
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
-        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate)
-        {
-            return this.CreateResponseAsync(thumbnailSetToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
-        /// </summary>
-        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ThumbnailSet>(thumbnailSetToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ThumbnailSet.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ThumbnailSet.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<ThumbnailSet>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified ThumbnailSet and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified ThumbnailSet and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified ThumbnailSet using PATCH.
         /// </summary>
         /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
-        /// <returns>The updated ThumbnailSet.</returns>
-        public System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate)
-        {
-            return this.UpdateAsync(thumbnailSetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ThumbnailSet using PATCH.
-        /// </summary>
-        /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ThumbnailSet.</returns>
-        public async System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ThumbnailSet> UpdateAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (thumbnailSetToUpdate.AdditionalData != null)
-			{
-				if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailSetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (thumbnailSetToUpdate.AdditionalData != null)
-            {
-                if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailSetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ThumbnailSet>(thumbnailSetToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified ThumbnailSet using PATCH and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
         /// </summary>
         /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
-        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate)
-        {
-            return this.UpdateResponseAsync(thumbnailSetToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified ThumbnailSet using PATCH and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
-        /// </summary>
-        /// <param name="thumbnailSetToUpdate">The ThumbnailSet to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> UpdateResponseAsync(ThumbnailSet thumbnailSetToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (thumbnailSetToUpdate.AdditionalData != null)
-			{
-				if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailSetToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (thumbnailSetToUpdate.AdditionalData != null)
-            {
-                if (thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    thumbnailSetToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailSetToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ThumbnailSet>(thumbnailSetToUpdate, cancellationToken).ConfigureAwait(false);
         }

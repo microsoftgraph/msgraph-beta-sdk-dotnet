@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DomainDnsRecord to the collection via POST.
-        /// </summary>
-        /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
-        /// <returns>The created DomainDnsRecord.</returns>
-        public System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord)
-        {
-            return this.AddAsync(domainDnsRecord, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DomainDnsRecord to the collection via POST.
         /// </summary>
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsRecord.</returns>
-        public System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DomainDnsRecord>(domainDnsRecord, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified DomainDnsRecord to the collection via POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.
-        /// </summary>
-        /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
-        /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord)
-        {
-            return this.AddResponseAsync(domainDnsRecord, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DomainDnsRecord to the collection via POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.
         /// </summary>
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DomainDnsRecord>(domainDnsRecord, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDomainVerificationDnsRecordsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDomainVerificationDnsRecordsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDomainVerificationDnsRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DomainVerificationDnsRecordsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainVerificationDnsRecordsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainVerificationDnsRecordsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DomainVerificationDnsRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DomainVerificationDnsRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DomainVerificationDnsRecordsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
-        /// <returns>The created MacOSGeneralDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate)
-        {
-            return this.CreateAsync(macOSGeneralDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSGeneralDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSGeneralDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MacOSGeneralDeviceConfiguration>(macOSGeneralDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> CreateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(macOSGeneralDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MacOSGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> CreateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> CreateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MacOSGeneralDeviceConfiguration>(macOSGeneralDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSGeneralDeviceConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSGeneralDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MacOSGeneralDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToUpdate">The MacOSGeneralDeviceConfiguration to update.</param>
-        /// <returns>The updated MacOSGeneralDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> UpdateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate)
-        {
-            return this.UpdateAsync(macOSGeneralDeviceConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH.
-        /// </summary>
-        /// <param name="macOSGeneralDeviceConfigurationToUpdate">The MacOSGeneralDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSGeneralDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> UpdateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> UpdateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSGeneralDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSGeneralDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MacOSGeneralDeviceConfiguration>(macOSGeneralDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToUpdate">The MacOSGeneralDeviceConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> UpdateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(macOSGeneralDeviceConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="macOSGeneralDeviceConfigurationToUpdate">The MacOSGeneralDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> UpdateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> UpdateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSGeneralDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    macOSGeneralDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSGeneralDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MacOSGeneralDeviceConfiguration>(macOSGeneralDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

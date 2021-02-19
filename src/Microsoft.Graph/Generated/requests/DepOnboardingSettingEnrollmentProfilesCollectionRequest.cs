@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified EnrollmentProfile to the collection via POST.
-        /// </summary>
-        /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
-        /// <returns>The created EnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<EnrollmentProfile> AddAsync(EnrollmentProfile enrollmentProfile)
-        {
-            return this.AddAsync(enrollmentProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EnrollmentProfile to the collection via POST.
         /// </summary>
         /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<EnrollmentProfile> AddAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<EnrollmentProfile> AddAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EnrollmentProfile>(enrollmentProfile, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified EnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> AddResponseAsync(EnrollmentProfile enrollmentProfile)
-        {
-            return this.AddResponseAsync(enrollmentProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified EnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.
         /// </summary>
         /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> AddResponseAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> AddResponseAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EnrollmentProfile>(enrollmentProfile, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDepOnboardingSettingEnrollmentProfilesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDepOnboardingSettingEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDepOnboardingSettingEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DepOnboardingSettingEnrollmentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAgreementFileLocalizationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AgreementFileLocalization to the collection via POST.
-        /// </summary>
-        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
-        /// <returns>The created AgreementFileLocalization.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization);
-
         /// <summary>
         /// Adds the specified AgreementFileLocalization to the collection via POST.
         /// </summary>
         /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgreementFileLocalization.</returns>
-        System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified AgreementFileLocalization to the collection via POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.
-        /// </summary>
-        /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
-        /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization);
+        System.Threading.Tasks.Task<AgreementFileLocalization> AddAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified AgreementFileLocalization to the collection via POST and returns a <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="agreementFileLocalization">The AgreementFileLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalization>> AddResponseAsync(AgreementFileLocalization agreementFileLocalization, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IAgreementFileLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFileLocalizationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgreementFileLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

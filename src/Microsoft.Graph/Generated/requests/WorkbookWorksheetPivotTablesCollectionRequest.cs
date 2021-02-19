@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified WorkbookPivotTable to the collection via POST.
-        /// </summary>
-        /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
-        /// <returns>The created WorkbookPivotTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookPivotTable> AddAsync(WorkbookPivotTable workbookPivotTable)
-        {
-            return this.AddAsync(workbookPivotTable, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookPivotTable to the collection via POST.
         /// </summary>
         /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
-        public System.Threading.Tasks.Task<WorkbookPivotTable> AddAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<WorkbookPivotTable> AddAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookPivotTable>(workbookPivotTable, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified WorkbookPivotTable to the collection via POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.
-        /// </summary>
-        /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable)
-        {
-            return this.AddResponseAsync(workbookPivotTable, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified WorkbookPivotTable to the collection via POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.
         /// </summary>
         /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTable, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IWorkbookWorksheetPivotTablesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IWorkbookWorksheetPivotTablesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IWorkbookWorksheetPivotTablesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<WorkbookWorksheetPivotTablesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookWorksheetPivotTablesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetPivotTablesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetPivotTablesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookWorksheetPivotTablesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetPivotTablesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetPivotTablesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetPivotTablesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<WorkbookWorksheetPivotTablesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAssignedAccessProfile using POST.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
-        /// <returns>The created WindowsAssignedAccessProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsAssignedAccessProfile> CreateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate)
-        {
-            return this.CreateAsync(windowsAssignedAccessProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsAssignedAccessProfile using POST.
-        /// </summary>
-        /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAssignedAccessProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsAssignedAccessProfile> CreateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAssignedAccessProfile> CreateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsAssignedAccessProfile>(windowsAssignedAccessProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsAssignedAccessProfile using POST and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> CreateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate)
-        {
-            return this.CreateResponseAsync(windowsAssignedAccessProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsAssignedAccessProfile using POST and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
-        /// </summary>
-        /// <param name="windowsAssignedAccessProfileToCreate">The WindowsAssignedAccessProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> CreateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> CreateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsAssignedAccessProfile>(windowsAssignedAccessProfileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsAssignedAccessProfile.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsAssignedAccessProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsAssignedAccessProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsAssignedAccessProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsAssignedAccessProfile and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsAssignedAccessProfile using PATCH.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToUpdate">The WindowsAssignedAccessProfile to update.</param>
-        /// <returns>The updated WindowsAssignedAccessProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsAssignedAccessProfile> UpdateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate)
-        {
-            return this.UpdateAsync(windowsAssignedAccessProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsAssignedAccessProfile using PATCH.
-        /// </summary>
-        /// <param name="windowsAssignedAccessProfileToUpdate">The WindowsAssignedAccessProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsAssignedAccessProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsAssignedAccessProfile> UpdateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsAssignedAccessProfile> UpdateAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsAssignedAccessProfileToUpdate.AdditionalData != null)
-			{
-				if (windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAssignedAccessProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsAssignedAccessProfileToUpdate.AdditionalData != null)
-            {
-                if (windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAssignedAccessProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsAssignedAccessProfile>(windowsAssignedAccessProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsAssignedAccessProfile using PATCH and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
         /// </summary>
         /// <param name="windowsAssignedAccessProfileToUpdate">The WindowsAssignedAccessProfile to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> UpdateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsAssignedAccessProfileToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsAssignedAccessProfile using PATCH and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
-        /// </summary>
-        /// <param name="windowsAssignedAccessProfileToUpdate">The WindowsAssignedAccessProfile to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> UpdateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> UpdateResponseAsync(WindowsAssignedAccessProfile windowsAssignedAccessProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsAssignedAccessProfileToUpdate.AdditionalData != null)
-			{
-				if (windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAssignedAccessProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsAssignedAccessProfileToUpdate.AdditionalData != null)
-            {
-                if (windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsAssignedAccessProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsAssignedAccessProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsAssignedAccessProfile>(windowsAssignedAccessProfileToUpdate, cancellationToken).ConfigureAwait(false);
         }

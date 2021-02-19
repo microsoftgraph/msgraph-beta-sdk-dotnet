@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ImportedAppleDeviceIdentity using POST.
         /// </summary>
         /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
-        /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> CreateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate);
-
-        /// <summary>
-        /// Creates the specified ImportedAppleDeviceIdentity using POST.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> CreateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ImportedAppleDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> CreateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate);
+        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> CreateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ImportedAppleDeviceIdentity using POST and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="importedAppleDeviceIdentityToCreate">The ImportedAppleDeviceIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> CreateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ImportedAppleDeviceIdentity.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> CreateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ImportedAppleDeviceIdentity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ImportedAppleDeviceIdentity and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ImportedAppleDeviceIdentity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ImportedAppleDeviceIdentity.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ImportedAppleDeviceIdentity using PATCH.
         /// </summary>
         /// <param name="importedAppleDeviceIdentityToUpdate">The ImportedAppleDeviceIdentity to update.</param>
-        /// <returns>The updated ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> UpdateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate);
-
-        /// <summary>
-        /// Updates the specified ImportedAppleDeviceIdentity using PATCH.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentityToUpdate">The ImportedAppleDeviceIdentity to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> UpdateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ImportedAppleDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
-        /// </summary>
-        /// <param name="importedAppleDeviceIdentityToUpdate">The ImportedAppleDeviceIdentity to update.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> UpdateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate);
+        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> UpdateAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ImportedAppleDeviceIdentity using PATCH and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> UpdateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> UpdateResponseAsync(ImportedAppleDeviceIdentity importedAppleDeviceIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

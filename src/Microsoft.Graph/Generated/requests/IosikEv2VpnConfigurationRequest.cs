@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosikEv2VpnConfiguration using POST.
         /// </summary>
         /// <param name="iosikEv2VpnConfigurationToCreate">The IosikEv2VpnConfiguration to create.</param>
-        /// <returns>The created IosikEv2VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosikEv2VpnConfiguration> CreateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate)
-        {
-            return this.CreateAsync(iosikEv2VpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosikEv2VpnConfiguration using POST.
-        /// </summary>
-        /// <param name="iosikEv2VpnConfigurationToCreate">The IosikEv2VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosikEv2VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosikEv2VpnConfiguration> CreateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosikEv2VpnConfiguration> CreateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosikEv2VpnConfiguration using POST and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="iosikEv2VpnConfigurationToCreate">The IosikEv2VpnConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> CreateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(iosikEv2VpnConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosikEv2VpnConfiguration using POST and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosikEv2VpnConfigurationToCreate">The IosikEv2VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> CreateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> CreateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosikEv2VpnConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosikEv2VpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosikEv2VpnConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosikEv2VpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosikEv2VpnConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosikEv2VpnConfiguration using PATCH.
         /// </summary>
         /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration to update.</param>
-        /// <returns>The updated IosikEv2VpnConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosikEv2VpnConfiguration> UpdateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate)
-        {
-            return this.UpdateAsync(iosikEv2VpnConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosikEv2VpnConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosikEv2VpnConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosikEv2VpnConfiguration> UpdateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosikEv2VpnConfiguration> UpdateAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosikEv2VpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosikEv2VpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosikEv2VpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosikEv2VpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosikEv2VpnConfiguration using PATCH and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> UpdateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(iosikEv2VpnConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosikEv2VpnConfiguration using PATCH and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosikEv2VpnConfigurationToUpdate">The IosikEv2VpnConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> UpdateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> UpdateResponseAsync(IosikEv2VpnConfiguration iosikEv2VpnConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosikEv2VpnConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosikEv2VpnConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosikEv2VpnConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosikEv2VpnConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosikEv2VpnConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosikEv2VpnConfiguration>(iosikEv2VpnConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

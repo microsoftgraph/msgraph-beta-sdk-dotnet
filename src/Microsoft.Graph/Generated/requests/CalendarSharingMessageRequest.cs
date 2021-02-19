@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified CalendarSharingMessage using POST.
         /// </summary>
         /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
-        /// <returns>The created CalendarSharingMessage.</returns>
-        public System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate)
-        {
-            return this.CreateAsync(calendarSharingMessageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CalendarSharingMessage using POST.
-        /// </summary>
-        /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarSharingMessage.</returns>
-        public async System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CalendarSharingMessage>(calendarSharingMessageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified CalendarSharingMessage using POST and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
         /// </summary>
         /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
-        /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate)
-        {
-            return this.CreateResponseAsync(calendarSharingMessageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CalendarSharingMessage using POST and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
-        /// </summary>
-        /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CalendarSharingMessage>(calendarSharingMessageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CalendarSharingMessage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CalendarSharingMessage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<CalendarSharingMessage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CalendarSharingMessage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CalendarSharingMessage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified CalendarSharingMessage using PATCH.
         /// </summary>
         /// <param name="calendarSharingMessageToUpdate">The CalendarSharingMessage to update.</param>
-        /// <returns>The updated CalendarSharingMessage.</returns>
-        public System.Threading.Tasks.Task<CalendarSharingMessage> UpdateAsync(CalendarSharingMessage calendarSharingMessageToUpdate)
-        {
-            return this.UpdateAsync(calendarSharingMessageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CalendarSharingMessage using PATCH.
-        /// </summary>
-        /// <param name="calendarSharingMessageToUpdate">The CalendarSharingMessage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CalendarSharingMessage.</returns>
-        public async System.Threading.Tasks.Task<CalendarSharingMessage> UpdateAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CalendarSharingMessage> UpdateAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (calendarSharingMessageToUpdate.AdditionalData != null)
-			{
-				if (calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarSharingMessageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (calendarSharingMessageToUpdate.AdditionalData != null)
-            {
-                if (calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarSharingMessageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CalendarSharingMessage>(calendarSharingMessageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified CalendarSharingMessage using PATCH and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
         /// </summary>
         /// <param name="calendarSharingMessageToUpdate">The CalendarSharingMessage to update.</param>
-        /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> UpdateResponseAsync(CalendarSharingMessage calendarSharingMessageToUpdate)
-        {
-            return this.UpdateResponseAsync(calendarSharingMessageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CalendarSharingMessage using PATCH and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
-        /// </summary>
-        /// <param name="calendarSharingMessageToUpdate">The CalendarSharingMessage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> UpdateResponseAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> UpdateResponseAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (calendarSharingMessageToUpdate.AdditionalData != null)
-			{
-				if (calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarSharingMessageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (calendarSharingMessageToUpdate.AdditionalData != null)
-            {
-                if (calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    calendarSharingMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, calendarSharingMessageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CalendarSharingMessage>(calendarSharingMessageToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISecurityCloudAppSecurityProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CloudAppSecurityProfile to the collection via POST.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfile">The CloudAppSecurityProfile to add.</param>
-        /// <returns>The created CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> AddAsync(CloudAppSecurityProfile cloudAppSecurityProfile);
-
         /// <summary>
         /// Adds the specified CloudAppSecurityProfile to the collection via POST.
         /// </summary>
         /// <param name="cloudAppSecurityProfile">The CloudAppSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudAppSecurityProfile.</returns>
-        System.Threading.Tasks.Task<CloudAppSecurityProfile> AddAsync(CloudAppSecurityProfile cloudAppSecurityProfile, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified CloudAppSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.
-        /// </summary>
-        /// <param name="cloudAppSecurityProfile">The CloudAppSecurityProfile to add.</param>
-        /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> AddResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfile);
+        System.Threading.Tasks.Task<CloudAppSecurityProfile> AddAsync(CloudAppSecurityProfile cloudAppSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified CloudAppSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="cloudAppSecurityProfile">The CloudAppSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudAppSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> AddResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CloudAppSecurityProfile>> AddResponseAsync(CloudAppSecurityProfile cloudAppSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityCloudAppSecurityProfilesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityCloudAppSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityCloudAppSecurityProfilesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityCloudAppSecurityProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityCloudAppSecurityProfilesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ISecurityCloudAppSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityCloudAppSecurityProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityCloudAppSecurityProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityCloudAppSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityCloudAppSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

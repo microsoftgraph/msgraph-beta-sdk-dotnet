@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
-        /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate)
-        {
-            return this.CreateAsync(mobileAppTroubleshootingEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppTroubleshootingEvent using POST.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> CreateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppTroubleshootingEvent using POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> CreateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate)
-        {
-            return this.CreateResponseAsync(mobileAppTroubleshootingEventToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppTroubleshootingEvent using POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEventToCreate">The MobileAppTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> CreateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> CreateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppTroubleshootingEvent.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppTroubleshootingEvent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<MobileAppTroubleshootingEvent>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified MobileAppTroubleshootingEvent and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppTroubleshootingEvent using PATCH.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
-        /// <returns>The updated MobileAppTroubleshootingEvent.</returns>
-        public System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> UpdateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate)
-        {
-            return this.UpdateAsync(mobileAppTroubleshootingEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppTroubleshootingEvent using PATCH.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppTroubleshootingEvent.</returns>
-        public async System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> UpdateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> UpdateAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppTroubleshootingEventToUpdate.AdditionalData != null)
-			{
-				if (mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppTroubleshootingEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppTroubleshootingEventToUpdate.AdditionalData != null)
-            {
-                if (mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppTroubleshootingEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEventToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified MobileAppTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
-        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> UpdateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate)
-        {
-            return this.UpdateResponseAsync(mobileAppTroubleshootingEventToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified MobileAppTroubleshootingEvent using PATCH and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEventToUpdate">The MobileAppTroubleshootingEvent to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> UpdateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> UpdateResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEventToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (mobileAppTroubleshootingEventToUpdate.AdditionalData != null)
-			{
-				if (mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppTroubleshootingEventToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppTroubleshootingEventToUpdate.AdditionalData != null)
-            {
-                if (mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppTroubleshootingEventToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppTroubleshootingEventToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MobileAppTroubleshootingEvent>(mobileAppTroubleshootingEventToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceUsersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified User to the collection via POST.
-        /// </summary>
-        /// <param name="user">The User to add.</param>
-        /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> AddAsync(User user);
-
         /// <summary>
         /// Adds the specified User to the collection via POST.
         /// </summary>
         /// <param name="user">The User to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created User.</returns>
-        System.Threading.Tasks.Task<User> AddAsync(User user, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
-        /// </summary>
-        /// <param name="user">The User to add.</param>
-        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user);
+        System.Threading.Tasks.Task<User> AddAsync(User user, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified User to the collection via POST and returns a <see cref="GraphResponse{User}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="user">The User to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<User>> AddResponseAsync(User user, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceUsersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceUsersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceUsersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceUsersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceUsersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceUsersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceUsersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceUsersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

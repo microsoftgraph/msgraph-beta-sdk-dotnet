@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified Extension using POST.
         /// </summary>
         /// <param name="extensionToCreate">The Extension to create.</param>
-        /// <returns>The created Extension.</returns>
-        public System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate)
-        {
-            return this.CreateAsync(extensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Extension using POST.
-        /// </summary>
-        /// <param name="extensionToCreate">The Extension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Extension.</returns>
-        public async System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Extension> CreateAsync(Extension extensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Extension>(extensionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
         /// </summary>
         /// <param name="extensionToCreate">The Extension to create.</param>
-        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate)
-        {
-            return this.CreateResponseAsync(extensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
-        /// </summary>
-        /// <param name="extensionToCreate">The Extension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Extension>(extensionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Extension.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Extension.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<Extension>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified Extension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified Extension and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified Extension using PATCH.
         /// </summary>
         /// <param name="extensionToUpdate">The Extension to update.</param>
-        /// <returns>The updated Extension.</returns>
-        public System.Threading.Tasks.Task<Extension> UpdateAsync(Extension extensionToUpdate)
-        {
-            return this.UpdateAsync(extensionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Extension using PATCH.
-        /// </summary>
-        /// <param name="extensionToUpdate">The Extension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Extension.</returns>
-        public async System.Threading.Tasks.Task<Extension> UpdateAsync(Extension extensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Extension> UpdateAsync(Extension extensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (extensionToUpdate.AdditionalData != null)
-			{
-				if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, extensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (extensionToUpdate.AdditionalData != null)
-            {
-                if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, extensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Extension>(extensionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified Extension using PATCH and returns a <see cref="GraphResponse{Extension}"/> object.
         /// </summary>
         /// <param name="extensionToUpdate">The Extension to update.</param>
-        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Extension>> UpdateResponseAsync(Extension extensionToUpdate)
-        {
-            return this.UpdateResponseAsync(extensionToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified Extension using PATCH and returns a <see cref="GraphResponse{Extension}"/> object.
-        /// </summary>
-        /// <param name="extensionToUpdate">The Extension to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Extension>> UpdateResponseAsync(Extension extensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Extension>> UpdateResponseAsync(Extension extensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (extensionToUpdate.AdditionalData != null)
-			{
-				if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, extensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (extensionToUpdate.AdditionalData != null)
-            {
-                if (extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    extensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, extensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Extension>(extensionToUpdate, cancellationToken).ConfigureAwait(false);
         }

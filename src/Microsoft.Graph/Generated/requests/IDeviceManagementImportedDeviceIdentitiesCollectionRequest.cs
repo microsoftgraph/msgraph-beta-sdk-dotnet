@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementImportedDeviceIdentitiesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ImportedDeviceIdentity to the collection via POST.
-        /// </summary>
-        /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
-        /// <returns>The created ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> AddAsync(ImportedDeviceIdentity importedDeviceIdentity);
-
         /// <summary>
         /// Adds the specified ImportedDeviceIdentity to the collection via POST.
         /// </summary>
         /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> AddAsync(ImportedDeviceIdentity importedDeviceIdentity, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ImportedDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.
-        /// </summary>
-        /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
-        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> AddResponseAsync(ImportedDeviceIdentity importedDeviceIdentity);
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> AddAsync(ImportedDeviceIdentity importedDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ImportedDeviceIdentity to the collection via POST and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="importedDeviceIdentity">The ImportedDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> AddResponseAsync(ImportedDeviceIdentity importedDeviceIdentity, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> AddResponseAsync(ImportedDeviceIdentity importedDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementImportedDeviceIdentitiesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementImportedDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementImportedDeviceIdentitiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementImportedDeviceIdentitiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementImportedDeviceIdentitiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

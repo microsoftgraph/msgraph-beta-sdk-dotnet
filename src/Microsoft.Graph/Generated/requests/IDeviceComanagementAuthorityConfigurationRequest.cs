@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComanagementAuthorityConfiguration using POST.
         /// </summary>
         /// <param name="deviceComanagementAuthorityConfigurationToCreate">The DeviceComanagementAuthorityConfiguration to create.</param>
-        /// <returns>The created DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> CreateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified DeviceComanagementAuthorityConfiguration using POST.
-        /// </summary>
-        /// <param name="deviceComanagementAuthorityConfigurationToCreate">The DeviceComanagementAuthorityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> CreateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DeviceComanagementAuthorityConfiguration using POST and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
-        /// </summary>
-        /// <param name="deviceComanagementAuthorityConfigurationToCreate">The DeviceComanagementAuthorityConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> CreateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate);
+        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> CreateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DeviceComanagementAuthorityConfiguration using POST and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="deviceComanagementAuthorityConfigurationToCreate">The DeviceComanagementAuthorityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> CreateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComanagementAuthorityConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> CreateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComanagementAuthorityConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceComanagementAuthorityConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DeviceComanagementAuthorityConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComanagementAuthorityConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceComanagementAuthorityConfiguration using PATCH.
         /// </summary>
         /// <param name="deviceComanagementAuthorityConfigurationToUpdate">The DeviceComanagementAuthorityConfiguration to update.</param>
-        /// <returns>The updated DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> UpdateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified DeviceComanagementAuthorityConfiguration using PATCH.
-        /// </summary>
-        /// <param name="deviceComanagementAuthorityConfigurationToUpdate">The DeviceComanagementAuthorityConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> UpdateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DeviceComanagementAuthorityConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
-        /// </summary>
-        /// <param name="deviceComanagementAuthorityConfigurationToUpdate">The DeviceComanagementAuthorityConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> UpdateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate);
+        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> UpdateAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComanagementAuthorityConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> UpdateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> UpdateResponseAsync(DeviceComanagementAuthorityConfiguration deviceComanagementAuthorityConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

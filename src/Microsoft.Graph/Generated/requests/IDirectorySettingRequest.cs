@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DirectorySetting using POST.
         /// </summary>
         /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
-        /// <returns>The created DirectorySetting.</returns>
-        System.Threading.Tasks.Task<DirectorySetting> CreateAsync(DirectorySetting directorySettingToCreate);
-
-        /// <summary>
-        /// Creates the specified DirectorySetting using POST.
-        /// </summary>
-        /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectorySetting.</returns>
-        System.Threading.Tasks.Task<DirectorySetting> CreateAsync(DirectorySetting directorySettingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DirectorySetting using POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
-        /// </summary>
-        /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
-        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> CreateResponseAsync(DirectorySetting directorySettingToCreate);
+        System.Threading.Tasks.Task<DirectorySetting> CreateAsync(DirectorySetting directorySettingToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DirectorySetting using POST and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="directorySettingToCreate">The DirectorySetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> CreateResponseAsync(DirectorySetting directorySettingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DirectorySetting.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> CreateResponseAsync(DirectorySetting directorySettingToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DirectorySetting.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DirectorySetting and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DirectorySetting and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DirectorySetting.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DirectorySetting using PATCH.
         /// </summary>
         /// <param name="directorySettingToUpdate">The DirectorySetting to update.</param>
-        /// <returns>The updated DirectorySetting.</returns>
-        System.Threading.Tasks.Task<DirectorySetting> UpdateAsync(DirectorySetting directorySettingToUpdate);
-
-        /// <summary>
-        /// Updates the specified DirectorySetting using PATCH.
-        /// </summary>
-        /// <param name="directorySettingToUpdate">The DirectorySetting to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DirectorySetting.</returns>
-        System.Threading.Tasks.Task<DirectorySetting> UpdateAsync(DirectorySetting directorySettingToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DirectorySetting using PATCH and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
-        /// </summary>
-        /// <param name="directorySettingToUpdate">The DirectorySetting to update.</param>
-        /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> UpdateResponseAsync(DirectorySetting directorySettingToUpdate);
+        System.Threading.Tasks.Task<DirectorySetting> UpdateAsync(DirectorySetting directorySettingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DirectorySetting using PATCH and returns a <see cref="GraphResponse{DirectorySetting}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DirectorySetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> UpdateResponseAsync(DirectorySetting directorySettingToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DirectorySetting>> UpdateResponseAsync(DirectorySetting directorySettingToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserSource to the collection via POST.
-        /// </summary>
-        /// <param name="userSource">The UserSource to add.</param>
-        /// <returns>The created UserSource.</returns>
-        public System.Threading.Tasks.Task<UserSource> AddAsync(UserSource userSource)
-        {
-            return this.AddAsync(userSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserSource to the collection via POST.
         /// </summary>
         /// <param name="userSource">The UserSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSource.</returns>
-        public System.Threading.Tasks.Task<UserSource> AddAsync(UserSource userSource, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserSource> AddAsync(UserSource userSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserSource>(userSource, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserSource to the collection via POST and returns a <see cref="GraphResponse{UserSource}"/> object of the request.
-        /// </summary>
-        /// <param name="userSource">The UserSource to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserSource>> AddResponseAsync(UserSource userSource)
-        {
-            return this.AddResponseAsync(userSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserSource to the collection via POST and returns a <see cref="GraphResponse{UserSource}"/> object of the request.
         /// </summary>
         /// <param name="userSource">The UserSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserSource>> AddResponseAsync(UserSource userSource, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserSource>> AddResponseAsync(UserSource userSource, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserSource>(userSource, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICustodianUserSourcesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICustodianUserSourcesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICustodianUserSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<CustodianUserSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CustodianUserSourcesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{CustodianUserSourcesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CustodianUserSourcesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CustodianUserSourcesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustodianUserSourcesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CustodianUserSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CustodianUserSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<CustodianUserSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

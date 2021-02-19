@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified UserConsentRequestObject using POST.
         /// </summary>
         /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
-        /// <returns>The created UserConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified UserConsentRequestObject using POST.
-        /// </summary>
-        /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified UserConsentRequestObject using POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> CreateResponseAsync(UserConsentRequestObject userConsentRequestObjectToCreate);
+        System.Threading.Tasks.Task<UserConsentRequestObject> CreateAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified UserConsentRequestObject using POST and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="userConsentRequestObjectToCreate">The UserConsentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> CreateResponseAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserConsentRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> CreateResponseAsync(UserConsentRequestObject userConsentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserConsentRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserConsentRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified UserConsentRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserConsentRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified UserConsentRequestObject using PATCH.
         /// </summary>
         /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject to update.</param>
-        /// <returns>The updated UserConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified UserConsentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified UserConsentRequestObject using PATCH and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="userConsentRequestObjectToUpdate">The UserConsentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> UpdateResponseAsync(UserConsentRequestObject userConsentRequestObjectToUpdate);
+        System.Threading.Tasks.Task<UserConsentRequestObject> UpdateAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserConsentRequestObject using PATCH and returns a <see cref="GraphResponse{UserConsentRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> UpdateResponseAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserConsentRequestObject>> UpdateResponseAsync(UserConsentRequestObject userConsentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

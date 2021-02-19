@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementGroupPolicyMigrationReportsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyMigrationReport to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
-        /// <returns>The created GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport);
-
         /// <summary>
         /// Adds the specified GroupPolicyMigrationReport to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyMigrationReport.</returns>
-        System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyMigrationReport to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.
-        /// </summary>
-        /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> AddResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReport);
+        System.Threading.Tasks.Task<GroupPolicyMigrationReport> AddAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified GroupPolicyMigrationReport to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyMigrationReport">The GroupPolicyMigrationReport to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReport}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> AddResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReport>> AddResponseAsync(GroupPolicyMigrationReport groupPolicyMigrationReport, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyMigrationReportsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyMigrationReportsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyMigrationReportsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

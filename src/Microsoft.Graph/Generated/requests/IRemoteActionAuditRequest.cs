@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified RemoteActionAudit using POST.
         /// </summary>
         /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
-        /// <returns>The created RemoteActionAudit.</returns>
-        System.Threading.Tasks.Task<RemoteActionAudit> CreateAsync(RemoteActionAudit remoteActionAuditToCreate);
-
-        /// <summary>
-        /// Creates the specified RemoteActionAudit using POST.
-        /// </summary>
-        /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteActionAudit.</returns>
-        System.Threading.Tasks.Task<RemoteActionAudit> CreateAsync(RemoteActionAudit remoteActionAuditToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified RemoteActionAudit using POST and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object.
-        /// </summary>
-        /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
-        /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> CreateResponseAsync(RemoteActionAudit remoteActionAuditToCreate);
+        System.Threading.Tasks.Task<RemoteActionAudit> CreateAsync(RemoteActionAudit remoteActionAuditToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified RemoteActionAudit using POST and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="remoteActionAuditToCreate">The RemoteActionAudit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> CreateResponseAsync(RemoteActionAudit remoteActionAuditToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RemoteActionAudit.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> CreateResponseAsync(RemoteActionAudit remoteActionAuditToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified RemoteActionAudit.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RemoteActionAudit and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified RemoteActionAudit and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RemoteActionAudit.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified RemoteActionAudit using PATCH.
         /// </summary>
         /// <param name="remoteActionAuditToUpdate">The RemoteActionAudit to update.</param>
-        /// <returns>The updated RemoteActionAudit.</returns>
-        System.Threading.Tasks.Task<RemoteActionAudit> UpdateAsync(RemoteActionAudit remoteActionAuditToUpdate);
-
-        /// <summary>
-        /// Updates the specified RemoteActionAudit using PATCH.
-        /// </summary>
-        /// <param name="remoteActionAuditToUpdate">The RemoteActionAudit to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RemoteActionAudit.</returns>
-        System.Threading.Tasks.Task<RemoteActionAudit> UpdateAsync(RemoteActionAudit remoteActionAuditToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified RemoteActionAudit using PATCH and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object.
-        /// </summary>
-        /// <param name="remoteActionAuditToUpdate">The RemoteActionAudit to update.</param>
-        /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> UpdateResponseAsync(RemoteActionAudit remoteActionAuditToUpdate);
+        System.Threading.Tasks.Task<RemoteActionAudit> UpdateAsync(RemoteActionAudit remoteActionAuditToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RemoteActionAudit using PATCH and returns a <see cref="GraphResponse{RemoteActionAudit}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RemoteActionAudit}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> UpdateResponseAsync(RemoteActionAudit remoteActionAuditToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RemoteActionAudit>> UpdateResponseAsync(RemoteActionAudit remoteActionAuditToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

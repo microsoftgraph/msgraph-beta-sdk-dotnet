@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified VppToken to the collection via POST.
-        /// </summary>
-        /// <param name="vppToken">The VppToken to add.</param>
-        /// <returns>The created VppToken.</returns>
-        public System.Threading.Tasks.Task<VppToken> AddAsync(VppToken vppToken)
-        {
-            return this.AddAsync(vppToken, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified VppToken to the collection via POST.
         /// </summary>
         /// <param name="vppToken">The VppToken to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VppToken.</returns>
-        public System.Threading.Tasks.Task<VppToken> AddAsync(VppToken vppToken, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<VppToken> AddAsync(VppToken vppToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<VppToken>(vppToken, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified VppToken to the collection via POST and returns a <see cref="GraphResponse{VppToken}"/> object of the request.
-        /// </summary>
-        /// <param name="vppToken">The VppToken to add.</param>
-        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VppToken>> AddResponseAsync(VppToken vppToken)
-        {
-            return this.AddResponseAsync(vppToken, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified VppToken to the collection via POST and returns a <see cref="GraphResponse{VppToken}"/> object of the request.
         /// </summary>
         /// <param name="vppToken">The VppToken to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VppToken>> AddResponseAsync(VppToken vppToken, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VppToken>> AddResponseAsync(VppToken vppToken, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<VppToken>(vppToken, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementVppTokensCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementVppTokensCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementVppTokensCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementVppTokensCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementVppTokensCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementVppTokensCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementVppTokensCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementVppTokensCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementVppTokensCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

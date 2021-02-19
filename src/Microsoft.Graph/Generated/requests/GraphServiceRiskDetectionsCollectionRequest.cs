@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified RiskDetection to the collection via POST.
-        /// </summary>
-        /// <param name="riskDetection">The RiskDetection to add.</param>
-        /// <returns>The created RiskDetection.</returns>
-        public System.Threading.Tasks.Task<RiskDetection> AddAsync(RiskDetection riskDetection)
-        {
-            return this.AddAsync(riskDetection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RiskDetection to the collection via POST.
         /// </summary>
         /// <param name="riskDetection">The RiskDetection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskDetection.</returns>
-        public System.Threading.Tasks.Task<RiskDetection> AddAsync(RiskDetection riskDetection, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<RiskDetection> AddAsync(RiskDetection riskDetection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RiskDetection>(riskDetection, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified RiskDetection to the collection via POST and returns a <see cref="GraphResponse{RiskDetection}"/> object of the request.
-        /// </summary>
-        /// <param name="riskDetection">The RiskDetection to add.</param>
-        /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskDetection>> AddResponseAsync(RiskDetection riskDetection)
-        {
-            return this.AddResponseAsync(riskDetection, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified RiskDetection to the collection via POST and returns a <see cref="GraphResponse{RiskDetection}"/> object of the request.
         /// </summary>
         /// <param name="riskDetection">The RiskDetection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskDetection}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<RiskDetection>> AddResponseAsync(RiskDetection riskDetection, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<RiskDetection>> AddResponseAsync(RiskDetection riskDetection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RiskDetection>(riskDetection, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceRiskDetectionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceRiskDetectionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceRiskDetectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceRiskDetectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceRiskDetectionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceRiskDetectionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceRiskDetectionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceRiskDetectionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceRiskDetectionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceRiskDetectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceRiskDetectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceRiskDetectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

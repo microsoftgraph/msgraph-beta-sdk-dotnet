@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsPhone81StoreApp using POST.
         /// </summary>
         /// <param name="windowsPhone81StoreAppToCreate">The WindowsPhone81StoreApp to create.</param>
-        /// <returns>The created WindowsPhone81StoreApp.</returns>
-        public System.Threading.Tasks.Task<WindowsPhone81StoreApp> CreateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate)
-        {
-            return this.CreateAsync(windowsPhone81StoreAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsPhone81StoreApp using POST.
-        /// </summary>
-        /// <param name="windowsPhone81StoreAppToCreate">The WindowsPhone81StoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhone81StoreApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhone81StoreApp> CreateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhone81StoreApp> CreateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsPhone81StoreApp>(windowsPhone81StoreAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsPhone81StoreApp using POST and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
         /// </summary>
         /// <param name="windowsPhone81StoreAppToCreate">The WindowsPhone81StoreApp to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> CreateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate)
-        {
-            return this.CreateResponseAsync(windowsPhone81StoreAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsPhone81StoreApp using POST and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
-        /// </summary>
-        /// <param name="windowsPhone81StoreAppToCreate">The WindowsPhone81StoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> CreateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> CreateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsPhone81StoreApp>(windowsPhone81StoreAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsPhone81StoreApp.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsPhone81StoreApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsPhone81StoreApp>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsPhone81StoreApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsPhone81StoreApp and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsPhone81StoreApp using PATCH.
         /// </summary>
         /// <param name="windowsPhone81StoreAppToUpdate">The WindowsPhone81StoreApp to update.</param>
-        /// <returns>The updated WindowsPhone81StoreApp.</returns>
-        public System.Threading.Tasks.Task<WindowsPhone81StoreApp> UpdateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate)
-        {
-            return this.UpdateAsync(windowsPhone81StoreAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsPhone81StoreApp using PATCH.
-        /// </summary>
-        /// <param name="windowsPhone81StoreAppToUpdate">The WindowsPhone81StoreApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81StoreApp.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhone81StoreApp> UpdateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhone81StoreApp> UpdateAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsPhone81StoreAppToUpdate.AdditionalData != null)
-			{
-				if (windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81StoreAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsPhone81StoreAppToUpdate.AdditionalData != null)
-            {
-                if (windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81StoreAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81StoreApp>(windowsPhone81StoreAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsPhone81StoreApp using PATCH and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
         /// </summary>
         /// <param name="windowsPhone81StoreAppToUpdate">The WindowsPhone81StoreApp to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> UpdateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsPhone81StoreAppToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsPhone81StoreApp using PATCH and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
-        /// </summary>
-        /// <param name="windowsPhone81StoreAppToUpdate">The WindowsPhone81StoreApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> UpdateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> UpdateResponseAsync(WindowsPhone81StoreApp windowsPhone81StoreAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsPhone81StoreAppToUpdate.AdditionalData != null)
-			{
-				if (windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81StoreAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsPhone81StoreAppToUpdate.AdditionalData != null)
-            {
-                if (windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsPhone81StoreAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81StoreAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsPhone81StoreApp>(windowsPhone81StoreAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

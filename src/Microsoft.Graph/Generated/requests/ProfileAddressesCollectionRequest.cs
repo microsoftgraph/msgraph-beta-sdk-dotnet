@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ItemAddress to the collection via POST.
-        /// </summary>
-        /// <param name="itemAddress">The ItemAddress to add.</param>
-        /// <returns>The created ItemAddress.</returns>
-        public System.Threading.Tasks.Task<ItemAddress> AddAsync(ItemAddress itemAddress)
-        {
-            return this.AddAsync(itemAddress, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemAddress to the collection via POST.
         /// </summary>
         /// <param name="itemAddress">The ItemAddress to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemAddress.</returns>
-        public System.Threading.Tasks.Task<ItemAddress> AddAsync(ItemAddress itemAddress, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ItemAddress> AddAsync(ItemAddress itemAddress, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ItemAddress>(itemAddress, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ItemAddress to the collection via POST and returns a <see cref="GraphResponse{ItemAddress}"/> object of the request.
-        /// </summary>
-        /// <param name="itemAddress">The ItemAddress to add.</param>
-        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ItemAddress>> AddResponseAsync(ItemAddress itemAddress)
-        {
-            return this.AddResponseAsync(itemAddress, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ItemAddress to the collection via POST and returns a <see cref="GraphResponse{ItemAddress}"/> object of the request.
         /// </summary>
         /// <param name="itemAddress">The ItemAddress to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ItemAddress>> AddResponseAsync(ItemAddress itemAddress, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAddress>> AddResponseAsync(ItemAddress itemAddress, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ItemAddress>(itemAddress, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IProfileAddressesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IProfileAddressesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IProfileAddressesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ProfileAddressesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAddressesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProfileAddressesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ProfileAddressesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileAddressesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfileAddressesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ProfileAddressesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ProfileAddressesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ProfileAddressesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

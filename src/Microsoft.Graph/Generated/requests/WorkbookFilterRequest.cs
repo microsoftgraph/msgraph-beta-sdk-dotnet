@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookFilter using POST.
         /// </summary>
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
-        /// <returns>The created WorkbookFilter.</returns>
-        public System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate)
-        {
-            return this.CreateAsync(workbookFilterToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookFilter using POST.
-        /// </summary>
-        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFilter.</returns>
-        public async System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookFilter> CreateAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookFilter>(workbookFilterToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
         /// </summary>
         /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate)
-        {
-            return this.CreateResponseAsync(workbookFilterToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
-        /// </summary>
-        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookFilter>(workbookFilterToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookFilter.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookFilter.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WorkbookFilter>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WorkbookFilter and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WorkbookFilter and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookFilter using PATCH.
         /// </summary>
         /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
-        /// <returns>The updated WorkbookFilter.</returns>
-        public System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate)
-        {
-            return this.UpdateAsync(workbookFilterToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookFilter using PATCH.
-        /// </summary>
-        /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookFilter.</returns>
-        public async System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookFilter> UpdateAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookFilterToUpdate.AdditionalData != null)
-			{
-				if (workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFilterToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookFilterToUpdate.AdditionalData != null)
-            {
-                if (workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFilterToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookFilter>(workbookFilterToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookFilter using PATCH and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
         /// </summary>
         /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate)
-        {
-            return this.UpdateResponseAsync(workbookFilterToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WorkbookFilter using PATCH and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
-        /// </summary>
-        /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> UpdateResponseAsync(WorkbookFilter workbookFilterToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (workbookFilterToUpdate.AdditionalData != null)
-			{
-				if (workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFilterToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (workbookFilterToUpdate.AdditionalData != null)
-            {
-                if (workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    workbookFilterToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookFilterToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookFilter>(workbookFilterToUpdate, cancellationToken).ConfigureAwait(false);
         }

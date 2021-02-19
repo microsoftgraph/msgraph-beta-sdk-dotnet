@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WorkbookChartTitle using POST.
         /// </summary>
         /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
-        /// <returns>The created WorkbookChartTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate);
-
-        /// <summary>
-        /// Creates the specified WorkbookChartTitle using POST.
-        /// </summary>
-        /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WorkbookChartTitle using POST and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
-        /// </summary>
-        /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> CreateResponseAsync(WorkbookChartTitle workbookChartTitleToCreate);
+        System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WorkbookChartTitle using POST and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> CreateResponseAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartTitle.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> CreateResponseAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookChartTitle.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WorkbookChartTitle and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WorkbookChartTitle and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartTitle.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WorkbookChartTitle using PATCH.
         /// </summary>
         /// <param name="workbookChartTitleToUpdate">The WorkbookChartTitle to update.</param>
-        /// <returns>The updated WorkbookChartTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartTitle> UpdateAsync(WorkbookChartTitle workbookChartTitleToUpdate);
-
-        /// <summary>
-        /// Updates the specified WorkbookChartTitle using PATCH.
-        /// </summary>
-        /// <param name="workbookChartTitleToUpdate">The WorkbookChartTitle to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartTitle> UpdateAsync(WorkbookChartTitle workbookChartTitleToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WorkbookChartTitle using PATCH and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
-        /// </summary>
-        /// <param name="workbookChartTitleToUpdate">The WorkbookChartTitle to update.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> UpdateResponseAsync(WorkbookChartTitle workbookChartTitleToUpdate);
+        System.Threading.Tasks.Task<WorkbookChartTitle> UpdateAsync(WorkbookChartTitle workbookChartTitleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartTitle using PATCH and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> UpdateResponseAsync(WorkbookChartTitle workbookChartTitleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> UpdateResponseAsync(WorkbookChartTitle workbookChartTitleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

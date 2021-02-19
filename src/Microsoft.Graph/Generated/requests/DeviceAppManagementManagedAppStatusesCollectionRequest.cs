@@ -33,71 +33,41 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedAppStatus to the collection via POST.
-        /// </summary>
-        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
-        /// <returns>The created ManagedAppStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedAppStatus> AddAsync(ManagedAppStatus managedAppStatus)
-        {
-            return this.AddAsync(managedAppStatus, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAppStatus to the collection via POST.
         /// </summary>
         /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatus.</returns>
-        public System.Threading.Tasks.Task<ManagedAppStatus> AddAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ManagedAppStatus> AddAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppStatus.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppStatus.GetType().FullName));
             return this.SendAsync<ManagedAppStatus>(managedAppStatus, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
-        /// </summary>
-        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus)
-        {
-            return this.AddResponseAsync(managedAppStatus, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
         /// </summary>
         /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppStatus.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppStatus.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatus, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IDeviceAppManagementManagedAppStatusesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceAppManagementManagedAppStatusesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IDeviceAppManagementManagedAppStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<DeviceAppManagementManagedAppStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -130,18 +100,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedAppStatusesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedAppStatusesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppStatusesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceAppManagementManagedAppStatusesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedAppStatusesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<DeviceAppManagementManagedAppStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

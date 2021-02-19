@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified LongRunningOperation using POST.
         /// </summary>
         /// <param name="longRunningOperationToCreate">The LongRunningOperation to create.</param>
-        /// <returns>The created LongRunningOperation.</returns>
-        System.Threading.Tasks.Task<LongRunningOperation> CreateAsync(LongRunningOperation longRunningOperationToCreate);
-
-        /// <summary>
-        /// Creates the specified LongRunningOperation using POST.
-        /// </summary>
-        /// <param name="longRunningOperationToCreate">The LongRunningOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LongRunningOperation.</returns>
-        System.Threading.Tasks.Task<LongRunningOperation> CreateAsync(LongRunningOperation longRunningOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified LongRunningOperation using POST and returns a <see cref="GraphResponse{LongRunningOperation}"/> object.
-        /// </summary>
-        /// <param name="longRunningOperationToCreate">The LongRunningOperation to create.</param>
-        /// <returns>The <see cref="GraphResponse{LongRunningOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> CreateResponseAsync(LongRunningOperation longRunningOperationToCreate);
+        System.Threading.Tasks.Task<LongRunningOperation> CreateAsync(LongRunningOperation longRunningOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified LongRunningOperation using POST and returns a <see cref="GraphResponse{LongRunningOperation}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="longRunningOperationToCreate">The LongRunningOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LongRunningOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> CreateResponseAsync(LongRunningOperation longRunningOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LongRunningOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> CreateResponseAsync(LongRunningOperation longRunningOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LongRunningOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified LongRunningOperation and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified LongRunningOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LongRunningOperation.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified LongRunningOperation using PATCH.
         /// </summary>
         /// <param name="longRunningOperationToUpdate">The LongRunningOperation to update.</param>
-        /// <returns>The updated LongRunningOperation.</returns>
-        System.Threading.Tasks.Task<LongRunningOperation> UpdateAsync(LongRunningOperation longRunningOperationToUpdate);
-
-        /// <summary>
-        /// Updates the specified LongRunningOperation using PATCH.
-        /// </summary>
-        /// <param name="longRunningOperationToUpdate">The LongRunningOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LongRunningOperation.</returns>
-        System.Threading.Tasks.Task<LongRunningOperation> UpdateAsync(LongRunningOperation longRunningOperationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified LongRunningOperation using PATCH and returns a <see cref="GraphResponse{LongRunningOperation}"/> object.
-        /// </summary>
-        /// <param name="longRunningOperationToUpdate">The LongRunningOperation to update.</param>
-        /// <returns>The <see cref="GraphResponse{LongRunningOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> UpdateResponseAsync(LongRunningOperation longRunningOperationToUpdate);
+        System.Threading.Tasks.Task<LongRunningOperation> UpdateAsync(LongRunningOperation longRunningOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LongRunningOperation using PATCH and returns a <see cref="GraphResponse{LongRunningOperation}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LongRunningOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> UpdateResponseAsync(LongRunningOperation longRunningOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LongRunningOperation>> UpdateResponseAsync(LongRunningOperation longRunningOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

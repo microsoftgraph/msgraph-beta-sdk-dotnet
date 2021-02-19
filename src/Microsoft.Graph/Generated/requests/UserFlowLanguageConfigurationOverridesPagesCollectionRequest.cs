@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UserFlowLanguagePage to the collection via POST.
-        /// </summary>
-        /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
-        /// <returns>The created UserFlowLanguagePage.</returns>
-        public System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage)
-        {
-            return this.AddAsync(userFlowLanguagePage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserFlowLanguagePage to the collection via POST.
         /// </summary>
         /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserFlowLanguagePage.</returns>
-        public System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UserFlowLanguagePage> AddAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserFlowLanguagePage>(userFlowLanguagePage, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UserFlowLanguagePage to the collection via POST and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.
-        /// </summary>
-        /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage)
-        {
-            return this.AddResponseAsync(userFlowLanguagePage, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UserFlowLanguagePage to the collection via POST and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.
         /// </summary>
         /// <param name="userFlowLanguagePage">The UserFlowLanguagePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> AddResponseAsync(UserFlowLanguagePage userFlowLanguagePage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserFlowLanguagePage>(userFlowLanguagePage, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserFlowLanguageConfigurationOverridesPagesCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserFlowLanguageConfigurationOverridesPagesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserFlowLanguageConfigurationOverridesPagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserFlowLanguageConfigurationOverridesPagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserFlowLanguageConfigurationOverridesPagesCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfigurationOverridesPagesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationOverridesPagesCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserFlowLanguageConfigurationOverridesPagesCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfigurationOverridesPagesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationOverridesPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfigurationOverridesPagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserFlowLanguageConfigurationOverridesPagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

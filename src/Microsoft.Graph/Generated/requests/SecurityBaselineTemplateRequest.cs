@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityBaselineTemplate using POST.
         /// </summary>
         /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
-        /// <returns>The created SecurityBaselineTemplate.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineTemplate> CreateAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate)
-        {
-            return this.CreateAsync(securityBaselineTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineTemplate using POST.
-        /// </summary>
-        /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineTemplate.</returns>
-        public async System.Threading.Tasks.Task<SecurityBaselineTemplate> CreateAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityBaselineTemplate> CreateAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SecurityBaselineTemplate>(securityBaselineTemplateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityBaselineTemplate using POST and returns a <see cref="GraphResponse{SecurityBaselineTemplate}"/> object.
         /// </summary>
         /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> CreateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate)
-        {
-            return this.CreateResponseAsync(securityBaselineTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineTemplate using POST and returns a <see cref="GraphResponse{SecurityBaselineTemplate}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineTemplateToCreate">The SecurityBaselineTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> CreateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> CreateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineTemplate>(securityBaselineTemplateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SecurityBaselineTemplate.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SecurityBaselineTemplate>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SecurityBaselineTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineTemplate and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SecurityBaselineTemplate using PATCH.
         /// </summary>
         /// <param name="securityBaselineTemplateToUpdate">The SecurityBaselineTemplate to update.</param>
-        /// <returns>The updated SecurityBaselineTemplate.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineTemplate> UpdateAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate)
-        {
-            return this.UpdateAsync(securityBaselineTemplateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineTemplate using PATCH.
-        /// </summary>
-        /// <param name="securityBaselineTemplateToUpdate">The SecurityBaselineTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineTemplate.</returns>
-        public async System.Threading.Tasks.Task<SecurityBaselineTemplate> UpdateAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityBaselineTemplate> UpdateAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityBaselineTemplateToUpdate.AdditionalData != null)
-			{
-				if (securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityBaselineTemplateToUpdate.AdditionalData != null)
-            {
-                if (securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SecurityBaselineTemplate>(securityBaselineTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SecurityBaselineTemplate using PATCH and returns a <see cref="GraphResponse{SecurityBaselineTemplate}"/> object.
         /// </summary>
         /// <param name="securityBaselineTemplateToUpdate">The SecurityBaselineTemplate to update.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> UpdateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate)
-        {
-            return this.UpdateResponseAsync(securityBaselineTemplateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineTemplate using PATCH and returns a <see cref="GraphResponse{SecurityBaselineTemplate}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineTemplateToUpdate">The SecurityBaselineTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> UpdateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplate>> UpdateResponseAsync(SecurityBaselineTemplate securityBaselineTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityBaselineTemplateToUpdate.AdditionalData != null)
-			{
-				if (securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityBaselineTemplateToUpdate.AdditionalData != null)
-            {
-                if (securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityBaselineTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineTemplate>(securityBaselineTemplateToUpdate, cancellationToken).ConfigureAwait(false);
         }

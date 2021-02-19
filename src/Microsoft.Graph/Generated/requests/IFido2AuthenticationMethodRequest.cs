@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified Fido2AuthenticationMethod using POST.
         /// </summary>
         /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
-        /// <returns>The created Fido2AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<Fido2AuthenticationMethod> CreateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate);
-
-        /// <summary>
-        /// Creates the specified Fido2AuthenticationMethod using POST.
-        /// </summary>
-        /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Fido2AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<Fido2AuthenticationMethod> CreateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified Fido2AuthenticationMethod using POST and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
-        /// </summary>
-        /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
-        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> CreateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate);
+        System.Threading.Tasks.Task<Fido2AuthenticationMethod> CreateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified Fido2AuthenticationMethod using POST and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="fido2AuthenticationMethodToCreate">The Fido2AuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> CreateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Fido2AuthenticationMethod.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> CreateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Fido2AuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Fido2AuthenticationMethod.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified Fido2AuthenticationMethod using PATCH.
         /// </summary>
         /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>
-        /// <returns>The updated Fido2AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<Fido2AuthenticationMethod> UpdateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate);
-
-        /// <summary>
-        /// Updates the specified Fido2AuthenticationMethod using PATCH.
-        /// </summary>
-        /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Fido2AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<Fido2AuthenticationMethod> UpdateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified Fido2AuthenticationMethod using PATCH and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
-        /// </summary>
-        /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>
-        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> UpdateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate);
+        System.Threading.Tasks.Task<Fido2AuthenticationMethod> UpdateAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Fido2AuthenticationMethod using PATCH and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> UpdateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> UpdateResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

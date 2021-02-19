@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SectionGroup to the collection via POST.
-        /// </summary>
-        /// <param name="sectionGroup">The SectionGroup to add.</param>
-        /// <returns>The created SectionGroup.</returns>
-        public System.Threading.Tasks.Task<SectionGroup> AddAsync(SectionGroup sectionGroup)
-        {
-            return this.AddAsync(sectionGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SectionGroup to the collection via POST.
         /// </summary>
         /// <param name="sectionGroup">The SectionGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SectionGroup.</returns>
-        public System.Threading.Tasks.Task<SectionGroup> AddAsync(SectionGroup sectionGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SectionGroup> AddAsync(SectionGroup sectionGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SectionGroup>(sectionGroup, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified SectionGroup to the collection via POST and returns a <see cref="GraphResponse{SectionGroup}"/> object of the request.
-        /// </summary>
-        /// <param name="sectionGroup">The SectionGroup to add.</param>
-        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup)
-        {
-            return this.AddResponseAsync(sectionGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SectionGroup to the collection via POST and returns a <see cref="GraphResponse{SectionGroup}"/> object of the request.
         /// </summary>
         /// <param name="sectionGroup">The SectionGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SectionGroup>(sectionGroup, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOnenoteSectionGroupsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOnenoteSectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOnenoteSectionGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OnenoteSectionGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteSectionGroupsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnenoteSectionGroupsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnenoteSectionGroupsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OnenoteSectionGroupsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnenoteSectionGroupsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSectionGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OnenoteSectionGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified DataClassificationService using POST.
         /// </summary>
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
-        /// <returns>The created DataClassificationService.</returns>
-        System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate);
-
-        /// <summary>
-        /// Creates the specified DataClassificationService using POST.
-        /// </summary>
-        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataClassificationService.</returns>
-        System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified DataClassificationService using POST and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
-        /// </summary>
-        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
-        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> CreateResponseAsync(DataClassificationService dataClassificationServiceToCreate);
+        System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified DataClassificationService using POST and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> CreateResponseAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DataClassificationService.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> CreateResponseAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DataClassificationService.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DataClassificationService and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified DataClassificationService and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DataClassificationService.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified DataClassificationService using PATCH.
         /// </summary>
         /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
-        /// <returns>The updated DataClassificationService.</returns>
-        System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate);
-
-        /// <summary>
-        /// Updates the specified DataClassificationService using PATCH.
-        /// </summary>
-        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataClassificationService.</returns>
-        System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified DataClassificationService using PATCH and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
-        /// </summary>
-        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
-        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> UpdateResponseAsync(DataClassificationService dataClassificationServiceToUpdate);
+        System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DataClassificationService using PATCH and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> UpdateResponseAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> UpdateResponseAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITeamworkWorkforceIntegrationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WorkforceIntegration to the collection via POST.
-        /// </summary>
-        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
-        /// <returns>The created WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration);
-
         /// <summary>
         /// Adds the specified WorkforceIntegration to the collection via POST.
         /// </summary>
         /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
-        /// </summary>
-        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration);
+        System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ITeamworkWorkforceIntegrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamworkWorkforceIntegrationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamworkWorkforceIntegrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

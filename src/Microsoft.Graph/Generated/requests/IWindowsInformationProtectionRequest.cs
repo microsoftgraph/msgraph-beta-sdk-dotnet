@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsInformationProtection using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionToCreate">The WindowsInformationProtection to create.</param>
-        /// <returns>The created WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> CreateAsync(WindowsInformationProtection windowsInformationProtectionToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtection using POST.
-        /// </summary>
-        /// <param name="windowsInformationProtectionToCreate">The WindowsInformationProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> CreateAsync(WindowsInformationProtection windowsInformationProtectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsInformationProtection using POST and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionToCreate">The WindowsInformationProtection to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> CreateResponseAsync(WindowsInformationProtection windowsInformationProtectionToCreate);
+        System.Threading.Tasks.Task<WindowsInformationProtection> CreateAsync(WindowsInformationProtection windowsInformationProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsInformationProtection using POST and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionToCreate">The WindowsInformationProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> CreateResponseAsync(WindowsInformationProtection windowsInformationProtectionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtection.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> CreateResponseAsync(WindowsInformationProtection windowsInformationProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsInformationProtection and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsInformationProtection.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsInformationProtection using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection to update.</param>
-        /// <returns>The updated WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> UpdateAsync(WindowsInformationProtection windowsInformationProtectionToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtection using PATCH.
-        /// </summary>
-        /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> UpdateAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsInformationProtection using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
-        /// </summary>
-        /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> UpdateResponseAsync(WindowsInformationProtection windowsInformationProtectionToUpdate);
+        System.Threading.Tasks.Task<WindowsInformationProtection> UpdateAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsInformationProtection using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> UpdateResponseAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> UpdateResponseAsync(WindowsInformationProtection windowsInformationProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

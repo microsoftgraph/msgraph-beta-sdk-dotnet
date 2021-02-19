@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IListContentTypesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ContentType to the collection via POST.
-        /// </summary>
-        /// <param name="contentType">The ContentType to add.</param>
-        /// <returns>The created ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> AddAsync(ContentType contentType);
-
         /// <summary>
         /// Adds the specified ContentType to the collection via POST.
         /// </summary>
         /// <param name="contentType">The ContentType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> AddAsync(ContentType contentType, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ContentType to the collection via POST and returns a <see cref="GraphResponse{ContentType}"/> object of the request.
-        /// </summary>
-        /// <param name="contentType">The ContentType to add.</param>
-        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContentType>> AddResponseAsync(ContentType contentType);
+        System.Threading.Tasks.Task<ContentType> AddAsync(ContentType contentType, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ContentType to the collection via POST and returns a <see cref="GraphResponse{ContentType}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="contentType">The ContentType to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContentType>> AddResponseAsync(ContentType contentType, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> AddResponseAsync(ContentType contentType, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListContentTypesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListContentTypesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ListContentTypesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ListContentTypesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListContentTypesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IListContentTypesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ListContentTypesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListContentTypesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListContentTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ListContentTypesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

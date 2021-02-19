@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsFeatureUpdateCatalogItem using POST.
         /// </summary>
         /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
-        /// <returns>The created WindowsFeatureUpdateCatalogItem.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate);
-
-        /// <summary>
-        /// Creates the specified WindowsFeatureUpdateCatalogItem using POST.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsFeatureUpdateCatalogItem.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified WindowsFeatureUpdateCatalogItem using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> CreateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate);
+        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified WindowsFeatureUpdateCatalogItem using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> CreateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsFeatureUpdateCatalogItem.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> CreateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsFeatureUpdateCatalogItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsFeatureUpdateCatalogItem and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified WindowsFeatureUpdateCatalogItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsFeatureUpdateCatalogItem.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH.
         /// </summary>
         /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem to update.</param>
-        /// <returns>The updated WindowsFeatureUpdateCatalogItem.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate);
-
-        /// <summary>
-        /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsFeatureUpdateCatalogItem.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> UpdateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate);
+        System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> UpdateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> UpdateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

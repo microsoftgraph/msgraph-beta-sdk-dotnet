@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleAssignmentMultiple using POST.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
-        /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate)
-        {
-            return this.CreateAsync(unifiedRoleAssignmentMultipleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleAssignmentMultiple using POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentMultiple.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> CreateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultipleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleAssignmentMultiple using POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> CreateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate)
-        {
-            return this.CreateResponseAsync(unifiedRoleAssignmentMultipleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleAssignmentMultiple using POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultipleToCreate">The UnifiedRoleAssignmentMultiple to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> CreateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> CreateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultipleToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRoleAssignmentMultiple.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleAssignmentMultiple.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<UnifiedRoleAssignmentMultiple>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
-        /// <returns>The updated UnifiedRoleAssignmentMultiple.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate)
-        {
-            return this.UpdateAsync(unifiedRoleAssignmentMultipleToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleAssignmentMultiple.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> UpdateAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentMultipleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentMultipleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultipleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
         /// </summary>
         /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> UpdateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate)
-        {
-            return this.UpdateResponseAsync(unifiedRoleAssignmentMultipleToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentMultipleToUpdate">The UnifiedRoleAssignmentMultiple to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> UpdateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> UpdateResponseAsync(UnifiedRoleAssignmentMultiple unifiedRoleAssignmentMultipleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentMultipleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleAssignmentMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleAssignmentMultipleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentMultiple>(unifiedRoleAssignmentMultipleToUpdate, cancellationToken).ConfigureAwait(false);
         }

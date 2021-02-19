@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityBaselineSettingState using POST.
         /// </summary>
         /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
-        /// <returns>The created SecurityBaselineSettingState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineSettingState> CreateAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate)
-        {
-            return this.CreateAsync(securityBaselineSettingStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineSettingState using POST.
-        /// </summary>
-        /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineSettingState.</returns>
-        public async System.Threading.Tasks.Task<SecurityBaselineSettingState> CreateAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityBaselineSettingState> CreateAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SecurityBaselineSettingState>(securityBaselineSettingStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityBaselineSettingState using POST and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object.
         /// </summary>
         /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> CreateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate)
-        {
-            return this.CreateResponseAsync(securityBaselineSettingStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityBaselineSettingState using POST and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineSettingStateToCreate">The SecurityBaselineSettingState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> CreateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> CreateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineSettingState>(securityBaselineSettingStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SecurityBaselineSettingState.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineSettingState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<SecurityBaselineSettingState>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified SecurityBaselineSettingState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified SecurityBaselineSettingState and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified SecurityBaselineSettingState using PATCH.
         /// </summary>
         /// <param name="securityBaselineSettingStateToUpdate">The SecurityBaselineSettingState to update.</param>
-        /// <returns>The updated SecurityBaselineSettingState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineSettingState> UpdateAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate)
-        {
-            return this.UpdateAsync(securityBaselineSettingStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineSettingState using PATCH.
-        /// </summary>
-        /// <param name="securityBaselineSettingStateToUpdate">The SecurityBaselineSettingState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityBaselineSettingState.</returns>
-        public async System.Threading.Tasks.Task<SecurityBaselineSettingState> UpdateAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityBaselineSettingState> UpdateAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityBaselineSettingStateToUpdate.AdditionalData != null)
-			{
-				if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityBaselineSettingStateToUpdate.AdditionalData != null)
-            {
-                if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SecurityBaselineSettingState>(securityBaselineSettingStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified SecurityBaselineSettingState using PATCH and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object.
         /// </summary>
         /// <param name="securityBaselineSettingStateToUpdate">The SecurityBaselineSettingState to update.</param>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> UpdateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate)
-        {
-            return this.UpdateResponseAsync(securityBaselineSettingStateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified SecurityBaselineSettingState using PATCH and returns a <see cref="GraphResponse{SecurityBaselineSettingState}"/> object.
-        /// </summary>
-        /// <param name="securityBaselineSettingStateToUpdate">The SecurityBaselineSettingState to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineSettingState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> UpdateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineSettingState>> UpdateResponseAsync(SecurityBaselineSettingState securityBaselineSettingStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (securityBaselineSettingStateToUpdate.AdditionalData != null)
-			{
-				if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityBaselineSettingStateToUpdate.AdditionalData != null)
-            {
-                if (securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityBaselineSettingStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityBaselineSettingStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SecurityBaselineSettingState>(securityBaselineSettingStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

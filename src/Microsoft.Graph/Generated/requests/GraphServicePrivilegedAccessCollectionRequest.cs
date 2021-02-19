@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified PrivilegedAccess to the collection via POST.
-        /// </summary>
-        /// <param name="privilegedAccess">The PrivilegedAccess to add.</param>
-        /// <returns>The created PrivilegedAccess.</returns>
-        public System.Threading.Tasks.Task<PrivilegedAccess> AddAsync(PrivilegedAccess privilegedAccess)
-        {
-            return this.AddAsync(privilegedAccess, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrivilegedAccess to the collection via POST.
         /// </summary>
         /// <param name="privilegedAccess">The PrivilegedAccess to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedAccess.</returns>
-        public System.Threading.Tasks.Task<PrivilegedAccess> AddAsync(PrivilegedAccess privilegedAccess, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<PrivilegedAccess> AddAsync(PrivilegedAccess privilegedAccess, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<PrivilegedAccess>(privilegedAccess, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified PrivilegedAccess to the collection via POST and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.
-        /// </summary>
-        /// <param name="privilegedAccess">The PrivilegedAccess to add.</param>
-        /// <returns>The <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> AddResponseAsync(PrivilegedAccess privilegedAccess)
-        {
-            return this.AddResponseAsync(privilegedAccess, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified PrivilegedAccess to the collection via POST and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.
         /// </summary>
         /// <param name="privilegedAccess">The PrivilegedAccess to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> AddResponseAsync(PrivilegedAccess privilegedAccess, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> AddResponseAsync(PrivilegedAccess privilegedAccess, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PrivilegedAccess>(privilegedAccess, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServicePrivilegedAccessCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServicePrivilegedAccessCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServicePrivilegedAccessCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServicePrivilegedAccessCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedAccessCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedAccessCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedAccessCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedAccessCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedAccessCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedAccessCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedAccessCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServicePrivilegedAccessCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICalendarCalendarPermissionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CalendarPermission to the collection via POST.
-        /// </summary>
-        /// <param name="calendarPermission">The CalendarPermission to add.</param>
-        /// <returns>The created CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> AddAsync(CalendarPermission calendarPermission);
-
         /// <summary>
         /// Adds the specified CalendarPermission to the collection via POST.
         /// </summary>
         /// <param name="calendarPermission">The CalendarPermission to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> AddAsync(CalendarPermission calendarPermission, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified CalendarPermission to the collection via POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object of the request.
-        /// </summary>
-        /// <param name="calendarPermission">The CalendarPermission to add.</param>
-        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> AddResponseAsync(CalendarPermission calendarPermission);
+        System.Threading.Tasks.Task<CalendarPermission> AddAsync(CalendarPermission calendarPermission, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified CalendarPermission to the collection via POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="calendarPermission">The CalendarPermission to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> AddResponseAsync(CalendarPermission calendarPermission, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> AddResponseAsync(CalendarPermission calendarPermission, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICalendarCalendarPermissionsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICalendarCalendarPermissionsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CalendarCalendarPermissionsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CalendarCalendarPermissionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarCalendarPermissionsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICalendarCalendarPermissionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CalendarCalendarPermissionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarCalendarPermissionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarCalendarPermissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarCalendarPermissionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

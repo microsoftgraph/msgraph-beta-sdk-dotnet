@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TermsAndConditionsAcceptanceStatus using POST.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
-        /// <returns>The created TermsAndConditionsAcceptanceStatus.</returns>
-        public System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate)
-        {
-            return this.CreateAsync(termsAndConditionsAcceptanceStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST.
-        /// </summary>
-        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsAcceptanceStatus.</returns>
-        public async System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
-        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate)
-        {
-            return this.CreateResponseAsync(termsAndConditionsAcceptanceStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
-        /// </summary>
-        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatusToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TermsAndConditionsAcceptanceStatus.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TermsAndConditionsAcceptanceStatus.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TermsAndConditionsAcceptanceStatus>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TermsAndConditionsAcceptanceStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TermsAndConditionsAcceptanceStatus and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TermsAndConditionsAcceptanceStatus using PATCH.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus to update.</param>
-        /// <returns>The updated TermsAndConditionsAcceptanceStatus.</returns>
-        public System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> UpdateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate)
-        {
-            return this.UpdateAsync(termsAndConditionsAcceptanceStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TermsAndConditionsAcceptanceStatus using PATCH.
-        /// </summary>
-        /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TermsAndConditionsAcceptanceStatus.</returns>
-        public async System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> UpdateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> UpdateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData != null)
-			{
-				if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAcceptanceStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData != null)
-            {
-                if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAcceptanceStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TermsAndConditionsAcceptanceStatus using PATCH and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus to update.</param>
-        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> UpdateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate)
-        {
-            return this.UpdateResponseAsync(termsAndConditionsAcceptanceStatusToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TermsAndConditionsAcceptanceStatus using PATCH and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
-        /// </summary>
-        /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> UpdateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> UpdateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData != null)
-			{
-				if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAcceptanceStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData != null)
-            {
-                if (termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    termsAndConditionsAcceptanceStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsAcceptanceStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatusToUpdate, cancellationToken).ConfigureAwait(false);
         }

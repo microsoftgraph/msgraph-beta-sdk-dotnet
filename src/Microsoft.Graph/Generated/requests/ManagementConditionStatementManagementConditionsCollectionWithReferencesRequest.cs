@@ -37,18 +37,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagementConditionStatementManagementConditionsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -81,18 +72,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<ManagementConditionStatementManagementConditionsCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);

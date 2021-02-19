@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosEducationDeviceConfiguration using POST.
         /// </summary>
         /// <param name="iosEducationDeviceConfigurationToCreate">The IosEducationDeviceConfiguration to create.</param>
-        /// <returns>The created IosEducationDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosEducationDeviceConfiguration> CreateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate)
-        {
-            return this.CreateAsync(iosEducationDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosEducationDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="iosEducationDeviceConfigurationToCreate">The IosEducationDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosEducationDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosEducationDeviceConfiguration> CreateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosEducationDeviceConfiguration> CreateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosEducationDeviceConfiguration>(iosEducationDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified IosEducationDeviceConfiguration using POST and returns a <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="iosEducationDeviceConfigurationToCreate">The IosEducationDeviceConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> CreateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate)
-        {
-            return this.CreateResponseAsync(iosEducationDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosEducationDeviceConfiguration using POST and returns a <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEducationDeviceConfigurationToCreate">The IosEducationDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> CreateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> CreateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosEducationDeviceConfiguration>(iosEducationDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosEducationDeviceConfiguration.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosEducationDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<IosEducationDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified IosEducationDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified IosEducationDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosEducationDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="iosEducationDeviceConfigurationToUpdate">The IosEducationDeviceConfiguration to update.</param>
-        /// <returns>The updated IosEducationDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<IosEducationDeviceConfiguration> UpdateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate)
-        {
-            return this.UpdateAsync(iosEducationDeviceConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosEducationDeviceConfiguration using PATCH.
-        /// </summary>
-        /// <param name="iosEducationDeviceConfigurationToUpdate">The IosEducationDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosEducationDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<IosEducationDeviceConfiguration> UpdateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosEducationDeviceConfiguration> UpdateAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosEducationDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEducationDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosEducationDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEducationDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosEducationDeviceConfiguration>(iosEducationDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified IosEducationDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="iosEducationDeviceConfigurationToUpdate">The IosEducationDeviceConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> UpdateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate)
-        {
-            return this.UpdateResponseAsync(iosEducationDeviceConfigurationToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified IosEducationDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <param name="iosEducationDeviceConfigurationToUpdate">The IosEducationDeviceConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosEducationDeviceConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> UpdateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<IosEducationDeviceConfiguration>> UpdateResponseAsync(IosEducationDeviceConfiguration iosEducationDeviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (iosEducationDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEducationDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosEducationDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosEducationDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosEducationDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosEducationDeviceConfiguration>(iosEducationDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

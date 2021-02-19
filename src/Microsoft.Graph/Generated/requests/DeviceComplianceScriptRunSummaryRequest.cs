@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScriptRunSummary using POST.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
-        /// <returns>The created DeviceComplianceScriptRunSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate)
-        {
-            return this.CreateAsync(deviceComplianceScriptRunSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScriptRunSummary using POST.
-        /// </summary>
-        /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScriptRunSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> CreateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceComplianceScriptRunSummary>(deviceComplianceScriptRunSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> CreateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate)
-        {
-            return this.CreateResponseAsync(deviceComplianceScriptRunSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScriptRunSummary using POST and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceScriptRunSummaryToCreate">The DeviceComplianceScriptRunSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> CreateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> CreateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceComplianceScriptRunSummary>(deviceComplianceScriptRunSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceComplianceScriptRunSummary.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<DeviceComplianceScriptRunSummary>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified DeviceComplianceScriptRunSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified DeviceComplianceScriptRunSummary and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceComplianceScriptRunSummary using PATCH.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
-        /// <returns>The updated DeviceComplianceScriptRunSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate)
-        {
-            return this.UpdateAsync(deviceComplianceScriptRunSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceScriptRunSummary using PATCH.
-        /// </summary>
-        /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScriptRunSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptRunSummary> UpdateAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptRunSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptRunSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceComplianceScriptRunSummary>(deviceComplianceScriptRunSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified DeviceComplianceScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> UpdateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate)
-        {
-            return this.UpdateResponseAsync(deviceComplianceScriptRunSummaryToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified DeviceComplianceScriptRunSummary using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object.
-        /// </summary>
-        /// <param name="deviceComplianceScriptRunSummaryToUpdate">The DeviceComplianceScriptRunSummary to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptRunSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> UpdateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptRunSummary>> UpdateResponseAsync(DeviceComplianceScriptRunSummary deviceComplianceScriptRunSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptRunSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceComplianceScriptRunSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptRunSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceComplianceScriptRunSummary>(deviceComplianceScriptRunSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

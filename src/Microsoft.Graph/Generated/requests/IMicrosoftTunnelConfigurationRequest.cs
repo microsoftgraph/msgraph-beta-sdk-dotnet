@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelConfiguration using POST.
         /// </summary>
         /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
-        /// <returns>The created MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> CreateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelConfiguration using POST.
-        /// </summary>
-        /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> CreateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
-        /// </summary>
-        /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> CreateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate);
+        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> CreateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MicrosoftTunnelConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelConfigurationToCreate">The MicrosoftTunnelConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> CreateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> CreateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftTunnelConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftTunnelConfiguration using PATCH.
         /// </summary>
         /// <param name="microsoftTunnelConfigurationToUpdate">The MicrosoftTunnelConfiguration to update.</param>
-        /// <returns>The updated MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> UpdateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified MicrosoftTunnelConfiguration using PATCH.
-        /// </summary>
-        /// <param name="microsoftTunnelConfigurationToUpdate">The MicrosoftTunnelConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> UpdateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MicrosoftTunnelConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
-        /// </summary>
-        /// <param name="microsoftTunnelConfigurationToUpdate">The MicrosoftTunnelConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> UpdateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate);
+        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> UpdateAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> UpdateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> UpdateResponseAsync(MicrosoftTunnelConfiguration microsoftTunnelConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

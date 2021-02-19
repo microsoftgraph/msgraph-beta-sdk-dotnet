@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified BookingAppointment using POST.
         /// </summary>
         /// <param name="bookingAppointmentToCreate">The BookingAppointment to create.</param>
-        /// <returns>The created BookingAppointment.</returns>
-        public System.Threading.Tasks.Task<BookingAppointment> CreateAsync(BookingAppointment bookingAppointmentToCreate)
-        {
-            return this.CreateAsync(bookingAppointmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingAppointment using POST.
-        /// </summary>
-        /// <param name="bookingAppointmentToCreate">The BookingAppointment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingAppointment.</returns>
-        public async System.Threading.Tasks.Task<BookingAppointment> CreateAsync(BookingAppointment bookingAppointmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingAppointment> CreateAsync(BookingAppointment bookingAppointmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<BookingAppointment>(bookingAppointmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified BookingAppointment using POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object.
         /// </summary>
         /// <param name="bookingAppointmentToCreate">The BookingAppointment to create.</param>
-        /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> CreateResponseAsync(BookingAppointment bookingAppointmentToCreate)
-        {
-            return this.CreateResponseAsync(bookingAppointmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingAppointment using POST and returns a <see cref="GraphResponse{BookingAppointment}"/> object.
-        /// </summary>
-        /// <param name="bookingAppointmentToCreate">The BookingAppointment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> CreateResponseAsync(BookingAppointment bookingAppointmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> CreateResponseAsync(BookingAppointment bookingAppointmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<BookingAppointment>(bookingAppointmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified BookingAppointment.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified BookingAppointment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<BookingAppointment>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified BookingAppointment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified BookingAppointment and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified BookingAppointment using PATCH.
         /// </summary>
         /// <param name="bookingAppointmentToUpdate">The BookingAppointment to update.</param>
-        /// <returns>The updated BookingAppointment.</returns>
-        public System.Threading.Tasks.Task<BookingAppointment> UpdateAsync(BookingAppointment bookingAppointmentToUpdate)
-        {
-            return this.UpdateAsync(bookingAppointmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified BookingAppointment using PATCH.
-        /// </summary>
-        /// <param name="bookingAppointmentToUpdate">The BookingAppointment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingAppointment.</returns>
-        public async System.Threading.Tasks.Task<BookingAppointment> UpdateAsync(BookingAppointment bookingAppointmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingAppointment> UpdateAsync(BookingAppointment bookingAppointmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (bookingAppointmentToUpdate.AdditionalData != null)
-			{
-				if (bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingAppointmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingAppointmentToUpdate.AdditionalData != null)
-            {
-                if (bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingAppointmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<BookingAppointment>(bookingAppointmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified BookingAppointment using PATCH and returns a <see cref="GraphResponse{BookingAppointment}"/> object.
         /// </summary>
         /// <param name="bookingAppointmentToUpdate">The BookingAppointment to update.</param>
-        /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> UpdateResponseAsync(BookingAppointment bookingAppointmentToUpdate)
-        {
-            return this.UpdateResponseAsync(bookingAppointmentToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified BookingAppointment using PATCH and returns a <see cref="GraphResponse{BookingAppointment}"/> object.
-        /// </summary>
-        /// <param name="bookingAppointmentToUpdate">The BookingAppointment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{BookingAppointment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> UpdateResponseAsync(BookingAppointment bookingAppointmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<BookingAppointment>> UpdateResponseAsync(BookingAppointment bookingAppointmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (bookingAppointmentToUpdate.AdditionalData != null)
-			{
-				if (bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingAppointmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingAppointmentToUpdate.AdditionalData != null)
-            {
-                if (bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingAppointmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingAppointmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<BookingAppointment>(bookingAppointmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

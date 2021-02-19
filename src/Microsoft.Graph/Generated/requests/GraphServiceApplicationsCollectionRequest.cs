@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Application to the collection via POST.
-        /// </summary>
-        /// <param name="application">The Application to add.</param>
-        /// <returns>The created Application.</returns>
-        public System.Threading.Tasks.Task<Application> AddAsync(Application application)
-        {
-            return this.AddAsync(application, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Application to the collection via POST.
         /// </summary>
         /// <param name="application">The Application to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Application.</returns>
-        public System.Threading.Tasks.Task<Application> AddAsync(Application application, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Application> AddAsync(Application application, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Application>(application, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
-        /// </summary>
-        /// <param name="application">The Application to add.</param>
-        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application)
-        {
-            return this.AddResponseAsync(application, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
         /// </summary>
         /// <param name="application">The Application to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Application>(application, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceApplicationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceApplicationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceApplicationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceApplicationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceApplicationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

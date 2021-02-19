@@ -32,26 +32,15 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookCategory to the collection via POST.
-        /// </summary>
-        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory)
-        {
-            return this.AddAsync(managedEBookCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedEBookCategory to the collection via POST.
         /// </summary>
         /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(managedEBookCategory.Id))
@@ -63,26 +52,15 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookCategory to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.
-        /// </summary>
-        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedEBookCategory managedEBookCategory)
-        {
-            return this.AddResponseAsync(managedEBookCategory, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ManagedEBookCategory to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.
         /// </summary>
         /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(managedEBookCategory.Id))

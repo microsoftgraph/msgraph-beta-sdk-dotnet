@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementManagedDeviceEncryptionStatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedDeviceEncryptionState to the collection via POST.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionState">The ManagedDeviceEncryptionState to add.</param>
-        /// <returns>The created ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> AddAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState);
-
         /// <summary>
         /// Adds the specified ManagedDeviceEncryptionState to the collection via POST.
         /// </summary>
         /// <param name="managedDeviceEncryptionState">The ManagedDeviceEncryptionState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> AddAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified ManagedDeviceEncryptionState to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.
-        /// </summary>
-        /// <param name="managedDeviceEncryptionState">The ManagedDeviceEncryptionState to add.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> AddResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState);
+        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> AddAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified ManagedDeviceEncryptionState to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceEncryptionState">The ManagedDeviceEncryptionState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> AddResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> AddResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementManagedDeviceEncryptionStatesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementManagedDeviceEncryptionStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagedDeviceEncryptionStatesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementManagedDeviceEncryptionStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IDeviceManagementManagedDeviceEncryptionStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagedDeviceEncryptionStatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementManagedDeviceEncryptionStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

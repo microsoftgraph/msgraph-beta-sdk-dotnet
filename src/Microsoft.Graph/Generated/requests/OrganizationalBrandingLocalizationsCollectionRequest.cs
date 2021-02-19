@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OrganizationalBrandingLocalization to the collection via POST.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalization">The OrganizationalBrandingLocalization to add.</param>
-        /// <returns>The created OrganizationalBrandingLocalization.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> AddAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization)
-        {
-            return this.AddAsync(organizationalBrandingLocalization, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OrganizationalBrandingLocalization to the collection via POST.
         /// </summary>
         /// <param name="organizationalBrandingLocalization">The OrganizationalBrandingLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OrganizationalBrandingLocalization.</returns>
-        public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> AddAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OrganizationalBrandingLocalization> AddAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OrganizationalBrandingLocalization>(organizationalBrandingLocalization, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified OrganizationalBrandingLocalization to the collection via POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.
-        /// </summary>
-        /// <param name="organizationalBrandingLocalization">The OrganizationalBrandingLocalization to add.</param>
-        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> AddResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization)
-        {
-            return this.AddResponseAsync(organizationalBrandingLocalization, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OrganizationalBrandingLocalization to the collection via POST and returns a <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.
         /// </summary>
         /// <param name="organizationalBrandingLocalization">The OrganizationalBrandingLocalization to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalization}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> AddResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalization>> AddResponseAsync(OrganizationalBrandingLocalization organizationalBrandingLocalization, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalization>(organizationalBrandingLocalization, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IOrganizationalBrandingLocalizationsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOrganizationalBrandingLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IOrganizationalBrandingLocalizationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<OrganizationalBrandingLocalizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OrganizationalBrandingLocalizationsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalizationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OrganizationalBrandingLocalizationsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrganizationalBrandingLocalizationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<OrganizationalBrandingLocalizationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

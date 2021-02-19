@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST.
-        /// </summary>
-        /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
-        /// <returns>The created UnsupportedGroupPolicyExtension.</returns>
-        public System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension)
-        {
-            return this.AddAsync(unsupportedGroupPolicyExtension, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST.
         /// </summary>
         /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnsupportedGroupPolicyExtension.</returns>
-        public System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UnsupportedGroupPolicyExtension>(unsupportedGroupPolicyExtension, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.
-        /// </summary>
-        /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
-        /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> AddResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension)
-        {
-            return this.AddResponseAsync(unsupportedGroupPolicyExtension, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.
         /// </summary>
         /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> AddResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> AddResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UnsupportedGroupPolicyExtension>(unsupportedGroupPolicyExtension, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

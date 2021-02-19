@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified ItemCategory using POST.
         /// </summary>
         /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
-        /// <returns>The created ItemCategory.</returns>
-        System.Threading.Tasks.Task<ItemCategory> CreateAsync(ItemCategory itemCategoryToCreate);
-
-        /// <summary>
-        /// Creates the specified ItemCategory using POST.
-        /// </summary>
-        /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemCategory.</returns>
-        System.Threading.Tasks.Task<ItemCategory> CreateAsync(ItemCategory itemCategoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified ItemCategory using POST and returns a <see cref="GraphResponse{ItemCategory}"/> object.
-        /// </summary>
-        /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
-        /// <returns>The <see cref="GraphResponse{ItemCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> CreateResponseAsync(ItemCategory itemCategoryToCreate);
+        System.Threading.Tasks.Task<ItemCategory> CreateAsync(ItemCategory itemCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified ItemCategory using POST and returns a <see cref="GraphResponse{ItemCategory}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="itemCategoryToCreate">The ItemCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> CreateResponseAsync(ItemCategory itemCategoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ItemCategory.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> CreateResponseAsync(ItemCategory itemCategoryToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ItemCategory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ItemCategory and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified ItemCategory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemCategory.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified ItemCategory using PATCH.
         /// </summary>
         /// <param name="itemCategoryToUpdate">The ItemCategory to update.</param>
-        /// <returns>The updated ItemCategory.</returns>
-        System.Threading.Tasks.Task<ItemCategory> UpdateAsync(ItemCategory itemCategoryToUpdate);
-
-        /// <summary>
-        /// Updates the specified ItemCategory using PATCH.
-        /// </summary>
-        /// <param name="itemCategoryToUpdate">The ItemCategory to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemCategory.</returns>
-        System.Threading.Tasks.Task<ItemCategory> UpdateAsync(ItemCategory itemCategoryToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified ItemCategory using PATCH and returns a <see cref="GraphResponse{ItemCategory}"/> object.
-        /// </summary>
-        /// <param name="itemCategoryToUpdate">The ItemCategory to update.</param>
-        /// <returns>The <see cref="GraphResponse{ItemCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> UpdateResponseAsync(ItemCategory itemCategoryToUpdate);
+        System.Threading.Tasks.Task<ItemCategory> UpdateAsync(ItemCategory itemCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemCategory using PATCH and returns a <see cref="GraphResponse{ItemCategory}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> UpdateResponseAsync(ItemCategory itemCategoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemCategory>> UpdateResponseAsync(ItemCategory itemCategoryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

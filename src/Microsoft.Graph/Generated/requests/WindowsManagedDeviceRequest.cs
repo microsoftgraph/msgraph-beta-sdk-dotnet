@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagedDevice using POST.
         /// </summary>
         /// <param name="windowsManagedDeviceToCreate">The WindowsManagedDevice to create.</param>
-        /// <returns>The created WindowsManagedDevice.</returns>
-        public System.Threading.Tasks.Task<WindowsManagedDevice> CreateAsync(WindowsManagedDevice windowsManagedDeviceToCreate)
-        {
-            return this.CreateAsync(windowsManagedDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsManagedDevice using POST.
-        /// </summary>
-        /// <param name="windowsManagedDeviceToCreate">The WindowsManagedDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagedDevice.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagedDevice> CreateAsync(WindowsManagedDevice windowsManagedDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagedDevice> CreateAsync(WindowsManagedDevice windowsManagedDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsManagedDevice>(windowsManagedDeviceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagedDevice using POST and returns a <see cref="GraphResponse{WindowsManagedDevice}"/> object.
         /// </summary>
         /// <param name="windowsManagedDeviceToCreate">The WindowsManagedDevice to create.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagedDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> CreateResponseAsync(WindowsManagedDevice windowsManagedDeviceToCreate)
-        {
-            return this.CreateResponseAsync(windowsManagedDeviceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsManagedDevice using POST and returns a <see cref="GraphResponse{WindowsManagedDevice}"/> object.
-        /// </summary>
-        /// <param name="windowsManagedDeviceToCreate">The WindowsManagedDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagedDevice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> CreateResponseAsync(WindowsManagedDevice windowsManagedDeviceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> CreateResponseAsync(WindowsManagedDevice windowsManagedDeviceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsManagedDevice>(windowsManagedDeviceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsManagedDevice.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsManagedDevice.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<WindowsManagedDevice>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified WindowsManagedDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified WindowsManagedDevice and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsManagedDevice using PATCH.
         /// </summary>
         /// <param name="windowsManagedDeviceToUpdate">The WindowsManagedDevice to update.</param>
-        /// <returns>The updated WindowsManagedDevice.</returns>
-        public System.Threading.Tasks.Task<WindowsManagedDevice> UpdateAsync(WindowsManagedDevice windowsManagedDeviceToUpdate)
-        {
-            return this.UpdateAsync(windowsManagedDeviceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsManagedDevice using PATCH.
-        /// </summary>
-        /// <param name="windowsManagedDeviceToUpdate">The WindowsManagedDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagedDevice.</returns>
-        public async System.Threading.Tasks.Task<WindowsManagedDevice> UpdateAsync(WindowsManagedDevice windowsManagedDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsManagedDevice> UpdateAsync(WindowsManagedDevice windowsManagedDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsManagedDeviceToUpdate.AdditionalData != null)
-			{
-				if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsManagedDeviceToUpdate.AdditionalData != null)
-            {
-                if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsManagedDevice>(windowsManagedDeviceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified WindowsManagedDevice using PATCH and returns a <see cref="GraphResponse{WindowsManagedDevice}"/> object.
         /// </summary>
         /// <param name="windowsManagedDeviceToUpdate">The WindowsManagedDevice to update.</param>
-        /// <returns>The <see cref="GraphResponse{WindowsManagedDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> UpdateResponseAsync(WindowsManagedDevice windowsManagedDeviceToUpdate)
-        {
-            return this.UpdateResponseAsync(windowsManagedDeviceToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified WindowsManagedDevice using PATCH and returns a <see cref="GraphResponse{WindowsManagedDevice}"/> object.
-        /// </summary>
-        /// <param name="windowsManagedDeviceToUpdate">The WindowsManagedDevice to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsManagedDevice}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> UpdateResponseAsync(WindowsManagedDevice windowsManagedDeviceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsManagedDevice>> UpdateResponseAsync(WindowsManagedDevice windowsManagedDeviceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (windowsManagedDeviceToUpdate.AdditionalData != null)
-			{
-				if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsManagedDeviceToUpdate.AdditionalData != null)
-            {
-                if (windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsManagedDeviceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsManagedDeviceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsManagedDevice>(windowsManagedDeviceToUpdate, cancellationToken).ConfigureAwait(false);
         }

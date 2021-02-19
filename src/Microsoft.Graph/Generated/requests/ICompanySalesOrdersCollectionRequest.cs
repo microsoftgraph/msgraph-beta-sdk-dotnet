@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanySalesOrdersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SalesOrder to the collection via POST.
-        /// </summary>
-        /// <param name="salesOrder">The SalesOrder to add.</param>
-        /// <returns>The created SalesOrder.</returns>
-        System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder);
-
         /// <summary>
         /// Adds the specified SalesOrder to the collection via POST.
         /// </summary>
         /// <param name="salesOrder">The SalesOrder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesOrder.</returns>
-        System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified SalesOrder to the collection via POST and returns a <see cref="GraphResponse{SalesOrder}"/> object of the request.
-        /// </summary>
-        /// <param name="salesOrder">The SalesOrder to add.</param>
-        /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesOrder>> AddResponseAsync(SalesOrder salesOrder);
+        System.Threading.Tasks.Task<SalesOrder> AddAsync(SalesOrder salesOrder, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified SalesOrder to the collection via POST and returns a <see cref="GraphResponse{SalesOrder}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="salesOrder">The SalesOrder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesOrder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesOrder>> AddResponseAsync(SalesOrder salesOrder, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SalesOrder>> AddResponseAsync(SalesOrder salesOrder, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesOrdersCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<ICompanySalesOrdersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanySalesOrdersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanySalesOrdersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CompanySalesOrdersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified Chat to the collection via POST.
-        /// </summary>
-        /// <param name="chat">The Chat to add.</param>
-        /// <returns>The created Chat.</returns>
-        public System.Threading.Tasks.Task<Chat> AddAsync(Chat chat)
-        {
-            return this.AddAsync(chat, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Chat to the collection via POST.
         /// </summary>
         /// <param name="chat">The Chat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Chat.</returns>
-        public System.Threading.Tasks.Task<Chat> AddAsync(Chat chat, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<Chat> AddAsync(Chat chat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Chat>(chat, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified Chat to the collection via POST and returns a <see cref="GraphResponse{Chat}"/> object of the request.
-        /// </summary>
-        /// <param name="chat">The Chat to add.</param>
-        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat)
-        {
-            return this.AddResponseAsync(chat, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified Chat to the collection via POST and returns a <see cref="GraphResponse{Chat}"/> object of the request.
         /// </summary>
         /// <param name="chat">The Chat to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Chat>(chat, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IUserChatsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserChatsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IUserChatsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<UserChatsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserChatsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserChatsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserChatsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{UserChatsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserChatsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserChatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<UserChatsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<UserChatsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified TiIndicator using POST.
         /// </summary>
         /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
-        /// <returns>The created TiIndicator.</returns>
-        public System.Threading.Tasks.Task<TiIndicator> CreateAsync(TiIndicator tiIndicatorToCreate)
-        {
-            return this.CreateAsync(tiIndicatorToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TiIndicator using POST.
-        /// </summary>
-        /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TiIndicator.</returns>
-        public async System.Threading.Tasks.Task<TiIndicator> CreateAsync(TiIndicator tiIndicatorToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TiIndicator> CreateAsync(TiIndicator tiIndicatorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TiIndicator>(tiIndicatorToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified TiIndicator using POST and returns a <see cref="GraphResponse{TiIndicator}"/> object.
         /// </summary>
         /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
-        /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TiIndicator>> CreateResponseAsync(TiIndicator tiIndicatorToCreate)
-        {
-            return this.CreateResponseAsync(tiIndicatorToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TiIndicator using POST and returns a <see cref="GraphResponse{TiIndicator}"/> object.
-        /// </summary>
-        /// <param name="tiIndicatorToCreate">The TiIndicator to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> CreateResponseAsync(TiIndicator tiIndicatorToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> CreateResponseAsync(TiIndicator tiIndicatorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TiIndicator>(tiIndicatorToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TiIndicator.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TiIndicator.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<TiIndicator>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified TiIndicator and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified TiIndicator and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified TiIndicator using PATCH.
         /// </summary>
         /// <param name="tiIndicatorToUpdate">The TiIndicator to update.</param>
-        /// <returns>The updated TiIndicator.</returns>
-        public System.Threading.Tasks.Task<TiIndicator> UpdateAsync(TiIndicator tiIndicatorToUpdate)
-        {
-            return this.UpdateAsync(tiIndicatorToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TiIndicator using PATCH.
-        /// </summary>
-        /// <param name="tiIndicatorToUpdate">The TiIndicator to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TiIndicator.</returns>
-        public async System.Threading.Tasks.Task<TiIndicator> UpdateAsync(TiIndicator tiIndicatorToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TiIndicator> UpdateAsync(TiIndicator tiIndicatorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tiIndicatorToUpdate.AdditionalData != null)
-			{
-				if (tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tiIndicatorToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tiIndicatorToUpdate.AdditionalData != null)
-            {
-                if (tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tiIndicatorToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TiIndicator>(tiIndicatorToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified TiIndicator using PATCH and returns a <see cref="GraphResponse{TiIndicator}"/> object.
         /// </summary>
         /// <param name="tiIndicatorToUpdate">The TiIndicator to update.</param>
-        /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TiIndicator>> UpdateResponseAsync(TiIndicator tiIndicatorToUpdate)
-        {
-            return this.UpdateResponseAsync(tiIndicatorToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified TiIndicator using PATCH and returns a <see cref="GraphResponse{TiIndicator}"/> object.
-        /// </summary>
-        /// <param name="tiIndicatorToUpdate">The TiIndicator to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> UpdateResponseAsync(TiIndicator tiIndicatorToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<TiIndicator>> UpdateResponseAsync(TiIndicator tiIndicatorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (tiIndicatorToUpdate.AdditionalData != null)
-			{
-				if (tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tiIndicatorToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tiIndicatorToUpdate.AdditionalData != null)
-            {
-                if (tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tiIndicatorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tiIndicatorToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TiIndicator>(tiIndicatorToUpdate, cancellationToken).ConfigureAwait(false);
         }

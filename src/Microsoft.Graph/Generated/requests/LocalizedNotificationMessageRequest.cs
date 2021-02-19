@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified LocalizedNotificationMessage using POST.
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
-        /// <returns>The created LocalizedNotificationMessage.</returns>
-        public System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate)
-        {
-            return this.CreateAsync(localizedNotificationMessageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LocalizedNotificationMessage using POST.
-        /// </summary>
-        /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
-        public async System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<LocalizedNotificationMessage>(localizedNotificationMessageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified LocalizedNotificationMessage using POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
-        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> CreateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate)
-        {
-            return this.CreateResponseAsync(localizedNotificationMessageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified LocalizedNotificationMessage using POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
-        /// </summary>
-        /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> CreateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> CreateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(localizedNotificationMessageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LocalizedNotificationMessage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LocalizedNotificationMessage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<LocalizedNotificationMessage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified LocalizedNotificationMessage using PATCH.
         /// </summary>
         /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage to update.</param>
-        /// <returns>The updated LocalizedNotificationMessage.</returns>
-        public System.Threading.Tasks.Task<LocalizedNotificationMessage> UpdateAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate)
-        {
-            return this.UpdateAsync(localizedNotificationMessageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LocalizedNotificationMessage using PATCH.
-        /// </summary>
-        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LocalizedNotificationMessage.</returns>
-        public async System.Threading.Tasks.Task<LocalizedNotificationMessage> UpdateAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<LocalizedNotificationMessage> UpdateAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (localizedNotificationMessageToUpdate.AdditionalData != null)
-			{
-				if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, localizedNotificationMessageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (localizedNotificationMessageToUpdate.AdditionalData != null)
-            {
-                if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, localizedNotificationMessageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LocalizedNotificationMessage>(localizedNotificationMessageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified LocalizedNotificationMessage using PATCH and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
         /// </summary>
         /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage to update.</param>
-        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> UpdateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate)
-        {
-            return this.UpdateResponseAsync(localizedNotificationMessageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified LocalizedNotificationMessage using PATCH and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
-        /// </summary>
-        /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> UpdateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> UpdateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (localizedNotificationMessageToUpdate.AdditionalData != null)
-			{
-				if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, localizedNotificationMessageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (localizedNotificationMessageToUpdate.AdditionalData != null)
-            {
-                if (localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    localizedNotificationMessageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, localizedNotificationMessageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(localizedNotificationMessageToUpdate, cancellationToken).ConfigureAwait(false);
         }

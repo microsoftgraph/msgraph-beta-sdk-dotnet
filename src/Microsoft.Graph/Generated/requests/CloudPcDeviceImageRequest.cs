@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified CloudPcDeviceImage using POST.
         /// </summary>
         /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
-        /// <returns>The created CloudPcDeviceImage.</returns>
-        public System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate)
-        {
-            return this.CreateAsync(cloudPcDeviceImageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CloudPcDeviceImage using POST.
-        /// </summary>
-        /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDeviceImage.</returns>
-        public async System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudPcDeviceImage> CreateAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CloudPcDeviceImage>(cloudPcDeviceImageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified CloudPcDeviceImage using POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
         /// </summary>
         /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
-        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> CreateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate)
-        {
-            return this.CreateResponseAsync(cloudPcDeviceImageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CloudPcDeviceImage using POST and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
-        /// </summary>
-        /// <param name="cloudPcDeviceImageToCreate">The CloudPcDeviceImage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> CreateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> CreateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CloudPcDeviceImage>(cloudPcDeviceImageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CloudPcDeviceImage.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CloudPcDeviceImage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<CloudPcDeviceImage>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified CloudPcDeviceImage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified CloudPcDeviceImage and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified CloudPcDeviceImage using PATCH.
         /// </summary>
         /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
-        /// <returns>The updated CloudPcDeviceImage.</returns>
-        public System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate)
-        {
-            return this.UpdateAsync(cloudPcDeviceImageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CloudPcDeviceImage using PATCH.
-        /// </summary>
-        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcDeviceImage.</returns>
-        public async System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CloudPcDeviceImage> UpdateAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (cloudPcDeviceImageToUpdate.AdditionalData != null)
-			{
-				if (cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcDeviceImageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (cloudPcDeviceImageToUpdate.AdditionalData != null)
-            {
-                if (cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcDeviceImageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CloudPcDeviceImage>(cloudPcDeviceImageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified CloudPcDeviceImage using PATCH and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
         /// </summary>
         /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
-        /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> UpdateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate)
-        {
-            return this.UpdateResponseAsync(cloudPcDeviceImageToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified CloudPcDeviceImage using PATCH and returns a <see cref="GraphResponse{CloudPcDeviceImage}"/> object.
-        /// </summary>
-        /// <param name="cloudPcDeviceImageToUpdate">The CloudPcDeviceImage to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CloudPcDeviceImage}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> UpdateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<CloudPcDeviceImage>> UpdateResponseAsync(CloudPcDeviceImage cloudPcDeviceImageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (cloudPcDeviceImageToUpdate.AdditionalData != null)
-			{
-				if (cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcDeviceImageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (cloudPcDeviceImageToUpdate.AdditionalData != null)
-            {
-                if (cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    cloudPcDeviceImageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, cloudPcDeviceImageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CloudPcDeviceImage>(cloudPcDeviceImageToUpdate, cancellationToken).ConfigureAwait(false);
         }

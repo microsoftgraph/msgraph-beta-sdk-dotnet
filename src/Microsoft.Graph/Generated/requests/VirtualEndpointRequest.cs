@@ -39,21 +39,11 @@ namespace Microsoft.Graph
         /// Creates the specified VirtualEndpoint using POST.
         /// </summary>
         /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
-        /// <returns>The created VirtualEndpoint.</returns>
-        public System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate)
-        {
-            return this.CreateAsync(virtualEndpointToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified VirtualEndpoint using POST.
-        /// </summary>
-        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VirtualEndpoint.</returns>
-        public async System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<VirtualEndpoint>(virtualEndpointToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -64,21 +54,11 @@ namespace Microsoft.Graph
         /// Creates the specified VirtualEndpoint using POST and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
         /// </summary>
         /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
-        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate)
-        {
-            return this.CreateResponseAsync(virtualEndpointToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified VirtualEndpoint using POST and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
-        /// </summary>
-        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<VirtualEndpoint>(virtualEndpointToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified VirtualEndpoint.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified VirtualEndpoint.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<VirtualEndpoint>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified VirtualEndpoint and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified VirtualEndpoint and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,48 +131,12 @@ namespace Microsoft.Graph
         /// Updates the specified VirtualEndpoint using PATCH.
         /// </summary>
         /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
-        /// <returns>The updated VirtualEndpoint.</returns>
-        public System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate)
-        {
-            return this.UpdateAsync(virtualEndpointToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified VirtualEndpoint using PATCH.
-        /// </summary>
-        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VirtualEndpoint.</returns>
-        public async System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (virtualEndpointToUpdate.AdditionalData != null)
-			{
-				if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (virtualEndpointToUpdate.AdditionalData != null)
-            {
-                if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -221,48 +147,12 @@ namespace Microsoft.Graph
         /// Updates the specified VirtualEndpoint using PATCH and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
         /// </summary>
         /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
-        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate)
-        {
-            return this.UpdateResponseAsync(virtualEndpointToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified VirtualEndpoint using PATCH and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
-        /// </summary>
-        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (virtualEndpointToUpdate.AdditionalData != null)
-			{
-				if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (virtualEndpointToUpdate.AdditionalData != null)
-            {
-                if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken).ConfigureAwait(false);
         }

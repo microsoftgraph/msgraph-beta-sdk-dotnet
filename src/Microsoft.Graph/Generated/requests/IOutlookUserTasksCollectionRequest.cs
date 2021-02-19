@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IOutlookUserTasksCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified OutlookTask to the collection via POST.
-        /// </summary>
-        /// <param name="outlookTask">The OutlookTask to add.</param>
-        /// <returns>The created OutlookTask.</returns>
-        System.Threading.Tasks.Task<OutlookTask> AddAsync(OutlookTask outlookTask);
-
         /// <summary>
         /// Adds the specified OutlookTask to the collection via POST.
         /// </summary>
         /// <param name="outlookTask">The OutlookTask to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTask.</returns>
-        System.Threading.Tasks.Task<OutlookTask> AddAsync(OutlookTask outlookTask, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified OutlookTask to the collection via POST and returns a <see cref="GraphResponse{OutlookTask}"/> object of the request.
-        /// </summary>
-        /// <param name="outlookTask">The OutlookTask to add.</param>
-        /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> AddResponseAsync(OutlookTask outlookTask);
+        System.Threading.Tasks.Task<OutlookTask> AddAsync(OutlookTask outlookTask, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified OutlookTask to the collection via POST and returns a <see cref="GraphResponse{OutlookTask}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="outlookTask">The OutlookTask to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> AddResponseAsync(OutlookTask outlookTask, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookTask>> AddResponseAsync(OutlookTask outlookTask, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserTasksCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IOutlookUserTasksCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserTasksCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OutlookUserTasksCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUserTasksCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IOutlookUserTasksCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{OutlookUserTasksCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookUserTasksCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUserTasksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookUserTasksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

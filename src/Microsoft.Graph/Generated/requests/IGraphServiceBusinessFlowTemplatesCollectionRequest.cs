@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServiceBusinessFlowTemplatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified BusinessFlowTemplate to the collection via POST.
-        /// </summary>
-        /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
-        /// <returns>The created BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> AddAsync(BusinessFlowTemplate businessFlowTemplate);
-
         /// <summary>
         /// Adds the specified BusinessFlowTemplate to the collection via POST.
         /// </summary>
         /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BusinessFlowTemplate.</returns>
-        System.Threading.Tasks.Task<BusinessFlowTemplate> AddAsync(BusinessFlowTemplate businessFlowTemplate, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified BusinessFlowTemplate to the collection via POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.
-        /// </summary>
-        /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
-        /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> AddResponseAsync(BusinessFlowTemplate businessFlowTemplate);
+        System.Threading.Tasks.Task<BusinessFlowTemplate> AddAsync(BusinessFlowTemplate businessFlowTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified BusinessFlowTemplate to the collection via POST and returns a <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="businessFlowTemplate">The BusinessFlowTemplate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BusinessFlowTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> AddResponseAsync(BusinessFlowTemplate businessFlowTemplate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlowTemplate>> AddResponseAsync(BusinessFlowTemplate businessFlowTemplate, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceBusinessFlowTemplatesCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceBusinessFlowTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IGraphServiceBusinessFlowTemplatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceBusinessFlowTemplatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceBusinessFlowTemplatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

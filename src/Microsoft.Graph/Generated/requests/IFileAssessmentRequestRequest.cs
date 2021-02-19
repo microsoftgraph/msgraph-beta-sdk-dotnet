@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified FileAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
-        /// <returns>The created FileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<FileAssessmentRequestObject> CreateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate);
-
-        /// <summary>
-        /// Creates the specified FileAssessmentRequestObject using POST.
-        /// </summary>
-        /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<FileAssessmentRequestObject> CreateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified FileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
-        /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> CreateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate);
+        System.Threading.Tasks.Task<FileAssessmentRequestObject> CreateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified FileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> CreateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FileAssessmentRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> CreateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified FileAssessmentRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified FileAssessmentRequestObject and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified FileAssessmentRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FileAssessmentRequestObject.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified FileAssessmentRequestObject using PATCH.
         /// </summary>
         /// <param name="fileAssessmentRequestObjectToUpdate">The FileAssessmentRequestObject to update.</param>
-        /// <returns>The updated FileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<FileAssessmentRequestObject> UpdateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate);
-
-        /// <summary>
-        /// Updates the specified FileAssessmentRequestObject using PATCH.
-        /// </summary>
-        /// <param name="fileAssessmentRequestObjectToUpdate">The FileAssessmentRequestObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FileAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<FileAssessmentRequestObject> UpdateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified FileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <param name="fileAssessmentRequestObjectToUpdate">The FileAssessmentRequestObject to update.</param>
-        /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> UpdateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate);
+        System.Threading.Tasks.Task<FileAssessmentRequestObject> UpdateAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FileAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> UpdateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> UpdateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

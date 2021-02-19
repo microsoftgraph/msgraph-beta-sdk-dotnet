@@ -20,28 +20,13 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWorkbookChartSeriesPointsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WorkbookChartPoint to the collection via POST.
-        /// </summary>
-        /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
-        /// <returns>The created WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> AddAsync(WorkbookChartPoint workbookChartPoint);
-
         /// <summary>
         /// Adds the specified WorkbookChartPoint to the collection via POST.
         /// </summary>
         /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> AddAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken);
-        
-        /// <summary>
-        /// Adds the specified WorkbookChartPoint to the collection via POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.
-        /// </summary>
-        /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> AddResponseAsync(WorkbookChartPoint workbookChartPoint);
+        System.Threading.Tasks.Task<WorkbookChartPoint> AddAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified WorkbookChartPoint to the collection via POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.
@@ -49,33 +34,22 @@ namespace Microsoft.Graph
         /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> AddResponseAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> AddResponseAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken = default(CancellationToken));
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookChartSeriesPointsCollectionPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWorkbookChartSeriesPointsCollectionPage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookChartSeriesPointsCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartSeriesPointsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesPointsCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<IWorkbookChartSeriesPointsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WorkbookChartSeriesPointsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartSeriesPointsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesPointsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesPointsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.
