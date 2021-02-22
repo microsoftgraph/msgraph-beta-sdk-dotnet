@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsMetric.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsMetric.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsMetric.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsMetric and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetric> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsMetric and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetric}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetric>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsMetric using PATCH.

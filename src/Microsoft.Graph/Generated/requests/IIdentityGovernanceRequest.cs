@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityGovernance.
         /// </summary>
-        /// <returns>The IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityGovernance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityGovernance.</returns>
-        System.Threading.Tasks.Task<IdentityGovernance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityGovernance and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityGovernance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityGovernance and returns a <see cref="GraphResponse{IdentityGovernance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityGovernance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityGovernance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityGovernance using PATCH.

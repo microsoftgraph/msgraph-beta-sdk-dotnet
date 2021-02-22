@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrintUsageByUser.
         /// </summary>
-        /// <returns>The PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrintUsageByUser.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintUsageByUser.</returns>
-        System.Threading.Tasks.Task<PrintUsageByUser> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrintUsageByUser and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrintUsageByUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrintUsageByUser and returns a <see cref="GraphResponse{PrintUsageByUser}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintUsageByUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintUsageByUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrintUsageByUser using PATCH.

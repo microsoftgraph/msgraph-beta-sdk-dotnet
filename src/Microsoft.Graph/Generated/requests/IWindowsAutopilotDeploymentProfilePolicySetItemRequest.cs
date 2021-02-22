@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsAutopilotDeploymentProfilePolicySetItem.
         /// </summary>
-        /// <returns>The WindowsAutopilotDeploymentProfilePolicySetItem.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfilePolicySetItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeploymentProfilePolicySetItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAutopilotDeploymentProfilePolicySetItem.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfilePolicySetItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeploymentProfilePolicySetItem and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfilePolicySetItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfilePolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsAutopilotDeploymentProfilePolicySetItem and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfilePolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfilePolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfilePolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsAutopilotDeploymentProfilePolicySetItem using PATCH.

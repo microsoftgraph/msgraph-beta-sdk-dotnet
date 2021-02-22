@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Chat.
         /// </summary>
-        /// <returns>The Chat.</returns>
-        System.Threading.Tasks.Task<Chat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Chat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Chat.</returns>
-        System.Threading.Tasks.Task<Chat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Chat and returns a <see cref="GraphResponse{Chat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Chat>> GetResponseAsync();
+        System.Threading.Tasks.Task<Chat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Chat and returns a <see cref="GraphResponse{Chat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Chat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Chat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Chat using POST.

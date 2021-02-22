@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<AgreementAcceptance>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -48,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -64,16 +64,17 @@ namespace Microsoft.Graph
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
-            var stream = new System.IO.MemoryStream();
+            var payload = string.Empty;
+            using (var stream = new System.IO.MemoryStream())
             using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
             {
                 writer.WriteStartObject();
                 writer.WriteString("@odata.id", objectUri);
                 writer.WriteEndObject();
                 await writer.FlushAsync();
+                payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             }
-            var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             this.ContentType = Constants.ContentTypes.JsonContentType;
             await this.SendAsync(payload, cancellationToken).ConfigureAwait(false);
         }
@@ -88,16 +89,17 @@ namespace Microsoft.Graph
         {
             var baseUrl = this.Client.BaseUrl;
             var objectUri = string.Format(@"{0}/users/{1}", baseUrl, id);
-            var stream = new System.IO.MemoryStream();
+            var payload = string.Empty;
+            using (var stream = new System.IO.MemoryStream())
             using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
             {
                 writer.WriteStartObject();
                 writer.WriteString("@odata.id", objectUri);
                 writer.WriteEndObject();
                 await writer.FlushAsync();
+                payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
             }
-            var payload = System.Text.Encoding.UTF8.GetString(stream.ToArray());
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             this.ContentType = Constants.ContentTypes.JsonContentType;
             return await this.SendAsyncWithGraphResponse(payload, cancellationToken).ConfigureAwait(false);
         }

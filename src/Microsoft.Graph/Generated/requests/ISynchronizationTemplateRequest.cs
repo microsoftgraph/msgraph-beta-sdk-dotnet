@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SynchronizationTemplate.
         /// </summary>
-        /// <returns>The SynchronizationTemplate.</returns>
-        System.Threading.Tasks.Task<SynchronizationTemplate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SynchronizationTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SynchronizationTemplate.</returns>
-        System.Threading.Tasks.Task<SynchronizationTemplate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SynchronizationTemplate and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> GetResponseAsync();
+        System.Threading.Tasks.Task<SynchronizationTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SynchronizationTemplate and returns a <see cref="GraphResponse{SynchronizationTemplate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SynchronizationTemplate using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81StoreApp.
         /// </summary>
-        /// <returns>The WindowsPhone81StoreApp.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81StoreApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81StoreApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81StoreApp.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81StoreApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81StoreApp and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsPhone81StoreApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsPhone81StoreApp and returns a <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81StoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81StoreApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsPhone81StoreApp using PATCH.

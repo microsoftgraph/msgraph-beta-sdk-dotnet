@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SensitiveType.
         /// </summary>
-        /// <returns>The SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SensitiveType.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SensitiveType and returns a <see cref="GraphResponse{SensitiveType}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync();
+        System.Threading.Tasks.Task<SensitiveType> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SensitiveType and returns a <see cref="GraphResponse{SensitiveType}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SensitiveType using PATCH.

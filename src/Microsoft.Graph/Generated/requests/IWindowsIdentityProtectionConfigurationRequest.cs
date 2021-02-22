@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsIdentityProtectionConfiguration.
         /// </summary>
-        /// <returns>The WindowsIdentityProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsIdentityProtectionConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsIdentityProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsIdentityProtectionConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsIdentityProtectionConfiguration and returns a <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsIdentityProtectionConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsIdentityProtectionConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsIdentityProtectionConfiguration using PATCH.

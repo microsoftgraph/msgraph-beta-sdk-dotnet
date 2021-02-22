@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RoleDefinition.
         /// </summary>
-        /// <returns>The RoleDefinition.</returns>
-        System.Threading.Tasks.Task<RoleDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RoleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleDefinition.</returns>
-        System.Threading.Tasks.Task<RoleDefinition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync();
+        System.Threading.Tasks.Task<RoleDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RoleDefinition using PATCH.

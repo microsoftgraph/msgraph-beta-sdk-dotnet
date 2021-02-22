@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SubscribedSku.
         /// </summary>
-        /// <returns>The SubscribedSku.</returns>
-        System.Threading.Tasks.Task<SubscribedSku> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SubscribedSku.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SubscribedSku.</returns>
-        System.Threading.Tasks.Task<SubscribedSku> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SubscribedSku and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> GetResponseAsync();
+        System.Threading.Tasks.Task<SubscribedSku> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SubscribedSku and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SubscribedSku using PATCH.

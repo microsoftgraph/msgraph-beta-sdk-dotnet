@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GovernanceRoleSetting.
         /// </summary>
-        /// <returns>The GovernanceRoleSetting.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleSetting> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GovernanceRoleSetting.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceRoleSetting.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleSetting> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GovernanceRoleSetting and returns a <see cref="GraphResponse{GovernanceRoleSetting}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> GetResponseAsync();
+        System.Threading.Tasks.Task<GovernanceRoleSetting> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GovernanceRoleSetting and returns a <see cref="GraphResponse{GovernanceRoleSetting}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernanceRoleSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleSetting>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GovernanceRoleSetting using PATCH.

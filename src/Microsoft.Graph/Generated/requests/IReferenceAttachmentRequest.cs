@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ReferenceAttachment.
         /// </summary>
-        /// <returns>The ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ReferenceAttachment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ReferenceAttachment and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync();
+        System.Threading.Tasks.Task<ReferenceAttachment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ReferenceAttachment and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ReferenceAttachment using PATCH.

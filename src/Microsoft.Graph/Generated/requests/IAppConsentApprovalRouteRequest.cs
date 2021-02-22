@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppConsentApprovalRoute.
         /// </summary>
-        /// <returns>The AppConsentApprovalRoute.</returns>
-        System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppConsentApprovalRoute.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppConsentApprovalRoute.</returns>
-        System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppConsentApprovalRoute and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppConsentApprovalRoute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppConsentApprovalRoute> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppConsentApprovalRoute and returns a <see cref="GraphResponse{AppConsentApprovalRoute}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppConsentApprovalRoute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppConsentApprovalRoute>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppConsentApprovalRoute using PATCH.

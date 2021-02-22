@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Program.
         /// </summary>
-        /// <returns>The Program.</returns>
-        System.Threading.Tasks.Task<Program> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Program.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Program.</returns>
-        System.Threading.Tasks.Task<Program> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Program and returns a <see cref="GraphResponse{Program}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Program>> GetResponseAsync();
+        System.Threading.Tasks.Task<Program> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Program and returns a <see cref="GraphResponse{Program}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Program}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Program>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Program>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Program using PATCH.

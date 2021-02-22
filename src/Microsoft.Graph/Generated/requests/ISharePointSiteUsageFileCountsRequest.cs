@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharePointSiteUsageFileCounts.
         /// </summary>
-        /// <returns>The SharePointSiteUsageFileCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharePointSiteUsageFileCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointSiteUsageFileCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharePointSiteUsageFileCounts and returns a <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharePointSiteUsageFileCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointSiteUsageFileCounts and returns a <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointSiteUsageFileCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageFileCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointSiteUsageFileCounts using PATCH.

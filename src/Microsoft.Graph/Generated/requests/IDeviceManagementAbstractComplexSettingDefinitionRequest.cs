@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementAbstractComplexSettingDefinition.
         /// </summary>
-        /// <returns>The DeviceManagementAbstractComplexSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementAbstractComplexSettingDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementAbstractComplexSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingDefinition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementAbstractComplexSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingDefinition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingDefinition>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementAbstractComplexSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementAbstractComplexSettingDefinition using PATCH.

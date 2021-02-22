@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementDerivedCredentialSettings.
         /// </summary>
-        /// <returns>The DeviceManagementDerivedCredentialSettings.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementDerivedCredentialSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementDerivedCredentialSettings.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementDerivedCredentialSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementDerivedCredentialSettings and returns a <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDerivedCredentialSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDerivedCredentialSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified DeviceManagementDerivedCredentialSettings using POST.

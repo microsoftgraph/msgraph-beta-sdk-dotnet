@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileApp.
         /// </summary>
-        /// <returns>The MobileApp.</returns>
-        System.Threading.Tasks.Task<MobileApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileApp.</returns>
-        System.Threading.Tasks.Task<MobileApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MobileApp and returns a <see cref="GraphResponse{MobileApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<MobileApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileApp and returns a <see cref="GraphResponse{MobileApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified MobileApp using POST.

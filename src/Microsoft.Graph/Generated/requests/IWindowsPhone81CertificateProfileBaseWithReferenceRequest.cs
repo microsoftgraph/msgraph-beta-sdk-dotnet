@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81CertificateProfileBase.
         /// </summary>
-        /// <returns>The WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81CertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81CertificateProfileBase and returns a <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsPhone81CertificateProfileBase and returns a <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified WindowsPhone81CertificateProfileBase using POST.

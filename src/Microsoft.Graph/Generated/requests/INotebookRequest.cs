@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Notebook.
         /// </summary>
-        /// <returns>The Notebook.</returns>
-        System.Threading.Tasks.Task<Notebook> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Notebook.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Notebook.</returns>
-        System.Threading.Tasks.Task<Notebook> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Notebook and returns a <see cref="GraphResponse{Notebook}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Notebook>> GetResponseAsync();
+        System.Threading.Tasks.Task<Notebook> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Notebook and returns a <see cref="GraphResponse{Notebook}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Notebook>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Notebook using PATCH.

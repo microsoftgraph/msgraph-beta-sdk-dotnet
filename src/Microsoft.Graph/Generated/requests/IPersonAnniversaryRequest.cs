@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PersonAnniversary.
         /// </summary>
-        /// <returns>The PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PersonAnniversary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonAnniversary.</returns>
-        System.Threading.Tasks.Task<PersonAnniversary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PersonAnniversary and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> GetResponseAsync();
+        System.Threading.Tasks.Task<PersonAnniversary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PersonAnniversary and returns a <see cref="GraphResponse{PersonAnniversary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAnniversary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonAnniversary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PersonAnniversary using PATCH.

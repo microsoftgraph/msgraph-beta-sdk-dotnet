@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidVpnConfiguration.
         /// </summary>
-        /// <returns>The AndroidVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidVpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidVpnConfiguration and returns a <see cref="GraphResponse{AndroidVpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidVpnConfiguration and returns a <see cref="GraphResponse{AndroidVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidVpnConfiguration using PATCH.

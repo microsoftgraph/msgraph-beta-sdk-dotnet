@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TrustFrameworkPolicy.
         /// </summary>
-        /// <returns>The TrustFrameworkPolicy.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TrustFrameworkPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TrustFrameworkPolicy.</returns>
-        System.Threading.Tasks.Task<TrustFrameworkPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TrustFrameworkPolicy and returns a <see cref="GraphResponse{TrustFrameworkPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<TrustFrameworkPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TrustFrameworkPolicy and returns a <see cref="GraphResponse{TrustFrameworkPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TrustFrameworkPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TrustFrameworkPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TrustFrameworkPolicy using PATCH.

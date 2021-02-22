@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<SuggestedEnrollmentLimit> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             return this.SendAsync<SuggestedEnrollmentLimit>(null, cancellationToken);
         }
 
@@ -48,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SuggestedEnrollmentLimit>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SuggestedEnrollmentLimit>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<SuggestedEnrollmentLimit>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<SuggestedEnrollmentLimit>(null, cancellationToken);
         }
 
 

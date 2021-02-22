@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedAppStatusRaw.
         /// </summary>
-        /// <returns>The ManagedAppStatusRaw.</returns>
-        System.Threading.Tasks.Task<ManagedAppStatusRaw> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedAppStatusRaw.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppStatusRaw.</returns>
-        System.Threading.Tasks.Task<ManagedAppStatusRaw> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedAppStatusRaw and returns a <see cref="GraphResponse{ManagedAppStatusRaw}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedAppStatusRaw}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatusRaw>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedAppStatusRaw> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedAppStatusRaw and returns a <see cref="GraphResponse{ManagedAppStatusRaw}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppStatusRaw}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatusRaw>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatusRaw>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedAppStatusRaw using PATCH.

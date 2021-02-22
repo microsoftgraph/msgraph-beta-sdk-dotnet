@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkEnrollmentProfile.
         /// </summary>
-        /// <returns>The AndroidForWorkEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkEnrollmentProfile and returns a <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkEnrollmentProfile and returns a <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkEnrollmentProfile using PATCH.

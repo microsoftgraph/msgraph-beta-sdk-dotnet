@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BookingStaffMember.
         /// </summary>
-        /// <returns>The BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BookingStaffMember.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BookingStaffMember and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> GetResponseAsync();
+        System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BookingStaffMember and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BookingStaffMember using PATCH.

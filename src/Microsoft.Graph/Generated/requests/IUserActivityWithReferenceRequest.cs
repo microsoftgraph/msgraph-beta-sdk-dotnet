@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserActivity.
         /// </summary>
-        /// <returns>The UserActivity.</returns>
-        System.Threading.Tasks.Task<UserActivity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserActivity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserActivity.</returns>
-        System.Threading.Tasks.Task<UserActivity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserActivity and returns a <see cref="GraphResponse{UserActivity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserActivity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserActivity and returns a <see cref="GraphResponse{UserActivity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified UserActivity using POST.

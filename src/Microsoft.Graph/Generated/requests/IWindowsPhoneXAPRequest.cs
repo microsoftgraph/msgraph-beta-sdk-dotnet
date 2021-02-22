@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhoneXAP.
         /// </summary>
-        /// <returns>The WindowsPhoneXAP.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsPhoneXAP.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhoneXAP.</returns>
-        System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsPhoneXAP and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhoneXAP}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsPhoneXAP> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsPhoneXAP and returns a <see cref="GraphResponse{WindowsPhoneXAP}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhoneXAP}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhoneXAP>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsPhoneXAP using PATCH.

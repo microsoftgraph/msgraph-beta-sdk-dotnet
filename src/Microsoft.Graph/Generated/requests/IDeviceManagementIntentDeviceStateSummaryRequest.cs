@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntentDeviceStateSummary.
         /// </summary>
-        /// <returns>The DeviceManagementIntentDeviceStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentDeviceStateSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentDeviceStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentDeviceStateSummary and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentDeviceStateSummary and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentDeviceStateSummary using PATCH.

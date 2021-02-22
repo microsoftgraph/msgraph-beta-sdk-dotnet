@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceConfigurationGroupAssignment.
         /// </summary>
-        /// <returns>The DeviceConfigurationGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationGroupAssignment using PATCH.

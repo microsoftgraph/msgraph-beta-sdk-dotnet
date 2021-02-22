@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileScepCertificateProfile.
         /// </summary>
-        /// <returns>The AndroidWorkProfileScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileScepCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileScepCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileScepCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileScepCertificateProfile and returns a <see cref="GraphResponse{AndroidWorkProfileScepCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileScepCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidWorkProfileScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileScepCertificateProfile and returns a <see cref="GraphResponse{AndroidWorkProfileScepCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileScepCertificateProfile using PATCH.

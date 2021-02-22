@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Note.
         /// </summary>
-        /// <returns>The Note.</returns>
-        System.Threading.Tasks.Task<Note> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Note.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Note.</returns>
-        System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync();
+        System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Note using PATCH.

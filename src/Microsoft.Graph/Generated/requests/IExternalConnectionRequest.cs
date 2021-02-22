@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ExternalConnection.
         /// </summary>
-        /// <returns>The ExternalConnection.</returns>
-        System.Threading.Tasks.Task<ExternalConnection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ExternalConnection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExternalConnection.</returns>
-        System.Threading.Tasks.Task<ExternalConnection> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ExternalConnection and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> GetResponseAsync();
+        System.Threading.Tasks.Task<ExternalConnection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ExternalConnection and returns a <see cref="GraphResponse{ExternalConnection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExternalConnection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ExternalConnection using PATCH.

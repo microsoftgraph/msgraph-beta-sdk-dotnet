@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserAnalytics.
         /// </summary>
-        /// <returns>The UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserAnalytics.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserAnalytics and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserAnalytics> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserAnalytics and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserAnalytics using PATCH.

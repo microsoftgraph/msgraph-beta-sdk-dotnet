@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementExchangeConnector.
         /// </summary>
-        /// <returns>The DeviceManagementExchangeConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementExchangeConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementExchangeConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementExchangeConnector using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AzureADFeatureUsage.
         /// </summary>
-        /// <returns>The AzureADFeatureUsage.</returns>
-        System.Threading.Tasks.Task<AzureADFeatureUsage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AzureADFeatureUsage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AzureADFeatureUsage.</returns>
-        System.Threading.Tasks.Task<AzureADFeatureUsage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AzureADFeatureUsage and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> GetResponseAsync();
+        System.Threading.Tasks.Task<AzureADFeatureUsage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AzureADFeatureUsage and returns a <see cref="GraphResponse{AzureADFeatureUsage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AzureADFeatureUsage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AzureADFeatureUsage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AzureADFeatureUsage using PATCH.

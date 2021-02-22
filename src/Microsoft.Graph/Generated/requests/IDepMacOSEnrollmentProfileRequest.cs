@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DepMacOSEnrollmentProfile.
         /// </summary>
-        /// <returns>The DepMacOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepMacOSEnrollmentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DepMacOSEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DepMacOSEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<DepMacOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DepMacOSEnrollmentProfile and returns a <see cref="GraphResponse{DepMacOSEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DepMacOSEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepMacOSEnrollmentProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<DepMacOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DepMacOSEnrollmentProfile and returns a <see cref="GraphResponse{DepMacOSEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepMacOSEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepMacOSEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DepMacOSEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DepMacOSEnrollmentProfile using PATCH.

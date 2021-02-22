@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AzureADUserFeatureUsage.
         /// </summary>
-        /// <returns>The AzureADUserFeatureUsage.</returns>
-        System.Threading.Tasks.Task<AzureADUserFeatureUsage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AzureADUserFeatureUsage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AzureADUserFeatureUsage.</returns>
-        System.Threading.Tasks.Task<AzureADUserFeatureUsage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AzureADUserFeatureUsage and returns a <see cref="GraphResponse{AzureADUserFeatureUsage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AzureADUserFeatureUsage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AzureADUserFeatureUsage>> GetResponseAsync();
+        System.Threading.Tasks.Task<AzureADUserFeatureUsage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AzureADUserFeatureUsage and returns a <see cref="GraphResponse{AzureADUserFeatureUsage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AzureADUserFeatureUsage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AzureADUserFeatureUsage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AzureADUserFeatureUsage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AzureADUserFeatureUsage using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified LocalizedNotificationMessage.
         /// </summary>
-        /// <returns>The LocalizedNotificationMessage.</returns>
-        System.Threading.Tasks.Task<LocalizedNotificationMessage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified LocalizedNotificationMessage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LocalizedNotificationMessage.</returns>
-        System.Threading.Tasks.Task<LocalizedNotificationMessage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> GetResponseAsync();
+        System.Threading.Tasks.Task<LocalizedNotificationMessage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LocalizedNotificationMessage using PATCH.

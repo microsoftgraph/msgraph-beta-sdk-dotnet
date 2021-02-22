@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerGeneralDeviceConfiguration.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerGeneralDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerGeneralDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerGeneralDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerGeneralDeviceConfiguration using PATCH.

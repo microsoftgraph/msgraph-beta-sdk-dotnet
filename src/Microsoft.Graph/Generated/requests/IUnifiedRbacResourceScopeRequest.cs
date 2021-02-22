@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRbacResourceScope.
         /// </summary>
-        /// <returns>The UnifiedRbacResourceScope.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceScope> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRbacResourceScope.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRbacResourceScope.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceScope> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRbacResourceScope and returns a <see cref="GraphResponse{UnifiedRbacResourceScope}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceScope}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceScope>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRbacResourceScope> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRbacResourceScope and returns a <see cref="GraphResponse{UnifiedRbacResourceScope}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceScope}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceScope>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceScope>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRbacResourceScope using PATCH.

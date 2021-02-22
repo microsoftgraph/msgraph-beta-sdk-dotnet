@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows10XSCEPCertificateProfile.
         /// </summary>
-        /// <returns>The Windows10XSCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows10XSCEPCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XSCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows10XSCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10XSCEPCertificateProfile and returns a <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XSCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10XSCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10XSCEPCertificateProfile using PATCH.

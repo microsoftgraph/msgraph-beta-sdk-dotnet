@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified InferenceClassificationOverride.
         /// </summary>
-        /// <returns>The InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync();
-
-        /// <summary>
-        /// Gets the specified InferenceClassificationOverride.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified InferenceClassificationOverride and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> GetResponseAsync();
+        System.Threading.Tasks.Task<InferenceClassificationOverride> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified InferenceClassificationOverride and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified InferenceClassificationOverride using PATCH.

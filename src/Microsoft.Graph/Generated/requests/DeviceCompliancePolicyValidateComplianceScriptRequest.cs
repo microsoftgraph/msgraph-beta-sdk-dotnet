@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceComplianceScriptValidationResult> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<DeviceComplianceScriptValidationResult>(this.RequestBody, cancellationToken);
         }
 
@@ -55,10 +55,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptValidationResult>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptValidationResult>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<DeviceComplianceScriptValidationResult>(this.RequestBody, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScriptValidationResult>(this.RequestBody, cancellationToken);
         }
 
 

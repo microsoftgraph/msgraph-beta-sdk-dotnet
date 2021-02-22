@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceLogCollectionResponse.
         /// </summary>
-        /// <returns>The DeviceLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceLogCollectionResponse.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceLogCollectionResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceLogCollectionResponse and returns a <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceLogCollectionResponse using PATCH.

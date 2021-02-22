@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosCompliancePolicy.
         /// </summary>
-        /// <returns>The IosCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<IosCompliancePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosCompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<IosCompliancePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosCompliancePolicy and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosCompliancePolicy and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosCompliancePolicy using PATCH.

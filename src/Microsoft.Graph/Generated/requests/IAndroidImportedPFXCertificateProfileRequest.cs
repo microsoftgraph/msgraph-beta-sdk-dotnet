@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidImportedPFXCertificateProfile.
         /// </summary>
-        /// <returns>The AndroidImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidImportedPFXCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidImportedPFXCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidImportedPFXCertificateProfile and returns a <see cref="GraphResponse{AndroidImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidImportedPFXCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidImportedPFXCertificateProfile and returns a <see cref="GraphResponse{AndroidImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidImportedPFXCertificateProfile using PATCH.

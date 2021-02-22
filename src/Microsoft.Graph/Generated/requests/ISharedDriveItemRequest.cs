@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharedDriveItem.
         /// </summary>
-        /// <returns>The SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharedDriveItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharedDriveItem and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharedDriveItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharedDriveItem and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharedDriveItem using PATCH.

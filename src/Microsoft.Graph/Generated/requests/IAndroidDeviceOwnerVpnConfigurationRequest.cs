@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerVpnConfiguration.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerVpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerVpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerVpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerVpnConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerVpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerVpnConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerVpnConfiguration using PATCH.

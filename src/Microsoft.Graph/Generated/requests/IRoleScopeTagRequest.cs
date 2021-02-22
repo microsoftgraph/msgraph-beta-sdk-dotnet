@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RoleScopeTag.
         /// </summary>
-        /// <returns>The RoleScopeTag.</returns>
-        System.Threading.Tasks.Task<RoleScopeTag> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RoleScopeTag.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleScopeTag.</returns>
-        System.Threading.Tasks.Task<RoleScopeTag> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RoleScopeTag and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> GetResponseAsync();
+        System.Threading.Tasks.Task<RoleScopeTag> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RoleScopeTag and returns a <see cref="GraphResponse{RoleScopeTag}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RoleScopeTag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RoleScopeTag>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RoleScopeTag using PATCH.

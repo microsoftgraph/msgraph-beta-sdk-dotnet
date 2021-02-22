@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DirectoryObject.
         /// </summary>
-        /// <returns>The DirectoryObject.</returns>
-        System.Threading.Tasks.Task<DirectoryObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DirectoryObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DirectoryObject.</returns>
-        System.Threading.Tasks.Task<DirectoryObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DirectoryObject and returns a <see cref="GraphResponse{DirectoryObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<DirectoryObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DirectoryObject and returns a <see cref="GraphResponse{DirectoryObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DirectoryObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DirectoryObject using PATCH.

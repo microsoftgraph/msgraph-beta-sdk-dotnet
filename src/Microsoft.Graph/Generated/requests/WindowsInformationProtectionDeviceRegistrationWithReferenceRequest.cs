@@ -38,20 +38,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsInformationProtectionDeviceRegistration.
         /// </summary>
-        /// <returns>The WindowsInformationProtectionDeviceRegistration.</returns>
-        public System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsInformationProtectionDeviceRegistration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsInformationProtectionDeviceRegistration.</returns>
-        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -59,21 +50,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsInformationProtectionDeviceRegistration and returns a <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(null, cancellationToken);
         }
 
 		/// <summary>
@@ -85,7 +67,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> CreateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -96,11 +78,11 @@ namespace Microsoft.Graph
         /// <param name="windowsInformationProtectionDeviceRegistrationToCreate">The WindowsInformationProtectionDeviceRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> CreateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToCreate, cancellationToken);
         }
 
 		/// <summary>
@@ -113,7 +95,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsInformationProtectionDeviceRegistration> UpdateAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -125,11 +107,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionDeviceRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionDeviceRegistration>> UpdateResponseAsync(WindowsInformationProtectionDeviceRegistration windowsInformationProtectionDeviceRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<WindowsInformationProtectionDeviceRegistration>(windowsInformationProtectionDeviceRegistrationToUpdate, cancellationToken);
         }
 
 		/// <summary>
@@ -139,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<WindowsInformationProtectionDeviceRegistration>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -148,10 +130,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

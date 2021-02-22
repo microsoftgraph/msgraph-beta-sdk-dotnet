@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementTroubleshootingEvent.
         /// </summary>
-        /// <returns>The DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementTroubleshootingEvent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementTroubleshootingEvent and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementTroubleshootingEvent and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementTroubleshootingEvent using PATCH.

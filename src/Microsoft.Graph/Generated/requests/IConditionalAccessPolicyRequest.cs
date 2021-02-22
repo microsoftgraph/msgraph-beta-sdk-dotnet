@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ConditionalAccessPolicy.
         /// </summary>
-        /// <returns>The ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ConditionalAccessPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<ConditionalAccessPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConditionalAccessPolicy and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConditionalAccessPolicy using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageCatalog.
         /// </summary>
-        /// <returns>The AccessPackageCatalog.</returns>
-        System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessPackageCatalog.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageCatalog.</returns>
-        System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessPackageCatalog and returns a <see cref="GraphResponse{AccessPackageCatalog}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageCatalog and returns a <see cref="GraphResponse{AccessPackageCatalog}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AccessPackageCatalog using POST.

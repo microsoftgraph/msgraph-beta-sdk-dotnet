@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosEduDeviceConfiguration.
         /// </summary>
-        /// <returns>The IosEduDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEduDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosEduDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosEduDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEduDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosEduDeviceConfiguration and returns a <see cref="GraphResponse{IosEduDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosEduDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEduDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosEduDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosEduDeviceConfiguration and returns a <see cref="GraphResponse{IosEduDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEduDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEduDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosEduDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosEduDeviceConfiguration using PATCH.

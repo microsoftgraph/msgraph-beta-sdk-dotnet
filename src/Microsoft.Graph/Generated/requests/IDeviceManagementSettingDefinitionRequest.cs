@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementSettingDefinition.
         /// </summary>
-        /// <returns>The DeviceManagementSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementSettingDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementSettingDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementSettingDefinition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementSettingDefinition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingDefinition>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementSettingDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementSettingDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementSettingDefinition using PATCH.

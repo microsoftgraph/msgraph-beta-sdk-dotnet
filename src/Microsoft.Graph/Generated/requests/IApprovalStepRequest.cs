@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ApprovalStep.
         /// </summary>
-        /// <returns>The ApprovalStep.</returns>
-        System.Threading.Tasks.Task<ApprovalStep> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ApprovalStep.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApprovalStep.</returns>
-        System.Threading.Tasks.Task<ApprovalStep> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ApprovalStep and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> GetResponseAsync();
+        System.Threading.Tasks.Task<ApprovalStep> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ApprovalStep and returns a <see cref="GraphResponse{ApprovalStep}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalStep}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApprovalStep>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ApprovalStep using PATCH.

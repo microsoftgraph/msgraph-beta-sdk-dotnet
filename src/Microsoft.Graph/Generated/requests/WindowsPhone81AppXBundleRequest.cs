@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsPhone81AppXBundle> CreateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81AppXBundleToCreate">The WindowsPhone81AppXBundle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> CreateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> CreateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<WindowsPhone81AppXBundle>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81AppXBundle.
-        /// </summary>
-        /// <returns>The WindowsPhone81AppXBundle.</returns>
-        public System.Threading.Tasks.Task<WindowsPhone81AppXBundle> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81AppXBundle.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhone81AppXBundle> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhone81AppXBundle> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<WindowsPhone81AppXBundle>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81AppXBundle and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81AppXBundle and returns a <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsPhone81AppXBundle> UpdateAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81AppXBundle}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> UpdateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81AppXBundle>> UpdateResponseAsync(WindowsPhone81AppXBundle windowsPhone81AppXBundleToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81AppXBundle>(windowsPhone81AppXBundleToUpdate, cancellationToken);
         }
 
         /// <summary>

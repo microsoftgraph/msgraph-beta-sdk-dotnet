@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Bitlocker.
         /// </summary>
-        /// <returns>The Bitlocker.</returns>
-        System.Threading.Tasks.Task<Bitlocker> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Bitlocker.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Bitlocker.</returns>
-        System.Threading.Tasks.Task<Bitlocker> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Bitlocker and returns a <see cref="GraphResponse{Bitlocker}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Bitlocker}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Bitlocker>> GetResponseAsync();
+        System.Threading.Tasks.Task<Bitlocker> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Bitlocker and returns a <see cref="GraphResponse{Bitlocker}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Bitlocker}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Bitlocker>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Bitlocker>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Bitlocker using PATCH.

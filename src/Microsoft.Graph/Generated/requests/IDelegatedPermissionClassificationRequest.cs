@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DelegatedPermissionClassification.
         /// </summary>
-        /// <returns>The DelegatedPermissionClassification.</returns>
-        System.Threading.Tasks.Task<DelegatedPermissionClassification> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DelegatedPermissionClassification.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DelegatedPermissionClassification.</returns>
-        System.Threading.Tasks.Task<DelegatedPermissionClassification> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> GetResponseAsync();
+        System.Threading.Tasks.Task<DelegatedPermissionClassification> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DelegatedPermissionClassification and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DelegatedPermissionClassification using PATCH.

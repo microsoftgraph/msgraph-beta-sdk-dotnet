@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Event.
         /// </summary>
-        /// <returns>The Event.</returns>
-        System.Threading.Tasks.Task<Event> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Event.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Event.</returns>
-        System.Threading.Tasks.Task<Event> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Event and returns a <see cref="GraphResponse{Event}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync();
+        System.Threading.Tasks.Task<Event> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Event and returns a <see cref="GraphResponse{Event}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Event>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Event using PATCH.

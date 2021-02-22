@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationCategory.
         /// </summary>
-        /// <returns>The DeviceManagementConfigurationCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementConfigurationCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationCategory and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementConfigurationCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationCategory and returns a <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementConfigurationCategory using PATCH.

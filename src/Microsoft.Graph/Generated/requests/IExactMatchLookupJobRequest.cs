@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ExactMatchLookupJob.
         /// </summary>
-        /// <returns>The ExactMatchLookupJob.</returns>
-        System.Threading.Tasks.Task<ExactMatchLookupJob> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ExactMatchLookupJob.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchLookupJob.</returns>
-        System.Threading.Tasks.Task<ExactMatchLookupJob> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ExactMatchLookupJob and returns a <see cref="GraphResponse{ExactMatchLookupJob}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExactMatchLookupJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchLookupJob>> GetResponseAsync();
+        System.Threading.Tasks.Task<ExactMatchLookupJob> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ExactMatchLookupJob and returns a <see cref="GraphResponse{ExactMatchLookupJob}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchLookupJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchLookupJob>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchLookupJob>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ExactMatchLookupJob using PATCH.

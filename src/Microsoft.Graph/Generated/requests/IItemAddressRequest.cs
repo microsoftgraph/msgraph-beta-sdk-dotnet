@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ItemAddress.
         /// </summary>
-        /// <returns>The ItemAddress.</returns>
-        System.Threading.Tasks.Task<ItemAddress> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ItemAddress.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemAddress.</returns>
-        System.Threading.Tasks.Task<ItemAddress> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ItemAddress and returns a <see cref="GraphResponse{ItemAddress}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync();
+        System.Threading.Tasks.Task<ItemAddress> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemAddress and returns a <see cref="GraphResponse{ItemAddress}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemAddress}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemAddress>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemAddress using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookRange.
         /// </summary>
-        /// <returns>The WorkbookRange.</returns>
-        System.Threading.Tasks.Task<WorkbookRange> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookRange.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRange.</returns>
-        System.Threading.Tasks.Task<WorkbookRange> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookRange and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookRange> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookRange and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookRange using PATCH.

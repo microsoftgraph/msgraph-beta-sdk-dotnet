@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Presence.
         /// </summary>
-        /// <returns>The Presence.</returns>
-        System.Threading.Tasks.Task<Presence> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Presence.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Presence.</returns>
-        System.Threading.Tasks.Task<Presence> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync();
+        System.Threading.Tasks.Task<Presence> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Presence using PATCH.

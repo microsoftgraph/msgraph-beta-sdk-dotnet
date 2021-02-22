@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceComplianceScript.
         /// </summary>
-        /// <returns>The DeviceComplianceScript.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceScript.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceScript.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceScript and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceComplianceScript> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceScript and returns a <see cref="GraphResponse{DeviceComplianceScript}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScript>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceScript using PATCH.

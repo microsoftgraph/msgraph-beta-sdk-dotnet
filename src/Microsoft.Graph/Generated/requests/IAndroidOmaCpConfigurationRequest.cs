@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidOmaCpConfiguration.
         /// </summary>
-        /// <returns>The AndroidOmaCpConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidOmaCpConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidOmaCpConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidOmaCpConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidOmaCpConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidOmaCpConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidOmaCpConfiguration and returns a <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidOmaCpConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidOmaCpConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidOmaCpConfiguration using PATCH.

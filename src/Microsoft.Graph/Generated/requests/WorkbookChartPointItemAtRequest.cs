@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartPoint> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             return this.SendAsync<WorkbookChartPoint>(null, cancellationToken);
         }
 
@@ -48,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WorkbookChartPoint>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WorkbookChartPoint>(null, cancellationToken);
         }
 
 
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartPoint> PatchAsync(WorkbookChartPoint workbookchartpoint, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             return this.SendAsync<WorkbookChartPoint>(workbookchartpoint, cancellationToken);
         }
 
@@ -74,10 +74,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="workbookchartpoint">The WorkbookChartPoint object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> PatchResponseAsync(WorkbookChartPoint workbookchartpoint, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> PatchResponseAsync(WorkbookChartPoint workbookchartpoint, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookchartpoint, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookchartpoint, cancellationToken);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookChartPoint> PutAsync(WorkbookChartPoint workbookchartpoint, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             return this.SendAsync<WorkbookChartPoint>(workbookchartpoint, cancellationToken);
         }
 
@@ -99,10 +99,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="workbookchartpoint">The WorkbookChartPoint object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> PutResponseAsync(WorkbookChartPoint workbookchartpoint, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> PutResponseAsync(WorkbookChartPoint workbookchartpoint, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookchartpoint, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookchartpoint, cancellationToken);
         }
 
         /// <summary>

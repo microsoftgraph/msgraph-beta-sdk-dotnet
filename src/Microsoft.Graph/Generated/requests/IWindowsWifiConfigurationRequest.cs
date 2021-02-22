@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsWifiConfiguration.
         /// </summary>
-        /// <returns>The WindowsWifiConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsWifiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsWifiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsWifiConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsWifiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsWifiConfiguration and returns a <see cref="GraphResponse{WindowsWifiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsWifiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsWifiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsWifiConfiguration and returns a <see cref="GraphResponse{WindowsWifiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsWifiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsWifiConfiguration using PATCH.

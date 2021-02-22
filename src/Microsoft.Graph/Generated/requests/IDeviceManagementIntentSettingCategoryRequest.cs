@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntentSettingCategory.
         /// </summary>
-        /// <returns>The DeviceManagementIntentSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentSettingCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentSettingCategory and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntentSettingCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentSettingCategory and returns a <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentSettingCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentSettingCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentSettingCategory using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TelecomExpenseManagementPartner.
         /// </summary>
-        /// <returns>The TelecomExpenseManagementPartner.</returns>
-        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TelecomExpenseManagementPartner.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TelecomExpenseManagementPartner.</returns>
-        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync();
+        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TelecomExpenseManagementPartner using PATCH.

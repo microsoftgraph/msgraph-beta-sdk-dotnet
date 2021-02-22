@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TiIndicator.
         /// </summary>
-        /// <returns>The TiIndicator.</returns>
-        System.Threading.Tasks.Task<TiIndicator> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TiIndicator.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TiIndicator.</returns>
-        System.Threading.Tasks.Task<TiIndicator> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TiIndicator and returns a <see cref="GraphResponse{TiIndicator}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TiIndicator>> GetResponseAsync();
+        System.Threading.Tasks.Task<TiIndicator> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TiIndicator and returns a <see cref="GraphResponse{TiIndicator}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TiIndicator}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TiIndicator>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TiIndicator>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TiIndicator using PATCH.

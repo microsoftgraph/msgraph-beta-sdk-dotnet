@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Site.
         /// </summary>
-        /// <returns>The Site.</returns>
-        System.Threading.Tasks.Task<Site> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Site.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Site.</returns>
-        System.Threading.Tasks.Task<Site> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Site and returns a <see cref="GraphResponse{Site}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Site>> GetResponseAsync();
+        System.Threading.Tasks.Task<Site> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Site and returns a <see cref="GraphResponse{Site}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Site>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Site>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Site using PATCH.

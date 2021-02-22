@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SalesOrderLine.
         /// </summary>
-        /// <returns>The SalesOrderLine.</returns>
-        System.Threading.Tasks.Task<SalesOrderLine> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SalesOrderLine.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesOrderLine.</returns>
-        System.Threading.Tasks.Task<SalesOrderLine> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SalesOrderLine and returns a <see cref="GraphResponse{SalesOrderLine}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SalesOrderLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesOrderLine>> GetResponseAsync();
+        System.Threading.Tasks.Task<SalesOrderLine> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SalesOrderLine and returns a <see cref="GraphResponse{SalesOrderLine}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesOrderLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesOrderLine>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SalesOrderLine>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SalesOrderLine using PATCH.

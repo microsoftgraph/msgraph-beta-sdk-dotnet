@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EnrollmentConfigurationAssignment.
         /// </summary>
-        /// <returns>The EnrollmentConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EnrollmentConfigurationAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EnrollmentConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EnrollmentConfigurationAssignment using PATCH.

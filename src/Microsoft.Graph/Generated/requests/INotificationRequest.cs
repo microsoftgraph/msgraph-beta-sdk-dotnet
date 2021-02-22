@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Notification.
         /// </summary>
-        /// <returns>The Notification.</returns>
-        System.Threading.Tasks.Task<Notification> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Notification.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Notification.</returns>
-        System.Threading.Tasks.Task<Notification> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Notification and returns a <see cref="GraphResponse{Notification}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Notification>> GetResponseAsync();
+        System.Threading.Tasks.Task<Notification> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Notification and returns a <see cref="GraphResponse{Notification}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Notification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Notification>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Notification>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Notification using PATCH.

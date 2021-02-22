@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceComanagementAuthorityConfiguration.
         /// </summary>
-        /// <returns>The DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceComanagementAuthorityConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComanagementAuthorityConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceComanagementAuthorityConfiguration and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceComanagementAuthorityConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComanagementAuthorityConfiguration and returns a <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComanagementAuthorityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComanagementAuthorityConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComanagementAuthorityConfiguration using PATCH.

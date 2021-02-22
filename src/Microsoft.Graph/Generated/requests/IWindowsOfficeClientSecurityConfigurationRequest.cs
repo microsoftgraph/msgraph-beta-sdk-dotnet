@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsOfficeClientSecurityConfiguration.
         /// </summary>
-        /// <returns>The WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsOfficeClientSecurityConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH.

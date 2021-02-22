@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CertificateBasedAuthConfiguration.
         /// </summary>
-        /// <returns>The CertificateBasedAuthConfiguration.</returns>
-        System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CertificateBasedAuthConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CertificateBasedAuthConfiguration.</returns>
-        System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified CertificateBasedAuthConfiguration using POST.

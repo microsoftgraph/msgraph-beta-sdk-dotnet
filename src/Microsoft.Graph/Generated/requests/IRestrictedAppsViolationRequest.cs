@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RestrictedAppsViolation.
         /// </summary>
-        /// <returns>The RestrictedAppsViolation.</returns>
-        System.Threading.Tasks.Task<RestrictedAppsViolation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RestrictedAppsViolation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RestrictedAppsViolation.</returns>
-        System.Threading.Tasks.Task<RestrictedAppsViolation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RestrictedAppsViolation and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> GetResponseAsync();
+        System.Threading.Tasks.Task<RestrictedAppsViolation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RestrictedAppsViolation and returns a <see cref="GraphResponse{RestrictedAppsViolation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RestrictedAppsViolation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RestrictedAppsViolation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RestrictedAppsViolation using PATCH.

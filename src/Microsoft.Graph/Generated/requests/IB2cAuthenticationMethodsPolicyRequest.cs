@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified B2cAuthenticationMethodsPolicy.
         /// </summary>
-        /// <returns>The B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified B2cAuthenticationMethodsPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The B2cAuthenticationMethodsPolicy.</returns>
-        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified B2cAuthenticationMethodsPolicy and returns a <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<B2cAuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified B2cAuthenticationMethodsPolicy and returns a <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2cAuthenticationMethodsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<B2cAuthenticationMethodsPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified B2cAuthenticationMethodsPolicy using PATCH.

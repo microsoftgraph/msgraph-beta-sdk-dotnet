@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceAndAppManagementRoleDefinition.
         /// </summary>
-        /// <returns>The DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceAndAppManagementRoleDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH.

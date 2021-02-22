@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueBoolean.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValueBoolean.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationValueBoolean.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValueBoolean and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueBoolean> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueBoolean and returns a <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueBoolean}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueBoolean>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationValueBoolean using PATCH.

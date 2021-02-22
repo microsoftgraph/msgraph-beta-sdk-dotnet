@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceCategory.
         /// </summary>
-        /// <returns>The DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceCategory and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceCategory and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceCategory using PATCH.

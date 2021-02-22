@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamsTemplate.
         /// </summary>
-        /// <returns>The TeamsTemplate.</returns>
-        System.Threading.Tasks.Task<TeamsTemplate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TeamsTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsTemplate.</returns>
-        System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync();
+        System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamsTemplate using PATCH.

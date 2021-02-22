@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsStoreApp.
         /// </summary>
-        /// <returns>The WindowsStoreApp.</returns>
-        System.Threading.Tasks.Task<WindowsStoreApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsStoreApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsStoreApp.</returns>
-        System.Threading.Tasks.Task<WindowsStoreApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsStoreApp and returns a <see cref="GraphResponse{WindowsStoreApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsStoreApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsStoreApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsStoreApp and returns a <see cref="GraphResponse{WindowsStoreApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsStoreApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsStoreApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsStoreApp using PATCH.

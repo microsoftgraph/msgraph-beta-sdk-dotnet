@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkVpnConfiguration.
         /// </summary>
-        /// <returns>The AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkVpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkVpnConfiguration and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkVpnConfiguration and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkVpnConfiguration using PATCH.

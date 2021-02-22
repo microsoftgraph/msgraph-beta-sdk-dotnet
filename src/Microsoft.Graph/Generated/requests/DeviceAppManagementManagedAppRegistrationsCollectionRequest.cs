@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ManagedAppRegistration> AddAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
             return this.SendAsync<ManagedAppRegistration>(managedAppRegistration, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="managedAppRegistration">The ManagedAppRegistration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistration, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistration, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceAppManagementManagedAppRegistrationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceAppManagementManagedAppRegistrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementManagedAppRegistrationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppRegistrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementManagedAppRegistrationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceAppManagementManagedAppRegistrationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagementManagedAppRegistrationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

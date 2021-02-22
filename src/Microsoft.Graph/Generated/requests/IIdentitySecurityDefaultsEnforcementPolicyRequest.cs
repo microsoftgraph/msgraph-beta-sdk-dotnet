@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
-        /// <returns>The IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PATCH.

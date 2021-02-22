@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationSynchronizationProfile.
         /// </summary>
-        /// <returns>The EducationSynchronizationProfile.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSynchronizationProfile.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationProfile and returns a <see cref="GraphResponse{EducationSynchronizationProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationSynchronizationProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationSynchronizationProfile and returns a <see cref="GraphResponse{EducationSynchronizationProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationSynchronizationProfile using PATCH.

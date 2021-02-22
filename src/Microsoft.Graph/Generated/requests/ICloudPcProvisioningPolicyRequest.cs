@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CloudPcProvisioningPolicy.
         /// </summary>
-        /// <returns>The CloudPcProvisioningPolicy.</returns>
-        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CloudPcProvisioningPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcProvisioningPolicy.</returns>
-        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CloudPcProvisioningPolicy and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CloudPcProvisioningPolicy using PATCH.

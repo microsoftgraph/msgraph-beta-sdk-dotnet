@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MailboxUsageDetail.
         /// </summary>
-        /// <returns>The MailboxUsageDetail.</returns>
-        System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MailboxUsageDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailboxUsageDetail.</returns>
-        System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MailboxUsageDetail and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<MailboxUsageDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MailboxUsageDetail and returns a <see cref="GraphResponse{MailboxUsageDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailboxUsageDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MailboxUsageDetail using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityUserFlow.
         /// </summary>
-        /// <returns>The IdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlow> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityUserFlow.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlow> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityUserFlow and returns a <see cref="GraphResponse{IdentityUserFlow}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityUserFlow> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityUserFlow and returns a <see cref="GraphResponse{IdentityUserFlow}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityUserFlow using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidEasEmailProfileConfiguration.
         /// </summary>
-        /// <returns>The AndroidEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidEasEmailProfileConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidEasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidEasEmailProfileConfiguration and returns a <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidEasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidEasEmailProfileConfiguration using PATCH.

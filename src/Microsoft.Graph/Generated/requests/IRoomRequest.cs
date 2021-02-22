@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Room.
         /// </summary>
-        /// <returns>The Room.</returns>
-        System.Threading.Tasks.Task<Room> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Room.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Room.</returns>
-        System.Threading.Tasks.Task<Room> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync();
+        System.Threading.Tasks.Task<Room> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Room using PATCH.

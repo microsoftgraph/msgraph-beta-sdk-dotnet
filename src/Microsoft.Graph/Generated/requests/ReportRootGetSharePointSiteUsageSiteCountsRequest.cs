@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(null, cancellationToken);
         }
 
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> PatchAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var response = await this.SendAsync<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -120,10 +120,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PatchResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PatchResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> PutAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             var response = await this.SendAsync<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -168,10 +168,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PutResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PutResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>(sharepointsiteusagesitecounts, cancellationToken);
         }
 
         /// <summary>

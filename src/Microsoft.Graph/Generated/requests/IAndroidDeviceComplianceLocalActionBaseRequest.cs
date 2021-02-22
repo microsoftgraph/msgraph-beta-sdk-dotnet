@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionBase.
         /// </summary>
-        /// <returns>The AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceComplianceLocalActionBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH.

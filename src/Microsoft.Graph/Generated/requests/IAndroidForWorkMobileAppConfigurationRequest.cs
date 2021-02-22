@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkMobileAppConfiguration.
         /// </summary>
-        /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkMobileAppConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH.

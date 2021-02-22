@@ -53,28 +53,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified Custodian.
         /// </summary>
-        /// <returns>The Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Custodian.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Custodian and returns a <see cref="GraphResponse{Custodian}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> GetResponseAsync();
+        System.Threading.Tasks.Task<Custodian> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Custodian and returns a <see cref="GraphResponse{Custodian}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Custodian>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Custodian>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Custodian using PATCH.

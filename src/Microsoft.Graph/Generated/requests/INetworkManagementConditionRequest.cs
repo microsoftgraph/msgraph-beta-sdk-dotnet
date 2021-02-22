@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified NetworkManagementCondition.
         /// </summary>
-        /// <returns>The NetworkManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NetworkManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NetworkManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NetworkManagementCondition and returns a <see cref="GraphResponse{NetworkManagementCondition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NetworkManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> GetResponseAsync();
+        System.Threading.Tasks.Task<NetworkManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NetworkManagementCondition and returns a <see cref="GraphResponse{NetworkManagementCondition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NetworkManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NetworkManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NetworkManagementCondition using PATCH.

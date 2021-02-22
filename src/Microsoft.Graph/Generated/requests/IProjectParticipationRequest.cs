@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ProjectParticipation.
         /// </summary>
-        /// <returns>The ProjectParticipation.</returns>
-        System.Threading.Tasks.Task<ProjectParticipation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ProjectParticipation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProjectParticipation.</returns>
-        System.Threading.Tasks.Task<ProjectParticipation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ProjectParticipation and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> GetResponseAsync();
+        System.Threading.Tasks.Task<ProjectParticipation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ProjectParticipation and returns a <see cref="GraphResponse{ProjectParticipation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProjectParticipation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProjectParticipation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ProjectParticipation using PATCH.

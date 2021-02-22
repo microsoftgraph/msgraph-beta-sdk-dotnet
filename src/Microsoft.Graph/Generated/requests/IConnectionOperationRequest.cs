@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ConnectionOperation.
         /// </summary>
-        /// <returns>The ConnectionOperation.</returns>
-        System.Threading.Tasks.Task<ConnectionOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ConnectionOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConnectionOperation.</returns>
-        System.Threading.Tasks.Task<ConnectionOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ConnectionOperation and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<ConnectionOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConnectionOperation and returns a <see cref="GraphResponse{ConnectionOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectionOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConnectionOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConnectionOperation using PATCH.

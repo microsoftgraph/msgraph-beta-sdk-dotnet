@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TargetedManagedAppPolicyAssignment.
         /// </summary>
-        /// <returns>The TargetedManagedAppPolicyAssignment.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TargetedManagedAppPolicyAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppPolicyAssignment.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TargetedManagedAppPolicyAssignment and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TargetedManagedAppPolicyAssignment and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TargetedManagedAppPolicyAssignment using PATCH.

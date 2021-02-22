@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> AddAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRole, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRole, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="accessPackageAssignmentResourceRole">The AccessPackageAssignmentResourceRole to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> AddResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRole, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> AddResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRole, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRole, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRole, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentAccessPackageAssignmentResourceRolesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

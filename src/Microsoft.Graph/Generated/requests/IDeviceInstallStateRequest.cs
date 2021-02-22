@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceInstallState.
         /// </summary>
-        /// <returns>The DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceInstallState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceInstallState and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceInstallState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceInstallState and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceInstallState using PATCH.

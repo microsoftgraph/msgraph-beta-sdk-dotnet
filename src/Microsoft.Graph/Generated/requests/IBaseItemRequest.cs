@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BaseItem.
         /// </summary>
-        /// <returns>The BaseItem.</returns>
-        System.Threading.Tasks.Task<BaseItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BaseItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BaseItem.</returns>
-        System.Threading.Tasks.Task<BaseItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BaseItem and returns a <see cref="GraphResponse{BaseItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BaseItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<BaseItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BaseItem and returns a <see cref="GraphResponse{BaseItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BaseItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BaseItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BaseItem using PATCH.

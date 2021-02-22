@@ -38,20 +38,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileTrustedRootCertificate.
         /// </summary>
-        /// <returns>The AndroidWorkProfileTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<AndroidWorkProfileTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -59,21 +50,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(null, cancellationToken);
         }
 
 		/// <summary>
@@ -85,7 +67,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> CreateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -96,11 +78,11 @@ namespace Microsoft.Graph
         /// <param name="androidWorkProfileTrustedRootCertificateToCreate">The AndroidWorkProfileTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> CreateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> CreateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToCreate, cancellationToken);
         }
 
 		/// <summary>
@@ -113,7 +95,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<AndroidWorkProfileTrustedRootCertificate> UpdateAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -125,11 +107,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileTrustedRootCertificate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> UpdateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileTrustedRootCertificate>> UpdateResponseAsync(AndroidWorkProfileTrustedRootCertificate androidWorkProfileTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<AndroidWorkProfileTrustedRootCertificate>(androidWorkProfileTrustedRootCertificateToUpdate, cancellationToken);
         }
 
 		/// <summary>
@@ -139,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<AndroidWorkProfileTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -148,10 +130,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

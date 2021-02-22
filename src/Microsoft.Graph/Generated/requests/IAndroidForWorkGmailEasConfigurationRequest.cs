@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkGmailEasConfiguration.
         /// </summary>
-        /// <returns>The AndroidForWorkGmailEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkGmailEasConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkGmailEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkGmailEasConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkGmailEasConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkGmailEasConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkGmailEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGmailEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkGmailEasConfiguration using PATCH.

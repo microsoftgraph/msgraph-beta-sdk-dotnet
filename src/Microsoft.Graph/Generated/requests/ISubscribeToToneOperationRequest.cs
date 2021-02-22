@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SubscribeToToneOperation.
         /// </summary>
-        /// <returns>The SubscribeToToneOperation.</returns>
-        System.Threading.Tasks.Task<SubscribeToToneOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SubscribeToToneOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SubscribeToToneOperation.</returns>
-        System.Threading.Tasks.Task<SubscribeToToneOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SubscribeToToneOperation and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<SubscribeToToneOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SubscribeToToneOperation and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SubscribeToToneOperation using PATCH.

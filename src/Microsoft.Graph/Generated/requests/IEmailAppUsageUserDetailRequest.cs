@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EmailAppUsageUserDetail.
         /// </summary>
-        /// <returns>The EmailAppUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EmailAppUsageUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAppUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EmailAppUsageUserDetail and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<EmailAppUsageUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EmailAppUsageUserDetail and returns a <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailAppUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EmailAppUsageUserDetail using PATCH.

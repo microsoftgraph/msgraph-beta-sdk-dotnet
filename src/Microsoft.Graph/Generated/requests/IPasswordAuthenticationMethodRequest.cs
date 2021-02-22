@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PasswordAuthenticationMethod.
         /// </summary>
-        /// <returns>The PasswordAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PasswordAuthenticationMethod.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PasswordAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PasswordAuthenticationMethod and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> GetResponseAsync();
+        System.Threading.Tasks.Task<PasswordAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PasswordAuthenticationMethod and returns a <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PasswordAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PasswordAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PasswordAuthenticationMethod using PATCH.

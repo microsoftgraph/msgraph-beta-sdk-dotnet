@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CustomerPaymentJournal.
         /// </summary>
-        /// <returns>The CustomerPaymentJournal.</returns>
-        System.Threading.Tasks.Task<CustomerPaymentJournal> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CustomerPaymentJournal.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CustomerPaymentJournal.</returns>
-        System.Threading.Tasks.Task<CustomerPaymentJournal> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CustomerPaymentJournal and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> GetResponseAsync();
+        System.Threading.Tasks.Task<CustomerPaymentJournal> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CustomerPaymentJournal and returns a <see cref="GraphResponse{CustomerPaymentJournal}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CustomerPaymentJournal using PATCH.

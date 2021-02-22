@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsHealthMonitoringConfiguration.
         /// </summary>
-        /// <returns>The WindowsHealthMonitoringConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsHealthMonitoringConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsHealthMonitoringConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsHealthMonitoringConfiguration and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsHealthMonitoringConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsHealthMonitoringConfiguration and returns a <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHealthMonitoringConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsHealthMonitoringConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsHealthMonitoringConfiguration using PATCH.

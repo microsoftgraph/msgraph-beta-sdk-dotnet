@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CalendarPermission.
         /// </summary>
-        /// <returns>The CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CalendarPermission.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CalendarPermission.</returns>
-        System.Threading.Tasks.Task<CalendarPermission> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CalendarPermission and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> GetResponseAsync();
+        System.Threading.Tasks.Task<CalendarPermission> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CalendarPermission and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CalendarPermission using PATCH.

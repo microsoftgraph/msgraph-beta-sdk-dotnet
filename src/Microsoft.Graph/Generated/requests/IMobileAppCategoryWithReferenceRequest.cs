@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileAppCategory.
         /// </summary>
-        /// <returns>The MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileAppCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MobileAppCategory and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<MobileAppCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppCategory and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified MobileAppCategory using POST.

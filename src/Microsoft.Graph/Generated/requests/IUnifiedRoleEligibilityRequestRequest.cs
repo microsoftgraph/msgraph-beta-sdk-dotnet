@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilityRequestObject.
         /// </summary>
-        /// <returns>The UnifiedRoleEligibilityRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilityRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleEligibilityRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilityRequestObject and returns a <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilityRequestObject and returns a <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleEligibilityRequestObject using PATCH.

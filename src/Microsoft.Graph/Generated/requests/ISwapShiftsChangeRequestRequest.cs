@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SwapShiftsChangeRequestObject.
         /// </summary>
-        /// <returns>The SwapShiftsChangeRequestObject.</returns>
-        System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SwapShiftsChangeRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SwapShiftsChangeRequestObject.</returns>
-        System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SwapShiftsChangeRequestObject and returns a <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SwapShiftsChangeRequestObject and returns a <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SwapShiftsChangeRequestObject using PATCH.

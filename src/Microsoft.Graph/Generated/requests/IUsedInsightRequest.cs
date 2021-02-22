@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UsedInsight.
         /// </summary>
-        /// <returns>The UsedInsight.</returns>
-        System.Threading.Tasks.Task<UsedInsight> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UsedInsight.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UsedInsight.</returns>
-        System.Threading.Tasks.Task<UsedInsight> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UsedInsight and returns a <see cref="GraphResponse{UsedInsight}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> GetResponseAsync();
+        System.Threading.Tasks.Task<UsedInsight> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UsedInsight and returns a <see cref="GraphResponse{UsedInsight}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UsedInsight using PATCH.

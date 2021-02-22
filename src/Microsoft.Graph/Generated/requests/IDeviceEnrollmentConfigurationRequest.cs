@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceEnrollmentConfiguration.
         /// </summary>
-        /// <returns>The DeviceEnrollmentConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceEnrollmentConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceEnrollmentConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceEnrollmentConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceEnrollmentConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceEnrollmentConfiguration using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedDeviceOverview.
         /// </summary>
-        /// <returns>The ManagedDeviceOverview.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceOverview.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceOverview.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceOverview and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedDeviceOverview> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceOverview and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ManagedDeviceOverview using POST.

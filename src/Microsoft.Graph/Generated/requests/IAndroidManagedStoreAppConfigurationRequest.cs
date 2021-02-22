@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidManagedStoreAppConfiguration.
         /// </summary>
-        /// <returns>The AndroidManagedStoreAppConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAppConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidManagedStoreAppConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedStoreAppConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAppConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidManagedStoreAppConfiguration and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidManagedStoreAppConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidManagedStoreAppConfiguration and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreAppConfiguration using PATCH.

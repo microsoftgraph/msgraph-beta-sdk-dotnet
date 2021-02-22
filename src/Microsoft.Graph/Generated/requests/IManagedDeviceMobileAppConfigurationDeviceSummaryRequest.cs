@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationDeviceSummary.
         /// </summary>
-        /// <returns>The ManagedDeviceMobileAppConfigurationDeviceSummary.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationDeviceSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfigurationDeviceSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfigurationDeviceSummary.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationDeviceSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfigurationDeviceSummary and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationDeviceSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationDeviceSummary and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationDeviceSummary using PATCH.

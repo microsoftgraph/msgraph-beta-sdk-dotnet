@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DocumentComment.
         /// </summary>
-        /// <returns>The DocumentComment.</returns>
-        System.Threading.Tasks.Task<DocumentComment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DocumentComment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DocumentComment.</returns>
-        System.Threading.Tasks.Task<DocumentComment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DocumentComment and returns a <see cref="GraphResponse{DocumentComment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DocumentComment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DocumentComment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DocumentComment and returns a <see cref="GraphResponse{DocumentComment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DocumentComment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DocumentComment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DocumentComment using PATCH.

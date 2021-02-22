@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ApplicationSignInSummary.
         /// </summary>
-        /// <returns>The ApplicationSignInSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ApplicationSignInSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApplicationSignInSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ApplicationSignInSummary and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApplicationSignInSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ApplicationSignInSummary and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ApplicationSignInSummary using PATCH.

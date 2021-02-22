@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessReviewInstanceDecisionItem.
         /// </summary>
-        /// <returns>The AccessReviewInstanceDecisionItem.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessReviewInstanceDecisionItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewInstanceDecisionItem.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessReviewInstanceDecisionItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessReviewInstanceDecisionItem and returns a <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewInstanceDecisionItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessReviewInstanceDecisionItem using PATCH.

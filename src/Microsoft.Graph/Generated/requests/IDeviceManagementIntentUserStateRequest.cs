@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntentUserState.
         /// </summary>
-        /// <returns>The DeviceManagementIntentUserState.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentUserState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentUserState.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentUserState and returns a <see cref="GraphResponse{DeviceManagementIntentUserState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserState>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntentUserState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentUserState and returns a <see cref="GraphResponse{DeviceManagementIntentUserState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentUserState using PATCH.

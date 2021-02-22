@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UsageRight.
         /// </summary>
-        /// <returns>The UsageRight.</returns>
-        System.Threading.Tasks.Task<UsageRight> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UsageRight.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UsageRight.</returns>
-        System.Threading.Tasks.Task<UsageRight> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UsageRight and returns a <see cref="GraphResponse{UsageRight}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsageRight>> GetResponseAsync();
+        System.Threading.Tasks.Task<UsageRight> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UsageRight and returns a <see cref="GraphResponse{UsageRight}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsageRight>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UsageRight>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UsageRight using PATCH.

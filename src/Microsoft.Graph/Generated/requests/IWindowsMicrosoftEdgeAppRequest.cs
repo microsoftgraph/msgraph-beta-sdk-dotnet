@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsMicrosoftEdgeApp.
         /// </summary>
-        /// <returns>The WindowsMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsMicrosoftEdgeApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsMicrosoftEdgeApp and returns a <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsMicrosoftEdgeApp using PATCH.

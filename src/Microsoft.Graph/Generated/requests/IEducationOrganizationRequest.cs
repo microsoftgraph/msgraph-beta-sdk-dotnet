@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationOrganization.
         /// </summary>
-        /// <returns>The EducationOrganization.</returns>
-        System.Threading.Tasks.Task<EducationOrganization> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationOrganization.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationOrganization.</returns>
-        System.Threading.Tasks.Task<EducationOrganization> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationOrganization and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationOrganization> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationOrganization and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationOrganization using PATCH.

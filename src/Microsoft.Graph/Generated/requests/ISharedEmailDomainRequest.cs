@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharedEmailDomain.
         /// </summary>
-        /// <returns>The SharedEmailDomain.</returns>
-        System.Threading.Tasks.Task<SharedEmailDomain> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharedEmailDomain.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharedEmailDomain.</returns>
-        System.Threading.Tasks.Task<SharedEmailDomain> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharedEmailDomain and returns a <see cref="GraphResponse{SharedEmailDomain}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharedEmailDomain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharedEmailDomain> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharedEmailDomain and returns a <see cref="GraphResponse{SharedEmailDomain}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedEmailDomain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomain>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharedEmailDomain using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EmailAppUsageVersionsUserCounts.
         /// </summary>
-        /// <returns>The EmailAppUsageVersionsUserCounts.</returns>
-        System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EmailAppUsageVersionsUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAppUsageVersionsUserCounts.</returns>
-        System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<EmailAppUsageVersionsUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EmailAppUsageVersionsUserCounts and returns a <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailAppUsageVersionsUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EmailAppUsageVersionsUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EmailAppUsageVersionsUserCounts using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueMultiText.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationValueMultiText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueMultiText> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValueMultiText.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationValueMultiText.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValueMultiText> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValueMultiText and returns a <see cref="GraphResponse{GroupPolicyPresentationValueMultiText}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueMultiText}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueMultiText>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationValueMultiText> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValueMultiText and returns a <see cref="GraphResponse{GroupPolicyPresentationValueMultiText}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueMultiText}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueMultiText>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueMultiText>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationValueMultiText using PATCH.

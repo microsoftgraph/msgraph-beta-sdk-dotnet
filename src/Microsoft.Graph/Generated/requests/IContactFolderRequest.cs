@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ContactFolder.
         /// </summary>
-        /// <returns>The ContactFolder.</returns>
-        System.Threading.Tasks.Task<ContactFolder> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ContactFolder.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ContactFolder.</returns>
-        System.Threading.Tasks.Task<ContactFolder> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ContactFolder and returns a <see cref="GraphResponse{ContactFolder}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> GetResponseAsync();
+        System.Threading.Tasks.Task<ContactFolder> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ContactFolder and returns a <see cref="GraphResponse{ContactFolder}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ContactFolder using PATCH.

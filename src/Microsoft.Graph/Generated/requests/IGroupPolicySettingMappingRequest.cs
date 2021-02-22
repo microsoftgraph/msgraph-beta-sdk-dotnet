@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicySettingMapping.
         /// </summary>
-        /// <returns>The GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicySettingMapping.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicySettingMapping.</returns>
-        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicySettingMapping and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicySettingMapping}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicySettingMapping> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicySettingMapping and returns a <see cref="GraphResponse{GroupPolicySettingMapping}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicySettingMapping}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicySettingMapping>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicySettingMapping using PATCH.

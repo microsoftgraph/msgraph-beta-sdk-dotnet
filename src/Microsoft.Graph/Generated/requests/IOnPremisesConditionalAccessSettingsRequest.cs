@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OnPremisesConditionalAccessSettings.
         /// </summary>
-        /// <returns>The OnPremisesConditionalAccessSettings.</returns>
-        System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OnPremisesConditionalAccessSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnPremisesConditionalAccessSettings.</returns>
-        System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync();
+        System.Threading.Tasks.Task<OnPremisesConditionalAccessSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OnPremisesConditionalAccessSettings and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OnPremisesConditionalAccessSettings using PATCH.

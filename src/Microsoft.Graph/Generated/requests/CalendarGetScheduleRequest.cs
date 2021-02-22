@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ICalendarGetScheduleCollectionPage> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var response = await this.SendAsync<CalendarGetScheduleCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CalendarGetScheduleCollectionResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CalendarGetScheduleCollectionResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<CalendarGetScheduleCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<CalendarGetScheduleCollectionResponse>(this.RequestBody, cancellationToken);
         }
 
 

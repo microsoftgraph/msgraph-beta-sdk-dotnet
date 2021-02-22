@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WebAccount.
         /// </summary>
-        /// <returns>The WebAccount.</returns>
-        System.Threading.Tasks.Task<WebAccount> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WebAccount.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WebAccount.</returns>
-        System.Threading.Tasks.Task<WebAccount> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WebAccount and returns a <see cref="GraphResponse{WebAccount}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebAccount>> GetResponseAsync();
+        System.Threading.Tasks.Task<WebAccount> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WebAccount and returns a <see cref="GraphResponse{WebAccount}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WebAccount>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WebAccount>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WebAccount using PATCH.

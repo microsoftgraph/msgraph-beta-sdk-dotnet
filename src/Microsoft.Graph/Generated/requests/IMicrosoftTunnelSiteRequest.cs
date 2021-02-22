@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MicrosoftTunnelSite.
         /// </summary>
-        /// <returns>The MicrosoftTunnelSite.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelSite.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelSite.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelSite and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> GetResponseAsync();
+        System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelSite and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelSite using PATCH.

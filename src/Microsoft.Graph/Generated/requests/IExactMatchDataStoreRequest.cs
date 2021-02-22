@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ExactMatchDataStore.
         /// </summary>
-        /// <returns>The ExactMatchDataStore.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ExactMatchDataStore.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchDataStore.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ExactMatchDataStore and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> GetResponseAsync();
+        System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ExactMatchDataStore and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ExactMatchDataStore using PATCH.

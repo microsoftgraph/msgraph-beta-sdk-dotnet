@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ListItemVersion.
         /// </summary>
-        /// <returns>The ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ListItemVersion.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync();
+        System.Threading.Tasks.Task<ListItemVersion> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ListItemVersion and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ListItemVersion using PATCH.

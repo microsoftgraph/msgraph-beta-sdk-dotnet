@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ProviderTenantSetting.
         /// </summary>
-        /// <returns>The ProviderTenantSetting.</returns>
-        System.Threading.Tasks.Task<ProviderTenantSetting> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ProviderTenantSetting.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProviderTenantSetting.</returns>
-        System.Threading.Tasks.Task<ProviderTenantSetting> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ProviderTenantSetting and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> GetResponseAsync();
+        System.Threading.Tasks.Task<ProviderTenantSetting> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ProviderTenantSetting and returns a <see cref="GraphResponse{ProviderTenantSetting}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProviderTenantSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProviderTenantSetting>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ProviderTenantSetting using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceHealthScriptDeviceState.
         /// </summary>
-        /// <returns>The DeviceHealthScriptDeviceState.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptDeviceState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptDeviceState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScriptDeviceState.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptDeviceState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptDeviceState and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceHealthScriptDeviceState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceHealthScriptDeviceState and returns a <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScriptDeviceState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptDeviceState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceHealthScriptDeviceState using PATCH.

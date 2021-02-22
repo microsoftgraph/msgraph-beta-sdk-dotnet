@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ShiftPreferences.
         /// </summary>
-        /// <returns>The ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ShiftPreferences.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ShiftPreferences and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync();
+        System.Threading.Tasks.Task<ShiftPreferences> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ShiftPreferences and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ShiftPreferences using PATCH.

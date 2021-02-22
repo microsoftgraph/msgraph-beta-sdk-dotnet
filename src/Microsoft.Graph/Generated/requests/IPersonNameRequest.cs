@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PersonName.
         /// </summary>
-        /// <returns>The PersonName.</returns>
-        System.Threading.Tasks.Task<PersonName> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PersonName.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonName.</returns>
-        System.Threading.Tasks.Task<PersonName> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PersonName and returns a <see cref="GraphResponse{PersonName}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PersonName}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonName>> GetResponseAsync();
+        System.Threading.Tasks.Task<PersonName> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PersonName and returns a <see cref="GraphResponse{PersonName}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonName}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonName>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonName>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PersonName using PATCH.

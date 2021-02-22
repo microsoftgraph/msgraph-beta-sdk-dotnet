@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsInformationProtection.
         /// </summary>
-        /// <returns>The WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsInformationProtection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsInformationProtection.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtection> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsInformationProtection and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsInformationProtection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsInformationProtection and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsInformationProtection using PATCH.

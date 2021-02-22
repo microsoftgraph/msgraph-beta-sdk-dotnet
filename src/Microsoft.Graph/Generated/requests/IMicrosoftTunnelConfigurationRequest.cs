@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MicrosoftTunnelConfiguration.
         /// </summary>
-        /// <returns>The MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<MicrosoftTunnelConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelConfiguration and returns a <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelConfiguration using PATCH.

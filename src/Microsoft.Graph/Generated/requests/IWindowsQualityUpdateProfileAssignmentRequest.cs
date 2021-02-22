@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsQualityUpdateProfileAssignment.
         /// </summary>
-        /// <returns>The WindowsQualityUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsQualityUpdateProfileAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsQualityUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsQualityUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsQualityUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsQualityUpdateProfileAssignment using PATCH.

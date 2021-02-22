@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyAssignment.
         /// </summary>
-        /// <returns>The DeviceCompliancePolicyAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCompliancePolicyAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceCompliancePolicyAssignment using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DefaultDeviceCompliancePolicy.
         /// </summary>
-        /// <returns>The DefaultDeviceCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<DefaultDeviceCompliancePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DefaultDeviceCompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DefaultDeviceCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<DefaultDeviceCompliancePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DefaultDeviceCompliancePolicy and returns a <see cref="GraphResponse{DefaultDeviceCompliancePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DefaultDeviceCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DefaultDeviceCompliancePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<DefaultDeviceCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DefaultDeviceCompliancePolicy and returns a <see cref="GraphResponse{DefaultDeviceCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DefaultDeviceCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DefaultDeviceCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DefaultDeviceCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DefaultDeviceCompliancePolicy using PATCH.

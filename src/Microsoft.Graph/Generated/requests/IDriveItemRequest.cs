@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DriveItem.
         /// </summary>
-        /// <returns>The DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DriveItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DriveItem using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ProgramControlType.
         /// </summary>
-        /// <returns>The ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ProgramControlType.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProgramControlType.</returns>
-        System.Threading.Tasks.Task<ProgramControlType> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ProgramControlType and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> GetResponseAsync();
+        System.Threading.Tasks.Task<ProgramControlType> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ProgramControlType and returns a <see cref="GraphResponse{ProgramControlType}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProgramControlType}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ProgramControlType>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ProgramControlType using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified LicenseDetails.
         /// </summary>
-        /// <returns>The LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> GetAsync();
-
-        /// <summary>
-        /// Gets the specified LicenseDetails.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified LicenseDetails and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> GetResponseAsync();
+        System.Threading.Tasks.Task<LicenseDetails> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified LicenseDetails and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified LicenseDetails using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileVpnConfiguration.
         /// </summary>
-        /// <returns>The AndroidWorkProfileVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileVpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileVpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileVpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileVpnConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileVpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileVpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidWorkProfileVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileVpnConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileVpnConfiguration using PATCH.

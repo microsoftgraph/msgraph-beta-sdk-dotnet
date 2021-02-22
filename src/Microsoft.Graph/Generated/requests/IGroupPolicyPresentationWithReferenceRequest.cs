@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentation.
         /// </summary>
-        /// <returns>The GroupPolicyPresentation.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentation.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentation and returns a <see cref="GraphResponse{GroupPolicyPresentation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentation>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentation and returns a <see cref="GraphResponse{GroupPolicyPresentation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified GroupPolicyPresentation using POST.

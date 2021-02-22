@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SitePage.
         /// </summary>
-        /// <returns>The SitePage.</returns>
-        System.Threading.Tasks.Task<SitePage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SitePage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SitePage.</returns>
-        System.Threading.Tasks.Task<SitePage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SitePage and returns a <see cref="GraphResponse{SitePage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SitePage>> GetResponseAsync();
+        System.Threading.Tasks.Task<SitePage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SitePage and returns a <see cref="GraphResponse{SitePage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SitePage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SitePage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SitePage using PATCH.

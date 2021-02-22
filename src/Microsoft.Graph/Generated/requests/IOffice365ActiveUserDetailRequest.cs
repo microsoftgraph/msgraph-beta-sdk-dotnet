@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Office365ActiveUserDetail.
         /// </summary>
-        /// <returns>The Office365ActiveUserDetail.</returns>
-        System.Threading.Tasks.Task<Office365ActiveUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Office365ActiveUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ActiveUserDetail.</returns>
-        System.Threading.Tasks.Task<Office365ActiveUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Office365ActiveUserDetail and returns a <see cref="GraphResponse{Office365ActiveUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Office365ActiveUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<Office365ActiveUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Office365ActiveUserDetail and returns a <see cref="GraphResponse{Office365ActiveUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365ActiveUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Office365ActiveUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Office365ActiveUserDetail using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementScriptAssignment.
         /// </summary>
-        /// <returns>The DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptAssignment and returns a <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementScriptAssignment and returns a <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementScriptAssignment using PATCH.

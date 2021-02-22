@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkypeForBusinessPeerToPeerActivityUserCounts.
         /// </summary>
-        /// <returns>The SkypeForBusinessPeerToPeerActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessPeerToPeerActivityUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessPeerToPeerActivityUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessPeerToPeerActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessPeerToPeerActivityUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessPeerToPeerActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessPeerToPeerActivityUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkypeForBusinessPeerToPeerActivityUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkypeForBusinessPeerToPeerActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessPeerToPeerActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessPeerToPeerActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessPeerToPeerActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkypeForBusinessPeerToPeerActivityUserCounts using PATCH.

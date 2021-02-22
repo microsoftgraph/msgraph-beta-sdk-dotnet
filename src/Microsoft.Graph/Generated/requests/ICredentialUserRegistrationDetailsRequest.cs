@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CredentialUserRegistrationDetails.
         /// </summary>
-        /// <returns>The CredentialUserRegistrationDetails.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationDetails> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CredentialUserRegistrationDetails.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUserRegistrationDetails.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationDetails> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CredentialUserRegistrationDetails and returns a <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationDetails>> GetResponseAsync();
+        System.Threading.Tasks.Task<CredentialUserRegistrationDetails> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CredentialUserRegistrationDetails and returns a <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationDetails>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationDetails>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationDetails using PATCH.

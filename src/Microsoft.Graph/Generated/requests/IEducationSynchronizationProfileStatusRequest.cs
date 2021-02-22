@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationSynchronizationProfileStatus.
         /// </summary>
-        /// <returns>The EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationProfileStatus.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSynchronizationProfileStatus.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationSynchronizationProfileStatus> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationSynchronizationProfileStatus and returns a <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationProfileStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationProfileStatus>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationSynchronizationProfileStatus using PATCH.

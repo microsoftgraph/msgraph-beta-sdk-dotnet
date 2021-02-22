@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedDeviceEncryptionState.
         /// </summary>
-        /// <returns>The ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceEncryptionState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceEncryptionState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceEncryptionState and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedDeviceEncryptionState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceEncryptionState and returns a <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceEncryptionState using PATCH.

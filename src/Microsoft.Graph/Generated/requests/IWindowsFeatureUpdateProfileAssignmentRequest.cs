@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsFeatureUpdateProfileAssignment.
         /// </summary>
-        /// <returns>The WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsFeatureUpdateProfileAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH.

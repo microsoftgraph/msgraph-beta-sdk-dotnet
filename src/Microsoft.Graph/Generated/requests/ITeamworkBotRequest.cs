@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamworkBot.
         /// </summary>
-        /// <returns>The TeamworkBot.</returns>
-        System.Threading.Tasks.Task<TeamworkBot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TeamworkBot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamworkBot.</returns>
-        System.Threading.Tasks.Task<TeamworkBot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TeamworkBot and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamworkBot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> GetResponseAsync();
+        System.Threading.Tasks.Task<TeamworkBot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamworkBot and returns a <see cref="GraphResponse{TeamworkBot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamworkBot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamworkBot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamworkBot using PATCH.

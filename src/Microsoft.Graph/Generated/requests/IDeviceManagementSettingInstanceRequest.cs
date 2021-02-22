@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementSettingInstance.
         /// </summary>
-        /// <returns>The DeviceManagementSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementSettingInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementSettingInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementSettingInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementSettingInstance and returns a <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementSettingInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementSettingInstance and returns a <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementSettingInstance using PATCH.

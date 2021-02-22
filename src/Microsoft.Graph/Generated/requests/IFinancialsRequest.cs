@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Financials.
         /// </summary>
-        /// <returns>The Financials.</returns>
-        System.Threading.Tasks.Task<Financials> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Financials.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Financials.</returns>
-        System.Threading.Tasks.Task<Financials> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Financials and returns a <see cref="GraphResponse{Financials}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Financials}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Financials>> GetResponseAsync();
+        System.Threading.Tasks.Task<Financials> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Financials and returns a <see cref="GraphResponse{Financials}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Financials}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Financials>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Financials>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Financials using PATCH.

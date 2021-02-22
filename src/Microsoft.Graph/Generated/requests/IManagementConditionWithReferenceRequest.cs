@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagementCondition.
         /// </summary>
-        /// <returns>The ManagementCondition.</returns>
-        System.Threading.Tasks.Task<ManagementCondition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementCondition.</returns>
-        System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagementCondition and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagementCondition and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ManagementCondition using POST.

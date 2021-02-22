@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TodoTask.
         /// </summary>
-        /// <returns>The TodoTask.</returns>
-        System.Threading.Tasks.Task<TodoTask> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TodoTask.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TodoTask.</returns>
-        System.Threading.Tasks.Task<TodoTask> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TodoTask and returns a <see cref="GraphResponse{TodoTask}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TodoTask>> GetResponseAsync();
+        System.Threading.Tasks.Task<TodoTask> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TodoTask and returns a <see cref="GraphResponse{TodoTask}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TodoTask>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TodoTask>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TodoTask using PATCH.

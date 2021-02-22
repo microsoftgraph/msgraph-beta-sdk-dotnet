@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ItemActivityOLD.
         /// </summary>
-        /// <returns>The ItemActivityOLD.</returns>
-        System.Threading.Tasks.Task<ItemActivityOLD> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ItemActivityOLD.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemActivityOLD.</returns>
-        System.Threading.Tasks.Task<ItemActivityOLD> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ItemActivityOLD and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> GetResponseAsync();
+        System.Threading.Tasks.Task<ItemActivityOLD> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemActivityOLD and returns a <see cref="GraphResponse{ItemActivityOLD}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityOLD}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityOLD>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemActivityOLD using PATCH.

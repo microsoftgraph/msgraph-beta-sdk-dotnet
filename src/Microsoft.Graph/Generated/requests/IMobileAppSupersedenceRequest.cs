@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileAppSupersedence.
         /// </summary>
-        /// <returns>The MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileAppSupersedence.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MobileAppSupersedence and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> GetResponseAsync();
+        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppSupersedence and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppSupersedence using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ResourceOperation.
         /// </summary>
-        /// <returns>The ResourceOperation.</returns>
-        System.Threading.Tasks.Task<ResourceOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ResourceOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ResourceOperation.</returns>
-        System.Threading.Tasks.Task<ResourceOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ResourceOperation and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<ResourceOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ResourceOperation and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ResourceOperation using PATCH.

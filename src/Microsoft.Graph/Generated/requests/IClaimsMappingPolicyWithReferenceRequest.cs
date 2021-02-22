@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ClaimsMappingPolicy.
         /// </summary>
-        /// <returns>The ClaimsMappingPolicy.</returns>
-        System.Threading.Tasks.Task<ClaimsMappingPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ClaimsMappingPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ClaimsMappingPolicy.</returns>
-        System.Threading.Tasks.Task<ClaimsMappingPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<ClaimsMappingPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ClaimsMappingPolicy and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ClaimsMappingPolicy using POST.

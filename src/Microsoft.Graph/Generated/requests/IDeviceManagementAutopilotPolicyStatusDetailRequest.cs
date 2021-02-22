@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail.
         /// </summary>
-        /// <returns>The DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementAutopilotPolicyStatusDetail.</returns>
-        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementAutopilotPolicyStatusDetail and returns a <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAutopilotPolicyStatusDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAutopilotPolicyStatusDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementAutopilotPolicyStatusDetail using PATCH.

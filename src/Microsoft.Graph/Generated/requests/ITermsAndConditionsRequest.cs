@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TermsAndConditions.
         /// </summary>
-        /// <returns>The TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TermsAndConditions.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TermsAndConditions and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> GetResponseAsync();
+        System.Threading.Tasks.Task<TermsAndConditions> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TermsAndConditions and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TermsAndConditions using PATCH.

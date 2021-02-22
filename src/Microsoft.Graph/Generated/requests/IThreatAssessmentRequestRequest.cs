@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ThreatAssessmentRequestObject.
         /// </summary>
-        /// <returns>The ThreatAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ThreatAssessmentRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ThreatAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ThreatAssessmentRequestObject and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ThreatAssessmentRequestObject and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ThreatAssessmentRequestObject using PATCH.

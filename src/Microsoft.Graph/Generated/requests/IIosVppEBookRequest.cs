@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosVppEBook.
         /// </summary>
-        /// <returns>The IosVppEBook.</returns>
-        System.Threading.Tasks.Task<IosVppEBook> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosVppEBook.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVppEBook.</returns>
-        System.Threading.Tasks.Task<IosVppEBook> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosVppEBook and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosVppEBook> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosVppEBook and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosVppEBook using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AgedAccountsPayable.
         /// </summary>
-        /// <returns>The AgedAccountsPayable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsPayable> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AgedAccountsPayable.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgedAccountsPayable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsPayable> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AgedAccountsPayable and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> GetResponseAsync();
+        System.Threading.Tasks.Task<AgedAccountsPayable> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AgedAccountsPayable and returns a <see cref="GraphResponse{AgedAccountsPayable}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgedAccountsPayable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsPayable>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AgedAccountsPayable using PATCH.

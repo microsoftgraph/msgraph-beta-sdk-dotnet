@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PolicyRoot.
         /// </summary>
-        /// <returns>The PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PolicyRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync();
+        System.Threading.Tasks.Task<PolicyRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PolicyRoot using PATCH.

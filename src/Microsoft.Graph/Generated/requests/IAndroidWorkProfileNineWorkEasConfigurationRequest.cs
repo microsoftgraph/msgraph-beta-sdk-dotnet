@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration.
         /// </summary>
-        /// <returns>The AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH.

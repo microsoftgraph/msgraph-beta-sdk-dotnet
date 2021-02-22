@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsManagementAppHealthState.
         /// </summary>
-        /// <returns>The WindowsManagementAppHealthState.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsManagementAppHealthState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsManagementAppHealthState.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsManagementAppHealthState and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsManagementAppHealthState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsManagementAppHealthState and returns a <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsManagementAppHealthState using PATCH.

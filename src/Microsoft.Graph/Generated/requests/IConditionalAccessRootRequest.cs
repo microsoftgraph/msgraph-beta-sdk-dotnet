@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ConditionalAccessRoot.
         /// </summary>
-        /// <returns>The ConditionalAccessRoot.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessRoot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ConditionalAccessRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConditionalAccessRoot.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessRoot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync();
+        System.Threading.Tasks.Task<ConditionalAccessRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConditionalAccessRoot using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AgedAccountsReceivable.
         /// </summary>
-        /// <returns>The AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AgedAccountsReceivable.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgedAccountsReceivable.</returns>
-        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AgedAccountsReceivable and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> GetResponseAsync();
+        System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AgedAccountsReceivable and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AgedAccountsReceivable using PATCH.

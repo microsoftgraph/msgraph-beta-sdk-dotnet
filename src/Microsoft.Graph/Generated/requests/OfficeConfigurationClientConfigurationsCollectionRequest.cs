@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<OfficeClientConfiguration> AddAsync(OfficeClientConfiguration officeClientConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             officeClientConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(officeClientConfiguration.GetType().FullName));
             return this.SendAsync<OfficeClientConfiguration>(officeClientConfiguration, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="officeClientConfiguration">The OfficeClientConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> AddResponseAsync(OfficeClientConfiguration officeClientConfiguration, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OfficeClientConfiguration>> AddResponseAsync(OfficeClientConfiguration officeClientConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             officeClientConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(officeClientConfiguration.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<OfficeClientConfiguration>(officeClientConfiguration, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<OfficeClientConfiguration>(officeClientConfiguration, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IOfficeConfigurationClientConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<OfficeConfigurationClientConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeConfigurationClientConfigurationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<OfficeConfigurationClientConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OfficeConfigurationClientConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<OfficeConfigurationClientConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<OfficeConfigurationClientConfigurationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

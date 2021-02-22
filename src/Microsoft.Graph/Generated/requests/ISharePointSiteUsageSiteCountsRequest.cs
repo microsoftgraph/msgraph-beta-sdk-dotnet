@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharePointSiteUsageSiteCounts.
         /// </summary>
-        /// <returns>The SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharePointSiteUsageSiteCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointSiteUsageSiteCounts.</returns>
-        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharePointSiteUsageSiteCounts and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharePointSiteUsageSiteCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointSiteUsageSiteCounts and returns a <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointSiteUsageSiteCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharePointSiteUsageSiteCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointSiteUsageSiteCounts using PATCH.

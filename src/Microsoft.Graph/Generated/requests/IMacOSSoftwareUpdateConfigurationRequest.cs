@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateConfiguration.
         /// </summary>
-        /// <returns>The MacOSSoftwareUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSSoftwareUpdateConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSSoftwareUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSSoftwareUpdateConfiguration and returns a <see cref="GraphResponse{MacOSSoftwareUpdateConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateConfiguration and returns a <see cref="GraphResponse{MacOSSoftwareUpdateConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateConfiguration using PATCH.

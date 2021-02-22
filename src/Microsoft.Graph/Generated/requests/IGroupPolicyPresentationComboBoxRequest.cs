@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationComboBox.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationComboBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationComboBox.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationComboBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationComboBox> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationComboBox and returns a <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationComboBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationComboBox>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationComboBox using PATCH.

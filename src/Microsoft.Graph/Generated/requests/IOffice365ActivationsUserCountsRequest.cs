@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Office365ActivationsUserCounts.
         /// </summary>
-        /// <returns>The Office365ActivationsUserCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationsUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Office365ActivationsUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ActivationsUserCounts.</returns>
-        System.Threading.Tasks.Task<Office365ActivationsUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<Office365ActivationsUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Office365ActivationsUserCounts and returns a <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365ActivationsUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Office365ActivationsUserCounts using PATCH.

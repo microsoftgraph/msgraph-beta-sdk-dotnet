@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnsupportedGroupPolicyExtension.
         /// </summary>
-        /// <returns>The UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnsupportedGroupPolicyExtension.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnsupportedGroupPolicyExtension and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnsupportedGroupPolicyExtension and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnsupportedGroupPolicyExtension using PATCH.

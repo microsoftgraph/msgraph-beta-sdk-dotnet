@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserFlowLanguagePage.
         /// </summary>
-        /// <returns>The UserFlowLanguagePage.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguagePage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserFlowLanguagePage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserFlowLanguagePage.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguagePage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserFlowLanguagePage and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserFlowLanguagePage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserFlowLanguagePage and returns a <see cref="GraphResponse{UserFlowLanguagePage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguagePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguagePage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserFlowLanguagePage using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified StsPolicy.
         /// </summary>
-        /// <returns>The StsPolicy.</returns>
-        System.Threading.Tasks.Task<StsPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified StsPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The StsPolicy.</returns>
-        System.Threading.Tasks.Task<StsPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified StsPolicy and returns a <see cref="GraphResponse{StsPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<StsPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<StsPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified StsPolicy and returns a <see cref="GraphResponse{StsPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<StsPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<StsPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified StsPolicy using PATCH.

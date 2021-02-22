@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Profile.
         /// </summary>
-        /// <returns>The Profile.</returns>
-        System.Threading.Tasks.Task<Profile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Profile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Profile.</returns>
-        System.Threading.Tasks.Task<Profile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Profile and returns a <see cref="GraphResponse{Profile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> GetResponseAsync();
+        System.Threading.Tasks.Task<Profile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Profile and returns a <see cref="GraphResponse{Profile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Profile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Profile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Profile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Profile using PATCH.

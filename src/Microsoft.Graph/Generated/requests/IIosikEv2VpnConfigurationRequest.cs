@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosikEv2VpnConfiguration.
         /// </summary>
-        /// <returns>The IosikEv2VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<IosikEv2VpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosikEv2VpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosikEv2VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<IosikEv2VpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosikEv2VpnConfiguration and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosikEv2VpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosikEv2VpnConfiguration and returns a <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosikEv2VpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosikEv2VpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosikEv2VpnConfiguration using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentSchedule.
         /// </summary>
-        /// <returns>The UnifiedRoleAssignmentSchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentSchedule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentSchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentSchedule and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentSchedule and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentSchedule using PATCH.

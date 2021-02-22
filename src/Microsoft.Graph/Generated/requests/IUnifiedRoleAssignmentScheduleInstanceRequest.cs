@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentScheduleInstance.
         /// </summary>
-        /// <returns>The UnifiedRoleAssignmentScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentScheduleInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentScheduleInstance and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentScheduleInstance and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentScheduleInstance using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph.CallRecords
         /// <summary>
         /// Gets the specified Segment.
         /// </summary>
-        /// <returns>The Segment.</returns>
-        System.Threading.Tasks.Task<Segment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Segment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Segment.</returns>
-        System.Threading.Tasks.Task<Segment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync();
+        System.Threading.Tasks.Task<Segment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Segment using PATCH.

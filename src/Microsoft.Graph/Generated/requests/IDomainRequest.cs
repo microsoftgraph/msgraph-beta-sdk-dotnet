@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Domain.
         /// </summary>
-        /// <returns>The Domain.</returns>
-        System.Threading.Tasks.Task<Domain> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Domain.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Domain.</returns>
-        System.Threading.Tasks.Task<Domain> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Domain and returns a <see cref="GraphResponse{Domain}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Domain>> GetResponseAsync();
+        System.Threading.Tasks.Task<Domain> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Domain and returns a <see cref="GraphResponse{Domain}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Domain>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Domain>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Domain using PATCH.

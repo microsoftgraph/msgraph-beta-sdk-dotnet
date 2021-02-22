@@ -23,28 +23,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified SourceCollection.
         /// </summary>
-        /// <returns>The SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SourceCollection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SourceCollection and returns a <see cref="GraphResponse{SourceCollection}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> GetResponseAsync();
+        System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SourceCollection and returns a <see cref="GraphResponse{SourceCollection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified SourceCollection using POST.

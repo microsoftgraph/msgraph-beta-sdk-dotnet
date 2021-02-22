@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SecureScore.
         /// </summary>
-        /// <returns>The SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SecureScore.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SecureScore and returns a <see cref="GraphResponse{SecureScore}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync();
+        System.Threading.Tasks.Task<SecureScore> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SecureScore and returns a <see cref="GraphResponse{SecureScore}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SecureScore using PATCH.

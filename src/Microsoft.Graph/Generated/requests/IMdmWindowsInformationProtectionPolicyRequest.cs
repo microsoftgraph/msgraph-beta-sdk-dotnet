@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MdmWindowsInformationProtectionPolicy.
         /// </summary>
-        /// <returns>The MdmWindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MdmWindowsInformationProtectionPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MdmWindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MdmWindowsInformationProtectionPolicy and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MdmWindowsInformationProtectionPolicy using PATCH.

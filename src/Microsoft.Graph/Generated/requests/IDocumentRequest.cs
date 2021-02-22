@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Document.
         /// </summary>
-        /// <returns>The Document.</returns>
-        System.Threading.Tasks.Task<Document> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Document.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Document.</returns>
-        System.Threading.Tasks.Task<Document> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Document and returns a <see cref="GraphResponse{Document}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> GetResponseAsync();
+        System.Threading.Tasks.Task<Document> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Document and returns a <see cref="GraphResponse{Document}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Document}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Document>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Document>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Document using PATCH.

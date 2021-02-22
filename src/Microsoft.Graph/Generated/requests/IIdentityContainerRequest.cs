@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityContainer.
         /// </summary>
-        /// <returns>The IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityContainer.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityContainer and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityContainer> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityContainer and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityContainer using PATCH.

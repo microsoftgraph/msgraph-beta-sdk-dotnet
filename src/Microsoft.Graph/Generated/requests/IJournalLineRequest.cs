@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified JournalLine.
         /// </summary>
-        /// <returns>The JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> GetAsync();
-
-        /// <summary>
-        /// Gets the specified JournalLine.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified JournalLine and returns a <see cref="GraphResponse{JournalLine}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<JournalLine>> GetResponseAsync();
+        System.Threading.Tasks.Task<JournalLine> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified JournalLine and returns a <see cref="GraphResponse{JournalLine}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<JournalLine>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified JournalLine using PATCH.

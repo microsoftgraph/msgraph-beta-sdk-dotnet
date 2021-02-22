@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementScriptRunSummary.
         /// </summary>
-        /// <returns>The DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementScriptRunSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementScriptRunSummary and returns a <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified DeviceManagementScriptRunSummary using POST.

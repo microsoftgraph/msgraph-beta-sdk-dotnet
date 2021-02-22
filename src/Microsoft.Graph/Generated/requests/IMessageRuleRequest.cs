@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MessageRule.
         /// </summary>
-        /// <returns>The MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MessageRule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MessageRule and returns a <see cref="GraphResponse{MessageRule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> GetResponseAsync();
+        System.Threading.Tasks.Task<MessageRule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MessageRule and returns a <see cref="GraphResponse{MessageRule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MessageRule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MessageRule using PATCH.

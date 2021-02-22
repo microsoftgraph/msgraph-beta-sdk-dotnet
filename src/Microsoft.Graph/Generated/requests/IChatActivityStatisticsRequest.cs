@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ChatActivityStatistics.
         /// </summary>
-        /// <returns>The ChatActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ChatActivityStatistics> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ChatActivityStatistics.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ChatActivityStatistics.</returns>
-        System.Threading.Tasks.Task<ChatActivityStatistics> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ChatActivityStatistics and returns a <see cref="GraphResponse{ChatActivityStatistics}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ChatActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChatActivityStatistics>> GetResponseAsync();
+        System.Threading.Tasks.Task<ChatActivityStatistics> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ChatActivityStatistics and returns a <see cref="GraphResponse{ChatActivityStatistics}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChatActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ChatActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ChatActivityStatistics using PATCH.

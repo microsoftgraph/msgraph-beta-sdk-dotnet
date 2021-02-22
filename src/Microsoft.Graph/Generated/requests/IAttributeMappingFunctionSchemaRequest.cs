@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AttributeMappingFunctionSchema.
         /// </summary>
-        /// <returns>The AttributeMappingFunctionSchema.</returns>
-        System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AttributeMappingFunctionSchema.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AttributeMappingFunctionSchema.</returns>
-        System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AttributeMappingFunctionSchema and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> GetResponseAsync();
+        System.Threading.Tasks.Task<AttributeMappingFunctionSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AttributeMappingFunctionSchema and returns a <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AttributeMappingFunctionSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AttributeMappingFunctionSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AttributeMappingFunctionSchema using PATCH.

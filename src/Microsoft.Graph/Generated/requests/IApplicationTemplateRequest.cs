@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ApplicationTemplate.
         /// </summary>
-        /// <returns>The ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ApplicationTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApplicationTemplate.</returns>
-        System.Threading.Tasks.Task<ApplicationTemplate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ApplicationTemplate and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> GetResponseAsync();
+        System.Threading.Tasks.Task<ApplicationTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ApplicationTemplate and returns a <see cref="GraphResponse{ApplicationTemplate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ApplicationTemplate using PATCH.

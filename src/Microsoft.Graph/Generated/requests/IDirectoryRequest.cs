@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Directory.
         /// </summary>
-        /// <returns>The Directory.</returns>
-        System.Threading.Tasks.Task<Directory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Directory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Directory.</returns>
-        System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Directory and returns a <see cref="GraphResponse{Directory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Directory>> GetResponseAsync();
+        System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Directory and returns a <see cref="GraphResponse{Directory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Directory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Directory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Directory using PATCH.

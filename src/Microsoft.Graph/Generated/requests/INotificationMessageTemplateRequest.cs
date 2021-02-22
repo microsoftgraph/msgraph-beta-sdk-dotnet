@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified NotificationMessageTemplate.
         /// </summary>
-        /// <returns>The NotificationMessageTemplate.</returns>
-        System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NotificationMessageTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NotificationMessageTemplate.</returns>
-        System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NotificationMessageTemplate and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync();
+        System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NotificationMessageTemplate and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NotificationMessageTemplate using PATCH.

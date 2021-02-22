@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamsTab.
         /// </summary>
-        /// <returns>The TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TeamsTab.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TeamsTab and returns a <see cref="GraphResponse{TeamsTab}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> GetResponseAsync();
+        System.Threading.Tasks.Task<TeamsTab> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamsTab and returns a <see cref="GraphResponse{TeamsTab}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamsTab using PATCH.

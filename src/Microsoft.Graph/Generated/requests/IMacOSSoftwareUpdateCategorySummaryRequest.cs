@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateCategorySummary.
         /// </summary>
-        /// <returns>The MacOSSoftwareUpdateCategorySummary.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSSoftwareUpdateCategorySummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSSoftwareUpdateCategorySummary.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSSoftwareUpdateCategorySummary and returns a <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateCategorySummary and returns a <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateCategorySummary using PATCH.

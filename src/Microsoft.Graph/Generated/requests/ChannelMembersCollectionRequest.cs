@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ConversationMember> AddAsync(ConversationMember conversationMember, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             conversationMember.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(conversationMember.GetType().FullName));
             return this.SendAsync<ConversationMember>(conversationMember, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="conversationMember">The ConversationMember to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConversationMember}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ConversationMember>> AddResponseAsync(ConversationMember conversationMember, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ConversationMember>> AddResponseAsync(ConversationMember conversationMember, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             conversationMember.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(conversationMember.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<ConversationMember>(conversationMember, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<ConversationMember>(conversationMember, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IChannelMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ChannelMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChannelMembersCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ChannelMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ChannelMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ChannelMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ChannelMembersCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosGeneralDeviceConfiguration.
         /// </summary>
-        /// <returns>The IosGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosGeneralDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosGeneralDeviceConfiguration and returns a <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosGeneralDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosGeneralDeviceConfiguration and returns a <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosGeneralDeviceConfiguration using PATCH.

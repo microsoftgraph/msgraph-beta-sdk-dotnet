@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified VirtualEndpoint.
         /// </summary>
-        /// <returns>The VirtualEndpoint.</returns>
-        System.Threading.Tasks.Task<VirtualEndpoint> GetAsync();
-
-        /// <summary>
-        /// Gets the specified VirtualEndpoint.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VirtualEndpoint.</returns>
-        System.Threading.Tasks.Task<VirtualEndpoint> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified VirtualEndpoint and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync();
+        System.Threading.Tasks.Task<VirtualEndpoint> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified VirtualEndpoint and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified VirtualEndpoint using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OneDriveActivityUserDetail.
         /// </summary>
-        /// <returns>The OneDriveActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<OneDriveActivityUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OneDriveActivityUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OneDriveActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<OneDriveActivityUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OneDriveActivityUserDetail and returns a <see cref="GraphResponse{OneDriveActivityUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OneDriveActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OneDriveActivityUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<OneDriveActivityUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OneDriveActivityUserDetail and returns a <see cref="GraphResponse{OneDriveActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OneDriveActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OneDriveActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OneDriveActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OneDriveActivityUserDetail using PATCH.

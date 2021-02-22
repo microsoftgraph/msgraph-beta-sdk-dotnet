@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows10GeneralConfiguration.
         /// </summary>
-        /// <returns>The Windows10GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10GeneralConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows10GeneralConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10GeneralConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows10GeneralConfiguration and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows10GeneralConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10GeneralConfiguration and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10GeneralConfiguration using PATCH.

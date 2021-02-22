@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookWorksheetProtection.
         /// </summary>
-        /// <returns>The WorkbookWorksheetProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookWorksheetProtection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookWorksheetProtection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookWorksheetProtection.</returns>
-        System.Threading.Tasks.Task<WorkbookWorksheetProtection> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookWorksheetProtection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookWorksheetProtection and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookWorksheetProtection using PATCH.

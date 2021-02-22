@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             return this.SendAsync<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken);
         }
 
@@ -48,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(null, cancellationToken);
         }
 
 
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PatchAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             return this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
         }
 
@@ -74,10 +74,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="userexperienceanalyticsregressionsummary">The UserExperienceAnalyticsRegressionSummary object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PatchResponseAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PatchResponseAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PutAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             return this.SendAsync<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
         }
 
@@ -99,10 +99,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="userexperienceanalyticsregressionsummary">The UserExperienceAnalyticsRegressionSummary object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PutResponseAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PutResponseAsync(UserExperienceAnalyticsRegressionSummary userexperienceanalyticsregressionsummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsRegressionSummary>(userexperienceanalyticsregressionsummary, cancellationToken);
         }
 
         /// <summary>

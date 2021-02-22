@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookRangeFormat.
         /// </summary>
-        /// <returns>The WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookRangeFormat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookRangeFormat and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookRangeFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookRangeFormat and returns a <see cref="GraphResponse{WorkbookRangeFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookRangeFormat using PATCH.

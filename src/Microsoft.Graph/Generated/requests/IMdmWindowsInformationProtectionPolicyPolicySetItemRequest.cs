@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem.
         /// </summary>
-        /// <returns>The MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MdmWindowsInformationProtectionPolicyPolicySetItem.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicyPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MdmWindowsInformationProtectionPolicyPolicySetItem and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicyPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicyPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MdmWindowsInformationProtectionPolicyPolicySetItem using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyEnablementRule.
         /// </summary>
-        /// <returns>The UnifiedRoleManagementPolicyEnablementRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyEnablementRule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyEnablementRule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyEnablementRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyEnablementRule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyEnablementRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyEnablementRule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyEnablementRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyEnablementRule>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyEnablementRule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyEnablementRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyEnablementRule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyEnablementRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyEnablementRule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyEnablementRule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyEnablementRule using PATCH.

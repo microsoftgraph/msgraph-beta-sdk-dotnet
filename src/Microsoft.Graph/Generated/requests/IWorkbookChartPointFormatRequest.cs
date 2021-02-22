@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookChartPointFormat.
         /// </summary>
-        /// <returns>The WorkbookChartPointFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPointFormat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookChartPointFormat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartPointFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPointFormat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookChartPointFormat and returns a <see cref="GraphResponse{WorkbookChartPointFormat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartPointFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookChartPointFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartPointFormat and returns a <see cref="GraphResponse{WorkbookChartPointFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartPointFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartPointFormat using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosDerivedCredentialAuthenticationConfiguration.
         /// </summary>
-        /// <returns>The IosDerivedCredentialAuthenticationConfiguration.</returns>
-        System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosDerivedCredentialAuthenticationConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosDerivedCredentialAuthenticationConfiguration.</returns>
-        System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosDerivedCredentialAuthenticationConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosDerivedCredentialAuthenticationConfiguration and returns a <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosDerivedCredentialAuthenticationConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosDerivedCredentialAuthenticationConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosDerivedCredentialAuthenticationConfiguration using PATCH.

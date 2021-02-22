@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SectionGroup.
         /// </summary>
-        /// <returns>The SectionGroup.</returns>
-        System.Threading.Tasks.Task<SectionGroup> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SectionGroup.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SectionGroup.</returns>
-        System.Threading.Tasks.Task<SectionGroup> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SectionGroup and returns a <see cref="GraphResponse{SectionGroup}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> GetResponseAsync();
+        System.Threading.Tasks.Task<SectionGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SectionGroup and returns a <see cref="GraphResponse{SectionGroup}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SectionGroup using PATCH.

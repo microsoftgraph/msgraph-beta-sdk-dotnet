@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerEnrollmentProfile.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH.

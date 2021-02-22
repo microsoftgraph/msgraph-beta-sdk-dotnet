@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkypeForBusinessParticipantActivityMinuteCounts.
         /// </summary>
-        /// <returns>The SkypeForBusinessParticipantActivityMinuteCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityMinuteCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessParticipantActivityMinuteCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessParticipantActivityMinuteCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityMinuteCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessParticipantActivityMinuteCounts and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityMinuteCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkypeForBusinessParticipantActivityMinuteCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityMinuteCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkypeForBusinessParticipantActivityMinuteCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkypeForBusinessParticipantActivityMinuteCounts and returns a <see cref="GraphResponse{SkypeForBusinessParticipantActivityMinuteCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessParticipantActivityMinuteCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityMinuteCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessParticipantActivityMinuteCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkypeForBusinessParticipantActivityMinuteCounts using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IntuneBrandingProfile.
         /// </summary>
-        /// <returns>The IntuneBrandingProfile.</returns>
-        System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IntuneBrandingProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IntuneBrandingProfile.</returns>
-        System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IntuneBrandingProfile and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<IntuneBrandingProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IntuneBrandingProfile and returns a <see cref="GraphResponse{IntuneBrandingProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IntuneBrandingProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IntuneBrandingProfile using PATCH.

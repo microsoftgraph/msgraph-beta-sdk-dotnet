@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified FileClassificationRequestObject.
         /// </summary>
-        /// <returns>The FileClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified FileClassificationRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FileClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified FileClassificationRequestObject and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{FileClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<FileClassificationRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FileClassificationRequestObject and returns a <see cref="GraphResponse{FileClassificationRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FileClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FileClassificationRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FileClassificationRequestObject using PATCH.

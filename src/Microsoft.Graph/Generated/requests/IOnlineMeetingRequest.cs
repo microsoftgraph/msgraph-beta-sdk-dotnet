@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OnlineMeeting.
         /// </summary>
-        /// <returns>The OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OnlineMeeting.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnlineMeeting.</returns>
-        System.Threading.Tasks.Task<OnlineMeeting> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync();
+        System.Threading.Tasks.Task<OnlineMeeting> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OnlineMeeting using PATCH.

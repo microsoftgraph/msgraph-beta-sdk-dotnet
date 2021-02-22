@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageResourceRequestObject.
         /// </summary>
-        /// <returns>The AccessPackageResourceRequestObject.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessPackageResourceRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResourceRequestObject.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessPackageResourceRequestObject and returns a <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessPackageResourceRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageResourceRequestObject and returns a <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackageResourceRequestObject using PATCH.

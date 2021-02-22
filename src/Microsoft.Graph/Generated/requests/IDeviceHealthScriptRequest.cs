@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceHealthScript.
         /// </summary>
-        /// <returns>The DeviceHealthScript.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScript> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScript.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScript.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScript> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScript and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceHealthScript> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceHealthScript and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceHealthScript using PATCH.

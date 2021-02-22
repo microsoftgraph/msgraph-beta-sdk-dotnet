@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CommsOperation.
         /// </summary>
-        /// <returns>The CommsOperation.</returns>
-        System.Threading.Tasks.Task<CommsOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CommsOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CommsOperation.</returns>
-        System.Threading.Tasks.Task<CommsOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CommsOperation and returns a <see cref="GraphResponse{CommsOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CommsOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<CommsOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CommsOperation and returns a <see cref="GraphResponse{CommsOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CommsOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CommsOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CommsOperation using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamsDeviceUsageUserCounts.
         /// </summary>
-        /// <returns>The TeamsDeviceUsageUserCounts.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TeamsDeviceUsageUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsDeviceUsageUserCounts.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TeamsDeviceUsageUserCounts and returns a <see cref="GraphResponse{TeamsDeviceUsageUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamsDeviceUsageUserCounts and returns a <see cref="GraphResponse{TeamsDeviceUsageUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageUserCounts using PATCH.

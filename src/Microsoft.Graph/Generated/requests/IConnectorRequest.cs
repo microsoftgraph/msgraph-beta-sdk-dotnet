@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Connector.
         /// </summary>
-        /// <returns>The Connector.</returns>
-        System.Threading.Tasks.Task<Connector> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Connector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Connector.</returns>
-        System.Threading.Tasks.Task<Connector> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Connector and returns a <see cref="GraphResponse{Connector}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Connector>> GetResponseAsync();
+        System.Threading.Tasks.Task<Connector> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Connector and returns a <see cref="GraphResponse{Connector}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Connector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Connector>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Connector>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Connector using PATCH.

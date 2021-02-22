@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ExternalGroup.
         /// </summary>
-        /// <returns>The ExternalGroup.</returns>
-        System.Threading.Tasks.Task<ExternalGroup> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ExternalGroup.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExternalGroup.</returns>
-        System.Threading.Tasks.Task<ExternalGroup> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ExternalGroup and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> GetResponseAsync();
+        System.Threading.Tasks.Task<ExternalGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ExternalGroup and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ExternalGroup using PATCH.

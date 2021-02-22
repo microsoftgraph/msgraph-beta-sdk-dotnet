@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnmanagedDeviceDiscoveryTask.
         /// </summary>
-        /// <returns>The UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnmanagedDeviceDiscoveryTask.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnmanagedDeviceDiscoveryTask.</returns>
-        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnmanagedDeviceDiscoveryTask> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnmanagedDeviceDiscoveryTask and returns a <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnmanagedDeviceDiscoveryTask}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnmanagedDeviceDiscoveryTask>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnmanagedDeviceDiscoveryTask using PATCH.

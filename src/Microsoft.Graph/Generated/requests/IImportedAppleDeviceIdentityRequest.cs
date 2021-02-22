@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ImportedAppleDeviceIdentity.
         /// </summary>
-        /// <returns>The ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ImportedAppleDeviceIdentity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ImportedAppleDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ImportedAppleDeviceIdentity and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> GetResponseAsync();
+        System.Threading.Tasks.Task<ImportedAppleDeviceIdentity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ImportedAppleDeviceIdentity and returns a <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedAppleDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ImportedAppleDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ImportedAppleDeviceIdentity using PATCH.

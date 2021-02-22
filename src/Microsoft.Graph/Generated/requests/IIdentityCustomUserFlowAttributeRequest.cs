@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityCustomUserFlowAttribute.
         /// </summary>
-        /// <returns>The IdentityCustomUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityCustomUserFlowAttribute> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityCustomUserFlowAttribute.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityCustomUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityCustomUserFlowAttribute> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityCustomUserFlowAttribute and returns a <see cref="GraphResponse{IdentityCustomUserFlowAttribute}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityCustomUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityCustomUserFlowAttribute>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityCustomUserFlowAttribute> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityCustomUserFlowAttribute and returns a <see cref="GraphResponse{IdentityCustomUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityCustomUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityCustomUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityCustomUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityCustomUserFlowAttribute using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MicrosoftStoreForBusinessContainedApp.
         /// </summary>
-        /// <returns>The MicrosoftStoreForBusinessContainedApp.</returns>
-        System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MicrosoftStoreForBusinessContainedApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftStoreForBusinessContainedApp.</returns>
-        System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MicrosoftStoreForBusinessContainedApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<MicrosoftStoreForBusinessContainedApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftStoreForBusinessContainedApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessContainedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessContainedApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftStoreForBusinessContainedApp using PATCH.

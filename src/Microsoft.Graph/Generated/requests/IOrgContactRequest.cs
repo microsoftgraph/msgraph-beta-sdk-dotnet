@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OrgContact.
         /// </summary>
-        /// <returns>The OrgContact.</returns>
-        System.Threading.Tasks.Task<OrgContact> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OrgContact.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OrgContact.</returns>
-        System.Threading.Tasks.Task<OrgContact> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync();
+        System.Threading.Tasks.Task<OrgContact> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OrgContact using PATCH.

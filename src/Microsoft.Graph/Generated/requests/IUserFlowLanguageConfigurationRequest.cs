@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserFlowLanguageConfiguration.
         /// </summary>
-        /// <returns>The UserFlowLanguageConfiguration.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserFlowLanguageConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserFlowLanguageConfiguration.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserFlowLanguageConfiguration and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserFlowLanguageConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserFlowLanguageConfiguration and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserFlowLanguageConfiguration using PATCH.

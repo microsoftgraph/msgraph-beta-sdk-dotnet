@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SiteUsageStorage.
         /// </summary>
-        /// <returns>The SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SiteUsageStorage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SiteUsageStorage and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SiteUsageStorage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> GetResponseAsync();
+        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SiteUsageStorage and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteUsageStorage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SiteUsageStorage using PATCH.

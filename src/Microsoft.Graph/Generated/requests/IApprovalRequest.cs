@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Approval.
         /// </summary>
-        /// <returns>The Approval.</returns>
-        System.Threading.Tasks.Task<Approval> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Approval.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Approval.</returns>
-        System.Threading.Tasks.Task<Approval> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Approval and returns a <see cref="GraphResponse{Approval}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> GetResponseAsync();
+        System.Threading.Tasks.Task<Approval> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Approval and returns a <see cref="GraphResponse{Approval}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Approval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Approval>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Approval>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Approval using PATCH.

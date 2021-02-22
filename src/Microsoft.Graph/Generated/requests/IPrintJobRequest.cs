@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrintJob.
         /// </summary>
-        /// <returns>The PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrintJob.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintJob.</returns>
-        System.Threading.Tasks.Task<PrintJob> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrintJob and returns a <see cref="GraphResponse{PrintJob}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrintJob> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrintJob and returns a <see cref="GraphResponse{PrintJob}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintJob}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintJob>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrintJob using PATCH.

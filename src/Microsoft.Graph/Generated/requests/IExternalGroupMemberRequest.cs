@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ExternalGroupMember.
         /// </summary>
-        /// <returns>The ExternalGroupMember.</returns>
-        System.Threading.Tasks.Task<ExternalGroupMember> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ExternalGroupMember.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExternalGroupMember.</returns>
-        System.Threading.Tasks.Task<ExternalGroupMember> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ExternalGroupMember and returns a <see cref="GraphResponse{ExternalGroupMember}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ExternalGroupMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroupMember>> GetResponseAsync();
+        System.Threading.Tasks.Task<ExternalGroupMember> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ExternalGroupMember and returns a <see cref="GraphResponse{ExternalGroupMember}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExternalGroupMember}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExternalGroupMember>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ExternalGroupMember>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ExternalGroupMember using PATCH.

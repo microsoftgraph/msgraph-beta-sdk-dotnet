@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyAssignment> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignment, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyAssignment">The WindowsDefenderApplicationControlSupplementalPolicyAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyAssignment windowsDefenderApplicationControlSupplementalPolicyAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignment, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(windowsDefenderApplicationControlSupplementalPolicyAssignment, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CloudCommunications.
         /// </summary>
-        /// <returns>The CloudCommunications.</returns>
-        System.Threading.Tasks.Task<CloudCommunications> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CloudCommunications.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudCommunications.</returns>
-        System.Threading.Tasks.Task<CloudCommunications> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CloudCommunications and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CloudCommunications}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> GetResponseAsync();
+        System.Threading.Tasks.Task<CloudCommunications> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CloudCommunications and returns a <see cref="GraphResponse{CloudCommunications}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudCommunications}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CloudCommunications>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CloudCommunications using PATCH.

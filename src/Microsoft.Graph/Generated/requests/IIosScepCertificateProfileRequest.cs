@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosScepCertificateProfile.
         /// </summary>
-        /// <returns>The IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosScepCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosScepCertificateProfile and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosScepCertificateProfile and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosScepCertificateProfile using PATCH.

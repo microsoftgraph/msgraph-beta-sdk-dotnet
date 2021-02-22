@@ -53,28 +53,16 @@ namespace Microsoft.Graph.CallRecords
         /// <summary>
         /// Gets the specified Session.
         /// </summary>
-        /// <returns>The Session.</returns>
-        System.Threading.Tasks.Task<Session> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Session.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Session.</returns>
-        System.Threading.Tasks.Task<Session> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Session and returns a <see cref="GraphResponse{Session}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Session>> GetResponseAsync();
+        System.Threading.Tasks.Task<Session> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Session and returns a <see cref="GraphResponse{Session}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Session>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Session>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Session using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileAppIntentAndState.
         /// </summary>
-        /// <returns>The MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileAppIntentAndState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MobileAppIntentAndState and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> GetResponseAsync();
+        System.Threading.Tasks.Task<MobileAppIntentAndState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppIntentAndState and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppIntentAndState using PATCH.

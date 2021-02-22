@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Teamwork.
         /// </summary>
-        /// <returns>The Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Teamwork.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Teamwork and returns a <see cref="GraphResponse{Teamwork}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync();
+        System.Threading.Tasks.Task<Teamwork> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Teamwork and returns a <see cref="GraphResponse{Teamwork}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Teamwork using PATCH.

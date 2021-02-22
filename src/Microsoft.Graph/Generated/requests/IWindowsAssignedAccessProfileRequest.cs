@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsAssignedAccessProfile.
         /// </summary>
-        /// <returns>The WindowsAssignedAccessProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAssignedAccessProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsAssignedAccessProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAssignedAccessProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAssignedAccessProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsAssignedAccessProfile and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsAssignedAccessProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsAssignedAccessProfile and returns a <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAssignedAccessProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsAssignedAccessProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsAssignedAccessProfile using PATCH.

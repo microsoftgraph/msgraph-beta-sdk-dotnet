@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrivilegedApproval.
         /// </summary>
-        /// <returns>The PrivilegedApproval.</returns>
-        System.Threading.Tasks.Task<PrivilegedApproval> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrivilegedApproval.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivilegedApproval.</returns>
-        System.Threading.Tasks.Task<PrivilegedApproval> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrivilegedApproval and returns a <see cref="GraphResponse{PrivilegedApproval}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedApproval>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrivilegedApproval> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrivilegedApproval and returns a <see cref="GraphResponse{PrivilegedApproval}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedApproval}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedApproval>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedApproval>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrivilegedApproval using PATCH.

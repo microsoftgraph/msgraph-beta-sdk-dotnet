@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationPolicy.
         /// </summary>
-        /// <returns>The DeviceManagementConfigurationPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementConfigurationPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationPolicy and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationPolicy and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementConfigurationPolicy using PATCH.
