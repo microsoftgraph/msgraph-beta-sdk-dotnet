@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<UsageRight>(usageRight, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<UsageRight>(usageRight, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<UsageRight>(usageRight, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceUsageRightsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceUsageRightsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceUsageRightsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceUsageRightsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> AddAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<AssignmentFilterEvaluationStatusDetails>(assignmentFilterEvaluationStatusDetails, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="assignmentFilterEvaluationStatusDetails">The AssignmentFilterEvaluationStatusDetails to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> AddResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> AddResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetails, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<AssignmentFilterEvaluationStatusDetails>(assignmentFilterEvaluationStatusDetails, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<AssignmentFilterEvaluationStatusDetails>(assignmentFilterEvaluationStatusDetails, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceAssignmentFilterEvaluationStatusDetailsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceConfigurationPolicySetItem.
         /// </summary>
-        /// <returns>The DeviceConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationPolicySetItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationPolicySetItem and returns a <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationPolicySetItem using PATCH.

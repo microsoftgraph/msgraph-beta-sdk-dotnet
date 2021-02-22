@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TokenIssuancePolicy.
         /// </summary>
-        /// <returns>The TokenIssuancePolicy.</returns>
-        System.Threading.Tasks.Task<TokenIssuancePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TokenIssuancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TokenIssuancePolicy.</returns>
-        System.Threading.Tasks.Task<TokenIssuancePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TokenIssuancePolicy and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<TokenIssuancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TokenIssuancePolicy and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified TokenIssuancePolicy using POST.

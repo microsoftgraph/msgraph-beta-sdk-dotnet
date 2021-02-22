@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod.
         /// </summary>
-        /// <returns>The PasswordlessMicrosoftAuthenticatorAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PasswordlessMicrosoftAuthenticatorAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> GetResponseAsync();
+        System.Threading.Tasks.Task<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod and returns a <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PasswordlessMicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PasswordlessMicrosoftAuthenticatorAuthenticationMethod using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementTemplateSettingCategory.
         /// </summary>
-        /// <returns>The DeviceManagementTemplateSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementTemplateSettingCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementTemplateSettingCategory.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementTemplateSettingCategory and returns a <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementTemplateSettingCategory and returns a <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementTemplateSettingCategory using PATCH.

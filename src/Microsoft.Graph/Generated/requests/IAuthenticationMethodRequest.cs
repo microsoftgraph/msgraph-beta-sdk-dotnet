@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AuthenticationMethod.
         /// </summary>
-        /// <returns>The AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethod> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AuthenticationMethod.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<AuthenticationMethod> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AuthenticationMethod and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> GetResponseAsync();
+        System.Threading.Tasks.Task<AuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AuthenticationMethod and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AuthenticationMethod using PATCH.

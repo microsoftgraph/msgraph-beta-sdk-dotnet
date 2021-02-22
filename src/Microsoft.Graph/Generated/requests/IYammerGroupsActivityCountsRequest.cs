@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified YammerGroupsActivityCounts.
         /// </summary>
-        /// <returns>The YammerGroupsActivityCounts.</returns>
-        System.Threading.Tasks.Task<YammerGroupsActivityCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified YammerGroupsActivityCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerGroupsActivityCounts.</returns>
-        System.Threading.Tasks.Task<YammerGroupsActivityCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified YammerGroupsActivityCounts and returns a <see cref="GraphResponse{YammerGroupsActivityCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<YammerGroupsActivityCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified YammerGroupsActivityCounts and returns a <see cref="GraphResponse{YammerGroupsActivityCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerGroupsActivityCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified YammerGroupsActivityCounts using PATCH.

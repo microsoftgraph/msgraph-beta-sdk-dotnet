@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<CustomerPaymentJournal> AddAsync(CustomerPaymentJournal customerPaymentJournal, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<CustomerPaymentJournal>(customerPaymentJournal, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="customerPaymentJournal">The CustomerPaymentJournal to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CustomerPaymentJournal}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> AddResponseAsync(CustomerPaymentJournal customerPaymentJournal, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CustomerPaymentJournal>> AddResponseAsync(CustomerPaymentJournal customerPaymentJournal, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<CustomerPaymentJournal>(customerPaymentJournal, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<CustomerPaymentJournal>(customerPaymentJournal, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ICompanyCustomerPaymentJournalsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<CompanyCustomerPaymentJournalsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyCustomerPaymentJournalsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<CompanyCustomerPaymentJournalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CompanyCustomerPaymentJournalsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<CompanyCustomerPaymentJournalsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<CompanyCustomerPaymentJournalsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

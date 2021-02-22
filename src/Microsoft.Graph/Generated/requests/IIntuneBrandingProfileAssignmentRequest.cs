@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IntuneBrandingProfileAssignment.
         /// </summary>
-        /// <returns>The IntuneBrandingProfileAssignment.</returns>
-        System.Threading.Tasks.Task<IntuneBrandingProfileAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IntuneBrandingProfileAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IntuneBrandingProfileAssignment.</returns>
-        System.Threading.Tasks.Task<IntuneBrandingProfileAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IntuneBrandingProfileAssignment and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<IntuneBrandingProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IntuneBrandingProfileAssignment and returns a <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IntuneBrandingProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IntuneBrandingProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IntuneBrandingProfileAssignment using PATCH.

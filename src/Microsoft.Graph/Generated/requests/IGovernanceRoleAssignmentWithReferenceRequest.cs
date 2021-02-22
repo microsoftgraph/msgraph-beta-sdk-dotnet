@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GovernanceRoleAssignment.
         /// </summary>
-        /// <returns>The GovernanceRoleAssignment.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GovernanceRoleAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceRoleAssignment.</returns>
-        System.Threading.Tasks.Task<GovernanceRoleAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GovernanceRoleAssignment and returns a <see cref="GraphResponse{GovernanceRoleAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<GovernanceRoleAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GovernanceRoleAssignment and returns a <see cref="GraphResponse{GovernanceRoleAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernanceRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GovernanceRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified GovernanceRoleAssignment using POST.

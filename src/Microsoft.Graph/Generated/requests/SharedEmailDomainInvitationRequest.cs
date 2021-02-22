@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<SharedEmailDomainInvitation> CreateAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="sharedEmailDomainInvitationToCreate">The SharedEmailDomainInvitation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> CreateResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> CreateResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<SharedEmailDomainInvitation>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified SharedEmailDomainInvitation.
-        /// </summary>
-        /// <returns>The SharedEmailDomainInvitation.</returns>
-        public System.Threading.Tasks.Task<SharedEmailDomainInvitation> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharedEmailDomainInvitation.</returns>
-        public async System.Threading.Tasks.Task<SharedEmailDomainInvitation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SharedEmailDomainInvitation> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<SharedEmailDomainInvitation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharedEmailDomainInvitation and returns a <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified SharedEmailDomainInvitation and returns a <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<SharedEmailDomainInvitation> UpdateAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> UpdateResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> UpdateResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<SharedEmailDomainInvitation>(sharedEmailDomainInvitationToUpdate, cancellationToken);
         }
 
         /// <summary>

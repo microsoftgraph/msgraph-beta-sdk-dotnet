@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityUserFlowAttribute.
         /// </summary>
-        /// <returns>The IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityUserFlowAttribute.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityUserFlowAttribute> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityUserFlowAttribute and returns a <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified IdentityUserFlowAttribute using POST.

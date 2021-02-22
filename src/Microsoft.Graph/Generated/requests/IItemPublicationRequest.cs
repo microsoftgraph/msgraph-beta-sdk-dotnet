@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ItemPublication.
         /// </summary>
-        /// <returns>The ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ItemPublication.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ItemPublication and returns a <see cref="GraphResponse{ItemPublication}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> GetResponseAsync();
+        System.Threading.Tasks.Task<ItemPublication> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemPublication and returns a <see cref="GraphResponse{ItemPublication}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemPublication using PATCH.

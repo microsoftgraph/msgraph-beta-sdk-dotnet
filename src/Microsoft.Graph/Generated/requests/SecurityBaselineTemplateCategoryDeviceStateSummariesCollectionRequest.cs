@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> AddAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummary, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="securityBaselineCategoryStateSummary">The SecurityBaselineCategoryStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummary, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

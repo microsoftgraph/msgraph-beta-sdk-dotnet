@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementScriptGroupAssignment.
         /// </summary>
-        /// <returns>The DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH.

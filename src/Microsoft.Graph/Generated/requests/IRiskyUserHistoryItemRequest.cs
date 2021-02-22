@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RiskyUserHistoryItem.
         /// </summary>
-        /// <returns>The RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RiskyUserHistoryItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RiskyUserHistoryItem and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RiskyUserHistoryItem and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RiskyUserHistoryItem using PATCH.

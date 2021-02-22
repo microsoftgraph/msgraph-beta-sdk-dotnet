@@ -53,28 +53,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified NoncustodialDataSource.
         /// </summary>
-        /// <returns>The NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NoncustodialDataSource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NoncustodialDataSource and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> GetResponseAsync();
+        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NoncustodialDataSource and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NoncustodialDataSource using PATCH.

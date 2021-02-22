@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsDomainJoinConfiguration.
         /// </summary>
-        /// <returns>The WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsDomainJoinConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDomainJoinConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsDomainJoinConfiguration and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsDomainJoinConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsDomainJoinConfiguration and returns a <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsDomainJoinConfiguration using PATCH.

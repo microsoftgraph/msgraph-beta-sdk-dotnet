@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookChartAreaFormat.
         /// </summary>
-        /// <returns>The WorkbookChartAreaFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAreaFormat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookChartAreaFormat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartAreaFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAreaFormat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookChartAreaFormat and returns a <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookChartAreaFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartAreaFormat and returns a <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartAreaFormat using PATCH.

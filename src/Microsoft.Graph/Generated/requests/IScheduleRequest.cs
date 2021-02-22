@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Schedule.
         /// </summary>
-        /// <returns>The Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Schedule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Schedule.</returns>
-        System.Threading.Tasks.Task<Schedule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync();
+        System.Threading.Tasks.Task<Schedule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Schedule and returns a <see cref="GraphResponse{Schedule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Schedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Schedule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Schedule using PATCH.

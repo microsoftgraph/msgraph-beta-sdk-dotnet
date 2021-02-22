@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Journal.
         /// </summary>
-        /// <returns>The Journal.</returns>
-        System.Threading.Tasks.Task<Journal> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Journal.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Journal.</returns>
-        System.Threading.Tasks.Task<Journal> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Journal and returns a <see cref="GraphResponse{Journal}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> GetResponseAsync();
+        System.Threading.Tasks.Task<Journal> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Journal and returns a <see cref="GraphResponse{Journal}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Journal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Journal>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Journal>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Journal using PATCH.

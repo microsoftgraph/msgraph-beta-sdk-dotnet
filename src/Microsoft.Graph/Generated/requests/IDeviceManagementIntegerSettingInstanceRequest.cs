@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntegerSettingInstance.
         /// </summary>
-        /// <returns>The DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntegerSettingInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntegerSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntegerSettingInstance and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntegerSettingInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntegerSettingInstance and returns a <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntegerSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntegerSettingInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntegerSettingInstance using PATCH.

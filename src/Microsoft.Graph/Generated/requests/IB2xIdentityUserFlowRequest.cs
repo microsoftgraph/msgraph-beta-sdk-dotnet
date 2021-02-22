@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified B2xIdentityUserFlow.
         /// </summary>
-        /// <returns>The B2xIdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<B2xIdentityUserFlow> GetAsync();
-
-        /// <summary>
-        /// Gets the specified B2xIdentityUserFlow.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The B2xIdentityUserFlow.</returns>
-        System.Threading.Tasks.Task<B2xIdentityUserFlow> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> GetResponseAsync();
+        System.Threading.Tasks.Task<B2xIdentityUserFlow> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified B2xIdentityUserFlow and returns a <see cref="GraphResponse{B2xIdentityUserFlow}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2xIdentityUserFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<B2xIdentityUserFlow>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified B2xIdentityUserFlow using PATCH.

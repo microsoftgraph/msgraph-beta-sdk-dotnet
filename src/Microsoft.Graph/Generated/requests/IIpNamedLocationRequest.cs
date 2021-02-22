@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IpNamedLocation.
         /// </summary>
-        /// <returns>The IpNamedLocation.</returns>
-        System.Threading.Tasks.Task<IpNamedLocation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IpNamedLocation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IpNamedLocation.</returns>
-        System.Threading.Tasks.Task<IpNamedLocation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IpNamedLocation and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> GetResponseAsync();
+        System.Threading.Tasks.Task<IpNamedLocation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IpNamedLocation and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IpNamedLocation using PATCH.

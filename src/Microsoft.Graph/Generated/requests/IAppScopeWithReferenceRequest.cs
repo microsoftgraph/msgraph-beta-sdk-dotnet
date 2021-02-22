@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppScope.
         /// </summary>
-        /// <returns>The AppScope.</returns>
-        System.Threading.Tasks.Task<AppScope> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppScope.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppScope.</returns>
-        System.Threading.Tasks.Task<AppScope> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppScope and returns a <see cref="GraphResponse{AppScope}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppScope}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppScope>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppScope> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppScope and returns a <see cref="GraphResponse{AppScope}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppScope}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppScope>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppScope>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AppScope using POST.

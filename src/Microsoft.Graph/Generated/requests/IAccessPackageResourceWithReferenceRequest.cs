@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageResource.
         /// </summary>
-        /// <returns>The AccessPackageResource.</returns>
-        System.Threading.Tasks.Task<AccessPackageResource> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessPackageResource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResource.</returns>
-        System.Threading.Tasks.Task<AccessPackageResource> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessPackageResource and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessPackageResource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageResource and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AccessPackageResource using POST.

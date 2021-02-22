@@ -23,28 +23,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified Tag.
         /// </summary>
-        /// <returns>The Tag.</returns>
-        System.Threading.Tasks.Task<Tag> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Tag.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Tag.</returns>
-        System.Threading.Tasks.Task<Tag> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Tag and returns a <see cref="GraphResponse{Tag}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Tag>> GetResponseAsync();
+        System.Threading.Tasks.Task<Tag> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Tag and returns a <see cref="GraphResponse{Tag}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Tag}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Tag>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Tag>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Tag using POST.

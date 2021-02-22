@@ -23,28 +23,16 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets the specified Set.
         /// </summary>
-        /// <returns>The Set.</returns>
-        System.Threading.Tasks.Task<Set> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Set.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Set.</returns>
-        System.Threading.Tasks.Task<Set> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Set and returns a <see cref="GraphResponse{Set}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Set>> GetResponseAsync();
+        System.Threading.Tasks.Task<Set> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Set and returns a <see cref="GraphResponse{Set}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Set>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Set>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Set using POST.

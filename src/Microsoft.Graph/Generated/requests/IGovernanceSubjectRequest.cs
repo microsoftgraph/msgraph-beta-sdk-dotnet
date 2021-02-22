@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GovernanceSubject.
         /// </summary>
-        /// <returns>The GovernanceSubject.</returns>
-        System.Threading.Tasks.Task<GovernanceSubject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GovernanceSubject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceSubject.</returns>
-        System.Threading.Tasks.Task<GovernanceSubject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GovernanceSubject and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> GetResponseAsync();
+        System.Threading.Tasks.Task<GovernanceSubject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GovernanceSubject and returns a <see cref="GraphResponse{GovernanceSubject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GovernanceSubject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GovernanceSubject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GovernanceSubject using PATCH.

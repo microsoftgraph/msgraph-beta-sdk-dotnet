@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ReportRoot.
         /// </summary>
-        /// <returns>The ReportRoot.</returns>
-        System.Threading.Tasks.Task<ReportRoot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ReportRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReportRoot.</returns>
-        System.Threading.Tasks.Task<ReportRoot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ReportRoot and returns a <see cref="GraphResponse{ReportRoot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync();
+        System.Threading.Tasks.Task<ReportRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ReportRoot and returns a <see cref="GraphResponse{ReportRoot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ReportRoot using PATCH.

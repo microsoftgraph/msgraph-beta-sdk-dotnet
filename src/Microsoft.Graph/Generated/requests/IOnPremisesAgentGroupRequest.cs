@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OnPremisesAgentGroup.
         /// </summary>
-        /// <returns>The OnPremisesAgentGroup.</returns>
-        System.Threading.Tasks.Task<OnPremisesAgentGroup> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OnPremisesAgentGroup.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnPremisesAgentGroup.</returns>
-        System.Threading.Tasks.Task<OnPremisesAgentGroup> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OnPremisesAgentGroup and returns a <see cref="GraphResponse{OnPremisesAgentGroup}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroup>> GetResponseAsync();
+        System.Threading.Tasks.Task<OnPremisesAgentGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OnPremisesAgentGroup and returns a <see cref="GraphResponse{OnPremisesAgentGroup}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnPremisesAgentGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroup>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OnPremisesAgentGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OnPremisesAgentGroup using PATCH.

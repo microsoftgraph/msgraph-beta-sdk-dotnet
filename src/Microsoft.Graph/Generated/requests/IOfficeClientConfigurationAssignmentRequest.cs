@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OfficeClientConfigurationAssignment.
         /// </summary>
-        /// <returns>The OfficeClientConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OfficeClientConfigurationAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfficeClientConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OfficeClientConfigurationAssignment and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<OfficeClientConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OfficeClientConfigurationAssignment and returns a <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeClientConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OfficeClientConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OfficeClientConfigurationAssignment using PATCH.

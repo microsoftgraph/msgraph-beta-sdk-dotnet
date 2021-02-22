@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Ediscovery
         public async System.Threading.Tasks.Task<SiteSource> CreateAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<SiteSource>(siteSourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="siteSourceToCreate">The SiteSource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> CreateResponseAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> CreateResponseAsync(SiteSource siteSourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<SiteSource>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified SiteSource.
-        /// </summary>
-        /// <returns>The SiteSource.</returns>
-        public System.Threading.Tasks.Task<SiteSource> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SiteSource.</returns>
-        public async System.Threading.Tasks.Task<SiteSource> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SiteSource> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<SiteSource>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified SiteSource and returns a <see cref="GraphResponse{SiteSource}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified SiteSource and returns a <see cref="GraphResponse{SiteSource}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<SiteSource>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<SiteSource>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph.Ediscovery
         public async System.Threading.Tasks.Task<SiteSource> UpdateAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<SiteSource>(siteSourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> UpdateResponseAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> UpdateResponseAsync(SiteSource siteSourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<SiteSource>(siteSourceToUpdate, cancellationToken);
         }
 
         /// <summary>

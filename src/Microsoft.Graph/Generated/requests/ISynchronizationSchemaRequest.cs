@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SynchronizationSchema.
         /// </summary>
-        /// <returns>The SynchronizationSchema.</returns>
-        System.Threading.Tasks.Task<SynchronizationSchema> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SynchronizationSchema.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SynchronizationSchema.</returns>
-        System.Threading.Tasks.Task<SynchronizationSchema> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SynchronizationSchema and returns a <see cref="GraphResponse{SynchronizationSchema}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SynchronizationSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationSchema>> GetResponseAsync();
+        System.Threading.Tasks.Task<SynchronizationSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SynchronizationSchema and returns a <see cref="GraphResponse{SynchronizationSchema}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SynchronizationSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SynchronizationSchema>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SynchronizationSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SynchronizationSchema using PATCH.

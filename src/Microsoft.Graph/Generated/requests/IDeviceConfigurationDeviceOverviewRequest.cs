@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceConfigurationDeviceOverview.
         /// </summary>
-        /// <returns>The DeviceConfigurationDeviceOverview.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationDeviceOverview> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationDeviceOverview.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationDeviceOverview.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationDeviceOverview> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationDeviceOverview and returns a <see cref="GraphResponse{DeviceConfigurationDeviceOverview}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceOverview>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceConfigurationDeviceOverview> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationDeviceOverview and returns a <see cref="GraphResponse{DeviceConfigurationDeviceOverview}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationDeviceOverview using PATCH.

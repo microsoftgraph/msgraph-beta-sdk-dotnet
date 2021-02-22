@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PolicySetAssignment.
         /// </summary>
-        /// <returns>The PolicySetAssignment.</returns>
-        System.Threading.Tasks.Task<PolicySetAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PolicySetAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicySetAssignment.</returns>
-        System.Threading.Tasks.Task<PolicySetAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PolicySetAssignment and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<PolicySetAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PolicySetAssignment and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PolicySetAssignment using PATCH.

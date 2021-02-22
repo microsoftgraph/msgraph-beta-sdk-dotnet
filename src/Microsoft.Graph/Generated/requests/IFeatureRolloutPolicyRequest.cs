@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified FeatureRolloutPolicy.
         /// </summary>
-        /// <returns>The FeatureRolloutPolicy.</returns>
-        System.Threading.Tasks.Task<FeatureRolloutPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified FeatureRolloutPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FeatureRolloutPolicy.</returns>
-        System.Threading.Tasks.Task<FeatureRolloutPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified FeatureRolloutPolicy and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<FeatureRolloutPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FeatureRolloutPolicy and returns a <see cref="GraphResponse{FeatureRolloutPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FeatureRolloutPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FeatureRolloutPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FeatureRolloutPolicy using PATCH.

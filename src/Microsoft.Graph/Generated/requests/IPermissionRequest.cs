@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Permission.
         /// </summary>
-        /// <returns>The Permission.</returns>
-        System.Threading.Tasks.Task<Permission> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Permission.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Permission.</returns>
-        System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync();
+        System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Permission using PATCH.

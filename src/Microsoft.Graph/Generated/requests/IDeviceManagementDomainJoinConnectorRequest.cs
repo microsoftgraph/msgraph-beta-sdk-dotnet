@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementDomainJoinConnector.
         /// </summary>
-        /// <returns>The DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementDomainJoinConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementDomainJoinConnector and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementDomainJoinConnector and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementDomainJoinConnector using PATCH.

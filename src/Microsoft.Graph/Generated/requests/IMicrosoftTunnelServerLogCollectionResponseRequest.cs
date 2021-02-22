@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MicrosoftTunnelServerLogCollectionResponse.
         /// </summary>
-        /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH.

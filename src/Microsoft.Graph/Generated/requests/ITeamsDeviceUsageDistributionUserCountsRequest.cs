@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TeamsDeviceUsageDistributionUserCounts.
         /// </summary>
-        /// <returns>The TeamsDeviceUsageDistributionUserCounts.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageDistributionUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TeamsDeviceUsageDistributionUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsDeviceUsageDistributionUserCounts.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageDistributionUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TeamsDeviceUsageDistributionUserCounts and returns a <see cref="GraphResponse{TeamsDeviceUsageDistributionUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageDistributionUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageDistributionUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<TeamsDeviceUsageDistributionUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TeamsDeviceUsageDistributionUserCounts and returns a <see cref="GraphResponse{TeamsDeviceUsageDistributionUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageDistributionUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageDistributionUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageDistributionUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageDistributionUserCounts using PATCH.

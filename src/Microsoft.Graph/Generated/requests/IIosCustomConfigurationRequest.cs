@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosCustomConfiguration.
         /// </summary>
-        /// <returns>The IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosCustomConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosCustomConfiguration and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosCustomConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosCustomConfiguration and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosCustomConfiguration using PATCH.

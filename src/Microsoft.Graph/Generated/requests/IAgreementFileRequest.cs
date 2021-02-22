@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AgreementFile.
         /// </summary>
-        /// <returns>The AgreementFile.</returns>
-        System.Threading.Tasks.Task<AgreementFile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AgreementFile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgreementFile.</returns>
-        System.Threading.Tasks.Task<AgreementFile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AgreementFile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AgreementFile and returns a <see cref="GraphResponse{AgreementFile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AgreementFile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AgreementFile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AgreementFile using PATCH.

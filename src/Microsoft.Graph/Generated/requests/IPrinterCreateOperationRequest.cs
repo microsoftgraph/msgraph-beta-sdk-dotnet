@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrinterCreateOperation.
         /// </summary>
-        /// <returns>The PrinterCreateOperation.</returns>
-        System.Threading.Tasks.Task<PrinterCreateOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrinterCreateOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrinterCreateOperation.</returns>
-        System.Threading.Tasks.Task<PrinterCreateOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrinterCreateOperation and returns a <see cref="GraphResponse{PrinterCreateOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrinterCreateOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterCreateOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrinterCreateOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrinterCreateOperation and returns a <see cref="GraphResponse{PrinterCreateOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrinterCreateOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterCreateOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrinterCreateOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrinterCreateOperation using PATCH.

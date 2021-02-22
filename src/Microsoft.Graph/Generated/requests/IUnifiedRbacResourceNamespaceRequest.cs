@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRbacResourceNamespace.
         /// </summary>
-        /// <returns>The UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRbacResourceNamespace.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRbacResourceNamespace.</returns>
-        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRbacResourceNamespace> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRbacResourceNamespace and returns a <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRbacResourceNamespace}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRbacResourceNamespace>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRbacResourceNamespace using PATCH.

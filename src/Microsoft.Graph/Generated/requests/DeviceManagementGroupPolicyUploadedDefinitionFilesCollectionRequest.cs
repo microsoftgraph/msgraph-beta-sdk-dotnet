@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GroupPolicyUploadedDefinitionFile> AddAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFile, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyUploadedDefinitionFile">The GroupPolicyUploadedDefinitionFile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> AddResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFile>> AddResponseAsync(GroupPolicyUploadedDefinitionFile groupPolicyUploadedDefinitionFile, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFile, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<GroupPolicyUploadedDefinitionFile>(groupPolicyUploadedDefinitionFile, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceManagementGroupPolicyUploadedDefinitionFilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

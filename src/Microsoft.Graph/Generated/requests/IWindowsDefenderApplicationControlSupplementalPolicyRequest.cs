@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicy.
         /// </summary>
-        /// <returns>The WindowsDefenderApplicationControlSupplementalPolicy.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicy.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicy and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicy and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicy using PATCH.

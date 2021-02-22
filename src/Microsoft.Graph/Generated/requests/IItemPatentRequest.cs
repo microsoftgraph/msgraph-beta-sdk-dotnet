@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ItemPatent.
         /// </summary>
-        /// <returns>The ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ItemPatent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ItemPatent and returns a <see cref="GraphResponse{ItemPatent}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> GetResponseAsync();
+        System.Threading.Tasks.Task<ItemPatent> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemPatent and returns a <see cref="GraphResponse{ItemPatent}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemPatent using PATCH.

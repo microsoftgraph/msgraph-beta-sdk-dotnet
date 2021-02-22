@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceConfigurationConflictSummary.
         /// </summary>
-        /// <returns>The DeviceConfigurationConflictSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationConflictSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationConflictSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationConflictSummary and returns a <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationConflictSummary using PATCH.

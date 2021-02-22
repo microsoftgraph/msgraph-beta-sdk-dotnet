@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosLobAppProvisioningConfiguration.
         /// </summary>
-        /// <returns>The IosLobAppProvisioningConfiguration.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosLobAppProvisioningConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosLobAppProvisioningConfiguration.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosLobAppProvisioningConfiguration and returns a <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosLobAppProvisioningConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosLobAppProvisioningConfiguration and returns a <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosLobAppProvisioningConfiguration using PATCH.

@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WorkbookRangeFont> CreateAsync(WorkbookRangeFont workbookRangeFontToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<WorkbookRangeFont>(workbookRangeFontToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="workbookRangeFontToCreate">The WorkbookRangeFont to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> CreateResponseAsync(WorkbookRangeFont workbookRangeFontToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> CreateResponseAsync(WorkbookRangeFont workbookRangeFontToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WorkbookRangeFont>(workbookRangeFontToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFont>(workbookRangeFontToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<WorkbookRangeFont>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified WorkbookRangeFont.
-        /// </summary>
-        /// <returns>The WorkbookRangeFont.</returns>
-        public System.Threading.Tasks.Task<WorkbookRangeFont> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookRangeFont.</returns>
-        public async System.Threading.Tasks.Task<WorkbookRangeFont> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WorkbookRangeFont> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<WorkbookRangeFont>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WorkbookRangeFont>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFont>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WorkbookRangeFont> UpdateAsync(WorkbookRangeFont workbookRangeFontToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<WorkbookRangeFont>(workbookRangeFontToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> UpdateResponseAsync(WorkbookRangeFont workbookRangeFontToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> UpdateResponseAsync(WorkbookRangeFont workbookRangeFontToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<WorkbookRangeFont>(workbookRangeFontToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<WorkbookRangeFont>(workbookRangeFontToUpdate, cancellationToken);
         }
 
         /// <summary>

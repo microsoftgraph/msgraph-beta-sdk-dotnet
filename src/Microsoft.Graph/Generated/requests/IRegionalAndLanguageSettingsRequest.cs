@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RegionalAndLanguageSettings.
         /// </summary>
-        /// <returns>The RegionalAndLanguageSettings.</returns>
-        System.Threading.Tasks.Task<RegionalAndLanguageSettings> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RegionalAndLanguageSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RegionalAndLanguageSettings.</returns>
-        System.Threading.Tasks.Task<RegionalAndLanguageSettings> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RegionalAndLanguageSettings and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> GetResponseAsync();
+        System.Threading.Tasks.Task<RegionalAndLanguageSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RegionalAndLanguageSettings and returns a <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RegionalAndLanguageSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RegionalAndLanguageSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RegionalAndLanguageSettings using PATCH.

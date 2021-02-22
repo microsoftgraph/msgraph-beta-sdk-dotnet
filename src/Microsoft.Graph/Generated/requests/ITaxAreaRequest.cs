@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TaxArea.
         /// </summary>
-        /// <returns>The TaxArea.</returns>
-        System.Threading.Tasks.Task<TaxArea> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TaxArea.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TaxArea.</returns>
-        System.Threading.Tasks.Task<TaxArea> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TaxArea and returns a <see cref="GraphResponse{TaxArea}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TaxArea>> GetResponseAsync();
+        System.Threading.Tasks.Task<TaxArea> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TaxArea and returns a <see cref="GraphResponse{TaxArea}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TaxArea}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TaxArea>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TaxArea>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TaxArea using PATCH.

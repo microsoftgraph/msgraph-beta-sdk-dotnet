@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BookingCurrency.
         /// </summary>
-        /// <returns>The BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BookingCurrency.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingCurrency.</returns>
-        System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync();
+        System.Threading.Tasks.Task<BookingCurrency> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BookingCurrency and returns a <see cref="GraphResponse{BookingCurrency}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingCurrency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingCurrency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BookingCurrency using PATCH.

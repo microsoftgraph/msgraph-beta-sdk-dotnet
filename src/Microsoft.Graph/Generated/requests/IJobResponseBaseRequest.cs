@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified JobResponseBase.
         /// </summary>
-        /// <returns>The JobResponseBase.</returns>
-        System.Threading.Tasks.Task<JobResponseBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified JobResponseBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The JobResponseBase.</returns>
-        System.Threading.Tasks.Task<JobResponseBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified JobResponseBase and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<JobResponseBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified JobResponseBase and returns a <see cref="GraphResponse{JobResponseBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified JobResponseBase using PATCH.

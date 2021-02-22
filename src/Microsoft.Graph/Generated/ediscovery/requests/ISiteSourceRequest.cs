@@ -53,28 +53,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified SiteSource.
         /// </summary>
-        /// <returns>The SiteSource.</returns>
-        System.Threading.Tasks.Task<SiteSource> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SiteSource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SiteSource.</returns>
-        System.Threading.Tasks.Task<SiteSource> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SiteSource and returns a <see cref="GraphResponse{SiteSource}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync();
+        System.Threading.Tasks.Task<SiteSource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SiteSource and returns a <see cref="GraphResponse{SiteSource}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SiteSource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SiteSource using PATCH.

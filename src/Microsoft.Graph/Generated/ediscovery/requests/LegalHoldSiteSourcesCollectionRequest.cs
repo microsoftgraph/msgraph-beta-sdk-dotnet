@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Ediscovery
         public System.Threading.Tasks.Task<SiteSource> AddAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<SiteSource>(siteSource, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="siteSource">The SiteSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SiteSource}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SiteSource>> AddResponseAsync(SiteSource siteSource, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<SiteSource>(siteSource, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<SiteSource>(siteSource, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ILegalHoldSiteSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<LegalHoldSiteSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LegalHoldSiteSourcesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<LegalHoldSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<LegalHoldSiteSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<LegalHoldSiteSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<LegalHoldSiteSourcesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

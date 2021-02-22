@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ManagedDeviceEncryptionState> AddAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<ManagedDeviceEncryptionState>(managedDeviceEncryptionState, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceEncryptionState">The ManagedDeviceEncryptionState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceEncryptionState}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> AddResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceEncryptionState>> AddResponseAsync(ManagedDeviceEncryptionState managedDeviceEncryptionState, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<ManagedDeviceEncryptionState>(managedDeviceEncryptionState, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceEncryptionState>(managedDeviceEncryptionState, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementManagedDeviceEncryptionStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementManagedDeviceEncryptionStatesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceManagementManagedDeviceEncryptionStatesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerWiFiConfiguration.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerWiFiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerWiFiConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerWiFiConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerWiFiConfiguration using PATCH.

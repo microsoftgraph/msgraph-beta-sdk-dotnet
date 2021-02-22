@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CalendarGroup.
         /// </summary>
-        /// <returns>The CalendarGroup.</returns>
-        System.Threading.Tasks.Task<CalendarGroup> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CalendarGroup.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CalendarGroup.</returns>
-        System.Threading.Tasks.Task<CalendarGroup> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CalendarGroup and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> GetResponseAsync();
+        System.Threading.Tasks.Task<CalendarGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CalendarGroup and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CalendarGroup using PATCH.

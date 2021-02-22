@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MailSearchFolder.
         /// </summary>
-        /// <returns>The MailSearchFolder.</returns>
-        System.Threading.Tasks.Task<MailSearchFolder> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MailSearchFolder.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailSearchFolder.</returns>
-        System.Threading.Tasks.Task<MailSearchFolder> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync();
+        System.Threading.Tasks.Task<MailSearchFolder> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MailSearchFolder using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ServicePrincipal.
         /// </summary>
-        /// <returns>The ServicePrincipal.</returns>
-        System.Threading.Tasks.Task<ServicePrincipal> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ServicePrincipal.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServicePrincipal.</returns>
-        System.Threading.Tasks.Task<ServicePrincipal> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ServicePrincipal and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> GetResponseAsync();
+        System.Threading.Tasks.Task<ServicePrincipal> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ServicePrincipal and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ServicePrincipal using POST.

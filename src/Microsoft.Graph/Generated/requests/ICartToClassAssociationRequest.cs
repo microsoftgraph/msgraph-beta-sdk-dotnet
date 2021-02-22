@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CartToClassAssociation.
         /// </summary>
-        /// <returns>The CartToClassAssociation.</returns>
-        System.Threading.Tasks.Task<CartToClassAssociation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CartToClassAssociation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CartToClassAssociation.</returns>
-        System.Threading.Tasks.Task<CartToClassAssociation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync();
+        System.Threading.Tasks.Task<CartToClassAssociation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CartToClassAssociation and returns a <see cref="GraphResponse{CartToClassAssociation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CartToClassAssociation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CartToClassAssociation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CartToClassAssociation using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSMicrosoftEdgeApp.
         /// </summary>
-        /// <returns>The MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSMicrosoftEdgeApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSMicrosoftEdgeApp.</returns>
-        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSMicrosoftEdgeApp and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSMicrosoftEdgeApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSMicrosoftEdgeApp and returns a <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSMicrosoftEdgeApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSMicrosoftEdgeApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSMicrosoftEdgeApp using PATCH.

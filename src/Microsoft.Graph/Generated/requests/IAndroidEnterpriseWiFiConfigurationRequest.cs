@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidEnterpriseWiFiConfiguration.
         /// </summary>
-        /// <returns>The AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidEnterpriseWiFiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidEnterpriseWiFiConfiguration using PATCH.

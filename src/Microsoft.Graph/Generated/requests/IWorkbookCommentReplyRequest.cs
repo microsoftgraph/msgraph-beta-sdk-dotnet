@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookCommentReply.
         /// </summary>
-        /// <returns>The WorkbookCommentReply.</returns>
-        System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookCommentReply.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookCommentReply.</returns>
-        System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookCommentReply and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookCommentReply> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookCommentReply and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookCommentReply using PATCH.

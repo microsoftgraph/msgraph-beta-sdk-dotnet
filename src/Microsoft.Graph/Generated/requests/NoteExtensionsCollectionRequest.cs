@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<Extension> AddAsync(Extension extension, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             extension.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(extension.GetType().FullName));
             return this.SendAsync<Extension>(extension, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="extension">The Extension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<Extension>> AddResponseAsync(Extension extension, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Extension>> AddResponseAsync(Extension extension, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             extension.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(extension.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<Extension>(extension, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<Extension>(extension, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<INoteExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<NoteExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NoteExtensionsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<NoteExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<NoteExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<NoteExtensionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<NoteExtensionsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

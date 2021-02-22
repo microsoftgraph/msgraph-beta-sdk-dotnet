@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosVpnConfiguration.
         /// </summary>
-        /// <returns>The IosVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<IosVpnConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosVpnConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<IosVpnConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosVpnConfiguration and returns a <see cref="GraphResponse{IosVpnConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVpnConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosVpnConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosVpnConfiguration and returns a <see cref="GraphResponse{IosVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVpnConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosVpnConfiguration using PATCH.

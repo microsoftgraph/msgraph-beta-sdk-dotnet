@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WindowsAutopilotDeviceIdentity> AddAsync(WindowsAutopilotDeviceIdentity windowsAutopilotDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<WindowsAutopilotDeviceIdentity>(windowsAutopilotDeviceIdentity, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="windowsAutopilotDeviceIdentity">The WindowsAutopilotDeviceIdentity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeviceIdentity>> AddResponseAsync(WindowsAutopilotDeviceIdentity windowsAutopilotDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeviceIdentity>> AddResponseAsync(WindowsAutopilotDeviceIdentity windowsAutopilotDeviceIdentity, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WindowsAutopilotDeviceIdentity>(windowsAutopilotDeviceIdentity, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeviceIdentity>(windowsAutopilotDeviceIdentity, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IWindowsAutopilotDeploymentProfileAssignedDevicesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfileAssignedDevicesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

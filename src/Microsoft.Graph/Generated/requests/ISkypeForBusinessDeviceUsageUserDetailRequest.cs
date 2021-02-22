@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkypeForBusinessDeviceUsageUserDetail.
         /// </summary>
-        /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkypeForBusinessDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkypeForBusinessDeviceUsageUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessDeviceUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkypeForBusinessDeviceUsageUserDetail using PATCH.

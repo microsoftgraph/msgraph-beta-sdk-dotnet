@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppRoleAssignment.
         /// </summary>
-        /// <returns>The AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppRoleAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppRoleAssignment.</returns>
-        System.Threading.Tasks.Task<AppRoleAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppRoleAssignment and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppRoleAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppRoleAssignment and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppRoleAssignment using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TargetedManagedAppConfiguration.
         /// </summary>
-        /// <returns>The TargetedManagedAppConfiguration.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TargetedManagedAppConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TargetedManagedAppConfiguration.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TargetedManagedAppConfiguration and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<TargetedManagedAppConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TargetedManagedAppConfiguration and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TargetedManagedAppConfiguration using PATCH.

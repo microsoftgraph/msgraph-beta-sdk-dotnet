@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OutlookUser.
         /// </summary>
-        /// <returns>The OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OutlookUser.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync();
+        System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OutlookUser using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDecimalTextBox.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationDecimalTextBox.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationDecimalTextBox.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationDecimalTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationDecimalTextBox> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDecimalTextBox and returns a <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDecimalTextBox}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDecimalTextBox>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDecimalTextBox using PATCH.

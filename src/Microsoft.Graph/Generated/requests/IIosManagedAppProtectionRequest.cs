@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosManagedAppProtection.
         /// </summary>
-        /// <returns>The IosManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<IosManagedAppProtection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosManagedAppProtection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<IosManagedAppProtection> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosManagedAppProtection and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosManagedAppProtection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosManagedAppProtection and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosManagedAppProtection using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedIOSLobApp.
         /// </summary>
-        /// <returns>The ManagedIOSLobApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSLobApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedIOSLobApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedIOSLobApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSLobApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedIOSLobApp and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedIOSLobApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedIOSLobApp and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedIOSLobApp using PATCH.

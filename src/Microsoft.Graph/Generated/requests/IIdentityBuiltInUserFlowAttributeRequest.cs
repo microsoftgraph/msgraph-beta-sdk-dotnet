@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityBuiltInUserFlowAttribute.
         /// </summary>
-        /// <returns>The IdentityBuiltInUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityBuiltInUserFlowAttribute> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityBuiltInUserFlowAttribute.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityBuiltInUserFlowAttribute.</returns>
-        System.Threading.Tasks.Task<IdentityBuiltInUserFlowAttribute> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityBuiltInUserFlowAttribute and returns a <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityBuiltInUserFlowAttribute>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityBuiltInUserFlowAttribute> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityBuiltInUserFlowAttribute and returns a <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityBuiltInUserFlowAttribute}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityBuiltInUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityBuiltInUserFlowAttribute>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityBuiltInUserFlowAttribute using PATCH.

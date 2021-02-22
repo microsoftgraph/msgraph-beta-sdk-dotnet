@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified NetworkIPv6ConfigurationManagementCondition.
         /// </summary>
-        /// <returns>The NetworkIPv6ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv6ConfigurationManagementCondition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NetworkIPv6ConfigurationManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NetworkIPv6ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv6ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NetworkIPv6ConfigurationManagementCondition and returns a <see cref="GraphResponse{NetworkIPv6ConfigurationManagementCondition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NetworkIPv6ConfigurationManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkIPv6ConfigurationManagementCondition>> GetResponseAsync();
+        System.Threading.Tasks.Task<NetworkIPv6ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NetworkIPv6ConfigurationManagementCondition and returns a <see cref="GraphResponse{NetworkIPv6ConfigurationManagementCondition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NetworkIPv6ConfigurationManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkIPv6ConfigurationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv6ConfigurationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NetworkIPv6ConfigurationManagementCondition using PATCH.

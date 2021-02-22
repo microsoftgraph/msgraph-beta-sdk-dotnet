@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PlannerBucketTaskBoardTaskFormat.
         /// </summary>
-        /// <returns>The PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PlannerBucketTaskBoardTaskFormat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PlannerBucketTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> GetResponseAsync();
+        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerBucketTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH.

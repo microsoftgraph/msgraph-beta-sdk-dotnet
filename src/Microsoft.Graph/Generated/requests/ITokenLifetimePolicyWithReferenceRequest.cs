@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TokenLifetimePolicy.
         /// </summary>
-        /// <returns>The TokenLifetimePolicy.</returns>
-        System.Threading.Tasks.Task<TokenLifetimePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TokenLifetimePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TokenLifetimePolicy.</returns>
-        System.Threading.Tasks.Task<TokenLifetimePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TokenLifetimePolicy and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<TokenLifetimePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TokenLifetimePolicy and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified TokenLifetimePolicy using POST.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile.
         /// </summary>
-        /// <returns>The WindowsPhone81ImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81ImportedPFXCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81ImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsPhone81ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsPhone81ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81ImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsPhone81ImportedPFXCertificateProfile using PATCH.

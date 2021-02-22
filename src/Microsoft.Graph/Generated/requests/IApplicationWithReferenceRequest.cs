@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Application.
         /// </summary>
-        /// <returns>The Application.</returns>
-        System.Threading.Tasks.Task<Application> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Application.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Application.</returns>
-        System.Threading.Tasks.Task<Application> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Application and returns a <see cref="GraphResponse{Application}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Application>> GetResponseAsync();
+        System.Threading.Tasks.Task<Application> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Application and returns a <see cref="GraphResponse{Application}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Application>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Application>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Application using POST.

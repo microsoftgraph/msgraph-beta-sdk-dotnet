@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationClass.
         /// </summary>
-        /// <returns>The EducationClass.</returns>
-        System.Threading.Tasks.Task<EducationClass> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationClass.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationClass.</returns>
-        System.Threading.Tasks.Task<EducationClass> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationClass and returns a <see cref="GraphResponse{EducationClass}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationClass>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationClass> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationClass and returns a <see cref="GraphResponse{EducationClass}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationClass>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationClass>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified EducationClass using POST.

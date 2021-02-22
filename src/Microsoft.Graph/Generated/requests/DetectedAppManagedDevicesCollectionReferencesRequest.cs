@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task AddAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
 
             if (string.IsNullOrEmpty(managedDevice.Id))
             {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
 
             if (string.IsNullOrEmpty(managedDevice.Id))
             {

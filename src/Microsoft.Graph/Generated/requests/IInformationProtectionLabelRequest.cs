@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified InformationProtectionLabel.
         /// </summary>
-        /// <returns>The InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync();
-
-        /// <summary>
-        /// Gets the specified InformationProtectionLabel.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InformationProtectionLabel.</returns>
-        System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified InformationProtectionLabel and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> GetResponseAsync();
+        System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified InformationProtectionLabel and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified InformationProtectionLabel using PATCH.

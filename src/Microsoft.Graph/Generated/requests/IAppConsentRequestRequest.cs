@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppConsentRequestObject.
         /// </summary>
-        /// <returns>The AppConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<AppConsentRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppConsentRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppConsentRequestObject.</returns>
-        System.Threading.Tasks.Task<AppConsentRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppConsentRequestObject and returns a <see cref="GraphResponse{AppConsentRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppConsentRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppConsentRequestObject and returns a <see cref="GraphResponse{AppConsentRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppConsentRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppConsentRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppConsentRequestObject using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceComplianceDeviceOverview.
         /// </summary>
-        /// <returns>The DeviceComplianceDeviceOverview.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceDeviceOverview> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceDeviceOverview.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceDeviceOverview.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceDeviceOverview> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceDeviceOverview and returns a <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceOverview>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceComplianceDeviceOverview> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceDeviceOverview and returns a <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceOverview>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceDeviceOverview using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkPosition.
         /// </summary>
-        /// <returns>The WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkPosition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkPosition.</returns>
-        System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkPosition and returns a <see cref="GraphResponse{WorkPosition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkPosition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkPosition and returns a <see cref="GraphResponse{WorkPosition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkPosition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkPosition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkPosition using PATCH.

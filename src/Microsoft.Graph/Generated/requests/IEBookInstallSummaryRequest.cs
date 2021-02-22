@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EBookInstallSummary.
         /// </summary>
-        /// <returns>The EBookInstallSummary.</returns>
-        System.Threading.Tasks.Task<EBookInstallSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EBookInstallSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EBookInstallSummary.</returns>
-        System.Threading.Tasks.Task<EBookInstallSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EBookInstallSummary and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<EBookInstallSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EBookInstallSummary and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EBookInstallSummary using PATCH.

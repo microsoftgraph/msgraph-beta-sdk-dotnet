@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceConfiguration> AddAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             deviceConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceConfiguration.GetType().FullName));
             return this.SendAsync<DeviceConfiguration>(deviceConfiguration, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="deviceConfiguration">The DeviceConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> AddResponseAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> AddResponseAsync(DeviceConfiguration deviceConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             deviceConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceConfiguration.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<DeviceConfiguration>(deviceConfiguration, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<DeviceConfiguration>(deviceConfiguration, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceManagementDeviceConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

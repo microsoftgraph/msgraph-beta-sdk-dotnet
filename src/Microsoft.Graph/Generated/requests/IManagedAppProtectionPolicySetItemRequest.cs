@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedAppProtectionPolicySetItem.
         /// </summary>
-        /// <returns>The ManagedAppProtectionPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedAppProtectionPolicySetItem.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppProtectionPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedAppProtectionPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedAppProtectionPolicySetItem and returns a <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppProtectionPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppProtectionPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedAppProtectionPolicySetItem using PATCH.

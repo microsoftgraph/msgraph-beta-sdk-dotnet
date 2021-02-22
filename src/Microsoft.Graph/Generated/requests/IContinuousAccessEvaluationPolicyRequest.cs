@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ContinuousAccessEvaluationPolicy.
         /// </summary>
-        /// <returns>The ContinuousAccessEvaluationPolicy.</returns>
-        System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ContinuousAccessEvaluationPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ContinuousAccessEvaluationPolicy.</returns>
-        System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ContinuousAccessEvaluationPolicy and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<ContinuousAccessEvaluationPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ContinuousAccessEvaluationPolicy and returns a <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContinuousAccessEvaluationPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ContinuousAccessEvaluationPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ContinuousAccessEvaluationPolicy using PATCH.

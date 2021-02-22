@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RiskyUser.
         /// </summary>
-        /// <returns>The RiskyUser.</returns>
-        System.Threading.Tasks.Task<RiskyUser> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RiskyUser.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RiskyUser.</returns>
-        System.Threading.Tasks.Task<RiskyUser> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RiskyUser and returns a <see cref="GraphResponse{RiskyUser}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskyUser>> GetResponseAsync();
+        System.Threading.Tasks.Task<RiskyUser> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RiskyUser and returns a <see cref="GraphResponse{RiskyUser}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskyUser>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RiskyUser>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RiskyUser using PATCH.

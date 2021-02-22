@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ThreatAssessmentRequestObject> AddAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             threatAssessmentRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(threatAssessmentRequest.GetType().FullName));
             return this.SendAsync<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="threatAssessmentRequest">The ThreatAssessmentRequestObject to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> AddResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             threatAssessmentRequest.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(threatAssessmentRequest.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequest, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IInformationProtectionThreatAssessmentRequestsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<InformationProtectionThreatAssessmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InformationProtectionThreatAssessmentRequestsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<InformationProtectionThreatAssessmentRequestsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

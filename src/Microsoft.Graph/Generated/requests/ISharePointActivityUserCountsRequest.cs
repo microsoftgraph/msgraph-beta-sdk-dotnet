@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharePointActivityUserCounts.
         /// </summary>
-        /// <returns>The SharePointActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SharePointActivityUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharePointActivityUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SharePointActivityUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharePointActivityUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointActivityUserCounts and returns a <see cref="GraphResponse{SharePointActivityUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointActivityUserCounts using PATCH.

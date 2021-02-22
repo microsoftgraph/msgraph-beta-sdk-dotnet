@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationSynchronizationError.
         /// </summary>
-        /// <returns>The EducationSynchronizationError.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationError.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSynchronizationError.</returns>
-        System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationSynchronizationError and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationSynchronizationError and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationSynchronizationError using PATCH.

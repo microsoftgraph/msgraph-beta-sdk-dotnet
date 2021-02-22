@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CredentialUsageSummary.
         /// </summary>
-        /// <returns>The CredentialUsageSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUsageSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CredentialUsageSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUsageSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUsageSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CredentialUsageSummary and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<CredentialUsageSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CredentialUsageSummary and returns a <see cref="GraphResponse{CredentialUsageSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUsageSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CredentialUsageSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CredentialUsageSummary using PATCH.

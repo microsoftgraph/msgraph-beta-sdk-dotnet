@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilitySchedule.
         /// </summary>
-        /// <returns>The UnifiedRoleEligibilitySchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilitySchedule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilitySchedule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleEligibilitySchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilitySchedule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilitySchedule and returns a <see cref="GraphResponse{UnifiedRoleEligibilitySchedule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilitySchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilitySchedule>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleEligibilitySchedule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilitySchedule and returns a <see cref="GraphResponse{UnifiedRoleEligibilitySchedule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilitySchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilitySchedule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilitySchedule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified UnifiedRoleEligibilitySchedule using POST.

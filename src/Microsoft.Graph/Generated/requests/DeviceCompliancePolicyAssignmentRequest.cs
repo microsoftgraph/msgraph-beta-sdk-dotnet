@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> CreateAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<DeviceCompliancePolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyAssignment.
-        /// </summary>
-        /// <returns>The DeviceCompliancePolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCompliancePolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<DeviceCompliancePolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> UpdateAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> UpdateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> UpdateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

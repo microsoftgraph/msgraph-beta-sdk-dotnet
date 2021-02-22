@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsAutopilotDeviceIdentity.
         /// </summary>
-        /// <returns>The WindowsAutopilotDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeviceIdentity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeviceIdentity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAutopilotDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeviceIdentity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse{WindowsAutopilotDeviceIdentity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeviceIdentity>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsAutopilotDeviceIdentity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsAutopilotDeviceIdentity and returns a <see cref="GraphResponse{WindowsAutopilotDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WindowsAutopilotDeviceIdentity using PATCH.

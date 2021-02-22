@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ImportedDeviceIdentity.
         /// </summary>
-        /// <returns>The ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ImportedDeviceIdentity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ImportedDeviceIdentity.</returns>
-        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> GetResponseAsync();
+        System.Threading.Tasks.Task<ImportedDeviceIdentity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ImportedDeviceIdentity and returns a <see cref="GraphResponse{ImportedDeviceIdentity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ImportedDeviceIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ImportedDeviceIdentity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ImportedDeviceIdentity using PATCH.

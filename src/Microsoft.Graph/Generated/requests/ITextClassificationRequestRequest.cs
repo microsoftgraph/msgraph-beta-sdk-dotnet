@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified TextClassificationRequestObject.
         /// </summary>
-        /// <returns>The TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TextClassificationRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TextClassificationRequestObject.</returns>
-        System.Threading.Tasks.Task<TextClassificationRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TextClassificationRequestObject and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<TextClassificationRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TextClassificationRequestObject and returns a <see cref="GraphResponse{TextClassificationRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TextClassificationRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TextClassificationRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TextClassificationRequestObject using PATCH.

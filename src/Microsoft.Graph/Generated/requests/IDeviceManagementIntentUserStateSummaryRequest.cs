@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntentUserStateSummary.
         /// </summary>
-        /// <returns>The DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentUserStateSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentUserStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntentUserStateSummary and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntentUserStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentUserStateSummary and returns a <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntentUserStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentUserStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentUserStateSummary using PATCH.

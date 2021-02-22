@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkGeneralDeviceConfiguration.
         /// </summary>
-        /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkNineWorkEasConfiguration.
         /// </summary>
-        /// <returns>The AndroidForWorkNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkNineWorkEasConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkNineWorkEasConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkNineWorkEasConfiguration and returns a <see cref="GraphResponse{AndroidForWorkNineWorkEasConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkNineWorkEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkNineWorkEasConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkNineWorkEasConfiguration and returns a <see cref="GraphResponse{AndroidForWorkNineWorkEasConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkNineWorkEasConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkNineWorkEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkNineWorkEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkNineWorkEasConfiguration using PATCH.

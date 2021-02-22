@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Entity.
         /// </summary>
-        /// <returns>The Entity.</returns>
-        System.Threading.Tasks.Task<Entity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Entity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Entity.</returns>
-        System.Threading.Tasks.Task<Entity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Entity and returns a <see cref="GraphResponse{Entity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync();
+        System.Threading.Tasks.Task<Entity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Entity and returns a <see cref="GraphResponse{Entity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Entity using POST.

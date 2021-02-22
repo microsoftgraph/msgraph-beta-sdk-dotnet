@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsAppHealthOSVersionPerformance.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsAppHealthOSVersionPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsAppHealthOSVersionPerformance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsAppHealthOSVersionPerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsAppHealthOSVersionPerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthOSVersionPerformance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsAppHealthOSVersionPerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthOSVersionPerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthOSVersionPerformance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsAppHealthOSVersionPerformance using PATCH.

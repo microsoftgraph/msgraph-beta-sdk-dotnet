@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IdentityProtectionRoot.
         /// </summary>
-        /// <returns>The IdentityProtectionRoot.</returns>
-        System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IdentityProtectionRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityProtectionRoot.</returns>
-        System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IdentityProtectionRoot and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IdentityProtectionRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> GetResponseAsync();
+        System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IdentityProtectionRoot and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityProtectionRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IdentityProtectionRoot using PATCH.

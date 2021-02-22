@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MicrosoftStoreForBusinessApp.
         /// </summary>
-        /// <returns>The MicrosoftStoreForBusinessApp.</returns>
-        System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MicrosoftStoreForBusinessApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftStoreForBusinessApp.</returns>
-        System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftStoreForBusinessApp using PATCH.

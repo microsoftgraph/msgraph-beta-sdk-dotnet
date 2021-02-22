@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDropdownList.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationDropdownList.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationDropdownList.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationDropdownList.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationDropdownList and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDropdownList and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDropdownList using PATCH.

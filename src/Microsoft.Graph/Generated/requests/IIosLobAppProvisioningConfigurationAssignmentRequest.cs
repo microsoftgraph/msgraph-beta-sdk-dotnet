@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosLobAppProvisioningConfigurationAssignment.
         /// </summary>
-        /// <returns>The IosLobAppProvisioningConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosLobAppProvisioningConfigurationAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosLobAppProvisioningConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosLobAppProvisioningConfigurationAssignment and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosLobAppProvisioningConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosLobAppProvisioningConfigurationAssignment and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosLobAppProvisioningConfigurationAssignment using PATCH.

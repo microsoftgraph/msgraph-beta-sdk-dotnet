@@ -23,28 +23,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified CaseIndexOperation.
         /// </summary>
-        /// <returns>The CaseIndexOperation.</returns>
-        System.Threading.Tasks.Task<CaseIndexOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CaseIndexOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CaseIndexOperation.</returns>
-        System.Threading.Tasks.Task<CaseIndexOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CaseIndexOperation and returns a <see cref="GraphResponse{CaseIndexOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CaseIndexOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseIndexOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<CaseIndexOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CaseIndexOperation and returns a <see cref="GraphResponse{CaseIndexOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseIndexOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseIndexOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CaseIndexOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified CaseIndexOperation using POST.

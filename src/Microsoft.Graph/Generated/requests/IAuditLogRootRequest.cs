@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AuditLogRoot.
         /// </summary>
-        /// <returns>The AuditLogRoot.</returns>
-        System.Threading.Tasks.Task<AuditLogRoot> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AuditLogRoot.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AuditLogRoot.</returns>
-        System.Threading.Tasks.Task<AuditLogRoot> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AuditLogRoot and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> GetResponseAsync();
+        System.Threading.Tasks.Task<AuditLogRoot> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AuditLogRoot and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AuditLogRoot using PATCH.

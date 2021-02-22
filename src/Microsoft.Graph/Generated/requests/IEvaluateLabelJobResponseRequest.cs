@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EvaluateLabelJobResponse.
         /// </summary>
-        /// <returns>The EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EvaluateLabelJobResponse.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EvaluateLabelJobResponse.</returns>
-        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EvaluateLabelJobResponse and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> GetResponseAsync();
+        System.Threading.Tasks.Task<EvaluateLabelJobResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EvaluateLabelJobResponse and returns a <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EvaluateLabelJobResponse}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EvaluateLabelJobResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EvaluateLabelJobResponse using PATCH.

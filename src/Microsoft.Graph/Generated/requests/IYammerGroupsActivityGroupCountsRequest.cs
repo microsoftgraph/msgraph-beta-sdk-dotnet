@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified YammerGroupsActivityGroupCounts.
         /// </summary>
-        /// <returns>The YammerGroupsActivityGroupCounts.</returns>
-        System.Threading.Tasks.Task<YammerGroupsActivityGroupCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified YammerGroupsActivityGroupCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerGroupsActivityGroupCounts.</returns>
-        System.Threading.Tasks.Task<YammerGroupsActivityGroupCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<YammerGroupsActivityGroupCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified YammerGroupsActivityGroupCounts and returns a <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerGroupsActivityGroupCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<YammerGroupsActivityGroupCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified YammerGroupsActivityGroupCounts using PATCH.

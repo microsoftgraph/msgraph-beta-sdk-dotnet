@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkCompliancePolicy.
         /// </summary>
-        /// <returns>The AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkCompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkCompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkCompliancePolicy and returns a <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkCompliancePolicy using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerTrustedRootCertificate and returns a <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified AndroidDeviceOwnerTrustedRootCertificate using POST.

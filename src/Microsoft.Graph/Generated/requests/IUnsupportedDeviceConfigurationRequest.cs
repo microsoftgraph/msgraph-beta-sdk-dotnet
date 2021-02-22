@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnsupportedDeviceConfiguration.
         /// </summary>
-        /// <returns>The UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnsupportedDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnsupportedDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnsupportedDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnsupportedDeviceConfiguration and returns a <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnsupportedDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnsupportedDeviceConfiguration using PATCH.

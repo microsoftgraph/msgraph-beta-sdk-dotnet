@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The stream.</returns>
         public System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             return this.SendStreamRequestAsync(null, cancellationToken, completionOption);
         }
 
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             return this.SendAsyncWithGraphResponse(null, cancellationToken, completionOption);
         }
     
@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<T> PutAsync<T>(Stream content, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : Report
         {
             this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             return this.SendAsync<T>(content, cancellationToken, completionOption);
         }
 
@@ -80,11 +80,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="completionOption">The <see cref="HttpCompletionOption"/> to pass to the <see cref="IHttpProvider"/> on send.</param>
         /// <returns>The <see cref="GraphResponse"/> object returned by the PUT call.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream content, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : Report
+        public System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream content, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : Report
         {
             this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<T>(content, cancellationToken, completionOption).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<T>(content, cancellationToken, completionOption);
         }
     
     }

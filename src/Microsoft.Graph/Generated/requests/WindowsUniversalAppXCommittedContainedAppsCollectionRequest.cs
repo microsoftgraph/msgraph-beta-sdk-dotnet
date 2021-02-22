@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             mobileContainedApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileContainedApp.GetType().FullName));
             return this.SendAsync<MobileContainedApp>(mobileContainedApp, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             mobileContainedApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileContainedApp.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedApp, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedApp, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IWindowsUniversalAppXCommittedContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUniversalAppXCommittedContainedAppsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsUniversalAppXCommittedContainedAppsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Printer.
         /// </summary>
-        /// <returns>The Printer.</returns>
-        System.Threading.Tasks.Task<Printer> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Printer.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Printer.</returns>
-        System.Threading.Tasks.Task<Printer> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Printer and returns a <see cref="GraphResponse{Printer}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Printer>> GetResponseAsync();
+        System.Threading.Tasks.Task<Printer> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Printer and returns a <see cref="GraphResponse{Printer}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Printer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Printer>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Printer>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Printer using PATCH.

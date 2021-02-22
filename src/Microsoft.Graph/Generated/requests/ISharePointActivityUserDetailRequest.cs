@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SharePointActivityUserDetail.
         /// </summary>
-        /// <returns>The SharePointActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SharePointActivityUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SharePointActivityUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SharePointActivityUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SharePointActivityUserDetail and returns a <see cref="GraphResponse{SharePointActivityUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SharePointActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<SharePointActivityUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SharePointActivityUserDetail and returns a <see cref="GraphResponse{SharePointActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SharePointActivityUserDetail using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrinterBase.
         /// </summary>
-        /// <returns>The PrinterBase.</returns>
-        System.Threading.Tasks.Task<PrinterBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrinterBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrinterBase.</returns>
-        System.Threading.Tasks.Task<PrinterBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrinterBase and returns a <see cref="GraphResponse{PrinterBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrinterBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrinterBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrinterBase and returns a <see cref="GraphResponse{PrinterBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrinterBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrinterBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrinterBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PrinterBase using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagementConditionStatement.
         /// </summary>
-        /// <returns>The ManagementConditionStatement.</returns>
-        System.Threading.Tasks.Task<ManagementConditionStatement> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagementConditionStatement.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementConditionStatement.</returns>
-        System.Threading.Tasks.Task<ManagementConditionStatement> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagementConditionStatement and returns a <see cref="GraphResponse{ManagementConditionStatement}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatement>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagementConditionStatement> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagementConditionStatement and returns a <see cref="GraphResponse{ManagementConditionStatement}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagementConditionStatement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatement>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagementConditionStatement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ManagementConditionStatement using POST.

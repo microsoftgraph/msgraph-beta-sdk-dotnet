@@ -38,20 +38,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PayloadResponse.
         /// </summary>
-        /// <returns>The PayloadResponse.</returns>
-        public System.Threading.Tasks.Task<PayloadResponse> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified PayloadResponse.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PayloadResponse.</returns>
-        public async System.Threading.Tasks.Task<PayloadResponse> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PayloadResponse> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<PayloadResponse>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -59,21 +50,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PayloadResponse and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified PayloadResponse and returns a <see cref="GraphResponse{PayloadResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<PayloadResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<PayloadResponse>(null, cancellationToken);
         }
 
 		/// <summary>
@@ -85,7 +67,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<PayloadResponse> CreateAsync(PayloadResponse payloadResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<PayloadResponse>(payloadResponseToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -96,11 +78,11 @@ namespace Microsoft.Graph
         /// <param name="payloadResponseToCreate">The PayloadResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> CreateResponseAsync(PayloadResponse payloadResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> CreateResponseAsync(PayloadResponse payloadResponseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<PayloadResponse>(payloadResponseToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<PayloadResponse>(payloadResponseToCreate, cancellationToken);
         }
 
 		/// <summary>
@@ -113,7 +95,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<PayloadResponse> UpdateAsync(PayloadResponse payloadResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<PayloadResponse>(payloadResponseToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -125,11 +107,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PayloadResponse}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> UpdateResponseAsync(PayloadResponse payloadResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PayloadResponse>> UpdateResponseAsync(PayloadResponse payloadResponseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<PayloadResponse>(payloadResponseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<PayloadResponse>(payloadResponseToUpdate, cancellationToken);
         }
 
 		/// <summary>
@@ -139,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<PayloadResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -148,10 +130,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

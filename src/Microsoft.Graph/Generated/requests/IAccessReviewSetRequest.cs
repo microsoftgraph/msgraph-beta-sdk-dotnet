@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessReviewSet.
         /// </summary>
-        /// <returns>The AccessReviewSet.</returns>
-        System.Threading.Tasks.Task<AccessReviewSet> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessReviewSet.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewSet.</returns>
-        System.Threading.Tasks.Task<AccessReviewSet> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessReviewSet and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessReviewSet> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessReviewSet and returns a <see cref="GraphResponse{AccessReviewSet}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessReviewSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewSet>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessReviewSet using PATCH.

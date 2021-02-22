@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CalendarSharingMessage.
         /// </summary>
-        /// <returns>The CalendarSharingMessage.</returns>
-        System.Threading.Tasks.Task<CalendarSharingMessage> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CalendarSharingMessage.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CalendarSharingMessage.</returns>
-        System.Threading.Tasks.Task<CalendarSharingMessage> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CalendarSharingMessage and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> GetResponseAsync();
+        System.Threading.Tasks.Task<CalendarSharingMessage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CalendarSharingMessage and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CalendarSharingMessage using PATCH.

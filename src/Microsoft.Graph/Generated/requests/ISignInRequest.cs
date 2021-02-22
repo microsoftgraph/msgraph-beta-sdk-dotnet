@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SignIn.
         /// </summary>
-        /// <returns>The SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SignIn.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SignIn and returns a <see cref="GraphResponse{SignIn}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SignIn>> GetResponseAsync();
+        System.Threading.Tasks.Task<SignIn> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SignIn and returns a <see cref="GraphResponse{SignIn}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SignIn>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SignIn using PATCH.

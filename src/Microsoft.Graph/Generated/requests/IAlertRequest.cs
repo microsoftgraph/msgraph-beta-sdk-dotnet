@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Alert.
         /// </summary>
-        /// <returns>The Alert.</returns>
-        System.Threading.Tasks.Task<Alert> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Alert.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Alert.</returns>
-        System.Threading.Tasks.Task<Alert> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Alert and returns a <see cref="GraphResponse{Alert}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Alert>> GetResponseAsync();
+        System.Threading.Tasks.Task<Alert> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Alert and returns a <see cref="GraphResponse{Alert}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Alert>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Alert>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Alert using PATCH.

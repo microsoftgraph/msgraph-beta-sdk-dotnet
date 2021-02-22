@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Group.
         /// </summary>
-        /// <returns>The Group.</returns>
-        System.Threading.Tasks.Task<Group> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Group.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Group.</returns>
-        System.Threading.Tasks.Task<Group> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Group and returns a <see cref="GraphResponse{Group}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Group>> GetResponseAsync();
+        System.Threading.Tasks.Task<Group> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Group and returns a <see cref="GraphResponse{Group}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Group>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Group>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Group using POST.

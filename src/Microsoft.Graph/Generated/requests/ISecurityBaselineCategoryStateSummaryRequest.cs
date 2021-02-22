@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SecurityBaselineCategoryStateSummary.
         /// </summary>
-        /// <returns>The SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SecurityBaselineCategoryStateSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecurityBaselineCategoryStateSummary.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SecurityBaselineCategoryStateSummary and returns a <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineCategoryStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SecurityBaselineCategoryStateSummary using PATCH.

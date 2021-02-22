@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration.
         /// </summary>
-        /// <returns>The Windows10EnterpriseModernAppManagementConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10EnterpriseModernAppManagementConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageAssignmentPolicy.
         /// </summary>
-        /// <returns>The AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessPackageAssignmentPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageAssignmentPolicy.</returns>
-        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessPackageAssignmentPolicy and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessPackageAssignmentPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageAssignmentPolicy and returns a <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackageAssignmentPolicy using PATCH.

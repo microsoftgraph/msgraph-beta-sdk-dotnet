@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OneDriveUsageFileCounts.
         /// </summary>
-        /// <returns>The OneDriveUsageFileCounts.</returns>
-        System.Threading.Tasks.Task<OneDriveUsageFileCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OneDriveUsageFileCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OneDriveUsageFileCounts.</returns>
-        System.Threading.Tasks.Task<OneDriveUsageFileCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OneDriveUsageFileCounts and returns a <see cref="GraphResponse{OneDriveUsageFileCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OneDriveUsageFileCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OneDriveUsageFileCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<OneDriveUsageFileCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OneDriveUsageFileCounts and returns a <see cref="GraphResponse{OneDriveUsageFileCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OneDriveUsageFileCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OneDriveUsageFileCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OneDriveUsageFileCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OneDriveUsageFileCounts using PATCH.

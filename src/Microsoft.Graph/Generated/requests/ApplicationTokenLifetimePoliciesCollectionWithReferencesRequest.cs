@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IApplicationTokenLifetimePoliciesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ApplicationTokenLifetimePoliciesCollectionWithReferencesResponse>(null, cancellationToken);
         }
 
         /// <summary>

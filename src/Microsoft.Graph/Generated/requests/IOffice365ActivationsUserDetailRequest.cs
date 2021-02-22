@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Office365ActivationsUserDetail.
         /// </summary>
-        /// <returns>The Office365ActivationsUserDetail.</returns>
-        System.Threading.Tasks.Task<Office365ActivationsUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Office365ActivationsUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365ActivationsUserDetail.</returns>
-        System.Threading.Tasks.Task<Office365ActivationsUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<Office365ActivationsUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Office365ActivationsUserDetail and returns a <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365ActivationsUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Office365ActivationsUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Office365ActivationsUserDetail using PATCH.

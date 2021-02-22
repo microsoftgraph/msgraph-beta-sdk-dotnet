@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementIntent.
         /// </summary>
-        /// <returns>The DeviceManagementIntent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntent.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementIntent and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementIntent and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementIntent using PATCH.

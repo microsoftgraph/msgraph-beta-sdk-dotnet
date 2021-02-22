@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows10CertificateProfileBase.
         /// </summary>
-        /// <returns>The Windows10CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<Windows10CertificateProfileBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows10CertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<Windows10CertificateProfileBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows10CertificateProfileBase and returns a <see cref="GraphResponse{Windows10CertificateProfileBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10CertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10CertificateProfileBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows10CertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10CertificateProfileBase and returns a <see cref="GraphResponse{Windows10CertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10CertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10CertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10CertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10CertificateProfileBase using PATCH.

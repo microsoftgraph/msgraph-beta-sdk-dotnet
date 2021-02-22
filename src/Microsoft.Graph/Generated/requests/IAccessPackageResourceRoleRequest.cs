@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageResourceRole.
         /// </summary>
-        /// <returns>The AccessPackageResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRole> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AccessPackageResourceRole.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResourceRole.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRole> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AccessPackageResourceRole and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> GetResponseAsync();
+        System.Threading.Tasks.Task<AccessPackageResourceRole> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AccessPackageResourceRole and returns a <see cref="GraphResponse{AccessPackageResourceRole}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceRole}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRole>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AccessPackageResourceRole using PATCH.

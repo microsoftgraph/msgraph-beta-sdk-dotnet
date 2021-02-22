@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CountryRegion.
         /// </summary>
-        /// <returns>The CountryRegion.</returns>
-        System.Threading.Tasks.Task<CountryRegion> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CountryRegion.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CountryRegion.</returns>
-        System.Threading.Tasks.Task<CountryRegion> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CountryRegion and returns a <see cref="GraphResponse{CountryRegion}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync();
+        System.Threading.Tasks.Task<CountryRegion> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CountryRegion and returns a <see cref="GraphResponse{CountryRegion}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CountryRegion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CountryRegion>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CountryRegion using PATCH.

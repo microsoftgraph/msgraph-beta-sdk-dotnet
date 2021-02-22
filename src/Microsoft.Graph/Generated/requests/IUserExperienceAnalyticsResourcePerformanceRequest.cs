@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsResourcePerformance.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsResourcePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsResourcePerformance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsResourcePerformance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsResourcePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsResourcePerformance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsResourcePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsResourcePerformance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsResourcePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsResourcePerformance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsResourcePerformance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsResourcePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsResourcePerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsResourcePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsResourcePerformance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsResourcePerformance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsResourcePerformance using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified FilterOperatorSchema.
         /// </summary>
-        /// <returns>The FilterOperatorSchema.</returns>
-        System.Threading.Tasks.Task<FilterOperatorSchema> GetAsync();
-
-        /// <summary>
-        /// Gets the specified FilterOperatorSchema.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FilterOperatorSchema.</returns>
-        System.Threading.Tasks.Task<FilterOperatorSchema> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified FilterOperatorSchema and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> GetResponseAsync();
+        System.Threading.Tasks.Task<FilterOperatorSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FilterOperatorSchema and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FilterOperatorSchema using PATCH.

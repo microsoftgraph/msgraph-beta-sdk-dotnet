@@ -53,28 +53,16 @@ namespace Microsoft.Graph.CallRecords
         /// <summary>
         /// Gets the specified CallRecord.
         /// </summary>
-        /// <returns>The CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CallRecord.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CallRecord and returns a <see cref="GraphResponse{CallRecord}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CallRecord>> GetResponseAsync();
+        System.Threading.Tasks.Task<CallRecord> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CallRecord and returns a <see cref="GraphResponse{CallRecord}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CallRecord>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CallRecord using PATCH.

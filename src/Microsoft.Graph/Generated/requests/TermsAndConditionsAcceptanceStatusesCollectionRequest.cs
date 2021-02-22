@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> AddAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatus, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsAcceptanceStatus">The TermsAndConditionsAcceptanceStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> AddResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatus, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> AddResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatus, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatus, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ITermsAndConditionsAcceptanceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<TermsAndConditionsAcceptanceStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatusesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatusesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

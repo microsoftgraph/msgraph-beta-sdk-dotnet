@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceManagementSettingInstance> AddAsync(DeviceManagementSettingInstance deviceManagementSettingInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             deviceManagementSettingInstance.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementSettingInstance.GetType().FullName));
             return this.SendAsync<DeviceManagementSettingInstance>(deviceManagementSettingInstance, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementSettingInstance">The DeviceManagementSettingInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementSettingInstance}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> AddResponseAsync(DeviceManagementSettingInstance deviceManagementSettingInstance, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementSettingInstance>> AddResponseAsync(DeviceManagementSettingInstance deviceManagementSettingInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             deviceManagementSettingInstance.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(deviceManagementSettingInstance.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<DeviceManagementSettingInstance>(deviceManagementSettingInstance, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<DeviceManagementSettingInstance>(deviceManagementSettingInstance, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementComplexSettingInstanceValueCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceManagementComplexSettingInstanceValueCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementComplexSettingInstanceValueCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceManagementComplexSettingInstanceValueCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

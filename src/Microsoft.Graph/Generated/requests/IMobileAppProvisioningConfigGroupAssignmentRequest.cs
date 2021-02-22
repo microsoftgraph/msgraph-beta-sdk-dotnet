@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MobileAppProvisioningConfigGroupAssignment.
         /// </summary>
-        /// <returns>The MobileAppProvisioningConfigGroupAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MobileAppProvisioningConfigGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppProvisioningConfigGroupAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MobileAppProvisioningConfigGroupAssignment and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MobileAppProvisioningConfigGroupAssignment using PATCH.

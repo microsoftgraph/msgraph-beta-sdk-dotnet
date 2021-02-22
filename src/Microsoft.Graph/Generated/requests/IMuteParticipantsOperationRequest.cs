@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MuteParticipantsOperation.
         /// </summary>
-        /// <returns>The MuteParticipantsOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantsOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MuteParticipantsOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MuteParticipantsOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantsOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MuteParticipantsOperation and returns a <see cref="GraphResponse{MuteParticipantsOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MuteParticipantsOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantsOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<MuteParticipantsOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MuteParticipantsOperation and returns a <see cref="GraphResponse{MuteParticipantsOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MuteParticipantsOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MuteParticipantsOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantsOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MuteParticipantsOperation using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ThreatAssessmentResult.
         /// </summary>
-        /// <returns>The ThreatAssessmentResult.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentResult> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ThreatAssessmentResult.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ThreatAssessmentResult.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentResult> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ThreatAssessmentResult and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> GetResponseAsync();
+        System.Threading.Tasks.Task<ThreatAssessmentResult> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ThreatAssessmentResult and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ThreatAssessmentResult using PATCH.

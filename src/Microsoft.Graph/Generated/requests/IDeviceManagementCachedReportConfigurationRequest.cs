@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementCachedReportConfiguration.
         /// </summary>
-        /// <returns>The DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementCachedReportConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementCachedReportConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementCachedReportConfiguration and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementCachedReportConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementCachedReportConfiguration and returns a <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementCachedReportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementCachedReportConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementCachedReportConfiguration using PATCH.

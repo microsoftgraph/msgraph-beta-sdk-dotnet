@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AssignmentFilterEvaluationStatusDetails.
         /// </summary>
-        /// <returns>The AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AssignmentFilterEvaluationStatusDetails.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AssignmentFilterEvaluationStatusDetails and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> GetResponseAsync();
+        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AssignmentFilterEvaluationStatusDetails and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AssignmentFilterEvaluationStatusDetails using PATCH.

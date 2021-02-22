@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsRegressionSummary.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsRegressionSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH.

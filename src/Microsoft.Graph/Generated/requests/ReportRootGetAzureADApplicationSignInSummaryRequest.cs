@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADApplicationSignInSummaryCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(null, cancellationToken);
         }
 
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADApplicationSignInSummaryCollectionPage> PatchAsync(ApplicationSignInSummary applicationsigninsummary, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var response = await this.SendAsync<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -120,10 +120,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="applicationsigninsummary">The ApplicationSignInSummary object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> PatchResponseAsync(ApplicationSignInSummary applicationsigninsummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> PatchResponseAsync(ApplicationSignInSummary applicationsigninsummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADApplicationSignInSummaryCollectionPage> PutAsync(ApplicationSignInSummary applicationsigninsummary, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             var response = await this.SendAsync<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -168,10 +168,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="applicationsigninsummary">The ApplicationSignInSummary object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> PutResponseAsync(ApplicationSignInSummary applicationsigninsummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>> PutResponseAsync(ApplicationSignInSummary applicationsigninsummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADApplicationSignInSummaryCollectionResponse>(applicationsigninsummary, cancellationToken);
         }
 
         /// <summary>

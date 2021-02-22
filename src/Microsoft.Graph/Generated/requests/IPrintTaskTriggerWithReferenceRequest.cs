@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrintTaskTrigger.
         /// </summary>
-        /// <returns>The PrintTaskTrigger.</returns>
-        System.Threading.Tasks.Task<PrintTaskTrigger> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrintTaskTrigger.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrintTaskTrigger.</returns>
-        System.Threading.Tasks.Task<PrintTaskTrigger> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrintTaskTrigger and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrintTaskTrigger> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrintTaskTrigger and returns a <see cref="GraphResponse{PrintTaskTrigger}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified PrintTaskTrigger using POST.

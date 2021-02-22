@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationAssignment.
         /// </summary>
-        /// <returns>The ManagedDeviceMobileAppConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfigurationAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceMobileAppConfigurationAssignment and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationAssignment and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationAssignment using PATCH.

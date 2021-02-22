@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppLogCollectionRequestObject.
         /// </summary>
-        /// <returns>The AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppLogCollectionRequestObject.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppLogCollectionRequestObject.</returns>
-        System.Threading.Tasks.Task<AppLogCollectionRequestObject> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppLogCollectionRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppLogCollectionRequestObject and returns a <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppLogCollectionRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppLogCollectionRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppLogCollectionRequestObject using PATCH.

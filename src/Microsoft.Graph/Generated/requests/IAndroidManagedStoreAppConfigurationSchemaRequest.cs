@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidManagedStoreAppConfigurationSchema.
         /// </summary>
-        /// <returns>The AndroidManagedStoreAppConfigurationSchema.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidManagedStoreAppConfigurationSchema.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedStoreAppConfigurationSchema.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidManagedStoreAppConfigurationSchema and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidManagedStoreAppConfigurationSchema> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidManagedStoreAppConfigurationSchema and returns a <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAppConfigurationSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAppConfigurationSchema>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreAppConfigurationSchema using PATCH.

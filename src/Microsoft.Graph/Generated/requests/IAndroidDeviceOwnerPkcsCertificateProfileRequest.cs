@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerPkcsCertificateProfile.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerPkcsCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerPkcsCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceOwnerPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidDeviceOwnerPkcsCertificateProfile and returns a <see cref="GraphResponse{AndroidDeviceOwnerPkcsCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerPkcsCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidDeviceOwnerPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidDeviceOwnerPkcsCertificateProfile and returns a <see cref="GraphResponse{AndroidDeviceOwnerPkcsCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidDeviceOwnerPkcsCertificateProfile using PATCH.

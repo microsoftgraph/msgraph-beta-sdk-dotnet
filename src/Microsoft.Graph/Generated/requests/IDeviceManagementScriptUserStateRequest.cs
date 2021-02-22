@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementScriptUserState.
         /// </summary>
-        /// <returns>The DeviceManagementScriptUserState.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptUserState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptUserState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptUserState.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptUserState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementScriptUserState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementScriptUserState and returns a <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementScriptUserState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptUserState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementScriptUserState using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DepOnboardingSetting.
         /// </summary>
-        /// <returns>The DepOnboardingSetting.</returns>
-        System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DepOnboardingSetting.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DepOnboardingSetting.</returns>
-        System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DepOnboardingSetting and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> GetResponseAsync();
+        System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DepOnboardingSetting and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DepOnboardingSetting using PATCH.

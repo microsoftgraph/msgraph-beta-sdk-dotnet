@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookChartGridlinesFormat.
         /// </summary>
-        /// <returns>The WorkbookChartGridlinesFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookChartGridlinesFormat.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartGridlinesFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookChartGridlinesFormat and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookChartGridlinesFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartGridlinesFormat and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartGridlinesFormat using PATCH.

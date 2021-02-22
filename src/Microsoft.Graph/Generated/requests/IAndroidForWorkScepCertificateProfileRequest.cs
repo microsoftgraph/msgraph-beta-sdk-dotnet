@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidForWorkScepCertificateProfile.
         /// </summary>
-        /// <returns>The AndroidForWorkScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkScepCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkScepCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkScepCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidForWorkScepCertificateProfile and returns a <see cref="GraphResponse{AndroidForWorkScepCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidForWorkScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkScepCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidForWorkScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidForWorkScepCertificateProfile and returns a <see cref="GraphResponse{AndroidForWorkScepCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkScepCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidForWorkScepCertificateProfile using PATCH.

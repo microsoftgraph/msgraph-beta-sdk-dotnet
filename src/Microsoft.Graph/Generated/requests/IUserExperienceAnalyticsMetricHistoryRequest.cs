@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsMetricHistory.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsMetricHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsMetricHistory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsMetricHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsMetricHistory and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsMetricHistory and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsMetricHistory using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MeetingActivityStatistics.
         /// </summary>
-        /// <returns>The MeetingActivityStatistics.</returns>
-        System.Threading.Tasks.Task<MeetingActivityStatistics> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MeetingActivityStatistics.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MeetingActivityStatistics.</returns>
-        System.Threading.Tasks.Task<MeetingActivityStatistics> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MeetingActivityStatistics and returns a <see cref="GraphResponse{MeetingActivityStatistics}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MeetingActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MeetingActivityStatistics>> GetResponseAsync();
+        System.Threading.Tasks.Task<MeetingActivityStatistics> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MeetingActivityStatistics and returns a <see cref="GraphResponse{MeetingActivityStatistics}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MeetingActivityStatistics}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MeetingActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MeetingActivityStatistics>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MeetingActivityStatistics using PATCH.

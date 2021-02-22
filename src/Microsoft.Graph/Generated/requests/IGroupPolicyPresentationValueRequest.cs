@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValue.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationValue.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValue> GetAsync();
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValue.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationValue.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationValue> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified GroupPolicyPresentationValue and returns a <see cref="GraphResponse{GroupPolicyPresentationValue}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValue>> GetResponseAsync();
+        System.Threading.Tasks.Task<GroupPolicyPresentationValue> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationValue and returns a <see cref="GraphResponse{GroupPolicyPresentationValue}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValue>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValue>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationValue using PATCH.

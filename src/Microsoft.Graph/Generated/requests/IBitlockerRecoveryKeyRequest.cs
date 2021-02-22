@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BitlockerRecoveryKey.
         /// </summary>
-        /// <returns>The BitlockerRecoveryKey.</returns>
-        System.Threading.Tasks.Task<BitlockerRecoveryKey> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BitlockerRecoveryKey.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BitlockerRecoveryKey.</returns>
-        System.Threading.Tasks.Task<BitlockerRecoveryKey> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BitlockerRecoveryKey and returns a <see cref="GraphResponse{BitlockerRecoveryKey}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKey>> GetResponseAsync();
+        System.Threading.Tasks.Task<BitlockerRecoveryKey> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BitlockerRecoveryKey and returns a <see cref="GraphResponse{BitlockerRecoveryKey}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BitlockerRecoveryKey}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKey>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BitlockerRecoveryKey>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BitlockerRecoveryKey using PATCH.

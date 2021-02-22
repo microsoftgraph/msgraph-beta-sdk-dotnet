@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ItemEmail.
         /// </summary>
-        /// <returns>The ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ItemEmail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ItemEmail and returns a <see cref="GraphResponse{ItemEmail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> GetResponseAsync();
+        System.Threading.Tasks.Task<ItemEmail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ItemEmail and returns a <see cref="GraphResponse{ItemEmail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ItemEmail using PATCH.

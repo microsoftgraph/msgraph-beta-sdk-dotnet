@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceHealthScriptRunSummary.
         /// </summary>
-        /// <returns>The DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptRunSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScriptRunSummary.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptRunSummary and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceHealthScriptRunSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceHealthScriptRunSummary and returns a <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScriptRunSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptRunSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceHealthScriptRunSummary using PATCH.

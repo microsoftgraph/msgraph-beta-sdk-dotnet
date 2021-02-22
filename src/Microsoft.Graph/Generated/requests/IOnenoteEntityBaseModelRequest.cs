@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified OnenoteEntityBaseModel.
         /// </summary>
-        /// <returns>The OnenoteEntityBaseModel.</returns>
-        System.Threading.Tasks.Task<OnenoteEntityBaseModel> GetAsync();
-
-        /// <summary>
-        /// Gets the specified OnenoteEntityBaseModel.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnenoteEntityBaseModel.</returns>
-        System.Threading.Tasks.Task<OnenoteEntityBaseModel> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified OnenoteEntityBaseModel and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> GetResponseAsync();
+        System.Threading.Tasks.Task<OnenoteEntityBaseModel> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified OnenoteEntityBaseModel and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified OnenoteEntityBaseModel using PATCH.

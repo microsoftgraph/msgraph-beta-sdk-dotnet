@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EmbeddedSIMDeviceState.
         /// </summary>
-        /// <returns>The EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EmbeddedSIMDeviceState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmbeddedSIMDeviceState.</returns>
-        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> GetResponseAsync();
+        System.Threading.Tasks.Task<EmbeddedSIMDeviceState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EmbeddedSIMDeviceState and returns a <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmbeddedSIMDeviceState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMDeviceState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EmbeddedSIMDeviceState using PATCH.

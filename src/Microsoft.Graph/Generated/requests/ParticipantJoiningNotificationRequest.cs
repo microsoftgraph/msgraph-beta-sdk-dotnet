@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ParticipantJoiningNotification> CreateAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<ParticipantJoiningNotification>(participantJoiningNotificationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="participantJoiningNotificationToCreate">The ParticipantJoiningNotification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> CreateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> CreateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(participantJoiningNotificationToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(participantJoiningNotificationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<ParticipantJoiningNotification>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified ParticipantJoiningNotification.
-        /// </summary>
-        /// <returns>The ParticipantJoiningNotification.</returns>
-        public System.Threading.Tasks.Task<ParticipantJoiningNotification> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ParticipantJoiningNotification.</returns>
-        public async System.Threading.Tasks.Task<ParticipantJoiningNotification> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ParticipantJoiningNotification> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<ParticipantJoiningNotification>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ParticipantJoiningNotification and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified ParticipantJoiningNotification and returns a <see cref="GraphResponse{ParticipantJoiningNotification}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ParticipantJoiningNotification> UpdateAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<ParticipantJoiningNotification>(participantJoiningNotificationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ParticipantJoiningNotification}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> UpdateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ParticipantJoiningNotification>> UpdateResponseAsync(ParticipantJoiningNotification participantJoiningNotificationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(participantJoiningNotificationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<ParticipantJoiningNotification>(participantJoiningNotificationToUpdate, cancellationToken);
         }
 
         /// <summary>

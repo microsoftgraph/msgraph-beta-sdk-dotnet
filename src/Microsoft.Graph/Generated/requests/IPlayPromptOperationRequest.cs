@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PlayPromptOperation.
         /// </summary>
-        /// <returns>The PlayPromptOperation.</returns>
-        System.Threading.Tasks.Task<PlayPromptOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PlayPromptOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlayPromptOperation.</returns>
-        System.Threading.Tasks.Task<PlayPromptOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PlayPromptOperation and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<PlayPromptOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlayPromptOperation and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlayPromptOperation using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppleDeviceFeaturesConfigurationBase.
         /// </summary>
-        /// <returns>The AppleDeviceFeaturesConfigurationBase.</returns>
-        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppleDeviceFeaturesConfigurationBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleDeviceFeaturesConfigurationBase.</returns>
-        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppleDeviceFeaturesConfigurationBase using PATCH.

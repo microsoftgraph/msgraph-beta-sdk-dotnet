@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagement.
         /// </summary>
-        /// <returns>The DeviceManagement.</returns>
-        System.Threading.Tasks.Task<DeviceManagement> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagement.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagement.</returns>
-        System.Threading.Tasks.Task<DeviceManagement> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagement and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagement> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagement and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagement using PATCH.

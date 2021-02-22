@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSPkcsCertificateProfile.
         /// </summary>
-        /// <returns>The MacOSPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSPkcsCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSPkcsCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSPkcsCertificateProfile and returns a <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSPkcsCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSPkcsCertificateProfile and returns a <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSPkcsCertificateProfile using PATCH.

@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SoftwareUpdateStatusSummary.
         /// </summary>
-        /// <returns>The SoftwareUpdateStatusSummary.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SoftwareUpdateStatusSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SoftwareUpdateStatusSummary.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified SoftwareUpdateStatusSummary using POST.

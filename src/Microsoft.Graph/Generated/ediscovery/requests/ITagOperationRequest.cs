@@ -53,28 +53,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified TagOperation.
         /// </summary>
-        /// <returns>The TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified TagOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified TagOperation and returns a <see cref="GraphResponse{TagOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TagOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<TagOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified TagOperation and returns a <see cref="GraphResponse{TagOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TagOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<TagOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified TagOperation using PATCH.

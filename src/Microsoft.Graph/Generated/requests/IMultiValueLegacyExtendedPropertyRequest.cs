@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MultiValueLegacyExtendedProperty.
         /// </summary>
-        /// <returns>The MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MultiValueLegacyExtendedProperty.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MultiValueLegacyExtendedProperty and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> GetResponseAsync();
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MultiValueLegacyExtendedProperty and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MultiValueLegacyExtendedProperty using PATCH.

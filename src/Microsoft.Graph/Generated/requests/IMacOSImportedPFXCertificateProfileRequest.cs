@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSImportedPFXCertificateProfile.
         /// </summary>
-        /// <returns>The MacOSImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSImportedPFXCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSImportedPFXCertificateProfile and returns a <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSImportedPFXCertificateProfile using PATCH.

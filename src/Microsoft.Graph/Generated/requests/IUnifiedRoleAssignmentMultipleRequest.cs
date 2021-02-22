@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentMultiple.
         /// </summary>
-        /// <returns>The UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentMultiple.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentMultiple.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentMultiple> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentMultiple and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultiple}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultiple>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentMultiple using PATCH.

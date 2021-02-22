@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookChartLegend.
         /// </summary>
-        /// <returns>The WorkbookChartLegend.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookChartLegend.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartLegend.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookChartLegend and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookChartLegend> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookChartLegend and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookChartLegend using PATCH.

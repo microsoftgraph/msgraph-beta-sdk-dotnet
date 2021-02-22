@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows81SCEPCertificateProfile.
         /// </summary>
-        /// <returns>The Windows81SCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows81SCEPCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81SCEPCertificateProfile.</returns>
-        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows81SCEPCertificateProfile and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows81SCEPCertificateProfile and returns a <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81SCEPCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows81SCEPCertificateProfile using PATCH.

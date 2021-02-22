@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementBooleanSettingInstance.
         /// </summary>
-        /// <returns>The DeviceManagementBooleanSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementBooleanSettingInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementBooleanSettingInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementBooleanSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementBooleanSettingInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementBooleanSettingInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementBooleanSettingInstance and returns a <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementBooleanSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementBooleanSettingInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementBooleanSettingInstance using PATCH.

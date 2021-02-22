@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EducationRubric.
         /// </summary>
-        /// <returns>The EducationRubric.</returns>
-        System.Threading.Tasks.Task<EducationRubric> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EducationRubric.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationRubric.</returns>
-        System.Threading.Tasks.Task<EducationRubric> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EducationRubric and returns a <see cref="GraphResponse{EducationRubric}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationRubric>> GetResponseAsync();
+        System.Threading.Tasks.Task<EducationRubric> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EducationRubric and returns a <see cref="GraphResponse{EducationRubric}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationRubric}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationRubric>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EducationRubric>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EducationRubric using PATCH.

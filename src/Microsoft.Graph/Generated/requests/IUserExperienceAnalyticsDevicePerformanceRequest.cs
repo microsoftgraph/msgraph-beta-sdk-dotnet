@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDevicePerformance.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDevicePerformance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDevicePerformance.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDevicePerformance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDevicePerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDevicePerformance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDevicePerformance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDevicePerformance using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows81CompliancePolicy.
         /// </summary>
-        /// <returns>The Windows81CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows81CompliancePolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows81CompliancePolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows81CompliancePolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows81CompliancePolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows81CompliancePolicy and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows81CompliancePolicy using PATCH.

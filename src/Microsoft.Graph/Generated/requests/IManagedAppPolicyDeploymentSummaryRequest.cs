@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedAppPolicyDeploymentSummary.
         /// </summary>
-        /// <returns>The ManagedAppPolicyDeploymentSummary.</returns>
-        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedAppPolicyDeploymentSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppPolicyDeploymentSummary.</returns>
-        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedAppPolicyDeploymentSummary and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH.

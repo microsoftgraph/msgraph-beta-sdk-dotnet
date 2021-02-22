@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementExchangeOnPremisesPolicy.
         /// </summary>
-        /// <returns>The DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementExchangeOnPremisesPolicy.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementExchangeOnPremisesPolicy.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementExchangeOnPremisesPolicy and returns a <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeOnPremisesPolicy}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeOnPremisesPolicy>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementExchangeOnPremisesPolicy using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WorkbookApplication.
         /// </summary>
-        /// <returns>The WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WorkbookApplication.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WorkbookApplication and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync();
+        System.Threading.Tasks.Task<WorkbookApplication> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WorkbookApplication and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified WorkbookApplication using PATCH.

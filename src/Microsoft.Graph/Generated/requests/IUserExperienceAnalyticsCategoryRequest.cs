@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsCategory.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsCategory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsCategory.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsCategory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsCategory> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsCategory and returns a <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsCategory>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsCategory using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DomainDnsTxtRecord.
         /// </summary>
-        /// <returns>The DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DomainDnsTxtRecord.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DomainDnsTxtRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> GetResponseAsync();
+        System.Threading.Tasks.Task<DomainDnsTxtRecord> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DomainDnsTxtRecord and returns a <see cref="GraphResponse{DomainDnsTxtRecord}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DomainDnsTxtRecord using PATCH.

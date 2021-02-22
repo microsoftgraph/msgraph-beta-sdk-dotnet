@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsAutopilotDeploymentProfile.
         /// </summary>
-        /// <returns>The WindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeploymentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified WindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified WindowsAutopilotDeploymentProfile and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified WindowsAutopilotDeploymentProfile using POST.

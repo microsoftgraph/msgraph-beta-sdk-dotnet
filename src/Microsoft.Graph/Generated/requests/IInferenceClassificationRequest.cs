@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified InferenceClassification.
         /// </summary>
-        /// <returns>The InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> GetAsync();
-
-        /// <summary>
-        /// Gets the specified InferenceClassification.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InferenceClassification.</returns>
-        System.Threading.Tasks.Task<InferenceClassification> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified InferenceClassification and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync();
+        System.Threading.Tasks.Task<InferenceClassification> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified InferenceClassification and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified InferenceClassification using PATCH.

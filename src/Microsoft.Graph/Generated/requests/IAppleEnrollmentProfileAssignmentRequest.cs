@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppleEnrollmentProfileAssignment.
         /// </summary>
-        /// <returns>The AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppleEnrollmentProfileAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleEnrollmentProfileAssignment.</returns>
-        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppleEnrollmentProfileAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppleEnrollmentProfileAssignment and returns a <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleEnrollmentProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppleEnrollmentProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppleEnrollmentProfileAssignment using PATCH.

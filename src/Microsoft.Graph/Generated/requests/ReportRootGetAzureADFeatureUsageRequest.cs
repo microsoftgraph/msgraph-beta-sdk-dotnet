@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADFeatureUsageCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ReportRootGetAzureADFeatureUsageCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(null, cancellationToken);
         }
 
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADFeatureUsageCollectionPage> PatchAsync(AzureADFeatureUsage azureadfeatureusage, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var response = await this.SendAsync<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -120,10 +120,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="azureadfeatureusage">The AzureADFeatureUsage object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> PatchResponseAsync(AzureADFeatureUsage azureadfeatureusage, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> PatchResponseAsync(AzureADFeatureUsage azureadfeatureusage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetAzureADFeatureUsageCollectionPage> PutAsync(AzureADFeatureUsage azureadfeatureusage, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             var response = await this.SendAsync<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -168,10 +168,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="azureadfeatureusage">The AzureADFeatureUsage object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> PutResponseAsync(AzureADFeatureUsage azureadfeatureusage, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>> PutResponseAsync(AzureADFeatureUsage azureadfeatureusage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<ReportRootGetAzureADFeatureUsageCollectionResponse>(azureadfeatureusage, cancellationToken);
         }
 
         /// <summary>

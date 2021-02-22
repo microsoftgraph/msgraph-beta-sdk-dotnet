@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosEasEmailProfileConfiguration.
         /// </summary>
-        /// <returns>The IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosEasEmailProfileConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosEasEmailProfileConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosEasEmailProfileConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosEasEmailProfileConfiguration and returns a <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEasEmailProfileConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosEasEmailProfileConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosEasEmailProfileConfiguration using PATCH.

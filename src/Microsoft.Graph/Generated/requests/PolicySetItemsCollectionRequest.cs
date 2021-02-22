@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<PolicySetItem> AddAsync(PolicySetItem policySetItem, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             policySetItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(policySetItem.GetType().FullName));
             return this.SendAsync<PolicySetItem>(policySetItem, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="policySetItem">The PolicySetItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySetItem}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> AddResponseAsync(PolicySetItem policySetItem, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetItem>> AddResponseAsync(PolicySetItem policySetItem, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             policySetItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(policySetItem.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<PolicySetItem>(policySetItem, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<PolicySetItem>(policySetItem, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IPolicySetItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<PolicySetItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PolicySetItemsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<PolicySetItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<PolicySetItemsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<PolicySetItemsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

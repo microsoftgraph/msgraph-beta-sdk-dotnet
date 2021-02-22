@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ChangeTrackedEntity.
         /// </summary>
-        /// <returns>The ChangeTrackedEntity.</returns>
-        System.Threading.Tasks.Task<ChangeTrackedEntity> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ChangeTrackedEntity.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ChangeTrackedEntity.</returns>
-        System.Threading.Tasks.Task<ChangeTrackedEntity> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync();
+        System.Threading.Tasks.Task<ChangeTrackedEntity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ChangeTrackedEntity using PATCH.

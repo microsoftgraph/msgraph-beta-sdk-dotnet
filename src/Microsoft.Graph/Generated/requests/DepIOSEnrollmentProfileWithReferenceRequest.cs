@@ -38,20 +38,11 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DepIOSEnrollmentProfile.
         /// </summary>
-        /// <returns>The DepIOSEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified DepIOSEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DepIOSEnrollmentProfile.</returns>
-        public async System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepIOSEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<DepIOSEnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -59,21 +50,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DepIOSEnrollmentProfile and returns a <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified DepIOSEnrollmentProfile and returns a <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(null, cancellationToken);
         }
 
 		/// <summary>
@@ -85,7 +67,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<DepIOSEnrollmentProfile> CreateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -96,11 +78,11 @@ namespace Microsoft.Graph
         /// <param name="depIOSEnrollmentProfileToCreate">The DepIOSEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> CreateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> CreateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToCreate, cancellationToken);
         }
 
 		/// <summary>
@@ -113,7 +95,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<DepIOSEnrollmentProfile> UpdateAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -125,11 +107,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DepIOSEnrollmentProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> UpdateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DepIOSEnrollmentProfile>> UpdateResponseAsync(DepIOSEnrollmentProfile depIOSEnrollmentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<DepIOSEnrollmentProfile>(depIOSEnrollmentProfileToUpdate, cancellationToken);
         }
 
 		/// <summary>
@@ -139,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<DepIOSEnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -148,10 +130,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

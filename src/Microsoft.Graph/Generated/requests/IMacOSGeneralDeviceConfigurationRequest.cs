@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSGeneralDeviceConfiguration.
         /// </summary>
-        /// <returns>The MacOSGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSGeneralDeviceConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH.

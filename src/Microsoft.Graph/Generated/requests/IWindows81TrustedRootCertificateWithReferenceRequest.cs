@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows81TrustedRootCertificate.
         /// </summary>
-        /// <returns>The Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows81TrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows81TrustedRootCertificate and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows81TrustedRootCertificate and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Windows81TrustedRootCertificate using POST.

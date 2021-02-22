@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified YammerDeviceUsageDistributionUserCounts.
         /// </summary>
-        /// <returns>The YammerDeviceUsageDistributionUserCounts.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageDistributionUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified YammerDeviceUsageDistributionUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerDeviceUsageDistributionUserCounts.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageDistributionUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified YammerDeviceUsageDistributionUserCounts and returns a <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageDistributionUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<YammerDeviceUsageDistributionUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified YammerDeviceUsageDistributionUserCounts and returns a <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{YammerDeviceUsageDistributionUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageDistributionUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageDistributionUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified YammerDeviceUsageDistributionUserCounts using PATCH.

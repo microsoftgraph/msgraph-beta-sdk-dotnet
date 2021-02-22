@@ -53,28 +53,16 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets the specified Relation.
         /// </summary>
-        /// <returns>The Relation.</returns>
-        System.Threading.Tasks.Task<Relation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Relation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Relation.</returns>
-        System.Threading.Tasks.Task<Relation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Relation and returns a <see cref="GraphResponse{Relation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Relation>> GetResponseAsync();
+        System.Threading.Tasks.Task<Relation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Relation and returns a <see cref="GraphResponse{Relation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Relation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Relation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Relation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Relation using PATCH.

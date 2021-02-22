@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementStringSettingInstance.
         /// </summary>
-        /// <returns>The DeviceManagementStringSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementStringSettingInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementStringSettingInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementStringSettingInstance.</returns>
-        System.Threading.Tasks.Task<DeviceManagementStringSettingInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementStringSettingInstance and returns a <see cref="GraphResponse{DeviceManagementStringSettingInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementStringSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementStringSettingInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementStringSettingInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementStringSettingInstance and returns a <see cref="GraphResponse{DeviceManagementStringSettingInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementStringSettingInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementStringSettingInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementStringSettingInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementStringSettingInstance using PATCH.

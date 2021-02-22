@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceComplianceDeviceStatus.
         /// </summary>
-        /// <returns>The DeviceComplianceDeviceStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceDeviceStatus> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceDeviceStatus.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceDeviceStatus.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceDeviceStatus> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceComplianceDeviceStatus and returns a <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceStatus>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceComplianceDeviceStatus> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceComplianceDeviceStatus and returns a <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceStatus>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceStatus>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceComplianceDeviceStatus using PATCH.

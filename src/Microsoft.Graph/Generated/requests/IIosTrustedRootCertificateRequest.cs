@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosTrustedRootCertificate.
         /// </summary>
-        /// <returns>The IosTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosTrustedRootCertificate and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosTrustedRootCertificate and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosTrustedRootCertificate using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Office365GroupsActivityGroupCounts.
         /// </summary>
-        /// <returns>The Office365GroupsActivityGroupCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityGroupCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Office365GroupsActivityGroupCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365GroupsActivityGroupCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityGroupCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Office365GroupsActivityGroupCounts and returns a <see cref="GraphResponse{Office365GroupsActivityGroupCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityGroupCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityGroupCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<Office365GroupsActivityGroupCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Office365GroupsActivityGroupCounts and returns a <see cref="GraphResponse{Office365GroupsActivityGroupCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityGroupCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityGroupCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityGroupCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityGroupCounts using PATCH.

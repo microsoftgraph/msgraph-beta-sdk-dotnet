@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceEnrollmentLimitConfiguration.
         /// </summary>
-        /// <returns>The DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceEnrollmentLimitConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceEnrollmentLimitConfiguration using PATCH.

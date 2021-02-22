@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> CreateAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             var newEntity = await this.SendAsync<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -56,11 +56,11 @@ namespace Microsoft.Graph
         /// <param name="windowsPhone81SCEPCertificateProfileToCreate">The WindowsPhone81SCEPCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> CreateResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> CreateResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
+            this.Method = Constants.HttpMethods.Delete;
             await this.SendAsync<WindowsPhone81SCEPCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -79,19 +79,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "DELETE";
-            return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81SCEPCertificateProfile.
-        /// </summary>
-        /// <returns>The WindowsPhone81SCEPCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = Constants.HttpMethods.Delete;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -99,9 +90,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81SCEPCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var retrievedEntity = await this.SendAsync<WindowsPhone81SCEPCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -110,21 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81SCEPCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81SCEPCertificateProfile and returns a <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<WindowsPhone81SCEPCertificateProfile> UpdateAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var updatedEntity = await this.SendAsync<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -150,11 +132,11 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsPhone81SCEPCertificateProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> UpdateResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81SCEPCertificateProfile>> UpdateResponseAsync(WindowsPhone81SCEPCertificateProfile windowsPhone81SCEPCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<WindowsPhone81SCEPCertificateProfile>(windowsPhone81SCEPCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

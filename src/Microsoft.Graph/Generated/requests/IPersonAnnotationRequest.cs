@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PersonAnnotation.
         /// </summary>
-        /// <returns>The PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PersonAnnotation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PersonAnnotation and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> GetResponseAsync();
+        System.Threading.Tasks.Task<PersonAnnotation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PersonAnnotation and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PersonAnnotation using PATCH.

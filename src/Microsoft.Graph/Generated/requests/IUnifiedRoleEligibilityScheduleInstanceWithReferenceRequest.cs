@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilityScheduleInstance.
         /// </summary>
-        /// <returns>The UnifiedRoleEligibilityScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilityScheduleInstance.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleEligibilityScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleEligibilityScheduleInstance and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilityScheduleInstance and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified UnifiedRoleEligibilityScheduleInstance using POST.

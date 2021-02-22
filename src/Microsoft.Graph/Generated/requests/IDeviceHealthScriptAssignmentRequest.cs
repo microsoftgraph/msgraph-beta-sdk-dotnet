@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceHealthScriptAssignment.
         /// </summary>
-        /// <returns>The DeviceHealthScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceHealthScriptAssignment and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceHealthScriptAssignment and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceHealthScriptAssignment using PATCH.

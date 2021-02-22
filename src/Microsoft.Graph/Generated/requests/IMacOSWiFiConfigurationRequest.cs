@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified MacOSWiFiConfiguration.
         /// </summary>
-        /// <returns>The MacOSWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSWiFiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified MacOSWiFiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified MacOSWiFiConfiguration and returns a <see cref="GraphResponse{MacOSWiFiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{MacOSWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSWiFiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<MacOSWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MacOSWiFiConfiguration and returns a <see cref="GraphResponse{MacOSWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MacOSWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MacOSWiFiConfiguration using PATCH.

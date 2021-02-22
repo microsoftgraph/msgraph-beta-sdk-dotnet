@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BusinessFlow.
         /// </summary>
-        /// <returns>The BusinessFlow.</returns>
-        System.Threading.Tasks.Task<BusinessFlow> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BusinessFlow.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BusinessFlow.</returns>
-        System.Threading.Tasks.Task<BusinessFlow> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BusinessFlow and returns a <see cref="GraphResponse{BusinessFlow}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BusinessFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> GetResponseAsync();
+        System.Threading.Tasks.Task<BusinessFlow> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BusinessFlow and returns a <see cref="GraphResponse{BusinessFlow}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BusinessFlow}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BusinessFlow>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BusinessFlow using PATCH.

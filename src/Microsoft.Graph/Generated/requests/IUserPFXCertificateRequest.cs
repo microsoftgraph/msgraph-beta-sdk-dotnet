@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserPFXCertificate.
         /// </summary>
-        /// <returns>The UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserPFXCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserPFXCertificate.</returns>
-        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserPFXCertificate and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserPFXCertificate and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserPFXCertificate using PATCH.

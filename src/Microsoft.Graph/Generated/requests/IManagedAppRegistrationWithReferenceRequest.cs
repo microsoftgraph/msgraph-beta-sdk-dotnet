@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedAppRegistration.
         /// </summary>
-        /// <returns>The ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedAppRegistration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedAppRegistration and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedAppRegistration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedAppRegistration and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified ManagedAppRegistration using POST.

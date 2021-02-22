@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified NdesConnector.
         /// </summary>
-        /// <returns>The NdesConnector.</returns>
-        System.Threading.Tasks.Task<NdesConnector> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NdesConnector.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NdesConnector.</returns>
-        System.Threading.Tasks.Task<NdesConnector> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NdesConnector and returns a <see cref="GraphResponse{NdesConnector}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NdesConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NdesConnector>> GetResponseAsync();
+        System.Threading.Tasks.Task<NdesConnector> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NdesConnector and returns a <see cref="GraphResponse{NdesConnector}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NdesConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NdesConnector>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NdesConnector>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NdesConnector using PATCH.

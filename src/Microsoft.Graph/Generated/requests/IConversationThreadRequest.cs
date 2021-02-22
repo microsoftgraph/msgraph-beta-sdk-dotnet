@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ConversationThread.
         /// </summary>
-        /// <returns>The ConversationThread.</returns>
-        System.Threading.Tasks.Task<ConversationThread> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ConversationThread.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConversationThread.</returns>
-        System.Threading.Tasks.Task<ConversationThread> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ConversationThread and returns a <see cref="GraphResponse{ConversationThread}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConversationThread>> GetResponseAsync();
+        System.Threading.Tasks.Task<ConversationThread> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ConversationThread and returns a <see cref="GraphResponse{ConversationThread}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConversationThread}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConversationThread>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ConversationThread>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ConversationThread using PATCH.

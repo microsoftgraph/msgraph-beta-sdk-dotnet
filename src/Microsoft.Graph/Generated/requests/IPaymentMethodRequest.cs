@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PaymentMethod.
         /// </summary>
-        /// <returns>The PaymentMethod.</returns>
-        System.Threading.Tasks.Task<PaymentMethod> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PaymentMethod.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PaymentMethod.</returns>
-        System.Threading.Tasks.Task<PaymentMethod> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PaymentMethod and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> GetResponseAsync();
+        System.Threading.Tasks.Task<PaymentMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PaymentMethod and returns a <see cref="GraphResponse{PaymentMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PaymentMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PaymentMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PaymentMethod using PATCH.

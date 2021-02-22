@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedApp.
         /// </summary>
-        /// <returns>The ManagedApp.</returns>
-        System.Threading.Tasks.Task<ManagedApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedApp.</returns>
-        System.Threading.Tasks.Task<ManagedApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedApp using PATCH.

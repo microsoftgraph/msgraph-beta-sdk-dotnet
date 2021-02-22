@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AppleUserInitiatedEnrollmentProfile.
         /// </summary>
-        /// <returns>The AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AppleUserInitiatedEnrollmentProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AppleUserInitiatedEnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AppleUserInitiatedEnrollmentProfile and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AppleUserInitiatedEnrollmentProfile and returns a <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AppleUserInitiatedEnrollmentProfile using PATCH.

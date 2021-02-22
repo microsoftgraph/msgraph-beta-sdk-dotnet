@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UserFlowLanguageConfiguration> AddAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<UserFlowLanguageConfiguration>(userFlowLanguageConfiguration, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="userFlowLanguageConfiguration">The UserFlowLanguageConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> AddResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> AddResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(userFlowLanguageConfiguration, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<UserFlowLanguageConfiguration>(userFlowLanguageConfiguration, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IB2cIdentityUserFlowLanguagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<B2cIdentityUserFlowLanguagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlowLanguagesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

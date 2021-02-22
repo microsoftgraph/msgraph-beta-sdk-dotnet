@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosEnterpriseWiFiConfiguration.
         /// </summary>
-        /// <returns>The IosEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosEnterpriseWiFiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEnterpriseWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosEnterpriseWiFiConfiguration using PATCH.

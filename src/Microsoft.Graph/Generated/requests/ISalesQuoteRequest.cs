@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SalesQuote.
         /// </summary>
-        /// <returns>The SalesQuote.</returns>
-        System.Threading.Tasks.Task<SalesQuote> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SalesQuote.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesQuote.</returns>
-        System.Threading.Tasks.Task<SalesQuote> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SalesQuote and returns a <see cref="GraphResponse{SalesQuote}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SalesQuote}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> GetResponseAsync();
+        System.Threading.Tasks.Task<SalesQuote> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SalesQuote and returns a <see cref="GraphResponse{SalesQuote}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesQuote}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SalesQuote>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SalesQuote using PATCH.

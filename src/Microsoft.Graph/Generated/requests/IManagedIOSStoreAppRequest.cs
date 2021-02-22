@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedIOSStoreApp.
         /// </summary>
-        /// <returns>The ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedIOSStoreApp.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedIOSStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSStoreApp> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedIOSStoreApp and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedIOSStoreApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedIOSStoreApp and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedIOSStoreApp using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyGroupAssignment.
         /// </summary>
-        /// <returns>The DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyGroupAssignment.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceCompliancePolicyGroupAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyGroupAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceCompliancePolicyGroupAssignment using PATCH.

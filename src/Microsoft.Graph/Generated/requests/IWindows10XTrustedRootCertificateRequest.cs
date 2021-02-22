@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows10XTrustedRootCertificate.
         /// </summary>
-        /// <returns>The Windows10XTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows10XTrustedRootCertificate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows10XTrustedRootCertificate using PATCH.

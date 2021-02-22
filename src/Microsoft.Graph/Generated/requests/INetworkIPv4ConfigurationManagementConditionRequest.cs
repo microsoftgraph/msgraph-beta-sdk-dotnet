@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified NetworkIPv4ConfigurationManagementCondition.
         /// </summary>
-        /// <returns>The NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NetworkIPv4ConfigurationManagementCondition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> GetResponseAsync();
+        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH.

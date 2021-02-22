@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified EasEmailProfileConfigurationBase.
         /// </summary>
-        /// <returns>The EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified EasEmailProfileConfigurationBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EasEmailProfileConfigurationBase.</returns>
-        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified EasEmailProfileConfigurationBase and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> GetResponseAsync();
+        System.Threading.Tasks.Task<EasEmailProfileConfigurationBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified EasEmailProfileConfigurationBase and returns a <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EasEmailProfileConfigurationBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<EasEmailProfileConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified EasEmailProfileConfigurationBase using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Windows81WifiImportConfiguration.
         /// </summary>
-        /// <returns>The Windows81WifiImportConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81WifiImportConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Windows81WifiImportConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows81WifiImportConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows81WifiImportConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Windows81WifiImportConfiguration and returns a <see cref="GraphResponse{Windows81WifiImportConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Windows81WifiImportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81WifiImportConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<Windows81WifiImportConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Windows81WifiImportConfiguration and returns a <see cref="GraphResponse{Windows81WifiImportConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81WifiImportConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81WifiImportConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Windows81WifiImportConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Windows81WifiImportConfiguration using PATCH.

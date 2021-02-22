@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified Agreement.
         /// </summary>
-        /// <returns>The Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Agreement.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Agreement.</returns>
-        System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Agreement and returns a <see cref="GraphResponse{Agreement}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Agreement>> GetResponseAsync();
+        System.Threading.Tasks.Task<Agreement> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Agreement and returns a <see cref="GraphResponse{Agreement}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Agreement}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Agreement>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Agreement>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified Agreement using PATCH.

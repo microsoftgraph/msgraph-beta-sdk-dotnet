@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsBaseline.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsBaseline.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsBaseline> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsBaseline.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsBaseline.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsBaseline> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> GetResponseAsync();
+        System.Threading.Tasks.Task<UserExperienceAnalyticsBaseline> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsBaseline and returns a <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsBaseline}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsBaseline>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsBaseline using PATCH.

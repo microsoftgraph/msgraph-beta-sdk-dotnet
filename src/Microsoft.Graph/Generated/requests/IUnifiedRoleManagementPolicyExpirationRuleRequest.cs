@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyExpirationRule.
         /// </summary>
-        /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync();
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> GetResponseAsync();
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH.

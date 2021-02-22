@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> AddAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
             return this.SendAsync<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="windowsAutopilotDeploymentProfile">The WindowsAutopilotDeploymentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> AddResponseAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> AddResponseAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             windowsAutopilotDeploymentProfile.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(windowsAutopilotDeploymentProfile.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<WindowsAutopilotDeploymentProfile>(windowsAutopilotDeploymentProfile, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

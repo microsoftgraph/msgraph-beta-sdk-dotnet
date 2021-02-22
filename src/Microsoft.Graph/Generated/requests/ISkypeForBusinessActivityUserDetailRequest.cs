@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserDetail.
         /// </summary>
-        /// <returns>The SkypeForBusinessActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessActivityUserDetail.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessActivityUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserDetail using PATCH.

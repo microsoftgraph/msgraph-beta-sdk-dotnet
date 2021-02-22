@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CredentialUserRegistrationCount.
         /// </summary>
-        /// <returns>The CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CredentialUserRegistrationCount.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUserRegistrationCount.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CredentialUserRegistrationCount and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> GetResponseAsync();
+        System.Threading.Tasks.Task<CredentialUserRegistrationCount> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CredentialUserRegistrationCount and returns a <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationCount}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationCount>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationCount using PATCH.

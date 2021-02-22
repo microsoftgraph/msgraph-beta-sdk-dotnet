@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified RbacApplicationMultiple.
         /// </summary>
-        /// <returns>The RbacApplicationMultiple.</returns>
-        System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync();
-
-        /// <summary>
-        /// Gets the specified RbacApplicationMultiple.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RbacApplicationMultiple.</returns>
-        System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified RbacApplicationMultiple and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync();
+        System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified RbacApplicationMultiple and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified RbacApplicationMultiple using PATCH.

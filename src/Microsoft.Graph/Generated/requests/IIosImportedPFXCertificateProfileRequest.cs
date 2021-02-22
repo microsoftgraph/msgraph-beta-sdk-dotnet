@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosImportedPFXCertificateProfile.
         /// </summary>
-        /// <returns>The IosImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosImportedPFXCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosImportedPFXCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosImportedPFXCertificateProfile and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosImportedPFXCertificateProfile and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosImportedPFXCertificateProfile using PATCH.

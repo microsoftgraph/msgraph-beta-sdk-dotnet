@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> AddAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<ApplicationSignInDetailedSummary>(applicationSignInDetailedSummary, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummary">The ApplicationSignInDetailedSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> AddResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> AddResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<ApplicationSignInDetailedSummary>(applicationSignInDetailedSummary, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<ApplicationSignInDetailedSummary>(applicationSignInDetailedSummary, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IReportRootApplicationSignInDetailedSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ReportRootApplicationSignInDetailedSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootApplicationSignInDetailedSummaryCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

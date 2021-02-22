@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidWorkProfileWiFiConfiguration.
         /// </summary>
-        /// <returns>The AndroidWorkProfileWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileWiFiConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidWorkProfileWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileWiFiConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileWiFiConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileWiFiConfiguration using PATCH.

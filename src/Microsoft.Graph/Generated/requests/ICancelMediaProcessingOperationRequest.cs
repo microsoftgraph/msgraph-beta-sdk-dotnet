@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified CancelMediaProcessingOperation.
         /// </summary>
-        /// <returns>The CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync();
-
-        /// <summary>
-        /// Gets the specified CancelMediaProcessingOperation.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync();
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified CancelMediaProcessingOperation using PATCH.

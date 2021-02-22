@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified VulnerableManagedDevice.
         /// </summary>
-        /// <returns>The VulnerableManagedDevice.</returns>
-        System.Threading.Tasks.Task<VulnerableManagedDevice> GetAsync();
-
-        /// <summary>
-        /// Gets the specified VulnerableManagedDevice.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VulnerableManagedDevice.</returns>
-        System.Threading.Tasks.Task<VulnerableManagedDevice> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified VulnerableManagedDevice and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> GetResponseAsync();
+        System.Threading.Tasks.Task<VulnerableManagedDevice> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified VulnerableManagedDevice and returns a <see cref="GraphResponse{VulnerableManagedDevice}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VulnerableManagedDevice}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<VulnerableManagedDevice>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified VulnerableManagedDevice using PATCH.

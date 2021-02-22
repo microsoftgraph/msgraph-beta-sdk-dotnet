@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosUpdateConfiguration.
         /// </summary>
-        /// <returns>The IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosUpdateConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosUpdateConfiguration.</returns>
-        System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosUpdateConfiguration and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosUpdateConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosUpdateConfiguration and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosUpdateConfiguration using PATCH.

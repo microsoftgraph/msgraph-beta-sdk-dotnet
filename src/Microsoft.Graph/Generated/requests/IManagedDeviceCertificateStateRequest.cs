@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagedDeviceCertificateState.
         /// </summary>
-        /// <returns>The ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceCertificateState.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceCertificateState.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCertificateState> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ManagedDeviceCertificateState and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> GetResponseAsync();
+        System.Threading.Tasks.Task<ManagedDeviceCertificateState> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ManagedDeviceCertificateState and returns a <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCertificateState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCertificateState>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ManagedDeviceCertificateState using PATCH.

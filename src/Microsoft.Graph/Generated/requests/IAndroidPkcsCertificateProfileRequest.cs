@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AndroidPkcsCertificateProfile.
         /// </summary>
-        /// <returns>The AndroidPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidPkcsCertificateProfile> GetAsync();
-
-        /// <summary>
-        /// Gets the specified AndroidPkcsCertificateProfile.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<AndroidPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified AndroidPkcsCertificateProfile and returns a <see cref="GraphResponse{AndroidPkcsCertificateProfile}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{AndroidPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidPkcsCertificateProfile>> GetResponseAsync();
+        System.Threading.Tasks.Task<AndroidPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified AndroidPkcsCertificateProfile and returns a <see cref="GraphResponse{AndroidPkcsCertificateProfile}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidPkcsCertificateProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<AndroidPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified AndroidPkcsCertificateProfile using PATCH.

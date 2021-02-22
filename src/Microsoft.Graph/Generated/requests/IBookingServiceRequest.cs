@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified BookingService.
         /// </summary>
-        /// <returns>The BookingService.</returns>
-        System.Threading.Tasks.Task<BookingService> GetAsync();
-
-        /// <summary>
-        /// Gets the specified BookingService.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingService.</returns>
-        System.Threading.Tasks.Task<BookingService> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified BookingService and returns a <see cref="GraphResponse{BookingService}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{BookingService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingService>> GetResponseAsync();
+        System.Threading.Tasks.Task<BookingService> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified BookingService and returns a <see cref="GraphResponse{BookingService}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{BookingService}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<BookingService>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<BookingService>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified BookingService using PATCH.

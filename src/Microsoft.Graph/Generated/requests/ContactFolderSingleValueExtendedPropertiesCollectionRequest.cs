@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> AddAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             return this.SendAsync<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken);
         }
 
@@ -52,11 +52,11 @@ namespace Microsoft.Graph
         /// <param name="singleValueLegacyExtendedProperty">The SingleValueLegacyExtendedProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> AddResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
-            return await this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Post;
+            return this.SendAsyncWithGraphResponse<SingleValueLegacyExtendedProperty>(singleValueLegacyExtendedProperty, cancellationToken);
         }
 
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IContactFolderSingleValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ContactFolderSingleValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -100,10 +100,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ContactFolderSingleValueExtendedPropertiesCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ContactFolderSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolderSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ContactFolderSingleValueExtendedPropertiesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ContactFolderSingleValueExtendedPropertiesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

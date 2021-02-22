@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PlannerPlanDetails.
         /// </summary>
-        /// <returns>The PlannerPlanDetails.</returns>
-        System.Threading.Tasks.Task<PlannerPlanDetails> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PlannerPlanDetails.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerPlanDetails.</returns>
-        System.Threading.Tasks.Task<PlannerPlanDetails> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PlannerPlanDetails and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> GetResponseAsync();
+        System.Threading.Tasks.Task<PlannerPlanDetails> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PlannerPlanDetails and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified PlannerPlanDetails using PATCH.

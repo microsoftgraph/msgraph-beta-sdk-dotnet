@@ -23,28 +23,16 @@ namespace Microsoft.Graph.TermStore
         /// <summary>
         /// Gets the specified Term.
         /// </summary>
-        /// <returns>The Term.</returns>
-        System.Threading.Tasks.Task<Term> GetAsync();
-
-        /// <summary>
-        /// Gets the specified Term.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Term.</returns>
-        System.Threading.Tasks.Task<Term> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified Term and returns a <see cref="GraphResponse{Term}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Term>> GetResponseAsync();
+        System.Threading.Tasks.Task<Term> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified Term and returns a <see cref="GraphResponse{Term}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Term}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Term>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<Term>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified Term using POST.

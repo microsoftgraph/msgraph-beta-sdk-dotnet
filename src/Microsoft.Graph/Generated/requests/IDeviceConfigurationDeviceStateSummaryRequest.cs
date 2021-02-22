@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceConfigurationDeviceStateSummary.
         /// </summary>
-        /// <returns>The DeviceConfigurationDeviceStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationDeviceStateSummary> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationDeviceStateSummary.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationDeviceStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationDeviceStateSummary> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceConfigurationDeviceStateSummary and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceConfigurationDeviceStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceConfigurationDeviceStateSummary and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceConfigurationDeviceStateSummary using PATCH.

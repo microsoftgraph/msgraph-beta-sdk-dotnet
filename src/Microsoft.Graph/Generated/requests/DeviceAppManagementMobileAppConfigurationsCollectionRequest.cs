@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> AddAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             managedDeviceMobileAppConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedDeviceMobileAppConfiguration.GetType().FullName));
             return this.SendAsync<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfiguration, cancellationToken);
         }
@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceMobileAppConfiguration">The ManagedDeviceMobileAppConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> AddResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> AddResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = "POST";
+            this.Method = Constants.HttpMethods.Post;
             managedDeviceMobileAppConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedDeviceMobileAppConfiguration.GetType().FullName));
-            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfiguration, cancellationToken).ConfigureAwait(false);
+            return this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfiguration>(managedDeviceMobileAppConfiguration, cancellationToken);
         }
 
 
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceAppManagementMobileAppConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<DeviceAppManagementMobileAppConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,10 +102,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAppManagementMobileAppConfigurationsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<DeviceAppManagementMobileAppConfigurationsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified IosExpeditedCheckinConfiguration.
         /// </summary>
-        /// <returns>The IosExpeditedCheckinConfiguration.</returns>
-        System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> GetAsync();
-
-        /// <summary>
-        /// Gets the specified IosExpeditedCheckinConfiguration.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosExpeditedCheckinConfiguration.</returns>
-        System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified IosExpeditedCheckinConfiguration and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> GetResponseAsync();
+        System.Threading.Tasks.Task<IosExpeditedCheckinConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified IosExpeditedCheckinConfiguration and returns a <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosExpeditedCheckinConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<IosExpeditedCheckinConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified IosExpeditedCheckinConfiguration using PATCH.

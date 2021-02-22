@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkillProficiency.
         /// </summary>
-        /// <returns>The SkillProficiency.</returns>
-        System.Threading.Tasks.Task<SkillProficiency> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkillProficiency.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkillProficiency.</returns>
-        System.Threading.Tasks.Task<SkillProficiency> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkillProficiency and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkillProficiency> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkillProficiency and returns a <see cref="GraphResponse{SkillProficiency}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkillProficiency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkillProficiency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkillProficiency using PATCH.

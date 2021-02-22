@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ColumnLink.
         /// </summary>
-        /// <returns>The ColumnLink.</returns>
-        System.Threading.Tasks.Task<ColumnLink> GetAsync();
-
-        /// <summary>
-        /// Gets the specified ColumnLink.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ColumnLink.</returns>
-        System.Threading.Tasks.Task<ColumnLink> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified ColumnLink and returns a <see cref="GraphResponse{ColumnLink}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync();
+        System.Threading.Tasks.Task<ColumnLink> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified ColumnLink and returns a <see cref="GraphResponse{ColumnLink}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified ColumnLink using PATCH.

@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserCounts.
         /// </summary>
-        /// <returns>The SkypeForBusinessActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserCounts> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessActivityUserCounts.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessActivityUserCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserCounts> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified SkypeForBusinessActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserCounts}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserCounts>> GetResponseAsync();
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserCounts> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserCounts and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserCounts}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserCounts}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserCounts using PATCH.

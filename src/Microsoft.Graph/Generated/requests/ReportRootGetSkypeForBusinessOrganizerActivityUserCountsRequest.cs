@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
+            this.Method = Constants.HttpMethods.Get;
             var response = await this.SendAsync<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "GET";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Get;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(null, cancellationToken);
         }
 
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionPage> PatchAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
+            this.Method = Constants.HttpMethods.Patch;
             var response = await this.SendAsync<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -120,10 +120,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="skypeforbusinessorganizeractivityusercounts">The SkypeForBusinessOrganizerActivityUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> PatchResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> PatchResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PATCH";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Patch;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionPage> PutAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
+            this.Method = Constants.HttpMethods.Put;
             var response = await this.SendAsync<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -168,10 +168,10 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="skypeforbusinessorganizeractivityusercounts">The SkypeForBusinessOrganizerActivityUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> PutResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>> PutResponseAsync(SkypeForBusinessOrganizerActivityUserCounts skypeforbusinessorganizeractivityusercounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = "PUT";
-            return await this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken).ConfigureAwait(false);
+            this.Method = Constants.HttpMethods.Put;
+            return this.SendAsyncWithGraphResponse<ReportRootGetSkypeForBusinessOrganizerActivityUserCountsCollectionResponse>(skypeforbusinessorganizeractivityusercounts, cancellationToken);
         }
 
         /// <summary>

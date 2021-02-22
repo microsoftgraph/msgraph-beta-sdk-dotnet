@@ -23,28 +23,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified PrivilegedRoleSettings.
         /// </summary>
-        /// <returns>The PrivilegedRoleSettings.</returns>
-        System.Threading.Tasks.Task<PrivilegedRoleSettings> GetAsync();
-
-        /// <summary>
-        /// Gets the specified PrivilegedRoleSettings.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivilegedRoleSettings.</returns>
-        System.Threading.Tasks.Task<PrivilegedRoleSettings> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified PrivilegedRoleSettings and returns a <see cref="GraphResponse{PrivilegedRoleSettings}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{PrivilegedRoleSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> GetResponseAsync();
+        System.Threading.Tasks.Task<PrivilegedRoleSettings> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified PrivilegedRoleSettings and returns a <see cref="GraphResponse{PrivilegedRoleSettings}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedRoleSettings}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedRoleSettings>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
         /// Creates the specified PrivilegedRoleSettings using POST.

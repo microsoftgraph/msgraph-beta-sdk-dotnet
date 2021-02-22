@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition.
         /// </summary>
-        /// <returns>The DeviceManagementConfigurationChoiceSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationChoiceSettingDefinition> GetAsync();
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementConfigurationChoiceSettingDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationChoiceSettingDefinition> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> GetResponseAsync();
+        System.Threading.Tasks.Task<DeviceManagementConfigurationChoiceSettingDefinition> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationChoiceSettingDefinition and returns a <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationChoiceSettingDefinition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationChoiceSettingDefinition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified DeviceManagementConfigurationChoiceSettingDefinition using PATCH.

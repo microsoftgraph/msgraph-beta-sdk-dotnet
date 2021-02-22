@@ -53,28 +53,16 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified FieldValueSet.
         /// </summary>
-        /// <returns>The FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> GetAsync();
-
-        /// <summary>
-        /// Gets the specified FieldValueSet.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FieldValueSet.</returns>
-        System.Threading.Tasks.Task<FieldValueSet> GetAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Gets the specified FieldValueSet and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
-        /// </summary>
-        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> GetResponseAsync();
+        System.Threading.Tasks.Task<FieldValueSet> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified FieldValueSet and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> GetResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified FieldValueSet using PATCH.
