@@ -76,5 +76,36 @@ namespace Microsoft.Graph
             /// </summary>
             public const string StreamContentType = "application/octet-stream";
         }
+
+        /// <summary>
+        /// Constants used to specify Http methods
+        /// </summary>
+        public static class HttpMethods
+        {
+            /// <summary>
+            /// The GET method.
+            /// </summary>
+            public const string Get = "GET";
+
+            /// <summary>
+            /// The POST method.
+            /// </summary>
+            public const string Post = "POST";
+
+            /// <summary>
+            /// The PATCH method.
+            /// </summary>
+            public const string Patch = "PATCH";
+
+            /// <summary>
+            /// The PUT method.
+            /// </summary>
+            public const string Put = "PUT";
+
+            /// <summary>
+            /// The DELETE method.
+            /// </summary>
+            public const string Delete = "DELETE";
+        }
     }
 }
