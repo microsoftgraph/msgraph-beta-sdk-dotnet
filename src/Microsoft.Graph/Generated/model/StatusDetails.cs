@@ -38,14 +38,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets errorCategory.
-        /// Categorizes the error code.
+        /// Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCategory", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCategory { get; set; }
     
         /// <summary>
         /// Gets or sets errorCode.
-        /// Unique error code if any occurred.
+        /// Unique error code if any occurred. Learn more
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "errorCode", Required = Newtonsoft.Json.Required.Default)]
         public string ErrorCode { get; set; }
