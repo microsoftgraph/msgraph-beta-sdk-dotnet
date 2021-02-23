@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed presenters.
-        /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.
+        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
@@ -146,7 +146,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets join information.
-        /// The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only
+        /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinInformation", Required = Newtonsoft.Json.Required.Default)]
         public ItemBody JoinInformation { get; set; }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lobby bypass settings.
-        /// Specifies which participants can bypass the meeting lobby.
+        /// Specifies which participants can bypass the meeting   lobby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lobbyBypassSettings", Required = Newtonsoft.Json.Required.Default)]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }

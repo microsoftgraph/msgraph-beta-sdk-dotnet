@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets instance enumeration scope.
-        /// In the case of an all groups review, this determines the scope of which groups will be reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope.
+        /// In the case of a review of guest users across all Microsoft 365 groups, this determines the scope of which groups will be reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "instanceEnumerationScope", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewScope InstanceEnumerationScope { get; set; }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope.
-        /// Defines scope of users reviewed in a group. For supported scopes, see accessReviewScope. Required on create.
+        /// Defines scope of users reviewed. For supported scopes, see accessReviewScope. Required on create.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "scope", Required = Newtonsoft.Json.Required.Default)]
         public AccessReviewScope Scope { get; set; }
