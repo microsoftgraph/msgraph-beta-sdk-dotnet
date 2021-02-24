@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<EducationOutcome> AddAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             educationOutcome.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(educationOutcome.GetType().FullName));
             return this.SendAsync<EducationOutcome>(educationOutcome, cancellationToken);
         }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<EducationOutcome>> AddResponseAsync(EducationOutcome educationOutcome, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             educationOutcome.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(educationOutcome.GetType().FullName));
             return this.SendAsyncWithGraphResponse<EducationOutcome>(educationOutcome, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IEducationSubmissionOutcomesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<EducationSubmissionOutcomesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationSubmissionOutcomesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<EducationSubmissionOutcomesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<EducationSubmissionOutcomesCollectionResponse>(null, cancellationToken);
         }
 

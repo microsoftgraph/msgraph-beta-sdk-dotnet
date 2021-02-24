@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<SecurityBaselineCategoryStateSummary> AddAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsync<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummary, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineCategoryStateSummary>> AddResponseAsync(SecurityBaselineCategoryStateSummary securityBaselineCategoryStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<SecurityBaselineCategoryStateSummary>(securityBaselineCategoryStateSummary, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ISecurityBaselineTemplateCategoryDeviceStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<SecurityBaselineTemplateCategoryDeviceStateSummariesCollectionResponse>(null, cancellationToken);
         }
 

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The stream.</returns>
         public System.Threading.Tasks.Task<Stream> GetAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendStreamRequestAsync(null, cancellationToken, completionOption);
         }
 
@@ -53,7 +53,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead)
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse(null, cancellationToken, completionOption);
         }
     
@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<T> PutAsync<T>(Stream logo, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : Application
         {
             this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = Constants.HttpMethods.PUT.ToString();
+            this.Method = CoreConstants.HttpMethods.PUT.ToString();
             return this.SendAsync<T>(logo, cancellationToken, completionOption);
         }
 
@@ -83,7 +83,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<T>> PutResponseAsync<T>(Stream logo, CancellationToken cancellationToken = default(CancellationToken), HttpCompletionOption completionOption = HttpCompletionOption.ResponseContentRead) where T : Application
         {
             this.ContentType = Constants.ContentTypes.StreamContentType;
-            this.Method = Constants.HttpMethods.PUT.ToString();
+            this.Method = CoreConstants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<T>(logo, cancellationToken, completionOption);
         }
     
