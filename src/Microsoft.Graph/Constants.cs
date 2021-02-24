@@ -76,36 +76,5 @@ namespace Microsoft.Graph
             /// </summary>
             public const string StreamContentType = "application/octet-stream";
         }
-
-        /// <summary>
-        /// Enum used specify Http methods
-        /// </summary>
-        public enum HttpMethods
-        {
-            /// <summary>
-            /// The GET method.
-            /// </summary>
-            GET,
-
-            /// <summary>
-            /// The POST method.
-            /// </summary>
-            POST,
-
-            /// <summary>
-            /// The PATCH method.
-            /// </summary>
-            PATCH,
-
-            /// <summary>
-            /// The PUT method.
-            /// </summary>
-            PUT,
-
-            /// <summary>
-            /// The DELETE method.
-            /// </summary>
-            DELETE
-        }
     }
 }
