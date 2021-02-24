@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<ConditionalAccessPolicy>(conditionalAccessPolicy, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> AddResponseAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(conditionalAccessPolicy, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IConditionalAccessRootPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ConditionalAccessRootPoliciesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ConditionalAccessRootPoliciesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRootPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ConditionalAccessRootPoliciesCollectionResponse>(null, cancellationToken);
         }
 

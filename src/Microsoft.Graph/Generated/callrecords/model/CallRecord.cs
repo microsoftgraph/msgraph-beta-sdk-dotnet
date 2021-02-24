@@ -86,7 +86,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets version.
-        /// Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+        /// Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
         /// </summary>
         [JsonPropertyName("version")]
         public Int64? Version { get; set; }

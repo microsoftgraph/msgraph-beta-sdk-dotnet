@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(null, cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PatchAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> PatchResponseAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken);
         }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerGroupsActivityDetailCollectionPage> PutAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             var response = await this.SendAsync<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>> PutResponseAsync(YammerGroupsActivityDetail yammergroupsactivitydetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerGroupsActivityDetailCollectionResponse>(yammergroupsactivitydetail, cancellationToken);
         }
 

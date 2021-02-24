@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityUserDetailCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(null, cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityUserDetailCollectionPage> PatchAsync(TeamsUserActivityUserDetail teamsuseractivityuserdetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(teamsuseractivityuserdetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>> PatchResponseAsync(TeamsUserActivityUserDetail teamsuseractivityuserdetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(teamsuseractivityuserdetail, cancellationToken);
         }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityUserDetailCollectionPage> PutAsync(TeamsUserActivityUserDetail teamsuseractivityuserdetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(teamsuseractivityuserdetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>> PutResponseAsync(TeamsUserActivityUserDetail teamsuseractivityuserdetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityUserDetailCollectionResponse>(teamsuseractivityuserdetail, cancellationToken);
         }
 

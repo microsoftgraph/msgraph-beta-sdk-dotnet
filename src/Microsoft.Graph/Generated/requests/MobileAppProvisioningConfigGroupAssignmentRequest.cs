@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> CreateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             var newEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> CreateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The MobileAppProvisioningConfigGroupAssignment.</returns>
         public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var retrievedEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<MobileAppProvisioningConfigGroupAssignment>(null, cancellationToken);
         }
 
@@ -119,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> UpdateAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var updatedEntity = await this.SendAsync<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> UpdateResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<MobileAppProvisioningConfigGroupAssignment>(mobileAppProvisioningConfigGroupAssignmentToUpdate, cancellationToken);
         }
 

@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// <returns>The ManagementCondition.</returns>
         public async System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var retrievedEntity = await this.SendAsync<ManagementCondition>(null, cancellationToken).ConfigureAwait(false);
             return retrievedEntity;
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ManagementCondition>(null, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             var newEntity = await this.SendAsync<ManagementCondition>(managementConditionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> CreateResponseAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<ManagementCondition>(managementConditionToCreate, cancellationToken);
         }
 
@@ -95,7 +95,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ManagementCondition> UpdateAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var updatedEntity = await this.SendAsync<ManagementCondition>(managementConditionToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
@@ -110,7 +110,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> UpdateResponseAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ManagementCondition>(managementConditionToUpdate, cancellationToken);
         }
 
@@ -121,7 +121,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             await this.SendAsync<ManagementCondition>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 

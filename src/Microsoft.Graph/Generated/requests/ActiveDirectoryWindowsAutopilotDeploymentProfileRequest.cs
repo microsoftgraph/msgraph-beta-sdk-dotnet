@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> CreateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             var newEntity = await this.SendAsync<ActiveDirectoryWindowsAutopilotDeploymentProfile>(activeDirectoryWindowsAutopilotDeploymentProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> CreateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>(activeDirectoryWindowsAutopilotDeploymentProfileToCreate, cancellationToken);
         }
 
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             await this.SendAsync<ActiveDirectoryWindowsAutopilotDeploymentProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
@@ -81,7 +81,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Delete;
+            this.Method = Constants.HttpMethods.DELETE.ToString();
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <returns>The ActiveDirectoryWindowsAutopilotDeploymentProfile.</returns>
         public async System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var retrievedEntity = await this.SendAsync<ActiveDirectoryWindowsAutopilotDeploymentProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ActiveDirectoryWindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>(null, cancellationToken);
         }
 
@@ -119,7 +119,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<ActiveDirectoryWindowsAutopilotDeploymentProfile> UpdateAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var updatedEntity = await this.SendAsync<ActiveDirectoryWindowsAutopilotDeploymentProfile>(activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>> UpdateResponseAsync(ActiveDirectoryWindowsAutopilotDeploymentProfile activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ActiveDirectoryWindowsAutopilotDeploymentProfile>(activeDirectoryWindowsAutopilotDeploymentProfileToUpdate, cancellationToken);
         }
 

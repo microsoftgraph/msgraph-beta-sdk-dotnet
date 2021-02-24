@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IRoleScopeTagGetRoleScopeTagsByIdCollectionPage> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             var response = await this.SendAsync<RoleScopeTagGetRoleScopeTagsByIdCollectionResponse>(this.RequestBody, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<RoleScopeTagGetRoleScopeTagsByIdCollectionResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<RoleScopeTagGetRoleScopeTagsByIdCollectionResponse>(this.RequestBody, cancellationToken);
         }
 

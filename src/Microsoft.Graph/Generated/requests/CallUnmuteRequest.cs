@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UnmuteParticipantOperation> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<UnmuteParticipantOperation>(this.RequestBody, cancellationToken);
         }
 
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<UnmuteParticipantOperation>(this.RequestBody, cancellationToken);
         }
 

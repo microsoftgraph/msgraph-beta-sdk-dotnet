@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageMailboxCountsCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(null, cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageMailboxCountsCollectionPage> PatchAsync(MailboxUsageMailboxCounts mailboxusagemailboxcounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             var response = await this.SendAsync<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(mailboxusagemailboxcounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>> PatchResponseAsync(MailboxUsageMailboxCounts mailboxusagemailboxcounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(mailboxusagemailboxcounts, cancellationToken);
         }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetMailboxUsageMailboxCountsCollectionPage> PutAsync(MailboxUsageMailboxCounts mailboxusagemailboxcounts, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             var response = await this.SendAsync<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(mailboxusagemailboxcounts, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>> PutResponseAsync(MailboxUsageMailboxCounts mailboxusagemailboxcounts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetMailboxUsageMailboxCountsCollectionResponse>(mailboxusagemailboxcounts, cancellationToken);
         }
 

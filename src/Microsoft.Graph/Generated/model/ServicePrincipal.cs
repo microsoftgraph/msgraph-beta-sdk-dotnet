@@ -181,7 +181,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred single sign on mode.
-        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
+        /// Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, external, and oidc.
         /// </summary>
         [JsonPropertyName("preferredSingleSignOnMode")]
         public string PreferredSingleSignOnMode { get; set; }

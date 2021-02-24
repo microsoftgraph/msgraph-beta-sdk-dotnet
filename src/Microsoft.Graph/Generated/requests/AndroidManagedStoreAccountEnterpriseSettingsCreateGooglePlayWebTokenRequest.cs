@@ -46,7 +46,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<string> PostAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             var response = await this.SendAsync<ODataMethodStringResponse>(this.RequestBody, cancellationToken);
             return response.Value;
         }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ODataMethodStringResponse>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<ODataMethodStringResponse>(this.RequestBody, cancellationToken);
         }
 

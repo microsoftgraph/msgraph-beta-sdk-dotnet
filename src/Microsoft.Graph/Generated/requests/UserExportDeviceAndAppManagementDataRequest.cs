@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsync<DeviceAndAppManagementData>(null, cancellationToken);
         }
 
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(null, cancellationToken);
         }
 
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> PatchAsync(DeviceAndAppManagementData deviceandappmanagementdata, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsync<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
@@ -76,7 +76,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> PatchResponseAsync(DeviceAndAppManagementData deviceandappmanagementdata, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Patch;
+            this.Method = Constants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
@@ -89,7 +89,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<DeviceAndAppManagementData> PutAsync(DeviceAndAppManagementData deviceandappmanagementdata, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             return this.SendAsync<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementData>> PutResponseAsync(DeviceAndAppManagementData deviceandappmanagementdata, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Put;
+            this.Method = Constants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<DeviceAndAppManagementData>(deviceandappmanagementdata, cancellationToken);
         }
 

@@ -75,7 +75,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonPropertyName("teamsAppId")]
         public string TeamsAppId { get; set; }

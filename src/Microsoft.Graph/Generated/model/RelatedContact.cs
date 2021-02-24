@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets relationship.
-        /// Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other.
+        /// Relationship to the user. Possible values are parent, relative, aide, doctor, guardian, child, other, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("relationship")]
         public ContactRelationship? Relationship { get; set; }

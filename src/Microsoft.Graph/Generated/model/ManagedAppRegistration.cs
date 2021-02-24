@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied policies.
-        /// Zero or more policys already applied on the registered app when it last synchronized with managment service.
+        /// Zero or more policys already applied on the registered app when it last synchronized with management service.
         /// </summary>
         [JsonPropertyName("appliedPolicies")]
         public IManagedAppRegistrationAppliedPoliciesCollectionPage AppliedPolicies { get; set; }

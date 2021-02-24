@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customAuthenticationFactors.
-        /// List of custom controls IDs required by the policy. Learn more about custom controls here: https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview
+        /// List of custom controls IDs required by the policy. For more information, see Custom controls.
         /// </summary>
         [JsonPropertyName("customAuthenticationFactors")]
         public IEnumerable<string> CustomAuthenticationFactors { get; set; }

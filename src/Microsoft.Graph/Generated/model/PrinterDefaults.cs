@@ -91,6 +91,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inputBin.
+        /// The default input bin that serves as the paper source.
         /// </summary>
         [JsonPropertyName("inputBin")]
         public string InputBin { get; set; }
