@@ -78,34 +78,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Constants used to specify Http methods
+        /// Enum used specify Http methods
         /// </summary>
-        public static class HttpMethods
+        public enum HttpMethods
         {
             /// <summary>
             /// The GET method.
             /// </summary>
-            public const string Get = "GET";
+            GET,
 
             /// <summary>
             /// The POST method.
             /// </summary>
-            public const string Post = "POST";
+            POST,
 
             /// <summary>
             /// The PATCH method.
             /// </summary>
-            public const string Patch = "PATCH";
+            PATCH,
 
             /// <summary>
             /// The PUT method.
             /// </summary>
-            public const string Put = "PUT";
+            PUT,
 
             /// <summary>
             /// The DELETE method.
             /// </summary>
-            public const string Delete = "DELETE";
+            DELETE
         }
     }
 }

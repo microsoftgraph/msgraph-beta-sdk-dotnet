@@ -37,42 +37,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.
+        /// true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets age group.
-        /// Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+        /// Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonPropertyName("ageGroup")]
         public string AgeGroup { get; set; }
     
         /// <summary>
         /// Gets or sets assigned licenses.
-        /// The licenses that are assigned to the user. Returned only on $select. Not nullable.
+        /// The licenses that are assigned to the user. Not nullable.
         /// </summary>
         [JsonPropertyName("assignedLicenses")]
         public IEnumerable<AssignedLicense> AssignedLicenses { get; set; }
     
         /// <summary>
         /// Gets or sets assigned plans.
-        /// The plans that are assigned to the user. Returned only on $select. Read-only. Not nullable.
+        /// The plans that are assigned to the user. Read-only. Not nullable.
         /// </summary>
         [JsonPropertyName("assignedPlans")]
         public IEnumerable<AssignedPlan> AssignedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets business phones.
-        /// The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
+        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default.
         /// </summary>
         [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
     
         /// <summary>
         /// Gets or sets city.
-        /// The city in which the user is located. Returned only on $select. Supports $filter.
+        /// The city in which the user is located. Supports $filter.
         /// </summary>
         [JsonPropertyName("city")]
         public string City { get; set; }
@@ -86,35 +86,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets consent provided for minor.
-        /// Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select.
+        /// Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonPropertyName("consentProvidedForMinor")]
         public string ConsentProvidedForMinor { get; set; }
     
         /// <summary>
         /// Gets or sets country.
-        /// The country/region in which the user is located; for example, 'US' or 'UK'. Returned only on $select. Supports $filter.
+        /// The country/region in which the user is located; for example, 'US' or 'UK'. Supports $filter.
         /// </summary>
         [JsonPropertyName("country")]
         public string Country { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
+        /// The created date of the user object.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets creation type.
-        /// Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Returned only on $select. Read-only.
+        /// Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only.
         /// </summary>
         [JsonPropertyName("creationType")]
         public string CreationType { get; set; }
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the user works. Returned only on $select. Supports $filter.
+        /// The name for the department in which the user works. Supports $filter.
         /// </summary>
         [JsonPropertyName("department")]
         public string Department { get; set; }
@@ -127,7 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
+        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -176,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fax number.
-        /// The fax number of the user. Returned only on $select.
+        /// The fax number of the user.
         /// </summary>
         [JsonPropertyName("faxNumber")]
         public string FaxNumber { get; set; }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identities.
-        /// Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter.
+        /// Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter.
         /// </summary>
         [JsonPropertyName("identities")]
         public IEnumerable<ObjectIdentity> Identities { get; set; }
@@ -225,21 +225,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last password change date time.
-        /// The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z' Returned only on $select. Read-only.
+        /// The time when this Azure AD user last changed their password. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonPropertyName("lastPasswordChangeDateTime")]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets legal age group classification.
-        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonPropertyName("legalAgeGroupClassification")]
         public string LegalAgeGroupClassification { get; set; }
     
         /// <summary>
         /// Gets or sets license assignment states.
-        /// State of license assignments for this user. Returned only on $select. Read-only.
+        /// State of license assignments for this user. Read-only.
         /// </summary>
         [JsonPropertyName("licenseAssignmentStates")]
         public IEnumerable<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
@@ -253,14 +253,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+        /// The mail alias for the user. This property must be specified when a user is created. Supports $filter.
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
+        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Returned by default.
         /// </summary>
         [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
@@ -274,98 +274,98 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises distinguished name.
-        /// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+        /// Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesDistinguishedName")]
         public string OnPremisesDistinguishedName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises domain name.
-        /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+        /// Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesDomainName")]
         public string OnPremisesDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
-        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select.
+        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15.
         /// </summary>
         [JsonPropertyName("onPremisesExtensionAttributes")]
         public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets on premises immutable id.
-        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter.
+        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.
         /// </summary>
         [JsonPropertyName("onPremisesImmutableId")]
         public string OnPremisesImmutableId { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z'. Returned only on $select. Read-only.
+        /// Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// Errors when using Microsoft synchronization product during provisioning. Returned only on $select.
+        /// Errors when using Microsoft synchronization product during provisioning.
         /// </summary>
         [JsonPropertyName("onPremisesProvisioningErrors")]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sam account name.
-        /// Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+        /// Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesSamAccountName")]
         public string OnPremisesSamAccountName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises security identifier.
-        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Returned only on $select. Read-only.
+        /// Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesSecurityIdentifier")]
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned only on $select. Read-only.
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets on premises user principal name.
-        /// Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+        /// Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
         /// </summary>
         [JsonPropertyName("onPremisesUserPrincipalName")]
         public string OnPremisesUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets other mails.
-        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].Returned only on $select.  Supports$filter.
+        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. Supports $filter.
         /// </summary>
         [JsonPropertyName("otherMails")]
         public IEnumerable<string> OtherMails { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
-        /// Specifies password policies for the user. This value is an enumeration with one possible value being 'DisableStrongPassword', which allows weaker passwords than the default policy to be specified. 'DisablePasswordExpiration' can also be specified. The two may be specified together; for example: 'DisablePasswordExpiration, DisableStrongPassword'.Returned only on $select.
+        /// Specifies password policies for the user. This value is an enumeration with one possible value being 'DisableStrongPassword', which allows weaker passwords than the default policy to be specified. 'DisablePasswordExpiration' can also be specified. The two may be specified together; for example: 'DisablePasswordExpiration, DisableStrongPassword'.
         /// </summary>
         [JsonPropertyName("passwordPolicies")]
         public string PasswordPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select.
+        /// Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
         /// </summary>
         [JsonPropertyName("passwordProfile")]
         public PasswordProfile PasswordProfile { get; set; }
     
         /// <summary>
         /// Gets or sets postal code.
-        /// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.
+        /// The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code.
         /// </summary>
         [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
@@ -386,49 +386,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioned plans.
-        /// The plans that are provisioned for the user. Returned only on $select. Read-only. Not nullable.
+        /// The plans that are provisioned for the user. Read-only. Not nullable.
         /// </summary>
         [JsonPropertyName("provisionedPlans")]
         public IEnumerable<ProvisionedPlan> ProvisionedPlans { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'] The any operator is required for filter expressions on multi-valued properties. Returned only on $select. Read-only, Not nullable. Supports $filter.
+        /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'] The any operator is required for filter expressions on multi-valued properties. Read-only, Not nullable. Supports $filter.
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets refresh tokens valid from date time.
-        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use invalidateAllRefreshTokens to reset.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("refreshTokensValidFromDateTime")]
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets show in address list.
-        /// true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select.
+        /// true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
         /// </summary>
         [JsonPropertyName("showInAddressList")]
         public bool? ShowInAddressList { get; set; }
     
         /// <summary>
         /// Gets or sets sign in sessions valid from date time.
-        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use revokeSignInSessions to reset.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
         /// </summary>
         [JsonPropertyName("signInSessionsValidFromDateTime")]
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets state.
-        /// The state or province in the user's address. Returned only on $select. Supports $filter.
+        /// The state or province in the user's address. Supports $filter.
         /// </summary>
         [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets street address.
-        /// The street address of the user's place of business. Returned only on $select.
+        /// The street address of the user's place of business.
         /// </summary>
         [JsonPropertyName("streetAddress")]
         public string StreetAddress { get; set; }
@@ -442,7 +442,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage location.
-        /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: 'US', 'JP', and 'GB'. Not nullable. Returned only on $select. Supports $filter.
+        /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: 'US', 'JP', and 'GB'. Not nullable. Supports $filter.
         /// </summary>
         [JsonPropertyName("usageLocation")]
         public string UsageLocation { get; set; }
@@ -456,14 +456,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Returned only on $select. Supports $filter.
+        /// A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports $filter.
         /// </summary>
         [JsonPropertyName("userType")]
         public string UserType { get; set; }
     
         /// <summary>
         /// Gets or sets mailbox settings.
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
         /// </summary>
         [JsonPropertyName("mailboxSettings")]
         public MailboxSettings MailboxSettings { get; set; }
@@ -477,70 +477,70 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets about me.
-        /// A freeform text entry field for the user to describe themselves. Returned only on $select.
+        /// A freeform text entry field for the user to describe themselves.
         /// </summary>
         [JsonPropertyName("aboutMe")]
         public string AboutMe { get; set; }
     
         /// <summary>
         /// Gets or sets birthday.
-        /// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z' Returned only on $select.
+        /// The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonPropertyName("birthday")]
         public DateTimeOffset? Birthday { get; set; }
     
         /// <summary>
         /// Gets or sets hire date.
-        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is '2014-01-01T00:00:00Z'. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         /// </summary>
         [JsonPropertyName("hireDate")]
         public DateTimeOffset? HireDate { get; set; }
     
         /// <summary>
         /// Gets or sets interests.
-        /// A list for the user to describe their interests. Returned only on $select.
+        /// A list for the user to describe their interests.
         /// </summary>
         [JsonPropertyName("interests")]
         public IEnumerable<string> Interests { get; set; }
     
         /// <summary>
         /// Gets or sets my site.
-        /// The URL for the user's personal site. Returned only on $select.
+        /// The URL for the user's personal site.
         /// </summary>
         [JsonPropertyName("mySite")]
         public string MySite { get; set; }
     
         /// <summary>
         /// Gets or sets past projects.
-        /// A list for the user to enumerate their past projects. Returned only on $select.
+        /// A list for the user to enumerate their past projects.
         /// </summary>
         [JsonPropertyName("pastProjects")]
         public IEnumerable<string> PastProjects { get; set; }
     
         /// <summary>
         /// Gets or sets preferred name.
-        /// The preferred name for the user. Returned only on $select.
+        /// The preferred name for the user.
         /// </summary>
         [JsonPropertyName("preferredName")]
         public string PreferredName { get; set; }
     
         /// <summary>
         /// Gets or sets responsibilities.
-        /// A list for the user to enumerate their responsibilities. Returned only on $select.
+        /// A list for the user to enumerate their responsibilities.
         /// </summary>
         [JsonPropertyName("responsibilities")]
         public IEnumerable<string> Responsibilities { get; set; }
     
         /// <summary>
         /// Gets or sets schools.
-        /// A list for the user to enumerate the schools they have attended. Returned only on $select.
+        /// A list for the user to enumerate the schools they have attended.
         /// </summary>
         [JsonPropertyName("schools")]
         public IEnumerable<string> Schools { get; set; }
     
         /// <summary>
         /// Gets or sets skills.
-        /// A list for the user to enumerate their skills. Returned only on $select.
+        /// A list for the user to enumerate their skills.
         /// </summary>
         [JsonPropertyName("skills")]
         public IEnumerable<string> Skills { get; set; }
@@ -565,6 +565,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
+        /// Represents the app roles a user has been granted for an application.
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IUserAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
@@ -599,7 +600,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.
+        /// The groups and directory roles that the user is a member of. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IUserMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -682,7 +683,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets events.
-        /// The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
+        /// The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("events")]
         public IUserEventsCollectionPage Events { get; set; }
@@ -717,14 +718,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets outlook.
-        /// Selective Outlook services available to the user. Read-only. Nullable.
+        /// Read-only.
         /// </summary>
         [JsonPropertyName("outlook")]
         public OutlookUser Outlook { get; set; }
     
         /// <summary>
         /// Gets or sets people.
-        /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
+        /// People that are relevant to the user. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("people")]
         public IUserPeopleCollectionPage People { get; set; }
@@ -765,7 +766,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the user. Nullable.
+        /// The collection of open extensions defined for the user. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IUserExtensionsCollectionPage Extensions { get; set; }
@@ -853,7 +854,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets planner.
-        /// Selective Planner services available to the user. Read-only. Nullable.
+        /// Entry-point to the Planner resource that might exist for a user. Read-only.
         /// </summary>
         [JsonPropertyName("planner")]
         public PlannerUser Planner { get; set; }

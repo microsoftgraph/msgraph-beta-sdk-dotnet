@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets response.
-        /// The response type. Possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded.
+        /// The response type. The possible values are: None, Organizer, TentativelyAccepted, Accepted, Declined, NotResponded.
         /// </summary>
         [JsonPropertyName("response")]
         public ResponseType? Response { get; set; }

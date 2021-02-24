@@ -42,7 +42,7 @@ namespace Microsoft.Graph.TermStore
         public System.Threading.Tasks.Task<Term> AddAsync(Term term, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<Term>(term, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.TermStore
         public System.Threading.Tasks.Task<GraphResponse<Term>> AddResponseAsync(Term term, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<Term>(term, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ISetTermsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<SetTermsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The <see cref="GraphResponse{SetTermsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<SetTermsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<SetTermsCollectionResponse>(null, cancellationToken);
         }
 

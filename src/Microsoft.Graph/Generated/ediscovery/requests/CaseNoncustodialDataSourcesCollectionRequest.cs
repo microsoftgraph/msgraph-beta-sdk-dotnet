@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Ediscovery
         public System.Threading.Tasks.Task<NoncustodialDataSource> AddAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<NoncustodialDataSource>(noncustodialDataSource, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Ediscovery
         public System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> AddResponseAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<NoncustodialDataSource>(noncustodialDataSource, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<ICaseNoncustodialDataSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<CaseNoncustodialDataSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse{CaseNoncustodialDataSourcesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<CaseNoncustodialDataSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<CaseNoncustodialDataSourcesCollectionResponse>(null, cancellationToken);
         }
 

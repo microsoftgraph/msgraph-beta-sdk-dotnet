@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ServicePrincipalOauth2PermissionGrantsCollectionWithReferencesResponse>(null, cancellationToken);
         }
 

@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets person type.
-        /// The type of person, for example distribution list.
+        /// The type of person.
         /// </summary>
         [JsonPropertyName("personType")]
         public string PersonType { get; set; }

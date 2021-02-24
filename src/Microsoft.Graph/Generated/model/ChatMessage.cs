@@ -91,14 +91,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last edited date time.
-        /// Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+        /// Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Microsoft Teams UI. If no edits are made the value is null.
         /// </summary>
         [JsonPropertyName("lastEditedDateTime")]
         public DateTimeOffset? LastEditedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
+        /// Read only. Timestamp when the chat message is created (initial setting) or edited, including when a reaction is added or removed.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
@@ -140,7 +140,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reply to id.
-        /// Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
+        /// Read-only. Id of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels not chats)
         /// </summary>
         [JsonPropertyName("replyToId")]
         public string ReplyToId { get; set; }

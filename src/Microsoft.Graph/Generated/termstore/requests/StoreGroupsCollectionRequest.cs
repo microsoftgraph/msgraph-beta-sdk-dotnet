@@ -42,7 +42,7 @@ namespace Microsoft.Graph.TermStore
         public System.Threading.Tasks.Task<Group> AddAsync(Group group, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<Group>(group, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.TermStore
         public System.Threading.Tasks.Task<GraphResponse<Group>> AddResponseAsync(Group group, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<Group>(group, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IStoreGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<StoreGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.TermStore
         /// <returns>The <see cref="GraphResponse{StoreGroupsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<StoreGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<StoreGroupsCollectionResponse>(null, cancellationToken);
         }
 

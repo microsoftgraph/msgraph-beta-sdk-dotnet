@@ -30,35 +30,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Created date time in UTC of the device enrollment configuration
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of the device enrollment configuration
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the device enrollment configuration
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Last modified date time in UTC of the device enrollment configuration
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
-        /// Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
@@ -72,14 +72,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets version.
-        /// The version of the device enrollment configuration
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// The list of group assignments for the device configuration profile
+        /// The list of group assignments for the device configuration profile.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceEnrollmentConfigurationAssignmentsCollectionPage Assignments { get; set; }

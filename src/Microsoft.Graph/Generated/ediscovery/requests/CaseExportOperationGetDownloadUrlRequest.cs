@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Ediscovery
         public async System.Threading.Tasks.Task<string> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ODataMethodStringResponse>(null, cancellationToken);
             return response.Value;
         }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ODataMethodStringResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ODataMethodStringResponse>(null, cancellationToken);
         }
 

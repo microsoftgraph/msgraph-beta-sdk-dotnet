@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. default is true.
+        /// true if the account is enabled; otherwise, false. Required.
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
@@ -182,7 +182,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// Operating system version of the device. Required.
+        /// The version of the operating system on the device. Required.
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
