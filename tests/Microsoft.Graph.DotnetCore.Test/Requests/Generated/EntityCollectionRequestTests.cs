@@ -73,7 +73,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<UserCalendarsCollectionResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<UserCalendarsCollectionResponse>(It.IsAny<Stream>()))
                     .Returns(calendarsCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Me.Calendars.Request().GetAsync();
@@ -120,11 +120,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var addedCalendar = new Calendar();
 
                 this.serializer.Setup(
-                    serializer => serializer.SerializeObject(addedCalendar))
-                    .Returns("body string");
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<Calendar>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<Calendar>(It.IsAny<Stream>()))
                     .Returns(addedCalendar);
 
                 var returnedCalendar = await this.graphServiceClient.Me.Calendars.Request().AddAsync(addedCalendar);
@@ -159,12 +155,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var attachmentToAdd = new FileAttachment();
 
                 this.serializer.Setup(
-                    serializer => serializer.SerializeObject(
-                        It.Is<FileAttachment>(attachment => string.Equals("#microsoft.graph.fileAttachment", attachment.ODataType))))
-                    .Returns("body string");
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<Attachment>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<Attachment>(It.IsAny<Stream>()))
                     .Returns(attachmentToAdd);
 
                 var returnedAttachment = await this.graphServiceClient

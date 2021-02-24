@@ -164,7 +164,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<UserReminderViewCollectionResponse>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<UserReminderViewCollectionResponse>(It.IsAny<Stream>()))
                     .Returns(userReminderViewCollectionResponse);
 
                 var returnedCollectionPage = await this.graphServiceClient.Me.ReminderView("now", "later").Request().GetAsync() as UserReminderViewCollectionPage;

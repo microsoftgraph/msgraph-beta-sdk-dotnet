@@ -51,7 +51,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 };
 
                 this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<string>()))
+                    serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>()))
                     .Returns(expectedItemResponse);
 
                 var item = await this.graphServiceClient.Me.Drive.Items["id"].Request().GetAsync();
@@ -135,9 +135,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                         .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
 
                 var contactToUpdate = new Contact { Id = "id" };
-
-                this.serializer.Setup(serializer => serializer.SerializeObject(contactToUpdate)).Returns("body");
-                this.serializer.Setup(serializer => serializer.DeserializeObject<Contact>(It.IsAny<string>())).Returns(contactToUpdate);
+                
+                this.serializer.Setup(serializer => serializer.DeserializeObject<Contact>(It.IsAny<Stream>())).Returns(contactToUpdate);
 
                 var contactResponse = await this.graphServiceClient.Me.Contacts["id"].Request().UpdateAsync(contactToUpdate);
 
@@ -170,9 +169,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                             HttpCompletionOption.ResponseContentRead,
                             CancellationToken.None))
                         .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                this.serializer.Setup(serializer => serializer.SerializeObject(It.IsAny<DriveItem>())).Returns("body");
-                this.serializer.Setup(serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<string>())).Returns(new DriveItem { Id = "id" });
+                
+                this.serializer.Setup(serializer => serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>())).Returns(new DriveItem { Id = "id" });
 
                 var itemResponse = isUpdate
                     ? await this.graphServiceClient.Me.Drive.Items["id"].Request().UpdateAsync(new DriveItem())
