@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<WorkbookTable> AddAsync(WorkbookTable workbookTable, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsync<WorkbookTable>(workbookTable, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> AddResponseAsync(WorkbookTable workbookTable, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<WorkbookTable>(workbookTable, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IWorkbookWorksheetTablesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<WorkbookWorksheetTablesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookWorksheetTablesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetTablesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<WorkbookWorksheetTablesCollectionResponse>(null, cancellationToken);
         }
 

@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<ActivityStatistics> AddAsync(ActivityStatistics activityStatistics, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             activityStatistics.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(activityStatistics.GetType().FullName));
             return this.SendAsync<ActivityStatistics>(activityStatistics, cancellationToken);
         }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<ActivityStatistics>> AddResponseAsync(ActivityStatistics activityStatistics, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             activityStatistics.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(activityStatistics.GetType().FullName));
             return this.SendAsyncWithGraphResponse<ActivityStatistics>(activityStatistics, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IUserAnalyticsActivityStatisticsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<UserAnalyticsActivityStatisticsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserAnalyticsActivityStatisticsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<UserAnalyticsActivityStatisticsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<UserAnalyticsActivityStatisticsCollectionResponse>(null, cancellationToken);
         }
 

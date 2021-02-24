@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<NdesConnector> AddAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsync<NdesConnector>(ndesConnector, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<NdesConnector>> AddResponseAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<NdesConnector>(ndesConnector, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IDeviceManagementNdesConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<DeviceManagementNdesConnectorsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<DeviceManagementNdesConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<DeviceManagementNdesConnectorsCollectionResponse>(null, cancellationToken);
         }
 

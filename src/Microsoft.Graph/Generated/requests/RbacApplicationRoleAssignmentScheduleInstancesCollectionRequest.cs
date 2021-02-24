@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> AddAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsync<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstance, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> AddResponseAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.POST.ToString();
+            this.Method = CoreConstants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<UnifiedRoleAssignmentScheduleInstance>(unifiedRoleAssignmentScheduleInstance, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse>(null, cancellationToken);
         }
 

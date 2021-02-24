@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerActivityUserDetailCollectionPage> GetAsync(
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<ReportRootGetYammerActivityUserDetailCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.GET.ToString();
+            this.Method = CoreConstants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>(null, cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerActivityUserDetailCollectionPage> PatchAsync(YammerActivityUserDetail yammeractivityuserdetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.PATCH.ToString();
+            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
             var response = await this.SendAsync<ReportRootGetYammerActivityUserDetailCollectionResponse>(yammeractivityuserdetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>> PatchResponseAsync(YammerActivityUserDetail yammeractivityuserdetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.PATCH.ToString();
+            this.Method = CoreConstants.HttpMethods.PATCH.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>(yammeractivityuserdetail, cancellationToken);
         }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<IReportRootGetYammerActivityUserDetailCollectionPage> PutAsync(YammerActivityUserDetail yammeractivityuserdetail, 
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.PUT.ToString();
+            this.Method = CoreConstants.HttpMethods.PUT.ToString();
             var response = await this.SendAsync<ReportRootGetYammerActivityUserDetailCollectionResponse>(yammeractivityuserdetail, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>> PutResponseAsync(YammerActivityUserDetail yammeractivityuserdetail, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.PUT.ToString();
+            this.Method = CoreConstants.HttpMethods.PUT.ToString();
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerActivityUserDetailCollectionResponse>(yammeractivityuserdetail, cancellationToken);
         }
 
