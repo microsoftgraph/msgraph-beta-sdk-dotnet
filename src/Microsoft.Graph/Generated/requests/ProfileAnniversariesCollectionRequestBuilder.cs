@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IPersonAnniversaryRequestBuilder"/> for the specified ProfilePersonAnniversary.
+        /// Gets an <see cref="IPersonAnnualEventRequestBuilder"/> for the specified ProfilePersonAnnualEvent.
         /// </summary>
-        /// <param name="id">The ID for the ProfilePersonAnniversary.</param>
-        /// <returns>The <see cref="IPersonAnniversaryRequestBuilder"/>.</returns>
-        public IPersonAnniversaryRequestBuilder this[string id]
+        /// <param name="id">The ID for the ProfilePersonAnnualEvent.</param>
+        /// <returns>The <see cref="IPersonAnnualEventRequestBuilder"/>.</returns>
+        public IPersonAnnualEventRequestBuilder this[string id]
         {
             get
             {
-                return new PersonAnniversaryRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new PersonAnnualEventRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

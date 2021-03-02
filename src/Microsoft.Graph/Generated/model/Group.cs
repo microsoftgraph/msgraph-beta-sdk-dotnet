@@ -364,6 +364,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
+        /// Represents the app roles a group has been granted for an application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appRoleAssignments", Required = Newtonsoft.Json.Required.Default)]
         public IGroupAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
@@ -471,20 +472,6 @@ namespace Microsoft.Graph
         public IGroupEventsCollectionPage Events { get; set; }
     
         /// <summary>
-        /// Gets or sets photo.
-        /// The group's profile photo.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
-        public ProfilePhoto Photo { get; set; }
-    
-        /// <summary>
-        /// Gets or sets photos.
-        /// The profile photos owned by the group. Read-only. Nullable.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
-        public IGroupPhotosCollectionPage Photos { get; set; }
-    
-        /// <summary>
         /// Gets or sets rejected senders.
         /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
@@ -546,6 +533,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onenote", Required = Newtonsoft.Json.Required.Default)]
         public Onenote Onenote { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photo.
+        /// The group's profile photo.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photo", Required = Newtonsoft.Json.Required.Default)]
+        public ProfilePhoto Photo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets photos.
+        /// The profile photos owned by the group. Read-only. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPhotosCollectionPage Photos { get; set; }
     
         /// <summary>
         /// Gets or sets team.

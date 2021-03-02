@@ -93,6 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inputBin.
+        /// The default input bin that serves as the paper source.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inputBin", Required = Newtonsoft.Json.Required.Default)]
         public string InputBin { get; set; }

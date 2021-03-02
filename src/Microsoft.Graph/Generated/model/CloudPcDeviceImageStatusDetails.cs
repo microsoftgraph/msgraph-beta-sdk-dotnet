@@ -30,5 +30,15 @@ namespace Microsoft.Graph
         /// </summary>
         SourceImageNotFound = 1,
 	
+        /// <summary>
+        /// Os Version Not Supported
+        /// </summary>
+        OsVersionNotSupported = 2,
+	
+        /// <summary>
+        /// Source Image Invalid
+        /// </summary>
+        SourceImageInvalid = 3,
+	
     }
 }

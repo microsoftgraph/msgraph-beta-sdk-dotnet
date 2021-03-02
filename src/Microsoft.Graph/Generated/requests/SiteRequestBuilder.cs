@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ExternalColumns.
+        /// </summary>
+        /// <returns>The <see cref="ISiteExternalColumnsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ISiteExternalColumnsCollectionWithReferencesRequestBuilder ExternalColumns
+        {
+            get
+            {
+                return new SiteExternalColumnsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("externalColumns"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Items.
         /// </summary>
         /// <returns>The <see cref="ISiteItemsCollectionRequestBuilder"/>.</returns>
@@ -197,6 +209,19 @@ namespace Microsoft.Graph
                 startDateTime,
                 endDateTime,
                 interval);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SiteGetApplicableContentTypesForList.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetApplicableContentTypesForListRequestBuilder"/>.</returns>
+        public ISiteGetApplicableContentTypesForListRequestBuilder GetApplicableContentTypesForList(
+            string listId)
+        {
+            return new SiteGetApplicableContentTypesForListRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getApplicableContentTypesForList"),
+                this.Client,
+                listId);
         }
 
         /// <summary>

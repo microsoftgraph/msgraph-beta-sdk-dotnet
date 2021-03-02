@@ -100,6 +100,12 @@ namespace Microsoft.Graph
         public ISiteDrivesCollectionPage Drives { get; set; }
     
         /// <summary>
+        /// Gets or sets external columns.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalColumns", Required = Newtonsoft.Json.Required.Default)]
+        public ISiteExternalColumnsCollectionWithReferencesPage ExternalColumns { get; set; }
+    
+        /// <summary>
         /// Gets or sets items.
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>

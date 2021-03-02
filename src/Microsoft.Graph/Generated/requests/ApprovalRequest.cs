@@ -234,33 +234,17 @@ namespace Microsoft.Graph
             if (approvalToInitialize != null && approvalToInitialize.AdditionalData != null)
             {
 
-                if (approvalToInitialize.CompletedSteps != null && approvalToInitialize.CompletedSteps.CurrentPage != null)
+                if (approvalToInitialize.Steps != null && approvalToInitialize.Steps.CurrentPage != null)
                 {
-                    approvalToInitialize.CompletedSteps.AdditionalData = approvalToInitialize.AdditionalData;
+                    approvalToInitialize.Steps.AdditionalData = approvalToInitialize.AdditionalData;
 
                     object nextPageLink;
-                    approvalToInitialize.AdditionalData.TryGetValue("completedSteps@odata.nextLink", out nextPageLink);
+                    approvalToInitialize.AdditionalData.TryGetValue("steps@odata.nextLink", out nextPageLink);
                     var nextPageLinkString = nextPageLink as string;
 
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
-                        approvalToInitialize.CompletedSteps.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (approvalToInitialize.PendingSteps != null && approvalToInitialize.PendingSteps.CurrentPage != null)
-                {
-                    approvalToInitialize.PendingSteps.AdditionalData = approvalToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalToInitialize.AdditionalData.TryGetValue("pendingSteps@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalToInitialize.PendingSteps.InitializeNextPageRequest(
+                        approvalToInitialize.Steps.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

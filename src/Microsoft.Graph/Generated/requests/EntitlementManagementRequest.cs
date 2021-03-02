@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (entitlementManagementToInitialize != null && entitlementManagementToInitialize.AdditionalData != null)
             {
 
+                if (entitlementManagementToInitialize.AccessPackageAssignmentApprovals != null && entitlementManagementToInitialize.AccessPackageAssignmentApprovals.CurrentPage != null)
+                {
+                    entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (entitlementManagementToInitialize.AccessPackageAssignmentPolicies != null && entitlementManagementToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {
                     entitlementManagementToInitialize.AccessPackageAssignmentPolicies.AdditionalData = entitlementManagementToInitialize.AdditionalData;

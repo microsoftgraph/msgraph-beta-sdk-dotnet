@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ThumbnailUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets web url.
         /// Contains a link to a web page or resource about the responsibility.
         /// </summary>

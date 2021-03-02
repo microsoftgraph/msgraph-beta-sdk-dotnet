@@ -79,6 +79,12 @@ namespace Microsoft.Graph
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sponsors", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<RelatedPerson> Sponsors { get; set; }
     
+        /// <summary>
+        /// Gets or sets thumbnail url.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        public string ThumbnailUrl { get; set; }
+    
     }
 }
 

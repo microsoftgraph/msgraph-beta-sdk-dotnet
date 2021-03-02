@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (contentTypeToInitialize != null && contentTypeToInitialize.AdditionalData != null)
             {
 
+                if (contentTypeToInitialize.BaseTypes != null && contentTypeToInitialize.BaseTypes.CurrentPage != null)
+                {
+                    contentTypeToInitialize.BaseTypes.AdditionalData = contentTypeToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contentTypeToInitialize.AdditionalData.TryGetValue("baseTypes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contentTypeToInitialize.BaseTypes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (contentTypeToInitialize.ColumnLinks != null && contentTypeToInitialize.ColumnLinks.CurrentPage != null)
                 {
                     contentTypeToInitialize.ColumnLinks.AdditionalData = contentTypeToInitialize.AdditionalData;
@@ -245,6 +261,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         contentTypeToInitialize.ColumnLinks.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contentTypeToInitialize.ColumnPositions != null && contentTypeToInitialize.ColumnPositions.CurrentPage != null)
+                {
+                    contentTypeToInitialize.ColumnPositions.AdditionalData = contentTypeToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contentTypeToInitialize.AdditionalData.TryGetValue("columnPositions@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contentTypeToInitialize.ColumnPositions.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (contentTypeToInitialize.Columns != null && contentTypeToInitialize.Columns.CurrentPage != null)
+                {
+                    contentTypeToInitialize.Columns.AdditionalData = contentTypeToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    contentTypeToInitialize.AdditionalData.TryGetValue("columns@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        contentTypeToInitialize.Columns.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

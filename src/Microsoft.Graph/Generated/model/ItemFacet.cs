@@ -59,6 +59,12 @@ namespace Microsoft.Graph
         public InferenceData Inference { get; set; }
     
         /// <summary>
+        /// Gets or sets is searchable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSearchable", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsSearchable { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified by.
         /// Provides the identifier of the user and/or application that last modified the entity.
         /// </summary>

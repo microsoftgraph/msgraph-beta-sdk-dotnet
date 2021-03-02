@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IApprovalRequestBuilder"/>.</returns>
         IApprovalRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ApprovalFilterByCurrentUser.
+        /// </summary>
+        /// <returns>The <see cref="IApprovalFilterByCurrentUserRequestBuilder"/>.</returns>
+        IApprovalFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            ApprovalFilterByCurrentUserOptions on);
     }
 }

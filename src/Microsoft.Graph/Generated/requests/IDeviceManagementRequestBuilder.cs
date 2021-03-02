@@ -428,6 +428,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsCategoriesCollectionRequestBuilder UserExperienceAnalyticsCategories { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceMetricHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsDeviceMetricHistory { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsDevicePerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDevicePerformanceCollectionRequestBuilder"/>.</returns>
@@ -458,6 +464,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder UserExperienceAnalyticsImpactingProcess { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsMetricHistory.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder"/>.</returns>
@@ -474,6 +486,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
         IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsRemoteConnection.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder UserExperienceAnalyticsRemoteConnection { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsResourcePerformance.

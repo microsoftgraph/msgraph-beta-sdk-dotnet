@@ -91,7 +91,7 @@ namespace Microsoft.Graph
         /// Guidance on how to pronounce the users name.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
-        public YomiPersonName Pronunciation { get; set; }
+        public PersonNamePronounciation Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets suffix.

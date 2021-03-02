@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public DeviceManagementReportFileFormat? Format { get; set; }
     
         /// <summary>
+        /// Gets or sets localization type.
+        /// Configures how the requested export job is localized
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localizationType", Required = Newtonsoft.Json.Required.Default)]
+        public DeviceManagementExportJobLocalizationType? LocalizationType { get; set; }
+    
+        /// <summary>
         /// Gets or sets report name.
         /// Name of the report
         /// </summary>

@@ -35,26 +35,26 @@ namespace Microsoft.Graph
         }
         
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        public System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary)
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
+        /// <returns>The created PersonAnnualEvent.</returns>
+        public System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent)
         {
-            return this.AddAsync(personAnniversary, CancellationToken.None);
+            return this.AddAsync(personAnnualEvent, CancellationToken.None);
         }
 
         /// <summary>
-        /// Adds the specified PersonAnniversary to the collection via POST.
+        /// Adds the specified PersonAnnualEvent to the collection via POST.
         /// </summary>
-        /// <param name="personAnniversary">The PersonAnniversary to add.</param>
+        /// <param name="personAnnualEvent">The PersonAnnualEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonAnniversary.</returns>
-        public System.Threading.Tasks.Task<PersonAnniversary> AddAsync(PersonAnniversary personAnniversary, CancellationToken cancellationToken)
+        /// <returns>The created PersonAnnualEvent.</returns>
+        public System.Threading.Tasks.Task<PersonAnnualEvent> AddAsync(PersonAnnualEvent personAnnualEvent, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            return this.SendAsync<PersonAnniversary>(personAnniversary, cancellationToken);
+            return this.SendAsync<PersonAnnualEvent>(personAnnualEvent, cancellationToken);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnniversary, object>> expandExpression)
+        public IProfileAnniversariesCollectionRequest Expand(Expression<Func<PersonAnnualEvent, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnniversary, object>> selectExpression)
+        public IProfileAnniversariesCollectionRequest Select(Expression<Func<PersonAnnualEvent, object>> selectExpression)
         {
             if (selectExpression == null)
             {

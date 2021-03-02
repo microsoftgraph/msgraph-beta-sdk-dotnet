@@ -31,11 +31,29 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets associated hubs urls.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "associatedHubsUrls", Required = Newtonsoft.Json.Required.Default)]
+        public IEnumerable<string> AssociatedHubsUrls { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// The descriptive text for the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document set.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentSet", Required = Newtonsoft.Json.Required.Default)]
+        public DocumentSet DocumentSet { get; set; }
+    
+        /// <summary>
+        /// Gets or sets document template.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "documentTemplate", Required = Newtonsoft.Json.Required.Default)]
+        public DocumentSetContent DocumentTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets group.
@@ -59,6 +77,12 @@ namespace Microsoft.Graph
         public ItemReference InheritedFrom { get; set; }
     
         /// <summary>
+        /// Gets or sets is built in.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsBuiltIn { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// The name of the content type.
         /// </summary>
@@ -80,6 +104,12 @@ namespace Microsoft.Graph
         public string ParentId { get; set; }
     
         /// <summary>
+        /// Gets or sets propagate changes.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateChanges", Required = Newtonsoft.Json.Required.Default)]
+        public bool? PropagateChanges { get; set; }
+    
+        /// <summary>
         /// Gets or sets read only.
         /// If true, the content type cannot be modified unless this value is first set to false.
         /// </summary>
@@ -94,11 +124,35 @@ namespace Microsoft.Graph
         public bool? Sealed { get; set; }
     
         /// <summary>
+        /// Gets or sets base.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "base", Required = Newtonsoft.Json.Required.Default)]
+        public ContentType Base { get; set; }
+    
+        /// <summary>
+        /// Gets or sets base types.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baseTypes", Required = Newtonsoft.Json.Required.Default)]
+        public IContentTypeBaseTypesCollectionWithReferencesPage BaseTypes { get; set; }
+    
+        /// <summary>
         /// Gets or sets column links.
         /// The collection of columns that are required by this content type
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columnLinks", Required = Newtonsoft.Json.Required.Default)]
         public IContentTypeColumnLinksCollectionPage ColumnLinks { get; set; }
+    
+        /// <summary>
+        /// Gets or sets column positions.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columnPositions", Required = Newtonsoft.Json.Required.Default)]
+        public IContentTypeColumnPositionsCollectionWithReferencesPage ColumnPositions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets columns.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
+        public IContentTypeColumnsCollectionPage Columns { get; set; }
     
     }
 }

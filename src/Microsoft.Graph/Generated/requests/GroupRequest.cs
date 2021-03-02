@@ -458,22 +458,6 @@ namespace Microsoft.Graph
                     }
                 }
 
-                if (groupToInitialize.Photos != null && groupToInitialize.Photos.CurrentPage != null)
-                {
-                    groupToInitialize.Photos.AdditionalData = groupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    groupToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        groupToInitialize.Photos.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
                 if (groupToInitialize.RejectedSenders != null && groupToInitialize.RejectedSenders.CurrentPage != null)
                 {
                     groupToInitialize.RejectedSenders.AdditionalData = groupToInitialize.AdditionalData;
@@ -565,6 +549,22 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         groupToInitialize.GroupLifecyclePolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (groupToInitialize.Photos != null && groupToInitialize.Photos.CurrentPage != null)
+                {
+                    groupToInitialize.Photos.AdditionalData = groupToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    groupToInitialize.AdditionalData.TryGetValue("photos@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        groupToInitialize.Photos.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

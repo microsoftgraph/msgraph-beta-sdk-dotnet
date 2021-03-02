@@ -101,6 +101,13 @@ namespace Microsoft.Graph
         public Int32? IosCount { get; set; }
     
         /// <summary>
+        /// Gets or sets linuxCount.
+        /// Number of Linux OS devices. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "linuxCount", Required = Newtonsoft.Json.Required.Default)]
+        public Int32? LinuxCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets macOSCount.
         /// Number of Mac OS X device count.
         /// </summary>

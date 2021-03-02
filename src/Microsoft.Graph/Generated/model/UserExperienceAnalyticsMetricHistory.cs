@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets device id.
+        /// The user experience analytics device id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets metric date time.
         /// The user experience analytics metric date time.
         /// </summary>
